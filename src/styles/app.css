@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.play-button {
+  right: -5px;
+  bottom: -5px;
+}
+
+.number-list::before {
+  width: 3px;
+  @apply absolute top-0 bg-teal-200;
+}
