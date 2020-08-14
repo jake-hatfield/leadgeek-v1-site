@@ -1,79 +1,36 @@
 import React from "react"
-import { loadStripe } from "@stripe/stripe-js"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-
-const stripePromise = loadStripe(
-  "pk_test_51HF2gpDdWoP4Ck9RZqPhljVm5WMH4cwsMNSeMuevI8lWugnJQryfuvzx6aExHTTVBGU8woKxosaCzH4VXsKAgfsQ00Y7QBWKlc"
-)
+import SEO from "../components/seo"
+import PricingTable from "../components/pricingTable"
 
 const PricingPage = () => {
-  const handleBundleClick = async event => {
-    // When the customer clicks on the button, redirect them to Checkout.
-    const stripe = await stripePromise
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [
-        {
-          price: "price_1HF3YTDdWoP4Ck9RztBRWzsp", // Replace with the ID of your price
-          quantity: 1,
-        },
-      ],
-      mode: "subscription",
-      successUrl: "http://localhost:8000/order-confirmation",
-      cancelUrl: "http://localhost:8000/pricing",
-    })
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `error.message`.
-  }
-  const handleGrowClick = async event => {
-    // When the customer clicks on the button, redirect them to Checkout.
-    const stripe = await stripePromise
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [
-        {
-          price: "price_1HF3JwDdWoP4Ck9RmZZ3IDEs", // Replace with the ID of your price
-          quantity: 1,
-        },
-      ],
-      mode: "subscription",
-      successUrl: "http://localhost:8000/order-confirmation",
-      cancelUrl: "http://localhost:8000/pricing",
-    })
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `error.message`.
-  }
-  const handleProClick = async event => {
-    // When the customer clicks on the button, redirect them to Checkout.
-    const stripe = await stripePromise
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [
-        {
-          price: "price_1HF3JwDdWoP4Ck9RmZZ3IDEs", // Replace with the ID of your price
-          quantity: 1,
-        },
-      ],
-      mode: "subscription",
-      successUrl: "http://localhost:8000/order-confirmation",
-      cancelUrl: "http://localhost:8000/pricing",
-    })
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `error.message`.
-  }
   return (
     <Layout>
-      <section className="container">
-        <button role="link" onClick={handleGrowClick}>
-          Checkout
-        </button>
-        <button role="link" onClick={handleBundleClick}>
-          Checkout
-        </button>
-        <button role="link" onClick={handleProClick}>
-          Checkout
-        </button>
+      <SEO title="Pricing" />
+      <section className="-mt-40 bg-gray-100">
+        <header className="mt-12 lg:mt-24 py-32 lg:py-40 container text-center">
+          <h1 className="text-3xl lg:text-4xl font-black text-gray-900">
+            Online arbitrage leads for e-com sellers.
+          </h1>
+          <h2 className="mt-8 mx-auto max-w-3xl text-base lg:text-lg leading-relaxed text-gray-700">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+            unde quibusdam optio distinctio vitae similique amet aut cumque
+            reprehenderit doloremque!
+          </h2>
+        </header>
+        <div className="container">
+          <Link to={"/signup/grow"}>Sign Up Now</Link>
+        </div>
+      </section>
+      <section>
+        <header className="mt-12 lg:mt-24 container text-center">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+            Compare plans
+          </h2>
+        </header>
+        <PricingTable />
       </section>
     </Layout>
   )

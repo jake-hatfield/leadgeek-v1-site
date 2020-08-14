@@ -39,7 +39,17 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: [
+      "responsive",
+      "first",
+      "last",
+      "even",
+      "odd",
+      "hover",
+      "focus",
+    ],
+  },
   corePlugins: {
     container: false,
   },
@@ -54,8 +64,8 @@ module.exports = {
           paddingRight: "1.5rem",
           "@screen sm": {
             maxWidth: "640px",
-            paddingLeft: "1rem",
-            paddingRight: "1rem",
+            paddingLeft: "0.5rem",
+            paddingRight: "0.5rem",
           },
           "@screen md": {
             maxWidth: "768px",

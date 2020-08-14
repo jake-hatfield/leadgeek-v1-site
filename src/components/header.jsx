@@ -14,24 +14,28 @@ const Header = () => {
         <Link
           to={`/pricing`}
           className="hover:text-purple-600 transition-colors duration-200"
+          activeClassName="active"
         >
           Pricing
         </Link>
         <Link
           to={`/contact`}
           className="ml-8 hover:text-purple-600 transition-colors duration-200"
+          activeClassName="active"
         >
           Contact
         </Link>
         <Link
           to={`/demo`}
           className="ml-8 hover:text-purple-600 transition-colors duration-200"
+          activeClassName="active"
         >
           Demo
         </Link>
         <Link
           to={`/pricing`}
           className="ml-8 py-3 px-5 border border-purple-400 rounded-md text-purple-400 hover:text-purple-600 hover:border-purple-600 transition-colors duration-200"
+          activeClassName="active"
         >
           Sign up
         </Link>
