@@ -52,7 +52,7 @@ const signupFeatures = ({ featureList, price, plan }) => {
           {featureList.map(feature => (
             <li key={feature.number} className="flex items-center">
               <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
-              <span className="ml-2">{feature.body}</span>
+              <span className="ml-4">{feature.body}</span>
             </li>
           ))}
         </ul>

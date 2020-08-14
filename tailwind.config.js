@@ -60,12 +60,12 @@ module.exports = {
           width: "100%",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
           "@screen sm": {
             maxWidth: "640px",
-            paddingLeft: "0.5rem",
-            paddingRight: "0.5rem",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
           },
           "@screen md": {
             maxWidth: "768px",

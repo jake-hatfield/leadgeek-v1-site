@@ -7,7 +7,7 @@ import SignupFeatures from "../components/signupFeatures"
 const signupPage = ({ price, featureList, plan }) => {
   return (
     <section className="text-gray-700">
-      <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-300"></div>
+      <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
       <div className="py-16 lg:py-24 h-100 lg:h-screen bg-gray-100">
         <article className="mx-auto container">
           <header className="text-center">

@@ -4,7 +4,7 @@ import SEO from "../../components/seo"
 import SignupPage from "../../components/signupPage"
 
 const ProSignupPage = () => {
-  const price = 129
+  const price = 189
   const featureList = [
     {
       number: "1",
