@@ -142,48 +142,46 @@ const PricingPage = () => {
           </h2>
         </header>
         <article className="pb-24 container lg:grid lg:grid-cols-10">
-          <div className="max-w-md mx-auto lg:max-w-none lg:mx-0 lg:col-start-4 lg:col-end-8 lg:row-start-1 lg:row-end-4">
+          <div className="mx-auto max-w-md md:max-w-sm lg:max-w-none lg:mx-0 lg:col-start-4 lg:col-end-8 lg:row-start-1 lg:row-end-4">
             <div className="relative z-10 rounded-lg shadow-xl">
-              <div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-purple-400"></div>
-                <div className="absolute inset-x-0 top-0 transform translate-y-px">
-                  <div className="flex justify-center transform -translate-y-1/2">
-                    <span className="inline-flex rounded-full bg-purple-400 px-4 py-1 text-sm leading-5 font-semibold tracking-wider uppercase text-white">
-                      Get both plans
-                    </span>
-                  </div>
+              <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-purple-400"></div>
+              <div className="absolute inset-x-0 top-0 transform translate-y-px">
+                <div className="flex justify-center transform -translate-y-1/2">
+                  <span className="inline-flex rounded-full bg-purple-400 px-4 py-1 text-sm leading-5 font-semibold tracking-wider uppercase text-white">
+                    Get both plans
+                  </span>
                 </div>
-                <header className="pt-12 pb-6 px-6 bg-white rounded-t-md text-center background-repeat">
-                  <h3 className="text-2xl lg:text-3xl font-semibold">
-                    Grow + Pro Bundle
-                  </h3>
-                  <div className="mt-1 flex items-center justify-center text-5xl font-bold">
-                    <span className="-ml-10 text-gray-600 text-2xl line-through font-light tracking-wider">
-                      $318
-                    </span>
-                    <span className="ml-1 text-2xl font-bold">$</span>
-                    <span>{bundlePrice}</span>
-                    <span className="ml-1 inline-block text-gray-600 text-2xl">
-                      /mo
-                    </span>
-                  </div>
-                </header>
-                <div className="border-t-2 border-purple-400 rounded-b-md py-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
-                  <ul>
-                    {bundleFeatureList.map(feature => (
-                      <li key={feature.number} className="flex items-center">
-                        <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
-                        <p className="ml-4 text-gray-600">{feature.body}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={`/signup/bundle`}
-                    className="mt-8 py-3 block shadow-sm bg-purple-600 text-white hover:bg-purple-500 rounded-md text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
-                  >
-                    Get the Bundle
-                  </Link>
+              </div>
+              <header className="pt-12 pb-6 px-6 bg-white rounded-t-md text-center background-repeat">
+                <h3 className="text-2xl lg:text-3xl font-semibold">
+                  Grow + Pro Bundle
+                </h3>
+                <div className="mt-1 flex items-center justify-center text-5xl font-bold">
+                  <span className="-ml-2 lg:-ml-10 text-gray-600 text-xl lg:text-2xl line-through font-light tracking-wider">
+                    $318
+                  </span>
+                  <span className="ml-1 text-2xl font-bold">$</span>
+                  <span>{bundlePrice}</span>
+                  <span className="ml-1 inline-block text-gray-600 text-2xl">
+                    /mo
+                  </span>
                 </div>
+              </header>
+              <div className="border-t-2 border-purple-400 rounded-b-md py-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
+                <ul>
+                  {bundleFeatureList.map(feature => (
+                    <li key={feature.number} className="flex items-center">
+                      <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
+                      <p className="ml-4 text-gray-600">{feature.body}</p>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to={`/signup/bundle`}
+                  className="mt-8 py-3 block shadow-sm bg-purple-600 text-white hover:bg-purple-500 rounded-md text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
+                >
+                  Get the Bundle
+                </Link>
               </div>
             </div>
           </div>

@@ -15,7 +15,7 @@ const contact = () => {
       />
       <article className="-mt-40 relative text-gray-900">
         <div className="lg:h-screen lg:w-2/5 absolute negative-z top-0 bg-gray-100" />
-        <div className="mt-12 lg:mt-24 pt-32 lg:pt-40 container lg:flex lg:justify-between">
+        <div className="mt-12 pt-32 lg:pt-40 container lg:flex lg:justify-between">
           <header className="lg:w-3/5">
             <div className="mx-auto max-w-md">
               <h1 className="text-3xl lg:text-4xl font-black">Get in touch.</h1>

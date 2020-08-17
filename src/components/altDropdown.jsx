@@ -8,7 +8,7 @@ function MoreDropdown({ title, items }) {
   MoreDropdown.handleClickOutside = () => setOpen(false)
 
   return (
-    <div className="hidden lg:block">
+    <div>
       <button
         tabIndex={0}
         onKeyPress={() => toggle(!open)}

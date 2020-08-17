@@ -10,14 +10,16 @@ const sideCard = ({ featureList, plan, price, link, start }) => {
         start
           ? `lg:col-start-1 lg:col-end-4 rounded-tl-md rounded-bl-md`
           : `lg:col-start-8 lg:col-end-11 rounded-tr-md rounded-br-md`
-      } mt-12 lg:mt-0 mx-auto lg:mx-0 max-w-md lg:max-w-none lg:row-start-2 lg:row-end-3 shadow-md`}
+      } mt-12 lg:mt-0 mx-auto lg:mx-0 max-w-md md:max-w-sm lg:max-w-none lg:row-start-2 lg:row-end-3 shadow-md`}
     >
       <header className="pt-8 pb-6 px-6 bg-white rounded-t-md text-center background-repeat">
         <h3 className="text-2xl lg:text-3xl font-semibold">{plan} Plan</h3>
-        <div className="mt-1 flex items-center justify-center text-4xl font-bold">
+        <div className="mt-1 flex items-center justify-center text-5xl lg:text-4xl font-bold">
           <span className="text-2xl font-bold">$</span>
           <span>{price}</span>
-          <span className="ml-1 inline-block text-gray-600 text-lg">/mo</span>
+          <span className="ml-1 inline-block text-gray-600 text-2xl lg:text-lg">
+            /mo
+          </span>
         </div>
       </header>
       <div className="p-6 rounded-b-md border-t-2 border-gray-200">

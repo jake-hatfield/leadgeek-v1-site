@@ -37,13 +37,14 @@ const Header = () => {
       linkID: 100,
       title: "Demo",
       description: "Hi this is a description",
-      link: "about",
+      link: "demo",
     },
     {
       linkID: 200,
       title: "Contact",
       description: "Hi this is a description",
-      link: "about",
+
+      link: "contact",
     },
     {
       linkID: 300,
@@ -55,27 +56,24 @@ const Header = () => {
       linkID: 300,
       title: "Guides",
       description: "Hi this is a description",
-      link: "about",
+      link: "guides",
     },
     {
       linkID: 300,
       title: "Security",
       description: "Learn about how LeadGeek protects users' privacy",
-      link: "about",
+      link: "security",
     },
   ]
   return (
-    <header className="relative container">
-      <div className="py-6 flex items-center justify-between md:justify-start md:space-x-10">
+    <header className="relative z-40 container">
+      <div className="py-6 flex items-center justify-between md:justify-between md:space-x-10">
         <div className="lg:w-0 lg:flex-1">
-          <Link href="#" className="flex">
-            {/* <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow"/> */}
-            <div className="font-bold text-2xl lg:text-3xl">
-              <Link to={`/`} className="text-gray-900">
-                Lead<span className="text-purple-500">Geek</span>
-              </Link>
-            </div>
-          </Link>
+          <div className="font-bold text-2xl lg:text-3xl">
+            <Link to={`/`} className="text-gray-900">
+              Lead<span className="text-purple-500">Geek</span>
+            </Link>
+          </div>
         </div>
         {/* mobile button */}
         <div className="-mr-2 -my-2 md:hidden">
@@ -98,7 +96,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
-        <nav className="hidden md:flex md:items-center space-x-10">
+        <nav className="hidden md:flex md:items-center md:space-x-6 space-x-10">
           <div className="relative">
             <FeatureDropdown
               title={`Features`}

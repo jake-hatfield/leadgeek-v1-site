@@ -7,7 +7,7 @@ function Dropdown({ title, items, open, setOpen }) {
   Dropdown.handleClickOutside = () => setOpen(false)
 
   return (
-    <div className="hidden lg:block">
+    <div>
       <button
         tabIndex={0}
         onKeyPress={() => toggle(!open)}
@@ -30,11 +30,11 @@ function Dropdown({ title, items, open, setOpen }) {
       <div
         className={`${
           open ? `block` : `hidden`
-        } mt-4 px-2 sm:px-0 w-screen max-w-4xl absolute z-40 left-1/2 transform -translate-x-1/2 `}
+        } mt-4 px-2 sm:px-0 w-screen max-w-xl lg:max-w-2xl xl:max-w-4xl absolute z-40 left-1/2 transform -translate-x-64 lg:-translate-x-1/2`}
       >
         <div className="rounded-md shadow-md">
           <div className="flex items-center justify-between rounded-md shadow-xs overflow-hidden bg-white">
-            <div className="px-5 py-6 w-3/4 relative z-20 grid grid-cols-2 gap-6 sm:gap-8 sm:p-8">
+            <div className="px-5 py-6 w-full lg:w-3/4 relative z-20 grid grid-cols-2 gap-6 sm:gap-8 sm:p-8">
               {items.map(item => (
                 <Link
                   key={item.linkID}
@@ -65,7 +65,7 @@ function Dropdown({ title, items, open, setOpen }) {
                 </Link>
               ))}
             </div>
-            <div className="w-1/4 h-48 flex items-center justify-center bg-gray-100 border-l-2 border-gray-200">
+            <div className="hidden lg:flex w-1/4 h-48 items-center justify-center bg-gray-100 border-l-2 border-gray-200">
               GIF
             </div>
           </div>
