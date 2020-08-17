@@ -63,6 +63,33 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
     }
   }
 
+  const iframeStyles = {
+    base: {
+      fontSize: "15.75px",
+      color: "#486581",
+      iconColor: "#BCCCDC",
+      ":focus": {
+        outline: "0",
+        boxShadow: "1px 3px 1px #4299e1",
+      },
+      "::placeholder": {
+        color: "#BCCCDC",
+      },
+    },
+    invalid: {
+      iconColor: "#fc8181",
+      color: "#fc8181",
+    },
+    complete: {
+      iconColor: "#65D6AD",
+    },
+  }
+
+  const cardElementOpts = {
+    iconStyle: "solid",
+    style: iframeStyles,
+  }
+
   return (
     <form onSubmit={handleFormSubmit} className="mt-3 max-w-xs">
       <BillingDetailsFields />
@@ -76,7 +103,8 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         <CardElement
           onChange={handleCardDetailsChange}
           id="card-element"
-          className="mt-2 py-2 px-2 rounded-md text-sm shadow-xs focus:outline-none focus:shadow-outline"
+          className="mt-1 py-2 px-2 rounded-md text-sm stripe-cc border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
+          options={cardElementOpts}
         />
       </div>
       {/* {checkoutError && <CheckoutError>{checkoutError}</CheckoutError>} */}

@@ -12,7 +12,7 @@ const FormField = ({ label, type, name, placeholder, required }) => {
           type={type}
           placeholder={placeholder}
           required={required}
-          className="py-1 px-2 w-full rounded-md bg-transparent text-sm shadow-xs focus:outline-none focus:shadow-outline"
+          className="py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
         />
       </div>
     </div>

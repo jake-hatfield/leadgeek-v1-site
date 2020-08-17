@@ -33,7 +33,7 @@ const featureList = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className="mt-12 lg:mt-24 container">
+    <section className="mt-12 lg:mt-16 container">
       <header className="text-center">
         <h1 className="text-3xl lg:text-4xl font-black text-gray-900">
           Online arbitrage leads for e-com sellers.
@@ -54,8 +54,8 @@ const IndexPage = () => (
             to={`/demo`}
             className="mt-4 md:mt-0 md:ml-2 py-4 px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
-            Watch demo
-            <Play className="h-5 w-5 absolute play-button inline bg-white rounded-full text-purple-600" />
+            Watch a demo
+            <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
           </Link>
         </nav>
       </header>
@@ -192,8 +192,8 @@ const IndexPage = () => (
             to={`/demo`}
             className="mt-4 md:mt-0 ml-0 md:ml-2 py-4 px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
-            Watch demo
-            <Play className="h-5 w-5 absolute play-button inline bg-white rounded-full text-purple-600" />
+            Watch a demo
+            <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
           </Link>
         </nav>
       </header>

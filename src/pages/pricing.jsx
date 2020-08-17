@@ -5,9 +5,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PricingTable from "../components/pricingTable"
 import SideCard from "../components/sideCard"
+import Faq from "../components/faq"
 
 import Check from "../assets/check.svg"
 import IconExample from "../assets/bell.svg"
+import Play from "../assets/play.svg"
 
 const PricingPage = () => {
   const growFeatureList = [
@@ -129,7 +131,7 @@ const PricingPage = () => {
     <Layout>
       <SEO title="Pricing" />
       <section className="-mt-40 h-5/6 lg:h-2/3 bg-gray-100 inset-0 text-gray-900">
-        <header className="mt-12 lg:mt-24 pt-32 lg:pt-40 pb-16 lg:pb-24 container text-center">
+        <header className="mt-12 lg:mt-16 pt-32 lg:pt-40 pb-16 container text-center">
           <h1 className="text-3xl lg:text-4xl font-black">
             Online arbitrage leads for e-com sellers.
           </h1>
@@ -155,10 +157,13 @@ const PricingPage = () => {
                   <h3 className="text-2xl lg:text-3xl font-semibold">
                     Grow + Pro Bundle
                   </h3>
-                  <div className="mt-1 flex items-center justify-center text-4xl font-bold">
-                    <span className="text-2xl font-bold">$</span>
+                  <div className="mt-1 flex items-center justify-center text-5xl font-bold">
+                    <span className="-ml-10 text-gray-600 text-2xl line-through font-light tracking-wider">
+                      $318
+                    </span>
+                    <span className="ml-1 text-2xl font-bold">$</span>
                     <span>{bundlePrice}</span>
-                    <span className="ml-1 inline-block text-gray-600 text-lg">
+                    <span className="ml-1 inline-block text-gray-600 text-2xl">
                       /mo
                     </span>
                   </div>
@@ -254,6 +259,32 @@ const PricingPage = () => {
           tableHeader={`support`}
           featureRows={supportFeatureRows}
         />
+      </section>
+      <Faq />
+      <section className="mt-12 lg:mt-24 container text-center">
+        <header>
+          <h2 className="font-bold text-2xl lg:text-3xl text-gray-900">
+            Ready to get started?
+            <span className="mt-4 lg:mt-2 block">
+              Sign up for LeadGeek today.
+            </span>
+          </h2>
+          <nav className="mt-12 font-semibold">
+            <Link
+              to={`/demo`}
+              className="mt-4 md:mt-0 py-4 px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+            >
+              Watch a demo
+              <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
+            </Link>
+            <Link
+              to={`/contact`}
+              className="ml-2 py-4 px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+            >
+              Contact support
+            </Link>
+          </nav>
+        </header>
       </section>
     </Layout>
   )
