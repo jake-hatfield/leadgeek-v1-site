@@ -23,10 +23,10 @@ const faq = () => {
               key={question.id}
               className="mt-8 pt-6 lg:flex lg:flex-wrap lg:items-start border-t-2 border-gray-200"
             >
-              <div className="mb-4 lg:mb-0 lg:pr-6 lg:w-1/3 text-lg font-medium">
+              <div className="mb-4 lg:mb-0 lg:pr-6 lg:w-1/3 lg:text-lg font-medium">
                 {question.question}
               </div>
-              <div className="lg:pl-6 lg:w-2/3 text-gray-600 leading-normal">
+              <div className="lg:pl-6 lg:w-2/3 text-gray-600 text-sm lg:text-base">
                 {question.answer}
               </div>
             </div>

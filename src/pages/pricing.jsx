@@ -259,7 +259,7 @@ const PricingPage = () => {
         />
       </section>
       <Faq />
-      <section className="mt-12 lg:mt-24 container text-center">
+      <section className="my-12 lg:my-24 container text-center">
         <header>
           <h2 className="font-bold text-2xl lg:text-3xl text-gray-900">
             Ready to get started?
@@ -270,14 +270,14 @@ const PricingPage = () => {
           <nav className="mt-12 font-semibold">
             <Link
               to={`/demo`}
-              className="mt-4 md:mt-0 py-4 px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+              className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
             >
               Watch a demo
               <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
             </Link>
             <Link
               to={`/contact`}
-              className="ml-2 py-4 px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+              className="mt-4 lg:mt-0 lg:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
             >
               Contact support
             </Link>

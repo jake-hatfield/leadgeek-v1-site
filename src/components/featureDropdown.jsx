@@ -21,24 +21,24 @@ function Dropdown({ title, items, open, setOpen }) {
           fill="currentColor"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
       </button>
       <div
         className={`${
           open ? `block` : `hidden`
-        } mt-4 px-2 sm:px-0 w-screen max-w-xl lg:max-w-2xl xl:max-w-4xl absolute z-40 left-1/2 transform -translate-x-64 lg:-translate-x-1/2`}
+        } mt-6 px-2 sm:px-0 w-screen md:max-w-lg lg:max-w-2xl xl:max-w-3xl absolute z-40 lg:left-full transform -translate-x-64 lg:-translate-x-1/2`}
       >
         <div className="rounded-md shadow-md">
           <div className="flex items-center justify-between rounded-md shadow-xs overflow-hidden bg-white">
-            <div className="px-5 py-6 w-full lg:w-3/4 relative z-20 grid grid-cols-2 gap-6 sm:gap-8 sm:p-8">
+            <div className="px-5 py-6 w-full lg:w-3/4 relative z-20 grid grid-cols-2 gap-6 sm:gap-8">
               {items.map(item => (
                 <Link
                   key={item.linkID}
-                  to={item.link}
+                  to={`/${item.link}`}
                   className="-m-3 p-2 flex items-start space-x-4 rounded-md hover:bg-gray-100 transition ease-in-out duration-200"
                 >
                   <svg
@@ -48,9 +48,9 @@ function Dropdown({ title, items, open, setOpen }) {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
                     />
                   </svg>

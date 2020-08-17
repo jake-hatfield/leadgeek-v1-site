@@ -16,7 +16,11 @@
   @apply text-purple-600;
 }
 
-@media only screen and (max-width: 640px) {
+.left-full {
+  left: 50%;
+}
+
+/* @media only screen and (max-width: 640px) {
   .full-width {
     width: 100vw;
     position: relative;
@@ -26,20 +30,22 @@
     margin-left: -50vw;
     margin-right: -50vw;
   }
-}
+} */
 
-.full-width {
-  width: 100vw;
-  position: relative;
-  z-index: -1;
+/* .full-width {
+  max-width: 970px;
   left: 50%;
   right: 50%;
-  margin-left: calc(-50vw - 0px);
+  margin-left: calc(-50vw + 40px);
   margin-right: calc(-50vw + 0px);
-}
+} */
 
 .negative-z {
   z-index: -1;
+}
+
+.translate-x-25 {
+  --transform-translate-x: -25%;
 }
 
 th {
@@ -51,7 +57,7 @@ tr {
 }
 
 td {
-  @apply pl-4 !important;
+  @apply px-4 !important;
 }
 
 /* .background-repeat {

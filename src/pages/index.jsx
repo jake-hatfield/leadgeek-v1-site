@@ -33,7 +33,7 @@ const featureList = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className="mt-12 lg:mt-16 container">
+    <section className="mt-4 md:mt-8 lg:mt-16 container">
       <header className="text-center">
         <h1 className="text-3xl lg:text-4xl font-black text-gray-900">
           Online arbitrage leads for e-com sellers.
@@ -46,40 +46,42 @@ const IndexPage = () => (
         <nav className="mt-12 font-semibold">
           <Link
             to={`/pricing`}
-            className="py-4 px-5 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+            className="py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
           >
             Get started
           </Link>
           <Link
             to={`/demo`}
-            className="mt-4 md:mt-0 md:ml-2 py-4 px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+            className="mt-4 md:mt-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
-            Watch a demo
+            Watch demo
             <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
           </Link>
         </nav>
       </header>
     </section>
-    <section className="mt-12 lg:mt-24 container">
-      <h2 className="font-bold text-2xl lg:text-3xl text-gray-900 lg:text-center">
-        With Lead<span className="text-purple-500">Geek</span>, sellers like you
-        can:
-      </h2>
-      {featureList.map(feature => (
-        <article key={feature.number} className="mt-16 lg:mt-32">
-          <div className="flex">
-            <div className="flex items-center justify-center inline h-8 lg:h-8 w-48 lg:w-8 bg-teal-200 rounded-full font-bold text-teal-500 number-list">
-              {feature.number}
+    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
+      <div className="container">
+        <h2 className="font-bold text-2xl lg:text-3xl text-gray-900 lg:text-center">
+          With Lead<span className="text-purple-500">Geek</span>, sellers like
+          you can:
+        </h2>
+        {featureList.map(feature => (
+          <article key={feature.number} className="mt-16">
+            <div className="flex">
+              <div className="p-3 md:p-0 flex items-center justify-center h-8 w-8 bg-teal-200 rounded-full font-bold text-teal-500 number-list">
+                {feature.number}
+              </div>
+              <header className="mt-1 ml-8 md:max-w-md">
+                <h2 className="lg:text-xl font-medium text-gray-900">
+                  {feature.header}
+                </h2>
+                <p className="mt-4 text-gray-700">{feature.body}</p>
+              </header>
             </div>
-            <header className="mt-1 ml-8 md:max-w-md">
-              <h2 className="lg:text-xl font-medium text-gray-900">
-                {feature.header}
-              </h2>
-              <p className="mt-4 text-gray-700">{feature.body}</p>
-            </header>
-          </div>
-        </article>
-      ))}
+          </article>
+        ))}
+      </div>
     </section>
     <section className="mt-12 lg:mt-24 container md:flex md:justify-between">
       <header className="md:max-w-xl lg:w-2/5 font-bold text-3xl text-gray-900">
@@ -173,7 +175,7 @@ const IndexPage = () => (
         </article>
       </div>
     </section>
-    <section className="mt-12 lg:mt-24 container text-center">
+    <section className="my-12 lg:my-24 container text-center">
       <header>
         <h2 className="font-bold text-2xl lg:text-3xl text-gray-900">
           Ready to get started?
@@ -184,13 +186,13 @@ const IndexPage = () => (
         <nav className="mt-12 font-semibold">
           <Link
             to={`/pricing`}
-            className="py-4 px-5 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+            className="py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
           >
             Get started
           </Link>
           <Link
             to={`/demo`}
-            className="mt-4 md:mt-0 ml-0 md:ml-2 py-4 px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+            className="mt-4 md:mt-0 ml-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
             Watch a demo
             <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
