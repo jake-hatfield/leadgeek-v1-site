@@ -49,6 +49,8 @@ module.exports = {
       "hover",
       "focus",
     ],
+    margin: ["responsive", "first", "last", "even", "odd", "hover", "focus"],
+    flexDirection: ["responsive", "first", "last", "even", "odd"],
   },
   corePlugins: {
     container: false,
@@ -68,12 +70,12 @@ module.exports = {
             paddingRight: "1rem",
           },
           "@screen md": {
-            maxWidth: "768px",
+            maxWidth: "1023px",
             paddingLeft: "1.25rem",
             paddingRight: "1.25rem",
           },
           "@screen lg": {
-            maxWidth: "1024px",
+            maxWidth: "1139px",
             paddingLeft: "1.5rem",
             paddingRight: "1.5rem",
           },

@@ -3,13 +3,15 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PrimaryHeader from "../components/primaryHeader"
 import PricingTable from "../components/pricingTable"
 import SideCard from "../components/sideCard"
+import TripleIcons from "../components/tripleIcons"
 import Faq from "../components/faq"
 
 import Check from "../assets/check.svg"
-import IconExample from "../assets/bell.svg"
 import Play from "../assets/play.svg"
+import IconExample from "../assets/bell.svg"
 
 const PricingPage = () => {
   const growFeatureList = [
@@ -82,6 +84,32 @@ const PricingPage = () => {
       body: "Feature 6",
     },
   ]
+  const whyLeadGeek = [
+    {
+      id: 1,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Identifying your dream personas",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+    },
+    {
+      id: 2,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Identifying your dream personas",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+    },
+    {
+      id: 3,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Identifying your dream personas",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+    },
+  ]
   const criteriaFeatureRows = [
     {
       rowID: 100,
@@ -131,16 +159,13 @@ const PricingPage = () => {
     <Layout>
       <SEO title="Pricing" />
       <section className="-mt-40 h-5/6 lg:h-2/3 bg-gray-100 inset-0 text-gray-900">
-        <header className="mt-12 lg:mt-16 pt-32 lg:pt-40 pb-16 container text-center">
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">
-            Online arbitrage leads for e-com sellers.
-          </h1>
-          <h2 className="mt-4 mx-auto lg:mt-8 lg:max-w-4xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
-            unde quibusdam optio distinctio vitae similique amet aut cumque
-            reprehenderit doloremque!
-          </h2>
-        </header>
+        <PrimaryHeader
+          header={`Want to simplify sourcing? Start here.`}
+          subHeader={` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+          unde quibusdam optio distinctio vitae similique amet aut cumque
+          reprehenderit doloremque!`}
+          negativeMargin
+        />
         <article className="pb-24 container lg:grid lg:grid-cols-10">
           <div className="mx-auto max-w-md md:max-w-sm lg:max-w-none lg:mx-0 lg:col-start-4 lg:col-end-8 lg:row-start-1 lg:row-end-4">
             <div className="relative z-10 rounded-lg shadow-xl">
@@ -201,50 +226,13 @@ const PricingPage = () => {
           />
         </article>
       </section>
-      <section className="py-12 lg:py-24 bg-purple-600 text-white">
-        <div className="container">
-          <header className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center">
-            <h2>Why customers choose LeadGeek</h2>
-          </header>
-          <div className="mt-12 xl:mt-16 md:flex md:justify-between">
-            <div className="lg:w-1/3">
-              <IconExample className="p-2 h-10 w-10 bg-white rounded-md text-purple-600" />
-              <h3 className="mt-6 lg:text-xl font-medium">
-                Identifying your dream personas
-              </h3>
-              <p className="mt-4 text-purple-100">
-                Founders who cast a wide net inevitably pick up some trash.
-                Rather than marketing wide, I will help you market deep by
-                creating a clear ideal persona (and equally as importantly
-              </p>
-            </div>
-            <div className="mt-8 md:mt-0 md:ml-12 lg:w-1/3">
-              <IconExample className="p-2 h-10 w-10 bg-white rounded-md text-purple-600" />
-              <h3 className="mt-6 lg:text-xl font-medium">
-                Clarifying your message
-              </h3>
-              <p className="mt-4 text-purple-100">
-                Your company may solve many problems, but which one(s) do your
-                users care about the most? I will trim the fat from your
-                messaging to serve your users up some filet-mignon quality
-                clarity.
-              </p>
-            </div>
-            <div className="mt-8 md:mt-0 md:ml-12 lg:w-1/3">
-              <IconExample className="p-2 h-10 w-10 bg-white rounded-md text-purple-600" />
-              <h3 className="mt-6 lg:text-xl font-medium">
-                Clarifying your message
-              </h3>
-              <p className="mt-4 text-purple-100">
-                Your company may solve many problems, but which one(s) do your
-                users care about the most? I will trim the fat from your
-                messaging to serve your users up some filet-mignon quality
-                clarity.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TripleIcons
+        bgColor={`bg-purple-600`}
+        mainHeader={`Why customers choose LeadGeek`}
+        items={whyLeadGeek}
+        primaryTextColor={`text-white`}
+        secondaryTextColor={`text-purple-100`}
+      />
       <section className="text-gray-900">
         <header className="mt-12 lg:mt-24 container text-center">
           <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold">
@@ -269,7 +257,7 @@ const PricingPage = () => {
               Sign up for LeadGeek today.
             </span>
           </h2>
-          <nav className="mt-12 font-semibold">
+          <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 w-48 md:w-full font-semibold">
             <Link
               to={`/demo`}
               className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
@@ -279,7 +267,7 @@ const PricingPage = () => {
             </Link>
             <Link
               to={`/contact`}
-              className="mt-4 lg:mt-0 lg:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+              className="mt-4 lg:mt-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
             >
               Contact support
             </Link>

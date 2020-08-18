@@ -24,11 +24,11 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="relative flex flex-col h-screen justify-between">
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   )
 }
 

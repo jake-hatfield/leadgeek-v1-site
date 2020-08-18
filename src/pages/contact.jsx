@@ -13,11 +13,11 @@ const contact = () => {
         description="Have a question for NGUX? There's a very real person on the other end of this contact form. Reach out with a UX design question or anything on your mind."
         keywords={[`contact not garbage ux`, `contact NGUX`]}
       />
-      <article className="-mt-40 mb-40 relative text-gray-900">
-        <div className="lg:h-screen lg:w-2/5 absolute negative-z top-0 bg-gray-100" />
-        <div className="mt-12 pt-32 lg:pt-40 container lg:flex lg:justify-between lg:items-center">
+      <div className="lg:h-screen lg:w-2/5 absolute top-0 negative-z bg-gray-100" />
+      <section className="relative text-gray-900">
+        <div className="container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
-            <div className="mx-auto md:mx-0 max-w-md">
+            <div className="mx-auto lg:mx-0 max-w-md">
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900">
                 Get in touch.
               </h1>
@@ -48,7 +48,7 @@ const contact = () => {
               </address>
             </div>
           </header>
-          <section className="mt-10 lg:mt-0 lg:w-2/5 lg:flex lg:items-start lg:justify-end">
+          <article className="mt-10 lg:mt-0 lg:w-2/5 lg:flex lg:items-start lg:justify-end">
             <form
               name="contact"
               method="post"
@@ -103,9 +103,9 @@ const contact = () => {
                 </button>
               </div>
             </form>
-          </section>
+          </article>
         </div>
-      </article>
+      </section>
     </Layout>
   )
 }
