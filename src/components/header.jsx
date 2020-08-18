@@ -107,7 +107,7 @@ const Header = () => {
   ]
   return (
     <header className="relative z-40 container">
-      <div className="py-6 flex items-center justify-between md:justify-between md:space-x-10">
+      <div className="py-3 flex items-center justify-between md:justify-between md:space-x-10">
         <div className="lg:w-0 lg:flex-1">
           <div className="font-bold text-xl lg:text-2xl">
             <Link to={`/`} className="text-gray-900">

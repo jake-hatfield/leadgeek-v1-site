@@ -132,10 +132,10 @@ const PricingPage = () => {
       <SEO title="Pricing" />
       <section className="-mt-40 h-5/6 lg:h-2/3 bg-gray-100 inset-0 text-gray-900">
         <header className="mt-12 lg:mt-16 pt-32 lg:pt-40 pb-16 container text-center">
-          <h1 className="text-3xl lg:text-4xl font-black">
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">
             Online arbitrage leads for e-com sellers.
           </h1>
-          <h2 className="mt-8 mx-auto max-w-3xl text-base lg:text-lg leading-relaxed text-gray-700">
+          <h2 className="mt-4 mx-auto lg:mt-8 lg:max-w-4xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
             unde quibusdam optio distinctio vitae similique amet aut cumque
             reprehenderit doloremque!
@@ -203,10 +203,10 @@ const PricingPage = () => {
       </section>
       <section className="py-12 lg:py-24 bg-purple-600 text-white">
         <div className="container">
-          <header className="text-3xl lg:text-4xl font-bold text-center">
+          <header className="text-3xl lg:text-4xl xl:text-5xl font-bold text-center">
             <h2>Why customers choose LeadGeek</h2>
           </header>
-          <div className="mt-12 md:flex md:justify-between">
+          <div className="mt-12 xl:mt-16 md:flex md:justify-between">
             <div className="lg:w-1/3">
               <IconExample className="p-2 h-10 w-10 bg-white rounded-md text-purple-600" />
               <h3 className="mt-6 lg:text-xl font-medium">
@@ -247,7 +247,9 @@ const PricingPage = () => {
       </section>
       <section className="text-gray-900">
         <header className="mt-12 lg:mt-24 container text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold">Compare plans</h2>
+          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold">
+            Compare plans
+          </h2>
         </header>
         <PricingTable
           tableHeader={`minimum criteria`}
@@ -272,7 +274,7 @@ const PricingPage = () => {
               to={`/demo`}
               className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
             >
-              Watch a demo
+              Watch demo
               <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
             </Link>
             <Link

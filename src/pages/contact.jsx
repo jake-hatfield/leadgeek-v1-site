@@ -13,13 +13,15 @@ const contact = () => {
         description="Have a question for NGUX? There's a very real person on the other end of this contact form. Reach out with a UX design question or anything on your mind."
         keywords={[`contact not garbage ux`, `contact NGUX`]}
       />
-      <article className="-mt-40 relative text-gray-900">
-        {/* <div className="lg:h-screen lg:w-2/5 absolute negative-z top-0 bg-gray-100" /> */}
-        <div className="mt-12 pt-32 lg:pt-40 container lg:flex lg:justify-between">
+      <article className="-mt-40 mb-40 relative text-gray-900">
+        <div className="lg:h-screen lg:w-2/5 absolute negative-z top-0 bg-gray-100" />
+        <div className="mt-12 pt-32 lg:pt-40 container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
-            <div className="mx-auto max-w-md">
-              <h1 className="text-3xl lg:text-4xl font-black">Get in touch.</h1>
-              <h2 className="mt-4 text-gray-700 leading-relaxed">
+            <div className="mx-auto md:mx-0 max-w-md">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900">
+                Get in touch.
+              </h1>
+              <h2 className="mt-4 lg:mt-8 text-base md:text-lg lg:text-lg leading-relaxed text-gray-700">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Explicabo unde quibusdam optio distinctio vitae similique amet
                 aut cumque reprehenderit doloremque!
