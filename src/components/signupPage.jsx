@@ -11,15 +11,20 @@ const signupPage = ({ price, featureList, plan }) => {
       <div className="py-16 lg:py-24 h-100 lg:h-screen bg-gray-100">
         <article className="mx-auto container">
           <header className="text-center">
-            <Link to={`/`} className="font-bold text-2xl text-gray-900">
+            <Link
+              to={`/`}
+              className="font-bold text-2xl lg:text-3xl text-gray-900"
+            >
               Lead<span className="text-purple-500">Geek</span>
             </Link>
-            <h1 className="mt-6 text-2xl lg:text-3xl font-black text-gray-900">
+            <h1 className="mt-6 text-4xl lg:text-5xl font-black text-gray-900">
               Start sourcing with LeadGeek
             </h1>
-            <p className="pt-4">Sign up takes less than 2 minutes.</p>
+            <p className="pt-4 text-base md:text-lg lg:text-xl leading-relaxed">
+              Sign up takes less than 2 minutes.
+            </p>
           </header>
-          <div className="mt-8 lg:flex lg:justify-center">
+          <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
             <div className="mx-auto pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 w-full lg:w-2/3 max-w-sm bg-white rounded-md shadow-lg">
               <CheckoutForm
                 price={price}

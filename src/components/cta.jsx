@@ -8,7 +8,7 @@ const CTA = () => {
     <section className="my-12 lg:my-24 container text-center">
       <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 container w-48 md:w-full font-semibold">
         <header>
-          <h2 className="font-bold text-2xl md:text-3xl text-gray-900">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
             Ready to get started?
             <span className="mt-4 lg:mt-2 block">
               Sign up for LeadGeek today.

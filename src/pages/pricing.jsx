@@ -11,7 +11,6 @@ import Faq from "../components/faq"
 
 import Check from "../assets/check.svg"
 import Play from "../assets/play.svg"
-import IconExample from "../assets/bell.svg"
 
 const PricingPage = () => {
   const growFeatureList = [
@@ -160,7 +159,7 @@ const PricingPage = () => {
       <SEO title="Pricing" />
       <section className="-mt-40 h-5/6 lg:h-2/3 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
-          header={`Want to simplify sourcing? Start here.`}
+          header={`Grow your online arbitrage business with LeadGeek.`}
           subHeader={` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
           unde quibusdam optio distinctio vitae similique amet aut cumque
           reprehenderit doloremque!`}
@@ -235,7 +234,7 @@ const PricingPage = () => {
       />
       <section className="text-gray-900">
         <header className="mt-12 lg:mt-24 container text-center">
-          <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">
             Compare plans
           </h2>
         </header>
@@ -251,7 +250,7 @@ const PricingPage = () => {
       <Faq />
       <section className="my-12 lg:my-24 container text-center">
         <header>
-          <h2 className="font-bold text-2xl lg:text-3xl text-gray-900">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
             Ready to get started?
             <span className="mt-4 lg:mt-2 block">
               Sign up for LeadGeek today.

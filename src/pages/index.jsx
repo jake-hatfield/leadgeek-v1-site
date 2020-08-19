@@ -36,7 +36,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <section className="container">
       <PrimaryHeader
-        header={`The Ultimate Toolkit for Online Arbitrage.`}
+        header={`Online Arbitrage Leads That Save You Time.`}
         subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
         quibum optio distinctio vitae similique amet aut cumque reprehenderit
         doloremque! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -52,8 +52,8 @@ const IndexPage = () => (
     </section>
     <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
       <div className="container">
-        <header className="lg:mx-auto lg:max-w-xl xl:max-w-2xl">
-          <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900 md:text-center">
+        <header className="lg:mx-auto md:max-w-xl xl:max-w-2xl">
+          <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900 lg:text-center">
             Lead<span className="text-purple-500">Geek</span> makes it easy for
             arbitrage sellers like you to:
           </h2>
