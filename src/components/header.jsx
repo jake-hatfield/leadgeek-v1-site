@@ -157,7 +157,7 @@ const Header = () => {
           </div>
           <Link
             to={`/signup`}
-            className="ml-8 py-3 px-4 border border-purple-400 rounded-md text-purple-400 hover:text-white hover:border-purple-600 hover:bg-purple-600 transition-colors duration-200"
+            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-purple-100 text-purple-600 hover:text-white hover:bg-purple-600 transition-colors duration-200"
             activeClassName="active"
           >
             Sign up

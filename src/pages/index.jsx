@@ -34,7 +34,7 @@ const featureList = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className="container">
+    <section>
       <PrimaryHeader
         header={`Online Arbitrage Leads That Save You Time.`}
         subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde

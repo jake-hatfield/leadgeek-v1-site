@@ -13,6 +13,13 @@ import Check from "../assets/check.svg"
 import Play from "../assets/play.svg"
 
 const PricingPage = () => {
+  const growPrice = 129
+  const proPrice = 189
+  const bundlePrice = 263
+  const proLink = "pro"
+  const growLink = "grow"
+  const growPlanSeats = 30
+  const proPlanSeats = 15
   const growFeatureList = [
     {
       number: "1",
@@ -109,23 +116,238 @@ const PricingPage = () => {
         "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
     },
   ]
-  const criteriaFeatureRows = [
+  const coreFeatureRows = [
     {
       rowID: 100,
       cells: [
-        { cellID: 101, description: true, value: "Profit" },
-        { cellID: 102, description: false, value: true },
-        { cellID: 103, description: false, value: true },
-        { cellID: 104, description: false, value: false },
+        {
+          cellID: 101,
+          description: true,
+          value: "Member limit",
+          tooltip:
+            "The maximum number of members allowed on each plan - fewer members means less competition.",
+        },
+        { cellID: 102, description: false, value: proPlanSeats },
+        { cellID: 103, description: false, value: proPlanSeats },
+        { cellID: 104, description: false, value: growPlanSeats },
       ],
     },
     {
       rowID: 200,
       cells: [
-        { cellID: 200, description: true, value: "ROI" },
+        {
+          cellID: 200,
+          description: true,
+          value: "Weekly # of products",
+          tooltip:
+            "The minimum weekly number of online arbitrage leads members are guaranteed to receive.",
+        },
+        { cellID: 201, description: false, value: 100 },
+        { cellID: 202, description: false, value: 50 },
+        { cellID: 203, description: false, value: 50 },
+      ],
+    },
+    {
+      rowID: 300,
+      cells: [
+        {
+          cellID: 300,
+          description: true,
+          value: "Price per lead",
+          tooltip: "The approximate average cost of each lead per plan.",
+        },
+        { cellID: 301, description: false, value: "$0.65" },
+        { cellID: 302, description: false, value: "$0.94" },
+        { cellID: 303, description: false, value: "$0.64" },
+      ],
+    },
+    {
+      rowID: 400,
+      cells: [
+        {
+          cellID: 400,
+          description: true,
+          value: "500+ Retail sources",
+          tooltip:
+            "We source over 500 verified, legitimate US retailers to find the best online arbitrage deals of the day.",
+        },
+        { cellID: 401, description: false, value: true },
+        { cellID: 402, description: false, value: true },
+        { cellID: 403, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 500,
+      cells: [
+        {
+          cellID: 500,
+          description: true,
+          value: "Delivery via email",
+          tooltip:
+            "Receive your leads directly to your inbox every morning at approximately 8am CST.",
+        },
+        { cellID: 501, description: false, value: true },
+        { cellID: 502, description: false, value: true },
+        { cellID: 503, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 600,
+      cells: [
+        {
+          cellID: 600,
+          description: true,
+          value: ".PDF & .XLSX format",
+          tooltip:
+            "We send the .PDF and .XLSX formats of our lead lists in case you prefer one over the other.",
+        },
+        { cellID: 601, description: false, value: true },
+        { cellID: 602, description: false, value: true },
+        { cellID: 603, description: false, value: true },
+      ],
+    },
+  ]
+  const criteriaFeatureRows = [
+    {
+      rowID: 100,
+      cells: [
+        {
+          cellID: 101,
+          description: true,
+          value: "Minimum profit",
+          tooltip:
+            "The bare minimum profit a product must meet to be approved for our list, after FBA fees are accounted for. Our average profit is much higher.",
+        },
+        { cellID: 102, description: false, value: true },
+        { cellID: 103, description: false, value: "$5" },
+        { cellID: 104, description: false, value: "$4" },
+      ],
+    },
+    {
+      rowID: 200,
+      cells: [
+        {
+          cellID: 200,
+          description: true,
+          value: "Minimum ROI",
+          tooltip:
+            "The bare minimum ROI a product must meet to be approved for our list, after FBA fees are accounted for. Our average ROI is much higher.",
+        },
         { cellID: 201, description: false, value: true },
         { cellID: 202, description: false, value: "50%" },
         { cellID: 203, description: false, value: "40%" },
+      ],
+    },
+    {
+      rowID: 300,
+      cells: [
+        {
+          cellID: 300,
+          description: true,
+          value: "Minimum monthly sales",
+          tooltip:
+            "The minimum number of times a product must sell in an average month to be approved for our list, estimated with tools like Keepa. The average monthly sales are substantially higher.",
+        },
+        { cellID: 301, description: false, value: true },
+        { cellID: 302, description: false, value: 15 },
+        { cellID: 303, description: false, value: 10 },
+      ],
+    },
+    {
+      rowID: 400,
+      cells: [
+        {
+          cellID: 400,
+          description: true,
+          value: "Minimum BSR",
+          tooltip:
+            "The minimum Best Sellers Rank, or BSR, a product must have to be approved for our list. This is specific to each product's category on Amazon. Lower numbers (e.g. 1.5%) are better.",
+        },
+        { cellID: 401, description: false, value: true },
+        { cellID: 402, description: false, value: "1.5%" },
+        { cellID: 403, description: false, value: "3%" },
+      ],
+    },
+    {
+      rowID: 500,
+      cells: [
+        {
+          cellID: 500,
+          description: true,
+          value: "Promo codes",
+          tooltip:
+            "We include any relevant promo/discount codes with our leads in order to help save you money.",
+        },
+        { cellID: 501, description: false, value: true },
+        { cellID: 502, description: false, value: true },
+        { cellID: 503, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 600,
+      cells: [
+        {
+          cellID: 600,
+          description: true,
+          value: "Cashback offers",
+          tooltip:
+            "We include any cashback offers from retailers to help reduce the cost of inventory.",
+        },
+        { cellID: 601, description: false, value: true },
+        { cellID: 602, description: false, value: true },
+        { cellID: 603, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 700,
+      cells: [
+        {
+          cellID: 700,
+          description: true,
+          value: "No hazmat status",
+          tooltip: "Hazmat products are ineligible for our arbitrage lists.",
+        },
+        { cellID: 701, description: false, value: true },
+        { cellID: 702, description: false, value: true },
+        { cellID: 703, description: false, value: true },
+      ],
+    },
+  ]
+  const educationFeatureRows = [
+    {
+      rowID: 100,
+      cells: [
+        { cellID: 101, description: true, value: "100% Solve rate" },
+        { cellID: 102, description: false, value: true },
+        { cellID: 103, description: false, value: true },
+        { cellID: 104, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 200,
+      cells: [
+        { cellID: 200, description: true, value: "Account protection" },
+        { cellID: 201, description: false, value: true },
+        { cellID: 202, description: false, value: true },
+        { cellID: 203, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 300,
+      cells: [
+        { cellID: 300, description: true, value: "Email & chat support" },
+        { cellID: 301, description: false, value: true },
+        { cellID: 302, description: false, value: true },
+        { cellID: 303, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 400,
+      cells: [
+        { cellID: 400, description: true, value: "Phone support" },
+        { cellID: 401, description: false, value: true },
+        { cellID: 402, description: false, value: false },
+        { cellID: 403, description: false, value: false },
       ],
     },
   ]
@@ -133,31 +355,69 @@ const PricingPage = () => {
     {
       rowID: 100,
       cells: [
-        { cellID: 101, description: true, value: "Profit" },
+        {
+          cellID: 101,
+          description: true,
+          value: "100% Solve rate",
+          tooltip:
+            "Our team works with members to reach a resolution to every problem.",
+        },
         { cellID: 102, description: false, value: true },
         { cellID: 103, description: false, value: true },
-        { cellID: 104, description: false, value: false },
+        { cellID: 104, description: false, value: true },
       ],
     },
     {
       rowID: 200,
       cells: [
-        { cellID: 200, description: true, value: "ROI" },
+        {
+          cellID: 200,
+          description: true,
+          value: "Account protection",
+          tooltip:
+            "If you receive a suspension notice from Amazon as a result of using a product on our lists, we'll help you get it lifted.",
+        },
         { cellID: 201, description: false, value: true },
-        { cellID: 202, description: false, value: "50%" },
-        { cellID: 203, description: false, value: "40%" },
+        { cellID: 202, description: false, value: true },
+        { cellID: 203, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 300,
+      cells: [
+        {
+          cellID: 300,
+          description: true,
+          value: "Email & chat support",
+          tooltip:
+            "Reach our team for support via email or live chat during normal business hours.",
+        },
+        { cellID: 301, description: false, value: true },
+        { cellID: 302, description: false, value: true },
+        { cellID: 303, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 400,
+      cells: [
+        {
+          cellID: 400,
+          description: true,
+          value: "Phone support",
+          tooltip:
+            "Reach our team for support via phone during normal business hours.",
+        },
+        { cellID: 401, description: false, value: true },
+        { cellID: 402, description: false, value: false },
+        { cellID: 403, description: false, value: false },
       ],
     },
   ]
-  const growPrice = 129
-  const proPrice = 189
-  const bundlePrice = 263
-  const proLink = "pro"
-  const growLink = "grow"
+
   return (
     <Layout>
       <SEO title="Pricing" />
-      <section className="-mt-40 h-5/6 lg:h-2/3 bg-gray-100 inset-0 text-gray-900">
+      <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Grow your online arbitrage business with LeadGeek.`}
           subHeader={` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
@@ -165,7 +425,10 @@ const PricingPage = () => {
           reprehenderit doloremque!`}
           negativeMargin
         />
-        <article className="pb-24 container lg:grid lg:grid-cols-10">
+        <article
+          id="pricing-plans"
+          className="pb-12 lg:pb-24 container lg:grid lg:grid-cols-10"
+        >
           <div className="mx-auto max-w-md md:max-w-sm lg:max-w-none lg:mx-0 lg:col-start-4 lg:col-end-8 lg:row-start-1 lg:row-end-4">
             <div className="relative z-10 rounded-lg shadow-xl">
               <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-purple-400"></div>
@@ -239,15 +502,27 @@ const PricingPage = () => {
           </h2>
         </header>
         <PricingTable
-          tableHeader={`minimum criteria`}
-          featureRows={criteriaFeatureRows}
+          tableHeader={`Plan features`}
+          featureRows={coreFeatureRows}
+          id={`plan-features`}
         />
         <PricingTable
-          tableHeader={`support`}
+          tableHeader={`Lead standards`}
+          featureRows={criteriaFeatureRows}
+          id={`lead-standards`}
+        />
+        <PricingTable
+          tableHeader={`Seller education`}
+          featureRows={educationFeatureRows}
+          id={`seller-education`}
+        />
+        <PricingTable
+          tableHeader={`Member support`}
           featureRows={supportFeatureRows}
+          id={`member-support`}
         />
       </section>
-      <Faq />
+      <Faq growPlanSeats={growPlanSeats} proPlanSeats={proPlanSeats} />
       <section className="my-12 lg:my-24 container text-center">
         <header>
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">

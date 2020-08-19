@@ -31,15 +31,13 @@ const contact = () => {
                 <p>Lorem ipsum dolor sit amet</p>
               </div>
               <address className="mt-6 text-gray-500 not-italic">
-                <div className="flex items-center">
-                  <Phone className="p-2 h-8 w-8 bg-teal-200 rounded-md text-teal-600" />
-                  <a href="tel:+13115552368" className="ml-2">
-                    (311) 555-2368
-                  </a>
-                </div>
                 <div className="mt-3 flex items-center">
                   <Mail className="p-2 h-8 w-8 bg-teal-200 rounded-md text-teal-600" />
-                  <a href="mailto:hello@leadgeek.io" className="ml-2">
+                  <a
+                    href="mailto:hello@leadgeek.io"
+                    target="_blank"
+                    className="ml-2"
+                  >
                     <span>he</span>
                     <span>llo@l</span>
                     <span>eadgeek.io</span>

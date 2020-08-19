@@ -17,9 +17,7 @@ const primaryHeader = ({
   return (
     <header
       className={`${
-        negativeMargin
-          ? `mt-12 lg:mt-16 pt-32 lg:pt-40 pb-16`
-          : `mt-8 md:mt-12 lg:mt-16`
+        negativeMargin ? `mt-12 lg:mt-16 pt-40 pb-16` : `mt-8 md:mt-12 lg:mt-16`
       } container md:text-center`}
     >
       <h1 className="lg:mx-auto max-w-4xl text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">

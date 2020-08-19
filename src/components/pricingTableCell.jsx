@@ -1,14 +1,33 @@
 import React from "react"
 
+import ReactTooltip from "react-tooltip"
+
 import Check from "../assets/check.svg"
 import X from "../assets/x.svg"
 
-const pricingTableCell = ({ value, description }) => {
+const pricingTableCell = ({ value, description, tooltip }) => {
   const contentType = () => {
-    if (description || typeof value === "string") {
+    if (description) {
+      return (
+        <div>
+          <a
+            data-tip={tooltip}
+            className="inline border-b border-gray-500 border-dotted"
+          >
+            {value}
+          </a>
+          <ReactTooltip
+            place="right"
+            effect="solid"
+            backgroundColor="#5D55FA"
+            textColor="#fff"
+            className="w-56 md:w-64"
+          />
+        </div>
+      )
+    } else if (typeof value === "string" || typeof value === "number") {
       return value
-    }
-    if (value === true) {
+    } else if (value === true) {
       return (
         <Check className="mx-auto h-4 lg:h-6 w-4 lg:w-6 text-teal-500 bg-teal-200 rounded-full" />
       )
@@ -22,7 +41,7 @@ const pricingTableCell = ({ value, description }) => {
     <td
       className={`${
         description
-          ? `py-6 w-2/5 border-0 text-gray-900`
+          ? `py-6 w-2/5 text-gray-900`
           : `text-center text-gray-800 font-light`
       } border-0 text-xs lg:text-base`}
     >
