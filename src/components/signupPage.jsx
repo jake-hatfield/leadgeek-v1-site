@@ -7,7 +7,7 @@ import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
 const signupPage = ({ price, featureList, plan, discount }) => {
-  const stripePromise = loadStripe(process.env.GATSBY_STRIPE_SECRET_KEY)
+  const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
   return (
     <section className="text-gray-700">
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
