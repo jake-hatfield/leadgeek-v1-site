@@ -123,11 +123,11 @@ const AboutPage = ({ data }) => {
     },
     {
       id: 11,
-      dataPoint: "Average 30 & 90 day BSR",
+      dataPoint: "30 & 90 day BSR",
     },
     {
       id: 12,
-      dataPoint: "Approximate monthly sales",
+      dataPoint: "Average monthly sales",
     },
     {
       id: 13,

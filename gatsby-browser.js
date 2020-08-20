@@ -16,3 +16,5 @@
 // export const wrapRootElement = ({ element }) => {
 //   return <Elements stripe={stripePromise}>{element}</Elements>
 // }
+
+require("./src/styles/app.css")
