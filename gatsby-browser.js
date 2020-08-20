@@ -5,9 +5,8 @@
  */
 
 // You can delete this file if you're not using it
-import React from "react"
+// import React from "react"
 
-import "./src/styles/app.css"
 // import { loadStripe } from "@stripe/stripe-js"
 // import { Elements } from "@stripe/react-stripe-js"
 
