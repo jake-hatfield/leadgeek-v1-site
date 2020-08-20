@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-gray-900 text-gray-400 lg:text-lg">
+    <footer className="py-12 relative z-40 bg-gray-900 text-gray-400 lg:text-lg">
       <nav className="container md:flex md:justify-center text-center">
         <div>
           <Link

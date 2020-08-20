@@ -4,7 +4,10 @@ import SEO from "../../components/seo"
 import SignupPage from "../../components/signupPage"
 
 const BundleSignupPage = () => {
-  const price = 263
+  const growPrice = 129
+  const proPrice = 189
+  const bundlePrice = 263
+  const discount = Math.trunc((1 - bundlePrice / (proPrice + growPrice)) * 100)
   const featureList = [
     {
       number: "1",
@@ -23,7 +26,12 @@ const BundleSignupPage = () => {
   return (
     <Fragment>
       <SEO title="Grow Plan Signup" />
-      <SignupPage featureList={featureList} price={price} plan={plan} />
+      <SignupPage
+        featureList={featureList}
+        price={bundlePrice}
+        plan={plan}
+        discount={discount}
+      />
     </Fragment>
   )
 }

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Check from "../assets/check.svg"
 
-const signupFeatures = ({ featureList, price, plan }) => {
+const signupFeatures = ({ featureList, price, plan, discount }) => {
   return (
     <div className="mt-12 lg:mt-0 mx-auto lg:ml-16 w-full lg:w-1/3 max-w-sm">
       <header>
@@ -41,7 +41,7 @@ const signupFeatures = ({ featureList, price, plan }) => {
             )}
             {plan === "Bundle" && (
               <span className="py-1 px-2 inline-block bg-teal-200 rounded-full text-xs text-teal-600 focus:outline-none focus:shadow-outline">
-                17% discount
+                {`${discount}% discount`}
               </span>
             )}
           </div>

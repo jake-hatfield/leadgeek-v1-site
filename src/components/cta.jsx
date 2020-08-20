@@ -16,13 +16,13 @@ const CTA = () => {
         <nav className="mt-4 lg:mt-6 mx-auto w-48 md:w-full">
           <Link
             to={`/pricing`}
-            className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+            className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
           >
             Get started
           </Link>
           <Link
             to={`/demo`}
-            className="mt-4 md:mt-0 ml-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-6 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+            className="mt-4 md:mt-0 ml-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-6 block md:inline-block relative shadow-sm rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
             Watch a demo
             <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />

@@ -25,7 +25,7 @@ const sideCard = ({ featureList, plan, price, link, start }) => {
       <div className="p-6 rounded-b-md border-t-2 border-gray-200">
         <ul>
           {featureList.map(feature => (
-            <li key={feature.number} className="flex items-center">
+            <li key={feature.id} className="flex items-center">
               <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
               <p className="ml-4 text-gray-600">{feature.body}</p>
             </li>

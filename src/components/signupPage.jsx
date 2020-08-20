@@ -4,7 +4,7 @@ import { Link, navigate } from "gatsby"
 import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
-const signupPage = ({ price, featureList, plan }) => {
+const signupPage = ({ price, featureList, plan, discount }) => {
   return (
     <section className="text-gray-700">
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
@@ -35,6 +35,7 @@ const signupPage = ({ price, featureList, plan }) => {
               featureList={featureList}
               price={price}
               plan={plan}
+              discount={discount}
             />
           </div>
         </article>

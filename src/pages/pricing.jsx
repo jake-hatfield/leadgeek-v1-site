@@ -16,78 +16,134 @@ const PricingPage = () => {
   const growPrice = 129
   const proPrice = 189
   const bundlePrice = 263
+  const discount = Math.trunc((1 - bundlePrice / (proPrice + growPrice)) * 100)
   const proLink = "pro"
   const growLink = "grow"
   const growPlanSeats = 30
   const proPlanSeats = 15
   const growFeatureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{growPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "50+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: (
+        <span>
+          $<strong className="font-semibold">4</strong>-30+ profit per unit
+        </span>
+      ),
     },
     {
-      number: "4",
-      body: "Feature 4",
+      id: "4",
+      body: (
+        <span>
+          <strong className="font-semibold">40</strong>%+ ROI per unit
+        </span>
+      ),
     },
     {
-      number: "5",
-      body: "Feature 5",
+      id: "5",
+      body: "Seller training material",
+    },
+    {
+      id: "6",
+      body: "Email & chat support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const proFeatureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "50+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: (
+        <span>
+          $<strong className="font-semibold">5</strong>-30+ profit per unit
+        </span>
+      ),
     },
     {
-      number: "4",
-      body: "Feature 4",
+      id: "4",
+      body: (
+        <span>
+          <strong className="font-semibold">50</strong>%+ ROI per unit
+        </span>
+      ),
     },
     {
-      number: "5",
-      body: "Feature 5",
+      id: "5",
+      body: "Seller training material",
+    },
+    {
+      id: "6",
+      body: "Email & chat support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const bundleFeatureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "100+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: "All Grow Plan leads",
     },
     {
-      number: "4",
-      body: "Feature 4",
+      id: "4",
+      body: "All Pro Plan leads",
     },
     {
-      number: "5",
-      body: "Feature 5",
+      id: "5",
+      body: (
+        <span>
+          Training course + <strong className="font-semibold">templates</strong>
+        </span>
+      ),
     },
     {
-      number: "6",
-      body: "Feature 6",
+      id: "6",
+      body: "Premium support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const whyLeadGeek = [
@@ -140,11 +196,11 @@ const PricingPage = () => {
           description: true,
           value: "Weekly # of products",
           tooltip:
-            "The minimum weekly number of online arbitrage leads members are guaranteed to receive.",
+            "The minimum number of online arbitrage leads members are guaranteed to receive weekly.",
         },
-        { cellID: 201, description: false, value: 100 },
-        { cellID: 202, description: false, value: 50 },
-        { cellID: 203, description: false, value: 50 },
+        { cellID: 201, description: false, value: "100+" },
+        { cellID: 202, description: false, value: "50+" },
+        { cellID: 203, description: false, value: "50+" },
       ],
     },
     {
@@ -156,7 +212,7 @@ const PricingPage = () => {
           value: "Price per lead",
           tooltip: "The approximate average cost of each lead per plan.",
         },
-        { cellID: 301, description: false, value: "$0.65" },
+        { cellID: 301, description: false, value: "$0.66" },
         { cellID: 302, description: false, value: "$0.94" },
         { cellID: 303, description: false, value: "$0.64" },
       ],
@@ -219,8 +275,8 @@ const PricingPage = () => {
             "The bare minimum profit a product must meet to be approved for our list, after FBA fees are accounted for. Our average profit is much higher.",
         },
         { cellID: 102, description: false, value: true },
-        { cellID: 103, description: false, value: "$5" },
-        { cellID: 104, description: false, value: "$4" },
+        { cellID: 103, description: false, value: "$5+" },
+        { cellID: 104, description: false, value: "$4+" },
       ],
     },
     {
@@ -234,8 +290,8 @@ const PricingPage = () => {
             "The bare minimum ROI a product must meet to be approved for our list, after FBA fees are accounted for. Our average ROI is much higher.",
         },
         { cellID: 201, description: false, value: true },
-        { cellID: 202, description: false, value: "50%" },
-        { cellID: 203, description: false, value: "40%" },
+        { cellID: 202, description: false, value: "50%+" },
+        { cellID: 203, description: false, value: "40%+" },
       ],
     },
     {
@@ -249,8 +305,8 @@ const PricingPage = () => {
             "The minimum number of times a product must sell in an average month to be approved for our list, estimated with tools like Keepa. The average monthly sales are substantially higher.",
         },
         { cellID: 301, description: false, value: true },
-        { cellID: 302, description: false, value: 15 },
-        { cellID: 303, description: false, value: 10 },
+        { cellID: 302, description: false, value: "15+" },
+        { cellID: 303, description: false, value: "10+" },
       ],
     },
     {
@@ -264,8 +320,8 @@ const PricingPage = () => {
             "The minimum Best Sellers Rank, or BSR, a product must have to be approved for our list. This is specific to each product's category on Amazon. Lower numbers (e.g. 1.5%) are better.",
         },
         { cellID: 401, description: false, value: true },
-        { cellID: 402, description: false, value: "1.5%" },
-        { cellID: 403, description: false, value: "3%" },
+        { cellID: 402, description: false, value: "<1.5%" },
+        { cellID: 403, description: false, value: "<3%" },
       ],
     },
     {
@@ -274,9 +330,9 @@ const PricingPage = () => {
         {
           cellID: 500,
           description: true,
-          value: "Promo codes",
+          value: "US seller approval",
           tooltip:
-            "We include any relevant promo/discount codes with our leads in order to help save you money.",
+            "All leads are checked by an experienced Amazon seller to verify each product lead has a history of selling and a high probability of selling well in the future.",
         },
         { cellID: 501, description: false, value: true },
         { cellID: 502, description: false, value: true },
@@ -289,9 +345,9 @@ const PricingPage = () => {
         {
           cellID: 600,
           description: true,
-          value: "Cashback offers",
+          value: "Promo codes",
           tooltip:
-            "We include any cashback offers from retailers to help reduce the cost of inventory.",
+            "We include any relevant promo/discount codes with our leads in order to help save you money.",
         },
         { cellID: 601, description: false, value: true },
         { cellID: 602, description: false, value: true },
@@ -304,12 +360,27 @@ const PricingPage = () => {
         {
           cellID: 700,
           description: true,
-          value: "No hazmat status",
-          tooltip: "Hazmat products are ineligible for our arbitrage lists.",
+          value: "Cashback offers",
+          tooltip:
+            "We include any cashback offers from retailers to help reduce the cost of inventory.",
         },
         { cellID: 701, description: false, value: true },
         { cellID: 702, description: false, value: true },
         { cellID: 703, description: false, value: true },
+      ],
+    },
+    {
+      rowID: 800,
+      cells: [
+        {
+          cellID: 800,
+          description: true,
+          value: "No hazmat status",
+          tooltip: "Hazmat products are ineligible for our arbitrage lists.",
+        },
+        { cellID: 801, description: false, value: true },
+        { cellID: 802, description: false, value: true },
+        { cellID: 803, description: false, value: true },
       ],
     },
   ]
@@ -317,7 +388,7 @@ const PricingPage = () => {
     {
       rowID: 100,
       cells: [
-        { cellID: 101, description: true, value: "100% Solve rate" },
+        { cellID: 101, description: true, value: "8-Module arbitrage course" },
         { cellID: 102, description: false, value: true },
         { cellID: 103, description: false, value: true },
         { cellID: 104, description: false, value: true },
@@ -326,7 +397,7 @@ const PricingPage = () => {
     {
       rowID: 200,
       cells: [
-        { cellID: 200, description: true, value: "Account protection" },
+        { cellID: 200, description: true, value: "Keepa graph e-book" },
         { cellID: 201, description: false, value: true },
         { cellID: 202, description: false, value: true },
         { cellID: 203, description: false, value: true },
@@ -335,7 +406,7 @@ const PricingPage = () => {
     {
       rowID: 300,
       cells: [
-        { cellID: 300, description: true, value: "Email & chat support" },
+        { cellID: 300, description: true, value: "Ungating training e-book" },
         { cellID: 301, description: false, value: true },
         { cellID: 302, description: false, value: true },
         { cellID: 303, description: false, value: true },
@@ -344,10 +415,23 @@ const PricingPage = () => {
     {
       rowID: 400,
       cells: [
-        { cellID: 400, description: true, value: "Phone support" },
+        { cellID: 400, description: true, value: "Tracking templates" },
         { cellID: 401, description: false, value: true },
         { cellID: 402, description: false, value: false },
         { cellID: 403, description: false, value: false },
+      ],
+    },
+    {
+      rowID: 500,
+      cells: [
+        {
+          cellID: 500,
+          description: true,
+          value: "Free content updates",
+        },
+        { cellID: 501, description: false, value: true },
+        { cellID: 502, description: false, value: true },
+        { cellID: 503, description: false, value: true },
       ],
     },
   ]
@@ -420,9 +504,6 @@ const PricingPage = () => {
       <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Grow your online arbitrage business with LeadGeek.`}
-          subHeader={` Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
-          unde quibusdam optio distinctio vitae similique amet aut cumque
-          reprehenderit doloremque!`}
           negativeMargin
         />
         <article
@@ -440,7 +521,8 @@ const PricingPage = () => {
                 </div>
               </div>
               <header className="pt-12 pb-6 px-6 bg-white rounded-t-md text-center background-repeat">
-                <h3 className="text-2xl lg:text-3xl font-semibold">
+                <span className="py-1 px-2 shadow-sm bg-teal-200 rounded-full text-teal-500">{`Save ${discount}%`}</span>
+                <h3 className="mt-2 text-2xl lg:text-3xl font-semibold">
                   Grow + Pro Bundle
                 </h3>
                 <div className="mt-1 flex items-center justify-center text-5xl font-bold">
@@ -457,7 +539,7 @@ const PricingPage = () => {
               <div className="border-t-2 border-purple-400 rounded-b-md py-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
                 <ul>
                   {bundleFeatureList.map(feature => (
-                    <li key={feature.number} className="flex items-center">
+                    <li key={feature.id} className="flex items-center">
                       <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
                       <p className="ml-4 text-gray-600">{feature.body}</p>
                     </li>
@@ -465,7 +547,7 @@ const PricingPage = () => {
                 </ul>
                 <Link
                   to={`/signup/bundle`}
-                  className="mt-8 py-3 block shadow-sm bg-purple-600 text-white hover:bg-purple-500 rounded-md text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
+                  className="mt-8 py-3 block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
                 >
                   Get the Bundle
                 </Link>
@@ -534,14 +616,14 @@ const PricingPage = () => {
           <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 w-48 md:w-full font-semibold">
             <Link
               to={`/demo`}
-              className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+              className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
             >
               Watch demo
               <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
             </Link>
             <Link
               to={`/contact`}
-              className="mt-4 lg:mt-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+              className="mt-4 lg:mt-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block shadow-sm rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
             >
               Contact support
             </Link>

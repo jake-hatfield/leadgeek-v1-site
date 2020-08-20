@@ -138,6 +138,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           <a
             href="mailto:support@leadgeek.io"
             target="_blank"
+            rel="noreferrer"
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
           >
             <span>sup</span>
@@ -178,6 +179,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           <a
             href="mailto:support@leadgeek.io"
             target="_blank"
+            rel="noreferrer"
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
           >
             <span>sup</span>
@@ -191,7 +193,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
   ]
   return (
     <section className="mt-12 lg:mt-24 bg-gray-100 text-gray-900">
-      <div className="py-12 lg:py-24 md:max-w-2xl lg:max-w-none container">
+      <div className="py-12 lg:py-24 md:w-3/4 lg:w-full container">
         <header>
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left">
             Frequently asked questions

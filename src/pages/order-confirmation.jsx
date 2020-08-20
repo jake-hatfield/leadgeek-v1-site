@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-const OrderConfirmation = () => {
+const OrderConfirmationPage = () => {
   return (
     <Layout>
       <section className="container">Hello World!</section>
@@ -10,4 +10,4 @@ const OrderConfirmation = () => {
   )
 }
 
-export default OrderConfirmation
+export default OrderConfirmationPage

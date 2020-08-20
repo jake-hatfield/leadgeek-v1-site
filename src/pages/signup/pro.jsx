@@ -4,7 +4,7 @@ import SEO from "../../components/seo"
 import SignupPage from "../../components/signupPage"
 
 const ProSignupPage = () => {
-  const price = 189
+  const proPrice = 189
   const featureList = [
     {
       number: "1",
@@ -23,7 +23,7 @@ const ProSignupPage = () => {
   return (
     <Fragment>
       <SEO title="Grow Plan Signup" />
-      <SignupPage featureList={featureList} price={price} plan={plan} />
+      <SignupPage featureList={featureList} price={proPrice} plan={plan} />
     </Fragment>
   )
 }

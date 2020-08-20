@@ -10,12 +10,12 @@ const pricingTableCell = ({ value, description, tooltip }) => {
     if (description) {
       return (
         <div>
-          <a
+          <span
             data-tip={tooltip}
             className="inline border-b border-gray-500 border-dotted"
           >
             {value}
-          </a>
+          </span>
           <ReactTooltip
             place="right"
             effect="solid"

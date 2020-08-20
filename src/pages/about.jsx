@@ -7,8 +7,9 @@ import LargeDescription from "../components/largeDescription"
 import CTA from "../components/cta"
 import AlternatingDescription from "../components/alternatingDescription"
 import TripleIcons from "../components/tripleIcons"
+import BulletedList from "../components/bulletedList"
 
-const aboutPage = ({ data }) => {
+const AboutPage = ({ data }) => {
   const criteriaItems = [
     {
       id: "1",
@@ -79,6 +80,79 @@ const aboutPage = ({ data }) => {
     },
   ]
 
+  const dataList = [
+    {
+      id: 1,
+      dataPoint: "Retailer source",
+    },
+    {
+      id: 2,
+      dataPoint: "Product title",
+    },
+    {
+      id: 3,
+      dataPoint: "Product category",
+    },
+    {
+      id: 4,
+      dataPoint: "Retailer link",
+    },
+    {
+      id: 5,
+      dataPoint: "Amazon product link",
+    },
+    {
+      id: 6,
+      dataPoint: "Current buy price",
+    },
+    {
+      id: 7,
+      dataPoint: "Current sell price",
+    },
+    {
+      id: 8,
+      dataPoint: "Net profit",
+    },
+    {
+      id: 9,
+      dataPoint: "Net ROI",
+    },
+    {
+      id: 10,
+      dataPoint: "Current BSR",
+    },
+    {
+      id: 11,
+      dataPoint: "Average 30 & 90 day BSR",
+    },
+    {
+      id: 12,
+      dataPoint: "Approximate monthly sales",
+    },
+    {
+      id: 13,
+      dataPoint: "3rd party seller competition",
+    },
+    {
+      id: 14,
+      dataPoint: "Relevant promo codes",
+    },
+    {
+      id: 15,
+      dataPoint: "Cashback discounts",
+    },
+    {
+      id: 16,
+      dataPoint: "Sourcing notes",
+    },
+    {
+      id: 17,
+      dataPoint: "Variation recommendations",
+    },
+  ]
+
+  const dataPoints = dataList.length
+
   return (
     <Layout>
       <section>
@@ -122,6 +196,11 @@ const aboutPage = ({ data }) => {
           secondaryTextColor={`text-purple-100`}
         />
         <CTA />
+        <BulletedList
+          mainHeader={`We check ${dataPoints} different data points bring you the best leads every day.`}
+          items={dataList}
+          margin={`my-12 lg:my-24`}
+        />
       </section>
     </Layout>
   )
@@ -140,4 +219,4 @@ export const query = graphql`
   }
 `
 
-export default aboutPage
+export default AboutPage

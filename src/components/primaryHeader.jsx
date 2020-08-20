@@ -30,13 +30,13 @@ const primaryHeader = ({
         <nav className="mt-6 lg:mt-12 w-48 md:w-full font-semibold text-center">
           <Link
             to={`/${linkOne}`}
-            className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+            className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
           >
             {linkOneText}
           </Link>
           <Link
             to={`/${linkTwo}`}
-            className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 block md:inline-block relative rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
+            className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 block md:inline-block relative shadow-sm rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
           >
             {linkTwoText}
             {play && (

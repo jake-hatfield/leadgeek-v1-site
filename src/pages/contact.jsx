@@ -2,10 +2,9 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Phone from "../assets/phone.svg"
 import Mail from "../assets/mail.svg"
 
-const contact = () => {
+const ContactPage = () => {
   return (
     <Layout>
       <SEO
@@ -36,6 +35,7 @@ const contact = () => {
                   <a
                     href="mailto:hello@leadgeek.io"
                     target="_blank"
+                    rel="noreferrer"
                     className="ml-2"
                   >
                     <span>he</span>
@@ -108,4 +108,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default ContactPage

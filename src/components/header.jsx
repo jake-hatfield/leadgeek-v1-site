@@ -12,7 +12,7 @@ const Header = () => {
       linkID: 100,
       title: "Lead criteria",
       description: "Hi this is a description",
-      link: "about",
+      link: "features/lead-criteria",
     },
     {
       linkID: 200,
@@ -107,8 +107,9 @@ const Header = () => {
   ]
   return (
     <header className="relative z-40 container">
-      <div className="py-6 lg:py-3 flex items-center justify-between md:justify-between md:space-x-10">
-        <div className="lg:w-0 lg:flex-1">
+      <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
+        {/* logo */}
+        <div>
           <div className="font-bold text-xl lg:text-2xl">
             <Link to={`/`} className="text-gray-900">
               Lead<span className="text-purple-500">Geek</span>
@@ -136,6 +137,7 @@ const Header = () => {
             </svg>
           </button>
         </div>
+        {/* md:+ nav */}
         <nav className="hidden md:flex md:items-center md:space-x-6 space-x-10">
           <div className="relative">
             <FeatureDropdown
@@ -164,16 +166,7 @@ const Header = () => {
           </Link>
         </nav>
       </div>
-
-      {/* Mobile menu, show/hide based on mobile menu state.
-
-    Entering: "duration-200 ease-out"
-      From: "opacity-0 scale-95"
-      To: "opacity-100 scale-100"
-    Leaving: "duration-100 ease-in"
-      From: "opacity-100 scale-100"
-      To: "opacity-0 scale-95" */}
-
+      {/* mobile menu */}
       <div
         className={`${
           mobileMenuOpen ? `block` : `hidden`
@@ -221,7 +214,7 @@ const Header = () => {
                     <Link
                       key={item.linkID}
                       to={`/${item.link}`}
-                      className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-200"
+                      className="-m-3 p-3 flex items-center space-x-3 rounded-md transition ease-in-out duration-200"
                     >
                       <svg
                         className="flex-shrink-0 h-6 w-6 text-purple-600"
@@ -244,7 +237,7 @@ const Header = () => {
                 </nav>
               </div>
             </div>
-            <div className="py-6 px-3 space-y-6 bg-gray-100">
+            <div className="py-6 px-3 space-y-6 rounded-b-md bg-gray-100">
               <div className="grid grid-cols-2 row-gap-4 col-gap-8">
                 {moreItemsMobile.map(item => (
                   <Link
