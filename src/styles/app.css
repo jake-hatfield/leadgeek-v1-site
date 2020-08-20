@@ -65,15 +65,15 @@
   }
 }
 */
-*/
 
-/* .full-width {
+/*
+.full-width {
   max-width: 970px;
   left: 50%;
   right: 50%;
   margin-left: calc(-50vw + 40px);
   margin-right: calc(-50vw + 0px);
-}
+} */
 
 .negative-z {
   z-index: -1;

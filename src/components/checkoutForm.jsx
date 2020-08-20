@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { loadStripe } from "@stripe/stripe-js"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import axios from "axios"
 
@@ -103,7 +104,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         <CardElement
           onChange={handleCardDetailsChange}
           id="card-element"
-          className="mt-1 py-2 px-2 rounded-md text-sm stripe-cc border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
+          className="mt-1 p-2 rounded-md text-sm border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
           options={cardElementOpts}
         />
       </div>
@@ -111,6 +112,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       {/* TIP always disable your submit button while processing payments */}
       <button
         disabled={isProcessing || !stripe}
+        type="submit"
         className={`${
           isProcessing ? `bg-purple-200` : `bg-purple-600`
         } mt-4 py-2 w-full rounded-md text-white shadow-sm hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}

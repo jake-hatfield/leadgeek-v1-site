@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin")
+
 module.exports = {
   purge: ["./src/**/*.js"],
   theme: {
@@ -56,34 +58,37 @@ module.exports = {
     container: false,
   },
   plugins: [
-    addComponents({
-      ".container": {
-        width: "100%",
-        marginLeft: "auto",
-        marginRight: "auto",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-        "@screen sm": {
-          maxWidth: "640px",
+    plugin(function ({ addComponents }) {
+      const container = {
+        ".container": {
+          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
           paddingLeft: "1rem",
           paddingRight: "1rem",
+          "@screen sm": {
+            maxWidth: "640px",
+            paddingLeft: "1rem",
+            paddingRight: "1rem",
+          },
+          "@screen md": {
+            maxWidth: "1023px",
+            paddingLeft: "1.25rem",
+            paddingRight: "1.25rem",
+          },
+          "@screen lg": {
+            maxWidth: "1139px",
+            paddingLeft: "1.5rem",
+            paddingRight: "1.5rem",
+          },
+          "@screen xl": {
+            maxWidth: "1140px",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+          },
         },
-        "@screen md": {
-          maxWidth: "1023px",
-          paddingLeft: "1.25rem",
-          paddingRight: "1.25rem",
-        },
-        "@screen lg": {
-          maxWidth: "1139px",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-        },
-        "@screen xl": {
-          maxWidth: "1140px",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
-        },
-      },
+      }
+      addComponents(container)
     }),
   ],
 }

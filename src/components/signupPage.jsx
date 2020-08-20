@@ -1,10 +1,13 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
+import { loadStripe } from "@stripe/stripe-js"
+import { Elements } from "@stripe/react-stripe-js"
 
 import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
 const signupPage = ({ price, featureList, plan, discount }) => {
+  const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
   return (
     <section className="text-gray-700">
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
@@ -26,10 +29,12 @@ const signupPage = ({ price, featureList, plan, discount }) => {
           </header>
           <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
             <div className="mx-auto pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 w-full lg:w-2/3 max-w-sm bg-white rounded-md shadow-lg">
-              <CheckoutForm
-                price={price}
-                onSuccessfulCheckout={() => navigate("/order-confirmation/")}
-              />
+              <Elements stripe={stripePromise}>
+                <CheckoutForm
+                  price={price}
+                  onSuccessfulCheckout={() => navigate("/order-confirmation/")}
+                />
+              </Elements>
             </div>
             <SignupFeatures
               featureList={featureList}
