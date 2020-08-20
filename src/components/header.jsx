@@ -238,7 +238,7 @@ const Header = () => {
               </div>
             </div>
             <div className="py-6 px-3 space-y-6 rounded-b-md bg-gray-100">
-              <div className="grid grid-cols-2 row-gap-4 col-gap-8">
+              <div className="grid grid-cols-2 row-gap-4 gap-8">
                 {moreItemsMobile.map(item => (
                   <Link
                     key={item.linkID}
