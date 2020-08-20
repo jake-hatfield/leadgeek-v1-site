@@ -56,7 +56,6 @@ module.exports = {
     container: false,
   },
   plugins: [
-    function ({ addComponents }) {
       addComponents({
         ".container": {
           width: "100%",
