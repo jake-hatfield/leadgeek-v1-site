@@ -10,8 +10,8 @@ const PrivacyPolicyPage = () => {
   return (
     <Layout title="Privacy Policy">
       <SEO title="Privacy Policy" description="" />
-      <section className="my-12 lg:my-16 max-w-2xl container text-gray-900">
-        <h1 className="mt-8 text-3xl font-black">
+      <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
+        <h1 className="text-3xl font-black">
           Welcome to {siteTitle}'s privacy policy
         </h1>
         <p className="mt-4 text-gray-700 text-gray-700">

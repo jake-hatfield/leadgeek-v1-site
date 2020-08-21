@@ -33,15 +33,15 @@ const Layout = ({ children }) => {
       <CookieConsent
         buttonText="Got it!"
         disableStyles={true}
-        containerClasses="py-5 fixed left-0 container md:flex md:items-center md:justify-between w-full z-40 bg-teal-200"
-        contentClasses="text-teal-600 text-xs md:text-sm"
-        buttonWrapperClasses="mt-2 md:mt-0 md:ml-12 flex-none"
+        containerClasses="pt-5 pb-6 fixed bottom-0 md:flex md:items-center md:justify-center w-full z-40 bg-teal-200"
+        contentClasses="container lg:mr-32 xl:mx-auto text-teal-600 text-xs md:text-sm"
+        buttonWrapperClasses="mt-3 ml-3 md:mt-0 md:mr-12 md:ml-0 xl:mr-8 lg:right-0 lg:absolute lg:inset-auto flex-none"
         buttonClasses="py-2 px-3 lg:py-3 lg:px-4 rounded-md text-sm bg-teal-600 text-teal-100"
       >
         Please note that we use cookies on our website to keep things running
         properly and to optimize performance. To learn more about how we use
         cookies,{" "}
-        <Link to={`/privacy`} className="font-semibold">
+        <Link to={`/privacy`} className="font-semibold underline">
           read our privacy policy
         </Link>
         .
