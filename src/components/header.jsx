@@ -59,12 +59,12 @@ const Header = () => {
       description: "Hi this is a description",
       link: "guides",
     },
-    {
-      linkID: 500,
-      title: "Security",
-      description: "Learn about how LeadGeek protects users' privacy",
-      link: "security",
-    },
+    // {
+    //   linkID: 500,
+    //   title: "Security",
+    //   description: "Learn about how LeadGeek protects users' privacy",
+    //   link: "security",
+    // },
   ]
   const moreItemsMobile = [
     {
@@ -98,12 +98,12 @@ const Header = () => {
       description: "Hi this is a description",
       link: "guides",
     },
-    {
-      linkID: 600,
-      title: "Security",
-      description: "Learn about how LeadGeek protects users' privacy",
-      link: "security",
-    },
+    // {
+    //   linkID: 600,
+    //   title: "Security",
+    //   description: "Learn about how LeadGeek protects users' privacy",
+    //   link: "security",
+    // },
   ]
   return (
     <header className="relative z-40 container">

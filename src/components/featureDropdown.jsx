@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import onClickOutside from "react-onclickoutside"
 
 function Dropdown({ title, items, open, setOpen }) {
   const toggle = () => setOpen(!open)
-  Dropdown.handleClickOutside = () => setOpen(false)
 
   return (
     <div>
@@ -80,8 +78,4 @@ function Dropdown({ title, items, open, setOpen }) {
   )
 }
 
-const clickOutsideConfig = {
-  handleClickOutside: () => Dropdown.handleClickOutside,
-}
-
-export default onClickOutside(Dropdown, clickOutsideConfig)
+export default Dropdown

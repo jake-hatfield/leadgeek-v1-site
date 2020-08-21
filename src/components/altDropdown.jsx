@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import onClickOutside from "react-onclickoutside"
 
 function MoreDropdown({ title, items }) {
   const [open, setOpen] = useState(false)
   const toggle = () => setOpen(!open)
-  MoreDropdown.handleClickOutside = () => setOpen(false)
 
   return (
     <div>
@@ -78,8 +76,4 @@ function MoreDropdown({ title, items }) {
   )
 }
 
-const clickOutsideConfig = {
-  handleClickOutside: () => MoreDropdown.handleClickOutside,
-}
-
-export default onClickOutside(MoreDropdown, clickOutsideConfig)
+export default MoreDropdown
