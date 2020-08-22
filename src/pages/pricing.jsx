@@ -388,16 +388,16 @@ const PricingPage = () => {
     {
       rowID: 100,
       cells: [
-        { cellID: 101, description: true, value: "8-Module arbitrage course" },
+        { cellID: 100, description: true, value: "Keepa graph e-book" },
+        { cellID: 101, description: false, value: true },
         { cellID: 102, description: false, value: true },
         { cellID: 103, description: false, value: true },
-        { cellID: 104, description: false, value: true },
       ],
     },
     {
       rowID: 200,
       cells: [
-        { cellID: 200, description: true, value: "Keepa graph e-book" },
+        { cellID: 200, description: true, value: "Ungating training e-book" },
         { cellID: 201, description: false, value: true },
         { cellID: 202, description: false, value: true },
         { cellID: 203, description: false, value: true },
@@ -406,10 +406,10 @@ const PricingPage = () => {
     {
       rowID: 300,
       cells: [
-        { cellID: 300, description: true, value: "Ungating training e-book" },
-        { cellID: 301, description: false, value: true },
+        { cellID: 301, description: true, value: "8-Module arbitrage course" },
         { cellID: 302, description: false, value: true },
         { cellID: 303, description: false, value: true },
+        { cellID: 304, description: false, value: false },
       ],
     },
     {
@@ -417,7 +417,7 @@ const PricingPage = () => {
       cells: [
         { cellID: 400, description: true, value: "Tracking templates" },
         { cellID: 401, description: false, value: true },
-        { cellID: 402, description: false, value: false },
+        { cellID: 402, description: false, value: true },
         { cellID: 403, description: false, value: false },
       ],
     },
@@ -492,7 +492,7 @@ const PricingPage = () => {
             "Reach our team for support via phone during normal business hours.",
         },
         { cellID: 401, description: false, value: true },
-        { cellID: 402, description: false, value: false },
+        { cellID: 402, description: false, value: true },
         { cellID: 403, description: false, value: false },
       ],
     },
