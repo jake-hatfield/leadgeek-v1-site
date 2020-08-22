@@ -8,8 +8,8 @@ const sideCard = ({ featureList, plan, price, link, start }) => {
     <div
       className={`${
         start
-          ? `lg:col-start-1 lg:col-end-4 rounded-tl-md rounded-md md:rounded-bl-md`
-          : `lg:col-start-8 lg:col-end-11 rounded-tr-md rounded-md md:rounded-br-md`
+          ? `lg:col-start-1 lg:col-end-4 rounded-md lg:rounded-none lg:rounded-tl-md lg:rounded-bl-md`
+          : `lg:col-start-8 lg:col-end-11 rounded-md lg:rounded-none lg:rounded-tr-md lg:rounded-br-md`
       } mt-12 lg:mt-0 mx-auto lg:mx-0 max-w-md md:max-w-sm lg:max-w-none lg:row-start-2 lg:row-end-3 shadow-md`}
     >
       <header className="pt-8 pb-6 px-6 bg-white rounded-t-md text-center background-repeat">
