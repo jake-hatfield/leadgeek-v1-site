@@ -43,24 +43,12 @@ function MoreDropdown({ title, items }) {
                       to={`/${item.link}`}
                       className="-m-3 p-2 flex items-start space-x-4 rounded-md hover:bg-gray-100 text-left transition ease-in-out duration-200"
                     >
-                      <svg
-                        className="h-6 w-6 flex-shrink-0 text-purple-600"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                        />
-                      </svg>
+                      {item.path}
                       <div className="space-y-1">
-                        <p className="text-sm leading-6 font-medium text-gray-900">
+                        <p className="text-sm leading-6 font-semibold text-gray-700">
                           {item.title}
                         </p>
-                        <p className="text-sm leading-5 text-gray-500">
+                        <p className="text-sm leading-5 font-normal text-gray-500">
                           {item.description}
                         </p>
                       </div>

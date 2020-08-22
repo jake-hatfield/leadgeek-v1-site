@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Play from "../assets/play.svg"
 
-const primaryHeader = ({
+const altHeader = ({
   header,
   subHeader,
   negativeMargin,
@@ -27,7 +27,7 @@ const primaryHeader = ({
         {subHeader}
       </h2>
       {nav && (
-        <nav className="mt-6 lg:mt-12 font-semibold text-center">
+        <nav className="mt-6 lg:mt-12 w-48 md:w-full font-semibold text-center">
           <Link
             to={`/${linkOne}`}
             className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
@@ -49,4 +49,4 @@ const primaryHeader = ({
   )
 }
 
-export default primaryHeader
+export default altHeader

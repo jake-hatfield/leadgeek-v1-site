@@ -14,7 +14,7 @@ const PrivacyPolicyPage = () => {
         <h1 className="text-3xl font-black">
           Welcome to {siteTitle}'s privacy policy
         </h1>
-        <p className="mt-4 text-gray-700 text-gray-700">
+        <p className="mt-4 text-gray-700">
           It is our policy to respect your privacy regarding any information we
           may collect while operating our website. This Privacy Policy applies
           to{" "}
@@ -40,7 +40,7 @@ const PrivacyPolicyPage = () => {
           visiting our website, you may be required to agree to additional terms
           and conditions.
         </p>
-        <h2 className="mt-6 text-xl font-bold">Website Visitors</h2>
+        <h2 className="mt-6 text-xl font-bold">Website visitors</h2>
         <p className="mt-4 text-gray-700">
           Like most website operators, {siteTitle} collects
           non-personally-identifying information of the sort that web browsers
@@ -53,7 +53,7 @@ const PrivacyPolicyPage = () => {
           publishing a report on trends in the usage of its website.
         </p>
         <h2 className="mt-6 text-xl font-bold">
-          Gathering of Personally-Identifying Information
+          Gathering of personally-identifying information
         </h2>
         <p className="mt-4 text-gray-700">
           Certain visitors to {siteTitle}'s websites choose to interact with{" "}
@@ -71,7 +71,7 @@ const PrivacyPolicyPage = () => {
           commercially acceptable means to protect your personal information, we
           cannot guarantee its absolute security.
         </p>
-        <h2 className="mt-6 text-xl font-bold">Links To External Sites</h2>
+        <h2 className="mt-6 text-xl font-bold">Links to external sites</h2>
         <p className="mt-4 text-gray-700">
           Our service may contain links to external sites that are not operated
           by us. If you click on a third party link, you will be directed to
@@ -83,7 +83,7 @@ const PrivacyPolicyPage = () => {
           privacy policies or practices of any third party sites, products or
           services.
         </p>
-        <h2 className="mt-6 text-xl font-bold">Aggregated Statistics</h2>
+        <h2 className="mt-6 text-xl font-bold">Aggregated statistics</h2>
         <p className="mt-4 text-gray-700">
           {siteTitle} may collect statistics about the behavior of visitors to
           its website. {siteTitle} may display this information publicly or
@@ -113,7 +113,7 @@ const PrivacyPolicyPage = () => {
           settings, you hereby acknowledge and agree to {siteTitle}'s use of
           cookies.
         </p>
-        <h2 className="mt-6 text-xl font-bold">Privacy Policy Changes</h2>
+        <h2 className="mt-6 text-xl font-bold">Privacy policy changes</h2>
         <p className="mt-4 text-gray-700">
           Although most changes are likely to be minor, {siteTitle} may change
           its privacy policy from time to time, and in {siteTitle}'s sole
@@ -122,7 +122,7 @@ const PrivacyPolicyPage = () => {
           site after any change in this privacy policy will constitute your
           acceptance of such change.
         </p>
-        <h2 className="mt-6 text-xl font-bold">Contact Information</h2>
+        <h2 className="mt-6 text-xl font-bold">Contact information</h2>
         <p className="mt-4 text-gray-700">
           If you have any questions about this privacy policy, please contact us
           via our{" "}

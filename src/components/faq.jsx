@@ -120,7 +120,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           anniversary of your sign up date. <br /> <br />
           For more information LeadGeek subscriptions, read our{" "}
           <Link
-            to={`/terms`}
+            to={`/terms#subscription-policy`}
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
           >
             terms of service
@@ -153,7 +153,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           <br /> <br /> For more information on LeadGeek's cancellation policy,
           read our{" "}
           <Link
-            to={`/terms`}
+            to={`/terms#cancellation-policy`}
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
           >
             terms of service
