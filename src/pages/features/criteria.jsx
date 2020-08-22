@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../../components/layout"
-import PrimaryHeader from "../../components/primaryHeader"
+import AltHeader from "../../components/altHeader"
 import AlternatingDescription from "../../components/alternatingDescription"
 
 const LeadCriteriaPage = () => {
@@ -33,7 +33,8 @@ const LeadCriteriaPage = () => {
   ]
   return (
     <Layout>
-      <PrimaryHeader
+      <AltHeader
+        title={`Strict Criteria`}
         header={`Online Arbitrage Leads That Save You Time.`}
         subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
         quibum optio distinctio vitae similique amet aut cumque reprehenderit
