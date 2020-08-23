@@ -36,7 +36,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <section>
       <PrimaryHeader
-        header={`Great online arbitrage sourcing starts here.`}
+        header={`We help you find great online arbitrage leads.`}
         subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
         quibum optio distinctio vitae similique amet aut cumque reprehenderit
         doloremque! Lorem ipsum dolor sit amet consectetur, adipisicing elit.

@@ -13,7 +13,7 @@ const CTA = () => {
             Sign up for LeadGeek today.
           </span>
         </h2>
-        <nav className="mt-4 lg:mt-6 mx-auto w-48 md:w-full">
+        <nav className="mt-4 lg:mt-6 mx-auto">
           <Link
             to={`/pricing`}
             className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"

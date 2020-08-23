@@ -613,7 +613,7 @@ const PricingPage = () => {
               Sign up for LeadGeek today.
             </span>
           </h2>
-          <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 w-48 md:w-full font-semibold">
+          <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 font-semibold">
             <Link
               to={`/demo`}
               className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
