@@ -293,11 +293,10 @@ const LeadCriteriaPage = ({ data }) => {
               <div className="border-l-2 border-gray-200">
                 <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
                   Pro plan priority
-                  <Check className="ml-2 h-4 w-4 text-white bg-teal-600 rounded-full" />
                 </h4>
                 <p className="mt-2 pl-2 text-sm text-gray-700">
-                  Both plans include all featured categories, but the Pro plan
-                  is more weighted towards certain types of products.
+                  The Pro plan includes all categories, but prioritizes products
+                  from the beauty, clothing grocery, and toys categories.
                 </p>
                 <div className="pl-2 pt-"></div>
               </div>
