@@ -255,7 +255,7 @@ const LeadCriteriaPage = () => {
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
               We check {dataPoints} different data points bring you the best
-              leads every day.
+              leads.
             </h2>
           </header>
           <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
@@ -271,7 +271,11 @@ const LeadCriteriaPage = () => {
               <h3 className="mt-6 font-medium text-gray-700">
                 Our data points:
               </h3>
-              <BulletedList items={dataList} margin={`mt-4`} />
+              <BulletedList
+                items={dataList}
+                margin={`mt-4`}
+                gridLayout="md:grid-cols-2"
+              />
             </div>
             <div className="md:ml-4 lg:ml-8 -md:w-1/2">Hello</div>
           </div>
@@ -284,8 +288,8 @@ const LeadCriteriaPage = () => {
               Count on consistency
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-              We check {dataPoints} different data points bring you the best
-              leads every day.
+              We send proven-selling products directly to your inbox every
+              weekday.
             </h2>
             <p className="mt-4 max-w-2xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
@@ -312,7 +316,7 @@ const LeadCriteriaPage = () => {
                     />
                   </svg>
                   <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                    Reliable leads
+                    500+ sources
                   </h3>
                   <p className={`mt-4`}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -337,7 +341,7 @@ const LeadCriteriaPage = () => {
                     />
                   </svg>
                   <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                    Some other thing
+                    Reliable leads
                   </h3>
                   <p className={`mt-4`}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
