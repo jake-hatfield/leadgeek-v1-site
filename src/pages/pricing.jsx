@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import PricingTable from "../components/pricingTable"
 import SideCard from "../components/sideCard"
-import TripleIcons from "../components/tripleIcons"
+import TripleIcons from "../components/threeIconList"
 import Faq from "../components/faq"
 
 import Check from "../assets/check.svg"

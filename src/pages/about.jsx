@@ -6,7 +6,7 @@ import PrimaryHeader from "../components/primaryHeader"
 import LargeDescription from "../components/largeDescription"
 import CTA from "../components/cta"
 import AlternatingDescription from "../components/alternatingDescription"
-import TripleIcons from "../components/tripleIcons"
+import TripleIcons from "../components/threeIconList"
 import BulletedList from "../components/bulletedList"
 
 const AboutPage = ({ data }) => {

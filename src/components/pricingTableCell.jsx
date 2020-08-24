@@ -29,11 +29,11 @@ const pricingTableCell = ({ value, description, tooltip }) => {
       return value
     } else if (value === true) {
       return (
-        <Check className="mx-auto h-4 lg:h-6 w-4 lg:w-6 text-teal-500 bg-teal-200 rounded-full" />
+        <Check className="mx-auto h-4 lg:h-5 w-4 lg:w-5 text-teal-500 bg-teal-200 rounded-full" />
       )
     } else {
       return (
-        <X className="mx-auto h-4 lg:h-6 w-4 lg:w-6 text-gray-500 bg-gray-200 rounded-full" />
+        <X className="mx-auto h-4 lg:h-5 w-4 lg:w-5 text-gray-500 bg-gray-200 rounded-full" />
       )
     }
   }
@@ -43,7 +43,7 @@ const pricingTableCell = ({ value, description, tooltip }) => {
         description
           ? `py-6 w-2/5 text-gray-900`
           : `text-center text-gray-800 font-light`
-      } border-0 text-xs lg:text-base`}
+      } border-0 text-xs lg:text-sm`}
     >
       {contentType()}
     </td>

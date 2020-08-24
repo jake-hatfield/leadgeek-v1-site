@@ -3,6 +3,7 @@ import React from "react"
 const tripleIcons = ({
   margin,
   bgColor,
+  title,
   mainHeader,
   items,
   primaryTextColor,
@@ -13,8 +14,13 @@ const tripleIcons = ({
       className={`${margin} py-12 lg:py-24 ${bgColor} ${primaryTextColor}`}
     >
       <div className="container">
-        <header className="text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center">
-          <h2>{mainHeader}</h2>
+        <header>
+          <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
+            {title}
+          </span>
+          <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold">
+            {mainHeader}
+          </h2>
         </header>
         <div className="mt-12 xl:mt-16 md:flex md:justify-between">
           {items.map(item => (

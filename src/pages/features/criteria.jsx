@@ -42,11 +42,10 @@ const LeadCriteriaPage = () => {
         Explicabo unde quibusdam optio distinctio vitae similique amet aut
         cumque reprehenderit doloremque!`}
         nav
-        linkOne={`pricing`}
-        linkOneText={`Get started`}
+        linkOne={`signup`}
+        linkOneText={`Join now`}
         linkTwo={`demo`}
-        linkTwoText={`Watch demo`}
-        play
+        linkTwoText={`Watch the demo`}
       />
       <AlternatingDescription
         mainHeader={`Lorem ipsum dolor sit amet consur`}
@@ -55,6 +54,7 @@ const LeadCriteriaPage = () => {
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}
         tertiaryColor={`text-purple-600`}
+        margin={`mt-24`}
         reverse
       />
     </Layout>

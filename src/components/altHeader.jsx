@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Play from "../assets/play.svg"
+import ArrowRight from "../assets/arrow-right.svg"
 
 const altHeader = ({
   title,
@@ -13,16 +13,17 @@ const altHeader = ({
   linkOneText,
   linkTwo,
   linkTwoText,
-  play,
 }) => {
   return (
     <header
       className={`${
-        negativeMargin ? `mt-12 lg:mt-16 pt-40 pb-16` : `mt-8 md:mt-12 lg:mt-16`
+        negativeMargin ? `mt-12 lg:mt-16 pt-40 pb-16` : `mt-8 md:mt-12 lg:mt-20`
       } container`}
     >
-      <div className="lg:max-w-3xl">
-        <span className="uppercase text-purple-600 font-bold">{title}</span>
+      <div className="md:max-w-2xl lg:max-w-3xl">
+        <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
+          {title}
+        </span>
         <h1 className="mt-2 text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">
           {header}
         </h1>
@@ -30,22 +31,22 @@ const altHeader = ({
           {subHeader}
         </h2>
         {nav && (
-          <nav className="mt-6 lg:mt-12 font-semibold text-center md:text-left">
+          <nav className="mt-6 font-semibold">
             <Link
               to={`/${linkOne}`}
-              className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
+              className="py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
             >
               {linkOneText}
             </Link>
-            <Link
-              to={`/${linkTwo}`}
-              className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 block md:inline-block relative shadow-sm rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
-            >
-              {linkTwoText}
-              {play && (
-                <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
-              )}
-            </Link>
+            <div className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 inline-block">
+              <Link
+                to={`/${linkTwo}`}
+                className="flex items-center relative text-gray-500 group hover:text-gray-700"
+              >
+                {linkTwoText}
+                <ArrowRight className="ml-1 group-hover:ml-2 w-4" />
+              </Link>
+            </div>
           </nav>
         )}
       </div>
