@@ -2,33 +2,51 @@ import React from "react"
 
 import Layout from "../../components/layout"
 import AltHeader from "../../components/altHeader"
-import AlternatingDescription from "../../components/alternatingDescription"
+import ThreeIconList from "../../components/threeIconList"
+import LargeDescription from "../../components/largeDescription"
+import CTA from "../../components/cta"
 
-const LeadCriteriaPage = () => {
-  const description = [
+const LeadCriteriaPage = ({ data }) => {
+  const criteriaTopics = [
+    {
+      id: 1,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Save time sourcing",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
+    },
+    {
+      id: 2,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Get informed research",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
+    },
+    {
+      id: 3,
+      iconPath:
+        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      header: "Count on consistency",
+      content:
+        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
+    },
+  ]
+  const criteriaItems = [
     {
       id: "1",
-      span: "Standards",
       header: "Lorem Ipsum dolor sit amet consectetur",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
+      image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: "2",
-      span: "Standards",
       header: "Lorem Ipsum dolor sit amet consectetur",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
-    },
-    {
-      id: "3",
-      span: "Standards",
-      header: "Lorem Ipsum dolor sit amet consectetur",
-      content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
+      image: data.astronaut.childImageSharp.fluid,
     },
   ]
   return (
@@ -47,19 +65,38 @@ const LeadCriteriaPage = () => {
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
       />
-      <AlternatingDescription
-        mainHeader={`Lorem ipsum dolor sit amet consur`}
-        items={description}
+      <ThreeIconList
+        items={criteriaTopics}
         bgColor={`bg-gray-100`}
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}
-        tertiaryColor={`text-purple-600`}
-        margin={`mt-24`}
-        reverse
+        iconColor={`bg-purple-100 text-purple-600`}
+        margin={`mt-20`}
+        title={`How it works`}
+        mainHeader={`Lorem ipsum dolor sit`}
+      />
+      <LargeDescription
+        mainHeader={`Lorem ipsum dolor sit amet consur`}
+        mainSubheader={`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.`}
+        items={criteriaItems}
+        bgColor={`bg-gray-200`}
+        primaryTextColor={`text-gray-900`}
+        secondaryTextColor={`text-gray-700`}
+      />
+      <CTA
+        padding={`py-12 lg:py-24`}
+        bgColor="bg-purple-600"
+        textColor="text-white"
+        buttonStyles="bg-white text-purple-600 hover:text-purple-800"
+        buttonText="Join now"
+        link="demo"
+        linkText="Watch demo"
+        linkStyles="text-purple-100 hover:text-purple-200"
       />
     </Layout>
   )
 }
+
 export const query = graphql`
   query {
     astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {

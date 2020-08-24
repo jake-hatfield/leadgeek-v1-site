@@ -155,13 +155,15 @@ const LeadCriteriaPage = () => {
           <div className="mt-8 md:mt-0 md:ml-4 lg:ml-6 md:w-3/4">
             <table className="relative z-20 md:table-fixed bg-gray-900 text-xs lg:text-sm text-white border-0">
               <thead className="bg-white text-gray-700 font-bold border-0">
-                <td className="md:w-1/2 border-0"></td>
-                <td className="md:w-1/4 text-center md:text-left border-0 leading-tight">
-                  Otder Services
-                </td>
-                <td className="md:w-1/4 text-center md:text-left border-0 leading-tight">
-                  LeadGeek
-                </td>
+                <tr>
+                  <td className="md:w-1/2 border-0"></td>
+                  <td className="md:w-1/4 text-center md:text-left border-0 leading-tight">
+                    Other Services
+                  </td>
+                  <td className="md:w-1/4 text-center md:text-left border-0 leading-tight">
+                    LeadGeek
+                  </td>
+                </tr>
               </thead>
               <tbody className="leading-snug font-normal shadow-lg">
                 <tr className="bg-gray-800">

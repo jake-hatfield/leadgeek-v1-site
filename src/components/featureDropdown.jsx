@@ -9,8 +9,8 @@ function Dropdown({ title, items, open, setOpen }) {
       <button
         tabIndex={0}
         onKeyPress={() => toggle(!open)}
-        onMouseEnter={() => toggle(!open)}
-        onMouseLeave={() => toggle(!open)}
+        onMouseEnter={() => open === false && toggle(!open)}
+        onMouseLeave={() => open === true && toggle(!open)}
         className="inline-flex items-center relative space-x-1 text-gray-500 text-base leading-6 font-medium hover:text-purple-600 focus:outline-none focus:text-purple-600 transition ease-in-out duration-200 md:cursor-default"
       >
         <div>
