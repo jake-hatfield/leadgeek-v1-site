@@ -1,6 +1,7 @@
 import React from "react"
 
 import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
 import BulletedList from "../../components/bulletedList"
@@ -108,6 +109,7 @@ const LeadCriteriaPage = () => {
   const dataPoints = dataList.length
   return (
     <Layout>
+      <SEO title="Member Support" description="" />
       <AltHeader
         title={`Proven reliability`}
         header={`Online Arbitrage Leads That Save You Time.`}

@@ -2,11 +2,14 @@ import React from "react"
 import Img from "gatsby-image"
 
 import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
 import LargeDescription from "../../components/largeDescription"
 import BulletedList from "../../components/bulletedList"
 import CTA from "../../components/cta"
+
+import Check from "../../assets/check.svg"
 
 const LeadCriteriaPage = ({ data }) => {
   const criteriaTopics = [
@@ -58,6 +61,7 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 2,
+      proPriority: true,
       dataPoint: "Beauty & personal care",
     },
     {
@@ -66,6 +70,7 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 4,
+      proPriority: true,
       dataPoint: "Clothing, shoes, & jewelry",
     },
     {
@@ -78,10 +83,12 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 7,
+      proPriority: true,
       dataPoint: "Grocery & gourmet food",
     },
     {
       id: 9,
+      proPriority: true,
       dataPoint: "Home & kitchen",
     },
     {
@@ -102,6 +109,7 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 14,
+      proPriority: true,
       dataPoint: "Toys & games",
     },
   ]
@@ -109,6 +117,7 @@ const LeadCriteriaPage = ({ data }) => {
   const categoryCount = productCategories.length
   return (
     <Layout>
+      <SEO title="Member Support" description="" />
       <AltHeader
         title={`Strict Criteria`}
         header={`Online Arbitrage Leads That Save You Time.`}
@@ -282,15 +291,15 @@ const LeadCriteriaPage = ({ data }) => {
             </header>
             <div className="py-4 md:w-1/4">
               <div className="border-l-2 border-gray-200">
-                <h4 className="pl-2 font-semibold text-lg text-gray-700">
-                  Bundle cap
+                <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
+                  Pro plan priority
+                  <Check className="ml-2 h-4 w-4 text-white bg-teal-600 rounded-full" />
                 </h4>
-                <div className="p-2">
-                  <span className="text-xl font-semibold text-purple-600">
-                    15
-                  </span>
-                  <p className="text-sm text-gray-600">max members per list</p>
-                </div>
+                <p className="mt-2 pl-2 text-sm text-gray-700">
+                  Both plans include all featured categories, but the Pro plan
+                  is more weighted towards certain types of products.
+                </p>
+                <div className="pl-2 pt-"></div>
               </div>
             </div>
           </article>
