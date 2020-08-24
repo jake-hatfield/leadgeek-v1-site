@@ -45,7 +45,7 @@ const LeadCriteriaPage = () => {
         linkOne={`signup`}
         linkOneText={`Join now`}
         linkTwo={`demo`}
-        linkTwoText={`Watch the demo`}
+        linkTwoText={`Watch demo`}
       />
       <AlternatingDescription
         mainHeader={`Lorem ipsum dolor sit amet consur`}

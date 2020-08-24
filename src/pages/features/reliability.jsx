@@ -3,42 +3,17 @@ import React from "react"
 import Layout from "../../components/layout"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
+import BulletedList from "../../components/bulletedList"
 
 import Check from "../../assets/check.svg"
 
 const LeadCriteriaPage = () => {
-  const description = [
-    {
-      id: "1",
-      span: "Standards",
-      header: "Lorem Ipsum dolor sit amet consectetur",
-      content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
-    },
-    {
-      id: "2",
-      span: "Standards",
-      header: "Lorem Ipsum dolor sit amet consectetur",
-      content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
-    },
-    {
-      id: "3",
-      span: "Standards",
-      header: "Lorem Ipsum dolor sit amet consectetur",
-      content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
-      //   image: data.astronaut.childImageSharp.fluid,
-    },
-  ]
   const leadReliability = [
     {
       id: 1,
       iconPath:
         "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your drea",
+      header: "Save time sourcing",
       content:
         "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
     },
@@ -46,7 +21,7 @@ const LeadCriteriaPage = () => {
       id: 2,
       iconPath:
         "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your drea",
+      header: "Get informed research",
       content:
         "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
     },
@@ -54,11 +29,82 @@ const LeadCriteriaPage = () => {
       id: 3,
       iconPath:
         "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your drea",
+      header: "Count on consistency",
       content:
         "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
     },
   ]
+  const dataList = [
+    {
+      id: 1,
+      dataPoint: "Retailer source",
+    },
+    {
+      id: 2,
+      dataPoint: "Product title",
+    },
+    {
+      id: 3,
+      dataPoint: "Product category",
+    },
+    {
+      id: 4,
+      dataPoint: "Retailer link",
+    },
+    {
+      id: 5,
+      dataPoint: "Amazon product link",
+    },
+    {
+      id: 6,
+      dataPoint: "Current buy price",
+    },
+    {
+      id: 7,
+      dataPoint: "Current sell price",
+    },
+    {
+      id: 8,
+      dataPoint: "Net profit",
+    },
+    {
+      id: 9,
+      dataPoint: "Net ROI",
+    },
+    {
+      id: 10,
+      dataPoint: "Current BSR",
+    },
+    {
+      id: 11,
+      dataPoint: "30 & 90 Day BSR",
+    },
+    {
+      id: 12,
+      dataPoint: "Average monthly sales",
+    },
+    {
+      id: 13,
+      dataPoint: "3rd party seller competition",
+    },
+    {
+      id: 14,
+      dataPoint: "Relevant promo codes",
+    },
+    {
+      id: 15,
+      dataPoint: "Cashback discounts",
+    },
+    {
+      id: 16,
+      dataPoint: "Sourcing notes",
+    },
+    {
+      id: 17,
+      dataPoint: "Variation recommendations",
+    },
+  ]
+  const dataPoints = dataList.length
   return (
     <Layout>
       <AltHeader
@@ -73,7 +119,7 @@ const LeadCriteriaPage = () => {
         linkOne={`signup`}
         linkOneText={`Join now`}
         linkTwo={`demo`}
-        linkTwoText={`Watch the demo`}
+        linkTwoText={`Watch demo`}
       />
       <ThreeIconList
         items={leadReliability}
@@ -85,17 +131,19 @@ const LeadCriteriaPage = () => {
         mainHeader={`Lorem ipsum dolor sit`}
       />
       <section className="mt-8 md:mt-12 lg:mt-20 -mb-16 lg:-mb-24 md:mx-auto container-width text-gray-700">
-        <header className="px-4 max-w-2xl">
+        <header className="px-4 xl:px-0 max-w-3xl">
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
-            Thing one
+            Save time sourcing
           </span>
           <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-            Thing number one explained
+            We're the all-in-one toolkit for productive sourcing.
           </h2>
         </header>
-        <div className="mt-12 md:px-4 md:flex md:justify-between">
+        <div className="mt-8 md:px-4 xl:px-0 md:flex md:justify-between">
           <div className="md:mt-12 px-4 md:px-0 md:w-1/4">
-            <h3 className="text-xl font-semibold text-gray-900">Lorem ipsum</h3>
+            <h3 className="text-xl font-semibold text-gray-900">
+              Automate the time-consuming work
+            </h3>
             <p className="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
               sequi soluta accusantium enim officia atque nam repudiandae ipsam
@@ -106,10 +154,10 @@ const LeadCriteriaPage = () => {
             <table className="relative z-20 md:table-fixed bg-gray-900 text-xs lg:text-sm text-white border-0">
               <thead className="bg-white text-gray-700 font-bold border-0">
                 <th className="md:w-1/2 border-0"></th>
-                <th className="md:w-1/4 text-center md:text-left border-0">
-                  Traditional
+                <th className="md:w-1/4 text-center md:text-left border-0 leading-tight">
+                  Other Services
                 </th>
-                <th className="md:w-1/4 text-center md:text-left border-0">
+                <th className="md:w-1/4 text-center md:text-left border-0 leading-tight">
                   LeadGeek
                 </th>
               </thead>
@@ -119,17 +167,19 @@ const LeadCriteriaPage = () => {
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <th className="font-medium border-0">Sorting leads</th>
+                  <th className="font-medium border-0">
+                    Sorting through leads
+                  </th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
@@ -139,7 +189,7 @@ const LeadCriteriaPage = () => {
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
@@ -149,7 +199,7 @@ const LeadCriteriaPage = () => {
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
@@ -159,7 +209,7 @@ const LeadCriteriaPage = () => {
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
@@ -171,17 +221,19 @@ const LeadCriteriaPage = () => {
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
                 </tr>
                 <tr className="bg-gray-800">
-                  <th className="font-medium border-0">Promo codes</th>
+                  <th className="font-medium border-0">
+                    Researching promo codes
+                  </th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
                     <div className="flex items-center">
-                      <Check className="h-4 w-4 text-purple-800 bg-purple-400 rounded-full" />
+                      <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
                   </td>
@@ -191,8 +243,35 @@ const LeadCriteriaPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-12 lg:py-20 bg-gray-100">
-        <div className="container">Hello</div>
+      <section className="py-12 lg:py-48 bg-gray-100">
+        <article className="container">
+          <header className="max-w-3xl">
+            <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
+              Get informed research
+            </span>
+            <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
+              We check {dataPoints} different data points bring you the best
+              leads every day.
+            </h2>
+          </header>
+          <div className="mt-12 md:flex md:justify-between">
+            <div className="md:w-1/2">
+              <h3 className="text-xl font-semibold text-gray-900">
+                Detailed analysis for every product
+              </h3>
+              <p className="mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                sequi soluta accusantium enim officia atque nam repudiandae
+                ipsam vero nesciunt!
+              </p>
+              <h3 className="mt-6 font-semibold text-gray-700">
+                Our data points:
+              </h3>
+              <BulletedList items={dataList} margin={`mt-4`} />
+            </div>
+            <div className="md:ml-4 lg:ml-8 -md:w-1/2">Hello</div>
+          </div>
+        </article>
       </section>
     </Layout>
   )
