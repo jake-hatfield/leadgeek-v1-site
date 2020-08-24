@@ -8,9 +8,9 @@ import PricingTable from "../components/pricingTable"
 import SideCard from "../components/sideCard"
 import TripleIcons from "../components/threeIconList"
 import Faq from "../components/faq"
+import CTA from "../components/cta"
 
 import Check from "../assets/check.svg"
-import Play from "../assets/play.svg"
 
 const PricingPage = () => {
   const growPrice = 129
@@ -53,7 +53,7 @@ const PricingPage = () => {
     },
     {
       id: "5",
-      body: "Seller training material",
+      body: "Training e-books",
     },
     {
       id: "6",
@@ -96,7 +96,11 @@ const PricingPage = () => {
     },
     {
       id: "5",
-      body: "Seller training material",
+      body: (
+        <span>
+          Training e-books & <strong>course</strong>
+        </span>
+      ),
     },
     {
       id: "6",
@@ -133,7 +137,7 @@ const PricingPage = () => {
       id: "5",
       body: (
         <span>
-          Training course + <strong className="font-semibold">templates</strong>
+          Training e-books & <strong>course</strong>
         </span>
       ),
     },
@@ -605,31 +609,16 @@ const PricingPage = () => {
         />
       </section>
       <Faq growPlanSeats={growPlanSeats} proPlanSeats={proPlanSeats} />
-      <section className="my-12 lg:my-24 container text-center">
-        <header>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-            Ready to get started?
-            <span className="mt-4 lg:mt-2 block">
-              Sign up for LeadGeek today.
-            </span>
-          </h2>
-          <nav className="mt-6 lg:mt-12 mx-auto md:mx-0 font-semibold">
-            <Link
-              to={`/demo`}
-              className="mt-4 md:mt-0 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block relative shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200"
-            >
-              Watch demo
-              <Play className="h-5 w-5 absolute button-icon inline bg-white rounded-full text-purple-600" />
-            </Link>
-            <Link
-              to={`/contact`}
-              className="mt-4 lg:mt-0 md:ml-2 py-3 px-4 lg:py-4 lg:px-5 block md:inline-block shadow-sm rounded-md bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors duration-200"
-            >
-              Contact support
-            </Link>
-          </nav>
-        </header>
-      </section>
+      <CTA
+        padding={`py-12 lg:py-24`}
+        bgColor="bg-purple-600"
+        textColor="text-white"
+        buttonStyles="bg-white text-purple-600 hover:text-purple-800"
+        buttonText="Join now"
+        link="contact"
+        linkText="Contact sales"
+        linkStyles="text-purple-100 hover:text-purple-200"
+      />
     </Layout>
   )
 }

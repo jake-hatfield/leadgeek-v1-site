@@ -167,7 +167,16 @@ const IndexPage = () => (
         </article>
       </div>
     </section>
-    <CTA />
+    <CTA
+      padding={`py-12 lg:py-24`}
+      bgColor="bg-purple-600"
+      textColor="text-white"
+      buttonStyles="bg-white text-purple-600 hover:text-purple-800"
+      buttonText="Join now"
+      link="demo"
+      linkText="Watch demo"
+      linkStyles="text-purple-100 hover:text-purple-200"
+    />
   </Layout>
 )
 

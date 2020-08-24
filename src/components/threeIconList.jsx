@@ -3,6 +3,7 @@ import React from "react"
 const tripleIcons = ({
   margin,
   bgColor,
+  iconColor,
   title,
   mainHeader,
   items,
@@ -34,7 +35,7 @@ const tripleIcons = ({
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="p-2 h-10 w-10 bg-white rounded-md text-purple-600"
+                className={`p-2 h-10 w-10 ${iconColor} rounded-md text-purple-600`}
               >
                 <path
                   strokeLinecap="round"
@@ -43,10 +44,8 @@ const tripleIcons = ({
                   d={item.iconPath}
                 />
               </svg>
-              <h3 className="mt-6 lg:text-xl font-medium">{item.header}</h3>
-              <p className={`mt-4 ${secondaryTextColor} lg:text-lg`}>
-                {item.content}
-              </p>
+              <h3 className="mt-6 lg:text-xl font-semibold">{item.header}</h3>
+              <p className={`mt-4 ${secondaryTextColor}`}>{item.content}</p>
             </div>
           ))}
         </div>
