@@ -23,12 +23,12 @@ const tripleIcons = ({
             {mainHeader}
           </h2>
         </header>
-        <div className="mt-12 xl:mt-16 md:flex md:justify-between">
+        <div className="mt-6 xl:mt-8 md:flex md:justify-between">
           {items.map(item => (
             <div
               key={item.id}
               v-for="item in items"
-              className="lg:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const tripleIcons = ({
                 />
               </svg>
               <h3 className="mt-6 lg:text-xl font-semibold">{item.header}</h3>
-              <p className={`mt-4 ${secondaryTextColor}`}>{item.content}</p>
+              <p className={`mt-2 ${secondaryTextColor}`}>{item.content}</p>
             </div>
           ))}
         </div>

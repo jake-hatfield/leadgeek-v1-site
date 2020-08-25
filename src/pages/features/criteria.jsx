@@ -9,35 +9,7 @@ import LargeDescription from "../../components/largeDescription"
 import BulletedList from "../../components/bulletedList"
 import CTA from "../../components/cta"
 
-import Check from "../../assets/check.svg"
-
 const LeadCriteriaPage = ({ data }) => {
-  const criteriaTopics = [
-    {
-      id: 1,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Save time sourcing",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-    {
-      id: 2,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Get informed research",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-    {
-      id: 3,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Count on consistency",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-  ]
   const criteriaItems = [
     {
       id: "1",
@@ -61,7 +33,6 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 2,
-      proPriority: true,
       dataPoint: "Beauty & personal care",
     },
     {
@@ -70,7 +41,6 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 4,
-      proPriority: true,
       dataPoint: "Clothing, shoes, & jewelry",
     },
     {
@@ -83,12 +53,10 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 7,
-      proPriority: true,
       dataPoint: "Grocery & gourmet food",
     },
     {
       id: 9,
-      proPriority: true,
       dataPoint: "Home & kitchen",
     },
     {
@@ -109,23 +77,42 @@ const LeadCriteriaPage = ({ data }) => {
     },
     {
       id: 14,
-      proPriority: true,
       dataPoint: "Toys & games",
     },
   ]
-
   const categoryCount = productCategories.length
+  const criteriaTopics = [
+    {
+      id: 1,
+      iconPath:
+        "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z",
+      header: "High standards",
+      content:
+        "Our strict criteria allow you to receive the top 1% of products without spending any time sourcing them yourself.",
+    },
+    {
+      id: 2,
+      iconPath:
+        "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+      header: "Low competition",
+      content:
+        "Seller competition is kept in check with extremely tight member caps and advanced capacity balancing methods.",
+    },
+    {
+      id: 3,
+      iconPath:
+        "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+      header: "Comprehensive categories",
+      content: `Products from over ${categoryCount} categories are sourced to keep the daily leads fresh and give our members a variety of choices.`,
+    },
+  ]
   return (
     <Layout>
       <SEO title="Member Support" description="" />
       <AltHeader
         title={`Strict Criteria`}
-        header={`Online Arbitrage Leads That Save You Time.`}
-        subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
-        quibum optio distinctio vitae similique amet aut cumque reprehenderit
-        doloremque! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Explicabo unde quibusdam optio distinctio vitae similique amet aut
-        cumque reprehenderit doloremque!`}
+        header={`Get premium leads that align with your selling standards.`}
+        subHeader={`LeadGeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities in large volume.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -140,11 +127,12 @@ const LeadCriteriaPage = ({ data }) => {
         iconColor={`bg-purple-100 text-purple-600`}
         margin={`mt-20`}
         title={`How it works`}
-        mainHeader={`Lorem ipsum dolor sit`}
+        mainHeader={`Give your sourcing a competitive edge.`}
       />
       <LargeDescription
-        mainHeader={`Lorem ipsum dolor sit amet consur`}
-        mainSubheader={`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.`}
+        title={`High standards`}
+        mainHeader={`Arbitrage lead benchmarks`}
+        mainSubheader={`Our carefully-tailored requirements and vetting methods allow you to get professional-grade arbitrage sourcing at a fraction of the price.`}
         items={criteriaItems}
         bgColor={`bg-gray-200`}
         primaryTextColor={`text-gray-900`}
@@ -158,8 +146,7 @@ const LeadCriteriaPage = ({ data }) => {
                 Low competition
               </span>
               <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                We send proven-selling products directly to your inbox every
-                weekday.
+                Our strategies to reduce lead exposure.
               </h2>
             </header>
             <div className="mt-8 md:flex md:justify-between">
@@ -181,12 +168,14 @@ const LeadCriteriaPage = ({ data }) => {
                 <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
                   Limited seats
                 </h3>
-                <p className={`mt-4`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                  sequi soluta accusantium en
+                <p className={`mt-2`}>
+                  Intra-list seller competition is something we take very
+                  seriously, which is why we cut down on lead exposure by
+                  setting no-budge caps on the number of members allowed on a
+                  list at any given time.
                 </p>
               </div>
-              <div className="mt-4 md:mt-0 md:ml-4 md:w-1/2">
+              <div className="mt-4 md:mt-0 md:ml-6 md:w-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -204,14 +193,16 @@ const LeadCriteriaPage = ({ data }) => {
                 <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
                   List splitting
                 </h3>
-                <p className={`mt-4`}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                  sequi soluta accusantium en
+                <p className={`mt-2`}>
+                  If one of our lists has hit maximum capacity, we'll halve the
+                  current competition when we open a new one. For instance, if
+                  30 sellers are on the Grow plan, we'll open a new list and
+                  balance the members 15/15.
                 </p>
               </div>
             </div>
           </article>
-          <div className="mt-8 md:mt-0 py-4 hidden md:block md:w-1/4">
+          <div className="mt-8 md:mt-0 md:ml-6 py-4 hidden md:block md:w-1/4">
             <div className="border-l-2 border-gray-200">
               <h4 className="pl-2 font-semibold text-lg text-gray-700">
                 Bundle cap
@@ -307,42 +298,52 @@ const LeadCriteriaPage = ({ data }) => {
         </div>
       </section>
       <section className="-mt-40 pt-56 pb-12 lg:pb-24 bg-gray-100 text-gray-700">
-        <div className="container">
-          <header>
+        <div className="container flex flex-col-reverse md:flex-row md:justify-between">
+          <header className="md:w-3/4">
             <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
               Comprehensive categories
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-              We source from {categoryCount}+ categories to find you something
-              new every day.
+              Access profitable leads from {categoryCount}+ proven categories
             </h2>
             <p className="mt-4 max-w-2xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              sequi soluta accusantium enim officia atque nam repudiandae ipsam
-              vero nesciunt!
+              Experience a wide variety of arbitrage leads from the best-selling
+              categories on Amazon. Whether you're just starting out or you've
+              been selling for a while, these are the most profitable types of
+              products to flip.
             </p>
+            <BulletedList
+              items={productCategories}
+              margin={`mt-8`}
+              gridLayout="md:grid-flow-col md:grid-cols-3 md:grid-rows-5"
+            />
           </header>
-          <article className="mt-8 flex flex-col-reverse md:flex-row md:justify-between">
-            <header className="md:w-3/4">
-              <BulletedList
-                items={productCategories}
-                margin={`mt-4`}
-                gridLayout="md:grid-flow-col md:grid-cols-3 md:grid-rows-5"
-              />
-            </header>
-            <div className="py-4 md:w-1/4">
-              <div className="border-l-2 border-gray-200">
-                <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
-                  Pro plan priority
-                </h4>
-                <p className="mt-2 pl-2 text-sm text-gray-700">
-                  The Pro plan includes all categories, but prioritizes products
-                  from the beauty, clothing, grocery, and toys categories.
-                </p>
-                <div className="pl-2 pt-"></div>
-              </div>
+          <div className="md:ml-6 py-4 md:w-1/4 flex flex-col justify-end">
+            <div className="border-l-2 border-gray-200">
+              <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
+                Grow plan priority
+              </h4>
+              <p className="mt-2 pl-2 text-xl font-semibold text-purple-600">
+                Ungated categories
+              </p>
+              <p className="mt-1 pl-2 text-sm text-gray-700">
+                Both lists have a mix of gated and ungated products, but the
+                Grow plan is weighted slightly more to ungated products.
+              </p>
             </div>
-          </article>
+            <div className="mt-6 border-l-2 border-gray-200">
+              <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
+                Pro plan priority
+              </h4>
+              <p className="mt-2 pl-2 text-xl font-semibold text-purple-600">
+                Gated categories
+              </p>
+              <p className="mt-1 pl-2 text-sm text-gray-700">
+                The Pro plan includes all categories, but prioritizes products
+                from the beauty, clothing, grocery, and toys categories.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <CTA

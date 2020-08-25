@@ -6,6 +6,7 @@ const largeDescription = ({
   bgColor,
   primaryTextColor,
   secondaryTextColor,
+  title,
   mainHeader,
   mainSubheader,
   items,
@@ -16,7 +17,12 @@ const largeDescription = ({
     >
       <div className="container">
         <header className="md:max-w-xl lg:max-w-2xl">
-          <h2 className="text-4xl lg:text-5xl font-black">{mainHeader}</h2>
+          <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
+            {title}
+          </span>
+          <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold">
+            {mainHeader}
+          </h2>
           <p
             className={`mt-6 ${secondaryTextColor} lg:text-lg xl:text-xl leading-relaxed lg:leading-normal`}
           >
