@@ -16,7 +16,7 @@ const largeDescription = ({
       className={`${margin} py-12 lg:py-24 ${bgColor} ${primaryTextColor}`}
     >
       <div className="container">
-        <header className="md:max-w-xl lg:max-w-2xl">
+        <header className="md:max-w-2xl lg:max-w-3xl">
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
             {title}
           </span>
@@ -24,7 +24,7 @@ const largeDescription = ({
             {mainHeader}
           </h2>
           <p
-            className={`mt-6 ${secondaryTextColor} lg:text-lg xl:text-xl leading-relaxed lg:leading-normal`}
+            className={`mt-4 lg:mt-6 ${secondaryTextColor} lg:text-lg xl:text-xl leading-relaxed lg:leading-normal`}
           >
             {mainSubheader}
           </p>
@@ -35,9 +35,13 @@ const largeDescription = ({
               <h3>{item.header}</h3>
             </header>
             <div className="mt-6 max-w-4xl md:flex md:justify-start md:items-center">
-              <Img fluid={item.image} className="md:w-1/2" />
+              <Img fluid={item.image} className="md:w-1/2 h-64" />
+
               <div className="mt-4 md:mt-0 md:ml-12 md:w-1/2 lg:text-lg xl:text-xl">
-                {item.content}
+                <span className="block uppercase text-sm md:text-base text-purple-600 font-bold">
+                  {item.title}
+                </span>
+                <p className="mt-2">{item.content}</p>
               </div>
             </div>
           </article>

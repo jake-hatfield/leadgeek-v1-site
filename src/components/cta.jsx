@@ -19,7 +19,7 @@ const CTA = ({
       <div className="container">
         <header className="mt-6 lg:mt-0 mx-auto md:mx-0 font-semibold">
           <h2
-            className={`text-3xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
+            className={`text-2xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
           >
             Ready to get started?
             <span className="mt-4 lg:mt-2 block">

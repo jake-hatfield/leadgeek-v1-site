@@ -35,7 +35,7 @@ const tripleIcons = ({
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className={`p-2 h-10 w-10 ${iconColor} rounded-md text-purple-600`}
+                className={`p-2 h-10 w-10 ${iconColor} rounded-md`}
               >
                 <path
                   strokeLinecap="round"

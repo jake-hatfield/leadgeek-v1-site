@@ -12,14 +12,32 @@ import CTA from "../../components/cta"
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [
     {
-      id: "1",
+      id: 1,
+      title: "Net Profit",
       header: "Lorem Ipsum dolor sit amet consectetur",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
-      id: "2",
+      id: 2,
+      title: "Net ROI",
+      header: "Lorem Ipsum dolor sit amet consectetur",
+      content:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+      image: data.astronaut.childImageSharp.fluid,
+    },
+    {
+      id: 3,
+      title: "Sales Velocity",
+      header: "Lorem Ipsum dolor sit amet consectetur",
+      content:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+      image: data.astronaut.childImageSharp.fluid,
+    },
+    {
+      id: 4,
+      title: "Seller Insight Test",
       header: "Lorem Ipsum dolor sit amet consectetur",
       content:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
@@ -131,8 +149,17 @@ const LeadCriteriaPage = ({ data }) => {
       />
       <LargeDescription
         title={`High standards`}
-        mainHeader={`Arbitrage lead benchmarks`}
-        mainSubheader={`Our carefully-tailored requirements and vetting methods allow you to get professional-grade arbitrage sourcing at a fraction of the price.`}
+        mainHeader={`Enjoy strict standards that yield superior products.`}
+        mainSubheader={
+          <span>
+            Our carefully-tailored requirements and vetting methods allow you to
+            get professional-grade arbitrage sourcing at a fraction of the
+            price. Though we use many metrics to determine product quality, four
+            are most important: <strong>net profit</strong>,{" "}
+            <strong>net ROI</strong>, <strong>sales velocity</strong>, and the{" "}
+            <strong>seller insight test</strong>.
+          </span>
+        }
         items={criteriaItems}
         bgColor={`bg-gray-200`}
         primaryTextColor={`text-gray-900`}
@@ -297,8 +324,8 @@ const LeadCriteriaPage = ({ data }) => {
           />
         </div>
       </section>
-      <section className="-mt-40 pt-56 pb-12 lg:pb-24 bg-gray-100 text-gray-700">
-        <div className="container flex flex-col-reverse md:flex-row md:justify-between">
+      <section className="-mt-48 md:-mt-40 pt-56 pb-12 lg:pb-24 bg-gray-100 text-gray-700">
+        <div className="container md:flex md:flex-row md:justify-between">
           <header className="md:w-3/4">
             <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
               Comprehensive categories
@@ -306,7 +333,7 @@ const LeadCriteriaPage = ({ data }) => {
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
               Access profitable leads from {categoryCount}+ proven categories
             </h2>
-            <p className="mt-4 max-w-2xl">
+            <p className="mt-4 max-w-2xl lg:text-lg">
               Experience a wide variety of arbitrage leads from the best-selling
               categories on Amazon. Whether you're just starting out or you've
               been selling for a while, these are the most profitable types of
@@ -318,27 +345,27 @@ const LeadCriteriaPage = ({ data }) => {
               gridLayout="md:grid-flow-col md:grid-cols-3 md:grid-rows-5"
             />
           </header>
-          <div className="md:ml-6 py-4 md:w-1/4 flex flex-col justify-end">
-            <div className="border-l-2 border-gray-200">
-              <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
+          <div className="mt-8 md:mt-0 md:ml-6 md:py-4 md:w-1/4 md:flex md:flex-col md:justify-end">
+            <div className="md:border-l-2 border-gray-200 text-sm text-gray-700">
+              <h4 className="md:pl-2 flex items-center font-semibold md:text-lg">
                 Grow plan priority
               </h4>
-              <p className="mt-2 pl-2 text-xl font-semibold text-purple-600">
+              <p className="mt-2 md:pl-2 text-base md:text-xl font-semibold text-purple-600">
                 Ungated categories
               </p>
-              <p className="mt-1 pl-2 text-sm text-gray-700">
+              <p className="mt-1 md:pl-2">
                 Both lists have a mix of gated and ungated products, but the
                 Grow plan is weighted slightly more to ungated products.
               </p>
             </div>
-            <div className="mt-6 border-l-2 border-gray-200">
-              <h4 className="pl-2 flex items-center font-semibold text-lg text-gray-700">
+            <div className="mt-6 md:border-l-2 border-gray-200 text-sm text-gray-700">
+              <h4 className="md:pl-2 flex items-center font-semibold md:text-lg">
                 Pro plan priority
               </h4>
-              <p className="mt-2 pl-2 text-xl font-semibold text-purple-600">
+              <p className="mt-2 md:pl-2 text-base md:text-xl font-semibold text-purple-600">
                 Gated categories
               </p>
-              <p className="mt-1 pl-2 text-sm text-gray-700">
+              <p className="mt-1 md:pl-2">
                 The Pro plan includes all categories, but prioritizes products
                 from the beauty, clothing, grocery, and toys categories.
               </p>
