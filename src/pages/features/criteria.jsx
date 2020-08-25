@@ -211,7 +211,7 @@ const LeadCriteriaPage = ({ data }) => {
               </div>
             </div>
           </article>
-          <div className="mt-8 md:mt-0 py-4 md:w-1/4">
+          <div className="mt-8 md:mt-0 py-4 hidden md:block md:w-1/4">
             <div className="border-l-2 border-gray-200">
               <h4 className="pl-2 font-semibold text-lg text-gray-700">
                 Bundle cap
@@ -257,6 +257,47 @@ const LeadCriteriaPage = ({ data }) => {
               </div>
             </div>
           </div>
+          <div className="mt-8 md:hidden flex justify-between">
+            <div className="w-1/3">
+              <h4 className="font-semibold">Bundle</h4>
+              <p className="mt-2 text-gray-700 text-sm">
+                Max{" "}
+                <span className="text-purple-600 text-base font-semibold">
+                  15
+                </span>{" "}
+                members
+              </p>
+            </div>
+            <div className="w-1/3">
+              <h4 className="font-semibold">Pro Plan</h4>
+              <p className="mt-2 text-gray-700 text-sm">
+                Max{" "}
+                <span className="text-purple-600 text-base font-semibold">
+                  15
+                </span>{" "}
+                members
+              </p>
+            </div>
+            <div className="w-1/3">
+              <h4 className="font-semibold">Grow Plan</h4>
+              <p className="mt-2 text-gray-700 text-sm">
+                Max{" "}
+                <span className="text-purple-600 text-base font-semibold">
+                  30
+                </span>{" "}
+                members
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 md:hidden">
+            <h4 className="font-semibold">List splitting</h4>
+            <p className="mt-2 text-gray-700 text-sm">
+              <span className="text-purple-600 text-base font-semibold">
+                Active
+              </span>{" "}
+              for all plans
+            </p>
+          </div>
         </div>
         <div className="mt-12">
           <Img
@@ -296,7 +337,7 @@ const LeadCriteriaPage = ({ data }) => {
                 </h4>
                 <p className="mt-2 pl-2 text-sm text-gray-700">
                   The Pro plan includes all categories, but prioritizes products
-                  from the beauty, clothing grocery, and toys categories.
+                  from the beauty, clothing, grocery, and toys categories.
                 </p>
                 <div className="pl-2 pt-"></div>
               </div>
