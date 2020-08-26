@@ -8,19 +8,19 @@ const Footer = () => {
         <div>
           <Link
             to={`/pricing`}
-            className="hover:text-gray-200 transition-colors duration-200"
+            className="hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Pricing
           </Link>
           <Link
             to={`/contact`}
-            className="ml-8 hover:text-gray-200 transition-colors duration-200"
+            className="ml-8 hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Contact
           </Link>
           <Link
             to={`/demo`}
-            className="ml-8 hover:text-gray-200 transition-colors duration-200"
+            className="ml-8 hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Demo
           </Link>
@@ -28,13 +28,13 @@ const Footer = () => {
         <div className="mt-4 md:mt-0 md:ml-8">
           <Link
             to={`/privacy`}
-            className="hover:text-gray-200 transition-colors duration-200"
+            className="hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Privacy
           </Link>
           <Link
             to={`/terms`}
-            className="ml-8 hover:text-gray-200 transition-colors duration-200"
+            className="ml-8 hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Terms
           </Link>

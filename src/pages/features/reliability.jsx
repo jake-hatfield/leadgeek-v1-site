@@ -10,32 +10,6 @@ import CTA from "../../components/cta"
 import Check from "../../assets/check.svg"
 
 const LeadCriteriaPage = () => {
-  const leadReliability = [
-    {
-      id: 1,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Save time sourcing",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-    {
-      id: 2,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Get informed research",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-    {
-      id: 3,
-      iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Count on consistency",
-      content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide",
-    },
-  ]
   const dataList = [
     {
       id: 1,
@@ -107,17 +81,38 @@ const LeadCriteriaPage = () => {
     },
   ]
   const dataPoints = dataList.length
+  const leadReliability = [
+    {
+      id: 1,
+      iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+      header: "Save time sourcing",
+      content:
+        "Our team helps you guard your time by doing your daily product sourcing at a fraction of the price.",
+    },
+    {
+      id: 2,
+      iconPath:
+        "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+      header: "Get informed research",
+      content: `We use ${dataPoints} data points in our product analysis to ensure we're delivering the highest-quality leads to you every day.`,
+    },
+    {
+      id: 3,
+      iconPath:
+        "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      header: "Count on consistency",
+      content:
+        "We provide the opportunity for stable growth by guaranteeing a fixed and consistent number of leads.",
+    },
+  ]
+
   return (
     <Layout>
-      <SEO title="Member Support" description="" />
+      <SEO title="Proven Reliability" description="" />
       <AltHeader
         title={`Proven reliability`}
-        header={`Online Arbitrage Leads That Save You Time.`}
-        subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
-        quibum optio distinctio vitae similique amet aut cumque reprehenderit
-        doloremque! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Explicabo unde quibusdam optio distinctio vitae similique amet aut
-        cumque reprehenderit doloremque!`}
+        header={`Increase your arbitrage sourcing output predictably.`}
+        subHeader={`LeadGeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, we guarantee a consistent output so you can seamlessly grow your FBA business and focus on more important things.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -132,7 +127,7 @@ const LeadCriteriaPage = () => {
         iconColor={`bg-purple-100 text-purple-600`}
         margin={`mt-20`}
         title={`How it works`}
-        mainHeader={`Lorem ipsum dolor sit`}
+        mainHeader={`Grow your business systematically.`}
       />
       <section className="mt-8 md:mt-12 lg:mt-20 -mb-16 lg:-mb-24 pt-12 md:pt-0 md:mx-auto container-width text-gray-700">
         <header className="px-4 xl:px-0 max-w-3xl">
@@ -140,7 +135,7 @@ const LeadCriteriaPage = () => {
             Save time sourcing
           </span>
           <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-            We're the all-in-one toolkit for productive sourcing.
+            Focus on what matters most.
           </h2>
         </header>
         <div className="mt-8 md:px-4 xl:px-0 md:flex md:justify-between">
@@ -149,9 +144,10 @@ const LeadCriteriaPage = () => {
               Automate the time-consuming work
             </h3>
             <p className="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              sequi soluta accusantium enim officia atque nam repudiandae ipsam
-              vero nesciunt!
+              LeadGeek lets you transition from a sourcing grind into a
+              concentrated FBA business owner. Let our expert team compress 8+
+              hours of product analysis into a list that you can review in a few
+              minutes each day.
             </p>
           </div>
           <div className="mt-8 md:mt-0 md:ml-4 lg:ml-6 md:w-3/4">
@@ -256,8 +252,7 @@ const LeadCriteriaPage = () => {
               Get informed research
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-              We check {dataPoints} different data points bring you the best
-              leads.
+              Dive deep into product information.
             </h2>
           </header>
           <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
@@ -266,12 +261,12 @@ const LeadCriteriaPage = () => {
                 Detailed analysis for every product
               </h3>
               <p className="mt-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                sequi soluta accusantium enim officia atque nam repudiandae
-                ipsam vero nesciunt!
+                Since we provide a thorough summary of a product's strengths
+                using {dataPoints} real-time data points, you can be empowered
+                to make informed purchasing decisions in a fraction of the time.
               </p>
               <h3 className="mt-6 font-medium text-gray-700">
-                Our data points:
+                Every product includes:
               </h3>
               <BulletedList
                 items={dataList}
@@ -290,13 +285,13 @@ const LeadCriteriaPage = () => {
               Count on consistency
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-              We send proven-selling products directly to your inbox every
-              weekday.
+              Cut out sourcing volatility.
             </h2>
             <p className="mt-4 max-w-2xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-              sequi soluta accusantium enim officia atque nam repudiandae ipsam
-              vero nesciunt!
+              With LeadGeek, you get a steady stream of proven-selling products
+              directly to your inbox at 8 am CST every weekday. Gain peace of
+              mind in knowing that you'll have guaranteed arbitrage
+              opportunities without volume fluctuations.
             </p>
           </header>
           <article className="mt-8 lg:mt-12 md:flex md:justify-between">
@@ -308,21 +303,22 @@ const LeadCriteriaPage = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className="p-2 h-10 w-10 rounded-md bg-teal-300 text-teal-800"
+                    className="p-2 h-10 w-10 rounded-md bg-purple-600 text-white"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                      d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
                     />
                   </svg>
                   <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                    500+ sources
+                    500+ Retail sources
                   </h3>
-                  <p className={`mt-4`}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vitae sequi soluta accusantium en
+                  <p className={`mt-2`}>
+                    Our team sources over 500 US e-retailers to give your
+                    product portfolio variety and help diminish lead
+                    over-exposure.
                   </p>
                 </div>
               </div>
@@ -333,21 +329,22 @@ const LeadCriteriaPage = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    className="p-2 h-10 w-10 rounded-md bg-teal-300 text-teal-800"
+                    className="p-2 h-10 w-10 rounded-md bg-purple-600 text-white"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                     />
                   </svg>
                   <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                    Reliable leads
+                    Reliable output
                   </h3>
-                  <p className={`mt-4`}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vitae sequi soluta accusantium en
+                  <p className={`mt-2`}>
+                    We guarantee 10 product leads every day, Monday-Friday. Join
+                    our Grow+Pro Bundle for 100+ leads per week at a substantial
+                    volume discount.
                   </p>
                 </div>
               </div>

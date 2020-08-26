@@ -29,14 +29,14 @@ const CTA = ({
           <nav className="mt-4 lg:mt-6 mx-auto">
             <Link
               to={`/signup`}
-              className={`py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md ${buttonStyles}  transition-colors duration-200`}
+              className={`py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md ${buttonStyles}  transition-colors duration-200 focus:outline-none focus:shadow-outline`}
             >
               {buttonText || "Get started"}
             </Link>
             <div className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 inline-block">
               <Link
                 to={`/${link || "demo"}`}
-                className={`flex items-center relative group ${linkStyles}`}
+                className={`flex items-center relative group ${linkStyles} focus:outline-none focus:shadow-outline`}
               >
                 {linkText || "Watch demo"}
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />

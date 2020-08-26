@@ -114,23 +114,23 @@ const LeadCriteriaPage = ({ data }) => {
         "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
       header: "Low competition",
       content:
-        "Seller competition is kept in check with extremely tight member caps and advanced capacity balancing methods.",
+        "We keep seller competition in check with extremely tight member cutoffs and advanced capacity balancing methods.",
     },
     {
       id: 3,
       iconPath:
         "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
       header: "Comprehensive categories",
-      content: `Products from over ${categoryCount} categories are sourced to keep the daily leads fresh and give our members a variety of choices.`,
+      content: `We source products from over ${categoryCount} categories to keep the daily leads fresh and give our members a variety of choices.`,
     },
   ]
   return (
     <Layout>
-      <SEO title="Member Support" description="" />
+      <SEO title="Strict Criteria" description="" />
       <AltHeader
         title={`Strict Criteria`}
         header={`Get premium leads that align with your selling standards.`}
-        subHeader={`LeadGeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities in large volume.`}
+        subHeader={`LeadGeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities so you don't have to spend hours sourcing yourself.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -173,7 +173,7 @@ const LeadCriteriaPage = ({ data }) => {
                 Low competition
               </span>
               <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-                Our strategies to reduce lead exposure.
+                Strategies that reduce lead exposure.
               </h2>
             </header>
             <div className="mt-8 md:flex md:justify-between">
@@ -193,7 +193,7 @@ const LeadCriteriaPage = ({ data }) => {
                   />
                 </svg>
                 <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                  Limited seats
+                  Seat limiting
                 </h3>
                 <p className={`mt-2`}>
                   Intra-list seller competition is something we take very

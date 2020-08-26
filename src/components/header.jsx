@@ -233,7 +233,10 @@ const Header = () => {
         {/* logo */}
         <div>
           <div className="font-bold text-xl lg:text-2xl">
-            <Link to={`/`} className="text-gray-900">
+            <Link
+              to={`/`}
+              className="text-gray-900 focus:outline-none focus:shadow-outline"
+            >
               Lead<span className="text-purple-500">Geek</span>
             </Link>
           </div>
@@ -281,7 +284,7 @@ const Header = () => {
           </div>
           <Link
             to={`/signup`}
-            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-purple-100 font-medium text-purple-600 hover:text-white hover:bg-purple-600 transition-colors duration-200"
+            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-purple-100 font-medium text-purple-600 hover:text-white hover:bg-purple-600 transition-colors duration-200 focus:outline-none focus:shadow-outline"
             activeClassName="active"
           >
             Sign up

@@ -75,11 +75,11 @@ const IndexPage = () => (
         ))}
       </div>
     </section>
-    <section className="mt-12 lg:mt-24 container md:flex md:justify-between">
+    <section className="mt-12 lg:mt-24 container lg:flex lg:justify-between">
       <header className="md:max-w-xs lg:w-2/5 font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
-        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>The complete toolkit for productive sourcing.</h2>
       </header>
-      <aside className="md:mx-auto lg:mx-0 mt-8 md:mt-0 md:max-w-xl lg:w-3/5">
+      <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-3/5">
         <div className="md:flex md:justify-between">
           <div className="md:mr-12 lg:w-1/2">
             <IconExample className="p-2 h-10 w-10 bg-purple-100 rounded-md text-purple-600" />
