@@ -9,6 +9,7 @@ const tripleIcons = ({
   items,
   primaryTextColor,
   secondaryTextColor,
+  textCenter,
 }) => {
   return (
     <section
@@ -19,11 +20,15 @@ const tripleIcons = ({
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
             {title}
           </span>
-          <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold">
+          <h2
+            className={`${
+              textCenter && `md:text-center`
+            } mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold`}
+          >
             {mainHeader}
           </h2>
         </header>
-        <div className="mt-6 xl:mt-8 md:flex md:justify-between">
+        <div className="mt-12 lg:mt-6 xl:mt-8 md:flex md:justify-between">
           {items.map(item => (
             <div
               key={item.id}

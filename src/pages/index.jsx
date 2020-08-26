@@ -10,23 +10,22 @@ import IconExample from "../assets/bell.svg"
 const featureList = [
   {
     number: "1",
-    header: "Lorem ipsum dolor sit",
+    header: "Drastically save time",
     body:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabunde quibusdam optio distinctio vitae similique amet aut cumquereprehenderit doloremque!",
+      "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a daily pre-vetted list of leads in minutes each day.",
     image: "Hello",
   },
   {
     number: "2",
-    header: "Lorem ipsum dolor sit",
-    body:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabunde quibusdam optio distinctio vitae similique amet aut cumquereprehenderit doloremque!",
+    header: "Predictably source products",
+    body: "As an Amazon arbitrage seller, ",
     image: "Hello",
   },
   {
     number: "3",
-    header: "Lorem ipsum dolor sit",
+    header: "Significantly scale volume",
     body:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabunde quibusdam optio distinctio vitae similique amet aut cumquereprehenderit doloremque!",
+      "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up with us as your business grows.",
     image: "Hello",
   },
 ]
@@ -37,11 +36,7 @@ const IndexPage = () => (
     <section>
       <PrimaryHeader
         header={`We help you find great online arbitrage leads.`}
-        subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
-        quibum optio distinctio vitae similique amet aut cumque reprehenderit
-        doloremque! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Explicabo unde quibusdam optio distinctio vitae similique amet aut
-        cumque reprehenderit doloremque!`}
+        subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of proven leads to your inbox.`}
         nav
         linkOne={`pricing`}
         linkOneText={`Get started`}
@@ -59,13 +54,13 @@ const IndexPage = () => (
           </h2>
         </header>
         {featureList.map(feature => (
-          <article key={feature.number} className="mt-8 md:mt-12 lg:mt-16">
+          <article key={feature.number} className="mt-8 lg:mt-12">
             <div className="flex">
               <div className="lg:mt-1 p-3 md:p-0 flex items-center justify-center h-8 w-8 bg-teal-200 rounded-full font-bold text-teal-500 number-list">
                 {feature.number}
               </div>
               <header className="mt-1 ml-8 md:max-w-md">
-                <h2 className="text-xl lg:text-2xl xl:text-3xl font-medium text-gray-900">
+                <h2 className="text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
                   {feature.header}
                 </h2>
                 <p className="mt-4 text-gray-700 lg:text-lg">{feature.body}</p>
@@ -82,7 +77,19 @@ const IndexPage = () => (
       <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-3/5">
         <div className="md:flex md:justify-between">
           <div className="md:mr-12 lg:w-1/2">
-            <IconExample className="p-2 h-10 w-10 bg-purple-100 rounded-md text-purple-600" />
+            <svg
+              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+              />
+            </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
               Identifying your dream persona
             </h3>
@@ -94,7 +101,19 @@ const IndexPage = () => (
             </p>
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
-            <IconExample className="p-2 h-10 w-10 bg-purple-100 rounded-md text-purple-600" />
+            <svg
+              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              />
+            </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
               Clarifying your message
             </h3>
@@ -107,7 +126,21 @@ const IndexPage = () => (
         </div>
         <div className="mt-8 lg:mt-12 md:flex md:justify-between">
           <div className="md:mr-12 lg:w-1/2">
-            <IconExample className="p-2 h-10 w-10 bg-purple-100 rounded-md text-purple-600" />
+            <svg
+              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              />
+            </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
               Positioning your brand strategically
             </h3>
@@ -118,7 +151,19 @@ const IndexPage = () => (
             </p>
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
-            <IconExample className="p-2 h-10 w-10 bg-purple-100 rounded-md text-purple-600" />
+            <svg
+              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
               Converting your power users
             </h3>

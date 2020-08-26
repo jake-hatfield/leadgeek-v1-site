@@ -580,7 +580,9 @@ const PricingPage = () => {
         items={whyLeadGeek}
         primaryTextColor={`text-white`}
         secondaryTextColor={`text-purple-100`}
-        iconColor={`bg-white text-purple-600`}
+        iconColor={`bg-white text-purple-600
+        `}
+        textCenter
       />
       <section className="text-gray-900">
         <header className="mt-12 lg:mt-24 container text-center">
