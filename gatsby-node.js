@@ -5,3 +5,13 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
+  createRedirect({
+    fromPath: "https://leadgeek.netlify.app/features",
+    toPath: "https://leadgeek.netlify.app/",
+    isPermanent: true,
+    force: true,
+  })
+}
