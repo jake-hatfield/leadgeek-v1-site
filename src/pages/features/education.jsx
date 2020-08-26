@@ -37,7 +37,7 @@ const supportPage = () => {
     <Layout>
       <SEO title="Member Support" description="" />
       <AltHeader
-        title={`Proven reliability`}
+        title={`Seller education`}
         header={`Online Arbitrage Leads That Save You Time.`}
         subHeader={`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo unde
   quibum optio distinctio vitae similique amet aut cumque reprehenderit

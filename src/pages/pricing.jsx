@@ -154,26 +154,26 @@ const PricingPage = () => {
     {
       id: 1,
       iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your dream personas",
+        "M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z",
+      header: "Excellent standards",
       content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+        "We understand that finding profitable products is a major responsibility for an arbitrage seller, and we don't take it lightly. Our criteria reflect the priority we place to only bring you the best.",
     },
     {
       id: 2,
       iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your dream personas",
+        "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
+      header: "Complete toolkit",
       content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+        "Our service cuts out the need to subscribe to expensive 3rd party sourcing tools. We help reduce your monthly costs by consolidating everything you need in one place.",
     },
     {
       id: 3,
       iconPath:
-        "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
-      header: "Identifying your dream personas",
+        "M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z",
+      header: "Friendly support",
       content:
-        "Founders who cast a wide net inevitably pick up some trash. Rather than marketing wide, I will help you market deep by creating a clear ideal persona (and equally as importantly",
+        "Navigating Amazon's rules can be tricky, but not with experienced sellers in your corner. Our team is happy to help out any way we can to make your selling experience better.",
     },
   ]
   const coreFeatureRows = [

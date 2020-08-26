@@ -28,7 +28,7 @@ const tripleIcons = ({
             {mainHeader}
           </h2>
         </header>
-        <div className="mt-12 lg:mt-6 xl:mt-8 md:flex md:justify-between">
+        <div className="mt-12 md:flex md:justify-between">
           {items.map(item => (
             <div
               key={item.id}

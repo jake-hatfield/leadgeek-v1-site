@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -6,26 +7,28 @@ import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 
 import IconExample from "../assets/bell.svg"
+import ArrowRight from "../assets/arrow-right.svg"
 
 const featureList = [
   {
     number: "1",
     header: "Drastically save time",
     body:
-      "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a daily pre-vetted list of leads in minutes each day.",
+      "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a pre-vetted list of leads in just minutes each day so you can focus on more important things.",
     image: "Hello",
   },
   {
     number: "2",
     header: "Predictably source products",
-    body: "As an Amazon arbitrage seller, ",
+    body:
+      "One of the biggest hurdles as an Amazon seller is sustainably finding products. We provide you with a guaranteed stream of leads so your business never suffers any downtime.",
     image: "Hello",
   },
   {
     number: "3",
     header: "Significantly scale volume",
     body:
-      "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up with us as your business grows.",
+      "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up with us as your business grows. Increasing potential new finds is as simple as subscribing to another list.",
     image: "Hello",
   },
 ]
@@ -49,8 +52,7 @@ const IndexPage = () => (
       <div className="container">
         <header className="lg:mx-auto md:max-w-xl xl:max-w-2xl">
           <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900 lg:text-center">
-            Lead<span className="text-purple-500">Geek</span> makes it easy for
-            arbitrage sellers like you to:
+            LeadGeek makes it easy for arbitrage sellers like you to:
           </h2>
         </header>
         {featureList.map(feature => (
@@ -91,14 +93,22 @@ const IndexPage = () => (
               />
             </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
-              Identifying your dream persona
+              Strict criteria
             </h3>
             <p className="mt-4 text-gray-700 lg:text-lg">
-              Founders who cast a wide net inevitably pick up some trash. Rather
-              than marketing wide, I will help you market deep by creating a
-              clear ideal persona (and equally as importantly - a negative
-              persona).
+              We don't sacrifice standards or cut any corners - every lead needs
+              to meet rigorous requirements before they're approved and sent to
+              you.
             </p>
+            <div className="mt-4 inline-block">
+              <Link
+                to={`/features/criteria`}
+                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+              >
+                Learn about lead criteria
+                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
             <svg
@@ -115,13 +125,21 @@ const IndexPage = () => (
               />
             </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
-              Clarifying your message
+              Proven reliability
             </h3>
             <p className="mt-4 text-gray-700 lg:text-lg">
-              Your company may solve many problems, but which one(s) do your
-              users care about the most? I will trim the fat from your messaging
-              to serve your users up some filet-mignon quality clarity.
+              Our team works tirelessly to bring you a consistent output of
+              high-quality products that you can count on to deliver results.
             </p>
+            <div className="mt-4 inline-block">
+              <Link
+                to={`/features/reliability`}
+                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+              >
+                Learn about sourcing reliability
+                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="mt-8 lg:mt-12 md:flex md:justify-between">
@@ -142,13 +160,21 @@ const IndexPage = () => (
               />
             </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
-              Positioning your brand strategically
+              Seller education
             </h3>
             <p className="mt-4 text-gray-700 lg:text-lg">
-              Smart SaaS companies are constantly trying to out-position their
-              competitors so their ideal customers come to them. I will help
-              identify and communicate your strongest advantages to your users.
+              Learn foundational online arbitrage concepts and strategies
+              through guides, courses, and templates available for members.
             </p>
+            <div className="mt-4 inline-block">
+              <Link
+                to={`/features/education`}
+                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+              >
+                Learn about arbitrage training
+                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+              </Link>
+            </div>
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
             <svg
@@ -165,14 +191,21 @@ const IndexPage = () => (
               />
             </svg>
             <h3 className="mt-6 text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
-              Converting your power users
+              Member support
             </h3>
             <p className="mt-4 text-gray-700 lg:text-lg">
-              Time to take action! Your power users are your dream personas
-              matured from caterpillar to butterfly. Once these users fully
-              understand the value in your product, they’ll stick around for a
-              long, long time.
+              Our experienced team has your back! Reach out to us for dedicated
+              support and other perks exclusive to LeadGeek sellers.
             </p>
+            <div className="mt-4 inline-block">
+              <Link
+                to={`/features/support`}
+                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+              >
+                Learn about member support
+                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </aside>

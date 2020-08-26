@@ -263,7 +263,8 @@ const LeadCriteriaPage = () => {
               <p className="mt-4">
                 Since we provide a thorough summary of a product's strengths
                 using {dataPoints} real-time data points, you can be empowered
-                to make informed purchasing decisions in a fraction of the time.
+                to make informed purchasing decisions in a fraction of the time
+                it would normally take.
               </p>
               <h3 className="mt-6 font-medium text-gray-700">
                 Every product includes:

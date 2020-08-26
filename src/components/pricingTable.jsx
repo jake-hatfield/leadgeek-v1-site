@@ -27,7 +27,7 @@ const pricingTable = ({ tableHeader, featureRows, id }) => {
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
             <Link
               to={`/signup/bundle`}
-              className="md:py-2 md:px-3 bg-purple-600 shadow-sm rounded-md text-white font-semibold hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
+              className="md:py-2 md:px-3 bg-purple-600 shadow-md rounded-md text-white font-semibold hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
             >
               Sign up
             </Link>
@@ -35,7 +35,7 @@ const pricingTable = ({ tableHeader, featureRows, id }) => {
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
             <Link
               to={`/signup/pro`}
-              className="md:py-2 md:px-3 shadow-sm rounded-md text-purple-500 font-semibold hover:text-purple-600 focus:outline-none focus:shadow-outline"
+              className="md:py-2 md:px-3 shadow-xs rounded-md text-purple-500 font-semibold hover:text-purple-600 focus:outline-none focus:shadow-outline"
             >
               Sign up
             </Link>
@@ -43,7 +43,7 @@ const pricingTable = ({ tableHeader, featureRows, id }) => {
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
             <Link
               to={`/signup/grow`}
-              className="md:py-2 md:px-3 shadow-sm rounded-md text-purple-500 font-semibold hover:text-purple-600 focus:outline-none focus:shadow-outline"
+              className="md:py-2 md:px-3 shadow-xs rounded-md text-purple-500 font-semibold hover:text-purple-600 focus:outline-none focus:shadow-outline"
             >
               Sign up
             </Link>

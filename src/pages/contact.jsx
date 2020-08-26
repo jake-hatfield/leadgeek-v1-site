@@ -31,7 +31,7 @@ const ContactPage = () => {
               </div>
               <address className="mt-6 text-gray-500 not-italic">
                 <div className="mt-3 flex items-center">
-                  <Mail className="p-2 h-8 w-8 bg-teal-200 rounded-md text-teal-600" />
+                  <Mail className="p-2 h-10 w-10 bg-teal-200 rounded-md text-teal-600" />
                   <a
                     href="mailto:hello@leadgeek.io"
                     target="_blank"
