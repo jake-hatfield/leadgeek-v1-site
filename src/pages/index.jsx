@@ -56,8 +56,11 @@ const IndexPage = () => (
           </h2>
         </header>
         {featureList.map(feature => (
-          <article key={feature.number} className="mt-8 lg:mt-12">
-            <div className="flex">
+          <article
+            key={feature.number}
+            className="mt-8 lg:mt-12 md:flex md:justify-between"
+          >
+            <div className="md:w-1/2 flex">
               <div className="lg:mt-1 p-3 md:p-0 flex items-center justify-center h-8 w-8 bg-teal-200 rounded-full font-bold text-teal-500 number-list">
                 {feature.number}
               </div>
@@ -68,6 +71,7 @@ const IndexPage = () => (
                 <p className="mt-4 text-gray-700 lg:text-lg">{feature.body}</p>
               </header>
             </div>
+            <div className="md:w-1/2">hello</div>
           </article>
         ))}
       </div>
