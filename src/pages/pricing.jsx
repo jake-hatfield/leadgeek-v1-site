@@ -584,7 +584,7 @@ const PricingPage = () => {
         `}
         textCenter
       />
-      <section className="text-gray-900">
+      <section id="features" className="text-gray-900">
         <header className="mt-12 lg:mt-24 container text-center">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold">
             Compare plans
