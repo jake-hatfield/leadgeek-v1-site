@@ -245,7 +245,7 @@ const Header = () => {
         <div className="-mr-2 -my-2 md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-200 ease-in-out"
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
           >
             <svg
               className="h-6 w-6"
@@ -275,7 +275,8 @@ const Header = () => {
           </div>
           <Link
             to={`/pricing`}
-            className="text-base leading-6 font-medium text-gray-500 hover:text-purple-600 focus:outline-none focus:text-purple-600 transition ease-in-out duration-200"
+            className="text-base leading-6 font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-purple-600 transition ease-in-out duration-200"
+            activeClassName="active"
           >
             Pricing
           </Link>
@@ -284,8 +285,7 @@ const Header = () => {
           </div>
           <Link
             to={`/signup`}
-            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-purple-100 font-medium text-purple-600 hover:text-white hover:bg-purple-600 transition-colors duration-200 focus:outline-none focus:shadow-outline"
-            activeClassName="active"
+            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-transparent font-medium text-gray-500 border border-gray-500 hover:text-white hover:bg-purple-600 hover:border-purple-600 transition-colors duration-200 focus:outline-none focus:shadow-outline"
           >
             Sign up
           </Link>

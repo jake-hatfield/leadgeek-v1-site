@@ -12,7 +12,7 @@ function MoreDropdown({ title, items }) {
         onKeyPress={() => toggle(!open)}
         onMouseEnter={() => open === false && toggle(!open)}
         onMouseLeave={() => open === true && toggle(!open)}
-        className="inline-flex space-x-1 text-gray-500 text-base leading-6 font-medium hover:text-purple-600 focus:outline-none focus:text-purple-600 transition ease-in-out duration-200 md:cursor-default"
+        className="inline-flex space-x-1 text-gray-500 text-base leading-6 font-medium hover:text-gray-700 focus:outline-none focus:text-gray-700 transition ease-in-out duration-200 md:cursor-default"
       >
         <div>
           <div className="flex items-center md:cursor-pointer">

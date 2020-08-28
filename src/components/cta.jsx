@@ -8,8 +8,11 @@ const CTA = ({
   padding,
   bgColor,
   textColor,
+  mainHeader,
+  subHeader,
   buttonText,
   buttonStyles,
+  buttonLink,
   link,
   linkText,
   linkStyles,
@@ -21,14 +24,14 @@ const CTA = ({
           <h2
             className={`text-2xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
           >
-            Ready to get started?
+            {mainHeader || `Ready to get started?`}
             <span className="mt-4 lg:mt-2 block">
-              Sign up for LeadGeek today.
+              {subHeader || `Sign up for LeadGeek today.`}
             </span>
           </h2>
           <nav className="mt-4 lg:mt-6 mx-auto">
             <Link
-              to={`/signup`}
+              to={`/${buttonLink || `pricing`}`}
               className={`py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md ${buttonStyles}  transition-colors duration-200 focus:outline-none focus:shadow-outline`}
             >
               {buttonText || "Get started"}

@@ -58,31 +58,31 @@ const IndexPage = () => (
         {featureList.map(feature => (
           <article
             key={feature.number}
-            className="mt-8 lg:mt-12 md:flex md:justify-between"
+            className="mt-8 lg:mt-12 flex flex-col-reverse md:flex-row justify-between"
           >
-            <div className="md:w-1/2 flex">
-              <div className="lg:mt-1 p-3 md:p-0 flex items-center justify-center h-8 w-8 bg-teal-200 rounded-full font-bold text-teal-500 number-list">
+            <div className="md:w-1/2 md:flex">
+              <span className="p-3 h-8 w-8 flex items-center justify-center bg-teal-200 rounded-full font-bold text-teal-500">
                 {feature.number}
-              </div>
-              <header className="mt-1 ml-8 md:max-w-md">
+              </span>
+              <header className="mt-2 md:ml-4 lg:ml-8 md:max-w-md">
                 <h2 className="text-lg lg:text-xl xl:text-2xl font-medium text-gray-900">
                   {feature.header}
                 </h2>
                 <p className="mt-4 text-gray-700 lg:text-lg">{feature.body}</p>
               </header>
             </div>
-            <div className="md:w-1/2">hello</div>
+            <div className="md:ml-12 lg:ml-16 md:w-1/2">hello</div>
           </article>
         ))}
       </div>
     </section>
     <section className="mt-12 lg:mt-24 container lg:flex lg:justify-between">
-      <header className="md:max-w-xs lg:w-2/5 font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
+      <header className="md:max-w-xs lg:w-1/3 xl:w-2/5 font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
         <h2>The complete toolkit for productive sourcing.</h2>
       </header>
-      <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-3/5">
+      <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5">
         <div className="md:flex md:justify-between">
-          <div className="md:mr-12 lg:w-1/2">
+          <div className="md:mr-8 lg:w-1/2">
             <svg
               className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
               fill="none"
@@ -107,7 +107,7 @@ const IndexPage = () => (
             <div className="mt-4 inline-block">
               <Link
                 to={`/features/criteria`}
-                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex flex-wrap-none items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
               >
                 Learn about lead criteria
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
@@ -138,7 +138,7 @@ const IndexPage = () => (
             <div className="mt-4 inline-block">
               <Link
                 to={`/features/reliability`}
-                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex whitespace-no-wrap items-center text-gray-500 whitespace-no-wrap group hover:text-gray-700 focus:outline-none focus:shadow-outline"
               >
                 Learn about sourcing reliability
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
@@ -173,7 +173,7 @@ const IndexPage = () => (
             <div className="mt-4 inline-block">
               <Link
                 to={`/features/education`}
-                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
               >
                 Learn about arbitrage training
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
@@ -204,7 +204,7 @@ const IndexPage = () => (
             <div className="mt-4 inline-block">
               <Link
                 to={`/features/support`}
-                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
               >
                 Learn about member support
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />

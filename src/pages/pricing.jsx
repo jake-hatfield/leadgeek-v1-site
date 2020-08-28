@@ -519,7 +519,7 @@ const PricingPage = () => {
               <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-purple-400"></div>
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
-                  <span className="inline-flex rounded-full bg-purple-400 px-4 py-1 text-sm leading-5 font-semibold tracking-wider uppercase text-white">
+                  <span className="inline-flex rounded-full bg-purple-500 px-4 py-1 text-sm leading-5 font-semibold tracking-wider uppercase text-white">
                     Get both plans
                   </span>
                 </div>

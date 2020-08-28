@@ -7,13 +7,13 @@
   bottom: -5px;
 }
 
-.number-list::before {
+/* .number-list::before {
   width: 3px;
   @apply absolute top-0 bg-teal-200;
-}
+} */
 
 .active {
-  @apply text-purple-600;
+  @apply text-gray-700;
 }
 
 .nav-width-md {
