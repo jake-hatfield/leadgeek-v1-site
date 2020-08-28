@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 
@@ -72,6 +73,7 @@ const signupPage = () => {
   ]
   return (
     <Layout>
+      <SEO title="Sign Up" />
       <section className="-mt-40 bg-teal-200 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Choose the sourcing plan that fits your needs.`}

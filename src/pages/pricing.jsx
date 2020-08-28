@@ -157,7 +157,7 @@ const PricingPage = () => {
         "M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z",
       header: "Excellent standards",
       content:
-        "We understand that finding profitable products is a major responsibility for an arbitrage seller, and we don't take it lightly. Our criteria reflect the priority we place to only bring you the best.",
+        "We understand that finding profitable products is a major responsibility for an arbitrage seller, and we don't take it lightly. Our criteria reflect our priority to only bring you the best.",
     },
     {
       id: 2,
