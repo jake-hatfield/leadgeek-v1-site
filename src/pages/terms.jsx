@@ -13,7 +13,7 @@ const TermsPage = () => {
       <SEO title="Terms of Service" description="" />
       <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
         <h1 className="text-3xl font-black">
-          {siteTitle}'s terms of service agreement
+          Welcome to {siteTitle}'s terms of service agreement
         </h1>
         <p className="mt-4 text-gray-700 text-gray-700">
           These terms of service constitute a legally binding agreement made
