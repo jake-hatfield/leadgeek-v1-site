@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <section className="py-12 lg:py-24 container text-gray-700">
-        <header className="text-center">
+        <header className="md:text-center">
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
             About us
           </span>
@@ -15,7 +15,7 @@ const AboutPage = () => {
             We are LeadGeek
           </h1>
         </header>
-        <div className="mt-12 mx-auto max-w-2xl">
+        <div className="mt-6 lg:mt-12 mx-auto max-w-2xl">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
             rerum asperiores est rem similique veritatis quod. Totam dolor

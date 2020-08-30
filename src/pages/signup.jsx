@@ -25,7 +25,7 @@ const signupPage = () => {
           Limited to <strong className="font-semibold">15</strong> members
         </p>,
         <p>
-          <strong className="font-semibold">100+</strong> products per week
+          <strong className="font-semibold">100+</strong> products/week
         </p>,
         "All Grow & Pro leads",
         "Support & training",
@@ -44,7 +44,7 @@ const signupPage = () => {
           Limited to <strong className="font-semibold">15</strong> members
         </p>,
         <p>
-          <strong className="font-semibold">50+</strong> products per week
+          <strong className="font-semibold">50+</strong> products/week
         </p>,
         "Pro lead standards",
         "Support & training",
@@ -62,7 +62,7 @@ const signupPage = () => {
           Limited to <strong className="font-semibold">30</strong> members
         </p>,
         <p>
-          <strong className="font-semibold">50+</strong> products per week
+          <strong className="font-semibold">50+</strong> products/week
         </p>,
         "Grow plan criteria",
         "Support & training",
@@ -118,11 +118,11 @@ const signupPage = () => {
                 </div>
                 <span className="ml-2 w-full border border-gray-200" />
               </div>
-              <ul className="mt-4 grid grid-cols-2 col-gap-1">
+              <ul className="mt-4 md:grid md:grid-cols-2 md:col-gap-1">
                 {item.bullets.map(bullet => (
                   <li
                     key={bullet}
-                    className="flex items-start md:items-center text-xs lg:text-sm"
+                    className="flex items-start md:items-center text-sm"
                   >
                     <Check className="h-3 w-3 md:h-4 md:w-4 flex-none text-teal-500 bg-teal-200 rounded-full" />
                     {(typeof bullet == "string" && bullet.includes("Grow")) ||
@@ -130,7 +130,7 @@ const signupPage = () => {
                       <span className="ml-2 lg:ml-4">
                         <Link
                           to={`/pricing#lead-standards`}
-                          className="underline"
+                          className="border-b border-gray-500 border-dotted"
                         >
                           {bullet}
                         </Link>

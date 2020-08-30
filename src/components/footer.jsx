@@ -48,8 +48,8 @@ const Footer = () => {
             </h4>
           </Link>
           <p className="mt-6 max-w-md md:max-w-none text-gray-400">
-            Premium online arbitrage leads for Amazon sellers who are ready to
-            outsource their sourcing.
+            Premium online arbitrage leads for Amazon sellers who want to put
+            product sourcing on full throttle.
           </p>
         </div>
         {categories.map(category => (
