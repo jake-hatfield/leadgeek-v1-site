@@ -8,7 +8,12 @@ import PrimaryHeader from "../components/primaryHeader"
 import EmailModal from "../components/emailModal"
 
 const GuidesPage = ({ data }) => {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen1, setModalOpen1] = useState(false)
+  const [modalOpen2, setModalOpen2] = useState(false)
+  const modalToggle = (modalOpen, setModalOpen) => {
+    setModalOpen(!modalOpen)
+  }
+
   const guides = [
     {
       id: 1,
@@ -19,8 +24,10 @@ const GuidesPage = ({ data }) => {
         "Study a product's metrics to turn arbitrage into a science. In this guide, you'll learn how to use powerful tools to determine the risk/reward of potential purchasing opportunities.",
       date: "Sep 1, 2020",
       length: "19 minute read",
-      shortName: "Keepa",
       image: data.astronaut.childImageSharp.fluid,
+      shortName: "Keepa",
+      setModalOpen: setModalOpen1,
+      modalOpen: modalOpen1,
     },
     {
       id: 2,
@@ -31,10 +38,13 @@ const GuidesPage = ({ data }) => {
         "Be able to take advantage of as many arbitrage opportunities as possible with a mature seller account. This guide teaches you the ungating process so you're no longer limited.",
       date: "Sep 6, 2020",
       length: "12 minute read",
-      shortName: "ungating",
       image: data.astronaut.childImageSharp.fluid,
+      shortName: "ungating",
+      setModalOpen: setModalOpen2,
+      modalOpen: modalOpen2,
     },
   ]
+
   return (
     <Layout>
       <SEO title="Arbitrage Guides" />
@@ -48,11 +58,11 @@ const GuidesPage = ({ data }) => {
       </section>
       <section className="-mt-12 mb-24 container md:grid md:grid-cols-2 lg:grid-cols-3 text-gray-700">
         {guides.map(guide => (
-          <div className="mt-6 first:mt-0 md:mt-0 mx-auto md:mr-0 first:md:ml-0 md:ml-4 lg:ml-6 max-w-xs md:max-w-none">
-            <article
-              key={guide.id}
-              className="relative z-10 rounded-md bg-white shadow-md"
-            >
+          <div
+            key={guide.id}
+            className="mt-6 first:mt-0 md:mt-0 mx-auto md:mr-0 first:md:ml-0 md:ml-4 lg:ml-6 max-w-xs md:max-w-none"
+          >
+            <article className="relative z-10 rounded-md bg-white shadow-md">
               <div>
                 <Img
                   fluid={guide.image}
@@ -93,7 +103,10 @@ const GuidesPage = ({ data }) => {
                   <span className="ml-1">{guide.length}</span>
                 </div>
                 <button
-                  onClick={() => setModalOpen(!modalOpen)}
+                  id={guide.key}
+                  onClick={() =>
+                    modalToggle(guide.modalOpen, guide.setModalOpen)
+                  }
                   className="mt-8 py-3 w-full flex items-center justify-center shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
                 >
                   <span>Get the guide</span>
@@ -115,11 +128,11 @@ const GuidesPage = ({ data }) => {
               </header>
             </article>
             <EmailModal
-              modalOpen={modalOpen}
-              setModalOpen={setModalOpen}
+              id={guide.id}
+              modalOpen={guide.modalOpen}
+              setModalOpen={guide.setModalOpen}
               header={guide.shortName}
-              image={guide.image}
-              bullets={guide.bullets}
+              image={data.astronaut.childImageSharp.fluid}
             />
           </div>
         ))}

@@ -6,7 +6,7 @@ import FormField from "../components/formField"
 const emailModal = ({ modalOpen, setModalOpen, header, image }) => {
   return (
     <article className={`${modalOpen ? `block` : `hidden`}`}>
-      <div class="modal-overlay flex items-center justify-center overflow-auto bg-gray-700">
+      <div className="modal-overlay flex items-center justify-center overflow-auto bg-gray-700">
         <div className="mx-4 w-full max-w-2xl md:flex relative z-40 rounded-md shadow-md bg-white">
           <Img
             fluid={image}
@@ -53,7 +53,7 @@ const emailModal = ({ modalOpen, setModalOpen, header, image }) => {
                   name="email"
                   label="Email"
                   type="email"
-                  placeholder="jeff.bezos@amazon.com"
+                  placeholder="totallyjeffbezos@amazon.com"
                   required
                 />
                 <button

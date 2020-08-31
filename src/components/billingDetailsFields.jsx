@@ -15,7 +15,7 @@ const BillingDetailsFields = () => {
         name="email"
         label="Email"
         type="email"
-        placeholder="jeff.bezos@amazon.com"
+        placeholder="totallyjeffbezos@amazon.com"
         required
       />
     </>
