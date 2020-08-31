@@ -343,9 +343,9 @@ const LeadCriteriaPage = () => {
                     Reliable output
                   </h3>
                   <p className={`mt-2`}>
-                    We guarantee 10 product leads every day, Monday-Friday. Join
-                    our Grow+Pro Bundle for 100+ leads per week at a substantial
-                    volume discount.
+                    We guarantee 10 product leads every day, Monday-Friday. Our
+                    lists go out early in the morning so you can be first to
+                    market with these deals.
                   </p>
                 </div>
               </div>

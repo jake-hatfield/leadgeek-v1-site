@@ -5,18 +5,52 @@ import SignupPage from "../../components/signupPage"
 
 const ProSignupPage = () => {
   const proPrice = 189
+  const proPlanSeats = 15
   const featureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "50+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: (
+        <span>
+          $<strong className="font-semibold">5</strong>-30+ profit per unit
+        </span>
+      ),
+    },
+    {
+      id: "4",
+      body: (
+        <span>
+          <strong className="font-semibold">50</strong>%+ ROI per unit
+        </span>
+      ),
+    },
+    {
+      id: "5",
+      body: (
+        <span>
+          Training e-books & <strong>course</strong>
+        </span>
+      ),
+    },
+    {
+      id: "6",
+      body: "Email & chat support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const plan = "Pro Plan"

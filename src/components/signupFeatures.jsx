@@ -57,9 +57,6 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
           ))}
         </ul>
       </aside>
-      <aside className="mt-5 py-2 px-3 bg-purple-100 rounded-md text-purple-500">
-        Hello
-      </aside>
     </div>
   )
 }

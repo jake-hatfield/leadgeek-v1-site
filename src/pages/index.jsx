@@ -35,7 +35,7 @@ const featureList = [
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Online Arbitrage Leads & Lists for Amazon Sellers" />
     <section>
       <PrimaryHeader
         header={`We help you find great online arbitrage leads.`}

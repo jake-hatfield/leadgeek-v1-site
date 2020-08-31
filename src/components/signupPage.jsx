@@ -28,13 +28,20 @@ const signupPage = ({ price, featureList, plan, discount }) => {
             </p>
           </header>
           <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
-            <div className="mx-auto pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 w-full lg:w-2/3 max-w-sm bg-white rounded-md shadow-lg">
-              <Elements stripe={stripePromise}>
-                <CheckoutForm
-                  price={price}
-                  onSuccessfulCheckout={() => navigate("/order-confirmation/")}
-                />
-              </Elements>
+            <div className="h-full w-full lg:w-2/3 max-w-sm">
+              <div className="mx-auto pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 bg-white rounded-md shadow-lg">
+                <Elements stripe={stripePromise}>
+                  <CheckoutForm
+                    price={price}
+                    onSuccessfulCheckout={() =>
+                      navigate("/order-confirmation/")
+                    }
+                  />
+                </Elements>
+              </div>
+              <aside className="mt-5 py-2 px-3 bg-purple-100 rounded-md text-purple-500">
+                Hello
+              </aside>
             </div>
             <SignupFeatures
               featureList={featureList}

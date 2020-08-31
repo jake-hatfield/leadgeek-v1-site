@@ -5,18 +5,48 @@ import SignupPage from "../../components/signupPage"
 
 const GrowSignupPage = () => {
   const growPrice = 129
+  const growPlanSeats = 30
   const featureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{growPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "50+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: (
+        <span>
+          $<strong className="font-semibold">4</strong>-30+ profit per unit
+        </span>
+      ),
+    },
+    {
+      id: "4",
+      body: (
+        <span>
+          <strong className="font-semibold">40</strong>%+ ROI per unit
+        </span>
+      ),
+    },
+    {
+      id: "5",
+      body: "Training e-books",
+    },
+    {
+      id: "6",
+      body: "Email & chat support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const plan = "Grow Plan"

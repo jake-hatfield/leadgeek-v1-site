@@ -1,56 +1,66 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import CTA from "../components/cta"
 
 const AboutPage = () => {
   return (
     <Layout>
-      <section className="py-12 lg:py-24 container text-gray-700">
-        <header className="md:text-center">
+      <SEO title="About LeadGeek" />
+      <section className="py-12 lg:py-24 container max-w-2xl text-gray-700">
+        <header>
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
-            About us
+            About LeadGeek
           </span>
-          <h1 className="lg:mx-auto max-w-4xl text-4xl lg:text-6xl font-black text-gray-900">
-            We are LeadGeek
+          <h1 className="mt-2 lg:mx-auto max-w-4xl text-4xl lg:text-5xl font-black text-gray-900">
+            We're here to help you grow and understand your Amazon business.
           </h1>
         </header>
-        <div className="mt-6 lg:mt-12 mx-auto max-w-2xl">
+        <div className="mt-6 lg:mt-10">
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            LeadGeek was born out of frustration trying to run an arbitrage
+            business with countless product sourcing tools. With no single point
+            with which to control sourcing output, attempting to scale gets
+            messy in no time flat. And despite juggling so many monthly software
+            subscriptions, often there would be no guarantee of results.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            Our team is made of experienced Amazon sellers who figured out that
+            simplicity is scalability. We create tools that we want ourselves -
+            tools that have a premium feel and that are a pleasure to use, but
+            most of all tools that deliver results.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            Our Amazon journey started with us working full-time and attempting
+            to arbitrage products on the side. This when-the-time-allows gig is
+            all too common, and we knew it wasn't practical long-term.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            We had to change something - and it came in the form of hiring out
+            our sourcing work to virtual assistants. After years of training and
+            managing FBA virtual assistant teams, we have it down to an art and
+            a science.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            The efficiencies we've discovered in managing our own team has
+            transferred over to how we manage our team to source for you. This
+            allows us to bring you scalable arbitrage leads for a mere fraction
+            of the price if you were to do it all on your own.
           </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-            rerum asperiores est rem similique veritatis quod. Totam dolor
-            tenetur accusamus ex recusandae, eius asperiores placeat fugiat
-            quis, ab in? Quas!
+            We're constantly building, improving, and growing with our members
+            to create relevant solutions to their everyday problems. Joining
+            LeadGeek means you're a part of a unique community who genuinely
+            care about every member's success.
+          </p>
+          <p className="mt-4">
+            If you have any questions about what our team can do for you, please{" "}
+            <Link to="/contact" className="font-semibold">
+              contact us
+            </Link>
+            .
           </p>
         </div>
       </section>

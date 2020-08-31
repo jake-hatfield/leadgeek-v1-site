@@ -29,7 +29,7 @@ const CTA = ({
               {subHeader || `Sign up for LeadGeek today.`}
             </span>
           </h2>
-          <nav className="mt-4 lg:mt-6 mx-auto">
+          <nav className="mt-4 md:mt-6 mx-auto">
             <Link
               to={`/${buttonLink || `pricing`}`}
               className={`py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md ${buttonStyles}  transition-colors duration-200 focus:outline-none focus:shadow-outline`}

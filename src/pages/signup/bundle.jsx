@@ -8,18 +8,44 @@ const BundleSignupPage = () => {
   const proPrice = 189
   const bundlePrice = 263
   const discount = Math.trunc((1 - bundlePrice / (proPrice + growPrice)) * 100)
+  const proPlanSeats = 15
   const featureList = [
     {
-      number: "1",
-      body: "Feature 1",
+      id: "1",
+      body: (
+        <span>
+          Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
+          members
+        </span>
+      ),
     },
     {
-      number: "2",
-      body: "Feature 2",
+      id: "2",
+      body: "100+ products per week",
     },
     {
-      number: "3",
-      body: "Feature 3",
+      id: "3",
+      body: "All Grow Plan leads",
+    },
+    {
+      id: "4",
+      body: "All Pro Plan leads",
+    },
+    {
+      id: "5",
+      body: (
+        <span>
+          Training e-books & <strong>course</strong>
+        </span>
+      ),
+    },
+    {
+      id: "6",
+      body: "Premium support",
+    },
+    {
+      id: "7",
+      body: "Free updates",
     },
   ]
   const plan = "Bundle"
