@@ -22,7 +22,7 @@ const primaryHeader = ({
         negativeMargin ? `mt-12 pt-40 ${classPadding}` : `mt-8 md:mt-12`
       } lg:mt-16 container md:text-center`}
     >
-      <h1 className="lg:mx-auto max-w-4xl text-4xl lg:text-6xl font-black text-gray-900">
+      <h1 className="lg:mx-auto max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black text-gray-900">
         {header}
       </h1>
       <h2 className="mt-4 lg:mt-6 mx-auto lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
