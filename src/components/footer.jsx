@@ -36,12 +36,12 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="py-12 relative z-40 bg-gray-900 text-gray-400">
+    <footer className="py-12 relative z-20 bg-gray-900 text-gray-400">
       <nav className="container flex justify-between flex-wrap md:flex-no-wrap">
-        <div className="w-full md:w-2/6 md:mr-12 lg:mr-24">
+        <div className="md:mr-12 lg:mr-24 w-full md:w-2/6">
           <Link
             to={`/`}
-            className="font-bold text-2xl lg:text-3xl text-white focus:outline-none focus:shadow-outline"
+            className="inline-block font-bold text-2xl lg:text-3xl text-white focus:outline-none focus:shadow-outline"
           >
             <h4>
               Lead<span className="text-purple-500">Geek</span>

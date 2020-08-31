@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import ArrowRight from "../assets/arrow-right.svg"
-import Mail from "../assets/mail.svg"
 
 const ContactPage = () => {
   return (

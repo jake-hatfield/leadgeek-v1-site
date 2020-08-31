@@ -112,8 +112,8 @@ const OrderConfirmationPage = () => {
               Support hours:
             </h3>
             <p className="mt-2">
-              <strong className="font-semibold">8am - 5pm</strong> CST
-              Monday-Friday
+              <strong className="font-semibold">8am - 5pm</strong> CST Monday -
+              Friday
             </p>
           </div>
           <div className="mt-6">
@@ -121,7 +121,7 @@ const OrderConfirmationPage = () => {
               Leads sent at:
             </h3>
             <p className="mt-2">
-              <strong className="font-semibold">8am</strong> CST Monday-Friday
+              <strong className="font-semibold">8am</strong> CST Monday - Friday
             </p>
           </div>
         </article>

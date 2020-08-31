@@ -228,7 +228,7 @@ const Header = () => {
     // },
   ]
   return (
-    <header className="relative z-40 container">
+    <header className="relative z-20 container">
       <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
         {/* logo */}
         <div>
