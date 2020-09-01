@@ -3,7 +3,7 @@ import Check from "../assets/check.svg"
 
 const bulletedList = ({ items, margin, gridLayout }) => {
   return (
-    <div className={`${margin} text-gray-900 text-xs lg:text-sm`}>
+    <div className={`${margin} text-gray-900 text-sm md:text-xs lg:text-sm`}>
       <ul
         className={`md:mx-auto md:max-w-xl lg:max-w-3xl md:grid ${gridLayout} text-gray-700`}
       >

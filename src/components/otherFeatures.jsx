@@ -20,7 +20,7 @@ const otherFeatures = ({
       <div className="container">
         <header>
           <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold">
-            Explore other features
+            Explore other LeadGeek features
           </h2>
         </header>
         <div className="mt-12 md:flex md:justify-between">
