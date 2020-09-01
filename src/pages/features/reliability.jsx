@@ -5,6 +5,7 @@ import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
 import BulletedList from "../../components/bulletedList"
+import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Check from "../../assets/check.svg"
@@ -87,14 +88,14 @@ const LeadCriteriaPage = () => {
       iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
       header: "Save time sourcing",
       content:
-        "Our team helps you guard your time by doing your daily product sourcing at a fraction of the price.",
+        "Protect your time by completing monotonous product sourcing in an instant (and at a fraction of the price).",
     },
     {
       id: 2,
       iconPath:
         "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
       header: "Get informed research",
-      content: `We use ${dataPoints} data points in our product analysis to ensure we're delivering the highest-quality leads to you every day.`,
+      content: `We use ${dataPoints} data points in our product analysis to ensure you receive only the highest-quality leads every day.`,
     },
     {
       id: 3,
@@ -102,7 +103,7 @@ const LeadCriteriaPage = () => {
         "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
       header: "Count on consistency",
       content:
-        "We provide the opportunity for stable growth by guaranteeing a fixed and consistent number of leads.",
+        "Take advantage of sourcing stability with a guaranteed, fixed quantity of pre-vetted leads.",
     },
   ]
 
@@ -112,7 +113,7 @@ const LeadCriteriaPage = () => {
       <AltHeader
         title={`Proven reliability`}
         header={`Increase your arbitrage sourcing output predictably.`}
-        subHeader={`LeadGeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, we guarantee a consistent output so you can seamlessly grow your FBA business and focus on more important things.`}
+        subHeader={`LeadGeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, get a guaranteed output to seamlessly grow your FBA business.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -354,6 +355,14 @@ const LeadCriteriaPage = () => {
           </article>
         </div>
       </section>
+      <OtherFeatures
+        primaryTextColor="text-gray-900"
+        secondaryTextColor="text-gray-700"
+        iconColor="bg-purple-100 text-purple-600"
+        criteria
+        education
+        support
+      />
       <CTA
         padding={`py-12 lg:py-24`}
         bgColor="bg-purple-600"

@@ -1,34 +1,31 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
-
-import IconExample from "../assets/bell.svg"
-import ArrowRight from "../assets/arrow-right.svg"
+import ArrowLink from "../components/arrowLink"
 
 const featureList = [
   {
     number: "1",
     header: "Drastically save time",
     body:
-      "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a pre-vetted list of leads in just minutes each day so you can focus on more important things.",
+      "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a pre-vetted list of leads in just minutes each day.",
     image: "Hello",
   },
   {
     number: "2",
     header: "Predictably source products",
     body:
-      "One of the biggest hurdles as an Amazon seller is sustainably finding products. We provide you with a guaranteed stream of leads so your business never suffers any downtime.",
+      "One of the biggest hurdles as an Amazon seller is sustainably finding products. LeadGeek members are provided with a guaranteed stream of leads so their business never suffers any downtime.",
     image: "Hello",
   },
   {
     number: "3",
     header: "Significantly scale volume",
     body:
-      "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up with us as your business grows. Increasing potential new finds is as simple as subscribing to another list.",
+      "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up as your business grows. Increasing potential new finds is as simple as subscribing to another list.",
     image: "Hello",
   },
 ]
@@ -38,7 +35,8 @@ const IndexPage = () => (
     <SEO title="Online Arbitrage Leads & Lists for Amazon Sellers" />
     <section>
       <PrimaryHeader
-        header={`We help you find great online arbitrage leads.`}
+        // header={`We help you find great online arbitrage leads.`}
+        header={`Premium online arbitrage sourcing, streamlined.`}
         subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of proven leads to your inbox.`}
         nav
         linkOne={`pricing`}
@@ -49,6 +47,29 @@ const IndexPage = () => (
       />
     </section>
     <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
+      <header className="container md:text-center">
+        <h1 className="lg:mx-auto max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
+          Hello
+        </h1>
+        <h2 className="mt-4 lg:mt-6 mx-auto lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+          Hello
+        </h2>
+      </header>
+      <div className="container">Hello</div>
+    </section>
+    <section className="py-12 lg:py-24 bg-gray-200">
+      <header className="container md:text-center">
+        <h1 className="lg:mx-auto max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
+          Hello
+        </h1>
+        <h2 className="mt-4 lg:mt-6 mx-auto lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+          Hello
+        </h2>
+      </header>
+      <div className="container">Hello</div>
+    </section>
+
+    <section className="py-12 lg:py-24 bg-gray-100">
       <div className="container">
         <header className="lg:mx-auto md:max-w-xl xl:max-w-2xl">
           <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900 lg:text-center">
@@ -76,7 +97,7 @@ const IndexPage = () => (
         ))}
       </div>
     </section>
-    <section className="mt-12 lg:mt-24 container lg:flex lg:justify-between">
+    <section className="my-12 lg:my-24 container lg:flex lg:justify-between">
       <header className="md:max-w-xs lg:w-1/3 xl:w-2/5 font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
         <h2>The complete toolkit for productive sourcing.</h2>
       </header>
@@ -100,19 +121,14 @@ const IndexPage = () => (
               Strict criteria
             </h3>
             <p className="mt-4 text-gray-700 lg:text-lg">
-              We don't sacrifice standards or cut any corners - every lead needs
-              to meet rigorous requirements before they're approved and sent to
+              Don't sacrifice standards or cut any corners - every lead needs to
+              meet rigorous requirements before they're approved and sent to
               you.
             </p>
-            <div className="mt-4 inline-block">
-              <Link
-                to={`/features/criteria`}
-                className="flex flex-wrap-none items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-              >
-                Learn about lead criteria
-                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-              </Link>
-            </div>
+            <ArrowLink
+              link="/features/criteria"
+              linkText="Learn about lead criteria"
+            />
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
             <svg
@@ -135,15 +151,10 @@ const IndexPage = () => (
               Our team works tirelessly to bring you a consistent output of
               high-quality products that you can count on to deliver results.
             </p>
-            <div className="mt-4 inline-block">
-              <Link
-                to={`/features/reliability`}
-                className="flex whitespace-no-wrap items-center text-gray-500 whitespace-no-wrap group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-              >
-                Learn about sourcing reliability
-                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-              </Link>
-            </div>
+            <ArrowLink
+              link="/features/reliability"
+              linkText="Learn about sourcing reliability"
+            />
           </div>
         </div>
         <div className="mt-8 lg:mt-12 md:flex md:justify-between">
@@ -170,15 +181,10 @@ const IndexPage = () => (
               Learn foundational online arbitrage concepts and strategies
               through guides, courses, and templates available for members.
             </p>
-            <div className="mt-4 inline-block">
-              <Link
-                to={`/features/education`}
-                className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-              >
-                Learn about arbitrage training
-                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-              </Link>
-            </div>
+            <ArrowLink
+              link="/features/education"
+              linkText="Learn about arbitrage training"
+            />
           </div>
           <div className="mt-8 md:mt-0 lg:w-1/2">
             <svg
@@ -201,20 +207,15 @@ const IndexPage = () => (
               Our experienced team has your back! Reach out to us for dedicated
               support and other perks exclusive to LeadGeek sellers.
             </p>
-            <div className="mt-4 inline-block">
-              <Link
-                to={`/features/support`}
-                className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-              >
-                Learn about member support
-                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-              </Link>
-            </div>
+            <ArrowLink
+              link="/features/support"
+              linkText="Learn about member support"
+            />
           </div>
         </div>
       </aside>
     </section>
-    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
+    {/* <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
       <div className="container md:flex md:justify-between">
         <header className="md:max-w-xl lg:w-2/5 font-bold text-3xl lg:text-4xl text-gray-900">
           <h2>Lorem ipsum dolor sit amet.</h2>
@@ -248,7 +249,7 @@ const IndexPage = () => (
           </aside>
         </article>
       </div>
-    </section>
+    </section> */}
     <CTA
       padding={`py-12 lg:py-24`}
       bgColor="bg-purple-600"

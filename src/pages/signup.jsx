@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
+import ArrowLink from "../components/arrowLink"
 import CTA from "../components/cta"
 
 import Check from "../assets/check.svg"
@@ -162,13 +163,11 @@ const signupPage = () => {
                 </span>
               </div>
               <div className="inline-block text-sm lg:text-base">
-                <Link
-                  to={`/pricing#features`}
-                  className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-                >
-                  Compare all features
-                  <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-                </Link>
+                <ArrowLink
+                  link="/pricing#features"
+                  linkText="Compare all features"
+                  noMargin
+                />
               </div>
               <div className="w-full">
                 <Link

@@ -4,6 +4,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
+import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 const supportPage = () => {
@@ -55,6 +56,14 @@ const supportPage = () => {
         margin={`mt-20`}
         title={`Exclusive member training`}
         mainHeader={`Complete educational resources.`}
+      />
+      <OtherFeatures
+        primaryTextColor="text-gray-900"
+        secondaryTextColor="text-gray-700"
+        iconColor="bg-purple-100 text-purple-600"
+        criteria
+        reliability
+        support
       />
       <CTA
         padding={`py-12 lg:py-24`}

@@ -7,6 +7,7 @@ import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
 import LargeDescription from "../../components/largeDescription"
 import BulletedList from "../../components/bulletedList"
+import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 const LeadCriteriaPage = ({ data }) => {
@@ -373,6 +374,14 @@ const LeadCriteriaPage = ({ data }) => {
           </div>
         </div>
       </section>
+      <OtherFeatures
+        primaryTextColor="text-gray-900"
+        secondaryTextColor="text-gray-700"
+        iconColor="bg-purple-100 text-purple-600"
+        reliability
+        education
+        support
+      />
       <CTA
         padding={`py-12 lg:py-24`}
         bgColor="bg-purple-600"

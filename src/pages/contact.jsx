@@ -22,7 +22,7 @@ const ContactPage = () => {
                 Get in touch.
               </h1>
               <h2 className="mt-4 lg:mt-8 text-base md:text-lg leading-relaxed text-gray-700">
-                Reach out with any questions about our services. Our friendly
+                Reach out with any questions about our services and our friendly
                 team will respond as soon as possible.
               </h2>
 
@@ -36,7 +36,7 @@ const ContactPage = () => {
                       href="mailto:hello@leadgeek.io"
                       target="_blank"
                       rel="noreferrer"
-                      className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                      className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
                     >
                       <span>he</span>
                       <span>llo@l</span>
@@ -53,7 +53,7 @@ const ContactPage = () => {
                 <div className="mt-2 inline-block text-gray-500">
                   <a
                     href="mailto:support@leadgeek.io"
-                    className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                    className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
                   >
                     Contact support
                     <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
