@@ -9,6 +9,7 @@ import CTA from "../components/cta"
 
 import Check from "../assets/check.svg"
 import Dotted from "../assets/dotted.svg"
+import HalfDotted from "../assets/half-dotted.svg"
 
 const signupPage = () => {
   const growPrice = 129
@@ -81,6 +82,11 @@ const signupPage = () => {
           subHeader={`Are you just getting started selling? Have some experience under your belt? Join our premium sourcing service and start flipping arbitrage products hassle-free.`}
           negativeMargin
           bottomPadding={`pb-40 md:pb-48`}
+          svgOne={
+            <div className="absolute bottom-0 right-0 z-0 transform -translate-y-6">
+              <HalfDotted className="hidden lg:inline-block w-40 text-teal-400" />
+            </div>
+          }
         />
       </section>
       <section className="-mt-32 container">

@@ -12,6 +12,7 @@ import CTA from "../components/cta"
 
 import Check from "../assets/check.svg"
 import Dotted from "../assets/dotted.svg"
+import HalfDotted from "../assets/half-dotted.svg"
 
 const PricingPage = () => {
   const growPrice = 129
@@ -510,11 +511,19 @@ const PricingPage = () => {
         <PrimaryHeader
           header={`Grow your online arbitrage business with LeadGeek.`}
           negativeMargin
+          svgOne={
+            <div className="absolute bottom-0 right-0 z-0 transform translate-y-32">
+              <Dotted className="hidden lg:inline-block w-32 text-gray-200" />
+            </div>
+          }
         />
         <article
           id="pricing-plans"
-          className="pb-12 lg:pb-24 container lg:grid lg:grid-cols-10"
+          className="pb-12 lg:pb-24 relative container lg:grid lg:grid-cols-10"
         >
+          <div className="absolute bottom-0 left-0 z-0 transform rotate-180 translate-y-12 -translate-x-32">
+            <HalfDotted className="hidden lg:inline-block w-48 text-purple-200" />
+          </div>
           <div className="mx-auto max-w-md md:max-w-sm lg:max-w-none lg:mx-0 lg:col-start-4 lg:col-end-8 lg:row-start-1 lg:row-end-4">
             <div className="relative z-10 rounded-lg shadow-xl">
               <div className="pointer-events-none absolute inset-0 rounded-lg border-2 border-purple-400"></div>

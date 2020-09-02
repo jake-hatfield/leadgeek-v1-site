@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Squiggles from "../assets/squiggles.svg"
+
 const faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [
     {
@@ -194,10 +196,13 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
   return (
     <section className="mt-12 lg:mt-24 bg-gray-100 text-gray-900">
       <div className="py-12 lg:py-24 md:w-3/4 lg:w-full container">
-        <header>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left">
+        <header className="relative">
+          <h2 className="relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left">
             Frequently asked questions
           </h2>
+          <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-16">
+            <Squiggles className="hidden lg:inline-block w-64 text-purple-200" />
+          </div>
         </header>
         <article>
           {questions.map(question => (

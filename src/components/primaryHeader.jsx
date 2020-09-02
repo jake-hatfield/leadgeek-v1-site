@@ -15,6 +15,7 @@ const primaryHeader = ({
   linkTwoText,
   play,
   svgOne,
+  svgTwo,
 }) => {
   const classPadding = bottomPadding ? bottomPadding : `pb-16`
   return (
@@ -51,6 +52,7 @@ const primaryHeader = ({
         )}
       </div>
       {svgOne && svgOne}
+      {svgTwo && svgTwo}
     </header>
   )
 }

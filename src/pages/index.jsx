@@ -8,6 +8,7 @@ import ArrowLink from "../components/arrowLink"
 
 import Dotted from "../assets/dotted.svg"
 import Squiggles from "../assets/squiggles.svg"
+import HalfDotted from "../assets/half-dotted.svg"
 
 const featureList = [
   {
@@ -75,27 +76,30 @@ const IndexPage = () => (
         linkTwoText={`Watch demo`}
         play
         svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-10 translate-x-24">
-            <Dotted className="hidden lg:inline-block w-16 lg:w-24 text-gray-200" />
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-10 -translate-x-32">
+            <Dotted className="hidden lg:inline-block w-32 text-purple-100" />
+          </div>
+        }
+        svgTwo={
+          <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 translate-x-12">
+            <HalfDotted className="hidden lg:inline-block w-48 text-purple-100" />
           </div>
         }
       />
     </section>
     <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-200 overflow-x-hidden">
-      <div className="relative container lg:flex">
-        <div className="absolute bottom-0 right-0 z-0 transform translate-x-32 -translate-y-12">
-          <Dotted className="hidden lg:inline-block w-32 text-purple-300" />
-          {/* <Squiggles className="hidden md:inline-block w-32 text-purple-300" /> */}
-        </div>
+      <div className="container lg:flex">
         <header className="lg:w-2/3">
-          <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-            How much is ineffective sourcing costing you?
-          </h2>
-          <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-            Finding the right products to sell is the core of a mature online
-            arbitrage business. If you can't routinely produce useful leads, how
-            much are you losing through undiscovered opportunities?
-          </h3>
+          <div>
+            <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
+              How much is ineffective sourcing costing you?
+            </h2>
+            <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+              Finding the right products to sell is the core of a mature online
+              arbitrage business. If you can't routinely produce useful leads,
+              how much are you losing through undiscovered opportunities?
+            </h3>
+          </div>
         </header>
         <div className="mt-12 lg:ml-12 md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
           <svg
@@ -126,7 +130,7 @@ const IndexPage = () => (
           <div
             key={item.id}
             v-for="item in items"
-            className="md:max-w-sm lg:max-w-none lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0 text-gray-700"
+            className="relative z-10 md:max-w-sm lg:max-w-none lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0 text-gray-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -148,14 +152,23 @@ const IndexPage = () => (
             <p className={`mt-2`}>{item.content}</p>
           </div>
         ))}
+        <div className="absolute bottom-0 left-0 z-0 transform rotate-180 translate-y-16 -translate-x-56">
+          <HalfDotted className="hidden md:inline-block w-48 text-gray-300" />
+        </div>
+        {/* <div className="absolute bottom-0 right-0 z-0 transform translate-x-24 -translate-y-16">
+          <Squiggles className="hidden lg:inline-block w-64 text-purple-200" />
+        </div> */}
       </div>
     </section>
     <section className="py-12 lg:py-24 bg-gray-100">
       <div className="container">
-        <header className="lg:mx-auto md:max-w-xl xl:max-w-2xl">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
+        <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
+          <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
             LeadGeek makes it easy for arbitrage sellers like you to:
           </h2>
+          <div className="absolute bottom-0 right-0 z-0 transform translate-y-8 translate-x-24">
+            <HalfDotted className="hidden lg:inline-block w-48 text-gray-200" />
+          </div>
         </header>
         {featureList.map(feature => (
           <article
@@ -179,8 +192,11 @@ const IndexPage = () => (
       </div>
     </section>
     <section className="my-12 lg:my-24 container lg:flex lg:justify-between text-gray-900">
-      <header className="md:max-w-xs lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
+      <header className="relative md:max-w-xs lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
         <h2>The complete toolkit for productive sourcing.</h2>
+        <div className="absolute bottom-0 left-0 z-0 transform -translate-y-40 -translate-x-16">
+          <Squiggles className="hidden lg:inline-block w-64 text-purple-200" />
+        </div>
       </header>
       <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5 text-gray-700">
         <div className="md:flex md:justify-between">
