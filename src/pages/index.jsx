@@ -125,7 +125,7 @@ const IndexPage = () => (
           </p>
         </div>
       </div>
-      <div className="mt-8 lg:mt-12 relative container lg:flex lg:justify-between">
+      <div className="mt-8 lg:mt-12 relative container lg:flex lg:justify-between md:overflow-x-hidden lg:overflow-visible">
         {costItems.map(item => (
           <div
             key={item.id}
