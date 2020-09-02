@@ -24,7 +24,7 @@ const CTA = ({
       <div className="relative container">
         <header className="mt-6 lg:mt-0 mx-auto md:mx-0 relative z-10 font-semibold">
           <h2
-            className={`text-2xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
+            className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
           >
             {mainHeader || `Ready to get started?`}
             <span className="mt-4 lg:mt-2 block">

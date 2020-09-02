@@ -68,7 +68,7 @@ const IndexPage = () => (
       <PrimaryHeader
         header={`We help you find great online arbitrage leads.`}
         // header={`Premium online arbitrage sourcing, streamlined.`}
-        subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of proven leads to your inbox.`}
+        subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of leads to your inbox.`}
         nav
         linkOne={`pricing`}
         linkOneText={`Get started`}
@@ -77,17 +77,17 @@ const IndexPage = () => (
         play
         svgOne={
           <div className="absolute top-0 left-0 z-0 transform translate-y-10 translate-x-16">
-            <Squiggles className="hidden lg:inline-block w-64 text-gray-200" />
+            <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
           </div>
         }
         svgTwo={
           <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 translate-x-12">
-            <HalfDotted className="hidden lg:inline-block w-48 text-purple-100" />
+            <HalfDotted className="hidden md:inline-block w-48 text-purple-100" />
           </div>
         }
       />
     </section>
-    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-200 overflow-x-hidden">
+    <section className="py-12 md:py-16 lg:py-24 bg-gray-200 overflow-x-hidden">
       <div className="container lg:flex">
         <header className="lg:w-2/3">
           <div>
@@ -157,14 +157,14 @@ const IndexPage = () => (
         </div>
       </div>
     </section>
-    <section className="py-12 lg:py-24 bg-gray-100">
+    <section className="py-12 md:py-16 lg:py-24 bg-gray-100">
       <div className="container">
         <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
           <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
             LeadGeek makes it easy for arbitrage sellers like you to:
           </h2>
-          <div className="absolute bottom-0 right-0 z-0 transform translate-y-8 translate-x-24">
-            <HalfDotted className="hidden lg:inline-block w-48 text-gray-200" />
+          <div className="absolute bottom-0 right-0 z-0 transform translate-y-24 translate-x-6 lg:translate-y-8 lg:translate-x-24">
+            <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
           </div>
         </header>
         {featureList.map(feature => (
@@ -188,11 +188,13 @@ const IndexPage = () => (
         ))}
       </div>
     </section>
-    <section className="my-12 lg:my-24 container lg:flex lg:justify-between text-gray-900">
-      <header className="relative md:max-w-xs lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
-        <h2>The complete toolkit for productive sourcing.</h2>
-        <div className="absolute bottom-0 left-0 z-0 transform -translate-y-40 -translate-x-16">
-          <Squiggles className="hidden lg:inline-block w-64 text-purple-200" />
+    <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
+      <header className="relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
+        <h2 className="relative z-10">
+          The complete toolkit for productive sourcing.
+        </h2>
+        <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16">
+          <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
         </div>
       </header>
       <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5 text-gray-700">
@@ -309,7 +311,7 @@ const IndexPage = () => (
         </div>
       </aside>
     </section>
-    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-200 text-gray-700">
+    <section className="mt-12 md:mt-16 lg:mt-24 py-12 md:py-16 lg:py-24 bg-gray-200 text-gray-700">
       <div className="container lg:flex lg:justify-between">
         <header className="md:max-w-xl lg:w-2/5 font-bold text-3xl lg:text-4xl text-gray-900">
           <h2>Hello</h2>
@@ -366,7 +368,7 @@ const IndexPage = () => (
       </div>
     </section>
     <CTA
-      padding={`py-12 lg:py-24`}
+      padding={`py-12 md:py-16 lg:py-24`}
       bgColor="bg-purple-600"
       textColor="text-white"
       buttonStyles="bg-white text-purple-600 hover:text-purple-800"
@@ -375,8 +377,8 @@ const IndexPage = () => (
       linkText="Watch demo"
       linkStyles="text-purple-100 hover:text-purple-200"
       svgOne={
-        <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
-          <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+        <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
+          <Dotted className="hidden md:inline-block w-24 text-purple-400" />
         </div>
       }
     />

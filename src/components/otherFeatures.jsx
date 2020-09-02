@@ -15,7 +15,7 @@ const otherFeatures = ({
 }) => {
   return (
     <section
-      className={`${margin} py-12 lg:py-24 ${bgColor} ${primaryTextColor}`}
+      className={`${margin} py-12 md:py-16 lg:py-24 ${bgColor} ${primaryTextColor}`}
     >
       <div className="container">
         <header>
@@ -23,11 +23,11 @@ const otherFeatures = ({
             Explore other LeadGeek features
           </h2>
         </header>
-        <div className="mt-12 md:flex md:justify-between">
+        <div className="mt-12 lg:flex lg:justify-between">
           {criteria && (
             <div
               v-for="item in items"
-              className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const otherFeatures = ({
           {reliability && (
             <div
               v-for="item in items"
-              className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +90,7 @@ const otherFeatures = ({
           {education && (
             <div
               v-for="item in items"
-              className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const otherFeatures = ({
           {support && (
             <div
               v-for="item in items"
-              className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

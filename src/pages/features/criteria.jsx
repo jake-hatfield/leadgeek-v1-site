@@ -170,7 +170,7 @@ const LeadCriteriaPage = ({ data }) => {
       />
       <section
         id="competition"
-        className="pt-12 lg:pt-24 container text-gray-700"
+        className="pt-12 md:pt-16 lg:pt-24 container text-gray-700"
       >
         <div className="md:flex md:justify-between">
           <article className="md:w-3/4">
@@ -388,7 +388,7 @@ const LeadCriteriaPage = ({ data }) => {
         support
       />
       <CTA
-        padding={`py-12 lg:py-24`}
+        padding={`py-12 md:py-16 lg:py-24`}
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
@@ -397,8 +397,8 @@ const LeadCriteriaPage = ({ data }) => {
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
-            <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
+            <Dotted className="hidden md:inline-block w-24 text-purple-400" />
           </div>
         }
       />

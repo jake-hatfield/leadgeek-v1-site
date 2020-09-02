@@ -13,7 +13,7 @@ const largeDescription = ({
 }) => {
   return (
     <section
-      className={`${margin} py-12 lg:py-24 ${bgColor} ${primaryTextColor}`}
+      className={`${margin} py-12 md:py-16 lg:py-24 ${bgColor} ${primaryTextColor}`}
     >
       <div className="container">
         <header className="md:max-w-2xl lg:max-w-3xl">

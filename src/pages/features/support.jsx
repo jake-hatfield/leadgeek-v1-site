@@ -112,7 +112,7 @@ const supportPage = ({ data }) => {
         education
       />
       <CTA
-        padding={`py-12 lg:py-24`}
+        padding={`py-12 md:py-16 lg:py-24`}
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
@@ -121,8 +121,8 @@ const supportPage = ({ data }) => {
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
-            <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
+            <Dotted className="hidden md:inline-block w-24 text-purple-400" />
           </div>
         }
       />

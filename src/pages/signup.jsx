@@ -190,7 +190,7 @@ const signupPage = () => {
       <section className="-mt-40 bg-purple-600 text-white">
         <div className="mt-12 lg:mt-16 pt-24 container">
           <CTA
-            padding={`py-12 lg:py-24`}
+            padding={`py-12 md:py-16 lg:py-24`}
             bgColor="bg-purple-600"
             textColor="text-white"
             mainHeader="Need help with anything?"
