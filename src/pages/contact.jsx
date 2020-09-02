@@ -74,10 +74,10 @@ const ContactPage = () => {
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              className="mx-auto lg:mx-0 w-full max-w-md"
+              className="mx-auto lg:mx-0 w-full max-w-md rounded-md shadow-md bg-white"
             >
               <input type="hidden" name="contact-page" value="contact" />
-              <div>
+              <div className="pt-6 pb-2 px-4 md:px-8">
                 <label
                   htmlFor="name"
                   className="block text-xs font-medium text-gray-700"
@@ -88,7 +88,7 @@ const ContactPage = () => {
                     name="name"
                     label="Name"
                     required
-                    className="mt-2 p-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-sm focus:outline-none focus:shadow-outline"
+                    className="mt-1 py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
                   />
                 </label>
                 <label
@@ -101,7 +101,7 @@ const ContactPage = () => {
                     name="email"
                     label="Email"
                     required
-                    className="mt-2 p-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-sm focus:outline-none focus:shadow-outline"
+                    className="mt-1 py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
                   />
                 </label>
                 <label className="mt-6 block text-xs font-medium text-gray-700">
@@ -112,12 +112,16 @@ const ContactPage = () => {
                     className="mt-2 resize-none pt-2 px-2 pb-16 md:pr-12 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-sm focus:outline-none focus:shadow-outline"
                   />
                 </label>
-                <button
-                  type="submit"
-                  className="mt-4 py-4 px-5 block md:inline-block relative rounded-md bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors duration-200"
-                >
-                  Send message
-                </button>
+              </div>
+              <div className="mt-1 bg-gray-100">
+                <div className="p-4 md:px-8">
+                  <button
+                    type="submit"
+                    className="py-4 px-5 block md:inline-block relative rounded-md bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors duration-200"
+                  >
+                    Send message
+                  </button>
+                </div>
               </div>
             </form>
           </article>

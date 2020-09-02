@@ -1,8 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import HalfDotted from "../assets/half-dotted.svg"
-
 const Footer = () => {
   const categories = [
     {
@@ -38,7 +36,7 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="py-12 relative z-20 bg-gray-900 text-gray-400">
+    <footer className="pt-16 pb-12 relative z-20 bg-gray-900 text-gray-400">
       <nav className="container relative z-10 flex justify-between flex-wrap md:flex-no-wrap">
         <div className="md:mr-12 lg:mr-24 w-full md:w-2/6">
           <Link
@@ -76,9 +74,6 @@ const Footer = () => {
             </ul>
           </div>
         ))}
-        <div className="absolute top-0 right-0 z-0 transform rotate-90 translate-y-12 translate-x-56">
-          <HalfDotted className="hidden lg:inline-block w-48 text-gray-800" />
-        </div>
       </nav>
       <div className="mt-12 container md:text-center text-sm md:text-base text-gray-600">
         <div className="w-full border border-gray-800" />

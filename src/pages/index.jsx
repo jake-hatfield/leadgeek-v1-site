@@ -75,12 +75,12 @@ const IndexPage = () => (
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
         play
+        // svgOne={
+        //   <div className="absolute top-0 left-0 z-0 transform -translate-y-10 -translate-x-32">
+        //     <Dotted className="hidden lg:inline-block w-32 text-purple-100" />
+        //   </div>
+        // }
         svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-10 -translate-x-32">
-            <Dotted className="hidden lg:inline-block w-32 text-purple-100" />
-          </div>
-        }
-        svgTwo={
           <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 translate-x-12">
             <HalfDotted className="hidden lg:inline-block w-48 text-purple-100" />
           </div>
