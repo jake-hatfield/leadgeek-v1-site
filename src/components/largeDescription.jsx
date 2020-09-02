@@ -24,7 +24,7 @@ const largeDescription = ({
             {mainHeader}
           </h2>
           <p
-            className={`mt-4 lg:mt-6 ${secondaryTextColor} lg:text-lg xl:text-xl leading-relaxed lg:leading-normal`}
+            className={`mt-4 lg:mt-6 ${secondaryTextColor} lg:text-lg leading-relaxed lg:leading-normal`}
           >
             {mainSubheader}
           </p>
@@ -36,8 +36,7 @@ const largeDescription = ({
             </header>
             <div className="mt-6 max-w-4xl md:flex md:justify-start md:items-center">
               <Img fluid={item.image} className="md:w-1/2 h-64" />
-
-              <div className="mt-4 md:mt-0 md:ml-12 md:w-1/2 lg:text-lg xl:text-xl">
+              <div className="mt-4 md:mt-0 md:ml-12 md:w-1/2">
                 <span className="block uppercase text-sm md:text-base text-purple-600 font-bold">
                   {item.title}
                 </span>

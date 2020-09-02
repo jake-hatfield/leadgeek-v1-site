@@ -2,7 +2,7 @@ import React from "react"
 
 import Img from "gatsby-image"
 
-const smallDescription = ({
+const alternatingDescription = ({
   margin,
   mainHeader,
   items,
@@ -27,9 +27,9 @@ const smallDescription = ({
               reverse
                 ? `md:odd:flex-row-reverse md:even:flex-row`
                 : `md:odd:flex-row md:even:flex-row-reverse`
-            } mt-6 md:mt-12 lg:mt-16 flex flex-col-reverse md:flex-row md:justify-between md:items-center`}
+            } mt-6 md:mt-12 lg:mt-16 lg:first:mt-0 flex flex-col-reverse md:flex-row md:justify-between md:items-center`}
           >
-            <header className="mt-4 md:mt-0 md:mx-12 md:w-1/2">
+            <header className="mt-4 md:mt-0 md:mx-12 md:w-3/5">
               <span className={`text-sm ${tertiaryColor} uppercase font-bold`}>
                 {item.span}
               </span>
@@ -45,7 +45,7 @@ const smallDescription = ({
               </p>
             </header>
             {item.image ? (
-              <Img fluid={item.image} className="w-full md:w-1/2" />
+              <Img fluid={item.image} className="w-full md:w-2/5 rounded-md" />
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,4 +69,4 @@ const smallDescription = ({
   )
 }
 
-export default smallDescription
+export default alternatingDescription

@@ -4,13 +4,14 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
+import LargeDescription from "../../components/largeDescription"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
 
-const supportPage = () => {
-  const leadReliability = [
+const supportPage = ({ data }) => {
+  const supportSummary = [
     {
       id: 1,
       iconPath:
@@ -35,6 +36,32 @@ const supportPage = () => {
         "Readily communicate with our team through several methods, so you can have your problems solved quickly and easily.",
     },
   ]
+  const supportPoints = [
+    {
+      id: 1,
+      title: "100% Issue solve rate",
+      header: "Lorem Ipsum dolor sit amet consectetur",
+      content:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+      image: data.astronaut.childImageSharp.fluid,
+    },
+    {
+      id: 2,
+      title: "Seller account protection",
+      header: "Lorem Ipsum dolor sit amet consectetur",
+      content:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+      image: data.astronaut.childImageSharp.fluid,
+    },
+    {
+      id: 3,
+      title: "Accessible communication",
+      header: "Lorem Ipsum dolor sit amet consectetur",
+      content:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+      image: data.astronaut.childImageSharp.fluid,
+    },
+  ]
   return (
     <Layout>
       <SEO title="Member Support" description="" />
@@ -49,7 +76,7 @@ const supportPage = () => {
         linkTwoText={`Watch demo`}
       />
       <ThreeIconList
-        items={leadReliability}
+        items={supportSummary}
         bgColor={`bg-gray-100`}
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}
@@ -57,6 +84,24 @@ const supportPage = () => {
         margin={`mt-20`}
         title={`Why we're different`}
         mainHeader={`Receive world-class seller support.`}
+      />
+      <LargeDescription
+        title={`High standards`}
+        mainHeader={`Enjoy strict standards that yield superior products.`}
+        mainSubheader={
+          <span>
+            Our carefully-tailored requirements and vetting methods allow you to
+            get professional-grade arbitrage sourcing at a fraction of the
+            price. Though we use many metrics to determine product quality, four
+            are most important: <strong>net profit</strong>,{" "}
+            <strong>net ROI</strong>, <strong>sales velocity</strong>, and the{" "}
+            <strong>seller insight test</strong>.
+          </span>
+        }
+        items={supportPoints}
+        bgColor={`bg-gray-200`}
+        primaryTextColor={`text-gray-900`}
+        secondaryTextColor={`text-gray-700`}
       />
       <OtherFeatures
         primaryTextColor="text-gray-900"
@@ -84,5 +129,18 @@ const supportPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default supportPage

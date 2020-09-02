@@ -275,7 +275,7 @@ const Header = () => {
           </div>
           <Link
             to={`/pricing`}
-            className="text-base leading-6 font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-purple-600 transition ease-in-out duration-200"
+            className="text-base leading-6 font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 transition ease-in-out duration-200"
             activeClassName="active"
           >
             Pricing

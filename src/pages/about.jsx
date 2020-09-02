@@ -20,7 +20,10 @@ const AboutPage = () => {
             We're here to help you grow and understand your Amazon business.
           </h1>
         </header>
-        <div className="mt-6 lg:mt-10">
+        <div className="mt-6 lg:mt-10 relative">
+          <div className="absolute top-0 right-0 z-0 transform translate-y-12 translate-x-32">
+            <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
+          </div>
           <p>
             LeadGeek was born out of frustration trying to run an arbitrage
             business with countless product sourcing tools. With no single point

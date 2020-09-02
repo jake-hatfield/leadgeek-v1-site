@@ -4,13 +4,14 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import AltHeader from "../../components/altHeader"
 import ThreeIconList from "../../components/threeIconList"
+import AlternatingDescription from "../../components/alternatingDescription"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
 
-const supportPage = () => {
-  const leadReliability = [
+const supportPage = ({ data }) => {
+  const educationSummary = [
     {
       id: 1,
       iconPath:
@@ -36,13 +37,40 @@ const supportPage = () => {
         "Hit all your selling metrics with complete templates to track sales progress.",
     },
   ]
+  const educationPoints = [
+    {
+      id: 1,
+      image: data.astronaut.childImageSharp.fluid,
+      span: "Practical e-books & guides",
+      header: "Practical e-books & guides",
+      content:
+        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+    },
+    {
+      id: 2,
+      image: data.astronaut.childImageSharp.fluid,
+      span: "Practical e-books & guides",
+      header: "8-Part OA training course",
+      content:
+        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+    },
+    {
+      id: 3,
+      image: data.astronaut.childImageSharp.fluid,
+      span: "Practical e-books & guides",
+      header: "Helpful tracking templates",
+      content:
+        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+    },
+  ]
+
   return (
     <Layout>
       <SEO title="Member Support" description="" />
       <AltHeader
         title={`Seller education`}
         header={`Comprehensive online arbitrage training.`}
-        subHeader={`Knowledge is power, so be empowered. Members enjoy several different types of training material to sharpen their selling knowledge, including e-books, video courses, and templates.`}
+        subHeader={`Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -50,7 +78,7 @@ const supportPage = () => {
         linkTwoText={`Watch demo`}
       />
       <ThreeIconList
-        items={leadReliability}
+        items={educationSummary}
         bgColor={`bg-gray-100`}
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}
@@ -58,6 +86,13 @@ const supportPage = () => {
         margin={`mt-20`}
         title={`Exclusive member training`}
         mainHeader={`Complete educational resources.`}
+      />
+      <AlternatingDescription
+        items={educationPoints}
+        bgColor="bg-gray-200"
+        primaryTextColor="text-gray-900"
+        secondaryTextColor="text-gray-700"
+        tertiaryColor="text-purple-600"
       />
       <OtherFeatures
         primaryTextColor="text-gray-900"
@@ -85,5 +120,18 @@ const supportPage = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default supportPage
