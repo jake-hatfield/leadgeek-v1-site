@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 
+import Dotted from "../assets/dotted.svg"
+
 const demoPage = () => {
   return (
     <Layout>
@@ -40,6 +42,11 @@ const demoPage = () => {
         linkText="Contact support"
         link="contact"
         linkStyles="text-purple-100 hover:text-purple-200"
+        svgOne={
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
+            <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+          </div>
+        }
       />
     </Layout>
   )

@@ -7,6 +7,8 @@ import ThreeIconList from "../../components/threeIconList"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
+import Dotted from "../../assets/dotted.svg"
+
 const supportPage = () => {
   const leadReliability = [
     {
@@ -74,6 +76,11 @@ const supportPage = () => {
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"
+        svgOne={
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
+            <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+          </div>
+        }
       />
     </Layout>
   )

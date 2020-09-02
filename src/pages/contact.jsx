@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import ArrowRight from "../assets/arrow-right.svg"
+import Dotted from "../assets/dotted.svg"
 
 const ContactPage = () => {
   return (
@@ -17,47 +18,52 @@ const ContactPage = () => {
       <section className="my-8 md:my-12 lg:my-24 relative text-gray-900">
         <div className="container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
-            <div className="mx-auto lg:mx-0 max-w-md">
-              <h1 className="text-4xl lg:text-6xl font-black text-gray-900">
-                Get in touch.
-              </h1>
-              <h2 className="mt-4 lg:mt-8 text-base md:text-lg leading-relaxed text-gray-700">
-                Reach out with any questions about our services and our friendly
-                team will respond as soon as possible.
-              </h2>
+            <div className="relative mx-auto lg:mx-0 max-w-md">
+              <div className="absolute top-0 left-0 z-0 transform -translate-x-12 -translate-y-8">
+                <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
+              </div>
+              <div className="relative z-10">
+                <h1 className="text-4xl lg:text-6xl font-black text-gray-900">
+                  Get in touch.
+                </h1>
+                <h2 className="mt-4 lg:mt-8 text-base md:text-lg leading-relaxed text-gray-700">
+                  Reach out with any questions about our services and our
+                  friendly team will respond as soon as possible.
+                </h2>
 
-              <div className="mt-10 text-gray-700">
-                <h3 className="text-xl font-semibold">
-                  Interested in joining?
-                </h3>
-                <address className="mt-2 text-gray-500 not-italic">
-                  <div className="mt-3 flex items-end">
+                <div className="mt-10 text-gray-700">
+                  <h3 className="text-xl font-semibold">
+                    Interested in joining?
+                  </h3>
+                  <address className="mt-2 text-gray-500 not-italic">
+                    <div className="mt-3 flex items-end">
+                      <a
+                        href="mailto:hello@leadgeek.io"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                      >
+                        <span>he</span>
+                        <span>llo@l</span>
+                        <span>eadgeek.io</span>
+                        <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+                      </a>
+                    </div>
+                  </address>
+                </div>
+                <div className="mt-6 text-gray-700">
+                  <h3 className="text-xl font-semibold">
+                    Already a LeadGeek member?
+                  </h3>
+                  <div className="mt-2 inline-block text-gray-500">
                     <a
-                      href="mailto:hello@leadgeek.io"
-                      target="_blank"
-                      rel="noreferrer"
+                      href="mailto:support@leadgeek.io"
                       className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
                     >
-                      <span>he</span>
-                      <span>llo@l</span>
-                      <span>eadgeek.io</span>
+                      Contact support
                       <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
                     </a>
                   </div>
-                </address>
-              </div>
-              <div className="mt-6 text-gray-700">
-                <h3 className="text-xl font-semibold">
-                  Already a LeadGeek member?
-                </h3>
-                <div className="mt-2 inline-block text-gray-500">
-                  <a
-                    href="mailto:support@leadgeek.io"
-                    className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-                  >
-                    Contact support
-                    <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-                  </a>
                 </div>
               </div>
             </div>

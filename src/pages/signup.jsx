@@ -8,7 +8,7 @@ import ArrowLink from "../components/arrowLink"
 import CTA from "../components/cta"
 
 import Check from "../assets/check.svg"
-import ArrowRight from "../assets/arrow-right.svg"
+import Dotted from "../assets/dotted.svg"
 
 const signupPage = () => {
   const growPrice = 129
@@ -195,6 +195,11 @@ const signupPage = () => {
             link="demo"
             linkText="Watch demo"
             linkStyles="text-purple-100 hover:text-purple-200"
+            svgOne={
+              <div className="absolute top-0 left-0 z-0 transform -translate-y-56 -translate-x-12">
+                <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+              </div>
+            }
           />
         </div>
       </section>

@@ -41,7 +41,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           To learn more about our strategies to keep list competition low, read
           our{" "}
           <Link
-            to={`/features/lead-criteria`}
+            to={`/features/criteria#competition`}
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
           >
             criteria page

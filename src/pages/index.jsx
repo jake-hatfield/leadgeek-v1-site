@@ -6,6 +6,9 @@ import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 import ArrowLink from "../components/arrowLink"
 
+import Dotted from "../assets/dotted.svg"
+import Squiggles from "../assets/squiggles.svg"
+
 const featureList = [
   {
     number: "1",
@@ -60,7 +63,7 @@ const costItems = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Online Arbitrage Leads & Lists for Amazon Sellers" />
-    <section>
+    <section className="relative">
       <PrimaryHeader
         header={`We help you find great online arbitrage leads.`}
         // header={`Premium online arbitrage sourcing, streamlined.`}
@@ -71,21 +74,19 @@ const IndexPage = () => (
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
         play
+        svgOne={
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-10 translate-x-24">
+            <Dotted className="hidden lg:inline-block w-16 lg:w-24 text-gray-200" />
+          </div>
+        }
       />
     </section>
-    {/* <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-100">
-      <header className="container md:text-center">
-        <h2 className="lg:mx-auto max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-          Is sourcing by hand really the best solution?
-        </h2>
-        <h3 className="mt-4 lg:mt-6 mx-auto lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-          Hello
-        </h3>
-      </header>
-      <div className="container">Hello</div>
-    </section> */}
-    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-200">
-      <div className="container lg:flex">
+    <section className="mt-12 lg:mt-24 py-12 lg:py-24 bg-gray-200 overflow-x-hidden">
+      <div className="relative container lg:flex">
+        <div className="absolute bottom-0 right-0 z-0 transform translate-x-32 -translate-y-12">
+          <Dotted className="hidden lg:inline-block w-32 text-purple-300" />
+          {/* <Squiggles className="hidden md:inline-block w-32 text-purple-300" /> */}
+        </div>
         <header className="lg:w-2/3">
           <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
             How much is ineffective sourcing costing you?
@@ -96,7 +97,7 @@ const IndexPage = () => (
             much are you losing through undiscovered opportunities?
           </h3>
         </header>
-        <div className="md:ml-12 lg:w-1/3 text-gray-700">
+        <div className="mt-12 lg:ml-12 md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
           <svg
             fill="none"
             viewBox="0 0 24 24"
@@ -120,12 +121,12 @@ const IndexPage = () => (
           </p>
         </div>
       </div>
-      <div className="mt-12 container md:flex md:justify-between">
+      <div className="mt-8 lg:mt-12 relative container lg:flex lg:justify-between">
         {costItems.map(item => (
           <div
             key={item.id}
             v-for="item in items"
-            className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0 text-gray-700"
+            className="md:max-w-sm lg:max-w-none lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0 text-gray-700"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -360,6 +361,11 @@ const IndexPage = () => (
       link="demo"
       linkText="Watch demo"
       linkStyles="text-purple-100 hover:text-purple-200"
+      svgOne={
+        <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
+          <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+        </div>
+      }
     />
   </Layout>
 )

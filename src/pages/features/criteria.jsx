@@ -10,6 +10,8 @@ import BulletedList from "../../components/bulletedList"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
+import Dotted from "../../assets/dotted.svg"
+
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [
     {
@@ -166,7 +168,10 @@ const LeadCriteriaPage = ({ data }) => {
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}
       />
-      <section className="pt-12 lg:pt-24 container text-gray-700">
+      <section
+        id="competition"
+        className="pt-12 lg:pt-24 container text-gray-700"
+      >
         <div className="md:flex md:justify-between">
           <article className="md:w-3/4">
             <header className="max-w-4xl">
@@ -391,6 +396,11 @@ const LeadCriteriaPage = ({ data }) => {
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"
+        svgOne={
+          <div className="absolute top-0 left-0 z-0 transform -translate-y-40 -translate-x-24">
+            <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
+          </div>
+        }
       />
     </Layout>
   )

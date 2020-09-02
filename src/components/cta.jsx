@@ -16,11 +16,13 @@ const CTA = ({
   link,
   linkText,
   linkStyles,
+  svgOne,
+  svgTwo,
 }) => {
   return (
-    <section className={`${margin} ${padding} ${bgColor}`}>
-      <div className="container">
-        <header className="mt-6 lg:mt-0 mx-auto md:mx-0 font-semibold">
+    <section className={`${margin} ${padding} ${bgColor} relative`}>
+      <div className="relative container">
+        <header className="mt-6 lg:mt-0 mx-auto md:mx-0 relative z-10 font-semibold">
           <h2
             className={`text-2xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
           >
@@ -47,6 +49,8 @@ const CTA = ({
             </div>
           </nav>
         </header>
+        {svgOne && svgOne}
+        {svgTwo && svgTwo}
       </div>
     </section>
   )

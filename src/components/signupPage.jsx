@@ -24,12 +24,12 @@ const signupPage = ({ price, featureList, plan, discount }) => {
               Start sourcing with LeadGeek
             </h1>
             <p className="pt-4 text-base md:text-lg lg:text-xl leading-relaxed">
-              Sign up takes less than 2 minutes.
+              Sign up takes less than 1 minute.
             </p>
           </header>
           <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
-            <div className="h-full w-full lg:w-2/3 max-w-sm">
-              <div className="mx-auto pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 bg-white rounded-md shadow-lg">
+            <div className="mx-auto h-full w-full lg:w-2/3 max-w-sm">
+              <div className="pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 bg-white rounded-md shadow-lg">
                 <Elements stripe={stripePromise}>
                   <CheckoutForm
                     price={price}
@@ -39,8 +39,31 @@ const signupPage = ({ price, featureList, plan, discount }) => {
                   />
                 </Elements>
               </div>
-              <aside className="mt-5 py-2 px-3 bg-purple-100 rounded-md text-purple-500">
-                Hello
+              <aside className="mt-4 py-2 px-4 border-l-8 border-purple-400 bg-purple-100 text-purple-600">
+                <div className="flex">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="mt-1 h-4 w-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        k
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p className="ml-2 text-sm">
+                    Your LeadGeek subscription will renew automatically, but
+                    you'll be able to cancel your account at any time by
+                    contacting support.
+                  </p>
+                </div>
               </aside>
             </div>
             <SignupFeatures
