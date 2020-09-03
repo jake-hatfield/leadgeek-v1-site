@@ -9,8 +9,8 @@
 exports.createPages = ({ actions }) => {
   const { createRedirect } = actions
   createRedirect({
-    fromPath: "https://leadgeek.netlify.app/features",
-    toPath: "https://leadgeek.netlify.app/",
+    fromPath: "https://leadgeek.io/features",
+    toPath: "https://leadgeek.io/",
     isPermanent: true,
     force: true,
   })

@@ -13,14 +13,16 @@ const altHeader = ({
   linkOneText,
   linkTwo,
   linkTwoText,
+  svgOne,
+  svgTwo,
 }) => {
   return (
     <header
       className={`${
         negativeMargin ? `mt-12 lg:mt-16 pt-40 pb-16` : `mt-8 md:mt-12 lg:mt-20`
-      } container`}
+      } relative overflow-x-hidden container`}
     >
-      <div className="md:max-w-2xl lg:max-w-3xl">
+      <div className="relative z-10 md:max-w-2xl lg:max-w-3xl">
         <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
           {title}
         </span>
@@ -50,6 +52,8 @@ const altHeader = ({
           </nav>
         )}
       </div>
+      {svgOne && svgOne}
+      {svgTwo && svgTwo}
     </header>
   )
 }

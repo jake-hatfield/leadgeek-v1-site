@@ -11,6 +11,7 @@ import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
+import Squiggles from "../../assets/squiggles.svg"
 
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [
@@ -132,13 +133,20 @@ const LeadCriteriaPage = ({ data }) => {
       <SEO title="Strict Criteria" description="" />
       <AltHeader
         title={`Strict Criteria`}
-        header={`Get premium leads that align with your selling standards.`}
+        header={`Awesome products sourced for you, not by you.`}
+        // header={`Be proud of the products your Amazon store sells.`}
+        // header={`Get premium leads that align with your selling standards.`}
         subHeader={`LeadGeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities so you don't have to spend hours sourcing yourself.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
+        svgOne={
+          <div className="absolute top-0 md:right-0 xl:left-0 z-0 transform md:translate-y-10 md:-translate-x-24 lg:translate-y-12 lg:-translate-x-32 xl:translate-y-32 xl:translate-x-64">
+            <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
+          </div>
+        }
       />
       <ThreeIconList
         items={criteriaTopics}

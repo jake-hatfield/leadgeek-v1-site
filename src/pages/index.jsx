@@ -66,7 +66,8 @@ const IndexPage = () => (
     <SEO title="Online Arbitrage Leads & Lists for Amazon Sellers" />
     <section className="relative">
       <PrimaryHeader
-        header={`We help you find great online arbitrage leads.`}
+        header={`More than just premium online arbitrage sourcing.`}
+        // header={`We help you find great online arbitrage leads.`}
         // header={`Premium online arbitrage sourcing, streamlined.`}
         subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of leads to your inbox.`}
         nav
@@ -81,7 +82,7 @@ const IndexPage = () => (
           </div>
         }
         svgTwo={
-          <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 translate-x-12">
+          <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 xl:-translate-y-16 xl:translate-x-12">
             <HalfDotted className="hidden md:inline-block w-48 text-purple-100" />
           </div>
         }
@@ -161,7 +162,7 @@ const IndexPage = () => (
       <div className="container">
         <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
           <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
-            LeadGeek makes it easy for arbitrage sellers like you to:
+            LeadGeek makes it easy for Amazon sellers like you to:
           </h2>
           <div className="absolute bottom-0 right-0 z-0 transform translate-y-24 translate-x-6 lg:translate-y-8 lg:translate-x-24">
             <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
@@ -191,7 +192,7 @@ const IndexPage = () => (
     <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
       <header className="relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
         <h2 className="relative z-10">
-          The complete toolkit for productive sourcing.
+          The complete toolkit for productive arbitrage.
         </h2>
         <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16">
           <Squiggles className="hidden md:inline-block w-64 text-purple-200" />

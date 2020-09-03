@@ -35,7 +35,7 @@ const GuidesPage = ({ data }) => {
       color: "green",
       title: "Opening Possibilities with Ungating",
       description:
-        "Be able to take advantage of as many arbitrage opportunities as possible with a mature seller account. This guide teaches you the ungating process so you're no longer limited.",
+        "Position your Amazon account to take advantge of as many arbitrage opportunities as possible. This guide teaches you the ungating process to open up exclusive categories.",
       date: "Sep 6, 2020",
       length: "12 minute read",
       image: data.astronaut.childImageSharp.fluid,

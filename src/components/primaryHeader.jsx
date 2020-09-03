@@ -24,7 +24,7 @@ const primaryHeader = ({
         negativeMargin
           ? `mt-12 pt-32 lg:pt-48 ${classPadding}`
           : `mt-8 md:mt-12 lg:mt-24 pb-12 md:pb-16 lg:pb-24`
-      } relative container overflow-hidden xl:overflow-visible md:text-center`}
+      } relative container overflow-hidden lg:overflow-visible md:text-center`}
     >
       <div className="md:mx-auto relative z-10 md:max-w-2xl lg:max-w-4xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900">
