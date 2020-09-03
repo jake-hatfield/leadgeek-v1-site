@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import { animated } from "react-spring"
 
-function Dropdown({ title, items, open, setOpen }) {
+function Dropdown({ title, items, open, setOpen, animation }) {
   const toggle = () => setOpen(!open)
 
   return (
@@ -28,10 +29,11 @@ function Dropdown({ title, items, open, setOpen }) {
               />
             </svg>
           </div>
-          <div
+          <animated.div
             className={`${
               open ? `block` : `hidden`
-            } pt-6 px-2 sm:px-0 w-screen navbar-width absolute z-40 left-50 transform`}
+            } pt-8 px-2 sm:px-0 w-screen navbar-width absolute z-40 left-50 transform`}
+            style={animation}
           >
             <div className="rounded-md shadow-md">
               <div className="flex items-center justify-between rounded-md shadow-xs overflow-hidden bg-gray-100">
@@ -59,7 +61,7 @@ function Dropdown({ title, items, open, setOpen }) {
                 </div>
               </div>
             </div>
-          </div>
+          </animated.div>
         </div>
       </button>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { useSpring } from "react-spring"
 
 import FeatureDropdown from "./featureDropdown"
 import AltDropdown from "./altDropdown"
@@ -227,6 +228,14 @@ const Header = () => {
     //   link: "security",
     // },
   ]
+  const featureAnimation = useSpring({
+    opacity: featureNavOpen ? 1 : 0,
+    marginTop: featureNavOpen ? -10 : 0,
+  })
+  const mobileAnimation = useSpring({
+    opacity: mobileMenuOpen ? 1 : 0,
+    marginTop: mobileMenuOpen ? -10 : 0,
+  })
   return (
     <header className="relative z-20 container">
       <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
@@ -270,6 +279,7 @@ const Header = () => {
               items={featureItems}
               open={featureNavOpen}
               setOpen={setFeatureNavOpen}
+              animation={featureAnimation}
               eventTypes="click"
             />
           </div>
@@ -281,7 +291,13 @@ const Header = () => {
             Pricing
           </Link>
           <div className="relative">
-            <AltDropdown title={`More`} items={moreItems} />
+            <AltDropdown
+              title={`More`}
+              items={moreItems}
+              open={mobileMenuOpen}
+              setOpen={setMobileMenuOpen}
+              animation={mobileAnimation}
+            />
           </div>
           <Link
             to={`/signup`}

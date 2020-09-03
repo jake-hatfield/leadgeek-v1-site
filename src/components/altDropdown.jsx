@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { animated } from "react-spring"
 
-function MoreDropdown({ title, items }) {
-  const [open, setOpen] = useState(false)
+function MoreDropdown({ title, items, animation, open, setOpen }) {
+  //   const [open, setOpen] = useState(false)
   const toggle = () => setOpen(!open)
 
   return (
@@ -29,10 +30,11 @@ function MoreDropdown({ title, items }) {
               />
             </svg>
           </div>
-          <div
+          <animated.div
             className={`${
               open ? `block` : `hidden`
-            } pt-6 px-2 sm:px-0 w-screen max-w-xs absolute z-40 left-1/2 transform -translate-x-1/2 `}
+            } pt-8 px-2 sm:px-0 w-screen max-w-xs absolute z-40 left-1/2 transform -translate-x-1/2 `}
+            style={animation}
           >
             <div className="rounded-md shadow-md">
               <div className="rounded-md shadow-xs overflow-hidden">
@@ -57,7 +59,7 @@ function MoreDropdown({ title, items }) {
                 </div>
               </div>
             </div>
-          </div>
+          </animated.div>
         </div>
       </button>
     </div>
