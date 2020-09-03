@@ -164,7 +164,7 @@ const IndexPage = () => (
           <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
             LeadGeek makes it easy for Amazon sellers like you to:
           </h2>
-          <div className="absolute bottom-0 right-0 z-0 transform translate-y-24 translate-x-6 lg:translate-y-8 lg:translate-x-24">
+          <div className="absolute bottom-0 right-0 z-0 transform translate-y-24 translate-x-12 lg:translate-y-8 lg:translate-x-24">
             <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
           </div>
         </header>
@@ -313,11 +313,11 @@ const IndexPage = () => (
       </aside>
     </section>
     <section className="mt-12 md:mt-16 lg:mt-24 py-12 md:py-16 lg:py-24 bg-gray-200 text-gray-700">
-      <div className="container lg:flex lg:justify-between">
-        <header className="md:max-w-xl lg:w-2/5 font-bold text-3xl lg:text-4xl text-gray-900">
+      <div className="container md:flex md:justify-between">
+        <header className="md:max-w-xl md:w-2/5 font-bold text-3xl lg:text-4xl text-gray-900">
           <h2>Hello</h2>
         </header>
-        <article className="mt-8 lg:mt-0 md:max-w-xl lg:w-3/5">
+        <article className="mt-8 lg:mt-0 md:max-w-xl md:w-3/5">
           <svg
             fill="none"
             viewBox="0 0 24 24"

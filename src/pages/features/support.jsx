@@ -40,25 +40,25 @@ const supportPage = ({ data }) => {
     {
       id: 1,
       title: "100% Issue solve rate",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Problem solving at your fingertips.",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "Bring any issue to our team's attention, and we guarantee a resolution. No matter how small the problem, LeadGeek members get their inquiries fixed thoroughly every time.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: 2,
       title: "Seller account protection",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Keep your Amazon account humming.",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "If you receive a wrongful suspension from Amazon as a result of selling one of our arbitrage leads, our team will help you appeal it. We stand behind our lead suggestions, so you'll be guided through the appeal process to get your account fully reinstated.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: 3,
       title: "Accessible communication",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Tailored & individualized support.",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "Because of strict member caps, our team can provide in-depth support through several different methods of communication. Members of the Grow Plan receive support via email or live chat, and Pro Plan members additionally receive phone support.",
       image: data.astronaut.childImageSharp.fluid,
     },
   ]
@@ -86,18 +86,6 @@ const supportPage = ({ data }) => {
         mainHeader={`Receive world-class seller support.`}
       />
       <LargeDescription
-        title={`High standards`}
-        mainHeader={`Enjoy strict standards that yield superior products.`}
-        mainSubheader={
-          <span>
-            Our carefully-tailored requirements and vetting methods allow you to
-            get professional-grade arbitrage sourcing at a fraction of the
-            price. Though we use many metrics to determine product quality, four
-            are most important: <strong>net profit</strong>,{" "}
-            <strong>net ROI</strong>, <strong>sales velocity</strong>, and the{" "}
-            <strong>seller insight test</strong>.
-          </span>
-        }
         items={supportPoints}
         bgColor={`bg-gray-200`}
         primaryTextColor={`text-gray-900`}

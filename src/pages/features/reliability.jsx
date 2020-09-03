@@ -113,7 +113,7 @@ const LeadCriteriaPage = () => {
       <SEO title="Proven Reliability" description="" />
       <AltHeader
         title={`Proven reliability`}
-        header={`Increase your arbitrage sourcing output predictably.`}
+        header={`Take the guesswork out of everyday sourcing.`}
         subHeader={`LeadGeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, get a guaranteed output to seamlessly grow your FBA business.`}
         nav
         linkOne={`signup`}

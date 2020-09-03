@@ -172,6 +172,7 @@ const LeadCriteriaPage = ({ data }) => {
           </span>
         }
         items={criteriaItems}
+        firstItemMargin
         bgColor={`bg-gray-200`}
         primaryTextColor={`text-gray-900`}
         secondaryTextColor={`text-gray-700`}

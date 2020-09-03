@@ -41,26 +41,26 @@ const supportPage = ({ data }) => {
     {
       id: 1,
       image: data.astronaut.childImageSharp.fluid,
-      span: "Practical e-books & guides",
-      header: "Practical e-books & guides",
+      span: "E-books & guides",
+      header: "Consult the seller's handbook.",
       content:
-        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+        "Reference full-length e-books that include time-tested selling techniques. These guides cover material like product selection, account ungating, and more.",
     },
     {
       id: 2,
       image: data.astronaut.childImageSharp.fluid,
-      span: "Practical e-books & guides",
-      header: "8-Part OA training course",
+      span: "Arbitrage course",
+      header: "Share a screen with the experts.",
       content:
-        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+        "Learn at your own pace when you go through our 8-part arbitrage video course. Detailed walkthroughs will help you gain a better grasp over topics like data analysis, product prep, and other foundational concepts.",
     },
     {
       id: 3,
       image: data.astronaut.childImageSharp.fluid,
-      span: "Practical e-books & guides",
-      header: "Helpful tracking templates",
+      span: "Tracking templates",
+      header: "Keep track of performance.",
       content:
-        "Several different types of training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.",
+        "Measure and improve your selling metrics with powerful templates. Evaluate sales trends to identify the top-performing products and replenish inventory for easy profit.",
     },
   ]
 
@@ -69,7 +69,7 @@ const supportPage = ({ data }) => {
       <SEO title="Member Support" description="" />
       <AltHeader
         title={`Seller education`}
-        header={`Sell like an online arbitrage pro.`}
+        header={`Train like an online arbitrage pro.`}
         subHeader={`Several different types of comprehensive training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
         nav
         linkOne={`signup`}
