@@ -175,7 +175,7 @@ const IndexPage = ({ data }) => {
               key={feature.number}
               className="mt-8 lg:mt-12 flex flex-col-reverse md:flex-row  md:items-center justify-between"
             >
-              <div className="md:w-1/2 md:flex">
+              <div className="mt-4 md:mt-0 md:w-1/2 md:flex">
                 <span className="p-3 h-8 w-8 flex items-center justify-center bg-teal-200 rounded-full font-bold text-teal-500">
                   {feature.number}
                 </span>
@@ -186,7 +186,7 @@ const IndexPage = ({ data }) => {
                   <p className="mt-2 text-gray-700">{feature.body}</p>
                 </header>
               </div>
-              <div className="md:ml-12 lg:ml-16 md:w-1/2">
+              <div className="mt-4 md:mt-0 md:ml-12 lg:ml-16 md:w-1/2">
                 <Img fluid={feature.image} className="w-full max-w-xs" />
               </div>
             </article>
