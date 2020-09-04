@@ -317,12 +317,14 @@ const IndexPage = ({ data }) => {
         </aside>
       </section>
       <section className="mt-12 md:mt-16 lg:mt-24 bg-gray-200 text-gray-700">
-        <div className="container relative lg:flex">
-          {/* <Img
-            fluid={data.inspectedProducts.childImageSharp.fluid}
-            className="lg:mr-12 max-w-lg lg:max-w-4xl lg:h-full lg:w-1/3 xl:w-2/5"
-          /> */}
-          <article className="mt-8 lg:mt-0 py-12 md:py-16 lg:py-24 lg:pr-6 xl:pr-8 lg:w-3/5 lg:max-w-xl">
+        <div className="relative lg:flex">
+          <div className="xl:mr-20 lg:w-2/5">
+            <Img
+              fluid={data.inspectedProducts.childImageSharp.fluid}
+              className="lg:h-full split-image w-full"
+            />
+          </div>
+          <article className="mt-4 lg:mt-0 py-12 md:py-16 lg:py-24 px-4 md:px-6 xl:px-0 lg:w-3/5 lg:max-w-xl">
             <svg
               fill="none"
               viewBox="0 0 24 24"
