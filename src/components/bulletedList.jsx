@@ -1,11 +1,12 @@
 import React from "react"
 import Check from "../assets/check.svg"
 
-const bulletedList = ({ items, margin, gridLayout }) => {
+const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
+  const listMaxWidth = maxWidth || `md:max-w-xl lg:max-w-3xl`
   return (
     <div className={`${margin} text-gray-900 text-sm md:text-xs lg:text-sm`}>
       <ul
-        className={`md:mx-auto md:max-w-xl lg:max-w-3xl md:grid ${gridLayout} text-gray-700`}
+        className={`md:mx-auto ${listMaxWidth} md:grid ${gridLayout} text-gray-700`}
       >
         {items.map(item => (
           <li key={item.id} className="flex items-center">

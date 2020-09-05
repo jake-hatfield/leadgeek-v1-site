@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -10,8 +11,9 @@ import CTA from "../../components/cta"
 
 import Check from "../../assets/check.svg"
 import Dotted from "../../assets/dotted.svg"
+import RetailerSources from "../../assets/retailer-sources.svg"
 
-const LeadCriteriaPage = () => {
+const LeadCriteriaPage = ({ data }) => {
   const dataList = [
     {
       id: 1,
@@ -63,7 +65,7 @@ const LeadCriteriaPage = () => {
     },
     {
       id: 13,
-      dataPoint: "3rd party seller competition",
+      dataPoint: "Seller competition",
     },
     {
       id: 14,
@@ -79,7 +81,7 @@ const LeadCriteriaPage = () => {
     },
     {
       id: 17,
-      dataPoint: "Variation recommendations",
+      dataPoint: "Variation suggestions",
     },
   ]
   const dataPoints = dataList.length
@@ -247,9 +249,9 @@ const LeadCriteriaPage = () => {
           </div>
         </div>
       </section>
-      <section className="pt-24 lg:pt-40 pb-12 lg:pb-24 bg-gray-100">
+      <section className="pt-24 lg:pt-40 pb-12 lg:pb-24 relative bg-gray-100">
         <article className="container">
-          <header className="max-w-3xl">
+          <header className="relative z-10 max-w-3xl">
             <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
               Get informed research
             </span>
@@ -257,8 +259,8 @@ const LeadCriteriaPage = () => {
               Dive deep into product information.
             </h2>
           </header>
-          <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
-            <div className="md:w-1/2">
+          <div className="mt-8 lg:mt-12 flex flex-col-reverse xl:flex-row justify-between text-gray-700">
+            <div className="mt-8 md:mt-12 xl:mt-0 xl:w-3/5">
               <h3 className="text-xl font-semibold text-gray-900">
                 Detailed analysis for every product
               </h3>
@@ -274,10 +276,16 @@ const LeadCriteriaPage = () => {
               <BulletedList
                 items={dataList}
                 margin={`mt-4`}
-                gridLayout="md:grid-cols-2"
+                gridLayout="md:grid-cols-4 xl:grid-cols-2"
+                maxWidth={`max-w-none`}
               />
             </div>
-            <div className="md:ml-4 lg:ml-8 -md:w-1/2">Hello</div>
+            <div className="md:ml-4 lg:ml-8 xl:w-2/5">
+              <Img
+                fluid={data.analysis.childImageSharp.fluid}
+                className="md:mx-auto lg:w-3/4 xl:w-full"
+              />
+            </div>
           </div>
         </article>
       </section>
@@ -288,7 +296,7 @@ const LeadCriteriaPage = () => {
               Count on consistency
             </span>
             <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900">
-              Cut out sourcing volatility.
+              Cut out volume volatility.
             </h2>
             <p className="mt-4 max-w-2xl">
               With LeadGeek, you get a steady stream of proven-selling products
@@ -297,10 +305,10 @@ const LeadCriteriaPage = () => {
               opportunities without volume fluctuations.
             </p>
           </header>
-          <article className="mt-8 lg:mt-12 md:flex md:justify-between">
-            <header className="md:w-1/3">
-              <div>
-                <div>
+          <article className="mt-8 lg:mt-12 flex flex-col-reverse lg:flex-row lg:justify-between lg:items-center">
+            <header className="lg:w-1/3">
+              <div className="mt-8 md:mt-12 lg:mt-0 md:flex md:justify-between lg:flex-col">
+                <div className="md:w-1/2 lg:w-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -318,41 +326,43 @@ const LeadCriteriaPage = () => {
                   <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
                     500+ Retail sources
                   </h3>
-                  <p className={`mt-2`}>
+                  <p className="mt-2">
                     Our team sources over 500 US e-retailers to give your
                     product portfolio variety and help diminish lead
                     over-exposure.
                   </p>
                 </div>
-              </div>
-              <div>
-                <div className="mt-8">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="p-2 h-10 w-10 rounded-md bg-purple-600 text-white"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
-                  <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                    Reliable output
-                  </h3>
-                  <p className={`mt-2`}>
-                    We guarantee 10 product leads every day, Monday-Friday. Our
-                    lists go out early in the morning so you can be first to
-                    market with these deals.
-                  </p>
+                <div className="md:w-1/2 lg:w-full">
+                  <div className="mt-8 md:mt-0 lg:mt-8 md:ml-8 lg:ml-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      className="p-2 h-10 w-10 rounded-md bg-purple-600 text-white"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      />
+                    </svg>
+                    <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
+                      Reliable output
+                    </h3>
+                    <p className={`mt-2`}>
+                      We guarantee 10 product leads every day, Monday-Friday.
+                      Our lists go out early in the morning so you can be first
+                      to market with these deals.
+                    </p>
+                  </div>
                 </div>
               </div>
             </header>
-            <div className="md:w-2/3">hello</div>
+            <div className="mx-auto lg:ml-12 md:w-3/4 lg:w-2/3 lg:max-w-xl">
+              <RetailerSources className="w-full" />
+            </div>
           </article>
         </div>
       </section>
@@ -384,11 +394,11 @@ const LeadCriteriaPage = () => {
 }
 export const query = graphql`
   query {
-    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    analysis: file(relativePath: { eq: "analysis.png" }) {
       id
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

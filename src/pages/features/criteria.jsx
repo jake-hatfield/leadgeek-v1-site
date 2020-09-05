@@ -179,8 +179,11 @@ const LeadCriteriaPage = ({ data }) => {
       />
       <section
         id="competition"
-        className="pt-12 md:pt-16 lg:pt-24 container text-gray-700"
+        className="pt-12 md:pt-16 lg:pt-24 relative container text-gray-700"
       >
+        <div className="absolute top-0 right-0 z-0 transform rotate-90 -translate-y-24 -translate-x-16 xl:-translate-x-1">
+          <Dotted className="hidden md:inline-block w-24 text-purple-200" />
+        </div>
         <div className="md:flex md:justify-between">
           <article className="md:w-3/4">
             <header className="max-w-4xl">
