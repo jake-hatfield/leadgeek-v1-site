@@ -259,8 +259,8 @@ const LeadCriteriaPage = ({ data }) => {
               Dive deep into product information.
             </h2>
           </header>
-          <div className="mt-8 lg:mt-12 flex flex-col-reverse xl:flex-row justify-between text-gray-700">
-            <div className="mt-8 md:mt-12 xl:mt-0 xl:w-3/5">
+          <div className="mt-8 lg:mt-12 flex flex-col-reverse lg:flex-row justify-between lg:items-center text-gray-700">
+            <div className="mt-8 md:mt-12 xl:mt-0 lg:w-2/5">
               <h3 className="text-xl font-semibold text-gray-900">
                 Detailed analysis for every product
               </h3>
@@ -270,22 +270,24 @@ const LeadCriteriaPage = ({ data }) => {
                 to make informed purchasing decisions in a fraction of the time
                 it would normally take.
               </p>
-              <h3 className="mt-6 font-medium text-gray-700">
-                Every product includes:
-              </h3>
-              <BulletedList
-                items={dataList}
-                margin={`mt-4`}
-                gridLayout="md:grid-cols-4 xl:grid-cols-2"
-                maxWidth={`max-w-none`}
-              />
             </div>
-            <div className="md:ml-4 lg:ml-8 xl:w-2/5">
+            <div className="md:mx-auto xl:ml-8 md:w-2/3 lg:w-3/5">
               <Img
                 fluid={data.analysis.childImageSharp.fluid}
                 className="md:mx-auto lg:w-3/4 xl:w-full"
               />
             </div>
+          </div>
+          <div className="lg:mt-12">
+            <h3 className="mt-6 font-medium text-gray-700">
+              Every product includes:
+            </h3>
+            <BulletedList
+              items={dataList}
+              margin={`mt-4`}
+              gridLayout="md:grid-cols-4"
+              maxWidth={`max-w-none`}
+            />
           </div>
         </article>
       </section>
