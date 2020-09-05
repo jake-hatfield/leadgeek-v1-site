@@ -187,7 +187,10 @@ const IndexPage = ({ data }) => {
                 </header>
               </div>
               <div className="mt-4 md:mt-0 md:ml-12 lg:ml-16 md:w-1/2">
-                <Img fluid={feature.image} className="w-full max-w-xs" />
+                <Img
+                  fluid={feature.image}
+                  className="w-full max-w-xs lg:max-w-md"
+                />
               </div>
             </article>
           ))}
