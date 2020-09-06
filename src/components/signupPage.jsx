@@ -11,7 +11,7 @@ const signupPage = ({ price, featureList, plan, discount }) => {
   return (
     <section className="text-gray-700">
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
-      <div className="py-16 lg:py-24 h-100 lg:h-screen bg-gray-100">
+      <div className="py-16 lg:py-24 h-100 lg:min-h-screen bg-gray-100">
         <div className="pb-8 md:pb-12 lg:pb-24 ">
           <article className="mx-auto container">
             <header className="text-center">
