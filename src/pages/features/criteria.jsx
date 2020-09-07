@@ -18,33 +18,33 @@ const LeadCriteriaPage = ({ data }) => {
     {
       id: 1,
       title: "Net Profit",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Sizeable profit per unit",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "A wide profit margin gives you peace of mind about price fluctuations - the Grow plan's products must have an absolute minimum of $4 profit per unit, and the Pro plan's products must meet $5 to be considered for approval. Though these minimums offer plenty of padding, average profits are much higher.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: 2,
       title: "Net ROI",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "High return on investment",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "Generous ROI criteria allow sellers to grow quickly no matter their starting capital. To be approved, every product on the Grow plan must meet at least 40% ROI per unit. Standards on the Pro plan are even more strict, requiring 50% ROI per unit.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: 3,
       title: "Sales Velocity",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Quick product turnover",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "Generate revenue quickly and be able to re-invest profits as these products move through your store's pipeline. Expect consistent product turnover with a minimum standard of 10 sales per month on the Grow plan and 15 sales per month on the Pro plan.",
       image: data.astronaut.childImageSharp.fluid,
     },
     {
       id: 4,
       title: "Seller Insight Test",
-      header: "Lorem Ipsum dolor sit amet consectetur",
+      header: "Professional sellers in your corner",
       content:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum molestiae sed eligendi cupiditate? Veniam dolorem, sit quae sed ducimus aliquam laborum! Deserunt quod quo id, quos odit consequuntur accusantium.",
+        "Part of LeadGeek's vetting process includes having an experienced US Amazon seller review each lead before being sent out. With a reasonable degree of certainty, products are inspected to verify that they'll continue to perform well into the future.",
       image: data.astronaut.childImageSharp.fluid,
     },
   ]
@@ -163,10 +163,10 @@ const LeadCriteriaPage = ({ data }) => {
         mainHeader={`Enjoy strict standards that yield superior products.`}
         mainSubheader={
           <span>
-            Our carefully-tailored requirements and vetting methods allow you to
-            get professional-grade arbitrage sourcing at a fraction of the
-            price. Though we use many metrics to determine product quality, four
-            are most important: <strong>net profit</strong>,{" "}
+            Carefully-tailored requirements and vetting methods allow you to get
+            professional-grade arbitrage sourcing at a fraction of the price.
+            Though many metrics are used to determine product quality, four are
+            most important: <strong>net profit</strong>,{" "}
             <strong>net ROI</strong>, <strong>sales velocity</strong>, and the{" "}
             <strong>seller insight test</strong>.
           </span>

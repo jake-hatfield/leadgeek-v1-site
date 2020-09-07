@@ -14,21 +14,21 @@ import HalfDotted from "../assets/half-dotted.svg"
 const IndexPage = ({ data }) => {
   const featureList = [
     {
-      number: "1",
+      number: 1,
       header: "Drastically save time",
       body:
         "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a pre-vetted list of leads in just minutes each day.",
       image: data.saveTime.childImageSharp.fluid,
     },
     {
-      number: "2",
+      number: 2,
       header: "Predictably source products",
       body:
         "One of the biggest hurdles as an Amazon seller is sustainably finding products. LeadGeek members are provided with a guaranteed stream of leads so their business never suffers any downtime.",
       image: data.sourceProducts.childImageSharp.fluid,
     },
     {
-      number: "3",
+      number: 3,
       header: "Significantly scale volume",
       body:
         "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up as your business grows. Increasing potential new finds is as simple as subscribing to another list.",
@@ -41,25 +41,39 @@ const IndexPage = ({ data }) => {
       id: 1,
       iconPath:
         "M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01",
-      header: "Loss on no assurance",
+      header: "Loss on sorting leads",
       content:
-        "Even if you're a pro at evaluating leads, you have no control over how many you'll be able to find day in and day out.",
+        "Sifting through software for hours a day trying to find profitable products is a good way to waste time even if you know where to start.",
+      show: false,
     },
     {
       id: 2,
+      iconPath:
+        "M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01",
+      header: "Loss on no assurance",
+      content:
+        "Even if you're a pro at evaluating leads, you have no control over how many you'll be able to find day in and day out.",
+      show: true,
+    },
+    {
+      id: 3,
       iconPath:
         "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
       header: "Loss on excessive tools",
       content:
         "The more software and services you add to supplement sourcing, the more money is wasted on needless overhead.",
+      show: true,
+      margin: true,
     },
     {
-      id: 3,
+      id: 4,
       iconPath:
         "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0",
       header: "Loss on bad inventory",
       content:
         "If you purchase inventory without doing your due dilligence, once-profitable products can become a nightmarish drain on your resources.",
+      show: true,
+      margin: true,
     },
   ]
   return (
@@ -104,7 +118,7 @@ const IndexPage = ({ data }) => {
               </h3>
             </div>
           </header>
-          <div className="mt-12 lg:ml-12 md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
+          <div className="mt-12 lg:ml-12 hidden lg:block md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
             <svg
               fill="none"
               viewBox="0 0 24 24"
@@ -128,12 +142,14 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
         </div>
-        <div className="mt-8 lg:mt-12 relative container lg:flex lg:justify-between md:overflow-x-hidden lg:overflow-visible">
+        <div className="mt-8 lg:mt-12 relative container md:flex md:justify-between md:flex-wrap lg:flex-no-wrap md:overflow-x-hidden lg:overflow-visible">
           {costItems.map(item => (
             <div
               key={item.id}
               v-for="item in items"
-              className="relative z-10 md:max-w-sm lg:max-w-none lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0 text-gray-700"
+              className={`${item.show ? `block` : `block lg:hidden`} ${
+                item.margin && `lg:ml-8`
+              } mt-8 lg:mt-0 relative z-10 md:max-w-sm lg:max-w-none md:w-1/2 lg:w-1/3 text-gray-700`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
