@@ -43,7 +43,7 @@ const supportPage = ({ data }) => {
       header: "Problem solving at your fingertips.",
       content:
         "Bring any issue to our team's attention, and we guarantee a resolution. No matter how small the problem, LeadGeek members get their inquiries fixed thoroughly every time.",
-      image: data.accountProtection.childImageSharp.fluid,
+      image: data.problemSolving.childImageSharp.fluid,
     },
     {
       id: 2,
@@ -59,7 +59,7 @@ const supportPage = ({ data }) => {
       header: "Tailored & individualized support.",
       content:
         "Because of strict member caps, our team can provide in-depth support through several different methods of communication. Members of the Grow Plan receive support via email or live chat, and Pro Plan members additionally receive phone support.",
-      image: data.accountProtection.childImageSharp.fluid,
+      image: data.accessibleCommuncation.childImageSharp.fluid,
     },
   ]
   return (
@@ -120,7 +120,25 @@ const supportPage = ({ data }) => {
 
 export const query = graphql`
   query {
+    problemSolving: file(relativePath: { eq: "problem-solving.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
     accountProtection: file(relativePath: { eq: "account-protection.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    accessibleCommuncation: file(
+      relativePath: { eq: "accessible-communication.png" }
+    ) {
       id
       childImageSharp {
         fluid {
