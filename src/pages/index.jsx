@@ -343,7 +343,7 @@ const IndexPage = ({ data }) => {
               className="lg:h-full split-image w-full"
             />
           </div>
-          <article className="mt-4 lg:mt-0 py-12 md:py-16 lg:py-24 px-4 md:px-6 xl:px-0 lg:w-3/5 lg:max-w-xl">
+          <article className="mt-4 md:mt-0 py-8 md:py-16 lg:py-20 px-4 md:px-6 xl:px-0 lg:w-3/5 lg:max-w-xl">
             <svg
               fill="none"
               viewBox="0 0 24 24"

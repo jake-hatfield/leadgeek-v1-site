@@ -25,7 +25,7 @@ const AboutPage = () => {
             <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
           </div>
           <p>
-            LeadGeek was born out of frustration trying to run an arbitrage
+            LeadGeek was borne out of frustration trying to run an arbitrage
             business with countless product sourcing tools. With no single point
             with which to control sourcing output, attempting to scale gets
             messy in no time flat. And despite juggling so many monthly software

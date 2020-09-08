@@ -131,8 +131,16 @@ td:last-child {
   text-decoration-color: #5d55fa;
 }
 
-.split-image {
-  max-height: 696px;
+@screen md {
+  .split-image {
+    max-height: 450px;
+  }
+}
+
+@screen lg {
+  .split-image {
+    max-height: 696px;
+  }
 }
 
 @screen lg {

@@ -40,7 +40,7 @@ const supportPage = ({ data }) => {
   const educationPoints = [
     {
       id: 1,
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.ebooks.childImageSharp.fluid,
       span: "E-books & guides",
       header: "Consult the seller's handbook.",
       content:
@@ -48,7 +48,7 @@ const supportPage = ({ data }) => {
     },
     {
       id: 2,
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.arbitrageCourse.childImageSharp.fluid,
       span: "Arbitrage course",
       header: "Share a screen with the experts.",
       content:
@@ -56,7 +56,7 @@ const supportPage = ({ data }) => {
     },
     {
       id: 3,
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.templates.childImageSharp.fluid,
       span: "Tracking templates",
       header: "Keep track of performance.",
       content:
@@ -66,7 +66,7 @@ const supportPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Member Support" description="" />
+      <SEO title="Seller Education" description="" />
       <AltHeader
         title={`Seller education`}
         header={`Train like an online arbitrage pro.`}
@@ -123,11 +123,27 @@ const supportPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    ebooks: file(relativePath: { eq: "ebooks.png" }) {
       id
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    arbitrageCourse: file(relativePath: { eq: "arbitrage-course.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    templates: file(relativePath: { eq: "templates.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
