@@ -74,7 +74,7 @@ const AboutPage = () => {
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="Join now"
+        buttonText="See pricing"
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"

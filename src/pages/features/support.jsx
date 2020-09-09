@@ -9,6 +9,7 @@ import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
+import HalfDotted from "../../assets/half-dotted.svg"
 
 const supportPage = ({ data }) => {
   const supportSummary = [
@@ -74,6 +75,11 @@ const supportPage = ({ data }) => {
         linkOneText={`Join now`}
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
+        svgOne={
+          <div className="absolute top-0 right-0 z-0 transform translate-y-4 -translate-x-12">
+            <HalfDotted className="hidden md:inline-block w-32 lg:w-48 text-gray-200" />
+          </div>
+        }
       />
       <ThreeIconList
         items={supportSummary}
@@ -104,7 +110,7 @@ const supportPage = ({ data }) => {
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="Join now"
+        buttonText="See pricing"
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"

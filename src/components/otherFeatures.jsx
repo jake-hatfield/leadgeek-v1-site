@@ -12,18 +12,20 @@ const otherFeatures = ({
   primaryTextColor,
   secondaryTextColor,
   iconColor,
+  svgOne,
 }) => {
   return (
     <section
       className={`${margin} py-12 md:py-16 lg:py-24 ${bgColor} ${primaryTextColor}`}
     >
       <div className="container">
-        <header>
-          <h2 className="mt-2 text-3xl lg:text-4xl xl:text-5xl font-bold">
+        <header className="relative">
+          <h2 className="mt-2 relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold">
             Explore other LeadGeek features
           </h2>
+          {svgOne && svgOne}
         </header>
-        <div className="mt-12 lg:flex lg:justify-between">
+        <div className="mt-12 relative z-10 lg:flex lg:justify-between">
           {criteria && (
             <div
               v-for="item in items"

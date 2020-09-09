@@ -42,7 +42,10 @@ const largeDescription = ({
                 <h3>{item.header}</h3>
               </header>
               <div className="mt-6 max-w-4xl md:flex md:justify-start md:items-center">
-                <Img fluid={item.image} className="md:w-1/2" />
+                <Img
+                  fluid={item.image}
+                  className="w-full max-w-xs md:w-1/2 lg:max-w-md"
+                />
                 <div className="mt-4 md:mt-0 md:ml-12 md:w-1/2">
                   <span className="block uppercase text-sm md:text-base text-purple-600 font-bold">
                     {item.title}

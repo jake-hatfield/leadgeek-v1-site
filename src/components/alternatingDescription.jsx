@@ -45,7 +45,10 @@ const alternatingDescription = ({
               </p>
             </header>
             {item.image ? (
-              <Img fluid={item.image} className="w-full md:w-2/5 rounded-md" />
+              <Img
+                fluid={item.image}
+                className="w-full max-w-xs md:w-2/5 lg:max-w-md"
+              />
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

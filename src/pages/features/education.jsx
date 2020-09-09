@@ -9,6 +9,8 @@ import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
+import HalfDotted from "../../assets/half-dotted.svg"
+import Squiggles from "../../assets/squiggles.svg"
 
 const supportPage = ({ data }) => {
   const educationSummary = [
@@ -76,6 +78,11 @@ const supportPage = ({ data }) => {
         linkOneText={`Join now`}
         linkTwo={`demo`}
         linkTwoText={`Watch demo`}
+        svgOne={
+          <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-12 -translate-x-48">
+            <Dotted className="hidden md:inline-block w-24 text-gray-100" />
+          </div>
+        }
       />
       <ThreeIconList
         items={educationSummary}
@@ -101,13 +108,18 @@ const supportPage = ({ data }) => {
         criteria
         reliability
         support
+        svgOne={
+          <div className="absolute top-0 left-0 z-0 transform lg:translate-y-4 translate-x-8">
+            <Squiggles className="hidden md:inline-block w-48 lg:w-64 text-gray-200" />
+          </div>
+        }
       />
       <CTA
         padding={`py-12 md:py-16 lg:py-24`}
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="Join now"
+        buttonText="See pricing"
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"

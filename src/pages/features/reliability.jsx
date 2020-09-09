@@ -271,10 +271,10 @@ const LeadCriteriaPage = ({ data }) => {
                 it would normally take.
               </p>
             </div>
-            <div className="md:mx-auto xl:ml-8 md:w-2/3 lg:w-3/5">
+            <div className="md:mx-auto xl:ml-8 lg:flex lg:justify-end md:w-2/3 lg:w-3/5">
               <Img
                 fluid={data.analysis.childImageSharp.fluid}
-                className="md:mx-auto lg:w-3/4 xl:w-full"
+                className="w-full max-w-xs md:max-w-md lg:max-w-md"
               />
             </div>
           </div>
@@ -381,7 +381,7 @@ const LeadCriteriaPage = ({ data }) => {
         bgColor="bg-purple-600"
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="Join now"
+        buttonText="See pricing"
         link="demo"
         linkText="Watch demo"
         linkStyles="text-purple-100 hover:text-purple-200"
