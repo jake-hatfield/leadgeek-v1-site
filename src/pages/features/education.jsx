@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -9,7 +10,6 @@ import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
 import Dotted from "../../assets/dotted.svg"
-import HalfDotted from "../../assets/half-dotted.svg"
 import Squiggles from "../../assets/squiggles.svg"
 
 const supportPage = ({ data }) => {

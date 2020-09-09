@@ -102,7 +102,7 @@ const OrderConfirmationPage = () => {
             <div className="mt-2 inline-block">
               <a
                 href="mailto:support@leadgeek.io"
-                className="flex whitespace-no-wrap items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex whitespace-no-wrap items-center text-purple-400 group hover:text-purple-600 focus:outline-none focus:shadow-outline transition-colors duration-200"
               >
                 <span>sup</span>
                 <span>port@l</span>
@@ -111,7 +111,7 @@ const OrderConfirmationPage = () => {
               </a>
             </div>
           </header>
-          <div className="mt-6 relative z-10">
+          <div className="mt-6 relative z-10 text-purple-400">
             <h3 className="text-xl font-semibold text-gray-700">
               Support hours:
             </h3>
@@ -120,7 +120,7 @@ const OrderConfirmationPage = () => {
               Friday
             </p>
           </div>
-          <div className="mt-6 relative z-10">
+          <div className="mt-6 relative z-10 text-purple-400">
             <h3 className="text-xl font-semibold text-gray-700">
               Leads sent at:
             </h3>

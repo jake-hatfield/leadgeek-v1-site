@@ -161,27 +161,27 @@ const Header = () => {
       description: "Learn about our company and how we can help you",
       link: "about",
     },
-    {
-      linkID: 400,
-      path: (
-        <svg
-          className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      ),
-      title: "Guides",
-      description: "Check out our free guides to help de-mystify arbitrage",
-      link: "guides",
-    },
+    // {
+    //   linkID: 400,
+    //   path: (
+    //     <svg
+    //       className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
+    //       fill="none"
+    //       viewBox="0 0 24 24"
+    //       stroke="currentColor"
+    //     >
+    //       <path
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //         strokeWidth="2"
+    //         d="M13 10V3L4 14h7v7l9-11h-7z"
+    //       />
+    //     </svg>
+    //   ),
+    //   title: "Guides",
+    //   description: "Check out our free guides to help de-mystify arbitrage",
+    //   link: "guides",
+    // },
     // {
     //   linkID: 500,
     //   title: "Security",

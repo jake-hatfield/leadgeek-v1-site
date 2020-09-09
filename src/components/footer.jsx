@@ -17,7 +17,7 @@ const Footer = () => {
       items: [
         { title: "Pricing", link: "pricing" },
         { title: "Demo", link: "demo" },
-        { title: "Guides", link: "guides" },
+        // { title: "Guides", link: "guides" },
       ],
     },
     {
