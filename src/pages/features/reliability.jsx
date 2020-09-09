@@ -112,7 +112,10 @@ const LeadCriteriaPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Proven Reliability" description="" />
+      <SEO
+        title="Proven Reliability"
+        description="Remove any guesswork that surrounds daily arbitrage sourcing with LeadGeek. We guarantee a consistent output of premium leads for you to choose from every weekday."
+      />
       <AltHeader
         title={`Proven reliability`}
         header={`Take the guesswork out of everyday sourcing.`}

@@ -9,7 +9,7 @@ const PrivacyPolicyPage = () => {
   const siteLinkFull = "https://leadgeek.io"
   return (
     <Layout title="Privacy Policy">
-      <SEO title="Privacy Policy" description="" />
+      <SEO title="Privacy Policy" />
       <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
         <h1 className="text-3xl font-black">
           Welcome to {siteTitle}'s privacy policy

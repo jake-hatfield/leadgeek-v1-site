@@ -78,7 +78,10 @@ const IndexPage = ({ data }) => {
   ]
   return (
     <Layout>
-      <SEO title="Online Arbitrage Leads & Lists for Amazon Sellers" />
+      <SEO
+        title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
+        description="Receive potent online arbitrage leads every weekday with LeadGeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+      />
       <section className="relative">
         <PrimaryHeader
           header={`More than just premium online arbitrage sourcing.`}

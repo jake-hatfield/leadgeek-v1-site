@@ -65,7 +65,10 @@ const supportPage = ({ data }) => {
   ]
   return (
     <Layout>
-      <SEO title="Member Support" description="" />
+      <SEO
+        title="Member Support"
+        description="Join a selling community that genuinely cares about helping you exceed your arbitrage goals. Receive top-tier support when you join LeadGeek."
+      />
       <AltHeader
         title={`Member support`}
         header={`Sell with confidence, not confusion.`}

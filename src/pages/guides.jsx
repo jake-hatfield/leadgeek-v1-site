@@ -47,7 +47,10 @@ const GuidesPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Arbitrage Guides" />
+      <SEO
+        title="Online Arbitrage Guides"
+        description="Use LeadGeek's free guides to learn everything you need to know about online arbitrage and Amazon FBA. Download complete training e-books today."
+      />
       <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`How-to guides`}

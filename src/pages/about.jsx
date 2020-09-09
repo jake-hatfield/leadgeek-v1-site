@@ -10,7 +10,10 @@ import Dotted from "../assets/dotted.svg"
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="About LeadGeek" />
+      <SEO
+        title="About LeadGeek"
+        description="Learn about our company, why we do what we do, and how we're the perfect team to help you grow your FBA business."
+      />
       <section className="py-12 lg:py-24 container max-w-2xl text-gray-700">
         <header>
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">

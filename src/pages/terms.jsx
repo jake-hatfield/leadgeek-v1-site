@@ -10,7 +10,7 @@ const TermsPage = () => {
   const siteLinkFull = "https://leadgeek.io"
   return (
     <Layout>
-      <SEO title="Terms of Service" description="" />
+      <SEO title="Terms of Service" />
       <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
         <h1 className="text-3xl font-black">
           Welcome to {siteTitle}'s terms of service agreement

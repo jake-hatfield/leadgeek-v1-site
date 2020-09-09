@@ -68,7 +68,10 @@ const supportPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Seller Education" description="" />
+      <SEO
+        title="Seller Education"
+        description="Join LeadGeek and receive in-depth e-books, video lessons, and templates to help you learn the ins and outs of online arbitrage."
+      />
       <AltHeader
         title={`Seller education`}
         header={`Train like an online arbitrage pro.`}

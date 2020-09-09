@@ -506,7 +506,10 @@ const PricingPage = () => {
 
   return (
     <Layout>
-      <SEO title="Pricing" />
+      <SEO
+        title="LeadGeek Pricing and Plans - Monthly Membership Costs"
+        description="Find out all the details of LeadGeek pricing so you can choose the plan that's best for your arbitrage business."
+      />
       <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Grow your online arbitrage business with LeadGeek.`}

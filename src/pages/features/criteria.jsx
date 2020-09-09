@@ -130,7 +130,10 @@ const LeadCriteriaPage = ({ data }) => {
   ]
   return (
     <Layout>
-      <SEO title="Strict Criteria" description="" />
+      <SEO
+        title="Strict Criteria"
+        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+      />
       <AltHeader
         title={`Strict Criteria`}
         header={`Awesome products sourced for you, not by you.`}

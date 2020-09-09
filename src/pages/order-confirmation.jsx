@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 
 import ArrowRight from "../assets/arrow-right.svg"
 import Check from "../assets/check.svg"
+import Squiggles from "../assets/squiggles.svg"
 
 const OrderConfirmationPage = () => {
   const items = [
@@ -92,8 +93,11 @@ const OrderConfirmationPage = () => {
             <p className="mt-4"></p>
           </div>
         </header>
-        <article className="lg:w-1/4 text-gray-500">
-          <header className="mt-6 lg:mt-0 text-gray-700">
+        <article className="relative lg:w-1/4 text-gray-500">
+          <div className="absolute bottom-0 left-0 z-0 transform -translate-y-48 -translate-x-8 lg:-translate-y-12 lg:-translate-x-40 xl:-translate-x-32">
+            <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
+          </div>
+          <header className="mt-6 lg:mt-0 relative z-10 text-gray-700">
             <h3 className="text-xl font-semibold">Have any questions?</h3>
             <div className="mt-2 inline-block">
               <a
@@ -107,7 +111,7 @@ const OrderConfirmationPage = () => {
               </a>
             </div>
           </header>
-          <div className="mt-6">
+          <div className="mt-6 relative z-10">
             <h3 className="text-xl font-semibold text-gray-700">
               Support hours:
             </h3>
@@ -116,7 +120,7 @@ const OrderConfirmationPage = () => {
               Friday
             </p>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 relative z-10">
             <h3 className="text-xl font-semibold text-gray-700">
               Leads sent at:
             </h3>

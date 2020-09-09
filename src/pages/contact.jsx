@@ -10,9 +10,8 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO
-        title="Contact"
-        description="Have a question for NGUX? There's a very real person on the other end of this contact form. Reach out with a UX design question or anything on your mind."
-        keywords={[`contact not garbage ux`, `contact NGUX`]}
+        title="Contact Us"
+        description="Have a question for our team? We're real people on the other end of the screen, so reach out with any questions or concerns."
       />
       <div className="pb-8 md:pb-16 lg:pb-24 lg:min-h-screen lg:w-2/5 absolute top-0 negative-z bg-gray-100" />
       <section className="my-8 md:my-12 lg:my-24 relative text-gray-900">

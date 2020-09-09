@@ -52,7 +52,10 @@ const GrowSignupPage = () => {
   const plan = "Grow Plan"
   return (
     <Fragment>
-      <SEO title="Grow Plan Signup" />
+      <SEO
+        title="Grow Plan Signup"
+        description="Join LeadGeek's Grow plan to receive premium arbitrage leads, support, and seller education to scale your FBA business."
+      />
       <SignupPage featureList={featureList} price={growPrice} plan={plan} />
     </Fragment>
   )

@@ -56,7 +56,10 @@ const ProSignupPage = () => {
   const plan = "Pro Plan"
   return (
     <Fragment>
-      <SEO title="Grow Plan Signup" />
+      <SEO
+        title="Pro Plan Signup"
+        description="Join LeadGeek's Pro plan for more arbitrage list exclusivity and the highest quality arbitrage products possible."
+      />
       <SignupPage featureList={featureList} price={proPrice} plan={plan} />
     </Fragment>
   )

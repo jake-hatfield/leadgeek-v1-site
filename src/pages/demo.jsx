@@ -10,7 +10,10 @@ import Dotted from "../assets/dotted.svg"
 const demoPage = () => {
   return (
     <Layout>
-      <SEO title="Demo" />
+      <SEO
+        title="Product Demo"
+        description="Watch a demo of LeadGeek in action to see how our service can simplify and improve your daily FBA operations."
+      />
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`How-to guides`}
