@@ -16,7 +16,7 @@ const demoPage = () => {
       />
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
-          header={`How-to guides`}
+          header={`See it in action.`}
           subHeader={`Each of these free guides contain advice and research to give you more insight into how to become an effective Amazon arbitrage seller.`}
           bottomPadding="pb-32"
           negativeMargin

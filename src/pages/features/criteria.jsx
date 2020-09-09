@@ -21,7 +21,7 @@ const LeadCriteriaPage = ({ data }) => {
       header: "Sizeable profit per unit",
       content:
         "A wide profit margin gives you peace of mind about price fluctuations - the Grow plan's products must have an absolute minimum of $4 profit per unit, and the Pro plan's products must meet $5 to be considered for approval. Though these minimums offer plenty of padding, average profits are much higher.",
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.profit.childImageSharp.fluid,
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const LeadCriteriaPage = ({ data }) => {
       header: "High return on investment",
       content:
         "Generous ROI criteria allow sellers to grow quickly no matter their starting capital. To be approved, every product on the Grow plan must meet at least 40% ROI per unit. Standards on the Pro plan are even more strict, requiring 50% ROI per unit.",
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.roi.childImageSharp.fluid,
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const LeadCriteriaPage = ({ data }) => {
       header: "Quick product turnover",
       content:
         "Generate revenue quickly and be able to re-invest profits as these products move through your store's pipeline. Expect consistent product turnover with a minimum standard of 10 sales per month on the Grow plan and 15 sales per month on the Pro plan.",
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.bsr.childImageSharp.fluid,
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const LeadCriteriaPage = ({ data }) => {
       header: "Professional sellers in your corner",
       content:
         "Part of LeadGeek's vetting process includes having an experienced US Amazon seller review each lead before being sent out. With a reasonable degree of certainty, products are inspected to verify that they'll continue to perform well into the future.",
-      image: data.astronaut.childImageSharp.fluid,
+      image: data.sellerInsight.childImageSharp.fluid,
     },
   ]
   const productCategories = [
@@ -339,13 +339,14 @@ const LeadCriteriaPage = ({ data }) => {
           </div>
         </div>
         <div className="mt-12">
-          <Img
-            fluid={data.astronaut.childImageSharp.fluid}
+          {/* <Img
+            fluid={data.profit.childImageSharp.fluid}
             className="h-64 w-full shadow-lg"
-          />
+          /> */}
         </div>
       </section>
-      <section className="-mt-48 md:-mt-40 pt-56 pb-12 lg:pb-24 bg-gray-100 text-gray-700">
+      {/* <section className="-mt-48 md:-mt-40 pt-56 pb-12 lg:pb-24 bg-gray-100 text-gray-700"> */}
+      <section className="py-12 md:py-16 lg:py-24 text-gray-700 bg-gray-100">
         <div className="container md:flex md:flex-row md:justify-between">
           <header className="md:w-3/4">
             <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
@@ -423,11 +424,35 @@ const LeadCriteriaPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    profit: file(relativePath: { eq: "profit.png" }) {
       id
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    roi: file(relativePath: { eq: "roi.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    bsr: file(relativePath: { eq: "bsr.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    sellerInsight: file(relativePath: { eq: "seller-insight.png" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
