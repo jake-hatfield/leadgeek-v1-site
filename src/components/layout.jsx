@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
       </CookieConsent>
       <Drift
         appId="gx6km7rv655d"
-        style={{ borderWidth: 2, borderColor: "#5D55FA" }}
+        style={{ borderWidth: 2, borderColor: "#5D55FA", borderStyle: "solid" }}
       />
     </div>
   )
