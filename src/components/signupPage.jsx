@@ -5,6 +5,7 @@ import { Elements } from "@stripe/react-stripe-js"
 
 import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
+import Drift from "react-driftjs"
 
 const signupPage = ({ price, featureList, plan, discount }) => {
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
@@ -77,6 +78,10 @@ const signupPage = ({ price, featureList, plan, discount }) => {
           </article>
         </div>
       </div>
+      <Drift
+        appId="gx6km7rv655d"
+        style={{ borderWidth: 2, borderColor: "#5D55FA", borderStyle: "solid" }}
+      />
     </section>
   )
 }

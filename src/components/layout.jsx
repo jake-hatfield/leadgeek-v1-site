@@ -6,7 +6,6 @@ import "../styles/app.css"
 import Header from "./header"
 import Footer from "./footer"
 import CookieConsent from "react-cookie-consent"
-import Drift from "react-driftjs"
 
 import ArrowRight from "../assets/arrow-right.svg"
 
@@ -45,10 +44,6 @@ const Layout = ({ children }) => {
           <ArrowRight className="ml-1 inline-block w-4" />
         </Link>
       </CookieConsent>
-      <Drift
-        appId="gx6km7rv655d"
-        style={{ borderWidth: 2, borderColor: "#5D55FA", borderStyle: "solid" }}
-      />
     </div>
   )
 }
