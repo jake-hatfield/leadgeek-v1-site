@@ -45,7 +45,10 @@ const Layout = ({ children }) => {
           <ArrowRight className="ml-1 inline-block w-4" />
         </Link>
       </CookieConsent>
-      <Drift appId="gx6km7rv655d" style={{ borderColor: "#5D55FA" }} />
+      <Drift
+        appId="gx6km7rv655d"
+        style={{ borderWidth: 2, borderColor: "#5D55FA" }}
+      />
     </div>
   )
 }
