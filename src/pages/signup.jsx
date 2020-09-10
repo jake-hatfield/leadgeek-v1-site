@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import ArrowLink from "../components/arrowLink"
 import CTA from "../components/cta"
-import Drift from "react-driftjs"
 
 import Check from "../assets/check.svg"
 import Dotted from "../assets/dotted.svg"
@@ -210,10 +209,6 @@ const signupPage = () => {
           />
         </div>
       </section>
-      <Drift
-        appId="gx6km7rv655d"
-        style={{ borderWidth: 2, borderColor: "#5D55FA", borderStyle: "solid" }}
-      />
     </Layout>
   )
 }

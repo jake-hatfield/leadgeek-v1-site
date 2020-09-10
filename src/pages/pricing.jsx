@@ -9,7 +9,6 @@ import SideCard from "../components/sideCard"
 import TripleIcons from "../components/threeIconList"
 import Faq from "../components/faq"
 import CTA from "../components/cta"
-import Drift from "react-driftjs"
 
 import Check from "../assets/check.svg"
 import Dotted from "../assets/dotted.svg"
@@ -641,10 +640,6 @@ const PricingPage = () => {
             <Dotted className="hidden md:inline-block w-24 text-purple-400" />
           </div>
         }
-      />
-      <Drift
-        appId="gx6km7rv655d"
-        style={{ borderWidth: 2, borderColor: "#5D55FA", borderStyle: "solid" }}
       />
     </Layout>
   )
