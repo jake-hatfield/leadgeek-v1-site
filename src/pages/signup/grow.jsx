@@ -42,7 +42,7 @@ const GrowSignupPage = () => {
     },
     {
       id: "6",
-      body: "Email & chat support",
+      body: "Email support",
     },
     {
       id: "7",
@@ -50,7 +50,7 @@ const GrowSignupPage = () => {
     },
   ]
   const plan = "Grow Plan"
-  const productSelected = "price_1HQIcTDdWoP4Ck9RK6STLcHa"
+  const productSelected = process.env.GATSBY_GROW_PRODUCT_ID
   return (
     <Fragment>
       <SEO

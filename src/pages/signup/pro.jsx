@@ -46,7 +46,7 @@ const ProSignupPage = () => {
     },
     {
       id: "6",
-      body: "Email & chat support",
+      body: "Email & phone support",
     },
     {
       id: "7",
@@ -54,7 +54,7 @@ const ProSignupPage = () => {
     },
   ]
   const plan = "Pro Plan"
-  const productSelected = "price_1HQIckDdWoP4Ck9Rp0rSGikS"
+  const productSelected = process.env.GATSBY_PRO_PRODUCT_ID
   return (
     <Fragment>
       <SEO

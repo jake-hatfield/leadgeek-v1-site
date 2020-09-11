@@ -49,7 +49,7 @@ const BundleSignupPage = () => {
     },
   ]
   const plan = "Bundle"
-  const productSelected = "price_1HQIcoDdWoP4Ck9RGcu8ZnSE"
+  const productSelected = process.env.GATSBY_BUNDLE_PRODUCT_ID
   return (
     <Fragment>
       <SEO

@@ -60,7 +60,7 @@ const supportPage = ({ data }) => {
       title: "Accessible communication",
       header: "Tailored & individualized support.",
       content:
-        "Because of strict member caps, our team can provide in-depth support through several different methods of communication. Members of the Grow Plan receive support via email or live chat, and Pro Plan members additionally receive phone support.",
+        "Because of strict member caps, our team can provide in-depth support through several different methods of communication. Members of the Grow Plan receive support via email, and Pro Plan members additionally receive phone support.",
       image: data.accessibleCommuncation.childImageSharp.fluid,
     },
   ]

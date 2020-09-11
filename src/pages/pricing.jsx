@@ -59,7 +59,7 @@ const PricingPage = () => {
     },
     {
       id: "6",
-      body: "Email & chat support",
+      body: "Email support",
     },
     {
       id: "7",
@@ -106,7 +106,7 @@ const PricingPage = () => {
     },
     {
       id: "6",
-      body: "Email & chat support",
+      body: "Email support",
     },
     {
       id: "7",
@@ -478,9 +478,9 @@ const PricingPage = () => {
         {
           cellID: 300,
           description: true,
-          value: "Email & chat support",
+          value: "Email support",
           tooltip:
-            "Reach our team for support via email or live chat during normal business hours.",
+            "Reach our team for support via email during normal business hours.",
         },
         { cellID: 301, description: false, value: true },
         { cellID: 302, description: false, value: true },
