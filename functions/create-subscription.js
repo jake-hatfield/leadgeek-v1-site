@@ -1,9 +1,9 @@
 require("dotenv").config()
 
-// const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
-const stripe = require("stripe")(
-  "sk_test_51HF2gpDdWoP4Ck9RQjCKZsDrvydigroixaCEfwsARdYmqr7RYWUJObpoLwQjWNwYel1wSqWrkXugIzaNe9xpwAXl00y3LfKcRI"
-)
+const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
+// const stripe = require("stripe")(
+//   "sk_test_51HF2gpDdWoP4Ck9RQjCKZsDrvydigroixaCEfwsARdYmqr7RYWUJObpoLwQjWNwYel1wSqWrkXugIzaNe9xpwAXl00y3LfKcRI"
+// )
 
 const statusCode = 200
 const headers = {
