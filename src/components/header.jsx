@@ -350,7 +350,7 @@ const Header = () => {
                 <div className="text-xs uppercase text-gray-600">
                   Product Features
                 </div>
-                <nav className="mt-8 grid row-gap-8">
+                <nav className="mt-8 grid gap-8">
                   {featureItems.map(item => (
                     <Link
                       key={item.linkID}
@@ -370,7 +370,7 @@ const Header = () => {
               </div>
             </div>
             <div className="py-6 px-3 space-y-6 rounded-b-md bg-gray-100">
-              <div className="grid grid-cols-2 row-gap-4 gap-8">
+              <div className="grid grid-cols-2 gap-4">
                 {moreItemsMobile.map(item => (
                   <Link
                     key={item.linkID}

@@ -125,7 +125,7 @@ const signupPage = () => {
                 </div>
                 <span className="ml-2 w-full border border-gray-200" />
               </div>
-              <ul className="mt-4 md:grid md:grid-cols-2 md:col-gap-1">
+              <ul className="mt-4 md:grid md:grid-cols-2 md:gap-x-2">
                 {item.bullets.map((bullet, i) => (
                   <li
                     key={i}
