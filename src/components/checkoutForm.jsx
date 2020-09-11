@@ -4,59 +4,68 @@ import axios from "axios"
 
 import BillingDetailsFields from "../components/billingDetailsFields"
 
-const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
+const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkoutError, setCheckoutError] = useState()
 
   const stripe = useStripe()
   const elements = useElements()
-
   const handleCardDetailsChange = ev => {
     ev.error ? setCheckoutError(ev.error.message) : setCheckoutError()
   }
-
   const handleFormSubmit = async ev => {
     ev.preventDefault()
 
-    const billingDetails = {
-      name: ev.target.name.value,
-      email: ev.target.email.value,
+    if (!stripe || !elements) {
+      return
     }
 
     setProcessingTo(true)
+    const { data: customer } = await axios.post(
+      "/.netlify/functions/create-customer",
+      {
+        name: ev.target.name.value,
+        email: ev.target.email.value,
+      }
+    )
 
     const cardElement = elements.getElement("card")
 
     try {
-      const { data: clientSecret } = await axios.post(
-        "/.netlify/functions/charge",
-        {
-          amount: price * 100,
-        }
-      )
-
-      const paymentMethodReq = await stripe.createPaymentMethod({
+      const priceId = productSelected
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: "card",
         card: cardElement,
-        billing_details: billingDetails,
       })
-
-      if (paymentMethodReq.error) {
-        setCheckoutError(paymentMethodReq.error.message)
+      if (error) {
+        console.log("[createPaymentMethod error]", error)
         setProcessingTo(false)
+        setCheckoutError(error.message)
         return
+      } else {
+        const paymentMethodId = paymentMethod.id
+        const { data: subscription } = await axios.post(
+          "/.netlify/functions/create-subscription",
+          {
+            customerId: customer,
+            paymentMethodId: paymentMethodId,
+            priceId: priceId,
+          }
+        )
       }
 
-      const { error } = await stripe.confirmCardPayment(clientSecret, {
-        payment_method: paymentMethodReq.paymentMethod.id,
-      })
+      //   const { error } = await stripe.confirmCardPayment(clientSecret, {
+      //     payment_method: paymentMethodReq.paymentMethod.id,
+      //   })
+      //   const { error } = await stripe.confirmCardPayment(clientSecret, {
+      //     payment_method: paymentMethodReq.paymentMethod.id,
+      //   })
 
       if (error) {
         setCheckoutError(error.message)
         setProcessingTo(false)
         return
       }
-
       onSuccessfulCheckout()
     } catch (err) {
       console.log(err)
@@ -68,12 +77,8 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       fontSize: "15.75px",
       color: "#486581",
       iconColor: "#BCCCDC",
-      ":focus": {
-        outline: "0",
-        boxShadow: "1px 3px 1px #4299e1",
-      },
       "::placeholder": {
-        color: "#BCCCDC",
+        color: "#D9E2EC",
       },
     },
     invalid: {

@@ -126,9 +126,9 @@ const signupPage = () => {
                 <span className="ml-2 w-full border border-gray-200" />
               </div>
               <ul className="mt-4 md:grid md:grid-cols-2 md:col-gap-1">
-                {item.bullets.map(bullet => (
+                {item.bullets.map((bullet, i) => (
                   <li
-                    key={bullet}
+                    key={i}
                     className="flex items-start md:items-center text-sm"
                   >
                     <Check className="h-3 w-3 md:h-4 md:w-4 flex-none text-teal-500 bg-teal-200 rounded-full" />

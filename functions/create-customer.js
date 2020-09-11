@@ -1,7 +1,9 @@
 require("dotenv").config()
-const axios = require("axios")
 
-const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
+// const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
+const stripe = require("stripe")(
+  "sk_test_51HF2gpDdWoP4Ck9RQjCKZsDrvydigroixaCEfwsARdYmqr7RYWUJObpoLwQjWNwYel1wSqWrkXugIzaNe9xpwAXl00y3LfKcRI"
+)
 
 const statusCode = 200
 const headers = {
@@ -23,7 +25,7 @@ exports.handler = async function (event) {
   const data = JSON.parse(event.body)
 
   // Ensure we have the required data before proceeding
-  if (!data.amount) {
+  if (!data.name) {
     const message = "Required information is missing."
     console.log(message)
     return {
@@ -36,17 +38,17 @@ exports.handler = async function (event) {
     }
   }
 
-  // Attempt a paymentIntent to Stripe and return the client_secret if successful
+  // Create a customer in stripe
   try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: data.amount,
-      currency: "usd",
+    const createCustomer = await stripe.customers.create({
+      name: data.name,
+      email: data.email,
     })
 
     return {
       statusCode,
       headers,
-      body: paymentIntent.client_secret,
+      body: createCustomer.id,
     }
   } catch (err) {
     console.error(err.message)

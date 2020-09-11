@@ -6,7 +6,13 @@ import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
-const signupPage = ({ price, featureList, plan, discount }) => {
+const signupPage = ({
+  price,
+  featureList,
+  plan,
+  productSelected,
+  discount,
+}) => {
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
   return (
     <section className="text-gray-700">
@@ -34,6 +40,7 @@ const signupPage = ({ price, featureList, plan, discount }) => {
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
                       price={price}
+                      productSelected={productSelected}
                       onSuccessfulCheckout={() =>
                         navigate("/order-confirmation/")
                       }
@@ -52,7 +59,6 @@ const signupPage = ({ price, featureList, plan, discount }) => {
                       >
                         <path
                           strokeLinecap="round"
-                          k
                           strokeLinejoin="round"
                           strokeWidth={2}
                           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"

@@ -49,6 +49,7 @@ const BundleSignupPage = () => {
     },
   ]
   const plan = "Bundle"
+  const productSelected = "price_1HQGhVDdWoP4Ck9RxFOvZ4n5"
   return (
     <Fragment>
       <SEO
@@ -59,6 +60,7 @@ const BundleSignupPage = () => {
         featureList={featureList}
         price={bundlePrice}
         plan={plan}
+        productSelected={productSelected}
         discount={discount}
       />
     </Fragment>
