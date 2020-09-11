@@ -50,7 +50,7 @@ const GrowSignupPage = () => {
     },
   ]
   const plan = "Grow Plan"
-  const productSelected = "price_1HQHjJDdWoP4Ck9RKnNpZk0I"
+  const productSelected = "price_1HQIcTDdWoP4Ck9RK6STLcHa"
   return (
     <Fragment>
       <SEO
