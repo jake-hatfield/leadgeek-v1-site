@@ -1,10 +1,6 @@
 require("dotenv").config()
 
 const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
-// const stripe = require("stripe")(
-//   "sk_test_51HF2gpDdWoP4Ck9RQjCKZsDrvydigroixaCEfwsARdYmqr7RYWUJObpoLwQjWNwYel1wSqWrkXugIzaNe9xpwAXl00y3LfKcRI"
-// )
-
 const statusCode = 200
 const headers = {
   "Access-Control-Allow-Origin": "*",
@@ -38,7 +34,7 @@ exports.handler = async function (event) {
     }
   }
 
-  // Attempt a paymentIntent to Stripe and return the client_secret if successful
+  // Attach the payment method to the customer
   try {
     await stripe.paymentMethods.attach(data.paymentMethodId, {
       customer: data.customerId,
@@ -46,12 +42,13 @@ exports.handler = async function (event) {
   } catch (error) {
     console.log(error)
   }
-
+  // Update the payment method/customer in Stripe
   await stripe.customers.update(data.customerId, {
     invoice_settings: {
       default_payment_method: data.paymentMethodId,
     },
   })
+  //   Create the subscription in Stripe
   const subscription = await stripe.subscriptions.create({
     customer: data.customerId,
     items: [{ price: data.priceId }],
@@ -63,16 +60,3 @@ exports.handler = async function (event) {
     body: subscription.status,
   }
 }
-//   catch (err) {
-//     console.error(err.message)
-
-//     return {
-//       statusCode: 424,
-//       headers,
-//       body: JSON.stringify({
-//         status: "failed",
-//         message: err.message,
-//       }),
-//     }
-//   }
-// }

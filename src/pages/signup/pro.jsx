@@ -54,7 +54,7 @@ const ProSignupPage = () => {
     },
   ]
   const plan = "Pro Plan"
-  const productSelected = "price_1HF3XTDdWoP4Ck9RelxSTxt2"
+  const productSelected = "price_1HQHirDdWoP4Ck9RrN5AxpeH"
   return (
     <Fragment>
       <SEO

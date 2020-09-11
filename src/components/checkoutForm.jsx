@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 import axios from "axios"
 
 import BillingDetailsFields from "../components/billingDetailsFields"
 
 const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false)
-  const [checkoutError, setCheckoutError] = useState()
+  const [checkoutError, setCheckoutError] = useState("")
 
   const stripe = useStripe()
   const elements = useElements()
@@ -15,6 +16,8 @@ const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
   }
   const handleFormSubmit = async ev => {
     ev.preventDefault()
+    const name = ev.target.name.value
+    const email = ev.target.email.value
 
     if (!stripe || !elements) {
       return
@@ -24,8 +27,8 @@ const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
     const { data: customer } = await axios.post(
       "/.netlify/functions/create-customer",
       {
-        name: ev.target.name.value,
-        email: ev.target.email.value,
+        name: name,
+        email: email,
       }
     )
 
@@ -44,28 +47,21 @@ const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
         return
       } else {
         const paymentMethodId = paymentMethod.id
-        const { data: subscription } = await axios.post(
-          "/.netlify/functions/create-subscription",
-          {
-            customerId: customer,
-            paymentMethodId: paymentMethodId,
-            priceId: priceId,
-          }
-        )
+        await axios.post("/.netlify/functions/create-subscription", {
+          customerId: customer,
+          paymentMethodId: paymentMethodId,
+          priceId: priceId,
+        })
       }
-
-      //   const { error } = await stripe.confirmCardPayment(clientSecret, {
-      //     payment_method: paymentMethodReq.paymentMethod.id,
-      //   })
-      //   const { error } = await stripe.confirmCardPayment(clientSecret, {
-      //     payment_method: paymentMethodReq.paymentMethod.id,
-      //   })
 
       if (error) {
         setCheckoutError(error.message)
         setProcessingTo(false)
         return
       }
+      addToMailchimp(email, {
+        FNAME: name,
+      })
       onSuccessfulCheckout()
     } catch (err) {
       console.log(err)
@@ -112,7 +108,7 @@ const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
           options={cardElementOpts}
         />
       </div>
-      {/* {checkoutError && <CheckoutError>{checkoutError}</CheckoutError>} */}
+      {checkoutError && <div>{checkoutError}</div>}
       {/* TIP always disable your submit button while processing payments */}
       <button
         disabled={isProcessing || !stripe}

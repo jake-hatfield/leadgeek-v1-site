@@ -14,6 +14,9 @@ const signupPage = ({
   discount,
 }) => {
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
+  const onSuccessfulCheckout = () => {
+    navigate("/order-confirmation/")
+  }
   return (
     <section className="text-gray-700">
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
@@ -41,9 +44,7 @@ const signupPage = ({
                     <CheckoutForm
                       price={price}
                       productSelected={productSelected}
-                      onSuccessfulCheckout={() =>
-                        navigate("/order-confirmation/")
-                      }
+                      onSuccessfulCheckout={() => onSuccessfulCheckout()}
                     />
                   </Elements>
                 </div>

@@ -49,7 +49,7 @@ const BundleSignupPage = () => {
     },
   ]
   const plan = "Bundle"
-  const productSelected = "price_1HQGhVDdWoP4Ck9RxFOvZ4n5"
+  const productSelected = "price_1HQHiZDdWoP4Ck9RtDqeILs4"
   return (
     <Fragment>
       <SEO
