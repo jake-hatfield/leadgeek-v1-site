@@ -70,9 +70,10 @@ const ContactPage = () => {
           <article className="mt-10 lg:mt-0 lg:w-2/5 lg:flex lg:items-start lg:justify-end">
             <form
               name="contact"
-              method="post"
+              method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              action="/contact-success"
               className="mx-auto lg:mx-0 w-full max-w-md rounded-md shadow-md bg-white"
             >
               <input type="hidden" name="contact-page" value="contact" />
