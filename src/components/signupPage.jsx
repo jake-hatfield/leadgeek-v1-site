@@ -42,6 +42,7 @@ const signupPage = ({
                 <div className="pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 bg-white rounded-md shadow-lg">
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
+                      plan={plan}
                       price={price}
                       productSelected={productSelected}
                       onSuccessfulCheckout={() => onSuccessfulCheckout()}

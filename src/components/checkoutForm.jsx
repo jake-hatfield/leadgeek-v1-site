@@ -5,7 +5,12 @@ import axios from "axios"
 
 import BillingDetailsFields from "../components/billingDetailsFields"
 
-const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
+const CheckoutForm = ({
+  plan,
+  productSelected,
+  price,
+  onSuccessfulCheckout,
+}) => {
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkoutError, setCheckoutError] = useState("")
 
@@ -59,8 +64,10 @@ const CheckoutForm = ({ productSelected, price, onSuccessfulCheckout }) => {
         setProcessingTo(false)
         return
       }
+      console.log(plan)
       addToMailchimp(email, {
         FNAME: name,
+        PLAN: `${plan} subscriber`,
       })
       onSuccessfulCheckout()
     } catch (err) {
