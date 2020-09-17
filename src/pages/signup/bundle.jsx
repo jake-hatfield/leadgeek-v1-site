@@ -31,17 +31,17 @@ const BundleSignupPage = () => {
       id: "4",
       body: "All Pro Plan leads",
     },
-    {
-      id: "5",
-      body: (
-        <span>
-          Training e-books & <strong>course</strong>
-        </span>
-      ),
-    },
+    // {
+    //   id: "5",
+    //   body: (
+    //     <span>
+    //       Training e-books & <strong>course</strong>
+    //     </span>
+    //   ),
+    // },
     {
       id: "6",
-      body: "Premium support",
+      body: "Email & phone support",
     },
     {
       id: "7",

@@ -107,7 +107,7 @@ const supportPage = ({ data }) => {
         iconColor="bg-purple-100 text-purple-600"
         criteria
         reliability
-        education
+        // education
       />
       <CTA
         padding={`py-12 md:py-16 lg:py-24`}

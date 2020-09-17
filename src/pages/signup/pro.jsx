@@ -36,14 +36,14 @@ const ProSignupPage = () => {
         </span>
       ),
     },
-    {
-      id: "5",
-      body: (
-        <span>
-          Training e-books & <strong>course</strong>
-        </span>
-      ),
-    },
+    // {
+    //   id: "5",
+    //   body: (
+    //     <span>
+    //       Training e-books & <strong>course</strong>
+    //     </span>
+    //   ),
+    // },
     {
       id: "6",
       body: "Email & phone support",

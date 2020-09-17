@@ -400,7 +400,7 @@ const LeadCriteriaPage = ({ data }) => {
         secondaryTextColor="text-gray-700"
         iconColor="bg-purple-100 text-purple-600"
         reliability
-        education
+        // education
         support
       />
       <CTA

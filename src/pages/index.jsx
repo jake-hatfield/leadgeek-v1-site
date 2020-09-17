@@ -282,7 +282,7 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
-            <div className="md:mr-12 lg:w-1/2">
+            {/* <div className="md:mr-12 lg:w-1/2">
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
                 fill="none"
@@ -309,7 +309,7 @@ const IndexPage = ({ data }) => {
                 link="/features/education"
                 linkText="Learn about arbitrage training"
               />
-            </div>
+            </div> */}
             <div className="mt-8 md:mt-0 lg:w-1/2">
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"

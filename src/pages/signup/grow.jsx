@@ -36,10 +36,10 @@ const GrowSignupPage = () => {
         </span>
       ),
     },
-    {
-      id: "5",
-      body: "Training e-books",
-    },
+    // {
+    //   id: "5",
+    //   body: "Training e-books",
+    // },
     {
       id: "6",
       body: "Email support",

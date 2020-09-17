@@ -53,10 +53,10 @@ const PricingPage = () => {
         </span>
       ),
     },
-    {
-      id: "5",
-      body: "Training e-books",
-    },
+    // {
+    //   id: "5",
+    //   body: "Training e-books",
+    // },
     {
       id: "6",
       body: "Email support",
@@ -96,17 +96,17 @@ const PricingPage = () => {
         </span>
       ),
     },
-    {
-      id: "5",
-      body: (
-        <span>
-          Training e-books & <strong>course</strong>
-        </span>
-      ),
-    },
+    // {
+    //   id: "5",
+    //   body: (
+    //     <span>
+    //       Training e-books & <strong>course</strong>
+    //     </span>
+    //   ),
+    // },
     {
       id: "6",
-      body: "Email support",
+      body: "Premium support",
     },
     {
       id: "7",
@@ -135,14 +135,14 @@ const PricingPage = () => {
       id: "4",
       body: "All Pro Plan leads",
     },
-    {
-      id: "5",
-      body: (
-        <span>
-          Training e-books & <strong>course</strong>
-        </span>
-      ),
-    },
+    // {
+    //   id: "5",
+    //   body: (
+    //     <span>
+    //       Training e-books & <strong>course</strong>
+    //     </span>
+    //   ),
+    // },
     {
       id: "6",
       body: "Premium support",
@@ -259,9 +259,9 @@ const PricingPage = () => {
         {
           cellID: 600,
           description: true,
-          value: ".PDF & .XLSX format",
+          value: ".XLSX & Cloud format",
           tooltip:
-            "We send the .PDF and .XLSX formats of our lead lists in case you prefer one over the other.",
+            "We send the .XLSX and Google Sheet formats of our lead lists in case you prefer one over the other.",
         },
         { cellID: 601, description: false, value: true },
         { cellID: 602, description: false, value: true },
@@ -390,57 +390,57 @@ const PricingPage = () => {
       ],
     },
   ]
-  const educationFeatureRows = [
-    {
-      rowID: 100,
-      cells: [
-        { cellID: 100, description: true, value: "Keepa graph e-book" },
-        { cellID: 101, description: false, value: true },
-        { cellID: 102, description: false, value: true },
-        { cellID: 103, description: false, value: true },
-      ],
-    },
-    {
-      rowID: 200,
-      cells: [
-        { cellID: 200, description: true, value: "Ungating training e-book" },
-        { cellID: 201, description: false, value: true },
-        { cellID: 202, description: false, value: true },
-        { cellID: 203, description: false, value: true },
-      ],
-    },
-    {
-      rowID: 300,
-      cells: [
-        { cellID: 301, description: true, value: "8-Module arbitrage course" },
-        { cellID: 302, description: false, value: true },
-        { cellID: 303, description: false, value: true },
-        { cellID: 304, description: false, value: false },
-      ],
-    },
-    {
-      rowID: 400,
-      cells: [
-        { cellID: 400, description: true, value: "Tracking templates" },
-        { cellID: 401, description: false, value: true },
-        { cellID: 402, description: false, value: true },
-        { cellID: 403, description: false, value: false },
-      ],
-    },
-    {
-      rowID: 500,
-      cells: [
-        {
-          cellID: 500,
-          description: true,
-          value: "Free content updates",
-        },
-        { cellID: 501, description: false, value: true },
-        { cellID: 502, description: false, value: true },
-        { cellID: 503, description: false, value: true },
-      ],
-    },
-  ]
+  //   const educationFeatureRows = [
+  //     {
+  //       rowID: 100,
+  //       cells: [
+  //         { cellID: 100, description: true, value: "Keepa graph e-book" },
+  //         { cellID: 101, description: false, value: true },
+  //         { cellID: 102, description: false, value: true },
+  //         { cellID: 103, description: false, value: true },
+  //       ],
+  //     },
+  //     {
+  //       rowID: 200,
+  //       cells: [
+  //         { cellID: 200, description: true, value: "Ungating training e-book" },
+  //         { cellID: 201, description: false, value: true },
+  //         { cellID: 202, description: false, value: true },
+  //         { cellID: 203, description: false, value: true },
+  //       ],
+  //     },
+  //     {
+  //       rowID: 300,
+  //       cells: [
+  //         { cellID: 301, description: true, value: "8-Module arbitrage course" },
+  //         { cellID: 302, description: false, value: true },
+  //         { cellID: 303, description: false, value: true },
+  //         { cellID: 304, description: false, value: false },
+  //       ],
+  //     },
+  //     {
+  //       rowID: 400,
+  //       cells: [
+  //         { cellID: 400, description: true, value: "Tracking templates" },
+  //         { cellID: 401, description: false, value: true },
+  //         { cellID: 402, description: false, value: true },
+  //         { cellID: 403, description: false, value: false },
+  //       ],
+  //     },
+  //     {
+  //       rowID: 500,
+  //       cells: [
+  //         {
+  //           cellID: 500,
+  //           description: true,
+  //           value: "Free content updates",
+  //         },
+  //         { cellID: 501, description: false, value: true },
+  //         { cellID: 502, description: false, value: true },
+  //         { cellID: 503, description: false, value: true },
+  //       ],
+  //     },
+  //   ]
   const supportFeatureRows = [
     {
       rowID: 100,
@@ -613,11 +613,11 @@ const PricingPage = () => {
           featureRows={criteriaFeatureRows}
           id={`lead-standards`}
         />
-        <PricingTable
+        {/* <PricingTable
           tableHeader={`Seller education`}
           featureRows={educationFeatureRows}
           id={`seller-education`}
-        />
+        /> */}
         <PricingTable
           tableHeader={`Member support`}
           featureRows={supportFeatureRows}

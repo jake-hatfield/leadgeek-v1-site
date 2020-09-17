@@ -8,7 +8,7 @@ const Footer = () => {
       items: [
         { title: "Criteria", link: "features/criteria" },
         { title: "Reliability", link: "features/reliability" },
-        { title: "Education", link: "features/education" },
+        // { title: "Education", link: "features/education" },
         { title: "Support", link: "features/support" },
       ],
     },
