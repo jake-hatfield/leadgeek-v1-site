@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Check from "../assets/check.svg"
+import Check from "../assets/svgs/check.svg"
 
 const sideCard = ({ featureList, plan, price, link, start }) => {
   return (

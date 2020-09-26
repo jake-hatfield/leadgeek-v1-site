@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Play from "../assets/play.svg"
+import Play from "../assets/svgs/play.svg"
 
 const primaryHeader = ({
   header,

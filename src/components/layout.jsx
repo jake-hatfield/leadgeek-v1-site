@@ -7,7 +7,7 @@ import Header from "./header"
 import Footer from "./footer"
 import CookieConsent from "react-cookie-consent"
 
-import ArrowRight from "../assets/arrow-right.svg"
+import ArrowRight from "../assets/svgs/arrow-right.svg"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

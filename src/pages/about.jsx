@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CTA from "../components/cta"
 
-import Dotted from "../assets/dotted.svg"
+import Dotted from "../assets/svgs/dotted.svg"
 
 const AboutPage = () => {
   return (

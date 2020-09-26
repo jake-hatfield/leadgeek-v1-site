@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { animated } from "react-spring"
 
+import demoGif from "../assets/gifs/preview.gif"
+
 function Dropdown({ title, items, open, setOpen, animation }) {
   const toggle = () => setOpen(!open)
 
@@ -56,8 +58,18 @@ function Dropdown({ title, items, open, setOpen, animation }) {
                     </Link>
                   ))}
                 </div>
-                <div className="hidden lg:flex w-1/4 xl:w-1/3 h-48 items-center justify-center">
-                  GIF
+                <div className="hidden lg:flex lg:flex-col w-1/4 xl:w-1/3 h-48 items-center justify-center">
+                  <div>
+                    <div className="relative">
+                      <Link to={"/demo"}>
+                        <img
+                          src={demoGif}
+                          alt="LeadGeek demo preview"
+                          className="w-64"
+                        />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

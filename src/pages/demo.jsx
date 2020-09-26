@@ -5,7 +5,9 @@ import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 
-import Dotted from "../assets/dotted.svg"
+import Dotted from "../assets/svgs/dotted.svg"
+import HalfDotted from "../assets/svgs/half-dotted.svg"
+import Squiggles from "../assets/svgs/squiggles.svg"
 
 const demoPage = () => {
   return (
@@ -16,23 +18,49 @@ const demoPage = () => {
       />
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
-          header={`See it in action.`}
-          subHeader={`Each of these free guides contain advice and research to give you more insight into how to become an effective Amazon arbitrage seller.`}
+          header={`We didn't reinvent the wheel, just sourcing.`}
+          subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. LeadGeek feels familiar to how you source now, but it's a much more efficient experience. Watch a full product walkthrough to see our product in action.`}
           bottomPadding="pb-32"
           negativeMargin
+          svgOne={
+            <div className="absolute bottom-0 left-0 z-0 transform -translate-y-8">
+              <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
+            </div>
+          }
         />
+      </section>
+      <section className="-mt-20 md:-mt-16 relative container flex justify-center">
+        <div className="absolute bottom-0 right-0 z-0 transform rotate-90 translate-y-12">
+          <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
+        </div>
+        <div className="video-responsive">
+          <iframe
+            className="video-responsive-item"
+            title="LeadGeek Demo"
+            src="https://player.vimeo.com/video/461992164"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        </div>
       </section>
       <section className="my-12 lg:my-24 container">
         <header className="md:mx-auto max-w-2xl text-gray-700">
-          <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900 lg:text-center">
-            LeadGeek makes it easy for arbitrage sellers like you to:
+          <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
+            Don't dig through information, surface it.
           </h2>
+          <p className="mt-6">
+            LeadGeek saves you time by presenting the information you need - and
+            only the information you need. The days of sorting through thousands
+            of products in a software's awful interface are over, as are the
+            hours you spend going through an "organized" sheet of leads from
+            another service.
+          </p>
           <p className="mt-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-            nesciunt, placeat recusandae vel totam aspernatur nemo, tempora
-            deserunt harum mollitia dolorem delectus sapiente ratione voluptatum
-            sunt maxime possimus sit optio, labore alias ad. Voluptatibus ipsum
-            inventore, corrupti cupiditate necessitatibus suscipit.
+            Our service helps surface the data that's important to you in
+            seconds. Focus on the aspects of product selection that are
+            important to you so you can evaluate, order, and ship your inventory
+            as quickly as possible.
           </p>
         </header>
       </section>
@@ -42,7 +70,7 @@ const demoPage = () => {
         textColor="text-white"
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
         buttonText="See pricing"
-        linkText="Contact support"
+        linkText="Contact us"
         link="contact"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={

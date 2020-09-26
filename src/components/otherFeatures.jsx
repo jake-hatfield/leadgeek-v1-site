@@ -25,7 +25,7 @@ const otherFeatures = ({
           </h2>
           {svgOne && svgOne}
         </header>
-        <div className="mt-12 relative z-10 lg:flex lg:justify-between">
+        <div className="mt-12 relative z-10 lg:flex">
           {criteria && (
             <div
               v-for="item in items"
@@ -89,6 +89,36 @@ const otherFeatures = ({
               />
             </div>
           )}
+          {support && (
+            <div
+              v-for="item in items"
+              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className={`p-2 h-10 w-10 ${iconColor} rounded-md`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <h3 className="mt-6 lg:text-xl font-semibold">Member support</h3>
+              <p className={`mt-2 ${secondaryTextColor}`}>
+                Our experienced team has your back! Reach out to us for
+                dedicated support and other perks exclusive to LeadGeek sellers.
+              </p>
+              <ArrowLink
+                link="/features/support"
+                linkText="Learn about member support"
+              />
+            </div>
+          )}
           {education && (
             <div
               v-for="item in items"
@@ -120,36 +150,6 @@ const otherFeatures = ({
               <ArrowLink
                 link="/features/education"
                 linkText="Learn about arbitrage training"
-              />
-            </div>
-          )}
-          {support && (
-            <div
-              v-for="item in items"
-              className="lg:w-1/3 first:ml-0 lg:ml-8 first:mt-0 mt-8 lg:mt-0"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className={`p-2 h-10 w-10 ${iconColor} rounded-md`}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold">Member support</h3>
-              <p className={`mt-2 ${secondaryTextColor}`}>
-                Our experienced team has your back! Reach out to us for
-                dedicated support and other perks exclusive to LeadGeek sellers.
-              </p>
-              <ArrowLink
-                link="/features/support"
-                linkText="Learn about member support"
               />
             </div>
           )}

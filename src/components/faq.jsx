@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Squiggles from "../assets/squiggles.svg"
+import Squiggles from "../assets/svgs/squiggles.svg"
 
 const faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [

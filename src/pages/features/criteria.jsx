@@ -10,8 +10,8 @@ import BulletedList from "../../components/bulletedList"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
-import Dotted from "../../assets/dotted.svg"
-import Squiggles from "../../assets/squiggles.svg"
+import Dotted from "../../assets/svgs/dotted.svg"
+import Squiggles from "../../assets/svgs/squiggles.svg"
 
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [

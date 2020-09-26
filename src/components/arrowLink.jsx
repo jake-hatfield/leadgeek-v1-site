@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import ArrowRight from "../assets/arrow-right.svg"
+import ArrowRight from "../assets/svgs/arrow-right.svg"
 
 const arrowLink = ({ link, linkText, noMargin }) => {
   return (

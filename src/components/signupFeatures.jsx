@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Check from "../assets/check.svg"
+import Check from "../assets/svgs/check.svg"
 
 const signupFeatures = ({ featureList, price, plan, discount }) => {
   return (
@@ -17,7 +17,7 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
           </Link>
         </div>
         <h2 className="mt-4 text-xl lg:text-2xl text-gray-900 font-bold">
-          LeadGeek {plan}
+          LeadGeek <span className="text-purple-600">{plan}</span>
         </h2>
         <div className="mt-2">
           <div className="flex items-center justify-between">

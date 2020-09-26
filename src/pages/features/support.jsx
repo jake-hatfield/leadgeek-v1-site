@@ -9,8 +9,8 @@ import LargeDescription from "../../components/largeDescription"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
-import Dotted from "../../assets/dotted.svg"
-import HalfDotted from "../../assets/half-dotted.svg"
+import Dotted from "../../assets/svgs/dotted.svg"
+import HalfDotted from "../../assets/svgs/half-dotted.svg"
 
 const supportPage = ({ data }) => {
   const supportSummary = [

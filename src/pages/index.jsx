@@ -8,9 +8,9 @@ import PrimaryHeader from "../components/primaryHeader"
 import CTA from "../components/cta"
 import ArrowLink from "../components/arrowLink"
 
-import Dotted from "../assets/dotted.svg"
-import Squiggles from "../assets/squiggles.svg"
-import HalfDotted from "../assets/half-dotted.svg"
+import Dotted from "../assets/svgs/dotted.svg"
+import Squiggles from "../assets/svgs/squiggles.svg"
+import HalfDotted from "../assets/svgs/half-dotted.svg"
 
 const IndexPage = ({ data }) => {
   const featureList = [
@@ -186,9 +186,6 @@ const IndexPage = ({ data }) => {
             <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
               LeadGeek makes it easy for Amazon sellers like you to:
             </h2>
-            <div className="absolute bottom-0 right-0 z-0 transform lg:translate-y-8 lg:translate-x-24">
-              <HalfDotted className="hidden lg:inline-block w-48 text-gray-200" />
-            </div>
           </header>
           {featureList.map(feature => (
             <article

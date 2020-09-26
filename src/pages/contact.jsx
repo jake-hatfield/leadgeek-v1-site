@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import ArrowRight from "../assets/arrow-right.svg"
-import Dotted from "../assets/dotted.svg"
+import ArrowRight from "../assets/svgs/arrow-right.svg"
+import Dotted from "../assets/svgs/dotted.svg"
 
 const ContactPage = () => {
   return (

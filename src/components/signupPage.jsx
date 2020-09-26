@@ -6,6 +6,8 @@ import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
+import HalfDotted from "../assets/svgs/half-dotted.svg"
+
 const signupPage = ({
   price,
   featureList,
@@ -22,8 +24,11 @@ const signupPage = ({
       <div className="h-6 absolute inset-x-0 top-0 background-repeat border-b-2 border-purple-400"></div>
       <div className="py-16 lg:py-24 h-100 lg:min-h-screen bg-gray-100">
         <div className="pb-8 md:pb-12 lg:pb-24 ">
-          <article className="mx-auto container">
-            <header className="text-center">
+          <article className="mx-auto relative container">
+            <div className="absolute top-0 right-0 z-0 transform">
+              <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
+            </div>
+            <header className="relative z-20 text-center">
               <Link
                 to={`/`}
                 className="font-bold text-2xl lg:text-3xl text-gray-900"

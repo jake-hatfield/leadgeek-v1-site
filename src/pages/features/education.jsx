@@ -9,8 +9,8 @@ import AlternatingDescription from "../../components/alternatingDescription"
 import OtherFeatures from "../../components/otherFeatures"
 import CTA from "../../components/cta"
 
-import Dotted from "../../assets/dotted.svg"
-import Squiggles from "../../assets/squiggles.svg"
+import Dotted from "../../assets/svgs/dotted.svg"
+import Squiggles from "../../assets/svgs/squiggles.svg"
 
 const supportPage = ({ data }) => {
   const educationSummary = [

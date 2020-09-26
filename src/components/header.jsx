@@ -241,7 +241,7 @@ const Header = () => {
       <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
         {/* logo */}
         <div>
-          <div className="font-bold text-xl lg:text-2xl">
+          <div className="flex items-center font-bold text-xl lg:text-2xl">
             <Link
               to={`/`}
               className="text-gray-900 focus:outline-none focus:shadow-outline"
@@ -315,14 +315,15 @@ const Header = () => {
       >
         <div className="rounded-md shadow-md">
           <div className="rounded-md shadow-xs bg-white divide-y-2 divide-gray-200">
-            <div className="pt-5 pb-6 px-3 space-y-6">
+            <div className="pt-4 pb-6 px-3 space-y-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <img
-                    className="mb-0 h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-                    alt="Workflow"
-                  />
+                  <Link
+                    to={`/`}
+                    className="font-bold text-xl text-gray-900 focus:outline-none focus:shadow-outline"
+                  >
+                    Lead<span className="text-purple-500">Geek</span>
+                  </Link>
                 </div>
                 <div className="-mt-1 -mr-2">
                   <button

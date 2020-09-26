@@ -7,9 +7,9 @@ import PrimaryHeader from "../components/primaryHeader"
 import ArrowLink from "../components/arrowLink"
 import CTA from "../components/cta"
 
-import Check from "../assets/check.svg"
-import Dotted from "../assets/dotted.svg"
-import HalfDotted from "../assets/half-dotted.svg"
+import Check from "../assets/svgs/check.svg"
+import Dotted from "../assets/svgs/dotted.svg"
+import HalfDotted from "../assets/svgs/half-dotted.svg"
 
 const signupPage = () => {
   const growPrice = 129

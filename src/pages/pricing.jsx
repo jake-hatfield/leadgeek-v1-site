@@ -10,9 +10,9 @@ import TripleIcons from "../components/threeIconList"
 import Faq from "../components/faq"
 import CTA from "../components/cta"
 
-import Check from "../assets/check.svg"
-import Dotted from "../assets/dotted.svg"
-import HalfDotted from "../assets/half-dotted.svg"
+import Check from "../assets/svgs/check.svg"
+import Dotted from "../assets/svgs/dotted.svg"
+import HalfDotted from "../assets/svgs/half-dotted.svg"
 
 const PricingPage = () => {
   const growPrice = 129
@@ -633,7 +633,7 @@ const PricingPage = () => {
         buttonText="Join now"
         buttonLink="signup"
         link="contact"
-        linkText="Contact"
+        linkText="Contact us"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
           <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">

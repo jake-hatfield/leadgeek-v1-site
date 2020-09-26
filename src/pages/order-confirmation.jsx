@@ -3,9 +3,9 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import ArrowRight from "../assets/arrow-right.svg"
-import Check from "../assets/check.svg"
-import Squiggles from "../assets/squiggles.svg"
+import ArrowRight from "../assets/svgs/arrow-right.svg"
+import Check from "../assets/svgs/check.svg"
+import Squiggles from "../assets/svgs/squiggles.svg"
 
 const OrderConfirmationPage = () => {
   const items = [

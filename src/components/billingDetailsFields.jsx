@@ -6,16 +6,16 @@ const BillingDetailsFields = () => {
     <>
       <FormField
         name="name"
-        label="Name"
+        label="Full name"
         type="text"
-        placeholder="Jeff Bezos"
+        placeholder="Peter Parker"
         required
       />
       <FormField
         name="email"
         label="Email"
         type="email"
-        placeholder="totallyjeffbezos@amazon.com"
+        placeholder="peterparker@gmail.com"
         required
       />
     </>
