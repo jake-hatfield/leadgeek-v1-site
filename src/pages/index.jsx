@@ -391,10 +391,10 @@ const IndexPage = ({ data }) => {
                   <span className="block uppercase text-sm">Minimum ROI</span>
                 </div>
                 <div className="ml-8 md:w-1/4">
-                  <span className="font-bold text-4xl text-purple-600">
-                    10+
+                  <span className="font-bold text-4xl text-purple-600">3%</span>
+                  <span className="block uppercase text-sm">
+                    Products / category
                   </span>
-                  <span className="block uppercase text-sm">Sales / month</span>
                 </div>
               </div>
             </aside>

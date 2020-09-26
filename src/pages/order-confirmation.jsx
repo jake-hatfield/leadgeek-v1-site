@@ -9,11 +9,11 @@ import Squiggles from "../assets/svgs/squiggles.svg"
 
 const OrderConfirmationPage = () => {
   const items = [
-    {
-      id: 1,
-      description: `Any educational material will be emailed to you over the next few
-  days.`,
-    },
+    //     {
+    //       id: 1,
+    //       description: `Any educational material will be emailed to you over the next few
+    //   days.`,
+    //     },
     {
       id: 2,
       description: `Online arbitrage leads will be emailed to you every weekday morning.`,
@@ -27,7 +27,7 @@ const OrderConfirmationPage = () => {
             href="mailto:support@leadgeek.io?subject=Request%20to%20Join%20Additional%20Lists"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-dotted"
+            className="link"
           >
             contact support
           </a>
