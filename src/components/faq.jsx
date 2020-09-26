@@ -82,7 +82,8 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
         <p>
           No, they aren't. We'd like to, but it's impossible to account for prep
           and ship-to-Amazon costs since they'll be different for everyone.
-          However, we <i>do</i> account for FBA fees.
+          However, we <i>do</i> account for FBA fees and a prep calculator is
+          included on every daily sheet.
         </p>
       ),
     },
