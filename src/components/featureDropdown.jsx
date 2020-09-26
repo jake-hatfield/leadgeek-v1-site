@@ -65,7 +65,7 @@ function Dropdown({ title, items, open, setOpen, animation }) {
                         <img
                           src={demoGif}
                           alt="LeadGeek demo preview"
-                          className="w-64"
+                          className="mb-0 w-64"
                         />
                       </Link>
                     </div>
