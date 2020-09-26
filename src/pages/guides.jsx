@@ -145,7 +145,7 @@ const GuidesPage = ({ data }) => {
 }
 export const query = graphql`
   query {
-    astronaut: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+    astronaut: file(relativePath: { eq: "analysis.png" }) {
       id
       childImageSharp {
         fluid {
