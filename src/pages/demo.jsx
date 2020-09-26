@@ -19,7 +19,7 @@ const demoPage = () => {
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`We didn't reinvent the wheel, just sourcing.`}
-          subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. LeadGeek feels familiar to how you source now, but it's a much more efficient experience. Watch a full product walkthrough to see our product in action.`}
+          subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. LeadGeek feels familiar to how you find products now, but it's a much more efficient experience. Watch a full walkthrough to see our product in action.`}
           bottomPadding="pb-32"
           negativeMargin
           svgOne={
