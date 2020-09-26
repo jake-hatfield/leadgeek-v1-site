@@ -62,8 +62,8 @@ function Dropdown({ title, items, open, setOpen, animation }) {
                 <div className="hidden lg:flex lg:flex-col w-1/4 xl:w-1/3 h-48 items-center justify-center">
                   <div>
                     <div className="relative">
-                      <PlayButton className="h-12 w-12 gif-button" />
                       <Link to={"/demo"}>
+                        <PlayButton className="h-12 w-12 gif-button text-purple-600" />
                         <img
                           src={demoGif}
                           alt="LeadGeek demo preview"

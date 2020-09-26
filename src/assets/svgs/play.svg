@@ -1,1 +1,3 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#5d55fa;fill-rule:evenodd;}</style></defs><rect class="cls-1" x="4.5" y="5" width="12.33" height="10.28"/><path class="cls-2" d="M10,20A10,10,0,1,0,0,10,10,10,0,0,0,10,20ZM9.44,6.46A1.23,1.23,0,0,0,8.16,6.4,1.24,1.24,0,0,0,7.5,7.5v5a1.24,1.24,0,0,0,.66,1.1,1.23,1.23,0,0,0,1.28-.06L13.19,11a1.25,1.25,0,0,0,0-2.08Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+</svg>
