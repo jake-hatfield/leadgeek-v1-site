@@ -67,6 +67,7 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        { name: `wot-verification`, content: "e1d10c408e176da4deec" },
       ].concat(meta)}
     />
   )
