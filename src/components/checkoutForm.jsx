@@ -12,7 +12,7 @@ const CheckoutForm = ({
   onSuccessfulCheckout,
 }) => {
   const [isProcessing, setProcessingTo] = useState(false)
-  const [checkoutError, setCheckoutError] = useState("")
+  const [checkoutError, setCheckoutError] = useState()
 
   const stripe = useStripe()
   const elements = useElements()
@@ -58,20 +58,22 @@ const CheckoutForm = ({
           priceId: priceId,
         })
       }
-
       if (error) {
         setCheckoutError(error.message)
         setProcessingTo(false)
         return
       }
-      console.log(plan)
       addToMailchimp(email, {
         FNAME: name,
         PLAN: `${plan} subscriber`,
       })
       onSuccessfulCheckout()
-    } catch (err) {
-      console.log(err)
+    } catch (error) {
+      console.log(error)
+      setCheckoutError(
+        "Your card was declined, please contact support to complete your purchase."
+      )
+      setProcessingTo(false)
     }
   }
 
@@ -115,7 +117,29 @@ const CheckoutForm = ({
           options={cardElementOpts}
         />
       </div>
-      {checkoutError && <div>{checkoutError}</div>}
+      {checkoutError && (
+        <aside className="mt-4 py-2 px-4 border-l-8 border-red-400 bg-red-200 text-red-500">
+          <div className="flex">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="h-4 w-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </div>
+            <p className="ml-2 text-xs">{checkoutError}</p>
+          </div>
+        </aside>
+      )}
       {/* TIP always disable your submit button while processing payments */}
       <button
         disabled={isProcessing || !stripe}
