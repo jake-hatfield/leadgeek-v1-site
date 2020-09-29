@@ -44,10 +44,24 @@ module.exports = {
     //     respectDNT: true,
     //   },
     // },
+    // {
+    //   resolve: "gatsby-plugin-google-tagmanager",
+    //   options: {
+    //     id: "GTM-NNVJ2DH",
+    //   },
+    // },
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: "gatsby-plugin-google-marketing-platform",
       options: {
-        id: "GTM-NNVJ2DH",
+        //   dataLayer: {
+        //     gaPropertyId: '[Google Analytics ID]',
+        //   },
+        tagmanager: {
+          id: "GTM-NNVJ2DH",
+        },
+        optimize: {
+          id: "OPT-KXGPFFT",
+        },
       },
     },
     {
