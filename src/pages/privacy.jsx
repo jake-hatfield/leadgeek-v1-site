@@ -238,11 +238,27 @@ const PrivacyPolicyPage = () => {
         </p>
         <h2 className="mt-6 text-xl font-bold">Contact information</h2>
         <p className="mt-4 text-gray-700">
-          If you have any questions about this privacy policy, please contact us
+          If you have any questions about our privacy policy, please contact us
           via our{" "}
           <Link to={`/contact`} className="font-semibold">
             contact form
           </Link>
+          , email us at{" "}
+          <a
+            href="mailto:hello@leadgeek.io"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold"
+          >
+            <span>sup</span>
+            <span>port@l</span>
+            <span>eadgeek.io</span>
+          </a>{" "}
+          or call us at{" "}
+          <a href="tel:(214) 810-0564" className="font-semibold">
+            <span>(214) 8</span>
+            <span>10-05</span>64
+          </a>
           .
         </p>
       </section>
