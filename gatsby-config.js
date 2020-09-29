@@ -31,6 +31,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-177232307-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-NNVJ2DH",
@@ -56,15 +65,6 @@ module.exports = {
         //
         // Defaults to gatsby-route-change
         // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-177232307-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
       },
     },
     {
