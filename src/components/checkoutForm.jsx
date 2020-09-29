@@ -150,7 +150,7 @@ const CheckoutForm = ({
       <div className="mt-4 md:flex md:items-center">
         <label className="block text-xs text-gray-500">
           <input
-            className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-400"
+            className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-600"
             type="checkbox"
             checked={checkedTOS}
             onChange={() => setCheckedTOS(!checkedTOS)}
