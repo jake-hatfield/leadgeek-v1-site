@@ -6,6 +6,21 @@ module.exports = {
     author: `LeadGeek`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-177232307-1",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-NNVJ2DH",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify`,
@@ -28,21 +43,6 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/assets/images/leadgeek-logo.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-177232307-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-NNVJ2DH",
       },
     },
     {
