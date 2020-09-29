@@ -120,7 +120,7 @@ const PrivacyPolicyPage = () => {
         </p>
         <p className="mt-4 text-gray-700">
           <strong>Performance / Analytics:</strong> We use cookies and other
-          similar technologies to analyse how the {siteTitle} Service is
+          similar technologies to analyze how the {siteTitle} Service is
           accessed, is used, or is performing. We use this information to
           maintain, operate, and continually improve the {siteTitle} Service. We
           may also obtain information from our email newsletters or other
@@ -134,7 +134,7 @@ const PrivacyPolicyPage = () => {
           {siteTitle} Service according to your preferences. For example, when
           you continue to use or come back to the {siteTitle} Service, we can
           provide you with our services based on information you provide to us,
-          such as remembering your username, how you have customised our
+          such as remembering your username, how you have customized our
           services, and reminding you of content you have engaged with
           previously.
         </p>
@@ -169,7 +169,7 @@ const PrivacyPolicyPage = () => {
             https://facebook.com/
           </a>
           ), to use cookies or other similar technologies on or outside the{" "}
-          {siteTitle} Service for the same purposes identified above, includingk
+          {siteTitle} Service for the same purposes identified above, including
           collecting information about your online activities over time and
           across different websites, applications, and/or devices.
         </p>
