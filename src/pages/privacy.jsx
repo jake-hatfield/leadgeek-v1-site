@@ -109,9 +109,104 @@ const PrivacyPolicyPage = () => {
           websites may not function properly without the aid of cookies.
         </p>
         <p className="mt-4 text-gray-700">
+          {siteTitle}, or our service providers acting on our behalf, may use
+          cookies in the following ways:
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Strictly Necessary:</strong> These cookies are necessary to
+          allow us to operate the {siteTitle} Service as you have requested. For
+          example, they let us recognize what type of subscriber you are and
+          then provide you with services accordingly.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Performance / Analytics:</strong> We use cookies and other
+          similar technologies to analyse how the {siteTitle} Service is
+          accessed, is used, or is performing. We use this information to
+          maintain, operate, and continually improve the {siteTitle} Service. We
+          may also obtain information from our email newsletters or other
+          communications we send to you, including whether you opened or
+          forwarded a newsletter or clicked on any of its content. This
+          information tells us about our newsletters' effectiveness and helps us
+          ensure that we're delivering information that you find interesting.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Functional:</strong> These cookies let us operate the{" "}
+          {siteTitle} Service according to your preferences. For example, when
+          you continue to use or come back to the {siteTitle} Service, we can
+          provide you with our services based on information you provide to us,
+          such as remembering your username, how you have customised our
+          services, and reminding you of content you have engaged with
+          previously.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Targeted Advertising:</strong> We use these cookies and other
+          similar technologies to serve you with advertisements that may be
+          relevant to you and your interests, including interest-based
+          advertising. The information may also be used to record how many times
+          you’ve been served a particular advertisement and to ensure we do not
+          display the same advertisement to you repeatedly, and to otherwise
+          help us measure their effectiveness. Additionally, we may serve
+          remarketing advertisements to you.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Third Party:</strong> We may allow our Business Partners
+          (Google:{" "}
+          <a
+            href="https://google.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            https://google.com/
+          </a>
+          , Facebook:{" "}
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            https://facebook.com/
+          </a>
+          ), to use cookies or other similar technologies on or outside the{" "}
+          {siteTitle} Service for the same purposes identified above, includingk
+          collecting information about your online activities over time and
+          across different websites, applications, and/or devices.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>{siteTitle} Ads :</strong> We work with website publishers,
+          application developers, advertising networks, and service providers to
+          deliver advertisements and other content promoting {siteTitle} on
+          other web sites and services. Cookies and other similar technologies
+          may be used to serve you with advertisements that may be relevant to
+          you and your interests on other websites, applications, and devices,
+          and to regulate the advertisements you receive and measure their
+          effectiveness.
+        </p>
+        <p className="mt-4 text-gray-700">
           By continuing to navigate our website without changing your cookie
           settings, you hereby acknowledge and agree to {siteTitle}'s use of
-          cookies.
+          cookies. If you would like to opt-out of analysis by Google Analytics
+          on our website and other websites, please visit{" "}
+          <a
+            href="https://tools.google.com/dlpage/gaoptout/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            https://tools.google.com/dlpage/gaoptout
+          </a>
+          . If you would like to adjust your ad delivery preferences on the
+          Google Ad network, please visit{" "}
+          <a
+            href="https://adssettings.google.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            Google's Ads Preferences Manager
+          </a>
+          .
         </p>
         <h2 className="mt-6 text-xl font-bold">Privacy policy changes</h2>
         <p className="mt-4 text-gray-700">
