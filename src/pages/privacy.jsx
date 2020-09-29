@@ -157,7 +157,16 @@ const PrivacyPolicyPage = () => {
             rel="noopener noreferrer nofollow"
             className="font-semibold"
           >
-            https://google.com/
+            https://google.com/,{" "}
+          </a>
+          Microsoft:{" "}
+          <a
+            href="https://microsoft.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            https://microsoft.com/
           </a>
           , Facebook:{" "}
           <a
@@ -205,6 +214,16 @@ const PrivacyPolicyPage = () => {
             className="font-semibold"
           >
             Google's Ads Preferences Manager
+          </a>
+          . If you would like to adjust your Microsoft Advertising preferences,
+          please visit{" "}
+          <a
+            href="https://about.ads.microsoft.com/en-us/resources/policies/personalized-ads"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="font-semibold"
+          >
+            Microsoft's Ads Preferences Manager
           </a>
           .
         </p>

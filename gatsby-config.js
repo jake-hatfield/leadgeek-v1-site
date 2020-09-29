@@ -37,19 +37,6 @@ module.exports = {
           "https://leadgeek.us2.list-manage.com/subscribe/post?u=78aa88c3633ef35c7c1ce0995&amp;id=d456eb75e8",
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-hubspot`,
-    //   options: {
-    //     trackingCode: "8438373",
-    //     respectDNT: true,
-    //   },
-    // },
-    // {
-    //   resolve: "gatsby-plugin-google-tagmanager",
-    //   options: {
-    //     id: "GTM-NNVJ2DH",
-    //   },
-    // },
     {
       resolve: "gatsby-plugin-google-marketing-platform",
       options: {
