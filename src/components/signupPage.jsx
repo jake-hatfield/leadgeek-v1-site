@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
@@ -29,12 +29,9 @@ const signupPage = ({
               <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
             </div>
             <header className="relative z-20 text-center">
-              <Link
-                to={`/`}
-                className="font-bold text-2xl lg:text-3xl text-gray-900"
-              >
+              <div className="font-bold text-2xl lg:text-3xl text-gray-900">
                 Lead<span className="text-purple-500">Geek</span>
-              </Link>
+              </div>
               <h1 className="mt-6 text-4xl lg:text-5xl font-black text-gray-900">
                 Start sourcing with LeadGeek
               </h1>
@@ -44,7 +41,7 @@ const signupPage = ({
             </header>
             <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
               <div className="mx-auto h-full w-full lg:w-2/3 max-w-sm">
-                <div className="pt-1 pb-2 lg:pt-2 lg:pb-3 px-6 lg:px-10 bg-white rounded-md shadow-lg">
+                <div className="pt-1 pb-2 lg:pt-2 lg:pb-3 px-4 md:px-6 lg:px-10 bg-white rounded-md shadow-lg">
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
                       plan={plan}

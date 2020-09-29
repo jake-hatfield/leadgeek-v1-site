@@ -12,6 +12,7 @@ const CheckoutForm = ({
   onSuccessfulCheckout,
 }) => {
   const [isProcessing, setProcessingTo] = useState(false)
+  const [checkedTOS, setCheckedTOS] = useState(false)
   const [checkoutError, setCheckoutError] = useState()
 
   const stripe = useStripe()
@@ -25,6 +26,11 @@ const CheckoutForm = ({
     const email = ev.target.email.value
 
     if (!stripe || !elements) {
+      return
+    }
+
+    if (!checkedTOS) {
+      setCheckoutError("Please agree to the terms of service.")
       return
     }
 
@@ -141,6 +147,27 @@ const CheckoutForm = ({
         </aside>
       )}
       {/* TIP always disable your submit button while processing payments */}
+      <div className="mt-4 md:flex md:items-center">
+        <label className="block text-xs text-gray-500">
+          <input
+            className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-400"
+            type="checkbox"
+            checked={checkedTOS}
+            onChange={() => setCheckedTOS(!checkedTOS)}
+          />
+          <span className="text-xs md:text-sm">
+            I agree to the{" "}
+            <a
+              href="/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold hover:text-gray-700 transition-colors duration-200"
+            >
+              terms of service
+            </a>
+          </span>
+        </label>
+      </div>
       <button
         disabled={isProcessing || !stripe}
         type="submit"

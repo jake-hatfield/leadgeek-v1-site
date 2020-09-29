@@ -37,6 +37,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "eslint": "^7.7.0",
     "prettier": "2.0.5",
     "tailwindcss": "^1.7.3"

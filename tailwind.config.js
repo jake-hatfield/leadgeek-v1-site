@@ -102,5 +102,6 @@ module.exports = {
       }
       addComponents(container)
     }),
+    require("@tailwindcss/custom-forms"),
   ],
 }

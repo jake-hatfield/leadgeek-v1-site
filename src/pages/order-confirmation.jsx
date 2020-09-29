@@ -50,7 +50,7 @@ const OrderConfirmationPage = () => {
             assist with any part of your Amazon selling journey, so reach out
             with any questions or concerns.
           </p>
-          <div className="mt-4 py-2 px-4 border-l-8 border-teal-400 bg-teal-200 text-teal-600">
+          <div className="mt-4 py-2 px-4 border-l-8 border-teal-400 bg-teal-100 text-teal-600">
             <div className="flex">
               <div>
                 <svg
