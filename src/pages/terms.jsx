@@ -190,7 +190,8 @@ const TermsPage = () => {
           Our policy is not to issue refunds for the current month of service,
           though some exceptions apply and are entirely up to our discretion. We
           attempt to work with our members to reach a mutual resolution and
-          honor genuine requests for refunds.
+          honor genuine requests for refunds or partial/prorated refunds for
+          unused service.
         </p>
         <h2 className="mt-6 text-xl font-bold">Prohibited activities</h2>
         <p className="mt-4 text-gray-700">

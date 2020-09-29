@@ -40,7 +40,7 @@ const OrderConfirmationPage = () => {
     <Layout>
       <SEO title="Order Confirmation" />
       <div className="lg:h-screen lg:w-2/5 absolute top-0 right-0 negative-z bg-purple-100" />
-      <section className="my-8 md:my-12 lg:my-24 container md:flex md:justify-between">
+      <section className="my-8 md:my-12 lg:mt-24 lg:mb-16 container md:flex md:justify-between">
         <header className="md:max-w-2xl md:w-3/5 ">
           <h1 className="text-4xl lg:text-5xl font-black text-gray-900">
             Thank you for joining LeadGeek!
@@ -55,16 +55,14 @@ const OrderConfirmationPage = () => {
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
                   className="mt-1 h-4 w-4"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    fillRule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                    clipRule="evenodd"
                   />
                 </svg>
               </div>

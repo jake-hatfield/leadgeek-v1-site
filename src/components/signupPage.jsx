@@ -7,6 +7,10 @@ import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
 import HalfDotted from "../assets/svgs/half-dotted.svg"
+import Visa from "../assets/svgs/visa-logo.svg"
+import Mastercard from "../assets/svgs/mastercard-logo.svg"
+import Discover from "../assets/svgs/discover-logo.svg"
+import AmericanExpress from "../assets/svgs/american-express-logo.svg"
 
 const signupPage = ({
   price,
@@ -51,31 +55,12 @@ const signupPage = ({
                     />
                   </Elements>
                 </div>
-                <aside className="mt-4 py-2 px-4 border-l-8 border-purple-400 bg-purple-100 text-purple-600">
-                  <div className="flex">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        className="mt-1 h-4 w-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="ml-2 text-sm">
-                      Your LeadGeek subscription will renew automatically, but
-                      you'll be able to cancel your account at any time by
-                      contacting support.
-                    </p>
-                  </div>
-                </aside>
+                <div className="mt-8 lg:mt-16 flex flex-wrap justify-between items-center">
+                  <Visa className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
+                  <Discover className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
+                  <Mastercard className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
+                  <AmericanExpress className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
+                </div>
               </div>
               <SignupFeatures
                 featureList={featureList}

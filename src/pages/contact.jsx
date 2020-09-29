@@ -14,7 +14,7 @@ const ContactPage = () => {
         description="Have a question for our team? We're real people on the other end of the screen, so reach out with any questions or concerns."
       />
       <div className="pb-8 md:pb-16 lg:pb-24 lg:min-h-screen lg:w-2/5 absolute top-0 negative-z bg-gray-100" />
-      <section className="my-8 md:my-12 lg:my-24 relative text-gray-900">
+      <section className="my-8 md:my-12 lg:mt-24 lg:mb-16 relative text-gray-900">
         <div className="container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
             <div className="relative mx-auto lg:mx-0 max-w-md">
