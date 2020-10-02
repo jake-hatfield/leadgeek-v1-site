@@ -9,10 +9,7 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
       <header className="mt-6 lg:mt-0">
         <div className="flex items-center justify-between">
           <div className="text-xs uppercase text-gray-600">Selected plan:</div>
-          <Link
-            to={"/pricing#pricing-plans"}
-            className="py-1 px-2 bg-purple-100 rounded-full text-xs text-purple-600 hover:text-purple-800 hover:bg-purple-200 focus:outline-none focus:shadow-outline transition-colors duration-200"
-          >
+          <Link to={"/pricing#pricing-plans"} className="pr-2 text-xs link">
             Change plan
           </Link>
         </div>
