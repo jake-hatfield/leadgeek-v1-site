@@ -9,7 +9,14 @@ const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
         className={`md:mx-auto ${listMaxWidth} md:grid ${gridLayout} text-gray-700`}
       >
         {items.map(item => (
-          <li key={item.id} className="flex items-center">
+          <li
+            key={item.id}
+            className="flex items-center"
+            data-sal="slide-up"
+            data-sal-duration="2000"
+            data-sal-delay={`${item.delay}00`}
+            data-sal-easing="ease"
+          >
             <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
             <span className="ml-4">{item.dataPoint}</span>
           </li>

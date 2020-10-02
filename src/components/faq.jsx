@@ -198,7 +198,12 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
     <section className="mt-12 lg:mt-24 bg-gray-100 text-gray-900">
       <div className="py-12 lg:py-24 md:w-3/4 lg:w-full container">
         <header className="relative">
-          <h2 className="relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left">
+          <h2
+            className="relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left"
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
+          >
             Frequently asked questions
           </h2>
           <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-16">

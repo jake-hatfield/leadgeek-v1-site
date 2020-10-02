@@ -96,6 +96,9 @@ const signupPage = () => {
             className={`${
               item.id === 1 ? `border-2 border-purple-400` : `border-none`
             } first:mt-0 mt-8 md:mt-12 md:flex md:justify-between relative z-10 rounded-md bg-gray-100 shadow-lg text-gray-700`}
+            data-sal="slide-up"
+            data-sal-duration="1000"
+            data-sal-easing="ease"
           >
             <header
               className={`${

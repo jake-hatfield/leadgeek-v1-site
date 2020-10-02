@@ -51,54 +51,67 @@ const LeadCriteriaPage = ({ data }) => {
   const productCategories = [
     {
       id: 1,
+      delay: 0,
       dataPoint: "Baby",
     },
     {
       id: 2,
+      delay: 1,
       dataPoint: "Beauty & personal care",
     },
     {
       id: 3,
+      delay: 2,
       dataPoint: "Books",
     },
     {
       id: 4,
+      delay: 3,
       dataPoint: "Clothing, shoes, & jewelry",
     },
     {
       id: 5,
+      delay: 4,
       dataPoint: "Electronics",
     },
     {
       id: 6,
+      delay: 5,
       dataPoint: "Garden & outdoor",
     },
     {
       id: 7,
+      delay: 6,
       dataPoint: "Grocery & gourmet food",
     },
     {
       id: 9,
+      delay: 7,
       dataPoint: "Home & kitchen",
     },
     {
       id: 10,
+      delay: 8,
       dataPoint: "Industrial & scientific",
     },
     {
       id: 11,
+      delay: 9,
       dataPoint: "Office products",
     },
     {
       id: 12,
+      delay: 9,
       dataPoint: "Pet supplies",
     },
     {
       id: 13,
+      delay: 9,
       dataPoint: "Sports & outdoors",
     },
     {
       id: 14,
+      delay: 9,
       dataPoint: "Toys & games",
     },
   ]
@@ -256,7 +269,12 @@ const LeadCriteriaPage = ({ data }) => {
                 Bundle cap
               </h4>
               <div className="p-2">
-                <span className="text-xl font-semibold text-purple-600">
+                <span
+                  className="text-xl font-semibold text-purple-600"
+                  data-sal="slide-up"
+                  data-sal-duration="2000"
+                  data-sal-easing="ease"
+                >
                   15
                 </span>
                 <p className="text-sm text-gray-600">max members per list</p>
@@ -267,7 +285,12 @@ const LeadCriteriaPage = ({ data }) => {
                 Pro plan cap
               </h4>
               <div className="p-2">
-                <span className="text-xl font-semibold text-purple-600">
+                <span
+                  className="text-xl font-semibold text-purple-600"
+                  data-sal="slide-up"
+                  data-sal-duration="2000"
+                  data-sal-easing="ease"
+                >
                   15
                 </span>
                 <p className="text-sm text-gray-600">max members per list</p>
@@ -278,7 +301,12 @@ const LeadCriteriaPage = ({ data }) => {
                 Grow plan cap
               </h4>
               <div className="p-2">
-                <span className="text-xl font-semibold text-purple-600">
+                <span
+                  className="text-xl font-semibold text-purple-600"
+                  data-sal="slide-up"
+                  data-sal-duration="2000"
+                  data-sal-easing="ease"
+                >
                   30
                 </span>
                 <p className="text-sm text-gray-600">max members per list</p>
@@ -289,7 +317,12 @@ const LeadCriteriaPage = ({ data }) => {
                 List splitting
               </h4>
               <div className="p-2">
-                <span className="text-xl font-semibold text-purple-600">
+                <span
+                  className="text-xl font-semibold text-purple-600"
+                  data-sal="slide-up"
+                  data-sal-duration="2000"
+                  data-sal-easing="ease"
+                >
                   Active
                 </span>
                 <p className="text-sm text-gray-600">for all plans</p>

@@ -107,6 +107,44 @@ const IndexPage = ({ data }) => {
           }
         />
       </section>
+      <section className="py-12 md:py-16 lg:py-24 bg-gray-100">
+        <div className="container">
+          <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
+            <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
+              LeadGeek makes it easy for Amazon sellers like you to:
+            </h2>
+          </header>
+          {featureList.map(feature => (
+            <article
+              key={feature.number}
+              className="mt-8 lg:mt-12 flex flex-col-reverse md:flex-row  md:items-center justify-between"
+            >
+              <div className="mt-4 md:mt-0 md:w-1/2 md:flex">
+                <span className="p-3 h-8 w-8 flex items-center justify-center bg-teal-200 rounded-full font-bold text-teal-500">
+                  {feature.number}
+                </span>
+                <header className="mt-2 md:ml-4 lg:ml-8 md:max-w-md">
+                  <h2 className="lg:text-xl font-semibold text-gray-900">
+                    {feature.header}
+                  </h2>
+                  <p className="mt-2 text-gray-700">{feature.body}</p>
+                </header>
+              </div>
+              <div
+                className="mt-4 md:mt-0 md:ml-12 lg:ml-16 md:w-1/2"
+                data-sal="slide-up"
+                data-sal-duration="2000"
+                data-sal-easing="ease"
+              >
+                <Img
+                  fluid={feature.image}
+                  className="w-full max-w-xs lg:max-w-md"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="py-12 md:py-16 lg:py-24 bg-gray-200 overflow-x-hidden">
         <div className="container lg:flex">
           <header className="lg:w-2/3">
@@ -180,39 +218,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-16 lg:py-24 bg-gray-100">
-        <div className="container">
-          <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
-            <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
-              LeadGeek makes it easy for Amazon sellers like you to:
-            </h2>
-          </header>
-          {featureList.map(feature => (
-            <article
-              key={feature.number}
-              className="mt-8 lg:mt-12 flex flex-col-reverse md:flex-row  md:items-center justify-between"
-            >
-              <div className="mt-4 md:mt-0 md:w-1/2 md:flex">
-                <span className="p-3 h-8 w-8 flex items-center justify-center bg-teal-200 rounded-full font-bold text-teal-500">
-                  {feature.number}
-                </span>
-                <header className="mt-2 md:ml-4 lg:ml-8 md:max-w-md">
-                  <h2 className="lg:text-xl font-semibold text-gray-900">
-                    {feature.header}
-                  </h2>
-                  <p className="mt-2 text-gray-700">{feature.body}</p>
-                </header>
-              </div>
-              <div className="mt-4 md:mt-0 md:ml-12 lg:ml-16 md:w-1/2">
-                <Img
-                  fluid={feature.image}
-                  className="w-full max-w-xs lg:max-w-md"
-                />
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+
       <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
         <header className="relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
           <h2 className="relative z-10">
@@ -246,10 +252,16 @@ const IndexPage = ({ data }) => {
                 to meet rigorous requirements before they're approved and sent
                 to you.
               </p>
-              <ArrowLink
-                link="/features/criteria"
-                linkText="Learn about lead criteria"
-              />
+              <div
+                data-sal="slide-up"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+              >
+                <ArrowLink
+                  link="/features/criteria"
+                  linkText="Learn about lead criteria"
+                />
+              </div>
             </div>
             <div className="mt-8 md:mt-0 lg:w-1/2">
               <svg
@@ -272,10 +284,16 @@ const IndexPage = ({ data }) => {
                 Our team works tirelessly to bring you a consistent output of
                 high-quality products that you can count on to deliver results.
               </p>
-              <ArrowLink
-                link="/features/reliability"
-                linkText="Learn about sourcing reliability"
-              />
+              <div
+                data-sal="slide-up"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+              >
+                <ArrowLink
+                  link="/features/reliability"
+                  linkText="Learn about sourcing reliability"
+                />
+              </div>
             </div>
           </div>
           <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
@@ -328,10 +346,16 @@ const IndexPage = ({ data }) => {
                 Reach out to us for dedicated support, Amazon selling
                 assistance, and other perks exclusive to LeadGeek members.
               </p>
-              <ArrowLink
-                link="/features/support"
-                linkText="Learn about member support"
-              />
+              <div
+                data-sal="slide-up"
+                data-sal-duration="1000"
+                data-sal-easing="ease"
+              >
+                <ArrowLink
+                  link="/features/support"
+                  linkText="Learn about member support"
+                />
+              </div>
             </div>
           </div>
         </aside>
@@ -378,19 +402,36 @@ const IndexPage = ({ data }) => {
                 <span className="ml-2 w-full md:w-3/5 border border-gray-300" />
               </div>
               <div className="mt-4 flex">
-                <div className="md:w-1/4">
+                <div
+                  className="w-1/3 md:w-1/4"
+                  data-sal="slide-up"
+                  data-sal-duration="1000"
+                  data-sal-easing="ease"
+                >
                   <span className="font-bold text-4xl text-purple-600">$4</span>
                   <span className="block uppercase text-sm">
                     Minimum profit
                   </span>
                 </div>
-                <div className="ml-8 md:w-1/4">
+                <div
+                  className="mx-5 w-1/3 md:w-1/4"
+                  data-sal="slide-up"
+                  data-sal-delay="200"
+                  data-sal-duration="1000"
+                  data-sal-easing="ease"
+                >
                   <span className="font-bold text-4xl text-purple-600">
                     40%
                   </span>
                   <span className="block uppercase text-sm">Minimum ROI</span>
                 </div>
-                <div className="ml-8 md:w-1/4">
+                <div
+                  className="w-1/3 md:w-1/4"
+                  data-sal="slide-up"
+                  data-sal-delay="400"
+                  data-sal-duration="1000"
+                  data-sal-easing="ease"
+                >
                   <span className="font-bold text-4xl text-purple-600">3%</span>
                   <span className="block uppercase text-sm">Max BSR</span>
                 </div>

@@ -26,7 +26,12 @@ const altHeader = ({
         <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
           {title}
         </span>
-        <h1 className="mt-2 text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900">
+        <h1
+          className="mt-2 text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900"
+          data-sal="fade"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
+        >
           {header}
         </h1>
         <h2 className="mt-4 lg:mt-6 text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">

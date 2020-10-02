@@ -18,78 +18,97 @@ const LeadCriteriaPage = ({ data }) => {
   const dataList = [
     {
       id: 1,
+      delay: 0,
       dataPoint: "Retailer source",
     },
     {
       id: 2,
+      delay: 0,
       dataPoint: "Product title",
     },
     {
       id: 3,
+      delay: 1,
       dataPoint: "Product category",
     },
     {
       id: 4,
+      delay: 1,
       dataPoint: "Retailer link",
     },
     {
       id: 5,
+      delay: 2,
       dataPoint: "Amazon product link",
     },
     {
       id: 6,
+      delay: 2,
       dataPoint: "Current buy price",
     },
     {
       id: 7,
+      delay: 3,
       dataPoint: "Current sell price",
     },
     {
       id: 8,
+      delay: 3,
       dataPoint: "Net profit",
     },
     {
       id: 9,
+      delay: 4,
       dataPoint: "Net ROI",
     },
     {
       id: 10,
+      delay: 4,
       dataPoint: "Current BSR + %",
     },
     {
       id: 11,
+      delay: 5,
       dataPoint: "30 & 90 Day BSR",
     },
     {
       id: 12,
+      delay: 5,
       dataPoint: "Average monthly sales",
     },
     {
       id: 13,
+      delay: 6,
       dataPoint: "Seller competition",
     },
     {
       id: 14,
+      delay: 6,
       dataPoint: "Item weight",
     },
     {
       id: 15,
+      delay: 7,
       dataPoint: "ASIN",
     },
     {
       id: 16,
+      delay: 7,
       dataPoint: "Relevant promo codes",
     },
     {
       id: 17,
+      delay: 8,
       dataPoint: "Cashback discounts",
     },
     {
       id: 18,
+      delay: 8,
       dataPoint: "Sourcing notes",
     },
     {
       id: 19,
+      delay: 9,
       dataPoint: "Variation suggestions",
     },
   ]
@@ -184,7 +203,12 @@ const LeadCriteriaPage = ({ data }) => {
                   <th className="font-medium border-0">Sourcing products</th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -196,7 +220,12 @@ const LeadCriteriaPage = ({ data }) => {
                   </th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -206,7 +235,12 @@ const LeadCriteriaPage = ({ data }) => {
                   <th className="font-medium border-0">Validating matches</th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -216,7 +250,12 @@ const LeadCriteriaPage = ({ data }) => {
                   <th className="font-medium border-0">Picking products</th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -226,7 +265,12 @@ const LeadCriteriaPage = ({ data }) => {
                   <th className="font-medium border-0">Checking in stock</th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -238,7 +282,12 @@ const LeadCriteriaPage = ({ data }) => {
                   </th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -250,7 +299,12 @@ const LeadCriteriaPage = ({ data }) => {
                   </th>
                   <td className="text-center md:text-left border-0">Manual</td>
                   <td className="border-0">
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      data-sal="slide-up"
+                      data-sal-duration="1000"
+                      data-sal-easing="ease"
+                    >
                       <Check className="h-4 w-4 text-gray-900 bg-purple-400 rounded-full" />
                       <p className="ml-2">Automatic</p>
                     </div>
@@ -283,7 +337,12 @@ const LeadCriteriaPage = ({ data }) => {
                 it would normally take.
               </p>
             </div>
-            <div className="md:mx-auto xl:ml-8 lg:flex lg:justify-end md:w-2/3 lg:w-3/5">
+            <div
+              className="md:mx-auto xl:ml-8 lg:flex lg:justify-end md:w-2/3 lg:w-3/5"
+              data-sal="slide-up"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <Img
                 fluid={data.analysis.childImageSharp.fluid}
                 className="w-full max-w-xs md:max-w-md lg:max-w-md"
@@ -374,7 +433,12 @@ const LeadCriteriaPage = ({ data }) => {
                 </div>
               </div>
             </header>
-            <div className="mx-auto lg:ml-12 md:w-3/4 lg:w-2/3 lg:max-w-xl">
+            <div
+              className="mx-auto lg:ml-12 md:w-3/4 lg:w-2/3 lg:max-w-xl"
+              data-sal="slide-up"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <RetailerSources className="w-full" />
             </div>
           </article>
