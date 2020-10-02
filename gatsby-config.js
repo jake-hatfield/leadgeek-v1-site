@@ -31,6 +31,22 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      //   options: {
+      //     threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
+      //     once: true, // Defines if animation needs to be launched once
+      //     disable: false, // Flag for disabling animations
+
+      //     // Advanced Options
+      //     // selector: '[data-sal]', // Selector of the elements to be animated
+      //     // animateClassName: 'sal-animate', // Class name which triggers animation
+      //     // disabledClassName: 'sal-disabled', // Class name which defines the disabled state
+      //     // rootMargin: '0% 50%', // Corresponds to root's bounding box margin
+      //     // enterEventName: 'sal:in', // Enter event name
+      //     // exitEventName: 'sal:out', // Exit event name
+      //   },
+    },
+    {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
         endpoint:
@@ -66,30 +82,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-scroll-reveal`,
-      options: {
-        threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
-        once: true, // Defines if animation needs to be launched once
-        disable: false, // Flag for disabling animations
-
-        // Advanced Options
-        // selector: '[data-sal]', // Selector of the elements to be animated
-        // animateClassName: 'sal-animate', // Class name which triggers animation
-        // disabledClassName: 'sal-disabled', // Class name which defines the disabled state
-        // rootMargin: '0% 50%', // Corresponds to root's bounding box margin
-        // enterEventName: 'sal:in', // Enter event name
-        // exitEventName: 'sal:out', // Exit event name
-      },
-    },
-    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        ignore: ["/sal.js"], // Ignore files/folders
       },
     },
     {
