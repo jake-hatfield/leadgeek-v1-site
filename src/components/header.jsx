@@ -5,6 +5,8 @@ import { useSpring } from "react-spring"
 import FeatureDropdown from "./featureDropdown"
 import AltDropdown from "./altDropdown"
 
+import ArrowRight from "../assets/svgs/arrow-right.svg"
+
 const Header = () => {
   const [featureNavOpen, setFeatureNavOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -237,75 +239,94 @@ const Header = () => {
     marginTop: mobileMenuOpen ? -10 : 0,
   })
   return (
-    <header className="relative z-20 container">
-      <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
-        {/* logo */}
-        <div>
-          <div className="flex items-center font-bold text-xl lg:text-2xl">
+    <header className="relative z-20">
+      <aside className="hidden lg:block bg-purple-600 text-purple-100">
+        <div className="py-3 container flex items-center">
+          <p>
+            Great news! There's still time to get inventory into Amazon for
+            Cyber Monday sales.
+          </p>
+          <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
             <Link
-              to={`/`}
-              className="text-gray-900 focus:outline-none focus:shadow-outline"
+              to={"/signup"}
+              className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
             >
-              Lead<span className="text-purple-500">Geek</span>
+              Sign up now
             </Link>
+            <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
           </div>
         </div>
-        {/* mobile button */}
-        <div className="-mr-2 -my-2 md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      </aside>
+      <div className="container">
+        <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
+          {/* logo */}
+          <div>
+            <div className="flex items-center font-bold text-xl lg:text-2xl">
+              <Link
+                to={`/`}
+                className="text-gray-900 focus:outline-none focus:shadow-outline"
+              >
+                Lead<span className="text-purple-500">Geek</span>
+              </Link>
+            </div>
+          </div>
+          {/* mobile button */}
+          <div className="-mr-2 -my-2 md:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+          {/* md:+ nav */}
+          <nav className="hidden md:flex md:items-center md:space-x-6 space-x-10">
+            <div className="relative">
+              <FeatureDropdown
+                title={`Features`}
+                items={featureItems}
+                open={featureNavOpen}
+                setOpen={setFeatureNavOpen}
+                animation={featureAnimation}
+                eventTypes="click"
               />
-            </svg>
-          </button>
+            </div>
+            <Link
+              to={`/pricing`}
+              className="text-base leading-6 font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 transition ease-in-out duration-200"
+              activeClassName="active"
+            >
+              Pricing
+            </Link>
+            <div className="relative">
+              <AltDropdown
+                title={`More`}
+                items={moreItems}
+                open={mobileMenuOpen}
+                setOpen={setMobileMenuOpen}
+                animation={mobileAnimation}
+              />
+            </div>
+            <Link
+              to={`/signup`}
+              className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-transparent font-medium text-gray-500 border border-gray-500 hover:text-white hover:bg-purple-600 hover:border-purple-600 transition-colors duration-200 focus:outline-none focus:shadow-outline"
+            >
+              Sign up
+            </Link>
+          </nav>
         </div>
-        {/* md:+ nav */}
-        <nav className="hidden md:flex md:items-center md:space-x-6 space-x-10">
-          <div className="relative">
-            <FeatureDropdown
-              title={`Features`}
-              items={featureItems}
-              open={featureNavOpen}
-              setOpen={setFeatureNavOpen}
-              animation={featureAnimation}
-              eventTypes="click"
-            />
-          </div>
-          <Link
-            to={`/pricing`}
-            className="text-base leading-6 font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 transition ease-in-out duration-200"
-            activeClassName="active"
-          >
-            Pricing
-          </Link>
-          <div className="relative">
-            <AltDropdown
-              title={`More`}
-              items={moreItems}
-              open={mobileMenuOpen}
-              setOpen={setMobileMenuOpen}
-              animation={mobileAnimation}
-            />
-          </div>
-          <Link
-            to={`/signup`}
-            className="ml-8 py-2 px-3 lg:py-3 lg:px-4 shadow-sm rounded-md bg-transparent font-medium text-gray-500 border border-gray-500 hover:text-white hover:bg-purple-600 hover:border-purple-600 transition-colors duration-200 focus:outline-none focus:shadow-outline"
-          >
-            Sign up
-          </Link>
-        </nav>
       </div>
       {/* mobile menu */}
       <div

@@ -85,13 +85,13 @@ const IndexPage = ({ data }) => {
       />
       <section className="relative">
         <PrimaryHeader
-          header={`More than just premium online arbitrage sourcing.`}
+          header={`Find the best arbitrage products to flip on Amazon.`}
           // header={`We help you find great online arbitrage leads.`}
           // header={`Premium online arbitrage sourcing, streamlined.`}
-          subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best arbitrage products to flip on Amazon. Our highly skilled team sources for hours each day to bring a tailored batch of leads to your inbox.`}
+          subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to sell via Amazon FBA. Our highly skilled team sources for hours each day to bring a tailored batch of leads to your inbox.`}
           nav
           linkOne={`pricing`}
-          linkOneText={`Get started`}
+          linkOneText={`See pricing`}
           linkTwo={`demo`}
           linkTwoText={`Watch demo`}
           play
