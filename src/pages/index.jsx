@@ -220,9 +220,9 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
-        <header className="relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
+        <header className="md:mr-4 relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
           <h2 className="relative z-10">
-            The complete toolkit for productive arbitrage.
+            See all features that help you source better leads.
           </h2>
           <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16">
             <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
