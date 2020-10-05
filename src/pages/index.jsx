@@ -93,7 +93,7 @@ const IndexPage = ({ data }) => {
           linkOne={`pricing`}
           linkOneText={`See pricing`}
           linkTwo={`demo`}
-          linkTwoText={`Watch demo`}
+          linkTwoText={`Watch a demo`}
           play
           svgOne={
             <div className="absolute top-0 left-0 z-0 transform translate-y-10 translate-x-16">
@@ -150,7 +150,7 @@ const IndexPage = ({ data }) => {
           <header className="lg:w-2/3">
             <div>
               <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-                How much is ineffective sourcing costing you?
+                Maximize productivity with LeadGeek.
               </h2>
               <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
                 Finding the right products to sell is the core of a mature
@@ -452,7 +452,7 @@ const IndexPage = ({ data }) => {
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
         buttonText="See pricing"
         link="demo"
-        linkText="Watch demo"
+        linkText="Watch a demo"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
           <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
