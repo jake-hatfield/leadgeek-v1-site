@@ -22,12 +22,7 @@ const ContactPage = () => {
                 <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
               </div>
               <div className="relative z-10">
-                <h1
-                  className="text-4xl lg:text-6xl font-black text-gray-900"
-                  data-sal="fade"
-                  data-sal-duration="1000"
-                  data-sal-easing="ease"
-                >
+                <h1 className="text-4xl lg:text-6xl font-black text-gray-900">
                   Get in touch.
                 </h1>
                 <h2 className="mt-4 lg:mt-8 text-base md:text-lg leading-relaxed text-gray-700">

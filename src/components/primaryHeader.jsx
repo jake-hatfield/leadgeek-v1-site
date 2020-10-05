@@ -27,12 +27,7 @@ const primaryHeader = ({
       } relative container overflow-hidden lg:overflow-visible md:text-center`}
     >
       <div className="md:mx-auto relative z-10 md:max-w-2xl xl:max-w-4xl">
-        <h1
-          className="text-4xl md:text-5xl xl:text-6xl font-black text-gray-900"
-          data-sal="fade"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
-        >
+        <h1 className="text-4xl md:text-5xl xl:text-6xl font-black text-gray-900">
           {header}
         </h1>
         <h2 className="mt-4 lg:mt-6 mx-auto md:max-w-xl lg:max-w-2xl xl:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">

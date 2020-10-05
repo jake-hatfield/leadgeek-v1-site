@@ -19,12 +19,7 @@ const AboutPage = () => {
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
             About LeadGeek
           </span>
-          <h1
-            className="mt-2 lg:mx-auto max-w-4xl text-4xl lg:text-5xl font-black text-gray-900"
-            data-sal="fade"
-            data-sal-duration="1000"
-            data-sal-easing="ease"
-          >
+          <h1 className="mt-2 lg:mx-auto max-w-4xl text-4xl lg:text-5xl font-black text-gray-900">
             We're here to help you grow and understand your Amazon business.
           </h1>
         </header>

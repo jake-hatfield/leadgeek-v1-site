@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
       id: 1,
       iconPath:
         "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-      header: "Loss on sorting leads",
+      header: "Save valuable time",
       content:
         "Sifting through software for hours a day trying to find profitable products is a good way to waste time even if you know where to start.",
       show: false,
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
       id: 2,
       iconPath:
         "M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01",
-      header: "Loss on no assurance",
+      header: "Get guaranteed products",
       content:
         "Even if you're a pro at evaluating leads, you have no control over how many you'll be able to find day in and day out.",
       show: true,
@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => {
       id: 3,
       iconPath:
         "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
-      header: "Loss on excessive tools",
+      header: "Remove wasteful overhead",
       content:
         "The more software and services you add to supplement sourcing, the more money is wasted on needless overhead.",
       show: true,
@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => {
       id: 4,
       iconPath:
         "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0",
-      header: "Loss on bad inventory",
+      header: "Buy long-term products",
       content:
         "If you purchase inventory without doing your due dilligence, once-profitable products can become a nightmarish drain on your resources.",
       show: true,
@@ -175,7 +175,7 @@ const IndexPage = ({ data }) => {
               />
             </svg>
             <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-              Loss on sorting leads
+              Save valuable time
             </h3>
             <p className="mt-2">
               Sifting through software for hours a day trying to find profitable
@@ -230,7 +230,12 @@ const IndexPage = ({ data }) => {
         </header>
         <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5 text-gray-700">
           <div className="md:flex md:justify-between">
-            <div className="md:mr-8 lg:w-1/2">
+            <div
+              className="md:mr-8 lg:w-1/2"
+              data-sal="slide-up"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
                 fill="none"
@@ -252,18 +257,20 @@ const IndexPage = ({ data }) => {
                 to meet rigorous requirements before they're approved and sent
                 to you.
               </p>
-              <div
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-easing="ease"
-              >
+              <div>
                 <ArrowLink
                   link="/features/criteria"
                   linkText="Learn about lead criteria"
                 />
               </div>
             </div>
-            <div className="mt-8 md:mt-0 lg:w-1/2">
+            <div
+              className="mt-8 md:mt-0 lg:w-1/2"
+              data-sal="slide-up"
+              data-sal-delay="200"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
                 fill="none"
@@ -284,11 +291,7 @@ const IndexPage = ({ data }) => {
                 Our team works tirelessly to bring you a consistent output of
                 high-quality products that you can count on to deliver results.
               </p>
-              <div
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-easing="ease"
-              >
+              <div>
                 <ArrowLink
                   link="/features/reliability"
                   linkText="Learn about sourcing reliability"
@@ -325,7 +328,13 @@ const IndexPage = ({ data }) => {
                 linkText="Learn about arbitrage training"
               />
             </div> */}
-            <div className="mt-8 md:mt-0 lg:w-1/2">
+            <div
+              className="mt-8 md:mt-0 lg:w-1/2"
+              data-sal="slide-up"
+              data-sal-delay="400"
+              data-sal-duration="1000"
+              data-sal-easing="ease"
+            >
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
                 fill="none"
@@ -346,11 +355,7 @@ const IndexPage = ({ data }) => {
                 Reach out to us for dedicated support, Amazon selling
                 assistance, and other perks exclusive to LeadGeek members.
               </p>
-              <div
-                data-sal="slide-up"
-                data-sal-duration="1000"
-                data-sal-easing="ease"
-              >
+              <div>
                 <ArrowLink
                   link="/features/support"
                   linkText="Learn about member support"

@@ -34,6 +34,10 @@ const tripleIcons = ({
               key={item.id}
               v-for="item in items"
               className="md:w-1/3 first:ml-0 md:ml-8 first:mt-0 mt-8 md:mt-0"
+              data-sal="slide-up"
+              data-sal-delay={`${item.id}00` || 100}
+              data-sal-duration="1000"
+              data-sal-easing="ease"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
