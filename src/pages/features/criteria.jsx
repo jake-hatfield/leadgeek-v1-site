@@ -157,7 +157,7 @@ const LeadCriteriaPage = ({ data }) => {
         linkOne={`signup`}
         linkOneText={`Join now`}
         linkTwo={`demo`}
-        linkTwoText={`Watch demo`}
+        linkTwoText={`Watch a demo`}
         svgOne={
           <div className="absolute top-0 md:right-0 xl:left-0 z-0 transform md:translate-y-10 md:-translate-x-24 lg:translate-y-12 lg:-translate-x-32 xl:translate-y-32 xl:translate-x-64">
             <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
@@ -443,7 +443,7 @@ const LeadCriteriaPage = ({ data }) => {
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
         buttonText="See pricing"
         link="demo"
-        linkText="Watch demo"
+        linkText="Watch a demo"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
           <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">

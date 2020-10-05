@@ -31,19 +31,19 @@ const CTA = ({
               {subHeader || `Sign up for LeadGeek today.`}
             </span>
           </h2>
-          <nav className="mt-4 md:mt-6 flex flex-wrap justify-between md:justify-start items-center">
+          <nav className="mt-6 md:mt-8">
             <Link
               to={`/${buttonLink || `pricing`}`}
               className={`py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md ${buttonStyles}  transition-colors duration-200 focus:outline-none focus:shadow-outline`}
             >
               {buttonText || "See pricing"}
             </Link>
-            <div className="md:ml-4 inline-block">
+            <div className="mt-4 md:mt-0 md:ml-4 md:inline-block">
               <Link
                 to={`/${link || "demo"}`}
                 className={`flex items-center relative group ${linkStyles} focus:outline-none focus:shadow-outline`}
               >
-                {linkText || "Watch demo"}
+                {linkText || "Watch a demo"}
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
               </Link>
             </div>

@@ -202,7 +202,7 @@ const signupPage = () => {
             buttonText="Contact us"
             buttonLink="contact"
             link="demo"
-            linkText="Watch demo"
+            linkText="Watch a demo"
             linkStyles="text-purple-100 hover:text-purple-200"
             svgOne={
               <div className="absolute top-0 left-0 z-0 transform -translate-y-56 -translate-x-12">

@@ -80,7 +80,7 @@ const supportPage = ({ data }) => {
         linkOne={`signup`}
         linkOneText={`Join now`}
         linkTwo={`demo`}
-        linkTwoText={`Watch demo`}
+        linkTwoText={`Watch a demo`}
         svgOne={
           <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-12 -translate-x-48">
             <Dotted className="hidden md:inline-block w-24 text-gray-100" />
@@ -124,7 +124,7 @@ const supportPage = ({ data }) => {
         buttonStyles="bg-white text-purple-600 hover:text-purple-800"
         buttonText="See pricing"
         link="demo"
-        linkText="Watch demo"
+        linkText="Watch a demo"
         linkStyles="text-purple-100 hover:text-purple-200"
         svgOne={
           <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
