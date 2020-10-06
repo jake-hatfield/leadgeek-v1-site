@@ -175,7 +175,7 @@ const IndexPage = ({ data }) => {
               />
             </svg>
             <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-              Save valuable time
+              Save valuable timek
             </h3>
             <p className="mt-2">
               Sifting through software for hours a day trying to find profitable
@@ -191,7 +191,7 @@ const IndexPage = ({ data }) => {
               v-for="item in items"
               className={`${item.show ? `block` : `block lg:hidden`} ${
                 item.margin && `lg:ml-8`
-              } mt-8 lg:mt-0 relative z-10 md:max-w-sm lg:max-w-none md:w-1/2 lg:w-1/3 text-gray-700`}
+              } mt-8 lg:mt-0 md:mr-6 lg:mr-0 relative z-10 md:max-w-md lg:max-w-none md:w-2/5 text-gray-700`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
