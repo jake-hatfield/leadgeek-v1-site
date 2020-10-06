@@ -25,7 +25,7 @@ const PricingPage = () => {
   const proPlanSeats = 15
   const growFeatureList = [
     {
-      id: "1",
+      id: 1,
       body: (
         <span>
           Limited to <strong className="font-semibold">{growPlanSeats}</strong>{" "}
@@ -34,11 +34,15 @@ const PricingPage = () => {
       ),
     },
     {
-      id: "2",
-      body: "50+ products per week",
+      id: 2,
+      body: (
+        <span>
+          <strong className="font-semibold">50+</strong> products per week
+        </span>
+      ),
     },
     {
-      id: "3",
+      id: 3,
       body: (
         <span>
           $<strong className="font-semibold">4</strong>-30+ profit per unit
@@ -46,7 +50,7 @@ const PricingPage = () => {
       ),
     },
     {
-      id: "4",
+      id: 4,
       body: (
         <span>
           <strong className="font-semibold">40</strong>%+ ROI per unit
@@ -58,17 +62,17 @@ const PricingPage = () => {
     //   body: "Training e-books",
     // },
     {
-      id: "6",
+      id: 6,
       body: "Email support",
     },
     {
-      id: "7",
+      id: 7,
       body: "Free updates",
     },
   ]
   const proFeatureList = [
     {
-      id: "1",
+      id: 1,
       body: (
         <span>
           Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
@@ -77,11 +81,15 @@ const PricingPage = () => {
       ),
     },
     {
-      id: "2",
-      body: "50+ products per week",
+      id: 2,
+      body: (
+        <span>
+          <strong className="font-semibold">50+</strong> products per week
+        </span>
+      ),
     },
     {
-      id: "3",
+      id: 3,
       body: (
         <span>
           $<strong className="font-semibold">5</strong>-30+ profit per unit
@@ -89,7 +97,7 @@ const PricingPage = () => {
       ),
     },
     {
-      id: "4",
+      id: 4,
       body: (
         <span>
           <strong className="font-semibold">50</strong>%+ ROI per unit
@@ -97,7 +105,7 @@ const PricingPage = () => {
       ),
     },
     // {
-    //   id: "5",
+    //   id: 5,
     //   body: (
     //     <span>
     //       Training e-books & <strong>course</strong>
@@ -105,17 +113,17 @@ const PricingPage = () => {
     //   ),
     // },
     {
-      id: "6",
+      id: 6,
       body: "Premium support",
     },
     {
-      id: "7",
+      id: 7,
       body: "Free updates",
     },
   ]
   const bundleFeatureList = [
     {
-      id: "1",
+      id: 1,
       body: (
         <span>
           Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
@@ -124,19 +132,23 @@ const PricingPage = () => {
       ),
     },
     {
-      id: "2",
-      body: "100+ products per week",
+      id: 2,
+      body: (
+        <span>
+          <strong className="font-semibold">100+</strong> products per week
+        </span>
+      ),
     },
     {
-      id: "3",
+      id: 3,
       body: "All Grow Plan leads",
     },
     {
-      id: "4",
+      id: 4,
       body: "All Pro Plan leads",
     },
     // {
-    //   id: "5",
+    //   id: 5,
     //   body: (
     //     <span>
     //       Training e-books & <strong>course</strong>
@@ -144,11 +156,11 @@ const PricingPage = () => {
     //   ),
     // },
     {
-      id: "6",
+      id: 6,
       body: "Premium support",
     },
     {
-      id: "7",
+      id: 7,
       body: "Free updates",
     },
   ]
