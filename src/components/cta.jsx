@@ -34,7 +34,7 @@ const CTA = ({
           <nav className="mt-6 md:mt-8 text-center md:text-left">
             <Link
               to={`/${buttonLink || `pricing`}`}
-              className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-white text-purple-600 hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
+              className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 focus:outline-none focus:shadow-outline"
             >
               {buttonText || "See pricing"}
             </Link>
