@@ -217,12 +217,12 @@ const Header = () => {
       description: "Hi this is a description",
       link: "about",
     },
-    {
-      linkID: 500,
-      title: "Guides",
-      description: "Hi this is a description",
-      link: "guides",
-    },
+    // {
+    //   linkID: 500,
+    //   title: "Guides",
+    //   description: "Hi this is a description",
+    //   link: "guides",
+    // },
     // {
     //   linkID: 600,
     //   title: "Security",
