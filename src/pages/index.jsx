@@ -224,14 +224,14 @@ const IndexPage = ({ data }) => {
           <h2 className="relative z-10">
             See all features that help you source better leads.
           </h2>
-          <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16">
+          <div className="absolute bottom-0 xl:top-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16 xl:translate-y-2">
             <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
           </div>
         </header>
         <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5 text-gray-700">
-          <div className="md:flex md:justify-between">
+          <div className="md:grid md:grid-cols-2 md:gap-6 lg:gap-4">
             <div
-              className="md:mr-8 lg:w-1/2"
+              //   className="lg:w-1/2"
               data-sal="slide-up"
               data-sal-duration="1000"
               data-sal-easing="ease"
@@ -265,7 +265,7 @@ const IndexPage = ({ data }) => {
               </div>
             </div>
             <div
-              className="mt-8 md:mt-0 lg:w-1/2"
+              className="mt-8 md:mt-0"
               data-sal="slide-up"
               data-sal-delay="200"
               data-sal-duration="1000"
@@ -289,17 +289,17 @@ const IndexPage = ({ data }) => {
               </h3>
               <p className="mt-2">
                 Our team works tirelessly to bring you a consistent output of
-                high-quality products that you can count on to deliver results.
+                high-quality products that you can count on every weekday.
               </p>
               <div>
                 <ArrowLink
                   link="/features/reliability"
-                  linkText="Learn about sourcing reliability"
+                  linkText="Learn about lead reliability"
                 />
               </div>
             </div>
           </div>
-          <div className="mt-8 lg:mt-12 md:flex md:justify-between text-gray-700">
+          <div className="mt-8 lg:mt-12 md:grid md:grid-cols-2 md:gap-6 lg:gap-4 text-gray-700">
             {/* <div className="md:mr-12 lg:w-1/2">
               <svg
                 className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
@@ -329,7 +329,7 @@ const IndexPage = ({ data }) => {
               />
             </div> */}
             <div
-              className="mt-8 md:mt-0 lg:w-1/2"
+              className="mt-8 md:mt-0"
               data-sal="slide-up"
               data-sal-delay="400"
               data-sal-duration="1000"
