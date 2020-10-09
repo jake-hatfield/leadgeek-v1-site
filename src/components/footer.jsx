@@ -47,15 +47,33 @@ const Footer = () => {
               Lead<span className="text-purple-500">Geek</span>
             </h4>
           </Link>
-          <p className="mt-6 max-w-md md:max-w-none text-gray-400">
-            Premium online arbitrage leads for Amazon sellers who want to put
-            product sourcing on full throttle.
-          </p>
+          <address className="mt-8 md:mt-4 flex not-italic text-gray-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-6 w-6 flex-none"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <a
+              href="https://www.google.com/maps/place/6333+E+Mockingbird+Ln+%23147,+Dallas,+TX+75214"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-sm lg:text-base"
+            >
+              6333 E Mockingbird Lane, Suite 147 Dallas, TX 75214
+            </a>
+          </address>
         </div>
         {categories.map(category => (
           <div
             key={category.header}
-            className="mt-8 md:mt-0 w-1/2 md:w-1/6 text-sm lg:text-base"
+            className="mt-4 md:mt-0 w-1/2 md:w-1/6 text-sm lg:text-base"
           >
             <h5 className="uppercase tracking-tight font-semibold text-gray-500">
               {category.header}
