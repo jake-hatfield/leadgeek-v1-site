@@ -261,6 +261,9 @@ const PrivacyPolicyPage = () => {
           </a>
           .
         </p>
+        <p className="mt-4 text-gray-700">
+          6333 E Mockingbird Lane, Suite 147 Dallas, TX 75214
+        </p>
       </section>
     </Layout>
   )
