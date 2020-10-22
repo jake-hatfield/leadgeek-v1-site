@@ -55,12 +55,12 @@ const signupPage = ({
                     />
                   </Elements>
                 </div>
-                <div className="mt-8 lg:mt-16 flex flex-wrap justify-between items-center">
+                {/* <div className="mt-8 lg:mt-16 flex flex-wrap justify-between items-center">
                   <Visa className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
                   <Discover className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
                   <Mastercard className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
                   <AmericanExpress className="inline-block h-12 w-12 md:h-12 md:w-16 text-gray-400" />
-                </div>
+                </div> */}
               </div>
               <SignupFeatures
                 featureList={featureList}
