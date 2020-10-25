@@ -171,17 +171,19 @@ const signupPage = () => {
                   /mo
                 </span>
               </div>
-              <div className="inline-block text-sm lg:text-base">
-                <ArrowLink
-                  link="/pricing#features"
-                  linkText="Compare all features"
-                  noMargin
-                />
-              </div>
-              <div className="w-full">
+
+              <div className="mt-4 w-full">
+                <Link
+                  to="/pricing#features"
+                  className="py-3 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-md text-gray-500 hover:text-gray-700 group transition-colors duration-200"
+                >
+                  <span className="whitespace-no-wrap font-semibold focus:outline-none focus:shadow-outline">
+                    Compare all features
+                  </span>
+                </Link>
                 <Link
                   to={`/signup/${item.link}`}
-                  className="mt-6 py-3 block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
+                  className="mt-2 py-3 block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 text-center font-bold transition-colors duration-200 focus:outline-none focus:shadow-outline"
                 >
                   Get the {item.shortName || item.plan}
                 </Link>

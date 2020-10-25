@@ -107,6 +107,7 @@ const IndexPage = ({ data }) => {
           }
         />
       </section>
+
       <section className="py-12 md:py-16 lg:py-24 bg-gray-100">
         <div className="container">
           <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
@@ -145,80 +146,6 @@ const IndexPage = ({ data }) => {
           ))}
         </div>
       </section>
-      <section className="py-12 md:py-16 lg:py-24 bg-gray-200 overflow-x-hidden">
-        <div className="container lg:flex">
-          <header className="lg:w-2/3">
-            <div>
-              <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-                Maximize productivity with LeadGeek.
-              </h2>
-              <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-                Finding the right products to sell is the core of a mature
-                online arbitrage business. If you can't routinely produce useful
-                leads, how much are you losing through undiscovered
-                opportunities?
-              </h3>
-            </div>
-          </header>
-          <div className="mt-12 lg:ml-12 hidden lg:block md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-              />
-            </svg>
-            <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-              Save valuable timek
-            </h3>
-            <p className="mt-2">
-              Sifting through software for hours a day trying to find profitable
-              products is a good way to waste time even if you know where to
-              start.
-            </p>
-          </div>
-        </div>
-        <div className="mt-8 lg:mt-12 relative container md:flex md:justify-between md:flex-wrap lg:flex-no-wrap md:overflow-x-hidden lg:overflow-visible">
-          {costItems.map(item => (
-            <div
-              key={item.id}
-              v-for="item in items"
-              className={`${item.show ? `block` : `block lg:hidden`} ${
-                item.margin && `lg:ml-8`
-              } mt-8 lg:mt-0 md:mr-6 lg:mr-0 relative z-10 md:max-w-md lg:max-w-none md:w-2/5 text-gray-700`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className={`p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white`}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d={item.iconPath}
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                {item.header}
-              </h3>
-              <p className={`mt-2`}>{item.content}</p>
-            </div>
-          ))}
-          <div className="absolute bottom-0 left-0 z-0 transform rotate-180 translate-y-16 -translate-x-56">
-            <HalfDotted className="hidden md:inline-block w-48 text-gray-300" />
-          </div>
-        </div>
-      </section>
-
       <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
         <header className="md:mr-4 relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
           <h2 className="relative z-10">
@@ -365,7 +292,80 @@ const IndexPage = ({ data }) => {
           </div>
         </aside>
       </section>
-      <section className="mt-12 md:mt-16 lg:mt-24 bg-gray-200 text-gray-700">
+      <section className="py-12 md:py-16 lg:py-24 bg-gray-100 overflow-x-hidden">
+        <div className="container lg:flex">
+          <header className="lg:w-2/3">
+            <div>
+              <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
+                Maximize productivity with LeadGeek.
+              </h2>
+              <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+                Finding the right products to sell is the core of a mature
+                online arbitrage business. If you can't routinely produce useful
+                leads, how much are you losing through undiscovered
+                opportunities?
+              </h3>
+            </div>
+          </header>
+          <div className="mt-12 lg:ml-12 hidden lg:block md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+              />
+            </svg>
+            <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
+              Save valuable timek
+            </h3>
+            <p className="mt-2">
+              Sifting through software for hours a day trying to find profitable
+              products is a good way to waste time even if you know where to
+              start.
+            </p>
+          </div>
+        </div>
+        <div className="mt-8 lg:mt-12 relative container md:flex md:justify-between md:flex-wrap lg:flex-no-wrap md:overflow-x-hidden lg:overflow-visible">
+          {costItems.map(item => (
+            <div
+              key={item.id}
+              v-for="item in items"
+              className={`${item.show ? `block` : `block lg:hidden`} ${
+                item.margin && `lg:ml-8`
+              } mt-8 lg:mt-0 md:mr-6 lg:mr-0 relative z-10 md:max-w-md lg:max-w-none md:w-2/5 text-gray-700`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className={`p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white`}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d={item.iconPath}
+                />
+              </svg>
+              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
+                {item.header}
+              </h3>
+              <p className={`mt-2`}>{item.content}</p>
+            </div>
+          ))}
+          <div className="absolute bottom-0 left-0 z-0 transform rotate-180 translate-y-16 -translate-x-56">
+            <HalfDotted className="hidden md:inline-block w-48 text-gray-300" />
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray-200 text-gray-700">
         <div className="relative lg:flex">
           <div className="xl:mr-20 lg:w-2/5">
             <Img

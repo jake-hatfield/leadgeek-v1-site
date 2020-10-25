@@ -36,14 +36,14 @@ const altHeader = ({
           <nav className="mt-6 font-semibold">
             <Link
               to={`/${linkOne}`}
-              className="py-3 px-4 lg:py-4 lg:px-6 inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
+              className="py-3 px-4 lg:py-4 lg:px-6 w-full md:w-auto text-center inline-block shadow-sm rounded-md bg-purple-600 text-white hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
             >
               {linkOneText}
             </Link>
-            <div className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 inline-block">
+            <div className="mt-4 md:mt-0 md:ml-2 py-3 lg:py-4 px-4 lg:px-6 md:inline-block">
               <Link
                 to={`/${linkTwo}`}
-                className="flex items-center text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                className="flex items-center justify-center md:justify-start text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
               >
                 {linkTwoText}
                 <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />

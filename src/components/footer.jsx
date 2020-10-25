@@ -36,7 +36,7 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="pt-16 pb-12 relative z-20 bg-gray-900 text-gray-400">
+    <footer className="pt-16 pb-12 relative z-20 bg-gray-800 text-gray-300">
       <nav className="container relative z-10 flex justify-between flex-wrap md:flex-no-wrap">
         <div className="md:mr-12 lg:mr-24 w-full md:w-2/6">
           <Link
@@ -47,7 +47,7 @@ const Footer = () => {
               Lead<span className="text-purple-500">Geek</span>
             </h4>
           </Link>
-          <address className="mt-8 md:mt-4 flex not-italic text-gray-500">
+          <address className="mt-8 md:mt-4 flex not-italic text-gray-400">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
         ))}
       </nav>
-      <div className="mt-12 container md:text-center text-sm md:text-base text-gray-600">
+      <div className="mt-12 container md:text-center text-sm md:text-base text-gray-500">
         <div className="w-full border border-gray-800" />
         <div className="mt-6 md:flex md:items-center md:justify-center">
           &copy; {new Date().getFullYear()} LeadGeek, Inc. All rights reserved
