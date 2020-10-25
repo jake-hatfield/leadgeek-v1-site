@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Check from "../assets/svgs/check.svg"
 
 const signupFeatures = ({ featureList, price, plan, discount }) => {
+  let listSize = 4
   return (
     <div className="mt-4 lg:mt-0 mx-auto lg:ml-16 w-full lg:w-1/3 flex flex-col-reverse lg:flex-col max-w-sm">
       <header className="mt-6 lg:mt-0">
@@ -13,8 +14,8 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
             Change plan
           </Link>
         </div>
-        <h2 className="mt-4 text-xl lg:text-2xl text-gray-900 font-bold">
-          LeadGeek <span className="text-purple-600">{plan}</span>
+        <h2 className="mt-4 text-xl lg:text-2xl text-purple-600 font-bold">
+          {plan}
         </h2>
         <div className="mt-2">
           <div className="flex items-center justify-between">
@@ -44,9 +45,9 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
           </div>
         </div>
 
-        <aside className="mt-6 text-sm text-gray-500">
+        <aside className="mt-4 text-sm text-gray-500">
           <ul>
-            {featureList.map(feature => (
+            {featureList.slice(0, listSize).map(feature => (
               <li key={feature.id} className="flex items-center">
                 <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
                 <span className="ml-4">{feature.body}</span>

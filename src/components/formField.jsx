@@ -1,8 +1,8 @@
 import React from "react"
 
-const FormField = ({ label, type, name, placeholder, required }) => {
+const FormField = ({ label, type, name, placeholder, required, width }) => {
   return (
-    <div className="pt-4 flex-col items-center">
+    <div className={`pt-4 ${width} flex-col items-center`}>
       <label htmlFor={name} className="block text-xs font-medium text-gray-700">
         {label}
       </label>

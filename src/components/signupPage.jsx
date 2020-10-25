@@ -7,10 +7,10 @@ import CheckoutForm from "../components/checkoutForm"
 import SignupFeatures from "../components/signupFeatures"
 
 import HalfDotted from "../assets/svgs/half-dotted.svg"
-import Visa from "../assets/svgs/visa-logo.svg"
-import Mastercard from "../assets/svgs/mastercard-logo.svg"
-import Discover from "../assets/svgs/discover-logo.svg"
-import AmericanExpress from "../assets/svgs/american-express-logo.svg"
+// import Visa from "../assets/svgs/visa-logo.svg"
+// import Mastercard from "../assets/svgs/mastercard-logo.svg"
+// import Discover from "../assets/svgs/discover-logo.svg"
+// import AmericanExpress from "../assets/svgs/american-express-logo.svg"
 
 const signupPage = ({
   price,
@@ -43,7 +43,7 @@ const signupPage = ({
                 Sign up takes less than 1 minute.
               </p>
             </header>
-            <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:justify-center">
+            <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:items-center lg:justify-center">
               <div className="mx-auto h-full w-full lg:w-2/3 max-w-sm">
                 <div className="pt-1 pb-2 lg:pt-2 lg:pb-3 px-4 md:px-6 lg:px-10 bg-white rounded-md shadow-lg">
                   <Elements stripe={stripePromise}>

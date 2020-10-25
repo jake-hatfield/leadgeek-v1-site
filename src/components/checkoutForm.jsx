@@ -22,7 +22,10 @@ const CheckoutForm = ({
   }
   const handleFormSubmit = async ev => {
     ev.preventDefault()
-    const name = ev.target.name.value
+    const firstName = ev.target.firstname.value
+    const lastName = ev.target.lastname.value
+    const name = `${firstName}  ${lastName}`
+    console.log(name)
     const email = ev.target.email.value
 
     if (!stripe || !elements) {
@@ -70,7 +73,8 @@ const CheckoutForm = ({
         return
       }
       addToMailchimp(email, {
-        FNAME: name,
+        FNAME: firstName,
+        LNAME: lastName,
         PLAN: `${plan} subscriber`,
       })
       onSuccessfulCheckout()
@@ -188,7 +192,7 @@ const CheckoutForm = ({
             clipRule="evenodd"
           />
         </svg>
-        <span>Your transaction is secured with SSL encryption</span>
+        <span>Your transaction is powered by Stripe</span>
       </div>
     </form>
   )

@@ -4,13 +4,23 @@ import FormField from "./formField"
 const BillingDetailsFields = () => {
   return (
     <>
-      <FormField
-        name="name"
-        label="Full name"
-        type="text"
-        placeholder="Peter Parker"
-        required
-      />
+      <div className="md:flex justify-between">
+        <FormField
+          name="firstname"
+          label="First name"
+          type="text"
+          placeholder="Peter"
+          required
+        />
+        <FormField
+          name="lastname"
+          label="Last name"
+          type="text"
+          placeholder="Parker"
+          width="ml-4"
+          required
+        />
+      </div>
       <FormField
         name="email"
         label="Email"
