@@ -17,7 +17,7 @@ const BillingDetailsFields = () => {
           label="Last name"
           type="text"
           placeholder="Parker"
-          width="ml-4"
+          width="md:ml-4"
           required
         />
       </div>
