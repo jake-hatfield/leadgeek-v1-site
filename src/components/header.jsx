@@ -240,7 +240,7 @@ const Header = () => {
   })
   return (
     <header className="relative z-20">
-      <aside className="hidden lg:block bg-purple-600 text-purple-100">
+      {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
           <p>
             Great news! There's still time to get inventory into Amazon for
@@ -256,7 +256,7 @@ const Header = () => {
             <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
           </div>
         </div>
-      </aside>
+      </aside> */}
       <div className="container">
         <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
           {/* logo */}
