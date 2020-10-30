@@ -46,6 +46,8 @@ const CheckoutForm = ({
       }
     )
 
+    const lowerCaseEmail = email.toLowerCase()
+    console.log(lowerCaseEmail)
     const cardElement = elements.getElement("card")
 
     try {
@@ -72,7 +74,7 @@ const CheckoutForm = ({
         setProcessingTo(false)
         return
       }
-      addToMailchimp(email, {
+      addToMailchimp(lowerCaseEmail, {
         FNAME: firstName,
         LNAME: lastName,
         PLAN: `${plan} subscriber`,
