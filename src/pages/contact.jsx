@@ -70,13 +70,13 @@ const ContactPage = () => {
           <article className="mt-10 lg:mt-0 lg:w-2/5 lg:flex lg:items-start lg:justify-end">
             <form
               name="contact"
-              method="POST"
+              method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               action="/contact-success"
               className="mx-auto lg:mx-0 w-full max-w-md rounded-md shadow-md bg-white"
             >
-              <input type="hidden" name="contact-page" value="contact" />
+              <input type="hidden" name="contact" value="contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <label
                   htmlFor="name"
