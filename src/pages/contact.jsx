@@ -76,7 +76,7 @@ const ContactPage = () => {
               action="/contact-success"
               className="mx-auto lg:mx-0 w-full max-w-md rounded-md shadow-md bg-white"
             >
-              <input type="hidden" name="contact" value="contact" />
+              <input type="hidden" name="form-name" value="contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <label
                   htmlFor="name"
