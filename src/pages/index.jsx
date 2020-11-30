@@ -402,43 +402,51 @@ const IndexPage = ({ data }) => {
             <aside className="mt-4 text-gray-700">
               <div className="flex items-center">
                 <div className="uppercase whitespace-no-wrap text-sm md:text-base text-purple-600 font-bold">
-                  Our standards
+                  Lead Averages
                 </div>
-                <span className="ml-2 w-full md:w-3/5 border border-gray-300" />
+                <div className="ml-2 w-full border border-gray-300" />
               </div>
               <div className="mt-4 flex">
                 <div
-                  className="w-1/3 md:w-1/4"
+                  className="md:w-1/4"
                   data-sal="slide-up"
                   data-sal-duration="1000"
                   data-sal-easing="ease"
                 >
-                  <span className="font-bold text-4xl text-purple-600">$4</span>
-                  <span className="block uppercase text-sm">
-                    Minimum profit
+                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
+                    $11.02
+                  </span>
+                  <span className="block uppercase text-xs md:text-sm">
+                    Net profit
                   </span>
                 </div>
                 <div
-                  className="mx-5 w-1/3 md:w-1/4"
+                  className="mx-5 md:w-1/4"
                   data-sal="slide-up"
                   data-sal-delay="200"
                   data-sal-duration="1000"
                   data-sal-easing="ease"
                 >
-                  <span className="font-bold text-4xl text-purple-600">
-                    40%
+                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
+                    85%
                   </span>
-                  <span className="block uppercase text-sm">Minimum ROI</span>
+                  <span className="block uppercase text-xs md:text-sm">
+                    Net ROI
+                  </span>
                 </div>
                 <div
-                  className="w-1/3 md:w-1/4"
+                  className="md:w-1/4"
                   data-sal="slide-up"
                   data-sal-delay="400"
                   data-sal-duration="1000"
                   data-sal-easing="ease"
                 >
-                  <span className="font-bold text-4xl text-purple-600">3%</span>
-                  <span className="block uppercase text-sm">Max BSR</span>
+                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
+                    151
+                  </span>
+                  <span className="block uppercase text-xs md:text-sm">
+                    Sales / mo
+                  </span>
                 </div>
               </div>
             </aside>
