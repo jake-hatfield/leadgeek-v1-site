@@ -9,14 +9,14 @@ const BillingDetailsFields = () => {
           name="firstname"
           label="First name"
           type="text"
-          placeholder="Peter"
+          placeholder="Dave"
           required
         />
         <FormField
           name="lastname"
           label="Last name"
           type="text"
-          placeholder="Parker"
+          placeholder="Saunders"
           width="md:ml-4"
           required
         />
@@ -25,7 +25,7 @@ const BillingDetailsFields = () => {
         name="email"
         label="Email"
         type="email"
-        placeholder="peterparker@gmail.com"
+        placeholder="dsaunders@gmail.com"
         required
       />
     </>

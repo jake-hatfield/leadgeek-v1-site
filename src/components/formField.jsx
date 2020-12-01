@@ -3,7 +3,7 @@ import React from "react"
 const FormField = ({ label, type, name, placeholder, required, width }) => {
   return (
     <div className={`pt-4 ${width} flex-col items-center`}>
-      <label htmlFor={name} className="block text-xs font-medium text-gray-700">
+      <label htmlFor={name} className="block text-xs font-medium text-gray-500">
         {label}
       </label>
       <div className="mt-1">

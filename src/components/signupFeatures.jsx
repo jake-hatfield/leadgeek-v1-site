@@ -56,7 +56,7 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
           </ul>
         </aside>
       </header>
-      <aside className="mt-4 py-2 px-4 border-l-8 border-purple-400 bg-purple-100 text-purple-600">
+      <aside className="mt-2 py-2 px-4 border-l-8 border-purple-400 bg-purple-100 text-purple-600">
         <div className="flex">
           <div>
             <svg

@@ -22,11 +22,15 @@ const CheckoutForm = ({
   }
   const handleFormSubmit = async ev => {
     ev.preventDefault()
-    const firstName = ev.target.firstname.value
-    const lastName = ev.target.lastname.value
-    const name = `${firstName}  ${lastName}`
+    const firstName = ev.target.firstname.value.trim()
+    const firstNameCapitalized =
+      firstName.charAt(0).toUpperCase() + firstName.slice(1)
+    const lastName = ev.target.lastname.value.trim()
+    const lastNameCapitalized =
+      lastName.charAt(0).toUpperCase() + lastName.slice(1)
+    const name = `${firstNameCapitalized} ${lastNameCapitalized}`
     console.log(name)
-    const email = ev.target.email.value
+    const email = ev.target.email.value.trim()
 
     if (!stripe || !elements) {
       return
@@ -75,8 +79,8 @@ const CheckoutForm = ({
         return
       }
       addToMailchimp(lowerCaseEmail, {
-        FNAME: firstName,
-        LNAME: lastName,
+        FNAME: firstNameCapitalized,
+        LNAME: lastNameCapitalized,
         PLAN: `${plan} subscriber`,
       })
       onSuccessfulCheckout()
@@ -118,7 +122,7 @@ const CheckoutForm = ({
       <div className="mt-4">
         <label
           htmlFor="card-element"
-          className="block text-xs font-medium text-gray-700"
+          className="block text-xs font-medium text-gray-500"
         >
           Payment information
         </label>
