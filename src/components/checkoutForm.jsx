@@ -29,33 +29,30 @@ const CheckoutForm = ({
     const lastNameCapitalized =
       lastName.charAt(0).toUpperCase() + lastName.slice(1)
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
-    console.log(name)
     const email = ev.target.email.value.trim()
-
+    // check for default error states
     if (!stripe || !elements) {
       return
     }
-
     if (!checkedTOS) {
       setCheckoutError("Please accept the terms of service.")
       return
     }
-
+    // create customer
     setProcessingTo(true)
+    const lowerCaseEmail = email.toLowerCase()
     const { data: customer } = await axios.post(
       "/.netlify/functions/create-customer",
       {
         name: name,
-        email: email,
+        email: lowerCaseEmail,
       }
     )
-
-    const lowerCaseEmail = email.toLowerCase()
-    console.log(lowerCaseEmail)
     const cardElement = elements.getElement("card")
 
     try {
       const priceId = productSelected
+      //   attach card to customer
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: "card",
         card: cardElement,
@@ -66,12 +63,19 @@ const CheckoutForm = ({
         setCheckoutError(error.message)
         return
       } else {
-        const paymentMethodId = paymentMethod.id
-        await axios.post("/.netlify/functions/create-subscription", {
-          customerId: customer,
-          paymentMethodId: paymentMethodId,
-          priceId: priceId,
-        })
+        const { data: res } = await axios.post(
+          "/.netlify/functions/create-subscription",
+          {
+            customerId: customer,
+            paymentMethod: paymentMethod,
+            priceId: priceId,
+          }
+        )
+        if (res === "You've already subscribed to this plan.") {
+          setCheckoutError(res)
+          setProcessingTo(false)
+          return
+        }
       }
       if (error) {
         setCheckoutError(error.message)

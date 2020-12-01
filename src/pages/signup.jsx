@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PrimaryHeader from "../components/primaryHeader"
-import ArrowLink from "../components/arrowLink"
 import CTA from "../components/cta"
 
 import Check from "../assets/svgs/check.svg"

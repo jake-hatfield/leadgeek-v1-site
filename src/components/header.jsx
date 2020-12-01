@@ -5,8 +5,6 @@ import { useSpring } from "react-spring"
 import FeatureDropdown from "./featureDropdown"
 import AltDropdown from "./altDropdown"
 
-import ArrowRight from "../assets/svgs/arrow-right.svg"
-
 const Header = () => {
   const [featureNavOpen, setFeatureNavOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

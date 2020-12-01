@@ -1,3 +1,5 @@
+const { check } = require("prettier")
+
 require("dotenv").config()
 
 const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)
@@ -34,21 +36,40 @@ exports.handler = async function (event) {
     }
   }
 
-  // Create a customer in stripe
+  // check/ create a customer in stripe
   try {
-    const createCustomer = await stripe.customers.create({
-      name: data.name,
+    // check if the customer already exists
+    const { data: recentCustomers } = await stripe.customers.list({
       email: data.email,
     })
-
-    return {
-      statusCode,
-      headers,
-      body: createCustomer.id,
+    const checkCustomerMatch = recentCustomers.some(
+      customer => customer.email === data.email
+    )
+    // if a customer has already been created, return their id
+    if (checkCustomerMatch) {
+      const customerMatch = recentCustomers.find(
+        customer => customer.email === data.email
+      )
+      const matchedID = customerMatch.id
+      return {
+        statusCode,
+        headers,
+        body: matchedID,
+      }
+    } else {
+      // no customer with this email exists yet, so create a new customer
+      const createCustomer = await stripe.customers.create({
+        name: data.name,
+        email: data.email,
+      })
+      return {
+        statusCode,
+        headers,
+        body: createCustomer.id,
+      }
     }
   } catch (err) {
     console.error(err.message)
-
     return {
       statusCode: 424,
       headers,
