@@ -24,10 +24,10 @@ const CheckoutForm = ({
     ev.preventDefault()
     const firstName = ev.target.firstname.value.trim()
     const firstNameCapitalized =
-      firstName.charAt(0).toUpperCase() + firstName.slice(1)
+      firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
     const lastName = ev.target.lastname.value.trim()
     const lastNameCapitalized =
-      lastName.charAt(0).toUpperCase() + lastName.slice(1)
+      lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
     const email = ev.target.email.value.trim()
     // check for default error states
