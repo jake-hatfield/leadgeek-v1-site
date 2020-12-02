@@ -52,7 +52,7 @@ const CheckoutForm = ({
 
     try {
       const priceId = productSelected
-      //   attach card to customer
+      //  create payment method
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: "card",
         card: cardElement,
@@ -71,27 +71,27 @@ const CheckoutForm = ({
             priceId: priceId,
           }
         )
-        if (res === "You've already subscribed to this plan.") {
+        if (res === "active") {
+          addToMailchimp(lowerCaseEmail, {
+            FNAME: firstNameCapitalized,
+            LNAME: lastNameCapitalized,
+            PLAN: `${plan} subscriber`,
+          })
+          onSuccessfulCheckout()
+        } else if (res === "You've already subscribed to this plan.") {
+          setCheckoutError(res)
+          setProcessingTo(false)
+          return
+        } else {
           setCheckoutError(res)
           setProcessingTo(false)
           return
         }
       }
-      if (error) {
-        setCheckoutError(error.message)
-        setProcessingTo(false)
-        return
-      }
-      addToMailchimp(lowerCaseEmail, {
-        FNAME: firstNameCapitalized,
-        LNAME: lastNameCapitalized,
-        PLAN: `${plan} subscriber`,
-      })
-      onSuccessfulCheckout()
     } catch (error) {
       console.log(error)
       setCheckoutError(
-        "Your card was declined, please contact support to complete your purchase."
+        "Your payment could not be processed, please contact support to complete your purchase."
       )
       setProcessingTo(false)
     }

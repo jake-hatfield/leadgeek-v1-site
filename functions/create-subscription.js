@@ -33,7 +33,6 @@ exports.handler = async function (event) {
       }),
     }
   }
-
   // payment method handling
   try {
     //   get all payment methods on file
@@ -48,7 +47,7 @@ exports.handler = async function (event) {
     // if there's a match, just use the one being tried rather than creating a duplicate
     if (checkPaymentMethodMatch) {
       const paymentMethodMatch = customerPaymentMethods.find(
-        method => method.card.last4 === data.card.last4
+        method => method.card.last4 === data.paymentMethod.card.last4
       )
       const matchedID = paymentMethodMatch.id
       await stripe.paymentMethods.attach(matchedID, {
@@ -68,6 +67,11 @@ exports.handler = async function (event) {
     }
   } catch (error) {
     console.log(error)
+    return {
+      statusCode,
+      headers,
+      body: error.raw.message,
+    }
   }
 
   //   proceed with the subscription in Stripe
@@ -87,7 +91,7 @@ exports.handler = async function (event) {
         body: "You've already subscribed to this plan.",
       }
     } else {
-      // subscription for this plan doesn't yet exist, create it
+      // subscription for this plan doesn't yet exist, so create it
       const subscription = await stripe.subscriptions.create({
         customer: data.customerId,
         items: [{ price: data.priceId }],
