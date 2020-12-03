@@ -6,7 +6,7 @@ import Squiggles from "../assets/svgs/squiggles.svg"
 const faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [
     {
-      id: "1",
+      id: 1,
       question: "How is LeadGeek different from other sourcing lists?",
       answer: (
         <p>
@@ -23,13 +23,13 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "2",
+      id: 2,
       question: "Can I just buy every lead on the list?",
       answer:
         "While that's possible with a big enough budget, it's more realistic to pick out a few products from the list every day that best fit your selling style.",
     },
     {
-      id: "3",
+      id: 3,
       question: "Are these leads going to be oversaturated?",
       answer: (
         <p>
@@ -53,7 +53,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "4",
+      id: 4,
       question: "Are these products ungated for me?",
       answer: (
         <p>
@@ -76,7 +76,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "5",
+      id: 5,
       question: "Are the prep or shipping to Amazon fees included?",
       answer: (
         <p>
@@ -88,7 +88,22 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "6",
+      id: 6,
+      question: "Do you include listings where Amazon is a seller?",
+      answer: (
+        <p>
+          In some cases. We don't necessarily shy away from listings with Amazon
+          as a seller if there's very strong historic proof that it's
+          advantageous for FBA sellers as well. <br />
+          <br />
+          If Amazon is the current seller and commonly sharing the Buy Box with
+          FBA sellers or if Amazon frequently goes out of stock (allowing FBA
+          sellers to take over), then we consider adding it to the list.
+        </p>
+      ),
+    },
+    {
+      id: 7,
       question: "Can I sell these products on any Amazon marketplace?",
       answer: (
         <p>
@@ -109,13 +124,13 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "7",
+      id: 8,
       question: "Do you offer lead samples or free trials?",
       answer:
         "In order to protect the integrity of the leads and the exclusivity our members pay for, we do not.",
     },
     {
-      id: "8",
+      id: 9,
       question: "How often will my account be charged?",
       answer: (
         <p>
@@ -133,7 +148,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "9",
+      id: 10,
       question: "What if I decide this isn't for me?",
       answer: (
         <p>
@@ -166,7 +181,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
       ),
     },
     {
-      id: "10",
+      id: 11,
       question: "How do I get in contact with support?",
       answer: (
         <p>
