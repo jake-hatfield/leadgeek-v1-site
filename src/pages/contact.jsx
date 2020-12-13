@@ -31,7 +31,11 @@ const ContactPage = () => {
                 </h2>
 
                 <div className="mt-10 text-gray-700">
-                  <h3 className="text-xl font-semibold">
+                  <h3 className="text-xl font-semibold">Our hours:</h3>
+                  <p className="mt-3 text-gray-500 font-semibold">
+                    Monday-Friday 8am-5pm CST
+                  </p>
+                  <h3 className="mt-6 text-xl font-semibold">
                     Interested in joining?
                   </h3>
                   <address className="mt-2 text-gray-500 not-italic">
