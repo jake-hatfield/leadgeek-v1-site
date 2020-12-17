@@ -11,6 +11,7 @@ import ArrowLink from "../components/arrowLink"
 import Dotted from "../assets/svgs/dotted.svg"
 import Squiggles from "../assets/svgs/squiggles.svg"
 import HalfDotted from "../assets/svgs/half-dotted.svg"
+import Quotations from "../assets/svgs/quotation-marks.svg"
 
 const IndexPage = ({ data }) => {
   const featureList = [
@@ -292,6 +293,29 @@ const IndexPage = ({ data }) => {
           </div>
         </aside>
       </section>
+      <section className="py-12 md:py-16 lg:py-24 bg-teal-200 text-teal-900">
+        <div className="container md:flex md:items-center md:justify-between">
+          <div className="md:mr-10 md:w-2/5">
+            <Img
+              fluid={data.frankTestimonial.childImageSharp.fluid}
+              className="relative z-10 w-full max-w-xs lg:max-w-md"
+            />
+          </div>
+          <header className="mt-8 md:mt-0 relative md:w-3/5">
+            <h2 className="relative z-10 leading-relaxed text-xl font-semibold">
+              I want to thank you for the effort you make to find products with
+              such good quality. It has been the best decision I have made in
+              acquiring your list. Thank you!
+            </h2>
+            <h4 className="mt-6 text-teal-800">Frank G.</h4>
+            <h5 className="mt-2 font-bold">International FBA Seller</h5>
+            <Quotations className="absolute top-0 z-0 h-16 w-16 lg:h-24 lg:w-24 text-teal-300 transform -translate-y-6 -translate-x-4 lg:-translate-y-12 lg:-translate-x-8" />
+            <div className="absolute bottom-0 right-0 z-0 transform -translate-y-24">
+              <Squiggles className="hidden md:inline-block w-64 text-teal-300" />
+            </div>
+          </header>
+        </div>
+      </section>
       <section className="py-12 md:py-16 lg:py-24 bg-gray-100 overflow-x-hidden">
         <div className="container lg:flex">
           <header className="lg:w-2/3">
@@ -322,7 +346,7 @@ const IndexPage = ({ data }) => {
               />
             </svg>
             <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-              Save valuable timek
+              Save valuable time
             </h3>
             <p className="mt-2">
               Sifting through software for hours a day trying to find profitable
@@ -453,6 +477,7 @@ const IndexPage = ({ data }) => {
           </article>
         </div>
       </section>
+
       <CTA
         padding={`py-12 md:py-16 lg:py-24`}
         bgColor="bg-purple-600"
@@ -499,6 +524,14 @@ export const query = graphql`
       }
     }
     inspectedProducts: file(relativePath: { eq: "inspected-products.jpg" }) {
+      id
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    frankTestimonial: file(relativePath: { eq: "frank-testimonial.png" }) {
       id
       childImageSharp {
         fluid {
