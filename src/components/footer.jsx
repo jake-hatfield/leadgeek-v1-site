@@ -66,7 +66,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="ml-2 text-sm lg:text-base"
             >
-              6333 E Mockingbird Lane, Suite 147 Dallas, TX 75214
+              6333 E Mockingbird Lane, Suite 147 PMB 2048 Dallas, TX 75214
             </a>
           </address>
         </div>
