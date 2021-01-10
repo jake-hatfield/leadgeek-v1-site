@@ -5,6 +5,8 @@ import { useSpring } from "react-spring"
 import FeatureDropdown from "./featureDropdown"
 import AltDropdown from "./altDropdown"
 
+import ArrowRight from "../assets/svgs/arrow-right.svg"
+
 const Header = () => {
   const [featureNavOpen, setFeatureNavOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -238,11 +240,11 @@ const Header = () => {
   })
   return (
     <header className="relative z-20">
-      {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
+      <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
           <p>
-            Great news! There's still time to get inventory into Amazon for
-            Cyber Monday sales.
+            Join LeadGeek and start 2021 off with a great way to source daily
+            products!
           </p>
           <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
             <Link
@@ -254,7 +256,7 @@ const Header = () => {
             <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
           </div>
         </div>
-      </aside> */}
+      </aside>
       <div className="container">
         <div className="py-6 lg:py-3 flex items-center justify-between md:space-x-10">
           {/* logo */}
