@@ -1,0 +1,47 @@
+const mongoose = require("mongoose")
+
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+  customerId: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  subId: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
+  paymentMethod: {
+    type: Object,
+    require: true,
+  },
+  resetPasswordToken: {
+    type: String,
+    default: null,
+    unique: true,
+  },
+  resetPasswordExpires: {
+    type: Date,
+    default: null,
+  },
+})
+
+module.exports = User = mongoose.model("user", UserSchema)

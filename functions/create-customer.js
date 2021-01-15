@@ -1,5 +1,3 @@
-const { check } = require("prettier")
-
 require("dotenv").config()
 
 const stripe = require("stripe")(process.env.GATSBY_STRIPE_SECRET_KEY)

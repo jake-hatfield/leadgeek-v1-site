@@ -1,9 +1,8 @@
 import React, { useState } from "react"
+import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import axios from "axios"
-
-import BillingDetailsFields from "../components/billingDetailsFields"
+import FormField from "../components/formField"
 
 const CheckoutForm = ({
   plan,
@@ -11,25 +10,54 @@ const CheckoutForm = ({
   price,
   onSuccessfulCheckout,
 }) => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+  })
+  const { email, password, firstName, lastName } = formData
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
+  const [count, setCount] = useState(1)
   const [checkoutError, setCheckoutError] = useState()
-
   const stripe = useStripe()
   const elements = useElements()
   const handleCardDetailsChange = ev => {
     ev.error ? setCheckoutError(ev.error.message) : setCheckoutError()
   }
-  const handleFormSubmit = async ev => {
-    ev.preventDefault()
-    const firstName = ev.target.firstname.value.trim()
+  const formPagniationTitles = [
+    {
+      title: "Account",
+      numberClasses: `${
+        count < 2 ? "bg-purple-600 text-white" : "bg-teal-200 text-teal-600"
+      }`,
+      titleClasses: `${count < 2 ? "text-gray-900" : "text-gray-500"}`,
+    },
+    {
+      title: "Billing",
+      numberClasses: `${
+        count === 2 ? "bg-purple-600 text-white" : "bg-gray-200 text-gray-500"
+      }`,
+      titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"}`,
+    },
+  ]
+  const onChange = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const onSubmit = async e => {
+    e.preventDefault()
+    const firstName = e.target.firstname.value.trim()
     const firstNameCapitalized =
       firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
-    const lastName = ev.target.lastname.value.trim()
+    const lastName = e.target.lastname.value.trim()
     const lastNameCapitalized =
       lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
-    const email = ev.target.email.value.trim()
+    const email = e.target.email.value.trim()
     // check for default error states
     if (!stripe || !elements) {
       return
@@ -39,18 +67,17 @@ const CheckoutForm = ({
       return
     }
     // create customer
-    setProcessingTo(true)
-    const lowerCaseEmail = email.toLowerCase()
-    const { data: customer } = await axios.post(
-      "/.netlify/functions/create-customer",
-      {
-        name: name,
-        email: lowerCaseEmail,
-      }
-    )
-    const cardElement = elements.getElement("card")
-
     try {
+      setProcessingTo(true)
+      const lowerCaseEmail = email.toLowerCase()
+      const { data: customer } = await axios.post(
+        "/.netlify/functions/create-customer",
+        {
+          name: name,
+          email: lowerCaseEmail,
+        }
+      )
+      const cardElement = elements.getElement("card")
       const priceId = productSelected
       //  create payment method
       const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -58,40 +85,59 @@ const CheckoutForm = ({
         card: cardElement,
       })
       if (error) {
-        console.log("[createPaymentMethod error]", error)
+        console.log("Create payment method error:", error)
         setProcessingTo(false)
         setCheckoutError(error.message)
         return
-      } else {
-        const { data: res } = await axios.post(
-          "/.netlify/functions/create-subscription",
+      }
+      const { data: subscriptionRes } = await axios.post(
+        "/.netlify/functions/create-subscription",
+        {
+          customerId: customer,
+          paymentMethod: paymentMethod,
+          priceId: priceId,
+        }
+      )
+      if (subscriptionRes === "active") {
+        const { data: userRes } = await axios.post(
+          "/.netlify/functions/create-user",
           {
+            name,
+            email: lowerCaseEmail,
             customerId: customer,
-            paymentMethod: paymentMethod,
-            priceId: priceId,
+            paymentMethod,
+            subId: priceId,
           }
         )
-        if (res === "active") {
+        console.log(userRes.message)
+        if (userRes.message === "User successfully added.") {
           addToMailchimp(lowerCaseEmail, {
             FNAME: firstNameCapitalized,
             LNAME: lastNameCapitalized,
             PLAN: `${plan} subscriber`,
           })
           onSuccessfulCheckout()
-        } else if (res === "You've already subscribed to this plan.") {
-          setCheckoutError(res)
-          setProcessingTo(false)
-          return
         } else {
-          setCheckoutError(res)
+          setCheckoutError(
+            "Your payment method was processed, but there was an additional error. Please contact support to finish creating your LeadGeek account."
+          )
           setProcessingTo(false)
-          return
         }
+      } else if (
+        subscriptionRes === "You've already subscribed to this plan."
+      ) {
+        setCheckoutError(subscriptionRes)
+        setProcessingTo(false)
+        return
+      } else {
+        setCheckoutError(subscriptionRes)
+        setProcessingTo(false)
+        return
       }
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
       setCheckoutError(
-        "Your payment could not be processed, please contact support to complete your purchase."
+        "Your payment could not be processed. Please make sure your information is correct or contact support to complete your purchase."
       )
       setProcessingTo(false)
     }
@@ -121,22 +167,120 @@ const CheckoutForm = ({
   }
 
   return (
-    <form onSubmit={handleFormSubmit} className="my-3 max-w-xs">
-      <BillingDetailsFields />
-      <div className="mt-4">
-        <label
-          htmlFor="card-element"
-          className="block text-xs font-medium text-gray-500"
-        >
-          Payment information
-        </label>
-        <CardElement
-          onChange={handleCardDetailsChange}
-          id="card-element"
-          className="mt-1 p-2 rounded-md text-sm border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
-          options={cardElementOpts}
-        />
-      </div>
+    <form onSubmit={e => onSubmit(e)} className="my-3 mx-auto max-w-xs">
+      <aside className="pb-3 border-b-2 border-gray-100">
+        <h3 className="mt-3 mb-5 text-lg text-gray-900 font-bold">
+          {count === 1
+            ? "Create a LeadGeek account"
+            : "Enter your billing information"}
+        </h3>
+        <div className="flex">
+          {formPagniationTitles.map((option, i) => (
+            <div key={i} className="even:ml-8 flex items-center">
+              <span
+                className={`py-1 px-3 rounded-md text-white text-xs font-bold ${option.numberClasses}`}
+              >
+                {i + 1}
+              </span>
+              <span
+                className={`ml-2 text-sm font-semibold ${option.titleClasses}`}
+              >
+                {option.title}
+              </span>
+            </div>
+          ))}
+        </div>
+      </aside>
+      {count === 1 ? (
+        <aside>
+          <FormField
+            name="email"
+            label="Email"
+            type="email"
+            placeholder={"dsaunders@gmail.com"}
+            value={email}
+            onChange={onChange}
+            required
+          />
+          <FormField
+            name="password"
+            label="Password"
+            type="password"
+            placeholder={"Create a new password"}
+            value={password}
+            onChange={onChange}
+            required
+          />
+          <div className="mt-4 md:flex md:items-center">
+            <label className="flex items-center text-xs text-gray-500">
+              <input
+                className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-600"
+                type="checkbox"
+                checked={checkedTOS}
+                onChange={() => setCheckedTOS(!checkedTOS)}
+              />
+              <span className="text-xs md:text-sm">
+                I agree to the{" "}
+                <a
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold hover:text-gray-700 transition-colors duration-200"
+                >
+                  terms of service
+                </a>
+              </span>
+            </label>
+          </div>
+          <button
+            disabled={!email || !password || !checkedTOS}
+            type="button"
+            onClick={() => setCount(count + 1)}
+            className={`mt-4 py-2 w-full rounded-md text-white font-semibold shadow-md bg-purple-600 hover:bg-purple-500 disabled:bg-gray-200 disabled:text-gray-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
+          >
+            Next step
+          </button>
+        </aside>
+      ) : null}
+      {count === 2 ? (
+        <aside>
+          <div className="md:flex justify-between">
+            <FormField
+              name="firstname"
+              label="First name"
+              type="text"
+              placeholder="Dave"
+              value={firstName}
+              onChange={onChange}
+              required
+            />
+            <FormField
+              name="lastname"
+              label="Last name"
+              type="text"
+              placeholder="Saunders"
+              value={lastName}
+              width="md:ml-4"
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="mt-4">
+            <label
+              htmlFor="card-element"
+              className="block text-xs font-medium text-gray-500"
+            >
+              Payment information
+            </label>
+            <CardElement
+              onChange={handleCardDetailsChange}
+              id="card-element"
+              className="mt-1 p-2 rounded-md text-sm border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
+              options={cardElementOpts}
+            />
+          </div>
+        </aside>
+      ) : null}
       {checkoutError && (
         <aside className="mt-4 py-2 px-4 border-l-8 border-red-400 bg-red-200 text-red-500">
           <div className="flex">
@@ -159,36 +303,27 @@ const CheckoutForm = ({
         </aside>
       )}
       {/* TIP always disable your submit button while processing payments */}
-      <div className="mt-4 md:flex md:items-center">
-        <label className="flex items-center text-xs text-gray-500">
-          <input
-            className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-600"
-            type="checkbox"
-            checked={checkedTOS}
-            onChange={() => setCheckedTOS(!checkedTOS)}
-          />
-          <span className="text-xs md:text-sm">
-            I agree to the{" "}
-            <a
-              href="/terms"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold hover:text-gray-700 transition-colors duration-200"
-            >
-              terms of service
-            </a>
-          </span>
-        </label>
-      </div>
-      <button
-        disabled={isProcessing || !stripe}
-        type="submit"
-        className={`${
-          isProcessing ? `bg-purple-200` : `bg-purple-600`
-        } mt-4 py-2 w-full rounded-md text-white shadow-md hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
-      >
-        {isProcessing ? "Processing..." : `Subscribe for $${price}`}
-      </button>
+      {count === 2 && (
+        <aside>
+          <button
+            disabled={count > 2}
+            type="button"
+            onClick={() => setCount(count - 1)}
+            className={`mt-4 text-sm text-gray-400 link rounded-md focus:outline-none focus:shadow-outline`}
+          >
+            Back
+          </button>
+          <button
+            disabled={isProcessing || !stripe}
+            type="submit"
+            className={`${
+              isProcessing ? `bg-gray-200` : `bg-purple-600`
+            } mt-4 py-2 w-full rounded-md text-white font-semibold shadow-md hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
+          >
+            {isProcessing ? "Processing..." : `Subscribe for $${price}`}
+          </button>
+        </aside>
+      )}
       <div className="mt-4 flex items-start md:items-center justify-center text-xs text-gray-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"

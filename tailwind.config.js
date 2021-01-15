@@ -53,6 +53,17 @@ module.exports = {
       "odd",
       "hover",
       "focus",
+      "disabled",
+    ],
+    textColor: [
+      "responsive",
+      "first",
+      "last",
+      "even",
+      "odd",
+      "hover",
+      "focus",
+      "disabled",
     ],
     margin: [
       "responsive",

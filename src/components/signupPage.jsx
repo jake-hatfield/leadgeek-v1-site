@@ -40,7 +40,7 @@ const signupPage = ({
                 Start sourcing with LeadGeek
               </h1>
               <p className="pt-4 text-base md:text-lg lg:text-xl leading-relaxed">
-                Sign up takes less than 1 minute.
+                Sign up takes less than 2 minutes.
               </p>
             </header>
             <div className="mt-10 md:mt-12 lg:mt-16 lg:flex lg:items-center lg:justify-center">
