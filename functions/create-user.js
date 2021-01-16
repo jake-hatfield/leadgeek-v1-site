@@ -3,6 +3,7 @@ const MongoClient = require("mongodb").MongoClient
 const MONGODB_URI = process.env.GATSBY_MONGODB_URI
 const DB_NAME = process.env.GATSBY_DB_NAME
 const CO_NAME = process.env.GATSBY_CO_NAME
+const bcrypt = require("bcryptjs")
 const User = require("../models/User")
 const statusCode = 200
 const headers = {
@@ -19,9 +20,9 @@ const connectToDatabase = async uri => {
   return cachedDb
 }
 const pushToDatabase = async (db, data) => {
-  const { name, email, customerId, paymentMethod, subId } = data
+  const { name, email, password, customerId, paymentMethod, subId } = data
   // Ensure we have the required data before proceeding
-  if (!name || !email || !customerId || !paymentMethod || !subId) {
+  if (!name || !email || !password || !customerId || !paymentMethod || !subId) {
     const message = "Required information is missing."
     console.log(message)
     return {
@@ -46,9 +47,13 @@ const pushToDatabase = async (db, data) => {
         }),
       }
     }
+    // encrypt password
+    const salt = await bcrypt.genSalt(10)
+    encryptedPassword = await bcrypt.hash(password, salt)
     user = await new User({
       name,
       email,
+      password: encryptedPassword,
       customerId,
       subId,
       paymentMethod,
