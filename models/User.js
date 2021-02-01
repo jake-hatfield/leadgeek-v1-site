@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
   ],
   paymentMethod: {
     type: Object,
-    require: true,
+    required: true,
   },
   resetPasswordToken: {
     type: String,
