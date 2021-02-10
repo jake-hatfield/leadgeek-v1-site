@@ -331,7 +331,8 @@ const CheckoutForm = ({
           priceId: priceId,
         }
       )
-      if (subscriptionRes === "active") {
+      //   const parsedSubscriptionRes = JSON.parse(subscriptionRes)
+      if (subscriptionRes.status === "active") {
         const { data: userRes } = await axios.post(
           "/.netlify/functions/create-user",
           {
@@ -340,7 +341,8 @@ const CheckoutForm = ({
             password,
             customerId: customer,
             paymentMethod,
-            subId: priceId,
+            subId: subscriptionRes,
+            planId: priceId,
           }
         )
         console.log(userRes.message)
@@ -358,13 +360,13 @@ const CheckoutForm = ({
           setProcessingTo(false)
         }
       } else if (
-        subscriptionRes === "You've already subscribed to this plan."
+        subscriptionRes.msg === "You've already subscribed to this plan."
       ) {
-        setCheckoutError(subscriptionRes)
+        setCheckoutError(subscriptionRes.msg)
         setProcessingTo(false)
         return
       } else {
-        setCheckoutError(subscriptionRes)
+        setCheckoutError(subscriptionRes.msg)
         setProcessingTo(false)
         return
       }

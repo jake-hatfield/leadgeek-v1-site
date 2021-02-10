@@ -20,9 +20,25 @@ const connectToDatabase = async uri => {
   return cachedDb
 }
 const pushToDatabase = async (db, data) => {
-  const { name, email, password, customerId, paymentMethod, subId } = data
+  const {
+    name,
+    email,
+    password,
+    customerId,
+    paymentMethod,
+    subId,
+    planId,
+  } = data
   // Ensure we have the required data before proceeding
-  if (!name || !email || !password || !customerId || !paymentMethod || !subId) {
+  if (
+    !name ||
+    !email ||
+    !password ||
+    !customerId ||
+    !paymentMethod ||
+    !subId ||
+    !planId
+  ) {
     const message = "Required information is missing."
     console.log(message)
     return {
@@ -56,6 +72,7 @@ const pushToDatabase = async (db, data) => {
       password: encryptedPassword,
       customerId,
       subId,
+      planId,
       paymentMethod,
       resetPasswordToken: null,
       resetPasswordExpires: null,

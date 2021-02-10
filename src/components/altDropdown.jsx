@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { animated } from "react-spring"
 
 function MoreDropdown({ title, items, animation, open, setOpen }) {
-  //   const [open, setOpen] = useState(false)
   const toggle = () => setOpen(!open)
 
   return (
