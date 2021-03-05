@@ -331,7 +331,7 @@ const CheckoutForm = ({
           priceId: priceId,
         }
       )
-      //   const parsedSubscriptionRes = JSON.parse(subscriptionRes)
+      // const parsedSubscriptionRes = JSON.parse(subscriptionRes)
       if (subscriptionRes.status === "active") {
         const { data: userRes } = await axios.post(
           "/.netlify/functions/create-user",

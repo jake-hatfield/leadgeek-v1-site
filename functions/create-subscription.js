@@ -85,7 +85,6 @@ exports.handler = async function (event, context, callback) {
       subscription => subscription.plan.id === data.priceId
     )
     if (checkSubscriptionMatch) {
-      console.log("teste")
       return {
         statusCode,
         headers,
