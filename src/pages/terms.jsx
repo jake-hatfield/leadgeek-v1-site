@@ -199,7 +199,7 @@ const TermsPage = () => {
         </p>
         <p className="mt-4 text-gray-700">
           If you forget to cancel your subscription before your automatic
-          payment cycle renews, please email support within 72 hours of thek
+          payment cycle renews, please email support within 72 hours of the
           payment and we'll refund you in full for the most recent charge.
           Refund requests made after the 72 hour period are honored at our
           discretion.
