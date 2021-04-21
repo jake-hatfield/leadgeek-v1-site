@@ -82,7 +82,6 @@ const pushToDatabase = async (db, data) => {
       name,
       email,
       password: encryptedPassword,
-      lastLogin: null,
       subscription: {
         cusId: customerId,
         subIds: [
