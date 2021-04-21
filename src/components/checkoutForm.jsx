@@ -294,7 +294,6 @@ const CheckoutForm = ({
     const lastNameCapitalized =
       lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
-    // const email = e.target.email.value.trim()
     // check for default error states
     if (!stripe || !elements) {
       return

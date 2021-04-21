@@ -12,7 +12,8 @@ const TermsPage = () => {
     <Layout>
       <SEO title="Terms of Service" />
       <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
-        <h1 className="text-3xl font-black">
+        <p className="font-bold text-gray-700">Last updated: March 10, 2021</p>
+        <h1 className="mt-4 text-3xl font-black">
           Welcome to {siteTitle}'s terms of service agreement
         </h1>
         <p className="mt-4 text-gray-700">

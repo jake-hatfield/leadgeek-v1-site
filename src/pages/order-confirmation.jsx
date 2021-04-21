@@ -46,9 +46,10 @@ const OrderConfirmationPage = () => {
             Thank you for joining LeadGeek!
           </h1>
           <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700">
-            You should receive a confirmation email shortly. We're happy to
-            assist with any part of your Amazon selling journey, so reach out
-            with any questions or concerns.
+            You should receive a confirmation email shortly (please also check
+            spam folders if you don't see it right away). We're happy to assist
+            with any part of your Amazon selling journey, so reach out with any
+            questions or concerns.
           </p>
           <div className="mt-4 py-2 px-4 border-l-8 border-teal-400 bg-teal-100 text-teal-600">
             <div className="flex">

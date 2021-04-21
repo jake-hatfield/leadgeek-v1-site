@@ -66,14 +66,39 @@ const pushToDatabase = async (db, data) => {
     // encrypt password
     const salt = await bcrypt.genSalt(10)
     encryptedPassword = await bcrypt.hash(password, salt)
+    // assign plan to string
+    let role
+    if (planId === process.env.GATSBY_BUNDLE_PRODUCT_ID) {
+      role = "bundle"
+    } else if (planId === process.env.GATSBY_PRO_PRODUCT_ID) {
+      role = "pro"
+    } else if (planId === process.env.GATSBY_GROW_PRODUCT_ID) {
+      role = "grow"
+    } else {
+      role = "user"
+    }
+    // create user
     user = await new User({
       name,
       email,
       password: encryptedPassword,
-      customerId,
-      subId,
-      planId,
-      paymentMethod,
+      lastLogin: null,
+      subscription: {
+        cusId: customerId,
+        subIds: [
+          {
+            id: subId.id,
+            active: true,
+          },
+        ],
+        planIds: [planId],
+      },
+      billing: {
+        paymentMethod: paymentMethod.id,
+        last4: paymentMethod.card.last4,
+        brand: paymentMethod.card.brand,
+      },
+      role,
       resetPasswordToken: null,
       resetPasswordExpires: null,
     })

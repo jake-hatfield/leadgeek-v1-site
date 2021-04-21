@@ -4,7 +4,6 @@ import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
 import CheckoutForm from "../components/checkoutForm"
-import SignupFeatures from "../components/signupFeatures"
 
 import HalfDotted from "../assets/svgs/half-dotted.svg"
 
