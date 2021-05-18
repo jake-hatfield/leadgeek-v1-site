@@ -1,9 +1,9 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import CTA from "../components/cta"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import PrimaryHeader from "components/primaryHeader"
+import CTA from "components/cta"
 
 import Dotted from "../assets/svgs/dotted.svg"
 import HalfDotted from "../assets/svgs/half-dotted.svg"

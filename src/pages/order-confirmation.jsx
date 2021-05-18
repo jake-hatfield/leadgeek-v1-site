@@ -1,7 +1,7 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
 
 import ArrowRight from "../assets/svgs/arrow-right.svg"
 import Check from "../assets/svgs/check.svg"

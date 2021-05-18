@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Check from "../assets/svgs/check.svg"
+import Check from "assets/svgs/check.svg"
 
 const signupFeatures = ({ featureList, price, plan, discount }) => {
   let listSize = 4

@@ -1,6 +1,6 @@
 import React from "react"
 
-import ArrowLink from "../components/arrowLink"
+import ArrowLink from "components/arrowLink"
 
 const otherFeatures = ({
   criteria,

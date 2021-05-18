@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import "../styles/app.css"
+import "styles/app.css"
 
-import Header from "./header"
-import Footer from "./footer"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 import CookieConsent from "react-cookie-consent"
 
-import ArrowRight from "../assets/svgs/arrow-right.svg"
+import ArrowRight from "assets/svgs/arrow-right.svg"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="relative flex flex-col h-screen justify-between">
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Navbar siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
       <CookieConsent

@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import AltHeader from "../../components/altHeader"
-import ThreeIconList from "../../components/threeIconList"
-import LargeDescription from "../../components/largeDescription"
-import BulletedList from "../../components/bulletedList"
-import OtherFeatures from "../../components/otherFeatures"
-import CTA from "../../components/cta"
+import Layout from "components/layout/Layout"
+import SEO from "components/utils/Seo"
+import AltHeader from "components/altHeader"
+import ThreeIconList from "components/threeIconList"
+import LargeDescription from "components/largeDescription"
+import BulletedList from "components/bulletedList"
+import OtherFeatures from "components/otherFeatures"
+import CTA from "components/cta"
 
-import Dotted from "../../assets/svgs/dotted.svg"
-import Squiggles from "../../assets/svgs/squiggles.svg"
+import Dotted from "assets/svgs/dotted.svg"
+import Squiggles from "assets/svgs/squiggles.svg"
 
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [

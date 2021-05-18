@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
+
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
-import CheckoutForm from "../components/checkoutForm"
+import CheckoutForm from "components/checkoutForm"
 
-import HalfDotted from "../assets/svgs/half-dotted.svg"
+import HalfDotted from "assets/svgs/half-dotted.svg"
 
 const signupPage = ({
   price,

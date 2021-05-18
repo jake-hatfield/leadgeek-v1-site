@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import CTA from "../components/cta"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import PrimaryHeader from "../components/PrimaryHeader"
+import CTA from "../components/Cta"
 
 import Check from "../assets/svgs/check.svg"
 import Dotted from "../assets/svgs/dotted.svg"

@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import CTA from "../components/cta"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import CTA from "../components/Cta"
 
 import Dotted from "../assets/svgs/dotted.svg"
 

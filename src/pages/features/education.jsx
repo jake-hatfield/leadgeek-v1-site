@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import AltHeader from "../../components/altHeader"
-import ThreeIconList from "../../components/threeIconList"
-import AlternatingDescription from "../../components/alternatingDescription"
-import OtherFeatures from "../../components/otherFeatures"
-import CTA from "../../components/cta"
+import Layout from "components/layout/Layout"
+import SEO from "components/utils/Seo"
+import AltHeader from "components/altHeader"
+import ThreeIconList from "components/threeIconList"
+import AlternatingDescription from "components/alternatingDescription"
+import OtherFeatures from "components/otherFeatures"
+import CTA from "components/cta"
 
-import Dotted from "../../assets/svgs/dotted.svg"
-import Squiggles from "../../assets/svgs/squiggles.svg"
+import Dotted from "assets/svgs/dotted.svg"
+import Squiggles from "assets/svgs/squiggles.svg"
 
 const supportPage = ({ data }) => {
   const educationSummary = [

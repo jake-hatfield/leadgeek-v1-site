@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import EmailModal from "../components/emailModal"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import PrimaryHeader from "../components/PrimaryHeader"
+import EmailModal from "../components/EmailModal"
 
 const GuidesPage = ({ data }) => {
   const [modalOpen1, setModalOpen1] = useState(false)

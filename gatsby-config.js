@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-resolve-src`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,6 +20,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

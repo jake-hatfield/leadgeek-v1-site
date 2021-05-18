@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
+
 import { animated } from "react-spring"
 
-import demoGif from "../assets/gifs/preview.gif"
-import PlayButton from "../assets/svgs/play.svg"
+import demoGif from "assets/gifs/preview.gif"
+import PlayButton from "assets/svgs/play.svg"
 
 function Dropdown({ title, items, open, setOpen, animation }) {
   const toggle = () => setOpen(!open)

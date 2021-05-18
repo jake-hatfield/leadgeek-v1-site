@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 
-import SEO from "../../components/seo"
-import SignupPage from "../../components/signupPage"
+import SEO from "components/utils/Seo"
+import SignupPage from "components/signupPage"
 
 const ProSignupPage = () => {
   const proPrice = 189

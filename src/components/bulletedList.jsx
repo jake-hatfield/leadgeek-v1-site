@@ -1,5 +1,6 @@
 import React from "react"
-import Check from "../assets/svgs/check.svg"
+
+import Check from "assets/svgs/check.svg"
 
 const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
   const listMaxWidth = maxWidth || `md:max-w-xl lg:max-w-3xl`

@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-import FormField from "../components/formField"
+import FormField from "components/utils/FormField"
 
 const emailModal = ({ modalOpen, setModalOpen, header, image }) => {
   return (

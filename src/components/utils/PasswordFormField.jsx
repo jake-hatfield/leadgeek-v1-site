@@ -1,6 +1,7 @@
 import React from "react"
-import EyeOpen from "../assets/svgs/eye-open.svg"
-import EyeClosed from "../assets/svgs/eye-closed.svg"
+
+import EyeOpen from "assets/svgs/eye-open.svg"
+import EyeClosed from "assets/svgs/eye-closed.svg"
 
 const FormField = ({
   label,
@@ -13,10 +14,7 @@ const FormField = ({
 }) => {
   return (
     <div className={`pt-4 ${width} flex-col items-center`}>
-      <label
-        htmlFor="password"
-        className="block text-xs font-medium text-gray-500"
-      >
+      <label htmlFor="password" className="form-field-label">
         {label}
       </label>
       <div className="relative">
@@ -26,7 +24,7 @@ const FormField = ({
           placeholder={placeholder}
           required={required}
           onChange={onChange}
-          className="mt-1 py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
+          className="mt-1 form-field"
         />
         <button
           onClick={toggle}
