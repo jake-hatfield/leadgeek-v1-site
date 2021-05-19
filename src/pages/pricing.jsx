@@ -164,7 +164,7 @@ const PricingPage = () => {
       body: "Free updates",
     },
   ]
-  const whyLeadGeek = [
+  const whyleadgeek = [
     {
       id: 1,
       iconPath:
@@ -519,12 +519,12 @@ const PricingPage = () => {
   return (
     <Layout>
       <SEO
-        title="LeadGeek Pricing and Plans - Monthly Membership Costs"
-        description="Find out all the details of LeadGeek pricing so you can choose the plan that's best for your arbitrage business."
+        title="leadgeek Pricing and Plans - Monthly Membership Costs"
+        description="Find out all the details of leadgeek pricing so you can choose the plan that's best for your arbitrage business."
       />
       <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
-          header={`Grow your online arbitrage business with LeadGeek.`}
+          header={`Grow your online arbitrage business with leadgeek.`}
           negativeMargin
           svgOne={
             <div className="absolute bottom-0 right-0 z-0 transform translate-y-32">
@@ -601,8 +601,8 @@ const PricingPage = () => {
       </section>
       <TripleIcons
         bgColor={`bg-purple-600`}
-        mainHeader={`Why customers choose LeadGeek`}
-        items={whyLeadGeek}
+        mainHeader={`Why customers choose leadgeek`}
+        items={whyleadgeek}
         primaryTextColor={`text-white`}
         secondaryTextColor={`text-purple-100`}
         iconColor={`bg-white text-purple-600

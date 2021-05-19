@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import { animated, useSpring } from "react-spring"
 
+import Logo from "assets/svgs/leadgeek-logo-light.svg"
+
 function MoreDropdown({ title, items, animation, open, setOpen }) {
   const toggle = () => setOpen(!open)
 
@@ -64,7 +66,7 @@ const Navbar = () => {
       {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
           <p>
-            Join LeadGeek and start 2021 off with a great way to source daily
+            Join leadgeek and start 2021 off with a great way to source daily
             products!
           </p>
           <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
@@ -81,9 +83,13 @@ const Navbar = () => {
       <div className="container">
         <div className="py-6 lg:py-4 center-between">
           {/* logo */}
-          <div className="flex items-center font-bold text-2xl lg:text-3xl">
-            <Link to={`/`} className="text-gray-900 rounded-lg ring-purple">
-              Lead<span className="text-purple-500">Geek</span>
+          <div className="flex items-center font-bold text-2xl lg:text-2xl group">
+            <Link
+              to={`/`}
+              className="all-center text-gray-900 rounded-lg ring-purple"
+            >
+              <Logo className="w-8 lg:w-10 mr-4" />
+              lead<span className="text-purple-500">geek</span>
             </Link>
           </div>
           {/* mobile button */}
@@ -114,7 +120,7 @@ const Navbar = () => {
                 <Link
                   to={`/${primaryLink.link}`}
                   className={classes.navbarLink}
-                  activeClassName="active"
+                  activeClassName="border-b-2 border-purple-600 text-purple-500"
                 >
                   {primaryLink.title}
                 </Link>
@@ -130,14 +136,10 @@ const Navbar = () => {
             <a
               href="https://app.leadgeek.io/login"
               className={classes.navbarLink}
-              activeClassName="active"
             >
               Log in
             </a>
-            <Link
-              to={"/signup"}
-              className="first:ml-0 ml-8 py-2 px-3 rounded-lg shadow-sm hover:shadow-md border-main bg-purple-500 font-semibold text-sm hover:bg-purple-600 text-white transition-main ring-purple"
-            >
+            <Link to={"/signup"} className="first:ml-0 cta-link">
               Sign up
             </Link>
           </nav>
@@ -293,8 +295,7 @@ const moreItemsMobile = [
 ]
 
 const classes = {
-  navbarLink:
-    "first:ml-0 ml-8 font-semibold text-gray-600 hover:text-purple-500 border-b-2 border-transparent hover:border-purple-600 group transition-colors-main",
+  navbarLink: "secondary-link",
 }
 
 export default Navbar

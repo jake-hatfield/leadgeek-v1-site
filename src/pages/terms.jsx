@@ -5,7 +5,7 @@ import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
 
 const TermsPage = () => {
-  const siteTitle = "LeadGeek"
+  const siteTitle = "leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io"
   return (
@@ -18,8 +18,8 @@ const TermsPage = () => {
         </h1>
         <p className="mt-4 text-gray-700">
           These terms of service constitute a legally binding agreement made
-          between you, whether personally or on behalf of an entity LeadGeek
-          ("LeadGeek", “we”, “us”, or “our”), concerning your access to and use
+          between you, whether personally or on behalf of an entity leadgeek
+          ("leadgeek", “we”, “us”, or “our”), concerning your access to and use
           of the{" "}
           <Link to={siteLink} className="font-semibold">
             {siteLinkFull}

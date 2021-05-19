@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "components/layout/layout"
@@ -9,8 +9,7 @@ import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
 import Dotted from "../assets/svgs/dotted.svg"
-import Squiggles from "../assets/svgs/squiggles.svg"
-import HalfDotted from "../assets/svgs/half-dotted.svg"
+import PaperTear from "assets/svgs/paper-tear-1.svg"
 import SearchAnnotation from "assets/svgs/search-annotation.svg"
 import FilterAnnotation from "assets/svgs/filter-annotation.svg"
 import MetricsAnnotation from "assets/svgs/important-metrics-annotation.svg"
@@ -21,7 +20,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
-        description="Receive potent online arbitrage leads every weekday with LeadGeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        description="Receive potent online arbitrage leads every weekday with leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
       {/* hero section */}
       <section className="relative">
@@ -33,7 +32,7 @@ const IndexPage = ({ data }) => {
           </section>
           <PrimaryHeader
             header={`Online arbitrage sourcing at its best.`}
-            subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to sell via Amazon FBA.`}
+            subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to flip via Amazon FBA.`}
             nav
             linkOne={`how-it-works`}
             linkOneText={`See how it works`}
@@ -45,21 +44,42 @@ const IndexPage = ({ data }) => {
       {/* testimonial section */}
 
       <div className="relative mt-48 py-12 bg-gray-100">
+        <div className="text-gray-100">
+          {/* <div className="section-divider-top" /> */}
+        </div>
         <section className="relative">
           <div className="relative -mt-40 mx-auto max-w-5xl px-8 all-center">
-            <FilterAnnotation className="hidden md:block absolute top-0 right-0 z-40 md:w-36 lg:w-64 text-purple-600 transform translate-y-16 translate-x-10" />
-            <SearchAnnotation className="hidden md:block absolute top-0 right-0 z-40 md:w-36 lg:w-36 text-purple-600 transform -translate-y-20 lg:-translate-y-24 -translate-x-28" />
-            <LikeArchiveAnnotation className="hidden md:block absolute top-0 left-0 z-40 md:w-56 lg:w-48 text-purple-600 transform -translate-y-20 lg:-translate-y-24 -translate-x-8 lg:translate-x-48" />
-            <MetricsAnnotation className="hidden md:block absolute bottom-0 left-0 z-40 md:w-36 lg:w-72 text-purple-600 transform -translate-y-20 lg:-translate-y-32 -translate-x-40" />
+            <FilterAnnotation className="hidden lg:block absolute top-0 right-0 z-40 lg:w-52 xl:w-64 text-purple-600 transform translate-y-16 translate-x-2 xl:translate-x-10" />
+            <SearchAnnotation className="hidden lg:block absolute top-0 right-0 z-40 lg:w-28 xl:w-36 text-purple-600 transform -translate-y-20 xl:-translate-y-24 -translate-x-28" />
+            <LikeArchiveAnnotation className="hidden lg:block absolute top-0 left-0 z-40 lg:w-40 xl:w-48 text-purple-600 transform -translate-y-20 xl:-translate-y-24 translate-x-48" />
+            <MetricsAnnotation className="hidden xl:block absolute bottom-0 left-0 z-40 md:w-36 lg:w-72 text-purple-600 transform -translate-y-20 lg:-translate-y-32 -translate-x-40" />
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
-          <header className="py-12 md:text-center">
+          <header className="pt-12 md:text-center">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
               Don't dig through information - surface it.
             </h2>
+            <p className="mt-4 lg:mt-6 mx-auto h3">
+              <span className="font-semibold">Before using leadgeek</span>: Your
+              process to find new arbitrage leads is disorganized,
+              time-consuming, and inconsistent. You feel like time and resources
+              are wasted when you can't find leads that meet your criteria.
+            </p>
+            <p className="mt-4 lg:mt-6 mx-auto h3">
+              <span className="font-semibold">After using leadgeek</span>: You
+              know exactly the quality of leads to expect every day. Your
+              business has a predictable growth system in place, there are fewer
+              headaches, and you can focus on getting more important things
+              done.
+            </p>
+            <div className="mt-6">
+              <Link to={"/features"} className="secondary-link">
+                See how leadgeek is built different
+              </Link>
+            </div>
           </header>
         </section>
       </div>
@@ -67,12 +87,15 @@ const IndexPage = ({ data }) => {
       <section className="py-12 container md:text-center">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
-            People who love clarity, love LeadGeek
+            People who love clarity, love leadgeek
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            provident sunt esse debitis accusamus optio aliquid est enim fuga
-            id?
+            Entrepreneurs, side-hustlers, newbies, and pro sellers have all
+            joined leadgeek to{" "}
+            <span className={classes.emphasizedText}>
+              fundamentally improve their arbitrage sourcing process
+            </span>
+            .
           </h3>
         </header>
         <div className="mt-8">
@@ -148,7 +171,7 @@ const TestimonialFull = ({ text, source, desc }) => {
 const testimonialsShort = [
   "good value, would recommend",
   "the best site I've found for leads",
-  "LeadGeek delivers on their promises",
+  "leadgeek delivers on their promises",
 ]
 
 const testimonialsFull = [
@@ -185,7 +208,7 @@ const testimonialsFull = [
   {
     text: (
       <p>
-        "LeadGeek delivers on their promises in the promo video on time every
+        "Leadgeek delivers on their promises in the promo video on time every
         day with solid ROI leads.{" "}
         <span className={classes.emphasizedText}>
           Would definitely recommend giving them a shot if you want to take the
@@ -203,7 +226,7 @@ const testimonialsFull = [
       <p>
         "I love the leads, they're very good.{" "}
         <span className={classes.emphasizedText}>
-          LeadGeek will pay off in a week
+          Leadgeek will pay off in a week
         </span>
         ... definitely the best site I've found for leads."
       </p>
@@ -263,7 +286,7 @@ export const query = graphql`
     heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 2048, quality: 90) {
+        fluid(maxWidth: 4096, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

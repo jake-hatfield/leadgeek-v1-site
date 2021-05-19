@@ -56,7 +56,7 @@ const ContactPage = () => {
                 </div>
                 <div className="mt-6 text-gray-700">
                   <h3 className="text-xl font-semibold">
-                    Already a LeadGeek member?
+                    Already a leadgeek member?
                   </h3>
                   <div className="mt-2 inline-block text-gray-500">
                     <a

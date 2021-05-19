@@ -5,7 +5,7 @@ import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
 
 const PrivacyPolicyPage = () => {
-  const siteTitle = "LeadGeek"
+  const siteTitle = "leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io"
   return (

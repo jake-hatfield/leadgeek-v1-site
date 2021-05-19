@@ -70,12 +70,12 @@ const supportPage = ({ data }) => {
     <Layout>
       <SEO
         title="Seller Education"
-        description="Join LeadGeek and receive in-depth e-books, video lessons, and templates to help you learn the ins and outs of online arbitrage."
+        description="Join leadgeek and receive in-depth e-books, video lessons, and templates to help you learn the ins and outs of online arbitrage."
       />
       <AltHeader
         title={`Seller education`}
         header={`Train like an online arbitrage pro.`}
-        subHeader={`Several different types of comprehensive training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
+        subHeader={`Several different types of comprehensive training materials are made available to leadgeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}

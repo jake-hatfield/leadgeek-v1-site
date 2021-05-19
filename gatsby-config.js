@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.leadgeek.io`,
-    title: `LeadGeek`,
-    description: `LeadGeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday.`,
-    author: `LeadGeek`,
+    title: `leadgeek`,
+    description: `leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday.`,
+    author: `leadgeek`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `LeadGeek Arbitrage Leads`,
-        short_name: `LeadGeek`,
+        name: `leadgeek Arbitrage Leads`,
+        short_name: `leadgeek`,
         start_url: `/`,
         background_color: `#5d55fa`,
         theme_color: `#5d55fa`,

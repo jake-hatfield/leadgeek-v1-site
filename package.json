@@ -1,7 +1,7 @@
 {
   "name": "leadgeek-site",
   "private": true,
-  "description": "The LeadGeek marketing website for online arbitrage sourcing.",
+  "description": "The leadgeek marketing website for online arbitrage sourcing.",
   "version": "0.1.0",
   "author": "Jake Hatfield <jake@leadgeek.io>",
   "dependencies": {

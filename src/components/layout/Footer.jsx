@@ -96,8 +96,7 @@ const Footer = () => {
       <div className="mt-12 container md:text-center text-sm md:text-base text-gray-500">
         <div className="w-full border border-gray-800" />
         <div className="mt-6 md:flex md:items-center md:justify-center">
-          &copy; 2020 - {new Date().getFullYear()} LeadGeek, Inc. All rights
-          reserved
+          &copy; {new Date().getFullYear()} leadgeek, All rights reserved
           <div className="mt-2 md:mt-0">
             <span className="ml-1 hidden md:inline-block"> |</span>{" "}
             <a href="/sitemap.xml">Sitemap</a>

@@ -7,10 +7,10 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [
     {
       id: 1,
-      question: "How is LeadGeek different from other sourcing lists?",
+      question: "How is leadgeek different from other sourcing lists?",
       answer: (
         <p>
-          LeadGeek is hyper-focused on high standards. We prioritize quality
+          leadgeek is hyper-focused on high standards. We prioritize quality
           over quantity, meaning we only put out leads that have a solid sales
           history and meet our strict criteria. <br />
           <br /> Our intra-list competition is significantly lower than many
@@ -136,7 +136,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
         <p>
           Your subscription will renew for another month of service on the
           anniversary of your sign up date. <br /> <br />
-          For more information LeadGeek subscriptions, read our{" "}
+          For more information leadgeek subscriptions, read our{" "}
           <Link
             to={`/terms#subscription-policy`}
             className="font-semibold hover:text-gray-900 transition-colors duration-200"
@@ -168,7 +168,7 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
           not issue refunds for the current month of service. However, we
           understand that special circumstances arise and honor genuine
           requests.
-          <br /> <br /> For more information on LeadGeek's cancellation policy,
+          <br /> <br /> For more information on leadgeek's cancellation policy,
           read our{" "}
           <Link
             to={`/terms#cancellation-policy`}

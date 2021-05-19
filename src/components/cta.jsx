@@ -28,7 +28,7 @@ const CTA = ({
           >
             {mainHeader || `Ready to get started?`}
             <span className="mt-4 lg:mt-2 block">
-              {subHeader || `Sign up for LeadGeek today.`}
+              {subHeader || `Sign up for leadgeek today.`}
             </span>
           </h2>
           <nav className="mt-6 md:mt-8 text-center md:text-left">

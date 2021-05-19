@@ -43,7 +43,7 @@ const OrderConfirmationPage = () => {
       <section className="my-8 md:my-12 lg:mt-24 lg:mb-16 container md:flex md:justify-between">
         <header className="md:max-w-2xl md:w-3/5 ">
           <h1 className="text-4xl lg:text-5xl font-black text-gray-900">
-            Thank you for joining LeadGeek!
+            Thank you for joining leadgeek!
           </h1>
           <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700">
             You should receive a confirmation email shortly (please also check
