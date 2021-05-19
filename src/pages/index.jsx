@@ -11,6 +11,10 @@ import CTA from "../components/Cta"
 import Dotted from "../assets/svgs/dotted.svg"
 import Squiggles from "../assets/svgs/squiggles.svg"
 import HalfDotted from "../assets/svgs/half-dotted.svg"
+import SearchAnnotation from "assets/svgs/search-annotation.svg"
+import FilterAnnotation from "assets/svgs/filter-annotation.svg"
+import MetricsAnnotation from "assets/svgs/important-metrics-annotation.svg"
+import LikeArchiveAnnotation from "assets/svgs/like-archive-annotation.svg"
 
 const IndexPage = ({ data }) => {
   return (
@@ -35,36 +39,35 @@ const IndexPage = ({ data }) => {
             linkOneText={`See how it works`}
             linkTwo={`signup`}
             linkTwoText={`Already know you want to join? Sign up now.`}
-            svgOne={
-              <div className="absolute top-0 left-0 z-0 transform translate-y-10 translate-x-16">
-                <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
-              </div>
-            }
-            svgTwo={
-              <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6">
-                <HalfDotted className="hidden md:inline-block w-48 text-purple-100" />
-              </div>
-            }
           />
         </HeaderWrapper>
       </section>
       {/* testimonial section */}
 
-      <div className="mt-20 py-12 bg-gray-100">
-        <section className="">
-          <div className="all-center">
+      <div className="relative mt-48 py-12 bg-gray-100">
+        <section className="relative">
+          <div className="relative -mt-40 mx-auto max-w-5xl px-8 all-center">
+            <FilterAnnotation className="hidden md:block absolute top-0 right-0 z-40 md:w-36 lg:w-64 text-purple-600 transform translate-y-16 translate-x-10" />
+            <SearchAnnotation className="hidden md:block absolute top-0 right-0 z-40 md:w-36 lg:w-36 text-purple-600 transform -translate-y-20 lg:-translate-y-24 -translate-x-28" />
+            <LikeArchiveAnnotation className="hidden md:block absolute top-0 left-0 z-40 md:w-56 lg:w-48 text-purple-600 transform -translate-y-20 lg:-translate-y-24 -translate-x-8 lg:translate-x-48" />
+            <MetricsAnnotation className="hidden md:block absolute bottom-0 left-0 z-40 md:w-36 lg:w-72 text-purple-600 transform -translate-y-20 lg:-translate-y-32 -translate-x-40" />
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="-mt-32 w-full max-w-5xl rounded-lg shadow-lg"
+              className="w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
+          <header className="py-12 md:text-center">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
+              Don't dig through information - surface it.
+            </h2>
+          </header>
         </section>
       </div>
 
       <section className="py-12 container md:text-center">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
-            People who love simplicity, love LeadGeek
+            People who love clarity, love LeadGeek
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti

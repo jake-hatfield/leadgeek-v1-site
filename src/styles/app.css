@@ -91,6 +91,7 @@ html {
 .h3 {
   @apply md:max-w-xl lg:max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700;
 }
+
 /* .nav-width-md {
   max-width: 723px !important;
   margin-left: -380px !important;
