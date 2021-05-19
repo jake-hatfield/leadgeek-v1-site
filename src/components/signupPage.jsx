@@ -69,7 +69,7 @@ const signupPage = ({
                     </svg>
                   </div>
                   <p className="ml-2 text-sm">
-                    <strong>Don't worry:</strong> Your leadgeek subscription
+                    <strong>Don't worry:</strong> Your Leadgeek subscription
                     will renew automatically, but you'll be able to adjust your
                     subscription status at any time by contacting support. We'll
                     happily refund you if you forget to cancel.

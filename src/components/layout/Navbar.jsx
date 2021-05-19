@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import Logo from "assets/svgs/leadgeek-logo-light.svg"
+import Logo from "assets/svgs/Leadgeek-logo-light.svg"
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
           <p>
-            Join leadgeek and start 2021 off with a great way to source daily
+            Join Leadgeek and start 2021 off with a great way to source daily
             products!
           </p>
           <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
@@ -70,7 +70,7 @@ const Navbar = () => {
               ))}
             </div>
             <a
-              href="https://app.leadgeek.io/login"
+              href="https://app.Leadgeek.io/login"
               className={classes.navbarLink}
             >
               Log in

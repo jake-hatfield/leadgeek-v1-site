@@ -1,9 +1,9 @@
 {
-  "name": "leadgeek-site",
+  "name": "Leadgeek-site",
   "private": true,
-  "description": "The leadgeek marketing website for online arbitrage sourcing.",
+  "description": "The Leadgeek marketing website for online arbitrage sourcing.",
   "version": "0.1.0",
-  "author": "Jake Hatfield <jake@leadgeek.io>",
+  "author": "Jake Hatfield <jake@Leadgeek.io>",
   "dependencies": {
     "@stripe/react-stripe-js": "^1.2.0",
     "@stripe/stripe-js": "^1.11.0",

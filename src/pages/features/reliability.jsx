@@ -142,12 +142,12 @@ const LeadCriteriaPage = ({ data }) => {
     <Layout>
       <SEO
         title="Proven Reliability"
-        description="Remove any guesswork that surrounds daily arbitrage sourcing with leadgeek. We guarantee a consistent output of premium leads for you to choose from every weekday."
+        description="Remove any guesswork that surrounds daily arbitrage sourcing with Leadgeek. We guarantee a consistent output of premium leads for you to choose from every weekday."
       />
       <AltHeader
         title={`Proven reliability`}
         header={`Take the guesswork out of everyday sourcing.`}
-        subHeader={`leadgeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, get a guaranteed output to seamlessly grow your FBA business.`}
+        subHeader={`Leadgeek gives you a relief from the uncertainty of sourcing. Rather than hoping you'll have products to sell every day, get a guaranteed output to seamlessly grow your FBA business.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}
@@ -179,7 +179,7 @@ const LeadCriteriaPage = ({ data }) => {
               Automate the time-consuming work
             </h3>
             <p className="mt-4">
-              leadgeek lets you transition from a sourcing grind into a
+              Leadgeek lets you transition from a sourcing grind into a
               concentrated FBA business owner. Let our expert team compress 8+
               hours of product analysis into a list that you can review in a few
               minutes each day.
@@ -194,7 +194,7 @@ const LeadCriteriaPage = ({ data }) => {
                     Other Services
                   </td>
                   <td className="md:w-1/4 text-center md:text-left border-0 leading-tight">
-                    leadgeek
+                    Leadgeek
                   </td>
                 </tr>
               </thead>
@@ -372,7 +372,7 @@ const LeadCriteriaPage = ({ data }) => {
               Cut out volume volatility.
             </h2>
             <p className="mt-4 max-w-2xl">
-              With leadgeek, you get a steady stream of proven-selling products
+              With Leadgeek, you get a steady stream of proven-selling products
               directly to your inbox at 8 am CST every weekday. Gain peace of
               mind in knowing that you'll have guaranteed arbitrage
               opportunities without volume fluctuations.

@@ -54,7 +54,7 @@ const BundleSignupPage = () => {
     <Fragment>
       <SEO
         title="Grow + Pro Bundle Signup"
-        description="Join leadgeek's Grow + Pro Bundle to receive an abundance of premium leads, support, and seller education at a substantial discount."
+        description="Join Leadgeek's Grow + Pro Bundle to receive an abundance of premium leads, support, and seller education at a substantial discount."
       />
       <SignupPage
         featureList={featureList}

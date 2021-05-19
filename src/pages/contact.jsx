@@ -41,7 +41,7 @@ const ContactPage = () => {
                   <address className="mt-2 text-gray-500 not-italic">
                     <div className="mt-3 flex items-end">
                       <a
-                        href="mailto:hello@leadgeek.io"
+                        href="mailto:hello@Leadgeek.io"
                         target="_blank"
                         rel="noreferrer"
                         className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
@@ -56,11 +56,11 @@ const ContactPage = () => {
                 </div>
                 <div className="mt-6 text-gray-700">
                   <h3 className="text-xl font-semibold">
-                    Already a leadgeek member?
+                    Already a Leadgeek member?
                   </h3>
                   <div className="mt-2 inline-block text-gray-500">
                     <a
-                      href="mailto:support@leadgeek.io"
+                      href="mailto:support@Leadgeek.io"
                       className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
                     >
                       Contact support

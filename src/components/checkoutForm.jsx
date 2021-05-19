@@ -357,7 +357,7 @@ const CheckoutForm = ({
           onSuccessfulCheckout()
         } else {
           setCheckoutError(
-            "Your payment method was processed, but there was an additional error. Please contact support to finish creating your leadgeek account."
+            "Your payment method was processed, but there was an additional error. Please contact support to finish creating your Leadgeek account."
           )
           setProcessingTo(false)
         }

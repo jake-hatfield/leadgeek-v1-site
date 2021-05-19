@@ -67,7 +67,7 @@ function Dropdown({ title, items, open, setOpen, animation }) {
                         <PlayButton className="h-12 w-12 gif-button text-purple-600" />
                         <img
                           src={demoGif}
-                          alt="leadgeek demo preview"
+                          alt="Leadgeek demo preview"
                           className="mb-0 w-48 xl:w-64 rounded-md shadow-xl"
                         />
                       </Link>

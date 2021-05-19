@@ -13,14 +13,14 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
-        description="Receive potent online arbitrage leads every weekday with leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
       {/* hero section */}
       <section className="relative">
         <HeaderWrapper>
           <PrimaryHeader
             header={`The uncomplicated arbitrage software.`}
-            subHeader={`Leadgeek is a tool that makes FBA sourcing productive, organized, and clear. People that use leadgeek are more efficient at finding arbitrage leads day in and day out. Here's how the magic happens.`}
+            subHeader={`Leadgeek is a tool that makes FBA sourcing productive, organized, and clear. People that use Leadgeek are more efficient at finding fresh arbitrage leads day in and day out. Here's how the magic happens.`}
           />
         </HeaderWrapper>
       </section>
@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => {
           <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="w-full rounded-lg border border-gray-200 shadow-lg"
+              className="w-full rounded-lg shadow-lg"
             />
           </div>
           <header className="pt-12 md:text-center">
@@ -41,13 +41,13 @@ const IndexPage = ({ data }) => {
               Don't dig through information - surface it.
             </h2>
             <p className="mt-4 lg:mt-6 mx-auto h3">
-              <span className="font-semibold">Before using leadgeek</span>: Your
+              <span className="font-semibold">Before using Leadgeek</span>: Your
               process to find new arbitrage leads is disorganized,
               time-consuming, and inconsistent. You feel like time and resources
               are wasted when you can't find leads that meet your criteria.
             </p>
             <p className="mt-4 lg:mt-6 mx-auto h3">
-              <span className="font-semibold">After using leadgeek</span>: You
+              <span className="font-semibold">After using Leadgeek</span>: You
               know exactly the quality of leads to expect every day. Your
               business has a predictable growth system in place, there are fewer
               headaches, and you can focus on getting more important things
@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
             </p>
             <div className="mt-6">
               <Link to={"/features"} className="secondary-link">
-                See how leadgeek is built different
+                See how Leadgeek is built different
               </Link>
             </div>
           </header>
@@ -65,11 +65,11 @@ const IndexPage = ({ data }) => {
       <section className="py-12 container md:text-center">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
-            People who love clarity, love leadgeek.
+            People who love clarity, love Leadgeek.
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h3">
             Entrepreneurs, side-hustlers, newbies, and pro sellers have all
-            joined leadgeek to{" "}
+            joined Leadgeek to{" "}
             <span className={classes.emphasizedText}>
               fundamentally improve their arbitrage sourcing process
             </span>

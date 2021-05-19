@@ -59,7 +59,7 @@ const ProSignupPage = () => {
     <Fragment>
       <SEO
         title="Pro Plan Signup"
-        description="Join leadgeek's Pro plan for more arbitrage list exclusivity and the highest quality arbitrage products possible."
+        description="Join Leadgeek's Pro plan for more arbitrage list exclusivity and the highest quality arbitrage products possible."
       />
       <SignupPage
         featureList={featureList}

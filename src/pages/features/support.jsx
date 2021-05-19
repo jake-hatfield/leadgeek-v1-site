@@ -44,7 +44,7 @@ const supportPage = ({ data }) => {
       title: "100% Issue solve rate",
       header: "Problem solving at your fingertips.",
       content:
-        "Bring any issue to our team's attention, and we guarantee a resolution. No matter how small the problem, leadgeek members get their inquiries fixed thoroughly every time.",
+        "Bring any issue to our team's attention, and we guarantee a resolution. No matter how small the problem, Leadgeek members get their inquiries fixed thoroughly every time.",
       image: data.problemSolving.childImageSharp.fluid,
     },
     {
@@ -68,12 +68,12 @@ const supportPage = ({ data }) => {
     <Layout>
       <SEO
         title="Member Support"
-        description="Join a selling community that genuinely cares about helping you exceed your arbitrage goals. Receive top-tier support when you join leadgeek."
+        description="Join a selling community that genuinely cares about helping you exceed your arbitrage goals. Receive top-tier support when you join Leadgeek."
       />
       <AltHeader
         title={`Member support`}
         header={`Sell with confidence, not confusion.`}
-        subHeader={`Navigating Amazon's marketplace can be a challenge, but there's no need to stumble through it alone. leadgeek members gain access to guidance from experienced arbitrage sellers to prevent pitfalls and solve issues.`}
+        subHeader={`Navigating Amazon's marketplace can be a challenge, but there's no need to stumble through it alone. Leadgeek members gain access to guidance from experienced arbitrage sellers to prevent pitfalls and solve issues.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}

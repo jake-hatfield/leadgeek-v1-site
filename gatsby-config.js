@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.leadgeek.io`,
-    title: `leadgeek`,
-    description: `leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday.`,
-    author: `leadgeek`,
+    siteUrl: `https://www.Leadgeek.io`,
+    title: `Leadgeek`,
+    description: `Leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday.`,
+    author: `Leadgeek`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,20 +24,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `leadgeek Arbitrage Leads`,
-        short_name: `leadgeek`,
+        name: `Leadgeek Arbitrage Leads`,
+        short_name: `Leadgeek`,
         start_url: `/`,
         background_color: `#5d55fa`,
         theme_color: `#5d55fa`,
         display: `minimal-ui`,
-        icon: `src/assets/images/leadgeek-logo.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/Leadgeek-logo.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
         endpoint:
-          "https://leadgeek.us2.list-manage.com/subscribe/post?u=78aa88c3633ef35c7c1ce0995&amp;id=d456eb75e8",
+          "https://Leadgeek.us2.list-manage.com/subscribe/post?u=78aa88c3633ef35c7c1ce0995&amp;id=d456eb75e8",
       },
     },
     {

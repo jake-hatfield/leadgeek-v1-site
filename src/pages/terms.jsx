@@ -5,9 +5,9 @@ import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
 
 const TermsPage = () => {
-  const siteTitle = "leadgeek"
+  const siteTitle = "Leadgeek"
   const siteLink = "/"
-  const siteLinkFull = "https://leadgeek.io"
+  const siteLinkFull = "https://Leadgeek.io"
   return (
     <Layout>
       <SEO title="Terms of Service" />
@@ -18,8 +18,8 @@ const TermsPage = () => {
         </h1>
         <p className="mt-4 text-gray-700">
           These terms of service constitute a legally binding agreement made
-          between you, whether personally or on behalf of an entity leadgeek
-          ("leadgeek", “we”, “us”, or “our”), concerning your access to and use
+          between you, whether personally or on behalf of an entity Leadgeek
+          ("Leadgeek", “we”, “us”, or “our”), concerning your access to and use
           of the{" "}
           <Link to={siteLink} className="font-semibold">
             {siteLinkFull}
@@ -171,7 +171,7 @@ const TermsPage = () => {
         <p className="mt-4 text-gray-700">
           Please email us at{" "}
           <a
-            href="mailto:hello@leadgeek.io"
+            href="mailto:hello@Leadgeek.io"
             target="_blank"
             rel="noreferrer"
             className="font-semibold"
@@ -443,7 +443,7 @@ const TermsPage = () => {
           </Link>
           , email us at{" "}
           <a
-            href="mailto:hello@leadgeek.io"
+            href="mailto:hello@Leadgeek.io"
             target="_blank"
             rel="noreferrer"
             className="font-semibold"
