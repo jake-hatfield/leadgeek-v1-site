@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <div className="relative flex flex-col h-screen justify-between">
       <Navbar siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <main className="mt-16 md:mt-20">{children}</main>
       <Footer />
       <CookieConsent
         buttonText="Got it"

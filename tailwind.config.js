@@ -169,7 +169,7 @@ module.exports = {
             paddingRight: "1.5rem",
           },
           "@screen xl": {
-            maxWidth: "1600px",
+            maxWidth: "1140px",
             paddingLeft: "2rem",
             paddingRight: "2rem",
           },

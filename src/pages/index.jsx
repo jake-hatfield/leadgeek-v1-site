@@ -43,16 +43,16 @@ const IndexPage = ({ data }) => {
       </section>
       {/* testimonial section */}
 
-      <div className="relative mt-48 py-12 bg-gray-100">
+      <div className="relative lg:mt-48 xl:mt-64 py-12 bg-gray-100">
         <div className="text-gray-100">
           {/* <div className="section-divider-top" /> */}
         </div>
         <section className="relative">
-          <div className="relative -mt-40 mx-auto max-w-5xl px-8 all-center">
-            <FilterAnnotation className="hidden lg:block absolute top-0 right-0 z-40 lg:w-52 xl:w-64 text-purple-600 transform translate-y-16 translate-x-2 xl:translate-x-10" />
-            <SearchAnnotation className="hidden lg:block absolute top-0 right-0 z-40 lg:w-28 xl:w-36 text-purple-600 transform -translate-y-20 xl:-translate-y-24 -translate-x-28" />
-            <LikeArchiveAnnotation className="hidden lg:block absolute top-0 left-0 z-40 lg:w-40 xl:w-48 text-purple-600 transform -translate-y-20 xl:-translate-y-24 translate-x-48" />
-            <MetricsAnnotation className="hidden xl:block absolute bottom-0 left-0 z-40 md:w-36 lg:w-72 text-purple-600 transform -translate-y-20 lg:-translate-y-32 -translate-x-40" />
+          <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+            <FilterAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-52 xl:w-full xl:max-w-sm text-purple-500 transform translate-y-16 translate-x-2 xl:translate-x-40" />
+            <SearchAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-28 xl:w-48 text-purple-500 transform -translate-y-20 xl:-translate-y-32 -translate-x-28" />
+            <LikeArchiveAnnotation className="hidden lg:block absolute top-0 left-0 z-20 lg:w-40 xl:w-64 text-purple-500 transform -translate-y-20 xl:-translate-y-28 translate-x-40" />
+            <MetricsAnnotation className="hidden xl:block absolute bottom-0 left-0 z-20 md:w-36 lg:w-72 xl:w-full max-w-sm text-purple-500 transform -translate-y-20 lg:-translate-y-32 -translate-x-64" />
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="w-full rounded-lg border border-gray-200 shadow-lg"
@@ -87,7 +87,7 @@ const IndexPage = ({ data }) => {
       <section className="py-12 container md:text-center">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
-            People who love clarity, love leadgeek
+            People who love clarity, love leadgeek.
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h3">
             Entrepreneurs, side-hustlers, newbies, and pro sellers have all
@@ -108,21 +108,12 @@ const IndexPage = ({ data }) => {
           ))}
         </div>
       </section>
-
       <CTA
-        padding={`py-12 md:py-16 lg:py-24`}
-        bgColor="bg-purple-600"
-        textColor="text-white"
-        buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="See pricing"
-        link="demo"
-        linkText="Watch a demo"
-        linkStyles="text-purple-100 hover:text-purple-200"
-        svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
-            <Dotted className="hidden md:inline-block w-24 text-purple-400" />
-          </div>
-        }
+        links={[
+          { title: "See how it works", link: "how-it-works" },
+          { title: "Tour the features", link: "features" },
+          { title: "Sign up now", link: "signup" },
+        ]}
       />
     </Layout>
   )

@@ -1,67 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import { animated, useSpring } from "react-spring"
-
 import Logo from "assets/svgs/leadgeek-logo-light.svg"
-
-function MoreDropdown({ title, items, animation, open, setOpen }) {
-  const toggle = () => setOpen(!open)
-
-  return (
-    <div
-      tabIndex={0}
-      onKeyPress={() => toggle(!open)}
-      onMouseEnter={() => open === false && toggle(!open)}
-      onMouseLeave={() => open === true && toggle(!open)}
-      className="ml-8 inline-flex space-x-1 text-gray-500 text-base leading-6 font-medium hover:text-gray-700 focus:outline-none focus:text-gray-700 transition-main md:cursor-default"
-    >
-      <div>
-        <div className={`${classes.navbarLink} cursor-pointer`}>{title}</div>
-        <animated.div
-          className={`${
-            open ? `block` : `hidden`
-          } absolute right-0 z-40 pt-6 w-full max-w-xs`}
-          style={animation}
-        >
-          <div className="rounded-md shadow-md">
-            <div className="rounded-md shadow-xs overflow-hidden">
-              <div className="px-5 py-6 relative z-20 grid gap-6 sm:gap-8 sm:p-8 bg-white">
-                {items.map(item => (
-                  <Link
-                    key={item.linkID}
-                    to={`/${item.link}`}
-                    className="-m-3 p-2 flex items-start space-x-4 rounded-md hover:bg-gray-100 text-left transition ease-in-out duration-200"
-                  >
-                    {item.path}
-                    <div className="space-y-1">
-                      <p className="text-sm leading-6 font-semibold text-gray-700">
-                        {item.title}
-                      </p>
-                      <p className="text-sm leading-5 font-normal text-gray-500">
-                        {item.description}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </animated.div>
-      </div>
-    </div>
-  )
-}
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const mobileAnimation = useSpring({
-    opacity: mobileMenuOpen ? 1 : 0,
-    marginTop: mobileMenuOpen ? -10 : 0,
-  })
 
   return (
-    <header className="relative z-20">
+    <header className="relative z-40">
       {/* notification banner */}
       {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
@@ -80,14 +26,11 @@ const Navbar = () => {
           </div>
         </div>
       </aside> */}
-      <div className="container">
-        <div className="py-6 lg:py-4 center-between">
+      <div className="fixed w-screen bg-white shadow-sm">
+        <div className="w-full py-6 md:py-4 container center-between">
           {/* logo */}
-          <div className="flex items-center font-bold text-2xl lg:text-2xl group">
-            <Link
-              to={`/`}
-              className="all-center text-gray-900 rounded-lg ring-purple"
-            >
+          <div className="font-bold text-2xl lg:text-2xl group">
+            <Link to={`/`} className="all-center text-gray-900 rounded-lg">
               <Logo className="w-8 lg:w-10 mr-4" />
               lead<span className="text-purple-500">geek</span>
             </Link>
@@ -125,13 +68,6 @@ const Navbar = () => {
                   {primaryLink.title}
                 </Link>
               ))}
-              <MoreDropdown
-                title={`More`}
-                items={moreItems}
-                open={mobileMenuOpen}
-                setOpen={setMobileMenuOpen}
-                animation={mobileAnimation}
-              />
             </div>
             <a
               href="https://app.leadgeek.io/login"
@@ -139,7 +75,7 @@ const Navbar = () => {
             >
               Log in
             </a>
-            <Link to={"/signup"} className="first:ml-0 cta-link">
+            <Link to={"/signup"} className="no-m-first cta-link">
               Sign up
             </Link>
           </nav>
@@ -295,7 +231,7 @@ const moreItemsMobile = [
 ]
 
 const classes = {
-  navbarLink: "secondary-link",
+  navbarLink: "no-m-first secondary-link",
 }
 
 export default Navbar

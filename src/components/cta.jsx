@@ -1,56 +1,34 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import ArrowRight from "assets/svgs/arrow-right.svg"
+import Arrow from "assets/svgs/cta-arrow.svg"
 
-const CTA = ({
-  margin,
-  padding,
-  bgColor,
-  textColor,
-  mainHeader,
-  subHeader,
-  buttonText,
-  buttonStyles,
-  buttonLink,
-  link,
-  linkText,
-  linkStyles,
-  svgOne,
-  svgTwo,
-}) => {
+const CTA = ({ mainHeader, links }) => {
+  console.log(links)
   return (
-    <section className={`${margin} ${padding} ${bgColor} relative`}>
+    <section className="relative py-8 lg:py-12 bg-gray-100">
       <div className="relative container">
-        <header className="mt-6 lg:mt-0 mx-auto md:mx-0 relative z-10 font-semibold">
+        <header className="mt-6 lg:mt-0 mx-auto md:mx-0 relative z-10 font-semibold center-between">
           <h2
-            className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold ${textColor}`}
+            className={`max-w-md text-2xl md:text-3xl xl:text-4xl font-black text-gray-900`}
           >
-            {mainHeader || `Ready to get started?`}
-            <span className="mt-4 lg:mt-2 block">
-              {subHeader || `Sign up for leadgeek today.`}
-            </span>
+            {mainHeader || `Start simplifying your sourcing.`}
           </h2>
-          <nav className="mt-6 md:mt-8 text-center md:text-left">
-            <Link
-              to={`/${buttonLink || `pricing`}`}
-              className="py-3 px-4 lg:py-4 lg:px-6 block md:inline-block shadow-sm rounded-md bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 focus:outline-none focus:shadow-outline"
-            >
-              {buttonText || "See pricing"}
-            </Link>
-            <div className="mt-4 md:mt-0 md:ml-4 md:inline-block">
+          <nav className="flex flex-col text-center md:text-left">
+            {links.map(link => (
               <Link
-                to={`/${link || "demo"}`}
-                className={`flex justify-center md:justify-start items-center relative group ${linkStyles} focus:outline-none focus:shadow-outline`}
+                key={link.title}
+                to={`/${link.link}`}
+                className="mt-4 cta-link-center"
               >
-                {linkText || "Watch a demo"}
-                <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+                {link.title}
               </Link>
-            </div>
+            ))}
           </nav>
         </header>
-        {svgOne && svgOne}
-        {svgTwo && svgTwo}
+        <div className="text-purple-500">
+          <Arrow className="absolute top-0 right-0 w-full max-w-xl transform translate-y-4 -translate-x-64" />
+        </div>
       </div>
     </section>
   )
