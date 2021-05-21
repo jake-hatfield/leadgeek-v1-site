@@ -56,17 +56,17 @@ const IndexPage = ({ data }) => {
               className="w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
-          <header className="pt-12 md:text-center">
+          <header className="pt-12 md:text-center text-gray-700">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
               Don't dig through information - surface it.
             </h2>
-            <p className="mt-4 lg:mt-6 mx-auto h3">
+            <p className="mt-4 lg:mt-6 mx-auto h4">
               <span className="font-semibold">Before using Leadgeek</span>: Your
               process to find new arbitrage leads is disorganized,
               time-consuming, and inconsistent. You feel like time and resources
               are wasted when you can't find leads that meet your criteria.
             </p>
-            <p className="mt-4 lg:mt-6 mx-auto h3">
+            <p className="mt-4 lg:mt-6 mx-auto h4">
               <span className="font-semibold">After using Leadgeek</span>: You
               know exactly the quality of leads to expect every day. Your
               business has a predictable growth system in place, there are fewer
@@ -81,13 +81,12 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </div>
-
       <section className="py-12 container md:text-center">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
             People who love clarity, love Leadgeek.
           </h2>
-          <h3 className="mt-4 lg:mt-6 mx-auto h3">
+          <h3 className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
             Entrepreneurs, side-hustlers, newbies, and pro sellers have all
             joined Leadgeek to{" "}
             <span className={classes.emphasizedText}>

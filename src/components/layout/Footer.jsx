@@ -16,10 +16,9 @@ const Footer = () => {
     {
       header: "Features",
       items: [
-        { title: "All features", link: "features" },
-        { title: "Criteria", link: "features/criteria" },
-        { title: "Reliability", link: "features/reliability" },
-        { title: "Support", link: "features/support" },
+        { title: "Tour all", link: "features/profit-criteria" },
+        { title: "The criteria", link: "features#lead-criteria" },
+        { title: "The experience", link: "features/#sourcing-experience" },
       ],
     },
     {

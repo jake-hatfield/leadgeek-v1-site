@@ -148,8 +148,16 @@ html {
   @apply text-gray-600 hover:text-purple-500 border-b-2 border-transparent hover:border-purple-600 group transition-colors-main;
 }
 
+.text-width {
+  @apply md:max-w-xl lg:max-w-2xl;
+}
+
 .h3 {
-  @apply md:max-w-xl lg:max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700;
+  @apply text-width text-base md:text-lg lg:text-xl leading-relaxed text-gray-700;
+}
+
+.h4 {
+  @apply text-width text-base lg:text-lg leading-relaxed;
 }
 
 .nav-width-md {

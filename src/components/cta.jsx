@@ -27,7 +27,7 @@ const CTA = ({ mainHeader, links }) => {
           </nav>
         </header>
         <div className="text-purple-500">
-          <Arrow className="absolute top-0 right-0 w-full max-w-xl transform translate-y-4 -translate-x-64" />
+          <Arrow className="hidden lg:block absolute top-0 right-0 w-full max-w-xs xl:max-w-sm transform translate-y-12 -translate-x-64" />
         </div>
       </div>
     </section>
