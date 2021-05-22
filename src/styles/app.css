@@ -214,7 +214,13 @@ html {
 }
 
 .tertiary-link {
-  @apply text-gray-600 hover:text-purple-500 border-b-2 border-transparent hover:border-purple-600 group transition-colors-main;
+  @apply text-gray-600 hover:text-purple-500 group transition-colors-main;
+}
+
+.tertiary-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #5455fa;
 }
 
 .text-width {
