@@ -9,18 +9,12 @@ const Footer = () => {
       header: "Product",
       items: [
         { title: "How it works", link: "how-it-works" },
+        { title: "Tour features", link: "features" },
         { title: "Pricing", link: "pricing" },
         { title: "Demo", link: "demo" },
       ],
     },
-    {
-      header: "Features",
-      items: [
-        { title: "Tour all", link: "features/profit-criteria" },
-        { title: "The criteria", link: "features#lead-criteria" },
-        { title: "The experience", link: "features/#sourcing-experience" },
-      ],
-    },
+
     {
       header: "Company",
       items: [
@@ -35,9 +29,12 @@ const Footer = () => {
         <div className="flex justify-center">
           <Logo className="w-8 lg:w-10" />
         </div>
-        <nav className="w-full relative z-10 mt-8 lg:mt-12 flex justify-between container">
+        <nav className="w-full relative z-10 mt-8 lg:mt-12 flex justify-center container">
           {categories.map(category => (
-            <div key={category.header} className="mt-4 md:mt-0">
+            <div
+              key={category.header}
+              className="mt-4 md:mt-0 first:ml-0 ml-16"
+            >
               <h5 className="h3 font-semibold">{category.header}</h5>
               <ul className="mt-4">
                 {category.items.map(item => (

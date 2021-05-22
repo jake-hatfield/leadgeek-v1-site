@@ -17,9 +17,9 @@ const index = () => {
         <HeaderWrapper>
           <PrimaryHeader
             header={`Online arbitrage leads made waaay better.`}
-            subHeader={`Leadgeek empowers you to find the products you want, when you want them. Our top 22 features are the perfect combination of hand-curation and beautiful software.`}
+            subHeader={`Leadgeek empowers you to find the products you want, when you want them. The top ${features.length} features are a perfect combination of hand-curation and beautiful software that make arbitrage actually fun.`}
             nav
-            linkOne={`features/profit`}
+            linkOne={`features/criteria`}
             linkOneText={`Start the tour`}
           />
         </HeaderWrapper>
@@ -28,14 +28,17 @@ const index = () => {
         <ol className="mt-4 lg:mt-6 feature-list feature-grid">
           {features.map((feature, i) => (
             <li key={i} className="feature-list-item card w-64">
-              <header>
+              <header className="">
                 <h3 className="h3">
-                  <Link to={`/${feature.link}`} className="secondary-link">
+                  <Link
+                    to={`/features/${feature.link}`}
+                    className="secondary-link text-gray-700"
+                  >
                     {feature.title}
                   </Link>
                 </h3>
               </header>
-              <div className="mt-4 lg:mt-6 ">
+              <div className="mt-2 lg:mt-4">
                 <p>{feature.desc}</p>
               </div>
             </li>
@@ -48,57 +51,58 @@ const index = () => {
 
 const features = [
   {
-    title: "feature1",
+    title: "Get top-shelf leads by default",
+    desc: `Know what you want to buy but don’t know exactly which sizes? What if you miss out on a discount hidden somewhere on the website? With Leadgeek, you won’t have to wonder. Variations suggestions, promo codes, shipping minimums, and seller-to-seller notes give you clarity on how to order your inventory.
+    `,
+    link: "criteria",
+  },
+  {
+    title: "Laser-accurate number crunching",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
-    desc:
-      "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
-  },
-  {
-    title: "feature1",
+    title: "Comprehensive categories",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyy",
   },
   {
-    title: "feature1",
+    title: "500+ trusted retailers",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Check out historical metrics",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Professional experience in your corner",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Keep 'em coming",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Skim info in the Feed",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Surface data, don't dig for it",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "Account for prep costs automatically",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
-    title: "feature1",
+    title: "View details on the fly",
     desc:
       "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
@@ -131,6 +135,21 @@ const features = [
     title: "Notes",
     desc: `Know what you want to buy but don’t know exactly which sizes? What if you miss out on a discount hidden somewhere on the website? With Leadgeek, you won’t have to wonder. Variations suggestions, promo codes, shipping minimums, and seller-to-seller notes give you clarity on how to order your inventory.
       `,
+  },
+  {
+    title: "feature1",
+    desc:
+      "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
+  },
+  {
+    title: "feature1",
+    desc:
+      "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
+  },
+  {
+    title: "feature1",
+    desc:
+      "yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy",
   },
   {
     title: "feature1",

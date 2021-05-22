@@ -29,7 +29,7 @@ const primaryHeader = ({
               </Link>
             </div>
             <div className="mt-6">
-              <Link to={`/${linkTwo}`} className="secondary-link">
+              <Link to={`/${linkTwo}`} className="secondary-link text-gray-700">
                 {linkTwoText}
               </Link>
             </div>

@@ -25,7 +25,7 @@ html {
 }
 
 .card {
-  @apply mx-auto py-4 lg:py-6 px-6 md:px-8 w-full bg-white border-main rounded-lg shadow-lg;
+  @apply mx-auto py-4 lg:py-6 px-6 w-full bg-white border-main rounded-lg shadow-lg;
 }
 
 .feature-list {
@@ -199,7 +199,18 @@ html {
 }
 
 .secondary-link {
-  @apply font-semibold text-gray-600 hover:text-purple-500 border-b-2 border-gray-600 hover:border-purple-600 group transition-colors-main;
+  @apply font-semibold hover:text-purple-500 group transition-colors-main;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #486581;
+}
+
+.secondary-link:hover {
+  text-decoration-color: #5455fa;
+}
+
+.active-secondary-link {
+  text-decoration-color: #5455fa;
 }
 
 .tertiary-link {

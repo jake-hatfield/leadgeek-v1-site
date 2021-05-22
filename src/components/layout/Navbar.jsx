@@ -63,7 +63,7 @@ const Navbar = () => {
                 <Link
                   to={`/${primaryLink.link}`}
                   className={classes.navbarLink}
-                  activeClassName="border-b-2 border-purple-600 text-purple-500"
+                  activeClassName="active-secondary-link text-purple-500"
                 >
                   {primaryLink.title}
                 </Link>
@@ -231,7 +231,7 @@ const moreItemsMobile = [
 ]
 
 const classes = {
-  navbarLink: "no-m-first secondary-link",
+  navbarLink: "no-m-first secondary-link text-gray-700",
 }
 
 export default Navbar
