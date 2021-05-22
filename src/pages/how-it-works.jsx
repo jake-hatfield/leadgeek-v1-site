@@ -38,16 +38,22 @@ const IndexPage = ({ data }) => {
           <p className="mt-4 lg:mt-6 mx-auto h4">
             Why should you learn how to tweak a-million-and-one settings and
             spend hours only to find a small handful of products to arbitrage?
-            That’s like finding a needle in a haystack. You're putting in the
-            time to find some gold nuggets, but how many leads are you missing?
+            That’s like finding a needle in a haystack.{" "}
+            <span className="emphasized-text-light">
+              You're putting in the time to find some gold nuggets, but how many
+              leads are you missing?
+            </span>{" "}
             And more importantly - how much time are you wasting?
           </p>
           <p className="mt-4 lg:mt-6 mx-auto h4">
             Whether you’ve been screening thousands of products to find the 0.5%
             of winners or picking leads out from spreadsheets that look like
-            they belong to the last decade, the traditional sourcing process can
-            be quite painful. Unless something changes, it doesn’t take long for
-            “traditional” to turn into “inefficient.”
+            they belong to the last decade,{" "}
+            <span className="emphasized-text-light">
+              the traditional sourcing process can be quite painful
+            </span>
+            . Unless something changes, it doesn’t take long for “traditional”
+            to turn into “inefficient.”
           </p>
         </header>
       </section>
@@ -64,11 +70,14 @@ const IndexPage = ({ data }) => {
             <p className="mt-4 lg:mt-6 h4 text-gray-700">
               The Feed is a flow of arbitrage leads curated for you. These
               hand-picked leads are screened, scrubbed, and streamlined so you
-              only see the best of the best. The Feed won’t clutter your screen
-              with information you don’t want to see, but you can still dive
-              deeper into any item on the fly. Rather than drowning in data,
-              you’re empowered to inspect products as you see fit - making
-              “easy” the default.
+              only see the best of the best.{" "}
+              <span className="emphasized-text">
+                The Feed won’t clutter your screen with information you don’t
+                want to see
+              </span>
+              , but you can still dive deeper into any item on the fly. Rather
+              than drowning in data, you’re empowered to inspect products as you
+              see fit - making “easy” the default.
             </p>
           </header>
         </div>
@@ -86,8 +95,12 @@ const IndexPage = ({ data }) => {
               </Link>{" "}
               every lead must meet in order for it to ever see the light of day.
               Each item is individually inspected to meet certain profit, ROI,
-              ranking, and monthly sales requirements so as to make the most of
-              your time.
+              ranking, and monthly sales requirements (with selling fees
+              accounted for too!). Now{" "}
+              <span className="emphasized-text">
+                there's no more time-waste
+              </span>{" "}
+              doing this repetitive process yourself.
             </p>
           </header>
           <Img
@@ -108,16 +121,19 @@ const IndexPage = ({ data }) => {
             />
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
-            Our intuitive filters help you surface information rather than
-            digging through it by hand. Is there a minimum profit you’d like
-            your inventory to have? There’s a filter for that. Want to only sell
-            lighter items? Or only ones that have at least 75 sales/month?
-            You’re in control:{" "}
+            Our{" "}
             <Link to={"/features/filters"} className="secondary-link">
-              combine these preferences together
+              intuitive filters
             </Link>{" "}
-            and focus all attention on the perfect products to add to your
-            inventory.
+            help you surface information rather than digging through it by hand.
+            Is there a minimum profit you’d like your inventory to have? There’s
+            a filter for that. Want to only sell lighter items? Or only ones
+            that have at least 75 sales/month? You’re in control: combine these
+            preferences together and{" "}
+            <span className="emphasized-text">
+              focus all attention on the perfect products
+            </span>
+            to add to your inventory.
           </p>
         </header>
       </section>
@@ -133,11 +149,14 @@ const IndexPage = ({ data }) => {
             />
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
-            When you find a product you’re interested in, it takes no time at
-            all to see if it should make the cut. The detailed view provides the
-            full picture before you decide to order. It’s easy to check out the
-            historical price or sales rank to verify that the item will
-            reasonably sell well in the future.
+            When you find a lead you’re interested in, it takes no time at all
+            to see if it should make the cut.{" "}
+            <span className="emphasized-text">
+              The detailed view provides the full picture before you decide to
+              order
+            </span>
+            . It’s easy to check out the historical price or sales rank to
+            verify that the item will reasonably sell well in the future.
           </p>
         </header>
       </section>
@@ -148,13 +167,15 @@ const IndexPage = ({ data }) => {
               Keep track of the good stuff.
             </h2>
             <p className="mt-4 lg:mt-6 h4 text-gray-700">
-              Adding more leads to your collection is simple, not overwhelming.
-              Is there an item you want to set aside for a few minutes while you
-              sort through the other leads of the day? Add it to your liked
-              leads and check back when you’re ready. If there’s something you
-              think that might be great to re-stock on in the future, add it to
-              your archived collection. You’re in total control of organizing
-              the leads how it best works for you.
+              <span className="emphasized-text">
+                Adding more leads to your collection is simple
+              </span>
+              , not overwhelming. Is there an item you want to set aside for a
+              few minutes while you sort through the other leads of the day? Add
+              it to your liked leads and check back when you’re ready. If
+              there’s something you think that might be great to re-stock on in
+              the future, add it to your archived collection. You’re in total
+              control of organizing the leads how it best works for you.
             </p>
           </header>
           <Img
