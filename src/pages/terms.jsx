@@ -12,10 +12,11 @@ const TermsPage = () => {
     <Layout>
       <SEO title="Terms of Service" />
       <section className="my-8 md:my-12 lg:my-16 max-w-2xl container text-gray-900">
-        <h1 className="text-3xl font-black">
+        <p className="font-bold text-gray-700">Last updated: March 10, 2021</p>
+        <h1 className="mt-4 text-3xl font-black">
           Welcome to {siteTitle}'s terms of service agreement
         </h1>
-        <p className="mt-4 text-gray-700 text-gray-700">
+        <p className="mt-4 text-gray-700">
           These terms of service constitute a legally binding agreement made
           between you, whether personally or on behalf of an entity LeadGeek
           ("LeadGeek", “we”, “us”, or “our”), concerning your access to and use
@@ -168,7 +169,7 @@ const TermsPage = () => {
           effect at the end of the current paid term.
         </p>
         <p className="mt-4 text-gray-700">
-          If you are unsatisfied with our services, please email us at{" "}
+          Please email us at{" "}
           <a
             href="mailto:hello@leadgeek.io"
             target="_blank"
@@ -179,7 +180,7 @@ const TermsPage = () => {
             <span>port@l</span>
             <span>eadgeek.io</span>
           </a>{" "}
-          or call us at{" "}
+          (preferred) or call us at{" "}
           <a href="tel:(214) 810-0564" className="font-semibold">
             <span>(214) 8</span>
             <span>10-05</span>64
@@ -188,10 +189,28 @@ const TermsPage = () => {
         </p>
         <p className="mt-4 text-gray-700">
           Our policy is not to issue refunds for the current month of service,
-          though some exceptions apply and are entirely up to our discretion. We
-          attempt to work with our members to reach a mutual resolution and
-          honor genuine requests for refunds or partial/prorated refunds for
-          unused service.
+          though exceptions are entirely up to our discretion. Due to the nature
+          of a weekly service on a recurring monthly structure, we attempt to
+          work with our members and reach a mutual resolution by allowing the
+          ability to pause a subscription's unused time/service and re-activate
+          at a later date. For instance, if a member uses a week of service and
+          realizes they want to become more ungated in categories and brands,
+          we'll pause recurring payments and allow the remaining 3 weeks to be
+          used at a later date.
+        </p>
+        <p className="mt-4 text-gray-700">
+          If you forget to cancel your subscription before your automatic
+          payment cycle renews, please email support within 72 hours of the
+          payment and we'll refund you in full for the most recent charge.
+          Refund requests made after the 72 hour period are honored at our
+          discretion.
+        </p>
+        <p className="mt-4 text-gray-700">
+          <strong>Please note:</strong> there will not be any refunds for too
+          many products being gated for a your Amazon Seller Central account. We
+          intentionally source products that are usable and ungated for the
+          majority of established Amazon Seller accounts, so please ensure your
+          account meets these criteria before joining.
         </p>
         <h2 className="mt-6 text-xl font-bold">Prohibited activities</h2>
         <p className="mt-4 text-gray-700">

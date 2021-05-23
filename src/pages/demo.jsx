@@ -18,7 +18,7 @@ const demoPage = () => {
       />
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
-          header={`We didn't reinvent the wheel, just sourcing.`}
+          header={`Don't dig through information, surface it.`}
           subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. LeadGeek feels familiar to how you find products now, but it's a much more efficient experience. Watch a full walkthrough to see our product in action.`}
           bottomPadding="pb-32"
           negativeMargin
@@ -47,7 +47,7 @@ const demoPage = () => {
       <section className="my-12 lg:my-24 container">
         <header className="md:mx-auto max-w-2xl text-gray-700">
           <h2 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-gray-900">
-            Don't dig through information, surface it.
+            Streamlined data = better decisions.
           </h2>
           <p className="mt-6">
             LeadGeek saves you time by presenting the information you need - and

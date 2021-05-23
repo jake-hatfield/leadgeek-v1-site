@@ -7,7 +7,7 @@ const headers = {
   "Access-Control-Allow-Headers": "Content-Type",
 }
 
-exports.handler = async function (event) {
+exports.handler = async function (event, context, callback) {
   // Ensure we're making a POST request
   if (event.httpMethod !== "POST") {
     return {
@@ -88,7 +88,9 @@ exports.handler = async function (event) {
       return {
         statusCode,
         headers,
-        body: "You've already subscribed to this plan.",
+        body: JSON.stringify({
+          msg: "You've already subscribed to this plan.",
+        }),
       }
     } else {
       // subscription for this plan doesn't yet exist, so create it
@@ -99,8 +101,9 @@ exports.handler = async function (event) {
       return {
         statusCode,
         headers,
-        body: subscription.status,
+        body: JSON.stringify(subscription),
       }
+      //   callback(null, JSON.stringify(response))
     }
   } catch (error) {
     console.log(error)
