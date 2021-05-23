@@ -117,7 +117,7 @@ const IndexPage = ({ data }) => {
 }
 
 const classes = {
-  emphasizedText: "emphasized-text",
+  emphasizedText: "emphasized-text text-lg",
 }
 
 const TestimonialShort = ({ text }) => {

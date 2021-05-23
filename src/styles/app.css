@@ -55,7 +55,7 @@ html {
 }
 
 .emphasized-text {
-  @apply py-0.5 px-1 rounded-md bg-gray-900 text-white text-lg;
+  @apply py-0.5 px-1 rounded-md bg-gray-900 text-white;
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
