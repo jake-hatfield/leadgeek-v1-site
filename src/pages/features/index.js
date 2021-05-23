@@ -144,7 +144,7 @@ const features = [
   {
     title: "Your own personal researcher",
     desc:
-      "Do you ever wonder if there’s a promo or some discount you’re missing before you order? Now you don’t have to wonder. Any available promotional codes, shipping minimums, or cashback from sites like Rakuten are automatically included.",
+      "Are you ever curious if there’s a promo or some discount you’re missing before you order? Now you don’t have to wonder. Any available promotional codes, shipping minimums, or cashback from sites like Rakuten are automatically included.",
   },
   {
     title: "Leads belong to you",
