@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import AltHeader from "../../components/altHeader"
-import ThreeIconList from "../../components/threeIconList"
-import LargeDescription from "../../components/largeDescription"
-import BulletedList from "../../components/bulletedList"
-import OtherFeatures from "../../components/otherFeatures"
-import CTA from "../../components/cta"
+import Layout from "components/layout/Layout"
+import SEO from "components/utils/Seo"
+import AltHeader from "components/altHeader"
+import ThreeIconList from "components/threeIconList"
+import LargeDescription from "components/largeDescription"
+import BulletedList from "components/bulletedList"
+import OtherFeatures from "components/otherFeatures"
+import CTA from "components/cta"
 
-import Dotted from "../../assets/svgs/dotted.svg"
-import Squiggles from "../../assets/svgs/squiggles.svg"
+import Dotted from "assets/svgs/dotted.svg"
+import Squiggles from "assets/svgs/squiggles.svg"
 
 const LeadCriteriaPage = ({ data }) => {
   const criteriaItems = [
@@ -44,7 +44,7 @@ const LeadCriteriaPage = ({ data }) => {
       title: "Seller Insight Test",
       header: "Professional sellers in your corner",
       content:
-        "Part of LeadGeek's vetting process includes having an experienced US Amazon seller review each lead before being sent out. With a reasonable degree of certainty, products are inspected to verify that they'll continue to perform well into the future.",
+        "Part of Leadgeek's vetting process includes having an experienced US Amazon seller review each lead before being sent out. With a reasonable degree of certainty, products are inspected to verify that they'll continue to perform well into the future.",
       image: data.sellerInsight.childImageSharp.fluid,
     },
   ]
@@ -152,7 +152,7 @@ const LeadCriteriaPage = ({ data }) => {
         header={`Awesome products sourced for you, not by you.`}
         // header={`Be proud of the products your Amazon store sells.`}
         // header={`Get premium leads that align with your selling standards.`}
-        subHeader={`LeadGeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities so you don't have to spend hours sourcing yourself.`}
+        subHeader={`Leadgeek helps you scale your business without sacrificing quality. Our team sorts through thousands of arbitrage leads every day to bring you the best opportunities so you don't have to spend hours sourcing yourself.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}

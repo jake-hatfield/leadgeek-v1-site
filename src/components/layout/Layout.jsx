@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import "../styles/app.css"
+import "styles/app.css"
 
-import Header from "./header"
-import Footer from "./footer"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 import CookieConsent from "react-cookie-consent"
 
-import ArrowRight from "../assets/svgs/arrow-right.svg"
+import ArrowRight from "assets/svgs/arrow-right.svg"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,8 +22,8 @@ const Layout = ({ children }) => {
 
   return (
     <div className="relative flex flex-col h-screen justify-between">
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <Navbar siteTitle={data.site.siteMetadata.title} />
+      <main className="mt-16 md:mt-20">{children}</main>
       <Footer />
       <CookieConsent
         buttonText="Got it"
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         buttonWrapperClasses="mt-3 ml-3 md:mt-0 md:mr-12 md:ml-0 xl:mr-4 lg:right-0 lg:absolute lg:inset-auto flex-none"
         buttonClasses="py-2 px-3 lg:py-3 lg:px-4 rounded-md text-sm bg-teal-600 text-teal-100 hover:bg-teal-500 transition-colors duration-200 focus:outline-none focus:shadow-outline"
       >
-        LeadGeek uses cookies on our site to keep things running properly and to
+        Leadgeek uses cookies on our site to keep things running properly and to
         optimize performance. To learn more about how we responsibly handle your
         data,{" "}
         <Link

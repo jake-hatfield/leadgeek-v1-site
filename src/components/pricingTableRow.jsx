@@ -1,6 +1,6 @@
 import React from "react"
 
-import PricingTableCell from "../components/pricingTableCell"
+import PricingTableCell from "components/pricingTableCell"
 
 const pricingTableRow = ({ cells }) => {
   return (

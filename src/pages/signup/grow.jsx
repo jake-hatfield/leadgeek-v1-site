@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 
-import SEO from "../../components/seo"
-import SignupPage from "../../components/signupPage"
+import SEO from "components/utils/Seo"
+import SignupPage from "components/signupPage"
 
 const GrowSignupPage = () => {
   const growPrice = 129
@@ -55,7 +55,7 @@ const GrowSignupPage = () => {
     <Fragment>
       <SEO
         title="Grow Plan Signup"
-        description="Join LeadGeek's Grow plan to receive premium arbitrage leads, support, and seller education to scale your FBA business."
+        description="Join Leadgeek's Grow plan to receive premium arbitrage leads, support, and seller education to scale your FBA business."
       />
       <SignupPage
         featureList={featureList}

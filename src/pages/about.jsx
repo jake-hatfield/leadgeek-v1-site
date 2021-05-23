@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import CTA from "../components/cta"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import CTA from "../components/Cta"
 
 import Dotted from "../assets/svgs/dotted.svg"
 
@@ -11,13 +11,13 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO
-        title="About LeadGeek"
+        title="About Leadgeek"
         description="Learn about our company, why we do what we do, and how we're the perfect team to help you grow your FBA business."
       />
       <section className="py-12 lg:py-24 container max-w-2xl text-gray-700">
         <header>
           <span className="uppercase text-sm md:text-base text-purple-600 font-bold">
-            About LeadGeek
+            About Leadgeek
           </span>
           <h1 className="mt-2 lg:mx-auto max-w-4xl text-4xl lg:text-5xl font-black text-gray-900">
             We're here to help you grow and understand your Amazon business.
@@ -28,7 +28,7 @@ const AboutPage = () => {
             <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
           </div>
           <p>
-            LeadGeek was borne out of frustration trying to run an arbitrage
+            Leadgeek was borne out of frustration trying to run an arbitrage
             business with countless product sourcing tools. With no single point
             with which to control sourcing output, attempting to scale gets
             messy in no time flat. And despite juggling so many monthly software
@@ -60,7 +60,7 @@ const AboutPage = () => {
           <p className="mt-4">
             We're constantly building, improving, and growing with our members
             to create relevant solutions to their everyday problems. Joining
-            LeadGeek means you're a part of a unique community who genuinely
+            Leadgeek means you're a part of a unique community who genuinely
             care about every member's success.
           </p>
           <p className="mt-4">

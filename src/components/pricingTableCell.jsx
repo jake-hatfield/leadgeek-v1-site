@@ -2,8 +2,8 @@ import React from "react"
 
 import ReactTooltip from "react-tooltip"
 
-import Check from "../assets/svgs/check.svg"
-import X from "../assets/svgs/x.svg"
+import Check from "assets/svgs/check.svg"
+import X from "assets/svgs/x.svg"
 
 const pricingTableCell = ({ value, description, tooltip }) => {
   const contentType = () => {

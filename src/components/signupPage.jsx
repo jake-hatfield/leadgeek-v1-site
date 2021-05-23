@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
+
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
-import CheckoutForm from "../components/checkoutForm"
+import CheckoutForm from "components/checkoutForm"
 
-import HalfDotted from "../assets/svgs/half-dotted.svg"
+import HalfDotted from "assets/svgs/half-dotted.svg"
 
 const signupPage = ({
   price,
@@ -68,7 +69,7 @@ const signupPage = ({
                     </svg>
                   </div>
                   <p className="ml-2 text-sm">
-                    <strong>Don't worry:</strong> Your LeadGeek subscription
+                    <strong>Don't worry:</strong> Your Leadgeek subscription
                     will renew automatically, but you'll be able to adjust your
                     subscription status at any time by contacting support. We'll
                     happily refund you if you forget to cancel.

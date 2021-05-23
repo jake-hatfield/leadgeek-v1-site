@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
 
 import Squiggles from "../assets/svgs/squiggles.svg"
 

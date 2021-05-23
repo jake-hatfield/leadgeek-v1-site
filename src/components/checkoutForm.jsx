@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react"
+
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 import addToMailchimp from "gatsby-plugin-mailchimp"
-import FormField from "./formField"
-import PasswordFormField from "./passwordFormField"
-import Check from "../assets/svgs/check.svg"
-import X from "../assets/svgs/x.svg"
+
+import FormField from "components/utils/FormField"
+import PasswordFormField from "components/utils/PasswordFormField"
+
+import Check from "assets/svgs/check.svg"
+import X from "assets/svgs/x.svg"
 
 const CheckoutForm = ({
   plan,
@@ -354,7 +357,7 @@ const CheckoutForm = ({
           onSuccessfulCheckout()
         } else {
           setCheckoutError(
-            "Your payment method was processed, but there was an additional error. Please contact support to finish creating your LeadGeek account."
+            "Your payment method was processed, but there was an additional error. Please contact support to finish creating your Leadgeek account."
           )
           setProcessingTo(false)
         }

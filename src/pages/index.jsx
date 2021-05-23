@@ -1,504 +1,284 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import CTA from "../components/cta"
-import ArrowLink from "../components/arrowLink"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import HeaderWrapper from "components/HeaderWrapper"
+import PrimaryHeader from "../components/PrimaryHeader"
+import CTA from "../components/Cta"
 
-import Dotted from "../assets/svgs/dotted.svg"
-import Squiggles from "../assets/svgs/squiggles.svg"
-import HalfDotted from "../assets/svgs/half-dotted.svg"
-import Quotations from "../assets/svgs/quotation-marks.svg"
+import SearchAnnotation from "assets/svgs/search-annotation.svg"
+import FilterAnnotation from "assets/svgs/filter-annotation.svg"
+import MetricsAnnotation from "assets/svgs/important-metrics-annotation.svg"
+import LikeArchiveAnnotation from "assets/svgs/like-archive-annotation.svg"
 
 const IndexPage = ({ data }) => {
-  const featureList = [
-    {
-      number: 1,
-      header: "Drastically save time",
-      body:
-        "Our online arbitrage leads allow you to remove yourself from the painstaking task of sourcing. Review a pre-vetted list of leads in just minutes each day.",
-      image: data.saveTime.childImageSharp.fluid,
-    },
-    {
-      number: 2,
-      header: "Predictably source products",
-      body:
-        "One of the biggest hurdles as an Amazon seller is sustainably finding products. LeadGeek members are provided with a guaranteed stream of leads so their business never suffers any downtime.",
-      image: data.sourceProducts.childImageSharp.fluid,
-    },
-    {
-      number: 3,
-      header: "Significantly scale volume",
-      body:
-        "Once you've tapped into our consistent flow of product leads, you can scale your sourcing needs up as your business grows. Increasing potential new finds is as simple as subscribing to another list.",
-      image: data.scaleVolume.childImageSharp.fluid,
-    },
-  ]
-
-  const costItems = [
-    {
-      id: 1,
-      iconPath:
-        "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
-      header: "Save valuable time",
-      content:
-        "Sifting through software for hours a day trying to find profitable products is a good way to waste time even if you know where to start.",
-      show: false,
-    },
-    {
-      id: 2,
-      iconPath:
-        "M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01",
-      header: "Get guaranteed products",
-      content:
-        "Even if you're a pro at evaluating leads, you have no control over how many you'll be able to find day in and day out.",
-      show: true,
-    },
-    {
-      id: 3,
-      iconPath:
-        "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
-      header: "Remove wasteful overhead",
-      content:
-        "The more software and services you add to supplement sourcing, the more money is wasted on needless overhead.",
-      show: true,
-      margin: true,
-    },
-    {
-      id: 4,
-      iconPath:
-        "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0",
-      header: "Buy long-term products",
-      content:
-        "If you purchase inventory without doing your due dilligence, once-profitable products can become a nightmarish drain on your resources.",
-      show: true,
-      margin: true,
-    },
-  ]
   return (
     <Layout>
       <SEO
         title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
-        description="Receive potent online arbitrage leads every weekday with LeadGeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
+      {/* hero section */}
       <section className="relative">
-        <PrimaryHeader
-          header={`Find the best arbitrage products to flip on Amazon.`}
-          // header={`We help you find great online arbitrage leads.`}
-          // header={`Premium online arbitrage sourcing, streamlined.`}
-          subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to sell via Amazon FBA. Our highly skilled team sources for hours each day to bring a tailored batch of leads to your inbox.`}
-          nav
-          linkOne={`pricing`}
-          linkOneText={`See pricing`}
-          linkTwo={`demo`}
-          linkTwoText={`Watch a demo`}
-          play
-          svgOne={
-            <div className="absolute top-0 left-0 z-0 transform translate-y-10 translate-x-16">
-              <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
-            </div>
-          }
-          svgTwo={
-            <div className="absolute bottom-0 right-0 z-0 transform rotate-90 -translate-y-6 xl:-translate-y-16 xl:translate-x-12">
-              <HalfDotted className="hidden md:inline-block w-48 text-purple-100" />
-            </div>
-          }
-        />
+        <HeaderWrapper>
+          <section className="all-center mb-4 container">
+            {testimonialsShort.map(testimonial => (
+              <TestimonialShort text={testimonial} />
+            ))}
+          </section>
+          <PrimaryHeader
+            header={`Online arbitrage sourcing at its best.`}
+            subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to flip via Amazon FBA.`}
+            nav
+            linkOne={`how-it-works`}
+            linkOneText={`See how it works`}
+            linkTwo={`signup`}
+            linkTwoText={`Already know you want to join? Sign up now.`}
+          />
+        </HeaderWrapper>
       </section>
+      {/* testimonial section */}
 
-      <section className="py-12 md:py-16 lg:py-24 bg-gray-100">
-        <div className="container">
-          <header className="relative lg:mx-auto md:max-w-xl lg:max-w-2xl">
-            <h2 className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 lg:text-center">
-              LeadGeek makes it easy for Amazon sellers like you to:
-            </h2>
-          </header>
-          {featureList.map(feature => (
-            <article
-              key={feature.number}
-              className="mt-8 lg:mt-12 flex flex-col-reverse md:flex-row  md:items-center justify-between"
-            >
-              <div className="mt-4 md:mt-0 md:w-1/2 md:flex">
-                <span className="p-3 h-8 w-8 flex items-center justify-center bg-teal-200 rounded-full font-bold text-teal-500">
-                  {feature.number}
-                </span>
-                <header className="mt-2 md:ml-4 lg:ml-8 md:max-w-md">
-                  <h2 className="lg:text-xl font-semibold text-gray-900">
-                    {feature.header}
-                  </h2>
-                  <p className="mt-2 text-gray-700">{feature.body}</p>
-                </header>
-              </div>
-              <div
-                className="mt-4 md:mt-0 md:ml-12 lg:ml-16 md:w-1/2"
-                data-sal="slide-up"
-                data-sal-duration="2000"
-                data-sal-easing="ease"
-              >
-                <Img
-                  fluid={feature.image}
-                  className="w-full max-w-xs lg:max-w-md"
-                />
-              </div>
-            </article>
-          ))}
+      <div className="relative lg:mt-48 xl:mt-64 py-12 bg-gray-100">
+        <div className="text-gray-100">
+          {/* <div className="section-divider-top" /> */}
         </div>
-      </section>
-      <section className="my-12 md:my-16 lg:my-24 container lg:flex lg:justify-between text-gray-900">
-        <header className="md:mr-4 relative md:max-w-md lg:w-1/3 xl:w-2/5 text-3xl md:text-4xl lg:text-5xl font-black">
-          <h2 className="relative z-10">
-            See all features that help you source better leads.
-          </h2>
-          <div className="absolute bottom-0 xl:top-0 left-0 z-0 transform translate-y-6 -translate-x-6 lg:-translate-y-64 lg:-translate-x-16 xl:translate-y-2">
-            <Squiggles className="hidden md:inline-block w-64 text-purple-200" />
-          </div>
-        </header>
-        <aside className="lg:mx-0 mt-8 lg:mt-0 lg:max-w-xl lg:w-2/3 xl:w-3/5 text-gray-700">
-          <div className="md:grid md:grid-cols-2 md:gap-6 lg:gap-4">
-            <div
-              //   className="lg:w-1/2"
-              data-sal="slide-up"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
-              <svg
-                className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                Strict criteria
-              </h3>
-              <p className="mt-2">
-                Don't sacrifice standards or cut any corners - every lead needs
-                to meet rigorous requirements before they're approved and sent
-                to you.
-              </p>
-              <div>
-                <ArrowLink
-                  link="/features/criteria"
-                  linkText="Learn about lead criteria"
-                />
-              </div>
-            </div>
-            <div
-              className="mt-8 md:mt-0"
-              data-sal="slide-up"
-              data-sal-delay="200"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
-              <svg
-                className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                Proven reliability
-              </h3>
-              <p className="mt-2">
-                Our team works tirelessly to bring you a consistent output of
-                high-quality products that you can count on every weekday.
-              </p>
-              <div>
-                <ArrowLink
-                  link="/features/reliability"
-                  linkText="Learn about lead reliability"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 lg:mt-12 md:grid md:grid-cols-2 md:gap-6 lg:gap-4 text-gray-700">
-            {/* <div className="md:mr-12 lg:w-1/2">
-              <svg
-                className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                Seller education
-              </h3>
-              <p className="mt-2">
-                Learn foundational online arbitrage concepts and strategies
-                through guides, courses, and templates available for members.
-              </p>
-              <ArrowLink
-                link="/features/education"
-                linkText="Learn about arbitrage training"
-              />
-            </div> */}
-            <div
-              className="mt-8 md:mt-0"
-              data-sal="slide-up"
-              data-sal-delay="400"
-              data-sal-duration="1000"
-              data-sal-easing="ease"
-            >
-              <svg
-                className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                Member support
-              </h3>
-              <p className="mt-2">
-                Reach out to us for dedicated support, Amazon selling
-                assistance, and other perks exclusive to LeadGeek members.
-              </p>
-              <div>
-                <ArrowLink
-                  link="/features/support"
-                  linkText="Learn about member support"
-                />
-              </div>
-            </div>
-          </div>
-        </aside>
-      </section>
-      <section className="py-12 md:py-16 lg:py-24 bg-teal-200 text-teal-900">
-        <div className="container md:flex md:items-center md:justify-between">
-          <div className="md:mr-10 md:w-2/5">
+        <section className="relative">
+          <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+            <FilterAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-52 xl:w-full xl:max-w-sm text-purple-500 transform translate-y-16 translate-x-2 xl:translate-x-40" />
+            <SearchAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-28 xl:w-48 text-purple-500 transform -translate-y-20 xl:-translate-y-32 -translate-x-28" />
+            <LikeArchiveAnnotation className="hidden lg:block absolute top-0 left-0 z-20 lg:w-40 xl:w-64 text-purple-500 transform -translate-y-20 xl:-translate-y-28 translate-x-40" />
+            <MetricsAnnotation className="hidden xl:block absolute bottom-0 left-0 z-20 md:w-36 lg:w-72 xl:w-full max-w-sm text-purple-500 transform -translate-y-20 lg:-translate-y-32 -translate-x-64" />
             <Img
-              fluid={data.frankTestimonial.childImageSharp.fluid}
-              className="relative z-10 w-full max-w-xs lg:max-w-md"
+              fluid={data.heroImage.childImageSharp.fluid}
+              className="w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
-          <header className="mt-8 md:mt-0 relative md:w-3/5">
-            <h2 className="relative z-10 leading-relaxed text-xl font-semibold">
-              I want to thank you for the effort you make to find products with
-              such good quality. It has been the best decision I have made in
-              acquiring your list. Thank you!
+          <header className="pt-12 md:text-center text-gray-700">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
+              Don't dig through information - surface it.
             </h2>
-            <h4 className="mt-6 text-teal-800">Frank G.</h4>
-            <h5 className="mt-2 font-bold">International FBA Seller</h5>
-            <Quotations className="absolute top-0 z-0 h-16 w-16 lg:h-24 lg:w-24 text-teal-300 transform -translate-y-6 -translate-x-4 lg:-translate-y-12 lg:-translate-x-8" />
-            <div className="absolute bottom-0 right-0 z-0 transform -translate-y-24">
-              <Squiggles className="hidden md:inline-block w-64 text-teal-300" />
-            </div>
-          </header>
-        </div>
-      </section>
-      <section className="py-12 md:py-16 lg:py-24 bg-gray-100 overflow-x-hidden">
-        <div className="container lg:flex">
-          <header className="lg:w-2/3">
-            <div>
-              <h2 className="max-w-4xl text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-                Maximize productivity with LeadGeek.
-              </h2>
-              <h3 className="mt-4 lg:mt-6 lg:max-w-3xl text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
-                Finding the right products to sell is the core of a mature
-                online arbitrage business. If you can't routinely produce useful
-                leads, how much are you losing through undiscovered
-                opportunities?
-              </h3>
-            </div>
-          </header>
-          <div className="mt-12 lg:ml-12 hidden lg:block md:max-w-sm lg:max-w-none lg:w-1/3 text-gray-700">
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-              />
-            </svg>
-            <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-              Save valuable time
-            </h3>
-            <p className="mt-2">
-              Sifting through software for hours a day trying to find profitable
-              products is a good way to waste time even if you know where to
-              start.
+            <p className="mt-4 lg:mt-6 mx-auto h4">
+              <span className="font-semibold">Before using Leadgeek</span>: Your
+              process to find new arbitrage leads is disorganized,
+              time-consuming, and inconsistent. You feel like time and resources
+              are wasted when you can't find leads that meet your criteria.
             </p>
-          </div>
-        </div>
-        <div className="mt-8 lg:mt-12 relative container md:flex md:justify-between md:flex-wrap lg:flex-no-wrap md:overflow-x-hidden lg:overflow-visible">
-          {costItems.map(item => (
-            <div
-              key={item.id}
-              v-for="item in items"
-              className={`${item.show ? `block` : `block lg:hidden`} ${
-                item.margin && `lg:ml-8`
-              } mt-8 lg:mt-0 md:mr-6 lg:mr-0 relative z-10 md:max-w-md lg:max-w-none md:w-2/5 text-gray-700`}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className={`p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white`}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d={item.iconPath}
-                />
-              </svg>
-              <h3 className="mt-6 lg:text-xl font-semibold text-gray-900">
-                {item.header}
-              </h3>
-              <p className={`mt-2`}>{item.content}</p>
+            <p className="mt-4 lg:mt-6 mx-auto h4">
+              <span className="font-semibold">After using Leadgeek</span>: You
+              know exactly the quality of leads to expect every day. Your
+              business has a predictable growth system in place, there are fewer
+              headaches, and you can focus on getting more important things
+              done.
+            </p>
+            <div className="mt-6">
+              <Link to={"/features"} className="secondary-link">
+                See how Leadgeek is built different
+              </Link>
             </div>
-          ))}
-          <div className="absolute bottom-0 left-0 z-0 transform rotate-180 translate-y-16 -translate-x-56">
-            <HalfDotted className="hidden md:inline-block w-48 text-gray-300" />
-          </div>
-        </div>
-      </section>
-      <section className="bg-gray-200 text-gray-700">
-        <div className="relative lg:flex">
-          <div className="xl:mr-20 lg:w-2/5">
-            <Img
-              fluid={data.inspectedProducts.childImageSharp.fluid}
-              className="lg:h-full split-image w-full"
+          </header>
+        </section>
+      </div>
+      <section className="py-12 container md:text-center">
+        <header>
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
+            People who love clarity, love Leadgeek.
+          </h2>
+          <h3 className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
+            Entrepreneurs, side-hustlers, newbies, and pro sellers have all
+            joined Leadgeek to{" "}
+            <span className={classes.emphasizedText}>
+              fundamentally improve their arbitrage sourcing process
+            </span>
+            .
+          </h3>
+        </header>
+        <div className="mt-8">
+          {testimonialsFull.map(testimonial => (
+            <TestimonialFull
+              text={testimonial.text}
+              source={testimonial.source}
+              desc={testimonial.desc}
             />
-          </div>
-          <article className="mt-4 md:mt-0 py-8 md:py-16 lg:py-20 px-4 md:px-6 xl:px-0 lg:w-3/5 lg:max-w-xl">
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-600 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-              />
-            </svg>
-            <header className="mt-6">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
-                Access thoroughly-inspected products.
-              </h3>
-              <p className="mt-2">
-                Strictly-vetted leads provide a cushion to account for shipping
-                costs, prep fees, and unforseen price volatility. LeadGeek
-                products must adhere to several high criteria before you ever
-                even see them, which means you only receive the
-                cream-of-the-crop selling opportunities.
-              </p>
-            </header>
-            <aside className="mt-4 text-gray-700">
-              <div className="flex items-center">
-                <div className="uppercase whitespace-no-wrap text-sm md:text-base text-purple-600 font-bold">
-                  Lead Averages
-                </div>
-                <div className="ml-2 w-full border border-gray-300" />
-              </div>
-              <div className="mt-4 flex">
-                <div
-                  className="md:w-1/4"
-                  data-sal="slide-up"
-                  data-sal-duration="1000"
-                  data-sal-easing="ease"
-                >
-                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
-                    $11.02
-                  </span>
-                  <span className="block uppercase text-xs md:text-sm">
-                    Net profit
-                  </span>
-                </div>
-                <div
-                  className="mx-5 md:w-1/4"
-                  data-sal="slide-up"
-                  data-sal-delay="200"
-                  data-sal-duration="1000"
-                  data-sal-easing="ease"
-                >
-                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
-                    85%
-                  </span>
-                  <span className="block uppercase text-xs md:text-sm">
-                    Net ROI
-                  </span>
-                </div>
-                <div
-                  className="md:w-1/4"
-                  data-sal="slide-up"
-                  data-sal-delay="400"
-                  data-sal-duration="1000"
-                  data-sal-easing="ease"
-                >
-                  <span className="font-bold text-2xl md:text-3xl lg:text-4xl text-purple-600">
-                    151
-                  </span>
-                  <span className="block uppercase text-xs md:text-sm">
-                    Sales / mo
-                  </span>
-                </div>
-              </div>
-            </aside>
-          </article>
+          ))}
         </div>
       </section>
-
       <CTA
-        padding={`py-12 md:py-16 lg:py-24`}
-        bgColor="bg-purple-600"
-        textColor="text-white"
-        buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-        buttonText="See pricing"
-        link="demo"
-        linkText="Watch a demo"
-        linkStyles="text-purple-100 hover:text-purple-200"
-        svgOne={
-          <div className="absolute top-0 left-0 z-0 transform -translate-y-32 xl:-translate-y-40 xl:-translate-x-24">
-            <Dotted className="hidden md:inline-block w-24 text-purple-400" />
-          </div>
-        }
+        links={[
+          { title: "See how it works", link: "how-it-works" },
+          { title: "Tour the features", link: "features" },
+          { title: "Sign up now", link: "signup" },
+        ]}
       />
     </Layout>
   )
 }
 
+const classes = {
+  emphasizedText: "emphasized-text",
+}
+
+const TestimonialShort = ({ text }) => {
+  return (
+    <div className="first:ml-0 ml-8">
+      <div className="all-center text-purple-500">
+        {Array.apply(null, { length: 5 }).map((s, i) => (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="svg-sm"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            key={i}
+          >
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <p className="text-sm text-gray-600">{`"${text}"`}</p>
+    </div>
+  )
+}
+
+const TestimonialFull = ({ text, source, desc }) => {
+  return (
+    <article className="mt-8">
+      <blockquote className="mx-auto md:max-w-xl lg:max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed font-semibold text-gray-800">
+        {text}
+      </blockquote>
+      <div className="mt-4 all-center">
+        <cite className="text-sm font-semibold">{source}</cite>
+        <span className="mx-2 font-semibold text-purple-500">/</span>
+        <p className="font-semibold text-sm text-gray-600">{`${desc} FBA seller`}</p>
+      </div>
+    </article>
+  )
+}
+
+const testimonialsShort = [
+  "good value, would recommend",
+  "the best site I've found for leads",
+  "Leadgeek delivers on their promises",
+]
+
+const testimonialsFull = [
+  {
+    text: (
+      <p>
+        "The very first thing I bought as an FBA seller was from your list about
+        33 days ago. I've sold 5 units of that item so far today (it's only 3:50
+        pm CST) and{" "}
+        <span className={classes.emphasizedText}>it's my first $100 day</span>.
+        Profit margin is roughly 25% and ROI more than 2x that. Thank you for
+        helping me get started."
+      </p>
+    ),
+    source: "Charles",
+    desc: "New",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "Delivered their lists as promised daily and always had at least a few
+        items I was interested in.{" "}
+        <span className={classes.emphasizedText}>
+          Good value, would recommend
+        </span>
+        ."
+      </p>
+    ),
+    source: "Brian",
+    desc: "Intermediate",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "Leadgeek delivers on their promises in the promo video on time every
+        day with solid ROI leads.{" "}
+        <span className={classes.emphasizedText}>
+          Would definitely recommend giving them a shot if you want to take the
+          guess work out of sourcing for FBA
+        </span>
+        ."
+      </p>
+    ),
+    source: "William",
+    desc: "Intermediate",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "I love the leads, they're very good.{" "}
+        <span className={classes.emphasizedText}>
+          Leadgeek will pay off in a week
+        </span>
+        ... definitely the best site I've found for leads."
+      </p>
+    ),
+    source: "Kevin",
+    desc: "New",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "
+        <span className={classes.emphasizedText}>
+          It looks FANTASTIC on my first try!
+        </span>{" "}
+        Great work, Jake. I look forward to trying it more on my next lead
+        list."
+      </p>
+    ),
+    source: "Yucheng",
+    desc: "International",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "
+        <span className={classes.emphasizedText}>
+          5 stars for you guys making this super simple
+        </span>
+        ."
+      </p>
+    ),
+    source: "Austin",
+    desc: "New",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "I want to thank you for the effort you make to find products with such
+        good quality.{" "}
+        <span className={classes.emphasizedText}>
+          It has been the best decision I have made in acquiring your list
+        </span>
+        . Thank you!"
+      </p>
+    ),
+    source: "Frank",
+    desc: "International",
+    image: null,
+  },
+]
+
 export const query = graphql`
   query {
+    heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 4096, quality: 90) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
     saveTime: file(relativePath: { eq: "save-time.png" }) {
       id
       childImageSharp {

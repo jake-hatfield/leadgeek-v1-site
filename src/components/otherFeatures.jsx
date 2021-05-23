@@ -1,6 +1,6 @@
 import React from "react"
 
-import ArrowLink from "../components/arrowLink"
+import ArrowLink from "components/arrowLink"
 
 const otherFeatures = ({
   criteria,
@@ -21,7 +21,7 @@ const otherFeatures = ({
       <div className="container">
         <header className="relative">
           <h2 className="mt-2 relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold">
-            Explore other LeadGeek features
+            Explore other Leadgeek features
           </h2>
           {svgOne && svgOne}
         </header>
@@ -111,7 +111,7 @@ const otherFeatures = ({
               <h3 className="mt-6 lg:text-xl font-semibold">Member support</h3>
               <p className={`mt-2 ${secondaryTextColor}`}>
                 Our experienced team has your back! Reach out to us for
-                dedicated support and other perks exclusive to LeadGeek sellers.
+                dedicated support and other perks exclusive to Leadgeek sellers.
               </p>
               <ArrowLink
                 link="/features/support"

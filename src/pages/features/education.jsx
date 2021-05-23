@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import AltHeader from "../../components/altHeader"
-import ThreeIconList from "../../components/threeIconList"
-import AlternatingDescription from "../../components/alternatingDescription"
-import OtherFeatures from "../../components/otherFeatures"
-import CTA from "../../components/cta"
+import Layout from "components/layout/Layout"
+import SEO from "components/utils/Seo"
+import AltHeader from "components/altHeader"
+import ThreeIconList from "components/threeIconList"
+import AlternatingDescription from "components/alternatingDescription"
+import OtherFeatures from "components/otherFeatures"
+import CTA from "components/cta"
 
-import Dotted from "../../assets/svgs/dotted.svg"
-import Squiggles from "../../assets/svgs/squiggles.svg"
+import Dotted from "assets/svgs/dotted.svg"
+import Squiggles from "assets/svgs/squiggles.svg"
 
 const supportPage = ({ data }) => {
   const educationSummary = [
@@ -70,12 +70,12 @@ const supportPage = ({ data }) => {
     <Layout>
       <SEO
         title="Seller Education"
-        description="Join LeadGeek and receive in-depth e-books, video lessons, and templates to help you learn the ins and outs of online arbitrage."
+        description="Join Leadgeek and receive in-depth e-books, video lessons, and templates to help you learn the ins and outs of online arbitrage."
       />
       <AltHeader
         title={`Seller education`}
         header={`Train like an online arbitrage pro.`}
-        subHeader={`Several different types of comprehensive training materials are made available to LeadGeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
+        subHeader={`Several different types of comprehensive training materials are made available to Leadgeek members in order to help sharpen their selling knowledge. Learn the ins and outs of online arbitrage directly from experienced Amazon sellers.`}
         nav
         linkOne={`signup`}
         linkOneText={`Join now`}

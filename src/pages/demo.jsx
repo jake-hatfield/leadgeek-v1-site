@@ -1,9 +1,9 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import CTA from "../components/cta"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import PrimaryHeader from "components/primaryHeader"
+import CTA from "components/cta"
 
 import Dotted from "../assets/svgs/dotted.svg"
 import HalfDotted from "../assets/svgs/half-dotted.svg"
@@ -14,12 +14,12 @@ const demoPage = () => {
     <Layout>
       <SEO
         title="Product Demo"
-        description="Watch a demo of LeadGeek in action to see how our service can simplify and improve your daily FBA operations."
+        description="Watch a demo of Leadgeek in action to see how our service can simplify and improve your daily FBA operations."
       />
       <section className="-mt-40 bg-purple-100 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Don't dig through information, surface it.`}
-          subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. LeadGeek feels familiar to how you find products now, but it's a much more efficient experience. Watch a full walkthrough to see our product in action.`}
+          subHeader={`Sourcing workarounds are over with, sourcing workflows are taking over. Leadgeek feels familiar to how you find products now, but it's a much more efficient experience. Watch a full walkthrough to see our product in action.`}
           bottomPadding="pb-32"
           negativeMargin
           svgOne={
@@ -36,7 +36,7 @@ const demoPage = () => {
         <div className="video-responsive">
           <iframe
             className="video-responsive-item"
-            title="LeadGeek Demo"
+            title="Leadgeek Demo"
             src="https://player.vimeo.com/video/461992164"
             frameBorder="0"
             allow="autoplay; fullscreen"
@@ -50,7 +50,7 @@ const demoPage = () => {
             Streamlined data = better decisions.
           </h2>
           <p className="mt-6">
-            LeadGeek saves you time by presenting the information you need - and
+            Leadgeek saves you time by presenting the information you need - and
             only the information you need. The days of sorting through thousands
             of products in a software's awful interface are over, as are the
             hours you spend going through an "organized" sheet of leads from

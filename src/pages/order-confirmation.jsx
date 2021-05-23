@@ -1,7 +1,7 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
 
 import ArrowRight from "../assets/svgs/arrow-right.svg"
 import Check from "../assets/svgs/check.svg"
@@ -24,7 +24,7 @@ const OrderConfirmationPage = () => {
         <span>
           To join additional lists,{" "}
           <a
-            href="mailto:support@leadgeek.io?subject=Request%20to%20Join%20Additional%20Lists"
+            href="mailto:support@Leadgeek.io?subject=Request%20to%20Join%20Additional%20Lists"
             target="_blank"
             rel="noopener noreferrer"
             className="link"
@@ -43,7 +43,7 @@ const OrderConfirmationPage = () => {
       <section className="my-8 md:my-12 lg:mt-24 lg:mb-16 container md:flex md:justify-between">
         <header className="md:max-w-2xl md:w-3/5 ">
           <h1 className="text-4xl lg:text-5xl font-black text-gray-900">
-            Thank you for joining LeadGeek!
+            Thank you for joining Leadgeek!
           </h1>
           <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700">
             You should receive a confirmation email shortly (please also check
@@ -100,7 +100,7 @@ const OrderConfirmationPage = () => {
             <h3 className="text-xl font-semibold">Have any questions?</h3>
             <div className="mt-2 inline-block">
               <a
-                href="mailto:support@leadgeek.io"
+                href="mailto:support@Leadgeek.io"
                 className="flex whitespace-no-wrap items-center text-purple-400 group hover:text-purple-600 focus:outline-none focus:shadow-outline transition-colors duration-200"
               >
                 <span>sup</span>

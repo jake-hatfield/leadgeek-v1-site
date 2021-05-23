@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import PricingTableRow from "../components/pricingTableRow"
+import PricingTableRow from "components/pricingTableRow"
 
 const pricingTable = ({ tableHeader, featureRows, id }) => {
   return (

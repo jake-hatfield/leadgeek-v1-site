@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
 
 const PrivacyPolicyPage = () => {
-  const siteTitle = "LeadGeek"
+  const siteTitle = "Leadgeek"
   const siteLink = "/"
-  const siteLinkFull = "https://leadgeek.io"
+  const siteLinkFull = "https://Leadgeek.io"
   return (
     <Layout title="Privacy Policy">
       <SEO title="Privacy Policy" />
@@ -245,7 +246,7 @@ const PrivacyPolicyPage = () => {
           </Link>
           , email us at{" "}
           <a
-            href="mailto:hello@leadgeek.io"
+            href="mailto:hello@Leadgeek.io"
             target="_blank"
             rel="noreferrer"
             className="font-semibold"

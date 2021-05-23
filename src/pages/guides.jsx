@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PrimaryHeader from "../components/primaryHeader"
-import EmailModal from "../components/emailModal"
+import Layout from "components/layout/layout"
+import SEO from "components/utils/Seo"
+import PrimaryHeader from "../components/PrimaryHeader"
+import EmailModal from "../components/EmailModal"
 
 const GuidesPage = ({ data }) => {
   const [modalOpen1, setModalOpen1] = useState(false)
@@ -49,7 +49,7 @@ const GuidesPage = ({ data }) => {
     <Layout>
       <SEO
         title="Online Arbitrage Guides"
-        description="Use LeadGeek's free guides to learn everything you need to know about online arbitrage and Amazon FBA. Download complete training e-books today."
+        description="Use Leadgeek's free guides to learn everything you need to know about online arbitrage and Amazon FBA. Download complete training e-books today."
       />
       <section className="-mt-40 bg-gray-100 inset-0 text-gray-900">
         <PrimaryHeader
