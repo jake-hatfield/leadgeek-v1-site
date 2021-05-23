@@ -629,7 +629,7 @@ const CheckoutForm = ({
             disabled={isProcessing || !stripe}
             type="submit"
             className={`${
-              isProcessing ? `bg-gray-200` : `bg-purple-600`
+              isProcessing ? `bg-gray-200 text-gray-500` : `bg-purple-600`
             } mt-4 py-2 w-full rounded-md text-white font-semibold shadow-md hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
           >
             {isProcessing ? "Processing..." : `Subscribe for $${price}`}
