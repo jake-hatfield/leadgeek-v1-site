@@ -87,10 +87,10 @@ const IndexPage = ({ data }) => {
             People who love clarity, love Leadgeek.
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
-            Entrepreneurs, side-hustlers, newbies, and pro sellers have all
-            joined Leadgeek to{" "}
+            Entrepreneurs, side-hustlers, newbies, and pro sellers all{" "}
             <span className={classes.emphasizedText}>
-              fundamentally improve their arbitrage sourcing process
+              join Leadgeek to fundamentally improve the arbitrage sourcing
+              process
             </span>
             .
           </h3>
