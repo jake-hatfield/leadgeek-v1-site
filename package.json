@@ -5,6 +5,9 @@
   "version": "0.1.0",
   "author": "Jake Hatfield <jake@Leadgeek.io>",
   "dependencies": {
+    "@fontsource/inter": "^4.3.0",
+    "@fontsource/nanum-pen-script": "^4.3.0",
+    "@fontsource/space-mono": "^4.3.0",
     "@stripe/react-stripe-js": "^1.2.0",
     "@stripe/stripe-js": "^1.11.0",
     "@tailwindcss/forms": "^0.3.2",
@@ -25,7 +28,6 @@
     "gatsby-plugin-sharp": "^2.12.1",
     "gatsby-plugin-sitemap": "^2.10.0",
     "gatsby-plugin-typescript": "^3.5.0",
-    "gatsby-plugin-typography": "^2.10.0",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.1",
     "mongodb": "^3.6.3",
@@ -39,9 +41,7 @@
     "react-helmet": "^6.1.0",
     "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.13",
-    "react-typography": "^0.16.19",
-    "stripe": "^8.131.1",
-    "typography": "^0.16.19"
+    "stripe": "^8.131.1"
   },
   "devDependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",

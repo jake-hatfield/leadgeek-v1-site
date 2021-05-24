@@ -136,7 +136,7 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-sm text-gray-600">{`"${text}"`}</p>
+      <p className="text-2xl text-gray-600 handwritten">{`"${text}"`}</p>
     </div>
   )
 }
@@ -144,13 +144,13 @@ const TestimonialShort = ({ text }) => {
 const TestimonialFull = ({ text, source, desc }) => {
   return (
     <article className="mt-8">
-      <blockquote className="mx-auto md:max-w-xl lg:max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed font-semibold text-gray-800">
+      <blockquote className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800">
         {text}
       </blockquote>
       <div className="mt-4 all-center">
-        <cite className="text-sm font-semibold">{source}</cite>
+        <cite className="text-sm font-semibold inter">{source}</cite>
         <span className="mx-2 font-semibold text-purple-500">/</span>
-        <p className="font-semibold text-sm text-gray-600">{`${desc} FBA seller`}</p>
+        <p className="font-semibold text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
       </div>
     </article>
   )

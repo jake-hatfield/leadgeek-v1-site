@@ -6,6 +6,18 @@ html {
   @apply text-gray-500;
 }
 
+body {
+  font-family: "Space Mono";
+}
+
+.inter {
+  font-family: "Inter" !important;
+}
+
+.handwritten {
+  font-family: "Nanum Pen Script" !important;
+}
+
 .all-center {
   @apply flex items-center justify-center;
 }

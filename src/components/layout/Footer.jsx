@@ -35,7 +35,7 @@ const Footer = () => {
               key={category.header}
               className="mt-4 md:mt-0 first:ml-0 ml-16"
             >
-              <h5 className="h3 font-semibold">{category.header}</h5>
+              <h5 className="h3 font-semibold inter">{category.header}</h5>
               <ul className="mt-4">
                 {category.items.map(item => (
                   <li key={item.title} className="mb-2 last:mb-0 ">
