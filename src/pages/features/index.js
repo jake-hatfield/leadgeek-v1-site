@@ -29,7 +29,7 @@ const index = () => {
           {features.map((feature, i) => (
             <li
               key={i}
-              className="feature-list-item card w-64 hover:shadow-2xl transition-main"
+              className="mt-4 feature-list-item card w-64 hover:shadow-xl transition-main"
             >
               <header className="">
                 <h3 className="h3">
@@ -206,7 +206,12 @@ const features = [
     title: "View details on the fly",
     desc: (
       <p>
-        yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy
+        Built-in tools allow you to{" "}
+        <span className="emphasized-text">
+          easily estimate product prep fees
+        </span>
+        . Whether you need to calculate a fee based on quantity or weight,
+        you'll see real-world profitability for each item.
       </p>
     ),
   },
@@ -214,7 +219,12 @@ const features = [
     title: "feature1",
     desc: (
       <p>
-        yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyy
+        Built-in tools allow you to{" "}
+        <span className="emphasized-text">
+          easily estimate product prep fees
+        </span>
+        . Whether you need to calculate a fee based on quantity or weight,
+        you'll see real-world profitability for each item.
       </p>
     ),
   },
@@ -222,7 +232,12 @@ const features = [
     title: "feature1",
     desc: (
       <p>
-        yoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoyyoyuoyoyoyoy
+        Built-in tools allow you to{" "}
+        <span className="emphasized-text">
+          easily estimate product prep fees
+        </span>
+        . Whether you need to calculate a fee based on quantity or weight,
+        you'll see real-world profitability for each item.
       </p>
     ),
   },

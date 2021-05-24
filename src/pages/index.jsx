@@ -136,7 +136,7 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-2xl text-gray-600 handwritten">{`"${text}"`}</p>
+      <p className="text-sm text-gray-600">{`"${text}"`}</p>
     </div>
   )
 }

@@ -30,7 +30,10 @@ const Navbar = () => {
         <div className="w-full py-6 md:py-4 container center-between">
           {/* logo */}
           <div className="font-bold text-2xl lg:text-2xl group">
-            <Link to={`/`} className="all-center text-gray-900 rounded-lg">
+            <Link
+              to={`/`}
+              className="all-center text-gray-900 rounded-lg inter"
+            >
               <Logo className="w-8 lg:w-10 mr-4" />
               lead<span className="text-purple-500">geek</span>
             </Link>

@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
             Why should you learn how to tweak a-million-and-one settings and
             spend hours only to find a small handful of products to arbitrage?
             That’s like finding a needle in a haystack.{" "}
-            <span className="emphasized-text-light">
+            <span className="emphasized-text-light text-lg">
               You're putting in the time to find some gold nuggets, but how many
               leads are you missing?
             </span>{" "}
@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
             Whether you’ve been screening thousands of products to find the 0.5%
             of winners or picking leads out from spreadsheets that look like
             they belong to the last decade,{" "}
-            <span className="emphasized-text-light">
+            <span className="emphasized-text-light text-lg">
               the traditional sourcing process can be quite painful
             </span>
             . Unless something changes, it doesn’t take long for “traditional”

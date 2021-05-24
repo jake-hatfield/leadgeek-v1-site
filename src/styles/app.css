@@ -67,7 +67,8 @@ body {
 }
 
 .emphasized-text {
-  @apply py-0.5 px-1 rounded-md bg-gray-900 text-white;
+  @apply px-0.5 rounded-md;
+  background: linear-gradient(90deg, #effcf6 0, #c6f7e2 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -83,7 +84,8 @@ body {
 }
 
 .emphasized-text-light {
-  @apply py-0.5 px-1 rounded-md bg-purple-600 text-white text-lg;
+  @apply px-0.5 rounded-md text-white;
+  background: linear-gradient(90deg, #7069fa 0, #5455fa 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;

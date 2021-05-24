@@ -64,7 +64,10 @@ const Footer = () => {
             ))}
           </ul>
           <div>
-            <p>Copyright &copy; {new Date().getFullYear()} Leadgeek</p>
+            <p>
+              Copyright <span className="inter">&copy;</span>{" "}
+              {new Date().getFullYear()} Leadgeek
+            </p>
           </div>
         </div>
       </div>
