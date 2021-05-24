@@ -30,10 +30,7 @@ const Navbar = () => {
         <div className="w-full py-6 md:py-4 container center-between">
           {/* logo */}
           <div className="font-bold text-2xl lg:text-2xl group">
-            <Link
-              to={`/`}
-              className="all-center text-gray-900 rounded-lg inter"
-            >
+            <Link to={`/`} className="all-center text-gray-900 rounded-lg">
               <Logo className="w-8 lg:w-10 mr-4" />
               lead<span className="text-purple-500">geek</span>
             </Link>
@@ -61,7 +58,7 @@ const Navbar = () => {
           </div>
           {/* md:+ nav */}
           <nav className="hidden md:flex md:items-center">
-            <div className="relative all-center">
+            <div className="relative all-center inter">
               {primaryLinks.map(primaryLink => (
                 <Link
                   to={`/${primaryLink.link}`}
@@ -78,7 +75,7 @@ const Navbar = () => {
             >
               Log in
             </a>
-            <Link to={"/signup"} className="no-m-first cta-link">
+            <Link to={"/signup"} className="no-m-first cta-link inter">
               Sign up
             </Link>
           </nav>
@@ -234,7 +231,7 @@ const moreItemsMobile = [
 ]
 
 const classes = {
-  navbarLink: "no-m-first secondary-link text-gray-700",
+  navbarLink: "no-m-first secondary-link text-gray-700 inter",
 }
 
 export default Navbar

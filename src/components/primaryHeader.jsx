@@ -24,7 +24,7 @@ const primaryHeader = ({
         {nav && (
           <nav className="mt-6 lg:mt-8 font-semibold text-center">
             <div>
-              <Link to={`/${linkOne}`} className="cta-link">
+              <Link to={`/${linkOne}`} className="cta-link inter">
                 {linkOneText}
               </Link>
             </div>

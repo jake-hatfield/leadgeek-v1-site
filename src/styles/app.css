@@ -7,11 +7,11 @@ html {
 }
 
 body {
-  font-family: "Space Mono";
+  font-family: "Space Mono, monospaced";
 }
 
 .inter {
-  font-family: "Inter" !important;
+  font-family: "Inter, sans-serif" !important;
 }
 
 .handwritten {
