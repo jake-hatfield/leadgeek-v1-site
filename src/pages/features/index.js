@@ -17,7 +17,7 @@ const index = () => {
         <HeaderWrapper>
           <PrimaryHeader
             header={`Online arbitrage leads made waaay better.`}
-            subHeader={`Leadgeek lets you to find the products you want, when you want them. The top ${features.length} features are the perfect combination of hand-curation and efficient software that make arbitrage actually fun. Start the tour below or click on each feature to learn more.`}
+            subHeader={`Leadgeek lets you to find the products you want, when you want them. The top ${features.length} features are the perfect combination of hand-curation and efficient software that make arbitrage actually fun. Start the tour or click on each feature to learn more.`}
             nav
             linkOne={`features/criteria`}
             linkOneText={`Start the tour`}
@@ -148,6 +148,19 @@ const features = [
     ),
   },
   {
+    title: "Hot off the press",
+    desc: (
+      <p>
+        Leadgeek helps you make sourcing a system by releasing{" "}
+        <span className="emphasized-text">
+          fresh leads every morning by 9 am CST
+        </span>
+        . These guaranteed arbitrage oppotunties let you be the first one to
+        order - and the first one to sell.
+      </p>
+    ),
+  },
+  {
     title: "Professional experience in your corner",
     desc: (
       <p>
@@ -167,10 +180,8 @@ const features = [
         The Feed shows the most important product metrics by design, making it
         easy to see the leads you’re interested in and breeze through the ones
         you aren’t.{" "}
-        <span className="emphasized-text">
-          You won’t be bombarded by information
-        </span>
-        , but instead feel informed to make the right decisions for you.
+        <span className="emphasized-text">You won’t be bombarded by info</span>,
+        but instead feel informed to make the right decisions for you.
       </p>
     ),
   },
@@ -181,11 +192,39 @@ const features = [
         You’ve finally got 30 minutes to sit down and check out some arbitrage
         leads. But there’s tons of information to sort through and so many
         metrics to analyze that it all feels overwhelming. Not with Leadgeek.
-        Leadgeek allows you to combine simple filters in a powerful way to{" "}
+        Leadgeek allows you to{" "}
         <span className="emphasized-text">
-          only show the information that’s important to you
+          combine simple filters in a powerful way to only show the information
+          that’s important to you
         </span>
         .
+      </p>
+    ),
+  },
+  {
+    title: "View details on the fly",
+    desc: (
+      <p>
+        Don't miss a beat with the detailed view for each item.{" "}
+        <span className="emphasized-text">
+          See primary metrics, historical data, and helpful notes all in one
+          place.
+        </span>{" "}
+        Also included are helpful links to the source retailer, Amazon listing,
+        and Seller Central to see if the product is ungated for you.
+      </p>
+    ),
+  },
+  {
+    title: `Stay organized with "Like" & "Archive"`,
+    desc: (
+      <p>
+        <span className="emphasized-text">
+          Things are right where you expect to find them
+        </span>{" "}
+        with Leadgeek's simple but powerful like and archive system. Like the
+        leads you want to order soon and archive the ones that deserve a second
+        look at some point in the future.
       </p>
     ),
   },
@@ -199,58 +238,6 @@ const features = [
         </span>
         . Whether you need to calculate a fee based on quantity or weight,
         you'll see real-world profitability for each item.
-      </p>
-    ),
-  },
-  {
-    title: "View details on the fly",
-    desc: (
-      <p>
-        Built-in tools allow you to{" "}
-        <span className="emphasized-text">
-          easily estimate product prep fees
-        </span>
-        . Whether you need to calculate a fee based on quantity or weight,
-        you'll see real-world profitability for each item.
-      </p>
-    ),
-  },
-  {
-    title: "feature1",
-    desc: (
-      <p>
-        Built-in tools allow you to{" "}
-        <span className="emphasized-text">
-          easily estimate product prep fees
-        </span>
-        . Whether you need to calculate a fee based on quantity or weight,
-        you'll see real-world profitability for each item.
-      </p>
-    ),
-  },
-  {
-    title: "feature1",
-    desc: (
-      <p>
-        Built-in tools allow you to{" "}
-        <span className="emphasized-text">
-          easily estimate product prep fees
-        </span>
-        . Whether you need to calculate a fee based on quantity or weight,
-        you'll see real-world profitability for each item.
-      </p>
-    ),
-  },
-  {
-    title: "Hot off the press",
-    desc: (
-      <p>
-        Leadgeek helps you make sourcing a system by releasing{" "}
-        <span className="emphasized-text">
-          fresh leads every morning by 9 am CST
-        </span>
-        . These guaranteed arbitrage oppotunties let you be the first one to
-        order - and the first one to sell.
       </p>
     ),
   },
@@ -298,10 +285,10 @@ const features = [
     desc: (
       <p>
         Are you ever curious if there’s a promo or some discount you’re missing
-        before you order? Now you don’t have to wonder. Any available{" "}
+        before you order? Now you don’t have to wonder.{" "}
         <span className="emphasized-text">
-          promotional code, free shipping minimum, and cashback is automatically
-          noted
+          Any available promotional code, free shipping minimum, and cashback is
+          automatically noted
         </span>
         .
       </p>
@@ -320,17 +307,18 @@ const features = [
       </p>
     ),
   },
-
   {
-    title: `Stay organized with "Like" & "Archive"`,
+    title: "A+ member support",
     desc: (
       <p>
+        Navigating Amazon's marketplace can be a challenge, but there's no need
+        to go through it alone.{" "}
         <span className="emphasized-text">
-          Things are right where you expect to find them
+          LeadGeek members get dedicated guidance from an experienced arbitrage
+          seller
         </span>{" "}
-        with Leadgeek's simple but powerful like and archive system. Like the
-        leads you want to order soon and archive the ones that deserve a second
-        look at some point in the future.
+        to prevent pitfalls and solve issues. Sell with confidence, not
+        confusion.
       </p>
     ),
   },
