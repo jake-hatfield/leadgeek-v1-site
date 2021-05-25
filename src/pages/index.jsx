@@ -8,10 +8,11 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
-import SearchAnnotation from "assets/svgs/search-annotation.svg"
-import FilterAnnotation from "assets/svgs/filter-annotation.svg"
-import MetricsAnnotation from "assets/svgs/important-metrics-annotation.svg"
-import LikeArchiveAnnotation from "assets/svgs/like-archive-annotation.svg"
+import LongArrow from "assets/svgs/arrow-straight-solid.svg"
+import ShortArrow from "assets/svgs/arrow-short-fat.svg"
+import WigglyLong from "assets/svgs/arrow-wiggly-solid-solid.svg"
+import TurnyFat from "assets/svgs/turny-fat.svg"
+import RetroSun from "assets/svgs/retro-sun-4.svg"
 
 const IndexPage = ({ data }) => {
   return (
@@ -21,7 +22,7 @@ const IndexPage = ({ data }) => {
         description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
       {/* hero section */}
-      <section className="relative">
+      <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>
           <section className="all-center mb-4 container">
             {testimonialsShort.map(testimonial => (
@@ -30,7 +31,16 @@ const IndexPage = ({ data }) => {
           </section>
           <PrimaryHeader
             title={`Online arbitrage sourcing at its best.`}
-            desc={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to flip via Amazon FBA.`}
+            desc={
+              <p>
+                Turn "I don't know what to sell" into "I have too much to buy":
+                <span className="font-bold">
+                  Receive a daily list of the best online arbitrage products to
+                  flip via Amazon FBA
+                </span>
+                .
+              </p>
+            }
             nav
             linkOne={`how-it-works`}
             linkOneText={`See how it works`}
@@ -41,19 +51,50 @@ const IndexPage = ({ data }) => {
       </section>
       {/* testimonial section */}
 
-      <div className="relative lg:mt-48 xl:mt-64 py-12 bg-gray-100">
+      <div className="relative lg:mt-64 xl:mt-72 py-12 bg-gray-100">
         <div className="text-gray-100">
           {/* <div className="section-divider-top" /> */}
         </div>
         <section className="relative">
           <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
-            <FilterAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-52 xl:w-full xl:max-w-sm text-purple-500 transform translate-y-16 translate-x-2 xl:translate-x-40" />
-            <SearchAnnotation className="hidden lg:block absolute top-0 right-0 z-20 lg:w-28 xl:w-48 text-purple-500 transform -translate-y-20 xl:-translate-y-32 -translate-x-28" />
-            <LikeArchiveAnnotation className="hidden lg:block absolute top-0 left-0 z-20 lg:w-40 xl:w-64 text-purple-500 transform -translate-y-20 xl:-translate-y-28 translate-x-40" />
-            <MetricsAnnotation className="hidden xl:block absolute bottom-0 left-0 z-20 md:w-36 lg:w-72 xl:w-full max-w-sm text-purple-500 transform -translate-y-20 lg:-translate-y-32 -translate-x-64" />
+            <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
+              <div className="relative">
+                <LongArrow className="h-40 transform rotate-180 text-gray-500" />
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 -rotate-6">
+                  Filter leads on the fly
+                </p>
+              </div>
+            </div>
+            <div className="hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56">
+              <div className="relative">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 rotate-3">
+                  Wicked-fast search by keyword
+                </p>
+                <ShortArrow className="absolute right-0 h-12 transform text-gray-500 translate-x-6 -rotate-12" />
+              </div>
+            </div>
+            <div className="hidden lg:block absolute top-0 left-0 z-20 transform -translate-y-36 translate-x-64">
+              <div className="relative">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 -rotate-3">
+                  Save leads you like or archive them for later
+                </p>
+                <WigglyLong className="absolute left-0 h-40 transform text-gray-500 -translate-y-2 translate-x-16 rotate-45" />
+              </div>
+            </div>
+            <div className="hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16">
+              <div className="relative">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 rotate-3">
+                  See all important metrics at a glance
+                </p>
+                <TurnyFat className="absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16" />
+              </div>
+            </div>
+            <div className="absolute right-0 transform rotate-12 translate-y-10 translate-x-4">
+              <RetroSun className="h-16 w-16 text-gray-300" />
+            </div>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="w-full rounded-lg border border-gray-200 shadow-lg"
+              className="min-w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
           <header className="pt-12 md:text-center text-gray-700">
@@ -81,7 +122,7 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </div>
-      <section className="py-12 container md:text-center">
+      <section className="relative py-12 container md:text-center overflow-hidden bg-splatter">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
             People who love clarity, love Leadgeek.
@@ -136,7 +177,7 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-sm text-gray-600">{`"${text}"`}</p>
+      <p className="text-sm text-gray-900">{`"${text}"`}</p>
     </div>
   )
 }

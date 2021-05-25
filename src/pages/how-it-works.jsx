@@ -16,11 +16,18 @@ const IndexPage = ({ data }) => {
         description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
       {/* hero section */}
-      <section className="relative">
+      <section className="relative overflow-x-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
             title={`The uncomplicated arbitrage software.`}
-            desc={`Leadgeek is a tool that makes FBA sourcing productive, organized, and clear. People that use Leadgeek are more efficient at finding fresh arbitrage leads day in and day out. Here's how the magic happens.`}
+            desc={
+              <p>
+                Leadgeek is a tool that makes FBA sourcing productive,
+                organized, and clear. People that use Leadgeek are more
+                efficient at finding fresh arbitrage leads day in and day out.
+                Here's how the magic happens.
+              </p>
+            }
           />
         </HeaderWrapper>
       </section>
@@ -112,7 +119,7 @@ const IndexPage = ({ data }) => {
           />
         </div>
       </section>
-      <section className="py-12 md:text-center text-gray-900">
+      <section className="relative py-12 md:text-center text-gray-900 overflow-x-hidden bg-splatter">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Filters are your friend.

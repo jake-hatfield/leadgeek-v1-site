@@ -5,8 +5,9 @@ import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-
 import { featureList } from "components/layout/Features"
+
+import ArrowDashed from "assets/svgs/arrow-straight-dashed-solid.svg"
 
 const index = () => {
   return (
@@ -15,25 +16,36 @@ const index = () => {
         title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
         description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
       />
-      <section className="relative">
+      <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
             title={`Online arbitrage leads made waaay better.`}
-            desc={`Leadgeek lets you to find the products you want, when you want them. The top ${featureList.length} features are the perfect combination of hand-curation and wicked-fast software that make arbitrage efficient and (dare I say it?)... fun.`}
+            desc={
+              <p>
+                Leadgeek lets you to find the products you want, when you want
+                them. The top ${featureList.length} features are the perfect
+                combination of hand-curation and wicked-fast software that make
+                arbitrage efficient and (dare I say it?)... fun.
+              </p>
+            }
             nav
             linkOne={`features/criteria`}
             linkOneText={`Start the tour`}
             svgOne={
-              <div className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-64">
-                <p className="handwritten text-xl w-56 text-purple-500 transform -rotate-6">
-                  Start the tour or click on a feature to learn more
-                </p>
+              <div className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72">
+                <div className="relative">
+                  {" "}
+                  <p className="py-1 px-2 handwritten text-xl w-56 rounded-lg bg-gray-900 text-teal-300 transform -rotate-6 shadow-lg text-center">
+                    Start the tour or click on a feature to learn more
+                  </p>
+                  <ArrowDashed className="absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-purple-500" />
+                </div>
               </div>
             }
           />
         </HeaderWrapper>
       </section>
-      <section className="px-8 max-w-7xl mx-auto text-gray-900">
+      <section className="relative py-12 px-8 max-w-7xl mx-auto text-gray-900 overflow-x-hidden bg-splatter">
         <ol className="mt-4 lg:mt-6 feature-list feature-grid">
           {featureList.map((feature, i) => (
             <li

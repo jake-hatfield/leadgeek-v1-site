@@ -15,6 +15,10 @@ body {
   font-family: "Inter, sans-serif" !important;
 }
 
+.text-shadow {
+  text-shadow: 3px 3px 0px #a2a5fc, 5px -4px 0px #8eedc7;
+}
+
 .handwritten {
   font-family: "Nanum Pen Script" !important;
 }
@@ -35,6 +39,17 @@ body {
 
 .link:hover {
   text-decoration-color: #5d55fa;
+}
+
+.bg-splatter {
+  background: #fff url("../assets/images/bg-splatter.jpg") top;
+  background-size: 1132px 1014px;
+  @apply relative z-0 overflow-hidden !important;
+}
+
+.invert {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .card {

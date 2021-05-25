@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/primaryHeader"
+import BulletedList from "components/BulletedList"
 
 const FeaturePage = ({ feature }) => {
   const [currentFeature, setCurrentFeature] = useState(
@@ -31,7 +32,7 @@ const FeaturePage = ({ feature }) => {
         {prevLink && (
           <Link
             to={`/features/${prevLink}/`}
-            className="fixed left-0 all-center transition-main"
+            className="fixed left-0 all-center transition-main group"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,7 @@ const FeaturePage = ({ feature }) => {
         {nextLink && (
           <Link
             to={`/features/${nextLink}/`}
-            className="fixed right-0 all-center transition-main"
+            className="fixed right-0 all-center transition-main group"
           >
             <span className="tertiary-link">next</span>
             <svg
@@ -142,7 +143,7 @@ export const featureList = [
       },
     ],
     link: "criteria",
-    nextLink: "fee-calculation",
+    nextLink: "calculations",
     prevLink: "member-support",
   },
   {
@@ -212,7 +213,7 @@ export const featureList = [
         ),
       },
     ],
-    link: "fee-calculation",
+    link: "calculations",
     nextLink: "categories",
     prevLink: "criteria",
   },
@@ -227,6 +228,82 @@ export const featureList = [
         to create your ideal product portfolio.
       </p>
     ),
+    faqs: [
+      {
+        title: "What categories are sourced from?",
+        desc: (
+          <div>
+            <BulletedList
+              gridLayout={"grid-cols-2 gap-4"}
+              maxWidth={"max-w-2xl"}
+              items={[
+                { title: "Appliances", delay: null },
+                { title: "Arts, crafts, & sewing", delay: null },
+                { title: "Automotive parts", delay: null },
+                { title: "Baby", delay: null },
+                { title: "Beauty & personal care", delay: null },
+                { title: "Books", delay: null },
+                { title: "CDs & vinyl", delay: null },
+                { title: "Cell Phones & Accessories", delay: null },
+                { title: "Clothing, Shoes & Jewelry", delay: null },
+                { title: "Computers", delay: null },
+                { title: "Electronics", delay: null },
+                { title: "Garden & Outdoor", delay: null },
+                { title: "Grocery & Gourmet Food", delay: null },
+                { title: "Handmade", delay: null },
+                { title: "Health & Household", delay: null },
+                { title: "Home & Kitchen", delay: null },
+                { title: "Industrial & Scientific", delay: null },
+                { title: "Luggage & Travel Gear", delay: null },
+                { title: "Movies & TV", delay: null },
+                { title: "Musical Instruments", delay: null },
+                { title: "Office Products", delay: null },
+                { title: "Pet Supplies", delay: null },
+                { title: "Sports & Outdoors", delay: null },
+                { title: "Tools & Home Improvement", delay: null },
+                { title: "Toys & Games", delay: null },
+                { title: "Video Games", delay: null },
+              ]}
+            />
+          </div>
+        ),
+      },
+      {
+        title: "What are the most commonly included?",
+        desc: (
+          <p>
+            There's a good bit of{" "}
+            <span className="emphasized-text">
+              toys, clothing, and home goods on the Grow plan
+            </span>
+            . More of the same on the Pro plan, but with some extra stuff in{" "}
+            <span className="emphasized-text">grocery or beauty</span> as well.
+          </p>
+        ),
+      },
+      {
+        title: "Will I be gated in some of the products from these categories?",
+        desc: (
+          <p>
+            Most definitely. If you're not gated in at least some, hit me up and
+            we'll talk all about how you're a super-seller.{" "}
+            <span className="emphasized-text">
+              While you won't be able to sell everything, there are plenty of
+              people new to arbitrage who use Leadgeek exclusively for sourcing
+            </span>
+            . We try to source from categories that many sellers are ungated in,
+            but if you have concerns please{" "}
+            <Link to="/contact/" className="secondary-link">
+              contact us
+            </Link>
+            .
+          </p>
+        ),
+      },
+    ],
+    link: "categories",
+    nextLink: "retailers",
+    prevLink: "calculations",
   },
   {
     title: "Solid sources by default",
@@ -240,6 +317,53 @@ export const featureList = [
         your Seller Central account suspended.
       </p>
     ),
+    faqs: [
+      {
+        title: "How can I trust that these retailers are the real deal?",
+        desc: (
+          <p>
+            When we say "authentic," we mean it.{" "}
+            <span className="emphasized-text">
+              These are retailers like Target, Walmart, Best Buy, etc
+            </span>
+            . No nonsense like eBay or AliExpress. As an added perk, lots of the
+            legit retailers have reasonable minimums for free shipping.
+          </p>
+        ),
+      },
+      {
+        title: "Can I use these sources for ungating?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              You surely cannot. These are{" "}
+              <span className="italic">retailers</span>, not distributors.
+            </span>{" "}
+            Unlike with wholesale that gets you an invoice, retailers just send
+            you a receipt. If you have a question about ungating,{" "}
+            <Link to="/contact/" className="secondary-link">
+              contact us
+            </Link>{" "}
+            and we can likely point you in the right direction.
+          </p>
+        ),
+      },
+      {
+        title: "Do you source from XYZ retailer?",
+        desc: (
+          <p>
+            I dunno! You'll have to{" "}
+            <Link to="/contact/" className="secondary-link">
+              ask us
+            </Link>
+            .
+          </p>
+        ),
+      },
+    ],
+    link: "retailers",
+    nextLink: "historical-metrics",
+    prevLink: "categories",
   },
   {
     title: "Check out historical metrics",
@@ -255,6 +379,52 @@ export const featureList = [
         trends like seasonality, out of stock spikes, and more.
       </p>
     ),
+    faqs: [
+      {
+        title: "What's the benefit of watching 30 & 90 day metrics?",
+        desc: (
+          <p>
+            There are a lot of benefits, actually. Arbitrage is sorta volatile,
+            which creates the price gaps you can take advantage of. A downside
+            to that is if the product dips too low in price or slows down to
+            much in velocity, you're stuck with something that loses you money.{" "}
+            <span className="emphasized-text">
+              Verifying the product history is well worth your while, and
+              Leadgeek makes it easy to check out
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Will I get the buy box?",
+        desc: (
+          <p>
+            <span className="emphasized-text">Quite likely, yes!</span> That's
+            why the current competition is included. For example: if the buy box
+            is controlled by a merchant fulfilled seller, swoop in and grab
+            those sales out from under them. Does an FBA seller have the buy
+            box? Match and share, there's plenty to go around.
+          </p>
+        ),
+      },
+      {
+        title: "How are these values tracked?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              With a really cool tool called Keepa
+            </span>
+            . Keepa tracks the history of a product for days, weeks, months, or
+            even years. The buy box competition is determined a few minutes
+            before the lead is posted.
+          </p>
+        ),
+      },
+    ],
+    link: "historical-metrics",
+    nextLink: "reliability",
+    prevLink: "retailers",
   },
   {
     title: "Keep 'em coming",
@@ -269,6 +439,50 @@ export const featureList = [
         . Just scroll through to find the ones that best fit your selling style.
       </p>
     ),
+    faqs: [
+      {
+        title: "How many leads will I get?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              Leadgeek guarantees 10 products for you to check out every day,
+              Monday-Friday
+            </span>
+            . That's 50 vetted items per week, or 200 every month. Feelin' ready
+            to take on more? The Bundle plan give you 20 leads each day
+            (100/week, 400/month) for a substantial discount.
+          </p>
+        ),
+      },
+      {
+        title: "Do you take any holidays off?",
+        desc: (
+          <p>
+            Indeed we do, but it's not like we're throwing a rager on Earth Day.{" "}
+            <span className="emphasized-text">
+              We take time to rest on Thanksgiving and Christmas
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Are there ever any extra leads?",
+        desc: (
+          <p>
+            Heck yeah.{" "}
+            <span className="emphasized-text">
+              There's around 20-40% extra leads more often than not
+            </span>
+            . Being gated in a product can be annoying, so some bonus leads are
+            thrown in to increase your chances of being able to sell more stuff.
+          </p>
+        ),
+      },
+    ],
+    link: "reliability",
+    nextLink: "exclusivity",
+    prevLink: "historical-metrics",
   },
   {
     title: "The inner circle",
@@ -283,6 +497,49 @@ export const featureList = [
         competition significantly.
       </p>
     ),
+    faqs: [
+      {
+        title: `Will there be a "race to the bottom"?`,
+        desc: (
+          <p>
+            We have no crystal ball to see into the future, but{" "}
+            <span className="emphasized-text">
+              reducing the list exposure helps prevent that from happening
+            </span>
+            . 30 people on the Grow plan and 15 on the Pro plan is one of the
+            tightest-knit lists in the industry.
+          </p>
+        ),
+      },
+      {
+        title: "What's a no-budge cap?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              The limit of members is the limit of members
+            </span>
+            . One of the things you're paying for is exclusivity and by darn
+            you'll get it.
+          </p>
+        ),
+      },
+      {
+        title: "Are there ever any extra leads?",
+        desc: (
+          <p>
+            Heck yeah.{" "}
+            <span className="emphasized-text">
+              There's around 20-40% extra leads more often than not
+            </span>
+            . Being gated in a product can be annoying, so some bonus leads are
+            thrown in to increase your chances of being able to sell more stuff.
+          </p>
+        ),
+      },
+    ],
+    link: "exclusivity",
+    nextLink: "predictability",
+    prevLink: "reliability",
   },
   {
     title: "Hot off the press",
@@ -296,6 +553,38 @@ export const featureList = [
         order - and the first one to sell.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Professional experience in your corner",
@@ -309,6 +598,56 @@ export const featureList = [
         that have been approved by years of FBA know-how.
       </p>
     ),
+    faqs: [
+      {
+        title: "Huh? Amazon seller review?",
+        desc: (
+          <p>
+            Yup!{" "}
+            <span className="emphasized-text">
+              An experienced Amazon seller checks the products
+            </span>
+            . What's more - while almost every other sourcing list uses
+            internationally-based virtual assistants to find new leads,{" "}
+            <span className="emphasized-text">
+              the vast majority of our sourcing is done manually by a US Amazon
+              seller themselves
+            </span>
+            . No cutting corners 'round these parts.
+          </p>
+        ),
+      },
+      {
+        title: "Which part is evaluated by the experienced seller?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              Everything about each and every lead
+            </span>
+            . They verify that the products are a match to the best of their
+            knowledge, that the metrics are accurate, that any additional notes
+            are accounted for, and that the product can be expected to sell with
+            a reasonable degree of certainty.
+          </p>
+        ),
+      },
+      {
+        title: "Does that mean I can just purchase stuff willy-nilly?",
+        desc: (
+          <p>
+            Probably not.{" "}
+            <span className="emphasized-text">
+              It's recommended that you review each product before you add it to
+              your inventory
+            </span>
+            ; Since when have double-checks been a bad idea?
+          </p>
+        ),
+      },
+    ],
+    link: "seller-insight",
+    nextLink: "feed",
+    prevLink: "predictability",
   },
   {
     title: "Skim info in the Feed",
@@ -321,6 +660,36 @@ export const featureList = [
         but instead feel informed to make the right decisions for you.
       </p>
     ),
+    faqs: [
+      {
+        title: "What kind of stuff is included in the Feed?",
+        desc: (
+          <p>
+            <span className="emphasized-text">
+              The title, category, image, competition, profit, ROI, BSR, monthly
+              sales, and date for each lead
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Can I see more?",
+        desc: (
+          <p>
+            Very easily.{" "}
+            <span className="emphasized-text">
+              Just click on the row for each item and you'll see a detailed view
+              instantly
+            </span>
+            , along with some extra shortcuts to make your life easier.
+          </p>
+        ),
+      },
+    ],
+    link: "feed",
+    nextLink: "filters",
+    prevLink: "seller-insight",
   },
   {
     title: "Surface data, don't dig for it",
@@ -336,6 +705,37 @@ export const featureList = [
         .
       </p>
     ),
+    faqs: [
+      {
+        title: "What can I filter by?",
+        desc: (
+          <p>
+            There are 7 min/max value filters:{" "}
+            <span className="emphasized-text">
+              profit, buy price, sell price, ROI, BSR, monthly sales, and weight
+            </span>
+            . Additionally, only see products that are in a particular{" "}
+            <span className="emphasized-text">category</span> or that were
+            posted on a certain <span className="emphasized-text">date</span>.
+          </p>
+        ),
+      },
+      {
+        title: "Only 9 filters? That doesn't seem like a lot...",
+        desc: (
+          <p>
+            <span className="emphasized-text">That's kinda the point</span>.
+            Anything more than that and you're probably over-complicating
+            things. The products have already been checked out - the filters are
+            there to bubble what you want up to the top. When combined, the
+            filters are quite powerful.
+          </p>
+        ),
+      },
+    ],
+    link: "filters",
+    nextLink: "details",
+    prevLink: "feed",
   },
   {
     title: "View details on the fly",
@@ -350,6 +750,38 @@ export const featureList = [
         and Seller Central to see if the product is ungated for you.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: `Stay organized with "Like" & "Archive"`,
@@ -363,6 +795,38 @@ export const featureList = [
         look at some point in the future.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Account for prep costs automatically",
@@ -376,6 +840,38 @@ export const featureList = [
         you'll see real-world profitability for each item.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Leave your mark",
@@ -388,6 +884,38 @@ export const featureList = [
         down so you don’t forget!
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Keyword central",
@@ -401,6 +929,38 @@ export const featureList = [
         the source store, title, ASIN, and more.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Variation suggestions out of the box",
@@ -415,6 +975,38 @@ export const featureList = [
         to order your inventory.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Your own personal researcher",
@@ -429,6 +1021,38 @@ export const featureList = [
         .
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "Leads belong to you",
@@ -442,6 +1066,38 @@ export const featureList = [
         to do whatever you want with.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
   {
     title: "A+ member support",
@@ -457,6 +1113,38 @@ export const featureList = [
         confusion.
       </p>
     ),
+    faqs: [
+      {
+        title: "Why release leads at a scheduled time?",
+        desc: (
+          <p>
+            Much of arbitrage is about developing a practical system and
+            nurturing habits. Many people have full-time jobs on top of doing
+            e-commerce, so{" "}
+            <span className="emphasized-text">
+              it makes sense for there to be a predictable time to make selling
+              a part of your schedule
+            </span>
+            .
+          </p>
+        ),
+      },
+      {
+        title: "Why 9 am CST?",
+        desc: (
+          <p>
+            Think of it like the opening of a farmer's market:{" "}
+            <span className="emphasized-text">
+              it's early enough to get first pick
+            </span>
+            , but not too late that all you want to do is stay in bed.
+          </p>
+        ),
+      },
+    ],
+    link: "predictability",
+    nextLink: "seller-insight",
+    prevLink: "exclusivity",
   },
 ]
 
