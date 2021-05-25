@@ -5,7 +5,7 @@ import ReactTooltip from "react-tooltip"
 import Check from "assets/svgs/check.svg"
 import X from "assets/svgs/x.svg"
 
-const pricingTableCell = ({ value, description, tooltip }) => {
+const PricingTableCell = ({ value, description, tooltip }) => {
   const contentType = () => {
     if (description) {
       return (
@@ -50,4 +50,4 @@ const pricingTableCell = ({ value, description, tooltip }) => {
   )
 }
 
-export default pricingTableCell
+export default PricingTableCell

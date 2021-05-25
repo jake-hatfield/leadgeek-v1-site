@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
       <section className="relative">
         <HeaderWrapper>
           <PrimaryHeader
-            header={`The uncomplicated arbitrage software.`}
-            subHeader={`Leadgeek is a tool that makes FBA sourcing productive, organized, and clear. People that use Leadgeek are more efficient at finding fresh arbitrage leads day in and day out. Here's how the magic happens.`}
+            title={`The uncomplicated arbitrage software.`}
+            desc={`Leadgeek is a tool that makes FBA sourcing productive, organized, and clear. People that use Leadgeek are more efficient at finding fresh arbitrage leads day in and day out. Here's how the magic happens.`}
           />
         </HeaderWrapper>
       </section>
@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
           />
         </div>
         <header className="mt-4 lg:mt-6">
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             The current baloney won't cut it.
           </h2>
           <p className="mt-4 lg:mt-6 mx-auto h4">
@@ -43,17 +43,20 @@ const IndexPage = ({ data }) => {
               You're putting in the time to find some gold nuggets, but how many
               leads are you missing?
             </span>{" "}
-            And more importantly - how much time are you wasting?
+            And more importantly -{" "}
+            <span className="emphasized-text-light text-lg">
+              how much time are you wasting?
+            </span>
           </p>
           <p className="mt-4 lg:mt-6 mx-auto h4">
             Whether you’ve been screening thousands of products to find the 0.5%
             of winners or picking leads out from spreadsheets that look like
             they belong to the last decade,{" "}
             <span className="emphasized-text-light text-lg">
-              the traditional sourcing process can be quite painful
+              the traditional sourcing process can be quite frustrating
             </span>
             . Unless something changes, it doesn’t take long for “traditional”
-            to turn into “inefficient.”
+            to turn into "painful.”
           </p>
         </header>
       </section>
@@ -64,7 +67,7 @@ const IndexPage = ({ data }) => {
             className="w-1/2 rounded-lg shadow-lg"
           />
           <header className="ml-8 w-1/2">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               It starts with the Feed.
             </h2>
             <p className="mt-4 lg:mt-6 h4 text-gray-700">
@@ -85,12 +88,12 @@ const IndexPage = ({ data }) => {
       <section className="py-12 container text-gray-900">
         <div className="md:flex md:items-center md:justify-between">
           <header className="w-1/2">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Great standards come standard.
             </h2>
             <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
               There are lots of{" "}
-              <Link to={"/features/lead-criteria"} className="secondary-link">
+              <Link to={"/features/lead-criteria/"} className="secondary-link">
                 rigorous criteria
               </Link>{" "}
               every lead must meet in order for it to ever see the light of day.
@@ -111,7 +114,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="py-12 md:text-center text-gray-900">
         <header>
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Filters are your friend.
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
@@ -122,7 +125,7 @@ const IndexPage = ({ data }) => {
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
             Our{" "}
-            <Link to={"/features/filters"} className="secondary-link">
+            <Link to={"/features/filters/"} className="secondary-link">
               intuitive filters
             </Link>{" "}
             help you surface information rather than digging through it by hand.
@@ -139,7 +142,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="py-12 bg-gray-100 md:text-center text-gray-900">
         <header>
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Develop an eye for details.
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
@@ -163,7 +166,7 @@ const IndexPage = ({ data }) => {
       <section className="py-12 container text-gray-900">
         <div className="md:flex md:items-center md:justify-between">
           <header className="w-1/2">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Keep track of the good stuff.
             </h2>
             <p className="mt-4 lg:mt-6 h4 text-gray-700">
@@ -174,8 +177,12 @@ const IndexPage = ({ data }) => {
               few minutes while you sort through the other leads of the day? Add
               it to your liked leads and check back when you’re ready. If
               there’s something you think that might be great to re-stock on in
-              the future, add it to your archived collection. You’re in total
-              control of organizing the leads how it best works for you.
+              the future, add it to your archived collection.{" "}
+              <span className="emphasized-text">
+                You’re in total control of organizing the leads how it best
+                works for you
+              </span>
+              .
             </p>
           </header>
           <Img

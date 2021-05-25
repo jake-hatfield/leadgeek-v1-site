@@ -1,7 +1,5 @@
 import React from "react"
 
-import ArrowLink from "components/arrowLink"
-
 const otherFeatures = ({
   criteria,
   reliability,
@@ -51,10 +49,6 @@ const otherFeatures = ({
                 to meet rigorous requirements before they're approved and sent
                 to you.
               </p>
-              <ArrowLink
-                link="/features/criteria"
-                linkText="Learn about lead criteria"
-              />
             </div>
           )}
           {reliability && (
@@ -83,10 +77,6 @@ const otherFeatures = ({
                 Our team works tirelessly to bring you a consistent output of
                 high-quality products that you can count on to deliver results.
               </p>
-              <ArrowLink
-                link="/features/reliability"
-                linkText="Learn about sourcing reliability"
-              />
             </div>
           )}
           {support && (
@@ -113,10 +103,6 @@ const otherFeatures = ({
                 Our experienced team has your back! Reach out to us for
                 dedicated support and other perks exclusive to Leadgeek sellers.
               </p>
-              <ArrowLink
-                link="/features/support"
-                linkText="Learn about member support"
-              />
             </div>
           )}
           {education && (
@@ -147,10 +133,6 @@ const otherFeatures = ({
                 Learn foundational online arbitrage concepts and strategies
                 through guides, courses, and templates available for members.
               </p>
-              <ArrowLink
-                link="/features/education"
-                linkText="Learn about arbitrage training"
-              />
             </div>
           )}
         </div>

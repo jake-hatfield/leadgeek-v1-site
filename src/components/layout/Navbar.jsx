@@ -61,7 +61,8 @@ const Navbar = () => {
             <div className="relative all-center inter">
               {primaryLinks.map(primaryLink => (
                 <Link
-                  to={`/${primaryLink.link}`}
+                  key={primaryLink.link}
+                  to={`/${primaryLink.link}/`}
                   className={classes.navbarLink}
                   activeClassName="active-secondary-link text-purple-500"
                 >
@@ -75,7 +76,7 @@ const Navbar = () => {
             >
               Log in
             </a>
-            <Link to={"/signup"} className="no-m-first cta-link inter">
+            <Link to={"/signup/"} className="no-m-first cta-link inter">
               Sign up
             </Link>
           </nav>
@@ -127,7 +128,7 @@ const Navbar = () => {
                 {moreItemsMobile.map(item => (
                   <Link
                     key={item.linkID}
-                    to={`/${item.link}`}
+                    to={`/${item.link}/`}
                     className="text-base leading-6 font-medium text-gray-700 hover:text-gray-900 transition ease-in-out duration-200"
                   >
                     {item.title}

@@ -1,8 +1,8 @@
 import React from "react"
 
-import PricingTableCell from "components/pricingTableCell"
+import PricingTableCell from "components/PricingTableCell"
 
-const pricingTableRow = ({ cells }) => {
+const PricingTableRow = ({ cells }) => {
   return (
     <tr
       v-for="row in rows"
@@ -20,4 +20,4 @@ const pricingTableRow = ({ cells }) => {
   )
 }
 
-export default pricingTableRow
+export default PricingTableRow

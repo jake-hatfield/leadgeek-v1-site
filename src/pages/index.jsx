@@ -29,8 +29,8 @@ const IndexPage = ({ data }) => {
             ))}
           </section>
           <PrimaryHeader
-            header={`Online arbitrage sourcing at its best.`}
-            subHeader={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to flip via Amazon FBA.`}
+            title={`Online arbitrage sourcing at its best.`}
+            desc={`Turn "I don't know what to sell" into "I have too much to buy": Receive a daily list of the best online arbitrage products to flip via Amazon FBA.`}
             nav
             linkOne={`how-it-works`}
             linkOneText={`See how it works`}
@@ -57,7 +57,7 @@ const IndexPage = ({ data }) => {
             />
           </div>
           <header className="pt-12 md:text-center text-gray-700">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
               Don't dig through information - surface it.
             </h2>
             <p className="mt-4 lg:mt-6 mx-auto h4">
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
               done.
             </p>
             <div className="mt-6">
-              <Link to={"/features"} className="secondary-link">
+              <Link to={"/features/"} className="secondary-link">
                 See how Leadgeek is built different
               </Link>
             </div>
@@ -83,7 +83,7 @@ const IndexPage = ({ data }) => {
       </div>
       <section className="py-12 container md:text-center">
         <header>
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900">
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
             People who love clarity, love Leadgeek.
           </h2>
           <h3 className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
@@ -265,6 +265,20 @@ const testimonialsFull = [
     ),
     source: "Frank",
     desc: "International",
+    image: null,
+  },
+  {
+    text: (
+      <p>
+        "
+        <span className={classes.emphasizedText}>
+          I really like the (software) setup
+        </span>
+        ."
+      </p>
+    ),
+    source: "Dimitry",
+    desc: "Intermediate",
     image: null,
   },
 ]

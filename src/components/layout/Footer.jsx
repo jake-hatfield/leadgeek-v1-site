@@ -35,11 +35,11 @@ const Footer = () => {
               key={category.header}
               className="mt-4 md:mt-0 first:ml-0 ml-16"
             >
-              <h5 className="h3 font-semibold inter">{category.header}</h5>
+              <h5 className="h3 font-semibold">{category.header}</h5>
               <ul className="mt-4">
                 {category.items.map(item => (
                   <li key={item.title} className="mb-2 last:mb-0 ">
-                    <Link to={`/${item.link}`} className="tertiary-link">
+                    <Link to={`/${item.link}/`} className="tertiary-link inter">
                       {item.title}
                     </Link>
                   </li>
@@ -49,21 +49,24 @@ const Footer = () => {
           ))}
         </nav>
       </div>
-      <div className="mt-8 lg:mt-12 text-xs font-bold text-gray-600">
+      <div className="mt-16 lg:mt-24 text-xs font-bold text-gray-600">
         <div className="w-full" />
         <div className="mt-6 container md:flex md:items-start md:justify-between">
           <ul className="flex">
             {footerLinks.map(footerLink => (
-              <li key={footerLink.title} className="no-m-first tertiary-link">
+              <li
+                key={footerLink.title}
+                className="no-m-first tertiary-link inter"
+              >
                 {footerLink.title === "Sitemap" ? (
                   <a href={`/${footerLink.link}`}>{footerLink.title}</a>
                 ) : (
-                  <Link to={`/${footerLink.link}`}>{footerLink.title}</Link>
+                  <Link to={`/${footerLink.link}/`}>{footerLink.title}</Link>
                 )}
               </li>
             ))}
           </ul>
-          <div>
+          <div className="mt-4 md:mt-0">
             <p>
               Copyright <span className="inter">&copy;</span>{" "}
               {new Date().getFullYear()} Leadgeek

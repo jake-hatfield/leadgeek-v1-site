@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Check from "assets/svgs/check.svg"
 
-const sideCard = ({ featureList, plan, price, link, start }) => {
+const SideCard = ({ featureList, plan, price, link, start }) => {
   return (
     <div
       className={`${
@@ -42,4 +42,4 @@ const sideCard = ({ featureList, plan, price, link, start }) => {
   )
 }
 
-export default sideCard
+export default SideCard

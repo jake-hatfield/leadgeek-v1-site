@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Check from "assets/svgs/check.svg"
 
-const signupFeatures = ({ featureList, price, plan, discount }) => {
+const SignupFeatures = ({ featureList, price, plan, discount }) => {
   let listSize = 4
   return (
     <div className="mt-4 lg:mt-0 mx-auto lg:ml-16 w-full lg:w-1/3 flex flex-col-reverse lg:flex-col max-w-sm">
@@ -84,4 +84,4 @@ const signupFeatures = ({ featureList, price, plan, discount }) => {
   )
 }
 
-export default signupFeatures
+export default SignupFeatures

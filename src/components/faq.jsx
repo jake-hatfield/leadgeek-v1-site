@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Squiggles from "assets/svgs/squiggles.svg"
 
-const faq = ({ growPlanSeats, proPlanSeats }) => {
+const Faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [
     {
       id: 1,
@@ -245,4 +245,4 @@ const faq = ({ growPlanSeats, proPlanSeats }) => {
   )
 }
 
-export default faq
+export default Faq

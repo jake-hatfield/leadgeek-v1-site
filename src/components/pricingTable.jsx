@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import PricingTableRow from "components/pricingTableRow"
+import PricingTableRow from "components/PricingTableRow"
 
-const pricingTable = ({ tableHeader, featureRows, id }) => {
+const PricingTable = ({ tableHeader, featureRows, id }) => {
   return (
     <table id={id} className="mt-12 container table-auto">
       <thead>
@@ -54,4 +54,4 @@ const pricingTable = ({ tableHeader, featureRows, id }) => {
   )
 }
 
-export default pricingTable
+export default PricingTable

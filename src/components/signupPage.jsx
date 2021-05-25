@@ -4,11 +4,11 @@ import { Link, navigate } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
-import CheckoutForm from "components/checkoutForm"
+import CheckoutForm from "components/CheckoutForm"
 
 import HalfDotted from "assets/svgs/half-dotted.svg"
 
-const signupPage = ({
+const SignupPage = ({
   price,
   featureList,
   plan,
@@ -90,4 +90,4 @@ const signupPage = ({
   )
 }
 
-export default signupPage
+export default SignupPage
