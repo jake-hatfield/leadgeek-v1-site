@@ -10,16 +10,55 @@ const FeaturePage = ({ feature }) => {
     featureList.filter(f => f.link === feature)[0]
   )
 
-  const { title, desc, faqs, link, nextLink, prevLink } = currentFeature
+  const {
+    title,
+    desc,
+    faqs,
+    link,
+    testimonialOne,
+    testimonialTwo,
+    nextLink,
+    prevLink,
+  } = currentFeature
   return (
-    <section className="bg-splatter">
+    <section className="py-12 bg-splatter">
       <HeaderWrapper>
-        <PrimaryHeader title={title} desc={desc} />
+        <PrimaryHeader
+          title={title}
+          desc={desc}
+          svgOne={
+            testimonialOne && (
+              <div
+                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 shadow-tealMd text-center transition-main w-56 ${testimonialOne.rotate}`}
+              >
+                <blockquote>
+                  "{testimonialOne.quote}" -{" "}
+                  <cite>{testimonialOne.source}</cite>
+                </blockquote>
+              </div>
+            )
+          }
+          svgTwo={
+            testimonialTwo && (
+              <div
+                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-12 shadow-tealMd text-center transition-main w-56 ${testimonialTwo.rotate}`}
+              >
+                <blockquote>
+                  "{testimonialTwo.quote}" -{" "}
+                  <cite>{testimonialTwo.source}</cite>
+                </blockquote>
+              </div>
+            )
+          }
+        />
       </HeaderWrapper>
       <section className="container">
         <ul className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800 text-center">
           {faqs.map((faq, i) => (
-            <li key={i} className="mt-6">
+            <li
+              key={i}
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${faq.rotate}`}
+            >
               <h3 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
                 {faq.title}
               </h3>
@@ -32,41 +71,17 @@ const FeaturePage = ({ feature }) => {
         {prevLink && (
           <Link
             to={`/features/${prevLink}/`}
-            className="fixed left-0 all-center transition-main group"
+            className="ml-8 fixed left-0 all-center transition-main group"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span className="tertiary-link">prev</span>
+            <span className="cta-link">prev</span>
           </Link>
         )}
         {nextLink && (
           <Link
             to={`/features/${nextLink}/`}
-            className="fixed right-0 all-center transition-main group"
+            className="mr-8 fixed right-0 all-center transition-main group"
           >
-            <span className="tertiary-link">next</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <span className="cta-link">next</span>
           </Link>
         )}
       </nav>
@@ -75,7 +90,7 @@ const FeaturePage = ({ feature }) => {
 }
 
 const classes = {
-  emphasizedFeature: "emphasized-text",
+  emphasizedFeature: "emphasized-text group-hover:text-gray-700",
 }
 
 export const featureList = [
@@ -101,10 +116,10 @@ export const featureList = [
             <span className={classes.emphasizedFeature}>
               $4/unit for the Grow plan and $7/unit for the Pro plan
             </span>
-            . It's worth noting that these are just the minimum acceptable
-            values - the average profit is much higher.
+            .
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-1",
       },
       {
         title: "What's the base ROI?",
@@ -117,6 +132,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-3",
       },
       {
         title: "What's the base sales velocity?",
@@ -130,6 +146,25 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
+      },
+      {
+        title: "Ok - what about the averages?",
+        desc: (
+          <p>
+            Over 2500+ products,{" "}
+            <span className={classes.emphasizedFeature}>
+              the average profit is $12.96, the average ROI is 84%, and the
+              average sales/mo. are 83
+            </span>
+            . There are no lame chump-change products 'round these parts:{" "}
+            <span className={classes.emphasizedFeature}>
+              The average selling price (ASP) is $43.57
+            </span>
+            . Not too shabby!
+          </p>
+        ),
+        rotate: "rotate-1 hover:-rotate-1",
       },
       {
         title: "How did you pick these criteria?",
@@ -144,8 +179,21 @@ export const featureList = [
             sold on Amazon's US marketplace.
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-2",
       },
     ],
+    testimonialOne: {
+      quote:
+        "Leadgeek delivers on their promises in the promo video on time every day with solid ROI leads",
+      source: "William",
+      rotate: "-rotate-6 hover:-rotate-3",
+    },
+    testimonialTwo: {
+      quote:
+        "I want to thank you for the effort you make to find products with such good quality",
+      source: "Frank",
+      rotate: "rotate-3 hover:rotate-2",
+    },
     link: "criteria",
     nextLink: "calculations",
     prevLink: "member-support",
@@ -184,6 +232,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "-rotate-3 hover:-rotate-2",
       },
       {
         title: "What costs are included?",
@@ -203,6 +252,7 @@ export const featureList = [
             (an often-neglected charge) are bundled into this calculator.
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-2",
       },
       {
         title: "Are the values updated periodically?",
@@ -217,8 +267,15 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
     ],
+    testimonialOne: {
+      quote: "(My) profit margin is roughly 25% and ROI more than 2x that",
+      source: "Charles",
+      rotate: "-rotate-2 hover:-rotate-3",
+    },
+    testimonialTwo: null,
     link: "calculations",
     nextLink: "categories",
     prevLink: "criteria",
@@ -236,7 +293,7 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "What categories are sourced from?",
+        title: "Which categories are sourced?",
         desc: (
           <div>
             <BulletedList
@@ -273,6 +330,7 @@ export const featureList = [
             />
           </div>
         ),
+        rotate: "-rotate-1 hover:rotate-1",
       },
       {
         title: "What are the most commonly included?",
@@ -287,6 +345,7 @@ export const featureList = [
             as well.
           </p>
         ),
+        rotate: "rotate-2 hover:-rotate-1",
       },
       {
         title: "Will I be gated in some of the products from these categories?",
@@ -306,8 +365,11 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-3",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
     link: "categories",
     nextLink: "retailers",
     prevLink: "calculations",
@@ -337,6 +399,7 @@ export const featureList = [
             legit retailers have reasonable minimums for free shipping.
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-2",
       },
       {
         title: "Can I use these sources for ungating?",
@@ -354,6 +417,7 @@ export const featureList = [
             and we can likely point you in the right direction.
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-2",
       },
       {
         title: "Do you source from XYZ retailer?",
@@ -366,6 +430,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "rotate-3 hover:-rotate-1",
       },
     ],
     link: "retailers",
@@ -393,7 +458,7 @@ export const featureList = [
           <p>
             There are a lot of benefits, actually. Arbitrage is sorta volatile,
             which creates the price gaps you can take advantage of. A downside
-            to that is if the product dips too low in price or slows down to
+            to that is if the product dips too low in price or slows down too
             much in velocity, you're stuck with something that loses you money.{" "}
             <span className={classes.emphasizedFeature}>
               Verifying the product history is well worth your while, and
@@ -402,6 +467,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-1",
       },
       {
         title: "Will I get the buy box?",
@@ -416,6 +482,7 @@ export const featureList = [
             buy box? Match and share, there's plenty to go around.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
       {
         title: "How are these values tracked?",
@@ -429,6 +496,7 @@ export const featureList = [
             before the lead is posted.
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-3",
       },
     ],
     link: "historical-metrics",
@@ -462,6 +530,7 @@ export const featureList = [
             (100/week, 400/month) for a substantial discount.
           </p>
         ),
+        rotate: "rotate-1 hover:rotate-2",
       },
       {
         title: "Do you take any holidays off?",
@@ -474,6 +543,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-1",
       },
       {
         title: "Are there ever any extra leads?",
@@ -487,8 +557,19 @@ export const featureList = [
             thrown in to increase your chances of being able to sell more stuff.
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-3",
       },
     ],
+    testimonialOne: {
+      quote: "Always had at least a few items I was interested in",
+      source: "Brian",
+      rotate: "-rotate-1 hover:rotate-2",
+    },
+    testimonialTwo: {
+      quote: "I love the leads, they're very good",
+      source: "Kevin",
+      rotate: "rotate-6 hover:-rotate-1",
+    },
     link: "reliability",
     nextLink: "exclusivity",
     prevLink: "historical-metrics",
@@ -519,6 +600,7 @@ export const featureList = [
             tightest-knit lists in the industry.
           </p>
         ),
+        rotate: "-rotate-3 hover:-rotate-1",
       },
       {
         title: "What's a no-budge cap?",
@@ -531,19 +613,7 @@ export const featureList = [
             you'll get it.
           </p>
         ),
-      },
-      {
-        title: "Are there ever any extra leads?",
-        desc: (
-          <p>
-            Heck yeah.{" "}
-            <span className={classes.emphasizedFeature}>
-              There's around 20-40% extra leads more often than not
-            </span>
-            . Being gated in a product can be annoying, so some bonus leads are
-            thrown in to increase your chances of being able to sell more stuff.
-          </p>
-        ),
+        rotate: "rotate-2 hover:rotate-1",
       },
     ],
     link: "exclusivity",
@@ -577,6 +647,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
       {
         title: "Why 9 am CST?",
@@ -586,11 +657,22 @@ export const featureList = [
             <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
-            , but not too late that all you want to do is stay in bed.
+            , but not so late that all that's left are root vegetables...
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-2",
       },
     ],
+    testimonialOne: {
+      quote: "Leadgeek delivers...on time every day",
+      source: "William",
+      rotate: "-rotate-6 hover:-rotate-3",
+    },
+    testimonialTwo: {
+      quote: "Delivered their lists as promised daily",
+      source: "Brian",
+      rotate: "rotate-3 hover:rotate-6",
+    },
     link: "predictability",
     nextLink: "seller-insight",
     prevLink: "exclusivity",
@@ -625,6 +707,7 @@ export const featureList = [
             . No cutting corners 'round these parts.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
       {
         title: "Which part is evaluated by the experienced seller?",
@@ -639,6 +722,7 @@ export const featureList = [
             a reasonable degree of certainty.
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-2",
       },
       {
         title: "Does that mean I can just purchase stuff willy-nilly?",
@@ -652,6 +736,7 @@ export const featureList = [
             ; Since when have double-checks been a bad idea?
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-2",
       },
     ],
     link: "seller-insight",
@@ -683,6 +768,7 @@ export const featureList = [
             .
           </p>
         ),
+        rotate: "rotate-1 hover:rotate-2",
       },
       {
         title: "Can I see more?",
@@ -696,8 +782,15 @@ export const featureList = [
             , along with some extra shortcuts to make your life easier.
           </p>
         ),
+        rotate: "-rotate-3 hover:-rotate-2",
       },
     ],
+    testimonialOne: {
+      quote: "It looks FANTASTIC on my first try!",
+      source: "Yucheng",
+      rotate: "-rotate-2 hover:-rotate-1",
+    },
+    testimonialTwo: null,
     link: "feed",
     nextLink: "filters",
     prevLink: "seller-insight",
@@ -731,6 +824,7 @@ export const featureList = [
             <span className={classes.emphasizedFeature}>date</span>.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-1",
       },
       {
         title: "Only 9 filters? That doesn't seem like a lot...",
@@ -745,8 +839,15 @@ export const featureList = [
             filters are quite powerful.
           </p>
         ),
+        rotate: "-rotate-1 hover:-rotate-3",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: {
+      quote: "5 stars for you guys making this super simple",
+      source: "Austin",
+      rotate: "rotate-2 hover:-rotate-2",
+    },
     link: "filters",
     nextLink: "details",
     prevLink: "feed",
@@ -758,44 +859,51 @@ export const featureList = [
         Don't miss a beat with the detailed view for each item.{" "}
         <span className={classes.emphasizedFeature}>
           See primary metrics, historical data, and helpful notes all in one
-          place.
-        </span>{" "}
-        Also included are helpful links to the source retailer, Amazon listing,
-        and Seller Central to see if the product is ungated for you.
+          place
+        </span>
+        . Also included are helpful links to the source retailer, Amazon
+        listing, and Seller Central to see if the product is ungated for you.
       </p>
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "How detailed are we talking here?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            Pretty detailed. It's good to understand what it is you'll
+            potentially be selling:{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              Hover over the image to get a magnified view, check out the brand,
+              and see the source.
+            </span>{" "}
+            If you're interested,{" "}
+            <span className={classes.emphasizedFeature}>
+              view the primary & historical metrics, and see if you're ungated
+              with one click
             </span>
-            .
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-3",
       },
       {
-        title: "Why 9 am CST?",
+        title: "Alright, what else?",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
+            Managerial tasks are really easy from the detailed view -{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
-            </span>
-            , but not too late that all you want to do is stay in bed.
+              like/archive, comment, and review seller-to-seller notes
+            </span>{" "}
+            in a jiffy.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    testimonialOne: null,
+    testimonialTwo: null,
+    link: "details",
+    nextLink: "like-and-archive",
+    prevLink: "filters",
   },
   {
     title: `Stay organized with "Like" & "Archive"`,
@@ -811,36 +919,36 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "How many leads can I like or archive?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            <span className={classes.emphasizedFeature}>There's no limit</span>,
+            like and archive away!
+          </p>
+        ),
+        rotate: "rotate-2 hover:rotate-3",
+      },
+      {
+        title: "Why have both liked and archived lists?",
+        desc: (
+          <p>
+            It's helpful to like the leads you're interested in double-checking
+            or ordering every day as you source through the Feed.{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              To prevent your liked list from getting cluttered, move the
+              products over to the archived list when you're ready
             </span>
             .
           </p>
         ),
-      },
-      {
-        title: "Why 9 am CST?",
-        desc: (
-          <p>
-            Think of it like the opening of a farmer's market:{" "}
-            <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
-            </span>
-            , but not too late that all you want to do is stay in bed.
-          </p>
-        ),
+        rotate: "-rotate-1 hover:rotate-1",
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    testimonialOne: null,
+    testimonialTwo: null,
+    link: "like-and-archive",
+    nextLink: "prep",
+    prevLink: "details",
   },
   {
     title: "Account for prep costs automatically",
@@ -856,36 +964,43 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: `What do you mean by "prep?"`,
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              When you order from a retailer, they'll ship products that need to
+              be prepared before sending them into Amazon's warehouse
             </span>
-            .
+            . Sometimes things need to be put in bags or packaged more securely.
+            In every case, each unit should be labeled with a special label
+            called an FNSKU. It's like a fingerprint from your Seller account so
+            it doesn't get mixed up with other products at the fulfillment
+            center.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-0",
       },
       {
-        title: "Why 9 am CST?",
+        title: `What do you mean by "prep?"`,
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              When you order from a retailer, they'll ship products that need to
+              be prepared before sending them into Amazon's warehouse
             </span>
-            , but not too late that all you want to do is stay in bed.
+            . Sometimes things need to be put in bags or packaged more securely.
+            In every case, each unit should be labeled with a special label
+            called an FNSKU. It's like a fingerprint from your Seller account so
+            it doesn't get mixed up with other products at the fulfillment
+            center.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-0",
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "prep",
+    nextLink: "comments",
+    prevLink: "like-and-archive",
   },
   {
     title: "Leave your mark",
@@ -1023,7 +1138,7 @@ export const featureList = [
     prevLink: "exclusivity",
   },
   {
-    title: "Your own personal researcher",
+    title: "Your very own research assistant",
     desc: (
       <p>
         Are you ever curious if there’s a promo or some discount you’re missing

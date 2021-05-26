@@ -7,7 +7,7 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 import { featureList } from "components/layout/Features"
 
-import ArrowDashed from "assets/svgs/arrow-straight-dashed-solid.svg"
+import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 
 const index = () => {
   return (
@@ -23,7 +23,7 @@ const index = () => {
             desc={
               <p>
                 Leadgeek lets you to find the products you want, when you want
-                them. The top ${featureList.length} features are the perfect
+                them. The top {featureList.length} features are the perfect
                 combination of hand-curation and wicked-fast software that make
                 arbitrage efficient and (dare I say it?)... fun.
               </p>
@@ -34,10 +34,10 @@ const index = () => {
             svgOne={
               <div className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72">
                 <div className="relative">
-                  <p className="py-1 px-2 handwritten text-xl w-56 rounded-lg bg-gray-900 text-teal-300 transform -rotate-6 shadow-lg text-center">
+                  <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3">
                     Start the tour or click on a feature to learn more
                   </p>
-                  <ArrowDashed className="absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-purple-500" />
+                  <LongArrow className="absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-gray-500" />
                 </div>
               </div>
             }
@@ -48,24 +48,18 @@ const index = () => {
         <div className="max-w-7xl mx-auto">
           <ol className="mt-4 lg:mt-6 feature-list feature-grid">
             {featureList.map((feature, i) => (
-              <li
-                key={i}
-                className="mt-4 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 w-64 transition-main shadow-dark transform rotate-3"
-              >
-                <header className="">
-                  <h3 className="h3">
-                    <Link
-                      to={`/features/${feature.link}/`}
-                      className="secondary-link text-gray-700 inter font-black"
-                    >
+              <Link key={i} to={`/features/${feature.link}/`}>
+                <li className="mt-4 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-64 transition-main shadow-dark">
+                  <header className="text-gray-900 group-hover:text-white">
+                    <h3 className="text-lg xl:text-xl inter font-black">
                       {feature.title}
-                    </Link>
-                  </h3>
-                </header>
-                <div className="mt-2 lg:mt-4 leading-relaxed">
-                  {feature.desc}
-                </div>
-              </li>
+                    </h3>
+                  </header>
+                  <div className="mt-2 lg:mt-4 leading-relaxed">
+                    {feature.desc}
+                  </div>
+                </li>
+              </Link>
             ))}
           </ol>
         </div>

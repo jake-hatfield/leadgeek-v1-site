@@ -47,7 +47,8 @@ const IndexPage = ({ data }) => {
             spend hours only to find a small handful of products to arbitrage?
             That’s like finding a needle in a haystack.{" "}
             <span className="emphasized-text-light text-lg">
-              You're putting in the time to find some gold nuggets, but how many
+              You're putting in the time to find{" "}
+              <span className="italic">some</span> gold nuggets, but how many
               leads are you missing?
             </span>{" "}
             And more importantly -{" "}
@@ -67,56 +68,60 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 container text-gray-900">
-        <div className="md:flex md:items-center md:justify-between">
-          <Img
-            fluid={data.heroImage.childImageSharp.fluid}
-            className="w-1/2 rounded-lg shadow-lg"
-          />
-          <header className="ml-8 w-1/2">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-              It starts with the Feed.
-            </h2>
-            <p className="mt-4 lg:mt-6 h4 text-gray-700">
-              The Feed is a flow of arbitrage leads curated for you. These
-              hand-picked leads are screened, scrubbed, and streamlined so you
-              only see the best of the best.{" "}
-              <span className="emphasized-text">
-                The Feed won’t clutter your screen with information you don’t
-                want to see
-              </span>
-              , but you can still dive deeper into any item on the fly. Rather
-              than drowning in data, you’re empowered to inspect products as you
-              see fit - making “easy” the default.
-            </p>
-          </header>
+      <section className="py-12  text-gray-900 bg-splatter">
+        <div className="container">
+          <div className="md:flex md:items-center md:justify-between">
+            <Img
+              fluid={data.heroImage.childImageSharp.fluid}
+              className="w-1/2 rounded-lg shadow-dark transform -rotate-2"
+            />
+            <header className="ml-8 w-1/2 bg-white">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+                It starts with the Feed.
+              </h2>
+              <p className="mt-4 lg:mt-6 h4 text-gray-700">
+                The Feed is a flow of arbitrage leads curated for you. These
+                hand-picked leads are screened, scrubbed, and streamlined so you
+                only see the best of the best.{" "}
+                <span className="emphasized-text">
+                  The Feed won’t clutter your screen with information you don’t
+                  want to see
+                </span>
+                , but you can still dive deeper into any item on the fly. Rather
+                than drowning in data, you’re empowered to inspect products as
+                you see fit - making “easy” the default.
+              </p>
+            </header>
+          </div>
         </div>
       </section>
-      <section className="py-12 container text-gray-900">
-        <div className="md:flex md:items-center md:justify-between">
-          <header className="w-1/2">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-              Great standards come standard.
-            </h2>
-            <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
-              There are lots of{" "}
-              <Link to={"/features/criteria/"} className="secondary-link">
-                rigorous criteria
-              </Link>{" "}
-              every lead must meet in order for it to ever see the light of day.
-              Each item is individually inspected to meet certain profit, ROI,
-              ranking, and monthly sales requirements (with selling fees
-              accounted for too!). Now{" "}
-              <span className="emphasized-text">
-                there's no more time-waste
-              </span>{" "}
-              doing this repetitive process yourself.
-            </p>
-          </header>
-          <Img
-            fluid={data.heroImage.childImageSharp.fluid}
-            className="ml-8 w-1/2 rounded-lg shadow-lg"
-          />
+      <section className="py-12 text-gray-900 bg-splatter">
+        <div className="container">
+          <div className="md:flex md:items-center md:justify-between">
+            <header className="w-1/2 bg-white">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+                Great standards come standard.
+              </h2>
+              <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
+                There are lots of{" "}
+                <Link to={"/features/criteria/"} className="secondary-link">
+                  rigorous criteria
+                </Link>{" "}
+                every lead must meet in order for it to ever see the light of
+                day. Each item is individually inspected to meet certain profit,
+                ROI, ranking, and monthly sales requirements (with selling fees
+                accounted for too!). Now{" "}
+                <span className="emphasized-text">
+                  there's no more time-waste
+                </span>{" "}
+                doing this repetitive process yourself.
+              </p>
+            </header>
+            <Img
+              fluid={data.heroImage.childImageSharp.fluid}
+              className="ml-8 w-1/2 rounded-lg shadow-dark transform rotate-3"
+            />
+          </div>
         </div>
       </section>
       <section className="relative py-12 md:text-center text-gray-900 overflow-x-hidden bg-splatter">
@@ -127,7 +132,7 @@ const IndexPage = ({ data }) => {
           <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg shadow-dark"
             />
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
@@ -155,7 +160,7 @@ const IndexPage = ({ data }) => {
           <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="w-full rounded-lg shadow-lg"
+              className="w-full rounded-lg shadow-dark"
             />
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
@@ -194,7 +199,7 @@ const IndexPage = ({ data }) => {
           </header>
           <Img
             fluid={data.heroImage.childImageSharp.fluid}
-            className="ml-8 w-1/2 rounded-lg shadow-lg"
+            className="ml-8 w-1/2 rounded-lg transform rotate-2 shadow-dark"
           />
         </div>
       </section>

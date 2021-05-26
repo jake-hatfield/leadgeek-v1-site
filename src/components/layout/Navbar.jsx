@@ -125,9 +125,9 @@ const Navbar = () => {
             </div>
             <div className="py-6 px-3 space-y-6 rounded-b-md bg-gray-100">
               <div className="grid grid-cols-2 gap-4">
-                {moreItemsMobile.map(item => (
+                {moreItemsMobile.map((item, i) => (
                   <Link
-                    key={item.linkID}
+                    key={i}
                     to={`/${item.link}/`}
                     className="text-base leading-6 font-medium text-gray-700 hover:text-gray-900 transition ease-in-out duration-200"
                   >

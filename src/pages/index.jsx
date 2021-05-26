@@ -25,10 +25,10 @@ const IndexPage = ({ data }) => {
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">
-        <HeaderWrapper>
+        <HeaderWrapper bottomPadding={"pb-80"}>
           <section className="all-center mb-4 container">
-            {testimonialsShort.map(testimonial => (
-              <TestimonialShort text={testimonial} />
+            {testimonialsShort.map((testimonial, i) => (
+              <TestimonialShort key={i} text={testimonial} />
             ))}
           </section>
           <PrimaryHeader
@@ -49,17 +49,12 @@ const IndexPage = ({ data }) => {
             linkOneText={`See how it works`}
             linkTwo={`signup`}
             linkTwoText={`Already know you want to join? Sign up now.`}
-            svgOne={
-              <div className="absolute bottom-0 left-0 transform -translate-y-12 text-gray-300 rotate-12">
-                <Pyramid className="h-8" />
-              </div>
-            }
           />
         </HeaderWrapper>
       </section>
       {/* hero image section */}
 
-      <div className="relative lg:mt-64 xl:mt-72 py-12 bg-gray-100">
+      <div className="relative py-12 bg-gray-100">
         <div className="text-gray-100">
           {/* <div className="section-divider-top" /> */}
         </div>
@@ -96,9 +91,6 @@ const IndexPage = ({ data }) => {
                 </p>
                 <TurnyFat className="absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16" />
               </div>
-            </div>
-            <div className="absolute right-0 transform rotate-12 translate-y-10 translate-x-4">
-              <RetroSun className="h-16 w-16 text-gray-300" />
             </div>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
@@ -146,8 +138,9 @@ const IndexPage = ({ data }) => {
             </h3>
           </header>
           <div className="mt-8">
-            {testimonialsFull.map(testimonial => (
+            {testimonialsFull.map((testimonial, i) => (
               <TestimonialFull
+                key={i}
                 text={testimonial.text}
                 source={testimonial.source}
                 desc={testimonial.desc}
@@ -165,7 +158,7 @@ const IndexPage = ({ data }) => {
         ]}
         desc={
           <p>
-            See how the thing works, 20 features that make Leadgeek rad, or join
+            See how Leadgeek works, the 20 features that make it rad, or join
             today.
           </p>
         }
@@ -180,7 +173,7 @@ const classes = {
 
 const TestimonialShort = ({ text }) => {
   return (
-    <div className="first:ml-0 ml-8">
+    <div className="first:ml-0 ml-8 bg-white">
       <div className="all-center text-purple-500">
         {Array.apply(null, { length: 5 }).map((s, i) => (
           <svg
@@ -208,9 +201,9 @@ const TestimonialFull = ({ text, source, desc, rotate }) => {
         <Quote className="h-8 w-8 text-gray-500 transform rotate-180 -translate-y-4 -translate-x-6" />
       </div>
       <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
-        <Quote className="h-8 w-8 text-gray-500 transform  -translate-y-2 translate-x-6" />
+        <Quote className="h-8 w-8 text-gray-500 transform -translate-y-2 translate-x-6" />
       </div>
-      <blockquote className="md:text-lg lg:text-xl leading-relaxed text-gray-800">
+      <blockquote className="md:text-lg leading-relaxed text-gray-800">
         {text}
       </blockquote>
       <div className="mt-4 all-center">
@@ -243,117 +236,113 @@ const testimonialsFull = [
     source: "Charles",
     desc: "New",
     image: null,
-    rotate: "rotate-1",
+    rotate: "rotate-2 hover:-rotate-2",
   },
   {
     text: (
       <p>
-        "Delivered their lists as promised daily and always had at least a few
+        Delivered their lists as promised daily and always had at least a few
         items I was interested in.{" "}
         <span className={classes.emphasizedText}>
           Good value, would recommend
         </span>
-        ."
+        .
       </p>
     ),
     source: "Brian",
     desc: "Intermediate",
     image: null,
-    rotate: "-rotate-1",
+    rotate: "-rotate-1 hover:rotate-2",
   },
   {
     text: (
       <p>
-        "Leadgeek delivers on their promises in the promo video on time every
-        day with solid ROI leads.{" "}
+        Leadgeek delivers on their promises in the promo video on time every day
+        with solid ROI leads.{" "}
         <span className={classes.emphasizedText}>
           Would definitely recommend giving them a shot if you want to take the
           guess work out of sourcing for FBA
         </span>
-        ."
+        .
       </p>
     ),
     source: "William",
     desc: "Intermediate",
     image: null,
-    rotate: "rotate-2",
+    rotate: "rotate-2 hover:-rotate-3",
   },
   {
     text: (
       <p>
-        "I love the leads, they're very good.{" "}
+        I love the leads, they're very good.{" "}
         <span className={classes.emphasizedText}>
           Leadgeek will pay off in a week
         </span>
-        ... definitely the best site I've found for leads."
+        ... definitely the best site I've found for leads.
       </p>
     ),
     source: "Kevin",
     desc: "New",
     image: null,
-    rotate: "",
+    rotate: "hover:-rotate-1",
   },
   {
     text: (
       <p>
-        "
         <span className={classes.emphasizedText}>
           It looks FANTASTIC on my first try!
         </span>{" "}
-        Great work, Jake. I look forward to trying it more on my next lead
-        list."
+        Great work. I look forward to trying it more on my next lead list.
       </p>
     ),
     source: "Yucheng",
     desc: "International",
     image: null,
-    rotate: "rotate-2",
+    rotate: "rotate-2 hover:rotate-3",
   },
   {
     text: (
       <p>
-        "
         <span className={classes.emphasizedText}>
           5 stars for you guys making this super simple
         </span>
-        ."
+        .
       </p>
     ),
     source: "Austin",
     desc: "New",
     image: null,
-    rotate: "-rotate-1",
+    rotate: "-rotate-1 hover:rotate-2",
   },
   {
     text: (
       <p>
-        "I want to thank you for the effort you make to find products with such
+        I want to thank you for the effort you make to find products with such
         good quality.{" "}
         <span className={classes.emphasizedText}>
           It has been the best decision I have made in acquiring your list
         </span>
-        . Thank you!"
+        . Thank you!
       </p>
     ),
     source: "Frank",
     desc: "International",
     image: null,
-    rotate: "rotate-1",
+    rotate: "rotate-2 hover:-rotate-1",
   },
   {
     text: (
       <p>
-        "
         <span className={classes.emphasizedText}>
           I really like the (software) setup
         </span>
-        ."
+        .
       </p>
     ),
     source: "Dimitry",
     desc: "Intermediate",
     image: null,
-    rotate: "-rotate-1",
+    rotate: "rotate-1 hover:-rotate-1",
   },
 ]
 
