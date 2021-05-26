@@ -12,7 +12,7 @@ const FeaturePage = ({ feature }) => {
 
   const { title, desc, faqs, link, nextLink, prevLink } = currentFeature
   return (
-    <>
+    <section className="bg-splatter">
       <HeaderWrapper>
         <PrimaryHeader title={title} desc={desc} />
       </HeaderWrapper>
@@ -70,8 +70,12 @@ const FeaturePage = ({ feature }) => {
           </Link>
         )}
       </nav>
-    </>
+    </section>
   )
+}
+
+const classes = {
+  emphasizedFeature: "emphasized-text",
 }
 
 export const featureList = [
@@ -82,7 +86,7 @@ export const featureList = [
         Scale your business without sacrificing quality in your inventory.
         Carefully-tailored criteria and vetting methods allow you to get
         professional-grade arbitrage sourcing at a fraction of the price.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Every lead needs to meet profit, ROI, and sales requirements
         </span>{" "}
         so you don’t waste any time with duds.
@@ -94,7 +98,7 @@ export const featureList = [
         desc: (
           <p>
             The minimum profit (after FBA fees) a product must meet is{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               $4/unit for the Grow plan and $7/unit for the Pro plan
             </span>
             . It's worth noting that these are just the minimum acceptable
@@ -107,7 +111,7 @@ export const featureList = [
         desc: (
           <p>
             On top of the profit criteria, any item has to have at least a{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               40% ROI on the Grow plan and a 50% ROI on the Pro plan
             </span>
             .
@@ -119,7 +123,7 @@ export const featureList = [
         desc: (
           <p>
             The minimum sales criteria are{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               10 sales/month + &#60;2% BSR on the Grow plan and 15 sales/month +
               &#60;1.5% BSR on the Pro plan
             </span>
@@ -133,7 +137,7 @@ export const featureList = [
           <p>
             When you combine the profit, ROI, BSR, and monthly sales minimums,
             there's reasonable padding built in for any fluctuations. To boot -{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               any lead with these standards means that they're generally in the
               top 1% of products
             </span>{" "}
@@ -152,7 +156,7 @@ export const featureList = [
       <p>
         If the profit estimations aren’t accurate, you’re often stuck with
         products that are breakeven or even lose you money. With Leadgeek,{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           all Amazon fees are accounted for with the official calculator
         </span>{" "}
         so you see numbers that can be relied on.
@@ -174,7 +178,7 @@ export const featureList = [
             . The official calculator from Amazon is pretty much the only
             reliable way to get an idea of profitability. This little tool keeps
             up with the changing FBA fee structure, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               these numbers are pretty darn close to accurate
             </span>
             .
@@ -187,11 +191,13 @@ export const featureList = [
           <p>
             Two big fees - and one kinda-hidden fee - are built into Leadgeek's
             estimations.{" "}
-            <span className="emphasized-text">The referral fee </span>(the
-            charge for selling on Amazon's marketplace),{" "}
-            <span className="emphasized-text">the FBA fulfillment fee</span>
+            <span className={classes.emphasizedFeature}>The referral fee </span>
+            (the charge for selling on Amazon's marketplace),{" "}
+            <span className={classes.emphasizedFeature}>
+              the FBA fulfillment fee
+            </span>
             (for not handling shipping or customer service yourself), and{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               the estimated storage cost
             </span>{" "}
             (an often-neglected charge) are bundled into this calculator.
@@ -205,7 +211,7 @@ export const featureList = [
             Nope, they aren't. A big part of arbitrage in general is timing, and
             things are bound to change. While it would be nice to keep the
             profitability metrics updated over time,{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's just not feasible with 100+ new leads sourced each week
             </span>
             .
@@ -222,7 +228,7 @@ export const featureList = [
     desc: (
       <p>
         Building a diversified inventory has never been easier.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Choose items sourced from 25+ top-selling Amazon categories
         </span>{" "}
         to create your ideal product portfolio.
@@ -273,11 +279,12 @@ export const featureList = [
         desc: (
           <p>
             There's a good bit of{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               toys, clothing, and home goods on the Grow plan
             </span>
             . More of the same on the Pro plan, but with some extra stuff in{" "}
-            <span className="emphasized-text">grocery or beauty</span> as well.
+            <span className={classes.emphasizedFeature}>grocery or beauty</span>{" "}
+            as well.
           </p>
         ),
       },
@@ -287,7 +294,7 @@ export const featureList = [
           <p>
             Most definitely. If you're not gated in at least some, hit me up and
             we'll talk all about how you're a super-seller.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               While you won't be able to sell everything, there are plenty of
               people new to arbitrage who use Leadgeek exclusively for sourcing
             </span>
@@ -309,7 +316,7 @@ export const featureList = [
     title: "Solid sources by default",
     desc: (
       <p>
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Over 500 trusted US-based retailers are used to source products
         </span>
         . This not only gives you variety, but a peace of mind that your items
@@ -323,7 +330,7 @@ export const featureList = [
         desc: (
           <p>
             When we say "authentic," we mean it.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               These are retailers like Target, Walmart, Best Buy, etc
             </span>
             . No nonsense like eBay or AliExpress. As an added perk, lots of the
@@ -335,7 +342,7 @@ export const featureList = [
         title: "Can I use these sources for ungating?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               You surely cannot. These are{" "}
               <span className="italic">retailers</span>, not distributors.
             </span>{" "}
@@ -371,7 +378,7 @@ export const featureList = [
       <p>
         History tends to repeat itself, and you deserve the full picture. That’s
         why{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Leadgeek includes 30 & 90 day metrics and current competition for the
           buy box
         </span>
@@ -388,7 +395,7 @@ export const featureList = [
             which creates the price gaps you can take advantage of. A downside
             to that is if the product dips too low in price or slows down to
             much in velocity, you're stuck with something that loses you money.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               Verifying the product history is well worth your while, and
               Leadgeek makes it easy to check out
             </span>
@@ -400,11 +407,13 @@ export const featureList = [
         title: "Will I get the buy box?",
         desc: (
           <p>
-            <span className="emphasized-text">Quite likely, yes!</span> That's
-            why the current competition is included. For example: if the buy box
-            is controlled by a merchant fulfilled seller, swoop in and grab
-            those sales out from under them. Does an FBA seller have the buy
-            box? Match and share, there's plenty to go around.
+            <span className={classes.emphasizedFeature}>
+              Quite likely, yes!
+            </span>{" "}
+            That's why the current competition is included. For example: if the
+            buy box is controlled by a merchant fulfilled seller, swoop in and
+            grab those sales out from under them. Does an FBA seller have the
+            buy box? Match and share, there's plenty to go around.
           </p>
         ),
       },
@@ -412,7 +421,7 @@ export const featureList = [
         title: "How are these values tracked?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               With a really cool tool called Keepa
             </span>
             . Keepa tracks the history of a product for days, weeks, months, or
@@ -433,7 +442,7 @@ export const featureList = [
         Leadgeek is all about predictability, especially when it comes to the
         quantity of leads you can expect. Gone are the days of striking out when
         sourcing -{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           the Feed delivers a guaranteed number of leads each and every weekday
         </span>
         . Just scroll through to find the ones that best fit your selling style.
@@ -444,7 +453,7 @@ export const featureList = [
         title: "How many leads will I get?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               Leadgeek guarantees 10 products for you to check out every day,
               Monday-Friday
             </span>
@@ -459,7 +468,7 @@ export const featureList = [
         desc: (
           <p>
             Indeed we do, but it's not like we're throwing a rager on Earth Day.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               We take time to rest on Thanksgiving and Christmas
             </span>
             .
@@ -471,7 +480,7 @@ export const featureList = [
         desc: (
           <p>
             Heck yeah.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               There's around 20-40% extra leads more often than not
             </span>
             . Being gated in a product can be annoying, so some bonus leads are
@@ -489,7 +498,7 @@ export const featureList = [
     desc: (
       <p>
         Leadgeek takes seller exclusivity seriously, which is why{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           there are no-budge caps on the number of people allowed on a list at
           any given time
         </span>
@@ -503,7 +512,7 @@ export const featureList = [
         desc: (
           <p>
             We have no crystal ball to see into the future, but{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               reducing the list exposure helps prevent that from happening
             </span>
             . 30 people on the Grow plan and 15 on the Pro plan is one of the
@@ -515,7 +524,7 @@ export const featureList = [
         title: "What's a no-budge cap?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               The limit of members is the limit of members
             </span>
             . One of the things you're paying for is exclusivity and by darn
@@ -528,7 +537,7 @@ export const featureList = [
         desc: (
           <p>
             Heck yeah.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               There's around 20-40% extra leads more often than not
             </span>
             . Being gated in a product can be annoying, so some bonus leads are
@@ -546,7 +555,7 @@ export const featureList = [
     desc: (
       <p>
         Leadgeek helps you make sourcing a system by releasing{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           fresh leads every morning by 9 am CST
         </span>
         . These guaranteed arbitrage opportunties let you be the first one to
@@ -561,7 +570,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -574,7 +583,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -590,7 +599,7 @@ export const featureList = [
     title: "Professional experience in your corner",
     desc: (
       <p>
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           The Leadgeek sourcing process includes review by a seasoned US Amazon
           seller
         </span>{" "}
@@ -604,12 +613,12 @@ export const featureList = [
         desc: (
           <p>
             Yup!{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               An experienced Amazon seller checks the products
             </span>
             . What's more - while almost every other sourcing list uses
             internationally-based virtual assistants to find new leads,{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               the vast majority of our sourcing is done manually by a US Amazon
               seller themselves
             </span>
@@ -621,7 +630,7 @@ export const featureList = [
         title: "Which part is evaluated by the experienced seller?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               Everything about each and every lead
             </span>
             . They verify that the products are a match to the best of their
@@ -636,7 +645,7 @@ export const featureList = [
         desc: (
           <p>
             Probably not.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               It's recommended that you review each product before you add it to
               your inventory
             </span>
@@ -656,8 +665,10 @@ export const featureList = [
         The Feed shows the most important product metrics by design, making it
         easy to see the leads you’re interested in and breeze through the ones
         you aren’t.{" "}
-        <span className="emphasized-text">You won’t be bombarded by info</span>,
-        but instead feel informed to make the right decisions for you.
+        <span className={classes.emphasizedFeature}>
+          You won’t be bombarded by info
+        </span>
+        , but instead feel informed to make the right decisions for you.
       </p>
     ),
     faqs: [
@@ -665,7 +676,7 @@ export const featureList = [
         title: "What kind of stuff is included in the Feed?",
         desc: (
           <p>
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               The title, category, image, competition, profit, ROI, BSR, monthly
               sales, and date for each lead
             </span>
@@ -678,7 +689,7 @@ export const featureList = [
         desc: (
           <p>
             Very easily.{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               Just click on the row for each item and you'll see a detailed view
               instantly
             </span>
@@ -699,7 +710,7 @@ export const featureList = [
         leads. But there’s tons of information to sort through and so many
         metrics to analyze that it all feels overwhelming. Not with Leadgeek.
         Leadgeek allows you to combine simple filters in a powerful way to{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           only show the information that’s important to you
         </span>
         .
@@ -711,12 +722,13 @@ export const featureList = [
         desc: (
           <p>
             There are 7 min/max value filters:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               profit, buy price, sell price, ROI, BSR, monthly sales, and weight
             </span>
             . Additionally, only see products that are in a particular{" "}
-            <span className="emphasized-text">category</span> or that were
-            posted on a certain <span className="emphasized-text">date</span>.
+            <span className={classes.emphasizedFeature}>category</span> or that
+            were posted on a certain{" "}
+            <span className={classes.emphasizedFeature}>date</span>.
           </p>
         ),
       },
@@ -724,8 +736,10 @@ export const featureList = [
         title: "Only 9 filters? That doesn't seem like a lot...",
         desc: (
           <p>
-            <span className="emphasized-text">That's kinda the point</span>.
-            Anything more than that and you're probably over-complicating
+            <span className={classes.emphasizedFeature}>
+              That's kinda the point
+            </span>
+            . Anything more than that and you're probably over-complicating
             things. The products have already been checked out - the filters are
             there to bubble what you want up to the top. When combined, the
             filters are quite powerful.
@@ -742,7 +756,7 @@ export const featureList = [
     desc: (
       <p>
         Don't miss a beat with the detailed view for each item.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           See primary metrics, historical data, and helpful notes all in one
           place.
         </span>{" "}
@@ -758,7 +772,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -771,7 +785,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -787,7 +801,7 @@ export const featureList = [
     title: `Stay organized with "Like" & "Archive"`,
     desc: (
       <p>
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Things are right where you expect to find them
         </span>{" "}
         with Leadgeek's simple but powerful like and archive system. Like the
@@ -803,7 +817,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -816,7 +830,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -833,7 +847,7 @@ export const featureList = [
     desc: (
       <p>
         Built-in tools allow you to{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           easily estimate product prep fees
         </span>
         . Whether you need to calculate a fee based on quantity or weight,
@@ -848,7 +862,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -861,7 +875,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -877,7 +891,7 @@ export const featureList = [
     title: "Leave your mark",
     desc: (
       <p>
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Personalize each product by writing a comment that only you can see
         </span>
         . Interested in a few variations or plan to re-order an item? Write it
@@ -892,7 +906,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -905,7 +919,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -922,7 +936,7 @@ export const featureList = [
     desc: (
       <p>
         Looking for something in particular?{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Powerful search lets you find what you’re interested in
         </span>{" "}
         without hunting through thousands of leads. Input keywords to search by
@@ -937,7 +951,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -950,7 +964,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -968,7 +982,7 @@ export const featureList = [
       <p>
         Finding the right variation is great, but it takes valuable time to
         determine which ones are worth selling. With Leadgeek,{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           variation research is done for you
         </span>
         . These suggestions and seller-to-seller notes give you clarity on how
@@ -983,7 +997,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -996,7 +1010,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -1014,7 +1028,7 @@ export const featureList = [
       <p>
         Are you ever curious if there’s a promo or some discount you’re missing
         before you order? Now you don’t have to wonder.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           Any available promotional code, free shipping minimum, and cashback is
           automatically noted
         </span>
@@ -1029,7 +1043,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -1042,7 +1056,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -1060,7 +1074,7 @@ export const featureList = [
       <p>
         Leadgeek puts you in control - and that means that you should be able to
         download your product leads if you want to.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           It's easy to export the items you want into a spreadsheet
         </span>{" "}
         to do whatever you want with.
@@ -1074,7 +1088,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -1087,7 +1101,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.
@@ -1105,7 +1119,7 @@ export const featureList = [
       <p>
         Navigating Amazon's marketplace can be a challenge, but there's no need
         to go through it alone.{" "}
-        <span className="emphasized-text">
+        <span className={classes.emphasizedFeature}>
           LeadGeek members get dedicated guidance from an experienced arbitrage
           seller
         </span>{" "}
@@ -1121,7 +1135,7 @@ export const featureList = [
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
             e-commerce, so{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it makes sense for there to be a predictable time to make selling
               a part of your schedule
             </span>
@@ -1134,7 +1148,7 @@ export const featureList = [
         desc: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
-            <span className="emphasized-text">
+            <span className={classes.emphasizedFeature}>
               it's early enough to get first pick
             </span>
             , but not too late that all you want to do is stay in bed.

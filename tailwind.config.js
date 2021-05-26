@@ -68,6 +68,7 @@ module.exports = {
         6: "6px",
         8: "8px",
       },
+      rotate: ["active", "group-hover"],
     },
   },
   variants: {

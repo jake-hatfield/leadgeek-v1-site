@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
             </h2>
             <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
               There are lots of{" "}
-              <Link to={"/features/lead-criteria/"} className="secondary-link">
+              <Link to={"/features/criteria/"} className="secondary-link">
                 rigorous criteria
               </Link>{" "}
               every lead must meet in order for it to ever see the light of day.
@@ -130,7 +130,7 @@ const IndexPage = ({ data }) => {
               className="w-full rounded-lg shadow-lg"
             />
           </div>
-          <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
+          <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
             Our{" "}
             <Link to={"/features/filters/"} className="secondary-link">
               intuitive filters
@@ -147,7 +147,7 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 bg-gray-100 md:text-center text-gray-900">
+      <section className="py-12 bg-gray-100 md:text-center text-gray-900 bg-splatter">
         <header>
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Develop an eye for details.
@@ -158,7 +158,7 @@ const IndexPage = ({ data }) => {
               className="w-full rounded-lg shadow-lg"
             />
           </div>
-          <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
+          <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
             When you find a lead you’re interested in, it takes no time at all
             to see if it should make the cut.{" "}
             <span className="emphasized-text">
@@ -170,13 +170,13 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 container text-gray-900">
-        <div className="md:flex md:items-center md:justify-between">
-          <header className="w-1/2">
+      <section className="py-12 text-gray-900 bg-splatter">
+        <div className="md:flex md:items-center md:justify-between container">
+          <header className="w-1/2 bg-white">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Keep track of the good stuff.
             </h2>
-            <p className="mt-4 lg:mt-6 h4 text-gray-700">
+            <p className="mt-4 lg:mt-6 h4 text-gray-700 ">
               <span className="emphasized-text">
                 Adding more leads to your collection is simple
               </span>
@@ -203,6 +203,12 @@ const IndexPage = ({ data }) => {
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "signup" },
         ]}
+        desc={
+          <p>
+            See the 20 features that make Leadgeek rad or join today.{" "}
+            <span className="italic">Or</span> both!
+          </p>
+        }
       />
     </Layout>
   )

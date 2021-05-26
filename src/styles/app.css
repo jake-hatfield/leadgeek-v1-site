@@ -47,9 +47,17 @@ body {
   @apply relative z-0 overflow-hidden !important;
 }
 
-.invert {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.stack-sm {
+  box-shadow: 10px 10px 0 -1px #fff, 10px 10px 0 #243b53;
+}
+
+.shadow-dark {
+  box-shadow: 3px 3px 0 #243b53;
+}
+
+.svg-shadow-purple {
+  -webkit-filter: drop-shadow(3px 3px 0 #c4c6ff);
+  filter: drop-shadow(3px 3px 0 #c4c6ff);
 }
 
 .card {

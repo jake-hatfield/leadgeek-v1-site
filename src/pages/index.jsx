@@ -8,11 +8,13 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
+import Pyramid from "assets/svgs/pyramid-inverted.svg"
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "assets/svgs/arrow-short-fat.svg"
 import WigglyLong from "assets/svgs/arrow-wiggly-solid-solid.svg"
 import TurnyFat from "assets/svgs/turny-fat.svg"
 import RetroSun from "assets/svgs/retro-sun-4.svg"
+import Quote from "assets/svgs/quote.svg"
 
 const IndexPage = ({ data }) => {
   return (
@@ -33,8 +35,9 @@ const IndexPage = ({ data }) => {
             title={`Online arbitrage sourcing at its best.`}
             desc={
               <p>
-                Turn "I don't know what to sell" into "I have too much to buy":
+                Turn "I don't know what to sell" into "I have too much to buy:"
                 <span className="font-bold">
+                  {" "}
                   Receive a daily list of the best online arbitrage products to
                   flip via Amazon FBA
                 </span>
@@ -46,10 +49,15 @@ const IndexPage = ({ data }) => {
             linkOneText={`See how it works`}
             linkTwo={`signup`}
             linkTwoText={`Already know you want to join? Sign up now.`}
+            svgOne={
+              <div className="absolute bottom-0 left-0 transform -translate-y-12 text-gray-300 rotate-12">
+                <Pyramid className="h-8" />
+              </div>
+            }
           />
         </HeaderWrapper>
       </section>
-      {/* testimonial section */}
+      {/* hero image section */}
 
       <div className="relative lg:mt-64 xl:mt-72 py-12 bg-gray-100">
         <div className="text-gray-100">
@@ -60,14 +68,14 @@ const IndexPage = ({ data }) => {
             <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
               <div className="relative">
                 <LongArrow className="h-40 transform rotate-180 text-gray-500" />
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 -rotate-6">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-6 hover:-rotate-3">
                   Filter leads on the fly
                 </p>
               </div>
             </div>
             <div className="hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56">
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 rotate-3">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 rotate-3 hover:-rotate-2">
                   Wicked-fast search by keyword
                 </p>
                 <ShortArrow className="absolute right-0 h-12 transform text-gray-500 translate-x-6 -rotate-12" />
@@ -75,7 +83,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className="hidden lg:block absolute top-0 left-0 z-20 transform -translate-y-36 translate-x-64">
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 -rotate-3">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-3 hover:rotate-3">
                   Save leads you like or archive them for later
                 </p>
                 <WigglyLong className="absolute left-0 h-40 transform text-gray-500 -translate-y-2 translate-x-16 rotate-45" />
@@ -83,7 +91,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className="hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16">
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center w-48 rotate-3">
+                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 rotate-3 hover:-rotate-3">
                   See all important metrics at a glance
                 </p>
                 <TurnyFat className="absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16" />
@@ -122,28 +130,31 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </div>
-      <section className="relative py-12 container md:text-center overflow-hidden bg-splatter">
-        <header>
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
-            People who love clarity, love Leadgeek.
-          </h2>
-          <h3 className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
-            Entrepreneurs, side-hustlers, newbies, and pro sellers all{" "}
-            <span className={classes.emphasizedText}>
-              join Leadgeek to fundamentally improve the arbitrage sourcing
-              process
-            </span>
-            .
-          </h3>
-        </header>
-        <div className="mt-8">
-          {testimonialsFull.map(testimonial => (
-            <TestimonialFull
-              text={testimonial.text}
-              source={testimonial.source}
-              desc={testimonial.desc}
-            />
-          ))}
+      <section className="relative py-12 md:text-center overflow-hidden bg-splatter">
+        <div className="container">
+          <header>
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
+              People who love clarity, love Leadgeek.
+            </h2>
+            <h3 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
+              Entrepreneurs, side-hustlers, newbies, and pro sellers all{" "}
+              <span className={classes.emphasizedText}>
+                join Leadgeek to fundamentally improve the arbitrage sourcing
+                process
+              </span>
+              .
+            </h3>
+          </header>
+          <div className="mt-8">
+            {testimonialsFull.map(testimonial => (
+              <TestimonialFull
+                text={testimonial.text}
+                source={testimonial.source}
+                desc={testimonial.desc}
+                rotate={testimonial.rotate}
+              />
+            ))}
+          </div>
         </div>
       </section>
       <CTA
@@ -152,6 +163,12 @@ const IndexPage = ({ data }) => {
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "signup" },
         ]}
+        desc={
+          <p>
+            See how the thing works, 20 features that make Leadgeek rad, or join
+            today.
+          </p>
+        }
       />
     </Layout>
   )
@@ -182,10 +199,18 @@ const TestimonialShort = ({ text }) => {
   )
 }
 
-const TestimonialFull = ({ text, source, desc }) => {
+const TestimonialFull = ({ text, source, desc, rotate }) => {
   return (
-    <article className="mt-8">
-      <blockquote className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800">
+    <article
+      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
+    >
+      <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
+        <Quote className="h-8 w-8 text-gray-500 transform rotate-180 -translate-y-4 -translate-x-6" />
+      </div>
+      <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
+        <Quote className="h-8 w-8 text-gray-500 transform  -translate-y-2 translate-x-6" />
+      </div>
+      <blockquote className="md:text-lg lg:text-xl leading-relaxed text-gray-800">
         {text}
       </blockquote>
       <div className="mt-4 all-center">
@@ -207,17 +232,18 @@ const testimonialsFull = [
   {
     text: (
       <p>
-        "The very first thing I bought as an FBA seller was from your list about
+        The very first thing I bought as an FBA seller was from your list about
         33 days ago. I've sold 5 units of that item so far today (it's only 3:50
         pm CST) and{" "}
         <span className={classes.emphasizedText}>it's my first $100 day</span>.
         Profit margin is roughly 25% and ROI more than 2x that. Thank you for
-        helping me get started."
+        helping me get started.
       </p>
     ),
     source: "Charles",
     desc: "New",
     image: null,
+    rotate: "rotate-1",
   },
   {
     text: (
@@ -233,6 +259,7 @@ const testimonialsFull = [
     source: "Brian",
     desc: "Intermediate",
     image: null,
+    rotate: "-rotate-1",
   },
   {
     text: (
@@ -249,6 +276,7 @@ const testimonialsFull = [
     source: "William",
     desc: "Intermediate",
     image: null,
+    rotate: "rotate-2",
   },
   {
     text: (
@@ -263,6 +291,7 @@ const testimonialsFull = [
     source: "Kevin",
     desc: "New",
     image: null,
+    rotate: "",
   },
   {
     text: (
@@ -278,6 +307,7 @@ const testimonialsFull = [
     source: "Yucheng",
     desc: "International",
     image: null,
+    rotate: "rotate-2",
   },
   {
     text: (
@@ -292,6 +322,7 @@ const testimonialsFull = [
     source: "Austin",
     desc: "New",
     image: null,
+    rotate: "-rotate-1",
   },
   {
     text: (
@@ -307,6 +338,7 @@ const testimonialsFull = [
     source: "Frank",
     desc: "International",
     image: null,
+    rotate: "rotate-1",
   },
   {
     text: (
@@ -321,6 +353,7 @@ const testimonialsFull = [
     source: "Dimitry",
     desc: "Intermediate",
     image: null,
+    rotate: "-rotate-1",
   },
 ]
 
