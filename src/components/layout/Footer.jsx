@@ -11,7 +11,7 @@ const Footer = () => {
         { title: "How it works", link: "how-it-works" },
         { title: "Tour features", link: "features" },
         { title: "Pricing", link: "pricing" },
-        { title: "Demo", link: "demo" },
+        // { title: "Demo", link: "demo" },
       ],
     },
 

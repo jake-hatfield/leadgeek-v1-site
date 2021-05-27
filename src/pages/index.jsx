@@ -8,12 +8,9 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
-import Pyramid from "assets/svgs/pyramid-inverted.svg"
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "assets/svgs/arrow-short-fat.svg"
-import WigglyLong from "assets/svgs/arrow-wiggly-solid-solid.svg"
 import TurnyFat from "assets/svgs/turny-fat.svg"
-import RetroSun from "assets/svgs/retro-sun-4.svg"
 import Quote from "assets/svgs/quote.svg"
 
 const IndexPage = ({ data }) => {
@@ -81,7 +78,8 @@ const IndexPage = ({ data }) => {
                 <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-3 hover:rotate-3">
                   Save leads you like or archive them for later
                 </p>
-                <WigglyLong className="absolute left-0 h-40 transform text-gray-500 -translate-y-2 translate-x-16 rotate-45" />
+                <LongArrow className="absolute left-0 h-36 transform text-gray-500 -translate-y-2 translate-x-16 rotate-45" />
+                <LongArrow className="absolute left-0 h-36 transform text-gray-500 translate-x-2 rotate-45" />
               </div>
             </div>
             <div className="hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16">

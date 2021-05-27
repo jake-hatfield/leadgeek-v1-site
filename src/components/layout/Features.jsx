@@ -196,7 +196,7 @@ export const featureList = [
     },
     link: "criteria",
     nextLink: "calculations",
-    prevLink: "member-support",
+    prevLink: "support",
   },
   {
     title: "Laser-accurate number crunching",
@@ -244,8 +244,8 @@ export const featureList = [
             (the charge for selling on Amazon's marketplace),{" "}
             <span className={classes.emphasizedFeature}>
               the FBA fulfillment fee
-            </span>
-            (for not handling shipping or customer service yourself), and{" "}
+            </span>{" "}
+            (for handling shipping and customer service), and{" "}
             <span className={classes.emphasizedFeature}>
               the estimated storage cost
             </span>{" "}
@@ -533,19 +533,6 @@ export const featureList = [
         rotate: "rotate-1 hover:rotate-2",
       },
       {
-        title: "Do you take any holidays off?",
-        desc: (
-          <p>
-            Indeed we do, but it's not like we're throwing a rager on Earth Day.{" "}
-            <span className={classes.emphasizedFeature}>
-              We take time to rest on Thanksgiving and Christmas
-            </span>
-            .
-          </p>
-        ),
-        rotate: "-rotate-2 hover:rotate-1",
-      },
-      {
         title: "Are there ever any extra leads?",
         desc: (
           <p>
@@ -558,6 +545,19 @@ export const featureList = [
           </p>
         ),
         rotate: "-rotate-1 hover:-rotate-3",
+      },
+      {
+        title: "Do you take any holidays off?",
+        desc: (
+          <p>
+            Indeed we do, but it's not like we're throwing a rager on Earth Day.{" "}
+            <span className={classes.emphasizedFeature}>
+              We take time to rest on Thanksgiving and Christmas
+            </span>
+            .
+          </p>
+        ),
+        rotate: "-rotate-2 hover:rotate-1",
       },
     ],
     testimonialOne: {
@@ -929,7 +929,7 @@ export const featureList = [
         rotate: "rotate-2 hover:rotate-3",
       },
       {
-        title: "Why have both liked and archived lists?",
+        title: "Why include both liked and archived lists?",
         desc: (
           <p>
             It's helpful to like the leads you're interested in double-checking
@@ -981,21 +981,19 @@ export const featureList = [
         rotate: "rotate-2 hover:rotate-0",
       },
       {
-        title: `What do you mean by "prep?"`,
+        title: "How can I account for prep expenses?",
         desc: (
           <p>
+            If your prep is cost calculated by the unit (eg. $0.90) or by weight
+            (eg. $0.20/lb),{" "}
             <span className={classes.emphasizedFeature}>
-              When you order from a retailer, they'll ship products that need to
-              be prepared before sending them into Amazon's warehouse
+              it's as simple as plugging in the value
             </span>
-            . Sometimes things need to be put in bags or packaged more securely.
-            In every case, each unit should be labeled with a special label
-            called an FNSKU. It's like a fingerprint from your Seller account so
-            it doesn't get mixed up with other products at the fulfillment
-            center.
+            . Everything else is taken care of for you, and you'll see adjusted
+            prices for every product in the Feed.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-0",
+        rotate: "-rotate-2 hover:-rotate-1",
       },
     ],
     link: "prep",
@@ -1015,36 +1013,24 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "What kinds of comments would be helpful?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            Anything to make life easier for your future self. Many people like
+            to include the{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              variations they're interested in, what price to shoot for the buy
+              box, or stock reminders down the line
             </span>
             .
           </p>
         ),
-      },
-      {
-        title: "Why 9 am CST?",
-        desc: (
-          <p>
-            Think of it like the opening of a farmer's market:{" "}
-            <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
-            </span>
-            , but not too late that all you want to do is stay in bed.
-          </p>
-        ),
+        rotate: "-rotate-3 hover:-rotate-2",
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "comments",
+    nextLink: "search",
+    prevLink: "prep",
   },
   {
     title: "Keyword central",
@@ -1060,36 +1046,37 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "What values can I search for?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            There are 4 search parameters:{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              title, retailer source, brand, and ASIN
             </span>
             .
           </p>
         ),
+        rotate: "rotate-2 hover:-rotate-1",
       },
       {
-        title: "Why 9 am CST?",
+        title: "Ugh! I don't remember the product's name exactly...",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
+            Don't worry! The search bar has what's called "fuzzy" search,
+            meaning{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              you don't have to input a query word-for-word
             </span>
-            , but not too late that all you want to do is stay in bed.
+            . It's smart enough to pick up what you're looking for without
+            including non-matches.
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-0",
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "search",
+    nextLink: "seller-notes",
+    prevLink: "comments",
   },
   {
     title: "Variation suggestions out of the box",
@@ -1133,9 +1120,9 @@ export const featureList = [
         ),
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "seller-notes",
+    nextLink: "promo-notes",
+    prevLink: "search",
   },
   {
     title: "Your very own research assistant",
@@ -1179,9 +1166,9 @@ export const featureList = [
         ),
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "promo-notes",
+    nextLink: "lead-ownership",
+    prevLink: "seller-notes",
   },
   {
     title: "Leads belong to you",
@@ -1224,9 +1211,9 @@ export const featureList = [
         ),
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "lead-ownership",
+    nextLink: "support",
+    prevLink: "promo-notes",
   },
   {
     title: "A+ member support",
@@ -1271,9 +1258,9 @@ export const featureList = [
         ),
       },
     ],
-    link: "predictability",
-    nextLink: "seller-insight",
-    prevLink: "exclusivity",
+    link: "support",
+    nextLink: "criteria",
+    prevLink: "lead-ownership",
   },
 ]
 
