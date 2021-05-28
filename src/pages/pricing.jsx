@@ -10,6 +10,8 @@ import Faq from "../components/Faq"
 
 import Loopy from "assets/svgs/loopy-dashed.svg"
 import Bullet from "assets/svgs/bullet.svg"
+import DividerTop from "assets/svgs/section-divider-top.svg"
+import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
 const PricingPage = () => {
   return (
@@ -47,9 +49,10 @@ const PricingPage = () => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative mt-8 pt-32 pb-12 px-8 text-gray-900 bg-gray-900">
-        <Loopy className="absolute top-0 right-1/2 h-40 text-purple-500 transform -translate-y-80" />
-        <div className="max-w-7xl mx-auto">
+      <section className="relative text-gray-900 bg-gray-900">
+        <DividerTop className="divider-top text-gray-900" />
+        <Loopy className="absolute top-0 right-1/2 h-32 lg:h-40 text-purple-500 transform -translate-y-80" />
+        <div className="mt-8 pt-20 lg:pt-32 pb-12 px-8 max-w-7xl mx-auto">
           <div className="-mt-64 lg:mt-0 flex flex-col lg:flex-row items-center lg:justify-center">
             {pricingCards.map((plan, i) => (
               <article
@@ -97,7 +100,7 @@ const PricingPage = () => {
                     </div>
                   </div>
                 </header>
-                <div className="mt-2 lg:mt-4 leading-relaxed">
+                <div className="mt-4 leading-relaxed">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="mt-2 flex">
                       <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
@@ -110,7 +113,8 @@ const PricingPage = () => {
           </div>
         </div>
       </section>
-      <section id="features" className="py-12 text-white bg-gray-900">
+      <section id="features" className="relative py-12 text-white bg-gray-900">
+        <DividerBottom className="divider-bottom text-gray-900" />
         <header className="container text-center">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold inter">
             Compare plans

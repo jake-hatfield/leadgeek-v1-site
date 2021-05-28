@@ -8,12 +8,16 @@ const PricingTable = ({ tableHeader, featureRows, id }) => {
     <table id={id} className="mt-12 container table-auto">
       <thead>
         <tr className="leading-tight text-purple-300 inter text-base">
-          <th className="border-0 xl:text-lg font-medium flex justify-start">
+          <th className="border-0 text-xs xl:text-lg font-medium text-left md:text-center md:flex md:justify-start">
             {tableHeader}
           </th>
-          <th className="border-0 text-center xl:text-lg font-medium">Grow</th>
-          <th className="border-0 text-center xl:text-lg font-medium">Pro</th>
-          <th className="border-0 text-center xl:text-lg font-medium">
+          <th className="border-0 text-center text-xs xl:text-lg font-medium">
+            Grow
+          </th>
+          <th className="border-0 text-center text-xs xl:text-lg font-medium">
+            Pro
+          </th>
+          <th className="border-0 text-center text-xs xl:text-lg font-medium">
             Grow+Pro Bundle
           </th>
         </tr>

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Faq = ({ growPlanSeats, proPlanSeats }) => {
+const Faq = () => {
   const questions = [
     {
       title: "How is Leadgeek different from other sourcing lists?",
@@ -38,7 +38,7 @@ const Faq = ({ growPlanSeats, proPlanSeats }) => {
           <br />
           If being restricted in too many products is a concern, we recommend
           the{" "}
-          <Link to={`/signup/grow`} className="secondary-link">
+          <Link to={`/signup/grow/`} className="secondary-link">
             Grow Plan
           </Link>{" "}
           since we prioritize more ungated products on that list.
@@ -179,7 +179,7 @@ const Faq = ({ growPlanSeats, proPlanSeats }) => {
   ]
   return (
     <section className="text-gray-900 bg-splatter">
-      <div className="py-12 container">
+      <div className="py-12 lg:py-20 container">
         <header className="relative">
           <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
             Frequently asked questions

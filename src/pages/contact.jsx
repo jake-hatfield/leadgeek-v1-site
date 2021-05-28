@@ -2,9 +2,9 @@ import React from "react"
 
 import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
+import FormField from "components/utils/FormField"
 
 import ArrowRight from "../assets/svgs/arrow-right.svg"
-import Dotted from "../assets/svgs/dotted.svg"
 
 const ContactPage = () => {
   return (
@@ -13,59 +13,37 @@ const ContactPage = () => {
         title="Contact Us"
         description="Have a question for our team? We're real people on the other end of the screen, so reach out with any questions or concerns."
       />
-      <div className="pb-8 md:pb-16 lg:pb-24 lg:min-h-screen lg:w-2/5 absolute top-0 negative-z bg-gray-100" />
-      <section className="my-8 md:my-12 lg:mt-24 lg:mb-16 relative text-gray-900">
+      <section className="py-8 md:py-12 relative text-gray-900 bg-splatter">
         <div className="container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
             <div className="relative mx-auto lg:mx-0 max-w-md">
-              <div className="absolute top-0 left-0 z-0 transform -translate-x-12 -translate-y-8">
-                <Dotted className="hidden lg:inline-block w-24 text-gray-200" />
-              </div>
               <div className="relative z-10">
-                <h1 className="text-4xl lg:text-6xl font-black text-gray-900">
+                <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter text-shadow">
                   Get in touch.
                 </h1>
-                <h2 className="mt-4 lg:mt-8 text-base md:text-lg leading-relaxed text-gray-700">
-                  Reach out with any questions about our services and our
-                  friendly team will respond as soon as possible.
-                </h2>
-
-                <div className="mt-10 text-gray-700">
-                  <h3 className="text-xl font-semibold">Our hours:</h3>
-                  <p className="mt-3 text-gray-500 font-semibold">
-                    Monday-Friday 8am-5pm CST
-                  </p>
-                  <h3 className="mt-6 text-xl font-semibold">
-                    Interested in joining?
+                <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
+                  Have a question? Shoot! We're sharp as a tack but please don't
+                  sit on us.
+                </p>
+                <div className="mt-2 bg-white">
+                  <h3 className="text-lg xl:text-xl inter font-black">
+                    Support hours:
                   </h3>
-                  <address className="mt-2 text-gray-500 not-italic">
-                    <div className="mt-3 flex items-end">
+                  <p className="mt-2 text-base text-gray-700">
+                    Monday-Friday 9am-5pm CST
+                  </p>
+                  <div className="mt-4 lg:mt-6">
+                    <h3 className="text-lg xl:text-xl inter font-black">
+                      Already a Leadgeek member?
+                    </h3>
+                    <div className="mt-2 inline-block text-base text-gray-700">
                       <a
-                        href="mailto:hello@Leadgeek.io"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
+                        href="mailto:support@leadgeek.io"
+                        className="secondary-link"
                       >
-                        <span>he</span>
-                        <span>llo@l</span>
-                        <span>eadgeek.io</span>
-                        <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+                        Contact support
                       </a>
                     </div>
-                  </address>
-                </div>
-                <div className="mt-6 text-gray-700">
-                  <h3 className="text-xl font-semibold">
-                    Already a Leadgeek member?
-                  </h3>
-                  <div className="mt-2 inline-block text-gray-500">
-                    <a
-                      href="mailto:support@Leadgeek.io"
-                      className="flex whitespace-no-wrap items-center link text-gray-500 group hover:text-gray-700 focus:outline-none focus:shadow-outline"
-                    >
-                      Contact support
-                      <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
-                    </a>
                   </div>
                 </div>
               </div>
@@ -78,54 +56,37 @@ const ContactPage = () => {
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               action="/contact-success"
-              className="mx-auto lg:mx-0 w-full max-w-md rounded-md shadow-md bg-white"
+              className="mx-auto lg:mx-0 w-full max-w-md rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1 hover:rotate-0"
             >
               <input type="hidden" name="form-name" value="contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
-                <label
-                  htmlFor="name"
-                  className="block text-xs font-medium text-gray-700"
-                >
-                  Full name
-                  <input
-                    type="name"
-                    name="name"
-                    label="Name"
-                    required
-                    className="mt-1 py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
-                  />
-                </label>
-                <label
-                  htmlFor="email"
-                  className="mt-6 block text-xs font-medium text-gray-700"
-                >
-                  Email
-                  <input
-                    type="email"
-                    name="email"
-                    label="Email"
-                    required
-                    className="mt-1 py-1 px-2 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-xs placeholder-gray-300 focus:outline-none focus:shadow-outline"
-                  />
-                </label>
-                <label className="mt-6 block text-xs font-medium text-gray-700">
+                <FormField
+                  label="Name"
+                  type="name"
+                  placeholder="Dave Saunders"
+                  required={true}
+                />
+                <FormField
+                  label="Email"
+                  type="email"
+                  placeholder="dsaunders@gmail.com"
+                  required={true}
+                />
+                <label className="pt-4 form-field-label">
                   Message
                   <textarea
                     name="message"
+                    placeholder="So...what is arbitrage?"
                     required
-                    className="mt-2 resize-none pt-2 px-2 pb-16 md:pr-12 w-full rounded-md bg-transparent text-sm border border-gray-200 shadow-sm focus:outline-none focus:shadow-outline"
+                    className="mt-2 resize-none pt-2 px-2 pb-16 w-full rounded-md text-sm border border-gray-200 hover:border-purple-300 placeholder-gray-300 ring-purple"
                   />
                 </label>
               </div>
-              <div className="mt-1 bg-gray-100">
-                <div className="p-4 md:px-8">
-                  <button
-                    type="submit"
-                    className="py-4 px-5 block md:inline-block relative rounded-md bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-colors duration-200"
-                  >
-                    Send message
-                  </button>
-                </div>
+
+              <div className="p-4 md:px-8">
+                <button type="submit" className="cta-link inter">
+                  Send message
+                </button>
               </div>
             </form>
           </article>

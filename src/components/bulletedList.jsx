@@ -12,7 +12,7 @@ const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
         {items.map((item, i) => (
           <li
             key={i}
-            className="flex items-center"
+            className="mt-2 lg:mt-0 flex items-center"
             data-sal="slide-up"
             data-sal-duration="2000"
             data-sal-delay={`${item.delay}00`}

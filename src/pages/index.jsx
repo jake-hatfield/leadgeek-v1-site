@@ -12,6 +12,8 @@ import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "assets/svgs/arrow-short-fat.svg"
 import TurnyFat from "assets/svgs/turny-fat.svg"
 import Quote from "assets/svgs/quote.svg"
+import DividerTop from "assets/svgs/section-divider-top.svg"
+import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
 const IndexPage = ({ data }) => {
   return (
@@ -22,8 +24,8 @@ const IndexPage = ({ data }) => {
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">
-        <HeaderWrapper bottomPadding={"pb-80"}>
-          <section className="all-center mb-4 container">
+        <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"}>
+          <section className="md:flex md:items-center md:justify-center mb-4 container">
             {testimonialsShort.map((testimonial, i) => (
               <TestimonialShort key={i} text={testimonial} />
             ))}
@@ -50,13 +52,15 @@ const IndexPage = ({ data }) => {
         </HeaderWrapper>
       </section>
       {/* hero image section */}
+      <div className="relative bg-gray-100">
+        <DividerTop className="divider-top text-gray-100" />
+        <DividerBottom className="divider-bottom text-gray-100" />
 
-      <div className="relative py-12 bg-gray-100">
         {/* <div className="text-gray-100">
           <div className="section-divider-top" />
         </div> */}
-        <section className="relative">
-          <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+        <section className="py-12 relative">
+          <div className="relative -mt-24 lg:-mt-40 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
             <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
               <div className="relative">
                 <LongArrow className="h-40 transform rotate-180 text-gray-500" />
@@ -94,7 +98,7 @@ const IndexPage = ({ data }) => {
               className="min-w-full rounded-lg border border-gray-200 shadow-lg"
             />
           </div>
-          <header className="pt-12 md:text-center text-gray-700">
+          <header className="pt-12 container md:text-center text-gray-700">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
               Don't dig through information - surface it.
             </h2>
@@ -119,10 +123,10 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </div>
-      <section className="relative py-12 md:text-center overflow-hidden bg-splatter">
+      <section className="relative py-12 lg:py-20 md:text-center overflow-hidden bg-splatter">
         <div className="container">
           <header>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white">
               People who love clarity, love Leadgeek.
             </h2>
             <h3 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
@@ -134,7 +138,7 @@ const IndexPage = ({ data }) => {
               .
             </h3>
           </header>
-          <div className="mt-8">
+          <div className="mt-12 px-4">
             {testimonialsFull.map((testimonial, i) => (
               <TestimonialFull
                 key={i}
@@ -170,8 +174,8 @@ const classes = {
 
 const TestimonialShort = ({ text }) => {
   return (
-    <div className="first:ml-0 ml-8 bg-white">
-      <div className="all-center text-purple-500">
+    <div className="mt-4 md:mt-0 first:ml-0 md:ml-8 bg-white">
+      <div className="flex items-center justify-start md:justify-center text-purple-500">
         {Array.apply(null, { length: 5 }).map((s, i) => (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +188,7 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-sm text-gray-900">{`"${text}"`}</p>
+      <p className="text-sm text-gray-900 text-left md:text-center">{`"${text}"`}</p>
     </div>
   )
 }
@@ -192,7 +196,7 @@ const TestimonialShort = ({ text }) => {
 const TestimonialFull = ({ text, source, desc, rotate }) => {
   return (
     <article
-      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
+      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-12 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
     >
       <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
         <Quote className="h-8 w-8 text-gray-500 transform rotate-180 -translate-y-4 -translate-x-6" />
@@ -206,7 +210,7 @@ const TestimonialFull = ({ text, source, desc, rotate }) => {
       <div className="mt-4 all-center">
         <cite className="text-sm font-semibold inter">{source}</cite>
         <span className="mx-2 font-semibold text-purple-500">/</span>
-        <p className="font-semibold text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
+        <p className="font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
       </div>
     </article>
   )

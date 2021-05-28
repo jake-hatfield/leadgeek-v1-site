@@ -8,6 +8,9 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
+import DividerTop from "assets/svgs/section-divider-top.svg"
+import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+
 const IndexPage = ({ data }) => {
   return (
     <Layout>
@@ -31,14 +34,16 @@ const IndexPage = ({ data }) => {
           />
         </HeaderWrapper>
       </section>
-      <section className="lg:mt-32 pt-40 pb-12 bg-gray-900 md:text-center text-white">
-        <div className="relative -mt-72 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+      <section className="relative mt-12 lg:mt-32 pt-40 pb-12 bg-gray-900 md:text-center text-white">
+        <DividerTop className="divider-top text-gray-900" />
+        <DividerBottom className="divider-bottom text-gray-900" />
+        <div className="relative -mt-56 lg:-mt-72 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
           <Img
             fluid={data.heroImage.childImageSharp.fluid}
             className="w-full rounded-lg shadow-lg"
           />
         </div>
-        <header className="mt-4 lg:mt-6">
+        <header className="mt-4 lg:mt-6 container">
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             The current baloney won't cut it.
           </h2>
@@ -73,9 +78,9 @@ const IndexPage = ({ data }) => {
           <div className="md:flex md:items-center md:justify-between">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="w-1/2 rounded-lg shadow-dark transform -rotate-2"
+              className="md:w-1/2 rounded-lg shadow-dark transform -rotate-2"
             />
-            <header className="ml-8 w-1/2 bg-white">
+            <header className="mt-8 md:mt-0 md:ml-8 md:w-1/2 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 It starts with the Feed.
               </h2>
@@ -97,8 +102,8 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="py-12 text-gray-900 bg-splatter">
         <div className="container">
-          <div className="md:flex md:items-center md:justify-between">
-            <header className="w-1/2 bg-white">
+          <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
+            <header className="mt-8 md:w-1/2 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 Great standards come standard.
               </h2>
@@ -119,17 +124,17 @@ const IndexPage = ({ data }) => {
             </header>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="ml-8 w-1/2 rounded-lg shadow-dark transform rotate-3"
+              className="md:ml-8 md:w-1/2 rounded-lg shadow-dark transform rotate-3"
             />
           </div>
         </div>
       </section>
       <section className="relative py-12 md:text-center text-gray-900 overflow-x-hidden bg-splatter">
-        <header>
+        <header className="container">
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Filters are your friend.
           </h2>
-          <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+          <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-1 md:rotate-0">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="w-full rounded-lg shadow-dark"
@@ -153,11 +158,11 @@ const IndexPage = ({ data }) => {
         </header>
       </section>
       <section className="py-12 bg-gray-100 md:text-center text-gray-900 bg-splatter">
-        <header>
+        <header className="container">
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Develop an eye for details.
           </h2>
-          <div className="relative mt-4 lg:mt-6 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
+          <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-3 md:rotate-0">
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="w-full rounded-lg shadow-dark"
@@ -176,8 +181,8 @@ const IndexPage = ({ data }) => {
         </header>
       </section>
       <section className="py-12 text-gray-900 bg-splatter">
-        <div className="md:flex md:items-center md:justify-between container">
-          <header className="w-1/2 bg-white">
+        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between container">
+          <header className="mt-8 md:w-1/2 bg-white">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Keep track of the good stuff.
             </h2>
@@ -199,7 +204,7 @@ const IndexPage = ({ data }) => {
           </header>
           <Img
             fluid={data.heroImage.childImageSharp.fluid}
-            className="ml-8 w-1/2 rounded-lg transform rotate-2 shadow-dark"
+            className="md:ml-8 md:w-1/2 rounded-lg transform rotate-2 shadow-dark"
           />
         </div>
       </section>

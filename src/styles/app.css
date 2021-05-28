@@ -91,7 +91,7 @@ body {
 }
 
 .emphasized-text {
-  @apply px-0.5 rounded-md;
+  @apply px-0.5 rounded-md text-base lg:text-lg;
   background: linear-gradient(90deg, #effcf6 0, #c6f7e2 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
@@ -108,7 +108,7 @@ body {
 }
 
 .emphasized-text-light {
-  @apply px-0.5 rounded-md text-white;
+  @apply px-0.5 rounded-md text-white text-sm lg:text-base;
   background: linear-gradient(90deg, #7069fa 0, #5455fa 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
@@ -124,60 +124,20 @@ body {
   box-decoration-break: clone;
 }
 
-.hero-top::before {
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%2363B3ED' preserveAspectRatio='none'%3E%3Cpolygon points='100,0 0,100 100,100' /%3E%3C/svg%3E");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  content: "";
-  height: 2vw;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: -1.9vw;
+.divider-top {
+  @apply absolute top-0 w-full transform -translate-y-2 md:-translate-y-6 lg:-translate-y-10;
 }
 
-.hero::before {
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%2363B3ED' preserveAspectRatio='none'%3E%3Cpolygon points='100,0 0,100 100,100' /%3E%3C/svg%3E");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  content: "";
-  height: 5vw;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: -4.9vw;
-  margin-right: 10px;
+.divider-bottom {
+  @apply absolute bottom-0 w-full transform translate-y-2 md:translate-y-6 lg:translate-y-10 z-10;
 }
-.hero::after {
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%2363B3ED' preserveAspectRatio='none'%3E%3Cpolygon points='100,0 0,100 0,0' /%3E%3C/svg%3E");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  content: "";
-  height: 5vw;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -5vw;
-  margin-right: 10px;
-}
-
-/* .section-divider-top {
-  @apply block absolute -top-8 left-0 right-0 w-full h-8;
-  background-image: url("../assets/svgs/Leadgeek-logo-light.svg");
-  background-size: auto 30px;
-  background-repeat: repeat-x;
-  background-position: top left;
-} */
 
 .form-field {
   @apply w-full mt-1 p-2 rounded-md text-sm border border-gray-200 hover:border-purple-300 placeholder-gray-300 ring-purple;
 }
 
 .form-field-label {
-  @apply block text-xs font-medium text-gray-500;
+  @apply block text-xs font-medium text-gray-700;
 }
 
 .svg-sm {

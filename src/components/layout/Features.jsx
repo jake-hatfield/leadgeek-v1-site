@@ -14,14 +14,13 @@ const FeaturePage = ({ feature }) => {
     title,
     desc,
     faqs,
-    link,
     testimonialOne,
     testimonialTwo,
     nextLink,
     prevLink,
   } = currentFeature
   return (
-    <section className="py-12 bg-splatter">
+    <section className="pb-12 bg-splatter">
       <HeaderWrapper>
         <PrimaryHeader
           title={title}
@@ -67,11 +66,11 @@ const FeaturePage = ({ feature }) => {
           ))}
         </ul>
       </section>
-      <nav className="hidden md:block fixed center-between top-1/2 inter font-bold text-purple-500">
+      <nav className="hidden md:block fixed center-between top-1/2 inter font-bold text-purple-500 z-40">
         {prevLink && (
           <Link
             to={`/features/${prevLink}/`}
-            className="ml-8 fixed left-0 all-center transition-main group"
+            className="ml-2 lg:ml-8 fixed left-0 all-center transition-main group"
           >
             <span className="cta-link">prev</span>
           </Link>
@@ -79,7 +78,7 @@ const FeaturePage = ({ feature }) => {
         {nextLink && (
           <Link
             to={`/features/${nextLink}/`}
-            className="mr-8 fixed right-0 all-center transition-main group"
+            className="mr-2 lg:mr-8 fixed right-0 all-center transition-main group"
           >
             <span className="cta-link">next</span>
           </Link>

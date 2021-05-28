@@ -24,7 +24,7 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="pt-16 pb-12 relative z-20 border-t border-gray-900">
+    <footer className="py-12 relative z-20 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
           <Logo className="w-8 lg:w-10" />
@@ -49,10 +49,10 @@ const Footer = () => {
           ))}
         </nav>
       </div>
-      <div className="mt-16 lg:mt-24 text-xs font-bold text-gray-600">
+      <div className="mt-16 text-xs font-bold text-gray-600">
         <div className="w-full" />
         <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="flex">
+          <ul className="flex justify-center md:justify-start">
             {footerLinks.map(footerLink => (
               <li
                 key={footerLink.title}
@@ -66,7 +66,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-4 md:mt-0">
+          <div className="mt-4 md:mt-0 text-center md:text-left">
             <p>
               Copyright <span className="inter">&copy;</span>{" "}
               {new Date().getFullYear()} Leadgeek

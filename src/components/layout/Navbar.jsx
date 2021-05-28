@@ -27,9 +27,9 @@ const Navbar = () => {
         </div>
       </aside> */}
       <div className="fixed w-screen bg-white shadow-sm">
-        <div className="w-full py-6 md:py-4 container center-between">
+        <div className="w-full py-4 lg:py-6 container center-between">
           {/* logo */}
-          <div className="font-bold text-2xl lg:text-2xl group">
+          <div className="font-bold text-xl lg:text-2xl group">
             <Link to={`/`} className="all-center text-gray-900 rounded-lg">
               <Logo className="w-8 lg:w-10 mr-4" />
               lead<span className="text-purple-500">geek</span>
