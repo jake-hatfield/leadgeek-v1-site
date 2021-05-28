@@ -261,6 +261,10 @@ body {
   text-decoration-color: #5455fa;
 }
 
+.row-border {
+  @apply border-b border-gray-800 !important;
+}
+
 .text-width {
   @apply md:max-w-xl lg:max-w-2xl;
 }

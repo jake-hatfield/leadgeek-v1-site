@@ -1,245 +1,203 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Squiggles from "assets/svgs/squiggles.svg"
-
 const Faq = ({ growPlanSeats, proPlanSeats }) => {
   const questions = [
     {
-      id: 1,
-      question: "How is Leadgeek different from other sourcing lists?",
-      answer: (
+      title: "How is Leadgeek different from other sourcing lists?",
+      desc: (
         <p>
-          Leadgeek is hyper-focused on high standards. We prioritize quality
-          over quantity, meaning we only put out leads that have a solid sales
-          history and meet our strict criteria. <br />
-          <br /> Our intra-list competition is significantly lower than many
-          other online arbitrage lists, which means more stable long-term prices
-          and a higher likelihood that our leads are replenishable.
-          <br />
-          <br /> Finally, our team is committed to helping you succeed by
-          providing thorough educational material and world-class support.
+          {" "}
+          <span className="emphasized-text">
+            Leadgeek is hyper-focused on{" "}
+            <Link to="/features/criteria/" className="secondary-link">
+              high standards
+            </Link>{" "}
+            for a{" "}
+            <Link to={`/features/exclusivity/`} className="secondary-link">
+              small group
+            </Link>{" "}
+            of dedicated Amazon sellers.
+          </span>
         </p>
       ),
+      rotate: "rotate-3 hover:rotate-2",
     },
     {
-      id: 2,
-      question: "Can I just buy every lead on the list?",
-      answer:
-        "While that's possible with a big enough budget, it's more realistic to pick out a few products from the list every day that best fit your selling style.",
-    },
-    {
-      id: 3,
-      question: "Are these leads going to be oversaturated?",
-      answer: (
+      title: "Are these products ungated for me?",
+      desc: (
         <p>
-          Not at all. We realize that a big shortcoming of any online arbitrage
-          list service is the competition among members, which is why we are
-          extremely strict about capping exposure to these leads. Our Grow Plan
-          is limited to {growPlanSeats} members and our Pro Plan is limited to{" "}
-          {proPlanSeats}, ensuring there's no "race to the bottom."
-          <br />
-          <br />
-          To learn more about our strategies to keep list competition low, read
-          our{" "}
-          <Link
-            to={`/features/criteria#competition`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            criteria page
-          </Link>
+          It depends on the maturity of your Seller account. Since everyone's
+          account is slightly different,{" "}
+          <span className="emphasized-text">
+            it's impossible to say until you check eligibility yourself - though
+            certainly some will be
+          </span>
           .
-        </p>
-      ),
-    },
-    {
-      id: 4,
-      question: "Are these products ungated for me?",
-      answer: (
-        <p>
-          We check our leads against a Seller Central account to determine
-          whether or not they're gated. But since everyone's account is slightly
-          different, it's impossible to say until you check eligibility
-          yourself.
           <br />
           <br />
           If being restricted in too many products is a concern, we recommend
           the{" "}
-          <Link
-            to={`/signup/grow`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
+          <Link to={`/signup/grow`} className="secondary-link">
             Grow Plan
           </Link>{" "}
-          since we prioritize slightly more ungated products on that list.
+          since we prioritize more ungated products on that list.
         </p>
       ),
+      rotate: "-rotate-2 hover:rotate-1",
     },
     {
-      id: 5,
-      question: "Are the prep or shipping to Amazon fees included?",
-      answer: (
+      title: "Are the prep or shipping to Amazon fees included?",
+      desc: (
         <p>
-          No, they aren't. We'd like to, but it's impossible to account for prep
-          and ship-to-Amazon costs since they'll be different for everyone.
-          However, we <i>do</i> account for FBA fees and a prep calculator is
-          included on every daily sheet.
+          <span className="emphasized-text">
+            No, they aren't. We'd like to, but it's impossible to account for
+            prep and ship-to-Amazon costs since they'll be different for
+            everyone
+          </span>
+          . However, we <i>do</i> account for{" "}
+          <Link to={`/features/calculations/`} className="secondary-link">
+            FBA fees
+          </Link>{" "}
+          and a have a built-in{" "}
+          <Link to={`/features/prep/`} className="secondary-link">
+            prep tool
+          </Link>
+          .
         </p>
       ),
+      rotate: "rotate-2 hover:rotate-1",
     },
     {
-      id: 6,
-      question: "Do you include listings where Amazon is a seller?",
-      answer: (
+      title: "Do you include listings where Amazon is a seller?",
+      desc: (
         <p>
-          In some cases. We don't necessarily shy away from listings with Amazon
-          as a seller if there's very strong historic proof that it's
-          advantageous for FBA sellers as well. <br />
-          <br />
-          If Amazon is the current seller and commonly sharing the Buy Box with
-          FBA sellers or if Amazon frequently goes out of stock (allowing FBA
-          sellers to take over), then we consider adding it to the list.
+          <span className="emphasized-text">In some cases, yeah</span>. We don't
+          necessarily shy away from listings with Amazon as a seller if there's
+          very strong historic proof that they're sharing the buy box and that
+          it's advantageous for FBA sellers.
         </p>
       ),
+      rotate: "rotate-1 hover:-rotate-1",
     },
     {
-      id: 7,
-      question: "Can I sell these products on any Amazon marketplace?",
-      answer: (
+      title: "Can I sell these products on any Amazon marketplace?",
+      desc: (
         <p>
-          The short answer is that they're for Amazon US only. <br /> <br />
-          Although these products are specifically meant to sell on the Amazon
-          US marketplace, you do not have to live in the US to use our service.
-          If you're not based in the US, we recommend using a domestic prepper
-          to receive your shipments and process them to Amazon. If you have any
+          The short answer is that{" "}
+          <span className="emphasized-text">
+            they're for Amazon US only, though you do not have to live in the US
+            to use our service
+          </span>
+          . If you're not based in the US, it's recommended to use a domestic
+          prepper to receive and process your shipments. If you have any
           questions about international selling,{" "}
-          <Link
-            to={`/contact`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
+          <Link to={`/contact/`} className="secondary-link">
             contact us
           </Link>
           .
         </p>
       ),
+      rotate: "-rotate-3 hover:rotate-2",
     },
     {
-      id: 8,
-      question: "Do you offer lead samples or free trials?",
-      answer:
-        "In order to protect the integrity of the leads and the exclusivity our members pay for, we do not.",
-    },
-    {
-      id: 9,
-      question: "How often will my account be charged?",
-      answer: (
+      title: "Do you offer lead samples or free trials?",
+      desc: (
         <p>
-          Your subscription will renew for another month of service on the
-          anniversary of your sign up date. <br /> <br />
-          For more information Leadgeek subscriptions, read our{" "}
-          <Link
-            to={`/terms#subscription-policy`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            terms of service
+          In order to protect the integrity of the leads and the exclusivity our
+          members pay for, <span className="emphasized-text">we do not</span>.
+        </p>
+      ),
+      rotate: "rotate-1 hover:rotate-3",
+    },
+    {
+      title: "How often will my account be charged?",
+      desc: (
+        <p>
+          <span className="emphasized-text">
+            Your subscription will renew for another month of service on the
+            anniversary of your sign up date
+          </span>
+          . For more information on Leadgeek subscriptions, read our{" "}
+          <Link to={`/terms/#subscription-policy`} className="secondary-link">
+            billing policy
           </Link>
           .
         </p>
       ),
+      rotate: "rotate-3 hover:-rotate-1",
     },
     {
-      id: 10,
-      question: "What if I decide this isn't for me?",
-      answer: (
+      title: "What if I decide this isn't for me?",
+      desc: (
         <p>
-          No worries! To cancel your subscription, you can email{" "}
-          <a
-            href="mailto:support@Leadgeek.io"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            <span>sup</span>
-            <span>port@l</span>
-            <span>eadgeek.io</span>
-          </a>{" "}
+          No worries!{" "}
+          <span className="emphasized-text">
+            To cancel your subscription, you can email{" "}
+            <a
+              href="mailto:support@Leadgeek.io"
+              target="_blank"
+              rel="noreferrer"
+              className="secondary-link"
+            >
+              <span>sup</span>
+              <span>port@l</span>
+              <span>eadgeek.io</span>
+            </a>
+          </span>{" "}
           and we'll get you sorted out. <br /> <br />{" "}
           <strong>Please note:</strong> due to the nature of the product, we do
           not issue refunds for the current month of service. However, we
           understand that special circumstances arise and honor genuine
-          requests.
-          <br /> <br /> For more information on Leadgeek's cancellation policy,
-          read our{" "}
-          <Link
-            to={`/terms#cancellation-policy`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            terms of service
-          </Link>
-          .
+          requests. See our{" "}
+          <Link to={`/terms/#cancellation-policy`} className="secondary-link">
+            cancellation policy
+          </Link>{" "}
+          for more info.
         </p>
       ),
+      rotate: "-rotate-1 hover:-rotate-2",
     },
     {
-      id: 11,
-      question: "How do I get in contact with support?",
-      answer: (
+      title: "How do I get in contact with support?",
+      desc: (
         <p>
           {" "}
-          You can contact our support team weekdays from 8am to 5pm CST via our{" "}
-          <Link
-            to={`/contact`}
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            contact page
-          </Link>{" "}
-          or by emailing{" "}
-          <a
-            href="mailto:support@Leadgeek.io"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold hover:text-gray-900 transition-colors duration-200"
-          >
-            <span>sup</span>
-            <span>port@l</span>
-            <span>eadgeek.io</span>
-          </a>
+          You can contact our support team weekdays from 9am-5pm CST{" "}
+          <span className="emphasized-text">
+            via our{" "}
+            <Link to={`/contact/`} className="secondary-link">
+              contact
+            </Link>{" "}
+            page
+          </span>
           .
         </p>
       ),
+      rotate: "-rotate-3 hover:-rotate-1",
     },
   ]
   return (
-    <section className="mt-12 lg:mt-24 bg-gray-100 text-gray-900">
-      <div className="py-12 lg:py-24 md:w-3/4 lg:w-full container">
+    <section className="text-gray-900 bg-splatter">
+      <div className="py-12 container">
         <header className="relative">
-          <h2
-            className="relative z-10 text-3xl lg:text-4xl xl:text-5xl font-bold md:text-center lg:text-left"
-            data-sal="slide-up"
-            data-sal-duration="1000"
-            data-sal-easing="ease"
-          >
+          <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
             Frequently asked questions
           </h2>
-          <div className="absolute bottom-0 left-0 z-0 transform translate-y-6 -translate-x-16">
-            <Squiggles className="hidden lg:inline-block w-64 text-purple-200" />
-          </div>
         </header>
-        <article>
-          {questions.map(question => (
-            <div
-              key={question.id}
-              className="mt-8 pt-6 lg:flex lg:flex-wrap lg:items-start border-t-2 border-gray-200"
+        <ul className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800 text-center">
+          {questions.map((question, i) => (
+            <li
+              key={i}
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
             >
-              <div className="mb-4 lg:mb-0 lg:pr-6 lg:w-1/3 md:text-lg font-medium">
-                {question.question}
-              </div>
-              <div className="lg:pl-6 lg:w-2/3 text-gray-600 text-sm md:text-base">
-                {question.answer}
-              </div>
-            </div>
+              <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
+                {question.title}
+              </h3>
+              <div className="mt-4 lg:mt-6 text-lg">{question.desc}</div>
+            </li>
           ))}
-        </article>
+        </ul>
       </div>
     </section>
   )

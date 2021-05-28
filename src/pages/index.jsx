@@ -52,9 +52,9 @@ const IndexPage = ({ data }) => {
       {/* hero image section */}
 
       <div className="relative py-12 bg-gray-100">
-        <div className="text-gray-100">
-          {/* <div className="section-divider-top" /> */}
-        </div>
+        {/* <div className="text-gray-100">
+          <div className="section-divider-top" />
+        </div> */}
         <section className="relative">
           <div className="relative -mt-40 mx-auto max-w-4xl xl:max-w-5xl px-8 all-center">
             <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
@@ -78,7 +78,6 @@ const IndexPage = ({ data }) => {
                 <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-3 hover:rotate-3">
                   Save leads you like or archive them for later
                 </p>
-                <LongArrow className="absolute left-0 h-36 transform text-gray-500 -translate-y-2 translate-x-16 rotate-45" />
                 <LongArrow className="absolute left-0 h-36 transform text-gray-500 translate-x-2 rotate-45" />
               </div>
             </div>

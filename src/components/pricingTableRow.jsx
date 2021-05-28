@@ -6,14 +6,13 @@ const PricingTableRow = ({ cells }) => {
   return (
     <tr
       v-for="row in rows"
-      className="odd:bg-white even:bg-gray-100 leading-snug"
+      className="leading-snug row-border hover:bg-gray-800 transition-main"
     >
-      {cells.map(cell => (
+      {cells.map((cell, i) => (
         <PricingTableCell
-          key={cell.cellID}
+          key={i}
           value={cell.value}
           description={cell.description}
-          tooltip={cell.tooltip}
         />
       ))}
     </tr>

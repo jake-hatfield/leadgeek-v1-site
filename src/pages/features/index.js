@@ -44,16 +44,16 @@ const index = () => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative py-12 px-8 text-gray-900 overflow-x-hidden bg-splatter">
+      <section className="relative pb-12 px-8 text-gray-900 overflow-x-hidden bg-splatter">
         <div className="max-w-7xl mx-auto">
           <ol className="mt-4 lg:mt-6 feature-list feature-grid">
             {featureList.map((feature, i) => (
               <Link key={i} to={`/features/${feature.link}/`}>
                 <li className="mt-4 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-64 transition-main shadow-dark">
                   <header className="text-gray-900 group-hover:text-white">
-                    <h3 className="text-lg xl:text-xl inter font-black">
+                    <h2 className="text-lg xl:text-xl inter font-black">
                       {feature.title}
-                    </h3>
+                    </h2>
                   </header>
                   <div className="mt-2 lg:mt-4 leading-relaxed">
                     {feature.desc}

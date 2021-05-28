@@ -59,7 +59,7 @@ const FeaturePage = ({ feature }) => {
               key={i}
               className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${faq.rotate}`}
             >
-              <h3 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
+              <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                 {faq.title}
               </h3>
               <div className="mt-4 lg:mt-6 h4">{faq.desc}</div>
@@ -1041,7 +1041,7 @@ export const featureList = [
           Powerful search lets you find what you’re interested in
         </span>{" "}
         without hunting through thousands of leads. Input keywords to search by
-        the source store, title, ASIN, and more.
+        the source store, title, or ASIN.
       </p>
     ),
     faqs: [
@@ -1093,31 +1093,34 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "What kinds of variation suggestions will I get?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            Anything to help make the buying process more clear, though it
+            usually looks like 3 main types of notes:{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              size, style, and color
             </span>
-            .
+            . These notes are combined, if applicable (eg. Size: 9, 10, 11.5 |
+            Color: Black/Red)
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-3",
       },
       {
-        title: "Why 9 am CST?",
+        title: "What is a seller-to-seller note?",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              These are notes offering help in a way that metrics maybe don't
+              show as explicitly
             </span>
-            , but not too late that all you want to do is stay in bed.
+            . Some notes might express trends on the Keepa graph, seasonality,
+            or competition expectations in the future (eg. Amazon can't stay in
+            stock, increase the buy box price.)
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-0",
       },
     ],
     link: "seller-notes",
@@ -1137,33 +1140,51 @@ export const featureList = [
         .
       </p>
     ),
+    rotate: "-rotate-1 hover:rotate-0",
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "Wait...how does cashback work?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            Sites like Rakuten or TopCashback get a small affiliate commission
+            for referring people to certain retailers like Target, Sierra,
+            ShopDisney, etc. At no cost to you, those retailers allow you to{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              save 1-10%+ when you order your inventory
+            </span>
+            . After a set amount of time, you can trade in your
+            Rakuten/TopCashback credit for gift cards to put towards more
+            inventory.
+          </p>
+        ),
+        rotate: "-rotate-2 hover:rotate-1",
+      },
+      {
+        title: "How do I take advantage of this?",
+        desc: (
+          <p>
+            With one click! If there's any discount available, you can{" "}
+            <span className={classes.emphasizedFeature}>
+              check under the notes section in the detailed view to buy from the
+              cashback link
             </span>
             .
           </p>
         ),
+        rotate: "rotate-2 hover:-rotate-1",
       },
       {
-        title: "Why 9 am CST?",
+        title: "Is the cashback calculated into the purchase price?",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              Nope, which means that you'll be able to shave 1-3% on your
+              inventory costs on average
             </span>
-            , but not too late that all you want to do is stay in bed.
+            .
           </p>
         ),
+        rotate: "-rotate-1 hover:rotate-0",
       },
     ],
     link: "promo-notes",
@@ -1184,31 +1205,30 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "What format are my leads put in?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            When exported,{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              your leads are converted to a .csv file
             </span>
-            .
+            , which is viewable in programs like Excel. It's also easy to
+            convert it to a .xlsx or other spreadsheet format.
           </p>
         ),
+        rotate: "-rotate-2 hover:rotate-2",
       },
       {
-        title: "Why 9 am CST?",
+        title: "How do I download them?",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              Just click on "Export" in the top right of the Leads panel
             </span>
-            , but not too late that all you want to do is stay in bed.
+            . After a few seconds, your list will be ready to download.
           </p>
         ),
+        rotate: "rotate-2 hover:rotate-0",
       },
     ],
     link: "lead-ownership",
@@ -1231,31 +1251,32 @@ export const featureList = [
     ),
     faqs: [
       {
-        title: "Why release leads at a scheduled time?",
+        title: "What kinds of things can you help me with?",
         desc: (
           <p>
-            Much of arbitrage is about developing a practical system and
-            nurturing habits. Many people have full-time jobs on top of doing
-            e-commerce, so{" "}
+            Our support is handled by an Amazon seller who knows their stuff.
+            They're{" "}
             <span className={classes.emphasizedFeature}>
-              it makes sense for there to be a predictable time to make selling
-              a part of your schedule
+              happy to help with anything you can throw our way
             </span>
-            .
+            . Things like ungating advice, case-by-case lead analysis, or
+            dealing with Amazon/Seller Central are common questions.
           </p>
         ),
+        rotate: "rotate-2 hover:-rotate-1",
       },
       {
-        title: "Why 9 am CST?",
+        title: "What are your hours?",
         desc: (
           <p>
-            Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
-              it's early enough to get first pick
+              9 am-5 pm CST Monday-Friday
             </span>
-            , but not too late that all you want to do is stay in bed.
+            . Additionally, the average email response time is under an hour, so
+            no sweat getting your questions answered quickly.
           </p>
         ),
+        rotate: "rotate-2 hover:-rotate-1",
       },
     ],
     link: "support",

@@ -1,6 +1,6 @@
 import React from "react"
 
-import Check from "assets/svgs/check.svg"
+import Bullet from "assets/svgs/bullet.svg"
 
 const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
   const listMaxWidth = maxWidth || `md:max-w-xl lg:max-w-3xl`
@@ -18,9 +18,7 @@ const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
             data-sal-delay={`${item.delay}00`}
             data-sal-easing="ease"
           >
-            <span className="svg-sm bg-purple-500 rounded-full flex-none">
-              <span className="rounded-full border-purple-600" />
-            </span>
+            <Bullet className="svg-sm text-teal-300" />
             <span className="ml-4">{item.title}</span>
           </li>
         ))}

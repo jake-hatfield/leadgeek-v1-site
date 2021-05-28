@@ -82,6 +82,16 @@ module.exports = {
       "group-hover",
       "focus",
     ],
+    textColor: [
+      "responsive",
+      "first",
+      "last",
+      "even",
+      "odd",
+      "hover",
+      "group-hover",
+      "focus",
+    ],
     margin: [
       "responsive",
       "first",
