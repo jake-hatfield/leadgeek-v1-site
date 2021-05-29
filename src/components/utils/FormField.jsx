@@ -5,6 +5,7 @@ const FormField = ({
   type,
   name,
   placeholder,
+  value,
   onChange,
   required,
   width,
@@ -17,6 +18,7 @@ const FormField = ({
       <input
         name={name}
         type={type}
+        value={value}
         placeholder={placeholder}
         required={required}
         onChange={onChange}

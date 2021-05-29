@@ -13,7 +13,7 @@ const ContactPage = () => {
         title="Contact Us"
         description="Have a question for our team? We're real people on the other end of the screen, so reach out with any questions or concerns."
       />
-      <section className="py-8 md:py-12 relative text-gray-900 bg-splatter">
+      <section className="py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container lg:flex lg:justify-between lg:items-center">
           <header className="lg:w-3/5">
             <div className="relative mx-auto lg:mx-0 max-w-md">

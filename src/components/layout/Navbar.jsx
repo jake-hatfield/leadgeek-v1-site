@@ -126,8 +126,8 @@ const Navbar = () => {
             </div>
             <div className="py-6 px-4 text-gray-700 font-semibold">
               <ul className="grid grid-rows gap-4">
-                {mobileLinks.map(link => (
-                  <li>
+                {mobileLinks.map((link, i) => (
+                  <li key={i}>
                     <Link to={`/${link.link}/`} className="flex items-center">
                       <span className="p-1 rounded-lg bg-gray-900 text-teal-300 shadow-tealSm">
                         <svg

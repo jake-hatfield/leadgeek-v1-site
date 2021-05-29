@@ -75,7 +75,7 @@ const signupPage = () => {
   return (
     <Layout>
       <SEO title="Sign Up" />
-      <section className="-mt-40 bg-teal-200 inset-0 text-gray-900">
+      <section className="bg-teal-200 inset-0 text-gray-900">
         <PrimaryHeader
           header={`Choose the sourcing plan that fits your needs.`}
           subHeader={`Are you just getting started selling? Have some experience under your belt? Join our premium sourcing service and start flipping arbitrage products hassle-free.`}
@@ -88,7 +88,7 @@ const signupPage = () => {
           }
         />
       </section>
-      <section className="-mt-32 container">
+      <section className="container">
         {plans.map(item => (
           <article
             key={item.id}
@@ -190,28 +190,6 @@ const signupPage = () => {
             </div>
           </article>
         ))}
-      </section>
-      <section className="-mt-40 bg-purple-600 text-white">
-        <div className="mt-12 lg:mt-16 pt-24 container">
-          <CTA
-            padding={`py-12 md:py-16 lg:py-24`}
-            bgColor="bg-purple-600"
-            textColor="text-white"
-            mainHeader="Need help with anything?"
-            subHeader="No question is too small."
-            buttonStyles="bg-white text-purple-600 hover:text-purple-800"
-            buttonText="Contact us"
-            buttonLink="contact"
-            link="demo"
-            linkText="Watch a demo"
-            linkStyles="text-purple-100 hover:text-purple-200"
-            svgOne={
-              <div className="absolute top-0 left-0 z-0 transform -translate-y-56 -translate-x-12">
-                <Dotted className="hidden lg:inline-block w-24 text-purple-400" />
-              </div>
-            }
-          />
-        </div>
       </section>
     </Layout>
   )

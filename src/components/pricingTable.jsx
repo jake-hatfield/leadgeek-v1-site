@@ -8,16 +8,16 @@ const PricingTable = ({ tableHeader, featureRows, id }) => {
     <table id={id} className="mt-12 container table-auto">
       <thead>
         <tr className="leading-tight text-purple-300 inter text-base">
-          <th className="border-0 text-xs xl:text-lg font-medium text-left md:text-center md:flex md:justify-start">
+          <th className="border-0 text-xs lg:text-base xl:text-lg font-medium text-left md:text-center md:flex md:justify-start">
             {tableHeader}
           </th>
-          <th className="border-0 text-center text-xs xl:text-lg font-medium">
+          <th className="border-0 text-center text-xs lg:text-base xl:text-lg font-medium">
             Grow
           </th>
-          <th className="border-0 text-center text-xs xl:text-lg font-medium">
+          <th className="border-0 text-center text-xs lg:text-base xl:text-lg font-medium">
             Pro
           </th>
-          <th className="border-0 text-center text-xs xl:text-lg font-medium">
+          <th className="border-0 text-center text-xs lg:text-base xl:text-lg font-medium">
             Grow+Pro Bundle
           </th>
         </tr>
@@ -32,7 +32,7 @@ const PricingTable = ({ tableHeader, featureRows, id }) => {
             <Link to={`/signup/grow/`} className="cta-link ">
               Sign up
             </Link>
-          </td>{" "}
+          </td>
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
             <Link to={`/signup/pro/`} className="cta-link">
               Sign up

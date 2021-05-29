@@ -103,9 +103,9 @@ const AboutPage = () => {
               Leadgeek is totally bootstrapped and independently owned. I'm not
               about that venture capital life because I believe that bigger
               isn't always better for the product or its customers. I don't know
-              what the future holds for the company, but I know our team will
+              what the future holds for the company, but I know Leadgeek will
               stay small, dedicated, and nimble to deliver the most rad and
-              relevant product to <i>you</i>. We succeed if you do.
+              relevant product to <i>you</i>. Leadgeek succeeds if you do.
               <br />
               <br />
               Anyway, have an amazing day!

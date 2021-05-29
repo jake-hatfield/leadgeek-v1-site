@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, navigate } from "gatsby"
 
 import { loadStripe } from "@stripe/stripe-js"
@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js"
 
 import CheckoutForm from "components/CheckoutForm"
 
-import HalfDotted from "assets/svgs/half-dotted.svg"
+import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const SignupPage = ({
   price,
@@ -16,8 +16,18 @@ const SignupPage = ({
   discount,
 }) => {
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+  })
+  const { email, firstName } = formData
   const onSuccessfulCheckout = () => {
-    navigate("/order-confirmation/")
+    navigate("/order-confirmation/", {
+      state: { email, firstName },
+    })
+    console.log(email, firstName)
   }
   return (
     <section className="text-gray-700">
@@ -25,17 +35,16 @@ const SignupPage = ({
       <div className="py-6 h-100 md:min-h-screen bg-gray-100">
         <div className="pb-8 md:pb-12 lg:pb-24 ">
           <article className="mx-auto relative container">
-            <div className="absolute top-0 right-0 z-0 transform translate-y-12 md:-translate-x-16 lg:-translate-x-48 xl:-translate-x-56">
-              <HalfDotted className="hidden md:inline-block w-48 text-gray-200" />
-            </div>
             <header className="relative z-20">
-              <Link
-                to={"/signup"}
-                className="font-bold text-xl lg:text-2xl text-gray-900"
-              >
-                <h1></h1>
-                Lead<span className="text-purple-500">Geek</span>
-              </Link>
+              <div className="font-bold text-xl lg:text-2xl group">
+                <Link
+                  to={`/signup/`}
+                  className="all-center text-gray-900 rounded-lg"
+                >
+                  <Logo className="w-8 lg:w-10 mr-4" />
+                  lead<span className="text-purple-500">geek</span>
+                </Link>
+              </div>
             </header>
             <div className="mt-10 md:mt-12 lg:mt-16">
               <div className="mx-auto h-full w-full lg:w-2/3 max-w-md">
@@ -47,6 +56,8 @@ const SignupPage = ({
                       productSelected={productSelected}
                       featureList={featureList}
                       discount={discount}
+                      formData={formData}
+                      setFormData={setFormData}
                       onSuccessfulCheckout={() => onSuccessfulCheckout()}
                     />
                   </Elements>
@@ -76,12 +87,6 @@ const SignupPage = ({
                   </p>
                 </div>
               </aside>
-              {/* <SignupFeatures
-                featureList={featureList}
-                price={price}
-                plan={plan}
-                discount={discount}
-              /> */}
             </div>
           </article>
         </div>

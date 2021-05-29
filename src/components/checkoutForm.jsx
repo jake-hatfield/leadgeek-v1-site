@@ -16,14 +16,10 @@ const CheckoutForm = ({
   featureList,
   price,
   discount,
+  formData,
+  setFormData,
   onSuccessfulCheckout,
 }) => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-  })
   const { email, password, firstName, lastName } = formData
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
@@ -433,7 +429,7 @@ const CheckoutForm = ({
             name="email"
             label="Email"
             type="email"
-            placeholder={email || "dsaunders@gmail.com"}
+            placeholder={"dsaunders@gmail.com"}
             value={email}
             onChange={onChange}
             required

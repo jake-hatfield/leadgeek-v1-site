@@ -829,13 +829,14 @@ export const featureList = [
         title: "Only 9 filters? That doesn't seem like a lot...",
         desc: (
           <p>
+            Exactly!{" "}
             <span className={classes.emphasizedFeature}>
-              That's kinda the point
+              Anything more than that and you're probably over-complicating
+              things
             </span>
-            . Anything more than that and you're probably over-complicating
-            things. The products have already been checked out - the filters are
-            there to bubble what you want up to the top. When combined, the
-            filters are quite powerful.
+            . The products have already been checked out - the filters are there
+            to bubble what you want up to the top. When combined, the filters
+            are quite powerful.
           </p>
         ),
         rotate: "-rotate-1 hover:-rotate-3",
