@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 text-gray-900 bg-splatter">
+      <section className="pt-24 pb-12 text-gray-900 bg-splatter">
         <div className="container">
           <div className="md:flex md:items-center md:justify-between">
             <Img

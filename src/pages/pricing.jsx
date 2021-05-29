@@ -32,8 +32,8 @@ const PricingPage = () => {
                 className={`hidden lg:block absolute bottom-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-12 translate-y-40 shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3`}
               >
                 <blockquote>
-                  "Would definitely... if you want to take the guess work out of
-                  sourcing for FBA" - <cite>William</cite>
+                  "Would definitely recommend if you want to take the guess work
+                  out of sourcing for FBA" - <cite>William</cite>
                 </blockquote>
               </div>
             }
@@ -113,7 +113,10 @@ const PricingPage = () => {
           </div>
         </div>
       </section>
-      <section id="features" className="relative py-12 text-white bg-gray-900">
+      <section
+        id="features"
+        className="relative pt-12 pb-16 text-white bg-gray-900"
+      >
         <DividerBottom className="divider-bottom text-gray-900" />
         <header className="container text-center">
           <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold inter">

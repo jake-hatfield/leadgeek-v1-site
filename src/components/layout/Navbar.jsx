@@ -86,25 +86,26 @@ const Navbar = () => {
       <div
         className={`${
           mobileMenuOpen ? `block` : `hidden`
-        } absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}
+        } fixed top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}
       >
         <div className="rounded-md shadow-md">
-          <div className="rounded-md shadow-xs bg-white divide-y-2 divide-gray-200">
-            <div className="pt-4 pb-6 px-3 space-y-6">
+          <div className="rounded-md shadow-dark border border-gray-900 bg-white divide-y divide-gray-900">
+            <div className="p-4 space-y-6">
               <div className="flex items-start justify-between">
-                <div>
+                <div className="font-bold text-xl lg:text-2xl group">
                   <Link
                     to={`/`}
-                    className="font-bold text-xl text-gray-900 focus:outline-none focus:shadow-outline"
+                    className="all-center text-gray-900 rounded-lg"
                   >
-                    Lead<span className="text-purple-500">Geek</span>
+                    <Logo className="w-8 lg:w-10 mr-4" />
+                    lead<span className="text-purple-500">geek</span>
                   </Link>
                 </div>
                 <div className="-mt-1 -mr-2">
                   <button
                     type="button"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-200 ease-in-out"
+                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
                   >
                     <svg
                       className="h-6 w-6"
@@ -123,27 +124,32 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="py-6 px-3 space-y-6 rounded-b-md bg-gray-100">
-              <div className="grid grid-cols-2 gap-4">
-                {moreItemsMobile.map((item, i) => (
-                  <Link
-                    key={i}
-                    to={`/${item.link}/`}
-                    className="text-base leading-6 font-medium text-gray-700 hover:text-gray-900 transition ease-in-out duration-200"
-                  >
-                    {item.title}
-                  </Link>
+            <div className="py-6 px-4 text-gray-700 font-semibold">
+              <ul className="grid grid-rows gap-4">
+                {mobileLinks.map(link => (
+                  <li>
+                    <Link to={`/${link.link}/`} className="flex items-center">
+                      <span className="p-1 rounded-lg bg-gray-900 text-teal-300 shadow-tealSm">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="svg-sm"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          {link.path}
+                        </svg>
+                      </span>
+                      <span className="ml-4">{link.title}</span>
+                    </Link>
+                  </li>
                 ))}
-              </div>
-              <div className="space-y-6">
-                <span className="w-full flex rounded-md shadow-sm">
-                  <Link
-                    to={`/signup`}
-                    className="w-full flex items-center justify-center py-3 px-4 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-purple-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-200"
-                  >
-                    Sign up
-                  </Link>
-                </span>
+              </ul>
+            </div>
+            <div className="p-4 space-y-6 rounded-b-md">
+              <div className="space-y-6 text-center">
+                <Link to={`/signup/`} className="block cta-link inter">
+                  Sign up now
+                </Link>
               </div>
             </div>
           </div>
@@ -168,66 +174,75 @@ const primaryLinks = [
   },
 ]
 
-const moreItems = [
+const mobileLinks = [
   {
+    title: "How it works",
+    link: "how-it-works",
     path: (
-      <svg
-        className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-        />
-      </svg>
+      <path
+        fillRule="evenodd"
+        d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+        clipRule="evenodd"
+      />
     ),
-    title: "About",
-    description: "Learn about our company and how we can help you",
-    link: "about",
   },
   {
+    title: "Tour features",
+    link: "features",
     path: (
-      <svg
-        className="p-2 h-10 w-10 flex-shrink-0 rounded-md bg-purple-100 text-purple-600"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-        />
-      </svg>
+      <path
+        fillRule="evenodd"
+        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+        clipRule="evenodd"
+      />
     ),
-    title: "Contact",
-    description: "Reach out to our team if you have any questions",
-
-    link: "contact",
   },
-]
-
-const moreItemsMobile = [
   {
     title: "Pricing",
     link: "pricing",
-  },
-  {
-    title: "Demo",
-    link: "demo",
+    path: (
+      <g>
+        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+        <path
+          fillRule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+          clipRule="evenodd"
+        />
+      </g>
+    ),
   },
   {
     title: "Contact",
     link: "contact",
+    path: (
+      <g>
+        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+      </g>
+    ),
   },
   {
     title: "About",
     link: "about",
+    path: (
+      <g>
+        <path
+          fillRule="evenodd"
+          d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z"
+          clipRule="evenodd"
+        />
+        <path
+          fillRule="evenodd"
+          d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z"
+          clipRule="evenodd"
+        />
+        <path
+          fillRule="evenodd"
+          d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z"
+          clipRule="evenodd"
+        />
+      </g>
+    ),
   },
 ]
 
