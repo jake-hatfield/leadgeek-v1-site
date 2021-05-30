@@ -7,8 +7,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 
-import Check from "assets/svgs/check.svg"
-import X from "assets/svgs/x.svg"
+import Bullet from "assets/svgs/bullet.svg"
 
 const CheckoutForm = ({
   plan,
@@ -24,21 +23,13 @@ const CheckoutForm = ({
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
   const [count, setCount] = useState(1)
+
   useEffect(() => {
     if (checkedTOS) {
       setCheckoutError("")
-    } else {
-      setCheckoutError("Please accept the terms of service.")
     }
   }, [checkedTOS])
-  const handleNextPage = checkedTOS => {
-    if (checkedTOS) {
-      setCount(count + 1)
-      setCheckoutError("")
-    } else {
-      setCheckoutError("Please accept the terms of service.")
-    }
-  }
+
   const [passwordShown, setPasswordShown] = useState(false)
   const togglePasswordVisibility = () => {
     setPasswordShown(passwordShown ? false : true)
@@ -53,16 +44,16 @@ const CheckoutForm = ({
     {
       title: "Account",
       numberClasses: `${
-        count < 2 ? "bg-purple-600 text-white" : "bg-gray-200 text-gray-500"
-      }`,
-      titleClasses: `${count < 2 ? "text-gray-900" : "text-gray-500"}`,
+        count < 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
+      } inter`,
+      titleClasses: `${count < 2 ? "text-gray-900" : "text-gray-500"} inter`,
     },
     {
       title: "Billing",
       numberClasses: `${
-        count === 2 ? "bg-purple-600 text-white" : "bg-gray-200 text-gray-500"
-      }`,
-      titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"}`,
+        count === 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
+      } inter`,
+      titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"} inter`,
     },
   ]
   let listSize = 4
@@ -71,18 +62,31 @@ const CheckoutForm = ({
   const [emailValidated, setEmailValidated] = useState(false)
   const [pwEmailValidated, setpwEmailValidated] = useState(false)
   const [commonPasswordValidated, setCommonPasswordValidated] = useState(false)
-
-  const checkSyles =
-    "inline-block h-4 w-4 text-teal-500 bg-teal-200 rounded-full"
-  const xStyles = "inline-block h-4 w-4 text-red-500 bg-red-200 rounded-full"
+  const notValidPassword =
+    !lengthValidated || !pwEmailValidated || !commonPasswordValidated
+  const handleNextPage = (email, notValidPassword, checkedTOS) => {
+    console.log(notValidPassword)
+    if (!email) {
+      return setCheckoutError("A valid email is required.")
+    } else if (notValidPassword) {
+      return setCheckoutError("A valid password is required.")
+    } else if (!checkedTOS) {
+      setCheckoutError("Please accept the terms of service.")
+    } else {
+      setCount(count + 1)
+      setCheckoutError("")
+    }
+  }
+  const successStyles = "inline-block h-4 w-4 text-teal-400"
+  const errorStyles = "inline-block h-4 w-4 text-red-400"
   const securityMeasureBullets = [
     {
       svg: (
         <span>
           {lengthValidated ? (
-            <Check className={checkSyles} />
+            <Bullet className={successStyles} />
           ) : (
-            <X className={xStyles} />
+            <Bullet className={errorStyles} />
           )}
         </span>
       ),
@@ -92,9 +96,9 @@ const CheckoutForm = ({
       svg: (
         <span>
           {pwEmailValidated ? (
-            <Check className={checkSyles} />
+            <Bullet className={successStyles} />
           ) : (
-            <X className={xStyles} />
+            <Bullet className={errorStyles} />
           )}
         </span>
       ),
@@ -104,22 +108,22 @@ const CheckoutForm = ({
       svg: (
         <span>
           {commonPasswordValidated ? (
-            <Check className={checkSyles} />
+            <Bullet className={successStyles} />
           ) : (
-            <X className={xStyles} />
+            <Bullet className={errorStyles} />
           )}
         </span>
       ),
       content: (
         <span>
-          Is not a member of this{" "}
+          Is not a member of this list of{" "}
           <a
             href="https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-100.txt"
             target="_blank"
             rel="noopener noreferrer"
-            className="link"
+            className="secondary-link"
           >
-            list of common passwords
+            truly terrible passwords
           </a>
         </span>
       ),
@@ -357,12 +361,6 @@ const CheckoutForm = ({
           )
           setProcessingTo(false)
         }
-      } else if (
-        subscriptionRes.msg === "You've already subscribed to this plan."
-      ) {
-        setCheckoutError(subscriptionRes.msg)
-        setProcessingTo(false)
-        return
       } else {
         setCheckoutError(subscriptionRes.msg)
         setProcessingTo(false)
@@ -376,6 +374,8 @@ const CheckoutForm = ({
       setProcessingTo(false)
     }
   }
+
+  const disabled = !emailValidated || notValidPassword || !checkedTOS
 
   const iframeStyles = {
     base: {
@@ -403,7 +403,7 @@ const CheckoutForm = ({
   return (
     <form onSubmit={onSubmit} className="mx-auto">
       <aside className="pb-3 border-b-2 border-gray-100">
-        <h3 className="mt-3 mb-5 text-xl md:text-2xl lg:text-3xl font-black text-gray-900">
+        <h3 className="mt-3 mb-5 text-xl md:text-2xl lg:text-3xl font-black text-gray-900 inter">
           {count === 1 ? "Create an account" : "Billing information"}
         </h3>
         <div className="flex">
@@ -445,14 +445,14 @@ const CheckoutForm = ({
             required
           />
           {checkoutError && (
-            <aside className="mt-4 py-2 px-4 border-l-8 border-red-400 bg-red-200 text-red-500">
+            <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 shadow-tealSm rounded-lg">
               <div className="flex">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="h-4 w-4"
+                    className="svg-sm"
                   >
                     <path
                       fillRule="evenodd"
@@ -469,7 +469,7 @@ const CheckoutForm = ({
             In order to protect your account, please make sure your password:
             <ul className="mt-4">
               {securityMeasureBullets.map((bullet, i) => (
-                <li key={i} className="mt-1 flex">
+                <li key={i} className="mt-2 flex">
                   <span>{bullet.svg}</span>
                   <span className="ml-2">{bullet.content}</span>
                 </li>
@@ -479,7 +479,7 @@ const CheckoutForm = ({
           <div className="mt-6 md:flex md:items-center">
             <label className="flex items-center text-xs">
               <input
-                className="mr-2 h-4 w-4 leading-tight form-checkbox text-purple-600"
+                className="mr-2 h-4 w-4 leading-tight rounded-sm text-purple-500 ring-purple transition-main"
                 type="checkbox"
                 checked={checkedTOS}
                 onChange={() => setCheckedTOS(!checkedTOS)}
@@ -490,7 +490,7 @@ const CheckoutForm = ({
                   href="/terms"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link"
+                  className="secondary-link"
                 >
                   terms of service
                 </a>
@@ -498,16 +498,15 @@ const CheckoutForm = ({
             </label>
           </div>
           <button
-            disabled={
-              !emailValidated ||
-              !password ||
-              !lengthValidated ||
-              !pwEmailValidated ||
-              !commonPasswordValidated
-            }
             type="button"
-            onClick={() => handleNextPage(checkedTOS)}
-            className={`mt-4 py-2 w-full rounded-md text-white font-semibold shadow-md bg-purple-600 hover:bg-purple-500 disabled:bg-gray-200 disabled:text-gray-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
+            onClick={() =>
+              handleNextPage(emailValidated, notValidPassword, checkedTOS)
+            }
+            className={`${
+              disabled
+                ? "py-3 px-4 bg-gray-200 text-gray-500 shadow-md ring-gray font-semibold text-sm rounded-lg"
+                : "cta-link"
+            } mt-4 lg:mt-6 w-full inter`}
           >
             Next step
           </button>
@@ -537,27 +536,24 @@ const CheckoutForm = ({
             />
           </div>
           <div className="mt-4">
-            <label
-              htmlFor="card-element"
-              className="block text-xs font-medium text-gray-500"
-            >
+            <label htmlFor="card-element" className="form-field-label">
               Payment information
             </label>
             <CardElement
               onChange={handleCardDetailsChange}
               id="card-element"
-              className="mt-1 p-2 rounded-md text-sm border border-gray-200 shadow-xs focus:outline-none focus:shadow-outline"
+              className="form-field"
               options={cardElementOpts}
             />
             {checkoutError && (
-              <aside className="mt-4 py-2 px-4 border-l-8 border-red-400 bg-red-200 text-red-500">
+              <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 shadow-tealSm rounded-lg">
                 <div className="flex">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="h-4 w-4"
+                      className="svg-sm"
                     >
                       <path
                         fillRule="evenodd"
@@ -610,7 +606,7 @@ const CheckoutForm = ({
               <ul>
                 {featureList.slice(0, listSize).map(feature => (
                   <li key={feature.id} className="last:mb-0 flex items-center">
-                    <Check className="h-4 w-4 text-teal-500 bg-teal-200 rounded-full" />
+                    <Bullet className="h-4 w-4 text-teal-400" />
                     <span className="ml-4">{feature.body}</span>
                   </li>
                 ))}
@@ -621,7 +617,7 @@ const CheckoutForm = ({
             disabled={count > 2}
             type="button"
             onClick={() => setCount(count - 1)}
-            className={`mt-4 text-sm text-gray-400 link rounded-md focus:outline-none focus:shadow-outline`}
+            className={`mt-4 text-sm text-gray-700 secondary-link rounded-md ring-gray`}
           >
             Back
           </button>
@@ -629,8 +625,10 @@ const CheckoutForm = ({
             disabled={isProcessing || !stripe}
             type="submit"
             className={`${
-              isProcessing ? `bg-gray-200 text-gray-500` : `bg-purple-600`
-            } mt-4 py-2 w-full rounded-md text-white font-semibold shadow-md hover:bg-purple-500 transition-colors duration-200 focus:outline-none focus:shadow-outline`}
+              isProcessing
+                ? `bg-gray-200 text-gray-500 shadow-md ring-gray cursor-wait`
+                : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
+            } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
           >
             {isProcessing ? "Processing..." : `Subscribe for $${price}`}
           </button>

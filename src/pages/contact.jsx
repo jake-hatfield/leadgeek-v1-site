@@ -4,8 +4,6 @@ import Layout from "components/layout/layout"
 import SEO from "components/utils/Seo"
 import FormField from "components/utils/FormField"
 
-import ArrowRight from "../assets/svgs/arrow-right.svg"
-
 const ContactPage = () => {
   return (
     <Layout>

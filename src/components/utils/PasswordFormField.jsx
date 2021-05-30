@@ -6,6 +6,7 @@ import EyeClosed from "assets/svgs/eye-closed.svg"
 const FormField = ({
   label,
   placeholder,
+  value,
   onChange,
   passwordShown,
   toggle,
@@ -21,6 +22,7 @@ const FormField = ({
         <input
           name="password"
           type={passwordShown ? "text" : "password"}
+          value={value}
           placeholder={placeholder}
           required={required}
           onChange={onChange}
@@ -32,9 +34,9 @@ const FormField = ({
           className="mt-3 mr-2 absolute right-0 rounded-md text-gray-400 focus:outline-none focus:shadow-outline"
         >
           {passwordShown ? (
-            <EyeClosed className="h-4" />
+            <EyeClosed className="mt-1 h-4" />
           ) : (
-            <EyeOpen className="h-4" />
+            <EyeOpen className="mt-1 h-4" />
           )}
         </button>
       </div>

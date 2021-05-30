@@ -3,11 +3,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import "styles/app.css"
 
-import Navbar from "./Navbar"
-import Footer from "./Footer"
 import CookieConsent from "react-cookie-consent"
 
-import ArrowRight from "assets/svgs/arrow-right.svg"
+import Navbar from "./Navbar"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,11 +36,10 @@ const Layout = ({ children }) => {
         optimize performance. To learn more about how we responsibly handle your
         data,{" "}
         <Link
-          to={`/privacy`}
+          to={`/privacy/`}
           className="font-semibold focus:outline-none focus:shadow-outline"
         >
           read our privacy policy
-          <ArrowRight className="ml-1 inline-block w-4" />
         </Link>
       </CookieConsent>
     </div>

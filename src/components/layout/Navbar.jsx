@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import Logo from "assets/svgs/Leadgeek-logo-light.svg"
+import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
       </aside> */}
       <div className="fixed w-screen bg-white shadow-sm">
-        <div className="w-full py-4 lg:py-6 container center-between">
+        <div className="w-full py-4 container center-between">
           {/* logo */}
           <div className="font-bold text-xl lg:text-2xl group">
             <Link to={`/`} className="all-center text-gray-900 rounded-lg">

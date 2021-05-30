@@ -7,7 +7,7 @@ import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
 
 import Check from "../assets/svgs/check.svg"
-import Dotted from "../assets/svgs/dotted.svg"
+
 import HalfDotted from "../assets/svgs/half-dotted.svg"
 
 const signupPage = () => {

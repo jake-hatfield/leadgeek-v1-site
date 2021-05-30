@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Logo from "assets/svgs/Leadgeek-logo-light.svg"
+import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const Footer = () => {
   const categories = [

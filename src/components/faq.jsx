@@ -179,7 +179,7 @@ const Faq = () => {
   ]
   return (
     <section className="text-gray-900 bg-splatter">
-      <div className="py-12 lg:py-20 container">
+      <div className="py-12 lg:pt-32 pb-12 container">
         <header className="relative">
           <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
             Frequently asked questions
