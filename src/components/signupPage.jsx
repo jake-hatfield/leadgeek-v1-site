@@ -37,7 +37,7 @@ const SignupPage = ({
           <header className="relative z-20">
             <h1 className="pt-4 lg:pt-6 font-bold text-xl lg:text-2xl group bg-white">
               <Link
-                to={`/signup/`}
+                to={`/pricing/`}
                 className="all-center text-gray-900 rounded-lg"
               >
                 <Logo className="w-8 lg:w-10 mr-4" />

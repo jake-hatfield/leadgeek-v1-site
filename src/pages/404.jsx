@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "components/layout/layout"
+import Layout from "components/layout/Layout"
 import SEO from "components/utils/Seo"
-
-import Squiggles from "../assets/svgs/squiggles.svg"
 
 const NotFoundPage = () => (
   <Layout>
@@ -31,9 +29,6 @@ const NotFoundPage = () => (
           </Link>
         </div>
       </header>
-      <div className="absolute top-0 right-0 z-0 transform translate-y-10 -translate-x-48">
-        <Squiggles className="hidden md:inline-block w-64 text-gray-200" />
-      </div>
     </section>
   </Layout>
 )

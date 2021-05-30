@@ -16,6 +16,7 @@ const FormField = ({
         {label}
       </label>
       <input
+        id={name}
         name={name}
         type={type}
         value={value}

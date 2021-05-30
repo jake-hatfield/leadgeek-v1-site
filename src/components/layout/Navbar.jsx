@@ -17,7 +17,7 @@ const Navbar = () => {
           </p>
           <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
             <Link
-              to={"/signup"}
+              to={"/pricing/"}
               className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
             >
               Sign up now
@@ -76,7 +76,7 @@ const Navbar = () => {
             >
               Log in
             </a>
-            <Link to={"/signup/"} className="no-m-first cta-link inter">
+            <Link to={"/pricing/"} className="no-m-first cta-link inter">
               Sign up
             </Link>
           </nav>
@@ -147,7 +147,7 @@ const Navbar = () => {
             </div>
             <div className="p-4 space-y-6 rounded-b-md">
               <div className="space-y-6 text-center">
-                <Link to={`/signup/`} className="block cta-link inter">
+                <Link to={`/pricing/`} className="block cta-link inter">
                   Sign up now
                 </Link>
               </div>

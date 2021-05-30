@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import HeaderWrapper from "components/HeaderWrapper"
-import PrimaryHeader from "components/primaryHeader"
+import PrimaryHeader from "components/PrimaryHeader"
 import BulletedList from "components/BulletedList"
 
 const FeaturePage = ({ feature }) => {

@@ -20,6 +20,7 @@ const FormField = ({
       </label>
       <div className="relative">
         <input
+          id={"password"}
           name="password"
           type={passwordShown ? "text" : "password"}
           value={value}
