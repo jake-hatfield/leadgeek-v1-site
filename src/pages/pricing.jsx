@@ -27,16 +27,6 @@ const PricingPage = () => {
             desc={
               "From starting out to scaling up - here are your monthly membership options."
             }
-            svgOne={
-              <div
-                className={`hidden lg:block absolute bottom-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-12 translate-y-40 shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3`}
-              >
-                <blockquote>
-                  "Would definitely recommend if you want to take the guess work
-                  out of sourcing for FBA" - <cite>William</cite>
-                </blockquote>
-              </div>
-            }
             svgTwo={
               <div
                 className={`hidden lg:block absolute bottom-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 translate-y-32 shadow-tealMd text-center transition-main w-56 rotate-3 hover:rotate-6`}

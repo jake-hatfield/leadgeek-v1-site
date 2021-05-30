@@ -8,49 +8,32 @@ const ProSignupPage = () => {
   const proPlanSeats = 15
   const featureList = [
     {
-      id: "1",
-      body: (
-        <span>
+      desc: (
+        <p>
           Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
           members
-        </span>
+        </p>
       ),
     },
     {
-      id: "2",
-      body: "50+ products per week",
+      desc: "50+ products per week",
     },
     {
-      id: "3",
-      body: (
-        <span>
-          $<strong className="font-semibold">5</strong>-30+ profit per unit
-        </span>
+      desc: (
+        <p>
+          $<strong className="font-semibold">7</strong>-50+ profit per unit
+        </p>
       ),
     },
     {
-      id: "4",
-      body: (
-        <span>
+      desc: (
+        <p>
           <strong className="font-semibold">50</strong>%+ ROI per unit
-        </span>
+        </p>
       ),
     },
-    // {
-    //   id: "5",
-    //   body: (
-    //     <span>
-    //       Training e-books & <strong>course</strong>
-    //     </span>
-    //   ),
-    // },
     {
-      id: "6",
-      body: "Email & phone support",
-    },
-    {
-      id: "7",
-      body: "Free updates",
+      desc: <p>Full software access</p>,
     },
   ]
   const plan = "Pro Plan"

@@ -34,6 +34,15 @@ const SignupPage = ({
       <div className="absolute inset-x-0 top-0 border-b-8 border-purple-500 z-10"></div>
       <div className="min-h-screen py-6 h-100 md:min-h-screen bg-splatter">
         <article className="mx-auto relative container">
+          <div
+            className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-12 translate-y-40 shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3`}
+          >
+            <blockquote>
+              "Would definitely recommend if you want to take the guess work out
+              of sourcing for FBA" - <cite>William</cite>
+            </blockquote>
+          </div>
+
           <header className="relative z-20">
             <h1 className="pt-4 lg:pt-6 font-bold text-xl lg:text-2xl group bg-white">
               <Link
@@ -62,17 +71,6 @@ const SignupPage = ({
                 </Elements>
               </div>
             </div>
-            {/* <aside className="mt-8 lg:mt-12 relative mx-auto md:max-w-xl lg:max-w-2xl py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 text-gray-900 transition-main shadow-dark transform -rotate-2 hover:rotate-0">
-                <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-                  Don't worry!
-                </h2>
-                <p className="mt-2">
-                  Your Leadgeek subscription will renew automatically, but
-                  you'll be able to adjust your subscription status at any time
-                  by contacting support. We'll happily refund you if you forget
-                  to cancel.
-                </p>
-              </aside> */}
           </div>
         </article>
       </div>

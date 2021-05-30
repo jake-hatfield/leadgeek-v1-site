@@ -56,7 +56,7 @@ const CheckoutForm = ({
       titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"} inter`,
     },
   ]
-  let listSize = 4
+  let listSize = 5
   //   password validation
   const [lengthValidated, setLengthValidated] = useState(false)
   const [emailValidated, setEmailValidated] = useState(false)
@@ -65,7 +65,6 @@ const CheckoutForm = ({
   const notValidPassword =
     !lengthValidated || !pwEmailValidated || !commonPasswordValidated
   const handleNextPage = (email, notValidPassword, checkedTOS) => {
-    console.log(notValidPassword)
     if (!email) {
       return setCheckoutError("A valid email is required.")
     } else if (notValidPassword) {
@@ -380,6 +379,7 @@ const CheckoutForm = ({
   const iframeStyles = {
     base: {
       fontSize: "15.75px",
+      fontFamily: "Space Mono",
       color: "#486581",
       iconColor: "#BCCCDC",
       "::placeholder": {
@@ -504,7 +504,7 @@ const CheckoutForm = ({
             }
             className={`${
               disabled
-                ? "py-3 px-4 bg-gray-200 text-gray-500 shadow-md ring-gray font-semibold text-sm rounded-lg"
+                ? "py-3 px-4 bg-gray-200 text-gray-500 shadow-md ring-gray font-semibold text-sm rounded-lg cursor-default"
                 : "cta-link"
             } mt-4 lg:mt-6 w-full inter`}
           >
@@ -571,8 +571,8 @@ const CheckoutForm = ({
       ) : null}
       {count === 2 && (
         <aside>
-          <div className="mt-6 text-xs md:text-sm">
-            <h2 className="mt-4 text-lg lg:text-xl text-purple-600 font-bold">
+          <div className="mt-6 text-xs md:text-sm text-gray-700">
+            <h2 className="mt-4 text-lg lg:text-xl font-bold inter text-gray-900">
               {plan}
             </h2>
             <div className="mt-2">
@@ -582,14 +582,18 @@ const CheckoutForm = ({
                     <span className="line-through font-medium text-gray-600">
                       $318
                     </span>
-                    <span className="ml-2 text-xl font-bold">${price}</span>
+                    <span className="ml-2 text-xl font-bold text-gray-900">
+                      ${price}
+                    </span>
                     <span className="inline-block text-gray-500 text-base">
                       /mo
                     </span>
                   </div>
                 ) : (
                   <div>
-                    <span className="text-2xl font-bold">${price}</span>
+                    <span className="text-2xl font-bold text-gray-900">
+                      ${price}
+                    </span>
                     <span className="inline-block text-gray-500 text-base">
                       /mo
                     </span>
@@ -602,12 +606,12 @@ const CheckoutForm = ({
                 )}
               </div>
             </div>
-            <aside className="mt-4 text-sm text-gray-500">
+            <aside className="mt-4 text-sm">
               <ul>
-                {featureList.slice(0, listSize).map(feature => (
-                  <li key={feature.id} className="last:mb-0 flex items-center">
-                    <Bullet className="h-4 w-4 text-teal-400" />
-                    <span className="ml-4">{feature.body}</span>
+                {featureList.slice(0, listSize).map((feature, i) => (
+                  <li key={i} className="mt-2 last:mb-0 flex">
+                    <Bullet className="mt-1 h-4 w-4 text-teal-400 flex-none" />
+                    <div className="ml-4">{feature.desc}</div>
                   </li>
                 ))}
               </ul>

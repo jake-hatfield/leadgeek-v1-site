@@ -11,41 +11,23 @@ const BundleSignupPage = () => {
   const proPlanSeats = 15
   const featureList = [
     {
-      id: "1",
-      body: (
-        <span>
-          Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
-          members
-        </span>
+      desc: (
+        <p>
+          <strong>100+</strong> products per week
+        </p>
       ),
     },
     {
-      id: "2",
-      body: "100+ products per week",
+      desc: <p>All Grow plan leads</p>,
     },
     {
-      id: "3",
-      body: "All Grow Plan leads",
+      desc: <p>All Pro plan leads</p>,
     },
     {
-      id: "4",
-      body: "All Pro Plan leads",
-    },
-    // {
-    //   id: "5",
-    //   body: (
-    //     <span>
-    //       Training e-books & <strong>course</strong>
-    //     </span>
-    //   ),
-    // },
-    {
-      id: "6",
-      body: "Email & phone support",
+      desc: <p>Full software access</p>,
     },
     {
-      id: "7",
-      body: "Free updates",
+      desc: <p>Early access/discounts on new tools</p>,
     },
   ]
   const plan = "Bundle"

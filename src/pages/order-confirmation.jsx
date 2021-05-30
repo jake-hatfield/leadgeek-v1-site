@@ -7,7 +7,7 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 import Bullet from "assets/svgs/bullet.svg"
 
-const OrderConfirmationPage = () => {
+const OrderConfirmationPage = ({ location }) => {
   const nextStepsList = [
     {
       description: (
@@ -19,19 +19,19 @@ const OrderConfirmationPage = () => {
     {
       description: (
         <p>
-          Have a question? Shoot us an email at{" "}
-          <a href="mailto:support@leadgeek.io" className="secondary-link">
-            support@leadgeek.io
-          </a>
-          . Our hours are 9am - 5pm CST M-F.
+          Log into the software suite and play around! Note: Your Feed might be
+          empty until the next batch of leads go live.
         </p>
       ),
     },
     {
       description: (
         <p>
-          Log into the software suite and play around! Note: Your Feed might be
-          empty until the next batch of leads go live.
+          Have a question? Shoot us an email at{" "}
+          <a href="mailto:support@leadgeek.io" className="secondary-link">
+            support@leadgeek.io
+          </a>
+          . Our hours are 9am-5pm CST M-F.
         </p>
       ),
     },
@@ -42,11 +42,13 @@ const OrderConfirmationPage = () => {
       <section className="pb-12 bg-splatter text-gray-900">
         <HeaderWrapper>
           <PrimaryHeader
-            title={"Whoop! A great big thanks for joining."}
+            title={`Whoop! A great big thanks for joining.`}
             desc={
               <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700 bg-white">
-                Your sourcing is about to get pretty stinkin' neat. You should
-                receive a confirmation email shortly, but please also check spam
+                Your sourcing is about to get pretty stinkin' neat
+                {location.firstName ? ` ${location.firstName}` : ""}. You should
+                receive a confirmation notice shortly to{" "}
+                {location.email || "your email"}, but please also check spam
                 folders if you don't see it right away.
               </p>
             }

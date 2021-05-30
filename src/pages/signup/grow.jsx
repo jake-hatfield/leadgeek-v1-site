@@ -8,45 +8,32 @@ const GrowSignupPage = () => {
   const growPlanSeats = 30
   const featureList = [
     {
-      id: "1",
-      body: (
-        <span>
+      desc: (
+        <p>
           Limited to <strong className="font-semibold">{growPlanSeats}</strong>{" "}
           members
-        </span>
+        </p>
       ),
     },
     {
-      id: "2",
-      body: "50+ products per week",
+      desc: "50+ products per week",
     },
     {
-      id: "3",
-      body: (
-        <span>
+      desc: (
+        <p>
           $<strong className="font-semibold">4</strong>-30+ profit per unit
-        </span>
+        </p>
       ),
     },
     {
-      id: "4",
-      body: (
-        <span>
+      desc: (
+        <p>
           <strong className="font-semibold">40</strong>%+ ROI per unit
-        </span>
+        </p>
       ),
     },
-    // {
-    //   id: "5",
-    //   body: "Training e-books",
-    // },
     {
-      id: "6",
-      body: "Email support",
-    },
-    {
-      id: "7",
-      body: "Free updates",
+      desc: <p>Full software access</p>,
     },
   ]
   const plan = "Grow Plan"
