@@ -5,15 +5,15 @@ import { Helmet } from "react-helmet"
 function SEO({ description, lang, meta, title }) {
   const defaultDescription =
     "Leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday."
-
   const metaDescription = description || defaultDescription
-
+  const defaultTitle = "Leadgeek"
+  const fullTitle = title || defaultTitle
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title="Leadgeek"
+      title={fullTitle}
       titleTemplate={`%s | Leadgeek`}
       meta={[
         {
@@ -22,7 +22,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: fullTitle,
         },
         {
           property: `og:description`,
@@ -38,11 +38,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: title,
+          content: fullTitle,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: fullTitle,
         },
         {
           name: `twitter:description`,
