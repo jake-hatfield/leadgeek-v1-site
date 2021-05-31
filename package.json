@@ -1,9 +1,9 @@
 {
-  "name": "Leadgeek-site",
+  "name": "Leadgeek",
   "private": true,
   "description": "The Leadgeek marketing website for online arbitrage sourcing.",
   "version": "0.1.0",
-  "author": "Jake Hatfield <jake@Leadgeek.io>",
+  "author": "Jake Hatfield <jake@leadgeek.io>",
   "dependencies": {
     "@fontsource/inter": "^4.3.0",
     "@fontsource/nanum-pen-script": "^4.3.0",

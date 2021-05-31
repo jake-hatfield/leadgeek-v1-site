@@ -1,5 +1,7 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
+
+import PropTypes from "prop-types"
 
 import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
@@ -159,6 +161,23 @@ const Navbar = () => {
   )
 }
 
+export default function MyNavbar(props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => <Navbar data={data} {...props} />}
+    />
+  )
+}
+
 const primaryLinks = [
   {
     title: "How it works",
@@ -250,4 +269,12 @@ const classes = {
   navbarLink: "no-m-first secondary-link text-gray-700 inter",
 }
 
-export default Navbar
+Navbar.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+}

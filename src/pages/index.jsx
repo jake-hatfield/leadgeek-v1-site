@@ -55,10 +55,6 @@ const IndexPage = ({ data }) => {
       <div className="relative bg-gray-100">
         <DividerTop className="divider-top text-gray-100" />
         <DividerBottom className="divider-bottom text-gray-100" />
-
-        {/* <div className="text-gray-100">
-          <div className="section-divider-top" />
-        </div> */}
         <section className="py-12 relative">
           <div className="relative -mt-24 lg:-mt-40 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
             <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">

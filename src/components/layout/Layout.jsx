@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import "styles/app.css"
 
 import CookieConsent from "react-cookie-consent"
@@ -9,19 +9,9 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <div className="relative flex flex-col h-screen justify-between">
-      <Navbar siteTitle={data.site.siteMetadata.title} />
+      <Navbar />
       <main className="mt-16 md:mt-20">{children}</main>
       <Footer />
       <CookieConsent
