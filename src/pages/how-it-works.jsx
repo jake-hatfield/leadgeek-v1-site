@@ -224,10 +224,6 @@ const IndexPage = ({ data }) => {
   )
 }
 
-const classes = {
-  emphasizedText: "py-0.5 px-1 rounded-md bg-gray-900 text-white text-lg",
-}
-
 export const query = graphql`
   query {
     heroImage: file(relativePath: { eq: "how-it-works-hero.png" }) {

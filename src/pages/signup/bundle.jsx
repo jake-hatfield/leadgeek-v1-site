@@ -8,7 +8,6 @@ const BundleSignupPage = () => {
   const proPrice = 189
   const bundlePrice = 263
   const discount = Math.trunc((1 - bundlePrice / (proPrice + growPrice)) * 100)
-  const proPlanSeats = 15
   const featureList = [
     {
       desc: (

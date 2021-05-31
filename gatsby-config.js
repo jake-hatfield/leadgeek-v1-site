@@ -81,7 +81,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/order-confirmation`, `/privacy`, `/terms`, `/404`],
+        exclude: [`/order-confirmation`, `/contact-success`, `/terms`, `/404`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
