@@ -3,10 +3,10 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 function SEO({ description, lang, meta, title }) {
-  const description =
+  const defaultDescription =
     "Leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday."
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || defaultDescription
 
   return (
     <Helmet

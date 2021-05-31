@@ -11,7 +11,7 @@ import Footer from "./Footer"
 const Layout = ({ children }) => {
   return (
     <div className="relative flex flex-col h-screen justify-between">
-      <Navbar />
+      <Navbar siteTitle={"Leadgeek"} />
       <main className="mt-16 md:mt-20">{children}</main>
       <Footer />
       <CookieConsent
