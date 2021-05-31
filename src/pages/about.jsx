@@ -11,8 +11,8 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO
-        title="About Leadgeek"
-        description="Learn about our company, why we do what we do, and how we're the perfect team to help you grow your FBA business."
+        title="About Leadgeek - Est. 2020"
+        description="Our mission: to create the best online arbitrage sourcing tools for FBA businesses of every size."
       />
       <section className="py-12 text-gray-700 bg-splatter">
         <div className="container max-w-2xl">

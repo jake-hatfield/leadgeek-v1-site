@@ -8,8 +8,8 @@ const LeadCriteriaPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Professional Experience in Your Corner | Leadgeek"
+        description="The Leadgeek sourcing process includes review by a seasoned US Amazon seller for each and every lead. That way, the only products you see are ones that have been approved by years of FBA know-how."
       />
       <Features feature={"seller-insight"} />
     </Layout>

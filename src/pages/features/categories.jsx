@@ -8,8 +8,8 @@ const CalculationPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Source Comprehensive Categories | Leadgeek"
+        description="Building a diversified inventory has never been easier. Choose items sourced from 25+ top-selling Amazon categories to create your ideal product portfolio."
       />
       <Features feature={"categories"} />
     </Layout>

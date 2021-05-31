@@ -8,8 +8,10 @@ const LeadCriteriaPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Top-Shelf Leads Come Standard | Leadgeek"
+        description="Scale your business without sacrificing quality in your inventory.
+        Carefully-tailored criteria and vetting methods allow you to get
+        professional-grade arbitrage sourcing at a fraction of the price."
       />
       <Features feature={"criteria"} />
     </Layout>

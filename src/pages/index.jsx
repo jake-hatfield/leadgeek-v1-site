@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
-        description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        title="Leadgeek: Online Arbitrage Sourcing Lists & Software"
+        description="Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">
@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
             </div>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="min-w-full rounded-lg border border-gray-200 shadow-lg"
+              className="min-w-full rounded-lg stack-sm border border-gray-900"
             />
           </div>
           <header className="pt-12 container md:text-center text-gray-700">
@@ -106,8 +106,8 @@ const IndexPage = ({ data }) => {
             </p>
             <p className="mt-4 lg:mt-6 mx-auto h4">
               <span className="font-semibold">After using Leadgeek</span>: You
-              know exactly the quality of leads to expect every day. Your
-              business has a predictable growth system in place, there are fewer
+              know exactly the list quality to expect every day. Your business
+              has a predictable growth system in place, there are fewer
               headaches, and you can focus on getting more important things
               done.
             </p>
@@ -151,7 +151,7 @@ const IndexPage = ({ data }) => {
         links={[
           { title: "See how it works", link: "how-it-works" },
           { title: "Tour the features", link: "features" },
-          { title: "Sign up now", link: "signup" },
+          { title: "Sign up now", link: "pricing" },
         ]}
         desc={
           <p>

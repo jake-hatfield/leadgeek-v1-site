@@ -3,22 +3,29 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 function SEO({ description, lang, meta, title }) {
+  const defaultTitle = "Leadgeek"
+  const fullTitle = title || defaultTitle
   const defaultDescription =
     "Leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday."
   const metaDescription = description || defaultDescription
-  const defaultTitle = "Leadgeek"
-  const fullTitle = title || defaultTitle
+  const keywords =
+    "Leadgeek, Leadgeek online arbitrage, online arbitrage sourcing list, online arbitrage software, arbitrage leads, Amazon FBA, online arbitrage tools"
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={fullTitle}
-      titleTemplate={`%s | Leadgeek`}
+      //   titleTemplate={`%s | Leadgeek`}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `keywords`,
+          content: keywords,
         },
         {
           property: `og:title`,

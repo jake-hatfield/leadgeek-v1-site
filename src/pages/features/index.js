@@ -13,8 +13,8 @@ const index = () => {
   return (
     <Layout>
       <SEO
-        title="Online Arbitrage Leads & Sourcing for Amazon Sellers"
-        description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        title={`Leadgeek Features`}
+        description={`See the top ${featureList.length} features that supercharge a great online arbitrage sourcing list into a deal-finding machine for your FBA business.`}
       />
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>

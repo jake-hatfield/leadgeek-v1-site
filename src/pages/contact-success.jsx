@@ -1,6 +1,7 @@
 import React from "react"
 
 import Layout from "components/layout/Layout"
+import SEO from "components/utils/Seo"
 
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
@@ -8,6 +9,10 @@ import PrimaryHeader from "components/PrimaryHeader"
 const ContactSuccess = () => {
   return (
     <Layout>
+      <SEO
+        title="Contact Success | Leadgeek"
+        description="Leadgeek support has received your message and will get to you as soon as possible."
+      />
       <section className="relative bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader

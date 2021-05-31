@@ -8,8 +8,8 @@ const LeadCriteriaPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Leave Your Mark | Leadgeek"
+        description="Personalize each product by writing a comment that only you can see. Interested in a few variations or plan to re-order an item? Write it down so you don’t forget!"
       />
       <Features feature={"comments"} />
     </Layout>

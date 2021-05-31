@@ -10,7 +10,10 @@ const TermsPage = () => {
   const siteLinkFull = "https://leadgeek.io"
   return (
     <Layout>
-      <SEO title="Terms of Service" />
+      <SEO
+        title="Leadgeek Terms of Service"
+        description="All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
+      />
       <section className="py-8 mdd:py-12 lg:py-16 text-gray-900 bg-splatter">
         <div className="max-w-2xl container">
           <p className="font-bold text-sm text-purple-500 bg-white">

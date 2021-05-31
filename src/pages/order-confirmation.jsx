@@ -40,7 +40,10 @@ const OrderConfirmationPage = ({ location }) => {
   ]
   return (
     <Layout>
-      <SEO title="Order Confirmation" />
+      <SEO
+        title="Order Confirmation | Leadgeek"
+        description="Your Leadgeek order has been successfully processed. Thank you for your purchase!"
+      />
       <section className="pb-12 bg-splatter text-gray-900">
         <HeaderWrapper>
           <PrimaryHeader

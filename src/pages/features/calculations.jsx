@@ -8,8 +8,8 @@ const CalculationPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Laser-Accurate Number Crunching | Leadgeek"
+        description="With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
       />
       <Features feature={"calculations"} />
     </Layout>

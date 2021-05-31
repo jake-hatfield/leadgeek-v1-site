@@ -8,8 +8,8 @@ const CalculationPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Hot Off the Press | Leadgeek"
+        description="Leadgeek helps you make sourcing a system by releasing fresh leads every morning by 9 am CST. These guaranteed arbitrage opportunties let you be the first one to order - and the first one to sell."
       />
       <Features feature={"predictability"} />
     </Layout>

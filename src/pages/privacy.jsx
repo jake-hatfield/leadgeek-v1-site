@@ -9,8 +9,13 @@ const PrivacyPolicyPage = () => {
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io"
   return (
-    <Layout title="Privacy Policy">
-      <SEO title="Privacy Policy" />
+    <Layout>
+      <SEO
+        title="Leadgeek Privacy Policy"
+        description={
+          "The privacy policy for Leadgeek website users and customers. We take your data seriously and handle it responsibly."
+        }
+      />
       <section className="py-8 md:py-12 lg:py-16 text-gray-900 bg-splatter">
         <div className="max-w-2xl container">
           <h1 className="mt-4 text-3xl font-black inter bg-white">
@@ -179,9 +184,9 @@ const PrivacyPolicyPage = () => {
                 rel="noopener noreferrer nofollow"
                 className="secondary-link"
               >
-                https://google.com/,{" "}
+                https://google.com/
               </a>
-              Microsoft:{" "}
+              , Microsoft:{" "}
               <a
                 href="https://microsoft.com/"
                 target="_blank"

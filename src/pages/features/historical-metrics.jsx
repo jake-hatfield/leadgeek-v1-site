@@ -8,8 +8,9 @@ const CalculationPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Strict Criteria"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+        title="Check Out Historical Metrics | Leadgeek"
+        description="Leadgeek includes 30 & 90 day metrics and current competition for the
+        buy box. While the price right now is important too, use historical data to see trends like seasonality, out of stock spikes, and more."
       />
       <Features feature={"historical-metrics"} />
     </Layout>

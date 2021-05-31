@@ -5,8 +5,11 @@ import Img from "gatsby-image"
 import Layout from "components/layout/Layout"
 import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
-import PrimaryHeader from "../components/PrimaryHeader"
-import CTA from "../components/Cta"
+import PrimaryHeader from "components/PrimaryHeader"
+import FeedMp4 from "assets/video/the-feed.mp4"
+import FiltersMp4 from "assets/video/filters.mp4"
+import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
+import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
@@ -15,8 +18,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Hello there"
-        description="Receive potent online arbitrage leads every weekday with Leadgeek. Start, grow, and mature your Amazon FBA business with premium arbitrage leads."
+        title="How Leadgeek Works"
+        description="Leadgeek is a fresh new take on traditional online arbitrage sourcing lists. Make finding new leads productive, organized, and clear with a simple process."
       />
       {/* hero section */}
       <section className="relative overflow-x-hidden bg-splatter">
@@ -40,7 +43,7 @@ const IndexPage = ({ data }) => {
         <div className="relative -mt-56 lg:-mt-72 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
           <Img
             fluid={data.heroImage.childImageSharp.fluid}
-            className="w-full rounded-lg shadow-lg"
+            className="p-4 pb-2 w-full rounded-lg stack-sm-dark border border-gray-900"
           />
         </div>
         <header className="mt-4 lg:mt-6 container">
@@ -76,11 +79,26 @@ const IndexPage = ({ data }) => {
       <section className="pt-24 pb-12 text-gray-900 bg-splatter">
         <div className="container">
           <div className="md:flex md:items-center md:justify-between">
-            <Img
+            {/* <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="md:w-1/2 rounded-lg shadow-dark transform -rotate-2"
-            />
-            <header className="mt-8 md:mt-0 md:ml-8 md:w-1/2 bg-white">
+            /> */}
+            {/* <Video
+              videoSrcUrl={`https://player.vimeo.com/video/461992164`}
+              classes={"-rotate-2 hover:-rotate-3"}
+            /> */}
+            <div className="video-responsive transform transition-main border border-gray-900 -rotate-3 hover:-rotate-1">
+              <video
+                autoPlay
+                loop
+                muted
+                playsinline
+                className="video-responsive-item"
+              >
+                <source src={FeedMp4} type="video/mp4" />
+              </video>
+            </div>
+            <header className="mt-8 md:mt-0 md:ml-12 md:w-1/2 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 It starts with the Feed.
               </h2>
@@ -124,7 +142,7 @@ const IndexPage = ({ data }) => {
             </header>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
-              className="md:ml-8 md:w-1/2 rounded-lg shadow-dark transform rotate-3"
+              className="md:ml-12 md:w-1/2 rounded-lg shadow-dark transform rotate-3"
             />
           </div>
         </div>
@@ -135,10 +153,17 @@ const IndexPage = ({ data }) => {
             Filters are your friend.
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-1 md:rotate-0">
-            <Img
-              fluid={data.heroImage.childImageSharp.fluid}
-              className="w-full rounded-lg shadow-dark"
-            />
+            <div className="w-full rounded-lg border border-gray-900 stack-sm">
+              <video
+                autoPlay
+                loop
+                muted
+                playsinline
+                className="w-full rounded-lg"
+              >
+                <source src={FiltersMp4} type="video/mp4" />
+              </video>
+            </div>
           </div>
           <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
             Our{" "}
@@ -182,7 +207,7 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="py-12 text-gray-900 bg-splatter">
         <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between container">
-          <header className="mt-8 md:w-1/2 bg-white">
+          <header className="mt-8 md:w-2/5 bg-white">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Keep track of the good stuff.
             </h2>
@@ -202,16 +227,23 @@ const IndexPage = ({ data }) => {
               .
             </p>
           </header>
-          <Img
-            fluid={data.heroImage.childImageSharp.fluid}
-            className="md:ml-8 md:w-1/2 rounded-lg transform rotate-2 shadow-dark"
-          />
+          <div className="ml-12 video-responsive transform transition-main border border-gray-900 rotate-3 hover:rotate-2">
+            <video
+              autoPlay
+              loop
+              muted
+              playsinline
+              className="video-responsive-item"
+            >
+              <source src={LikeArchiveMp4} type="video/mp4" />
+            </video>
+          </div>
         </div>
       </section>
       <CTA
         links={[
           { title: "Tour the features", link: "features" },
-          { title: "Sign up now", link: "signup" },
+          { title: "Sign up now", link: "pricing" },
         ]}
         desc={
           <p>

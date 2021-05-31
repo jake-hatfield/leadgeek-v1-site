@@ -443,11 +443,10 @@ export const featureList = [
         History tends to repeat itself, and you deserve the full picture. That’s
         why{" "}
         <span className={classes.emphasizedFeature}>
-          Leadgeek includes 30 & 90 day metrics and current competition for the
-          buy box
+          Leadgeek includes 30 & 90 day metrics and competition for the buy box
         </span>
-        . While the price right now is important too, use historical data to see
-        trends like seasonality, out of stock spikes, and more.
+        . Use historical data to see trends like seasonality, out of stock
+        spikes, and more.
       </p>
     ),
     faqs: [

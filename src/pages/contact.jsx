@@ -8,8 +8,8 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Us"
-        description="Have a question for our team? We're real people on the other end of the screen, so reach out with any questions or concerns."
+        title="Contact Leadgeek"
+        description="Have a question about Leadgeek? We'll do our best to get you some answers."
       />
       <section className="py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container lg:flex lg:justify-between lg:items-center">
@@ -53,9 +53,10 @@ const ContactPage = () => {
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/contact-success"
+              action="/contact-success/"
               className="mx-auto lg:mx-0 w-full max-w-md rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1 hover:rotate-0"
             >
+              <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <FormField
