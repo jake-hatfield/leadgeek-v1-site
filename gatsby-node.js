@@ -6,12 +6,12 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = ({ actions }) => {
-  const { createRedirect } = actions
-  createRedirect({
-    fromPath: "https://Leadgeek.io/features",
-    toPath: "https://Leadgeek.io/",
-    isPermanent: true,
-    force: true,
-  })
-}
+// exports.createPages = ({ actions }) => {
+//   const { createRedirect } = actions
+//   createRedirect({
+//     fromPath: "https://leadgeek.io/features",
+//     toPath: "https://leadgeek.io/",
+//     isPermanent: true,
+//     force: true,
+//   })
+// }

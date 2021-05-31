@@ -29,7 +29,9 @@ const OrderConfirmationPage = ({ location }) => {
         <p>
           Have a question? Shoot us an email at{" "}
           <a href="mailto:support@leadgeek.io" className="secondary-link">
-            support@leadgeek.io
+            <span>supp</span>
+            <span>ort@le</span>
+            <span>adgeek.io</span>
           </a>
           . Our hours are 9am-5pm CST M-F.
         </p>
@@ -48,8 +50,8 @@ const OrderConfirmationPage = ({ location }) => {
                 Your sourcing is about to get pretty stinkin' neat
                 {location.firstName ? ` ${location.firstName}` : ""}. You should
                 receive a confirmation notice shortly to{" "}
-                {location.email || "your email"}, but please also check spam
-                folders if you don't see it right away.
+                {location.email || "your email"}, but also check spam folders if
+                you don't see it right away.
               </p>
             }
             nav

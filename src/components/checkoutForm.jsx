@@ -6,6 +6,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
+import Spinner from "components/utils/Spinner"
 
 import Bullet from "assets/svgs/bullet.svg"
 
@@ -504,7 +505,7 @@ const CheckoutForm = ({
             }
             className={`${
               disabled
-                ? "py-3 px-4 bg-gray-200 text-gray-500 shadow-md ring-gray font-semibold text-sm rounded-lg cursor-default"
+                ? "py-3 px-4 bg-gray-200 text-gray-500 ring-gray font-semibold text-sm rounded-lg cursor-default"
                 : "cta-link"
             } mt-4 lg:mt-6 w-full inter`}
           >
@@ -625,17 +626,23 @@ const CheckoutForm = ({
           >
             Back
           </button>
-          <button
-            disabled={isProcessing || !stripe}
-            type="submit"
-            className={`${
-              isProcessing
-                ? `bg-gray-200 text-gray-500 shadow-md ring-gray cursor-wait`
-                : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
-            } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
-          >
-            {isProcessing ? "Processing..." : `Subscribe for $${price}`}
-          </button>
+          {isProcessing ? (
+            <div className="mt-4">
+              <Spinner spinnerWidth={"md"} noMargin={"true"} />
+            </div>
+          ) : (
+            <button
+              disabled={isProcessing || !stripe}
+              type="submit"
+              className={`${
+                isProcessing
+                  ? `bg-gray-200 text-gray-500 ring-gray cursor-not-allowed`
+                  : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
+              } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
+            >
+              Subscribe for ${price}
+            </button>
+          )}
         </aside>
       )}
       <div className="mt-4 flex items-start md:items-center justify-center text-xs text-gray-400">
