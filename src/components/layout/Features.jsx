@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, Img } from "gatsby"
 
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
@@ -18,6 +18,8 @@ const FeaturePage = ({ feature }) => {
     testimonialTwo,
     nextLink,
     prevLink,
+    video,
+    image,
   } = currentFeature
   return (
     <section className="pb-12 bg-splatter">

@@ -39,14 +39,29 @@ const IndexPage = ({ data }) => {
       </section>
       <section className="relative mt-12 lg:mt-32 pt-40 pb-12 bg-gray-900 md:text-center text-white">
         <DividerTop className="divider-top text-gray-900" />
-        <DividerBottom className="divider-bottom text-gray-900" />
-        <div className="relative -mt-56 lg:-mt-72 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
-          <Img
-            fluid={data.heroImage.childImageSharp.fluid}
-            className="p-4 pb-2 w-full rounded-lg stack-sm-dark border border-gray-900"
+        <div className="image-grid -mt-56 lg:-mt-72 px-4 lg:px-8">
+          {/* <Img
+            fluid={data.app.childImageSharp.fluid}
+            className="rounded-lg stack-sm-dark border border-gray-900"
           />
+
+          <Img
+            fluid={data.filters.childImageSharp.fluid}
+            className="w-56 rounded-lg stack-sm-dark border border-gray-900"
+          /> */}
+          {/* <Img
+            fluid={data.prep.childImageSharp.fluid}
+            className="absolute w-full rounded-lg stack-sm-dark border border-gray-900"
+          />
+          <Img
+            fluid={data.details.childImageSharp.fluid}
+            className="absolute w-full rounded-lg stack-sm-dark border border-gray-900"
+          /> */}
         </div>
-        <header className="mt-4 lg:mt-6 container">
+      </section>
+      <section className="relative pb-12 md:text-center bg-gray-900">
+        <DividerBottom className="divider-bottom text-gray-900" />
+        <header className="container">
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             The current baloney won't cut it.
           </h2>
@@ -77,8 +92,8 @@ const IndexPage = ({ data }) => {
         </header>
       </section>
       <section className="pt-24 pb-12 text-gray-900 bg-splatter">
-        <div className="container">
-          <div className="md:flex md:items-center md:justify-between">
+        <div className="px-4 lg:px-8 ">
+          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-7xl">
             {/* <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="md:w-1/2 rounded-lg shadow-dark transform -rotate-2"
@@ -87,7 +102,7 @@ const IndexPage = ({ data }) => {
               videoSrcUrl={`https://player.vimeo.com/video/461992164`}
               classes={"-rotate-2 hover:-rotate-3"}
             /> */}
-            <div className="video-responsive transform transition-main border border-gray-900 -rotate-3 hover:-rotate-1">
+            <div className="mx-auto video-responsive transform transition-main border border-gray-900 -rotate-3 hover:-rotate-1">
               <video
                 autoPlay
                 loop
@@ -98,11 +113,11 @@ const IndexPage = ({ data }) => {
                 <source src={FeedMp4} type="video/mp4" />
               </video>
             </div>
-            <header className="mt-8 md:mt-0 md:ml-12 md:w-1/2 bg-white">
+            <header className="text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 It starts with the Feed.
               </h2>
-              <p className="mt-4 lg:mt-6 h4 text-gray-700">
+              <p className="mx-auto mt-4 lg:mt-6 h4 text-gray-700">
                 The Feed is a flow of arbitrage leads curated for you. These
                 hand-picked leads are screened, scrubbed, and streamlined so you
                 only see the best of the best.{" "}
@@ -141,7 +156,7 @@ const IndexPage = ({ data }) => {
               </p>
             </header>
             <Img
-              fluid={data.heroImage.childImageSharp.fluid}
+              fluid={data.prep.childImageSharp.fluid}
               className="md:ml-12 md:w-1/2 rounded-lg shadow-dark transform rotate-3"
             />
           </div>
@@ -165,7 +180,7 @@ const IndexPage = ({ data }) => {
               </video>
             </div>
           </div>
-          <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
+          <p className="mt-4 lg:mt-8 mx-auto h4 bg-white text-gray-700">
             Our{" "}
             <Link to={"/features/filters/"} className="secondary-link">
               intuitive filters
@@ -189,7 +204,7 @@ const IndexPage = ({ data }) => {
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-3 md:rotate-0">
             <Img
-              fluid={data.heroImage.childImageSharp.fluid}
+              fluid={data.prep.childImageSharp.fluid}
               className="w-full rounded-lg shadow-dark"
             />
           </div>
@@ -205,41 +220,44 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 text-gray-900 bg-splatter">
-        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between container">
-          <header className="mt-8 md:w-2/5 bg-white">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-              Keep track of the good stuff.
-            </h2>
-            <p className="mt-4 lg:mt-6 h4 text-gray-700 ">
-              <span className="emphasized-text">
-                Adding more leads to your collection is simple
-              </span>
-              , not overwhelming. Is there an item you want to set aside for a
-              few minutes while you sort through the other leads of the day? Add
-              it to your liked leads and check back when you’re ready. If
-              there’s something you think that might be great to re-stock on in
-              the future, add it to your archived collection.{" "}
-              <span className="emphasized-text">
-                You’re in total control of organizing the leads how it best
-                works for you
-              </span>
-              .
-            </p>
-          </header>
-          <div className="ml-12 video-responsive transform transition-main border border-gray-900 rotate-3 hover:rotate-2">
-            <video
-              autoPlay
-              loop
-              muted
-              playsinline
-              className="video-responsive-item"
-            >
-              <source src={LikeArchiveMp4} type="video/mp4" />
-            </video>
+      <section className="pt-24 pb-12 text-gray-900 bg-splatter">
+        <div className="px-4 lg:px-8 ">
+          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-7xl">
+            <header className="text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+                Keep track of the good stuff.
+              </h2>
+              <p className="mt-4 lg:mt-6 h4 text-gray-700 ">
+                <span className="emphasized-text">
+                  Adding more leads to your collection is simple
+                </span>
+                , not overwhelming. Is there an item you want to set aside for a
+                few minutes while you sort through the other leads of the day?
+                Add it to your liked leads and check back when you’re ready. If
+                there’s something you think that might be great to re-stock on
+                in the future, add it to your archived collection.{" "}
+                <span className="emphasized-text">
+                  You’re in total control of organizing the leads how it best
+                  works for you
+                </span>
+                .
+              </p>
+            </header>
+            <div className="lg:ml-12 mx-auto video-responsive transform transition-main border border-gray-900 rotate-2 hover:rotate-3">
+              <video
+                autoPlay
+                loop
+                muted
+                playsinline
+                className="video-responsive-item"
+              >
+                <source src={LikeArchiveMp4} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
+
       <CTA
         links={[
           { title: "Tour the features", link: "features" },
@@ -258,7 +276,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "how-it-works-hero.png" }) {
+    app: file(relativePath: { eq: "leadgeek-app.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 4096, quality: 90) {
@@ -266,42 +284,26 @@ export const query = graphql`
         }
       }
     }
-    saveTime: file(relativePath: { eq: "save-time.png" }) {
+    filters: file(relativePath: { eq: "filters.png" }) {
       id
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 4096, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    sourceProducts: file(relativePath: { eq: "source-products.png" }) {
+    prep: file(relativePath: { eq: "prep.png" }) {
       id
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 4096, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    scaleVolume: file(relativePath: { eq: "scale-volume.png" }) {
+    details: file(relativePath: { eq: "details.png" }) {
       id
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    inspectedProducts: file(relativePath: { eq: "inspected-products.jpg" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    frankTestimonial: file(relativePath: { eq: "frank-testimonial.png" }) {
-      id
-      childImageSharp {
-        fluid {
+        fluid(maxWidth: 4096, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
