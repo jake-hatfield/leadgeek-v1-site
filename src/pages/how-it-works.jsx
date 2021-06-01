@@ -13,6 +13,7 @@ import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+import Zaggy from "assets/svgs/straight-zaggy.svg"
 
 const IndexPage = ({ data }) => {
   return (
@@ -38,30 +39,15 @@ const IndexPage = ({ data }) => {
         </HeaderWrapper>
       </section>
       <section className="relative mt-12 lg:mt-32 pt-40 pb-12 bg-gray-900 md:text-center text-white">
-        <DividerTop className="divider-top text-gray-900" />
-        <div className="image-grid -mt-56 lg:-mt-72 px-4 lg:px-8">
-          {/* <Img
-            fluid={data.app.childImageSharp.fluid}
-            className="rounded-lg stack-sm-dark border border-gray-900"
-          />
-
-          <Img
-            fluid={data.filters.childImageSharp.fluid}
-            className="w-56 rounded-lg stack-sm-dark border border-gray-900"
-          /> */}
-          {/* <Img
-            fluid={data.prep.childImageSharp.fluid}
-            className="absolute w-full rounded-lg stack-sm-dark border border-gray-900"
-          />
+        <DividerTop className="divider-top text-gray-900" />{" "}
+        <DividerBottom className="divider-bottom text-gray-900" />
+        <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">
           <Img
             fluid={data.details.childImageSharp.fluid}
-            className="absolute w-full rounded-lg stack-sm-dark border border-gray-900"
-          /> */}
+            className="min-w-full rounded-lg border border-gray-900 stack-sm"
+          />
         </div>
-      </section>
-      <section className="relative pb-12 md:text-center bg-gray-900">
-        <DividerBottom className="divider-bottom text-gray-900" />
-        <header className="container">
+        <header className="mt-12 container">
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             The current baloney won't cut it.
           </h2>
@@ -91,33 +77,26 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="pt-24 pb-12 text-gray-900 bg-splatter">
+
+      <section className="py-12 md:py-24 text-gray-900 bg-splatter">
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
-            {/* <Img
-              fluid={data.heroImage.childImageSharp.fluid}
-              className="md:w-1/2 rounded-lg shadow-dark transform -rotate-2"
-            /> */}
-            {/* <Video
-              videoSrcUrl={`https://player.vimeo.com/video/461992164`}
-              classes={"-rotate-2 hover:-rotate-3"}
-            /> */}
-            <div className="md:mx-auto max-w-5xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1">
+            <div className="md:mx-auto lg:mx-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1">
               <video
                 autoPlay
                 loop
                 muted
-                playsinline
+                playsInline
                 className="video-responsive-item"
               >
                 <source src={FeedMp4} type="video/mp4" />
               </video>
             </div>
-            <header className="md:mx-auto max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+            <header className="md:mx-auto lg:mx-0 max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 It starts with the Feed.
               </h2>
-              <p className="mx-auto mt-4 lg:mt-6 h4 text-gray-700">
+              <p className="mx-auto mt-4 lg:mt-6 h4 text-gray-900">
                 The Feed is a flow of arbitrage leads curated for you. These
                 hand-picked leads are screened, scrubbed, and streamlined so you
                 only see the best of the best.{" "}
@@ -133,14 +112,14 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="py-12 text-gray-900 bg-splatter">
-        <div className="container">
-          <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
-            <header className="mt-8 md:w-1/2 bg-white">
+      <section className="py-24 text-gray-900 bg-splatter">
+        <div className="px-4 lg:px-12 xl:px-16">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-center mx-auto max-w-3xl lg:max-w-none">
+            <header className="md:mx-auto lg:mx-0 max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 Great standards come standard.
               </h2>
-              <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-700">
+              <p className="mt-4 lg:mt-6 mx-auto h4 text-gray-900">
                 There are lots of{" "}
                 <Link to={"/features/criteria/"} className="secondary-link">
                   rigorous criteria
@@ -155,32 +134,34 @@ const IndexPage = ({ data }) => {
                 doing this repetitive process yourself.
               </p>
             </header>
-            <Img
-              fluid={data.prep.childImageSharp.fluid}
-              className="md:ml-12 md:w-1/2 rounded-lg shadow-dark transform rotate-3"
-            />
+            <div className="md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl">
+              <Img
+                fluid={data.app.childImageSharp.fluid}
+                className="w-full rounded-lg border border-gray-900 stack-sm transform hover:rotate-2 transition-main"
+              />
+            </div>
           </div>
         </div>
       </section>
-      <section className="relative py-12 md:text-center text-gray-900 overflow-x-hidden bg-splatter">
+      <section className="relative pt-12 pb-24 md:text-center text-gray-900 overflow-x-hidden bg-splatter">
         <header className="container">
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter bg-white">
             Filters are your friend.
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center">
-            <div className="w-full">
+            <div className="w-full relative z-40">
               <video
                 autoPlay
                 loop
                 muted
-                playsinline
+                playsInline
                 className="w-full rounded-lg border border-gray-900 stack-sm"
               >
                 <source src={FiltersMp4} type="video/mp4" />
               </video>
             </div>
           </div>
-          <p className="mt-4 lg:mt-8 mx-auto h4 bg-white text-gray-700">
+          <p className="mt-8 mx-auto h4 bg-white text-gray-900">
             Our{" "}
             <Link to={"/features/filters/"} className="secondary-link">
               intuitive filters
@@ -197,37 +178,41 @@ const IndexPage = ({ data }) => {
           </p>
         </header>
       </section>
-      <section className="py-12 bg-gray-100 md:text-center text-gray-900 bg-splatter">
-        <header className="container">
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-            Develop an eye for details.
-          </h2>
-          <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-3 md:rotate-0">
-            <Img
-              fluid={data.app.childImageSharp.fluid}
-              className="w-full rounded-lg shadow-dark"
-            />
+      <section className="py-12 lg:py-24 text-gray-900 bg-splatter">
+        <div className="px-4 lg:px-12 xl:px-16">
+          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
+            <div className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5 transform transition-main hover:-rotate-1">
+              <Img
+                fluid={data.detailsClose.childImageSharp.fluid}
+                className="w-full rounded-lg border border-gray-900 stack-sm"
+              />
+            </div>
+            <header className="md:mx-auto lg:mx-0 max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+              <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+                Develop an eye for details.
+              </h2>
+              <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900">
+                When you find a lead you’re interested in, it takes no time at
+                all to see if it should make the cut.{" "}
+                <span className="emphasized-text">
+                  The detailed view provides the full picture before you decide
+                  to order
+                </span>
+                . It’s easy to check out the historical price or sales rank to
+                verify that the item will reasonably sell well in the future.
+              </p>
+            </header>
           </div>
-          <p className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
-            When you find a lead you’re interested in, it takes no time at all
-            to see if it should make the cut.{" "}
-            <span className="emphasized-text">
-              The detailed view provides the full picture before you decide to
-              order
-            </span>
-            . It’s easy to check out the historical price or sales rank to
-            verify that the item will reasonably sell well in the future.
-          </p>
-        </header>
+        </div>
       </section>
       <section className="pt-24 pb-12 text-gray-900 bg-splatter">
-        <div className="px-4 lg:px-8 ">
-          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-7xl">
-            <header className="mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+        <div className="px-4 lg:px-12 xl:px-16">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-center mx-auto max-w-3xl lg:max-w-none">
+            <header className="md:mx-auto lg:mx-0 max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 Keep track of the good stuff.
               </h2>
-              <p className="mt-4 lg:mt-6 h4 text-gray-700 ">
+              <p className="mt-4 lg:mt-6 h4 text-gray-900 ">
                 <span className="emphasized-text">
                   Adding more leads to your collection is simple
                 </span>
@@ -243,12 +228,12 @@ const IndexPage = ({ data }) => {
                 .
               </p>
             </header>
-            <div className="lg:ml-12 mx-auto video-responsive transform transition-main border border-gray-900 hover:rotate-2">
+            <div className="md:mx-auto lg:ml-12 lg:mr-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:rotate-2">
               <video
                 autoPlay
                 loop
                 muted
-                playsinline
+                playsInline
                 className="video-responsive-item"
               >
                 <source src={LikeArchiveMp4} type="video/mp4" />
@@ -280,27 +265,19 @@ export const query = graphql`
       id
       childImageSharp {
         fluid(maxWidth: 4096, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    filters: file(relativePath: { eq: "filters.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    prep: file(relativePath: { eq: "prep.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
     details: file(relativePath: { eq: "details.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 4096, quality: 90) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    detailsClose: file(relativePath: { eq: "details-close.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 4096, quality: 90) {

@@ -44,7 +44,7 @@ const index = () => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative pb-12 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter">
+      <section className="relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter">
         <div className="max-w-7xl mx-auto">
           <ol className="mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left">
             {featureList.map((feature, i) => (

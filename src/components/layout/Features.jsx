@@ -5,6 +5,14 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 import BulletedList from "components/BulletedList"
 
+import CommentMp4 from "assets/video/comment.mp4"
+import FeedMp4 from "assets/video/the-feed.mp4"
+import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
+import FiltersMp4 from "assets/video/filters.mp4"
+import PrepMp4 from "assets/video/prep.mp4"
+import SearchMp4 from "assets/video/search.mp4"
+import ExportMp4 from "assets/video/export.mp4"
+
 const FeaturePage = ({ feature }) => {
   const [currentFeature, setCurrentFeature] = useState(
     featureList.filter(f => f.link === feature)[0]
@@ -16,13 +24,14 @@ const FeaturePage = ({ feature }) => {
     faqs,
     testimonialOne,
     testimonialTwo,
+    link,
     nextLink,
     prevLink,
     video,
     image,
   } = currentFeature
   return (
-    <section className="pb-12 bg-splatter">
+    <section className="pb-12 lg:pb-24 bg-splatter">
       <HeaderWrapper>
         <PrimaryHeader
           title={title}
@@ -53,12 +62,25 @@ const FeaturePage = ({ feature }) => {
           }
         />
       </HeaderWrapper>
+      {video && (
+        <div className="px-4 lg:px-8 pb-12 max-w-4xl lg:max-w-5xl mx-auto">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-lg border border-gray-900 stack-sm"
+          >
+            <source src={video} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <section className="container">
         <ul className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800 text-center">
           {faqs.map((faq, i) => (
             <li
               key={i}
-              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${faq.rotate}`}
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${faq.rotate}`}
             >
               <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                 {faq.title}
@@ -83,6 +105,14 @@ const FeaturePage = ({ feature }) => {
             className="mr-2 lg:mr-8 fixed right-0 all-center transition-main group"
           >
             <span className="cta-link">next</span>
+          </Link>
+        )}
+        {link === "support" && (
+          <Link
+            to={`/pricing/`}
+            className="mr-2 lg:mr-8 fixed right-0 all-center transition-main group"
+          >
+            <span className="cta-link">See pricing</span>
           </Link>
         )}
       </nav>
@@ -791,6 +821,7 @@ export const featureList = [
       rotate: "-rotate-2 hover:-rotate-1",
     },
     testimonialTwo: null,
+    video: FeedMp4,
     link: "feed",
     nextLink: "filters",
     prevLink: "seller-insight",
@@ -849,6 +880,7 @@ export const featureList = [
       source: "Austin",
       rotate: "rotate-2 hover:-rotate-2",
     },
+    video: FiltersMp4,
     link: "filters",
     nextLink: "details",
     prevLink: "feed",
@@ -947,6 +979,7 @@ export const featureList = [
     ],
     testimonialOne: null,
     testimonialTwo: null,
+    video: LikeArchiveMp4,
     link: "like-and-archive",
     nextLink: "prep",
     prevLink: "details",
@@ -997,6 +1030,7 @@ export const featureList = [
         rotate: "-rotate-2 hover:-rotate-1",
       },
     ],
+    video: PrepMp4,
     link: "prep",
     nextLink: "comments",
     prevLink: "like-and-archive",
@@ -1029,6 +1063,7 @@ export const featureList = [
         rotate: "-rotate-3 hover:-rotate-2",
       },
     ],
+    video: CommentMp4,
     link: "comments",
     nextLink: "search",
     prevLink: "prep",
@@ -1075,6 +1110,7 @@ export const featureList = [
         rotate: "-rotate-1 hover:rotate-0",
       },
     ],
+    video: SearchMp4,
     link: "search",
     nextLink: "seller-notes",
     prevLink: "comments",
@@ -1232,6 +1268,7 @@ export const featureList = [
         rotate: "rotate-2 hover:rotate-0",
       },
     ],
+    video: ExportMp4,
     link: "lead-ownership",
     nextLink: "support",
     prevLink: "promo-notes",

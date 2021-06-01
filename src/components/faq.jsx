@@ -179,7 +179,7 @@ const Faq = () => {
   ]
   return (
     <section className="text-gray-900 bg-splatter">
-      <div className="py-12 lg:pt-32 pb-12 container">
+      <div className="py-12 lg:pt-32 lg:pb-24 container">
         <header className="relative">
           <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
             Frequently asked questions
@@ -189,7 +189,7 @@ const Faq = () => {
           {questions.map((question, i) => (
             <li
               key={i}
-              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
             >
               <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                 {question.title}

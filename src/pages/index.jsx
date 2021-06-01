@@ -119,7 +119,7 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </div>
-      <section className="relative py-12 lg:py-20 md:text-center overflow-hidden bg-splatter">
+      <section className="relative py-12 lg:pt-28 lg:pb-12 md:text-center overflow-hidden bg-splatter">
         <div className="container">
           <header>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white">
@@ -165,7 +165,7 @@ const IndexPage = ({ data }) => {
 }
 
 const classes = {
-  emphasizedText: "emphasized-text text-lg",
+  emphasizedText: "emphasized-text lg:text-lg",
 }
 
 const TestimonialShort = ({ text }) => {
@@ -192,7 +192,7 @@ const TestimonialShort = ({ text }) => {
 const TestimonialFull = ({ text, source, desc, rotate }) => {
   return (
     <article
-      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-12 lg:mt-16 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
+      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-12 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
     >
       <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
         <Quote className="h-8 w-8 text-gray-500 transform rotate-180 -translate-y-4 -translate-x-6" />
@@ -349,46 +349,6 @@ export const query = graphql`
       id
       childImageSharp {
         fluid(maxWidth: 4096, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    saveTime: file(relativePath: { eq: "save-time.png" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    sourceProducts: file(relativePath: { eq: "source-products.png" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    scaleVolume: file(relativePath: { eq: "scale-volume.png" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    inspectedProducts: file(relativePath: { eq: "inspected-products.jpg" }) {
-      id
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    frankTestimonial: file(relativePath: { eq: "frank-testimonial.png" }) {
-      id
-      childImageSharp {
-        fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

@@ -94,14 +94,6 @@ body {
   grid-column-end: 2 max;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 0.93fr 1.35fr 1.85fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-gap: 1em;
-  margin: 4em 0 4em 0;
-}
-
 .emphasized-text {
   @apply px-0.5 rounded-md;
   background: linear-gradient(90deg, #effcf6 0, #c6f7e2 100%);
