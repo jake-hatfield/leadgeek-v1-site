@@ -92,8 +92,8 @@ const IndexPage = ({ data }) => {
         </header>
       </section>
       <section className="pt-24 pb-12 text-gray-900 bg-splatter">
-        <div className="px-4 lg:px-8 ">
-          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-7xl">
+        <div className="px-4 lg:px-12 xl:px-16">
+          <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
             {/* <Img
               fluid={data.heroImage.childImageSharp.fluid}
               className="md:w-1/2 rounded-lg shadow-dark transform -rotate-2"
@@ -102,7 +102,7 @@ const IndexPage = ({ data }) => {
               videoSrcUrl={`https://player.vimeo.com/video/461992164`}
               classes={"-rotate-2 hover:-rotate-3"}
             /> */}
-            <div className="mx-auto video-responsive transform transition-main border border-gray-900 -rotate-3 hover:-rotate-1">
+            <div className="md:mx-auto max-w-5xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1">
               <video
                 autoPlay
                 loop
@@ -113,7 +113,7 @@ const IndexPage = ({ data }) => {
                 <source src={FeedMp4} type="video/mp4" />
               </video>
             </div>
-            <header className="text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+            <header className="md:mx-auto max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 It starts with the Feed.
               </h2>
@@ -167,14 +167,14 @@ const IndexPage = ({ data }) => {
           <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
             Filters are your friend.
           </h2>
-          <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-1 md:rotate-0">
-            <div className="w-full rounded-lg border border-gray-900 stack-sm">
+          <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center">
+            <div className="w-full">
               <video
                 autoPlay
                 loop
                 muted
                 playsinline
-                className="w-full rounded-lg"
+                className="w-full rounded-lg border border-gray-900 stack-sm"
               >
                 <source src={FiltersMp4} type="video/mp4" />
               </video>
@@ -204,7 +204,7 @@ const IndexPage = ({ data }) => {
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center transform -rotate-3 md:rotate-0">
             <Img
-              fluid={data.prep.childImageSharp.fluid}
+              fluid={data.app.childImageSharp.fluid}
               className="w-full rounded-lg shadow-dark"
             />
           </div>
@@ -223,7 +223,7 @@ const IndexPage = ({ data }) => {
       <section className="pt-24 pb-12 text-gray-900 bg-splatter">
         <div className="px-4 lg:px-8 ">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-7xl">
-            <header className="text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
+            <header className="mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">
               <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
                 Keep track of the good stuff.
               </h2>
@@ -243,7 +243,7 @@ const IndexPage = ({ data }) => {
                 .
               </p>
             </header>
-            <div className="lg:ml-12 mx-auto video-responsive transform transition-main border border-gray-900 rotate-2 hover:rotate-3">
+            <div className="lg:ml-12 mx-auto video-responsive transform transition-main border border-gray-900 hover:rotate-2">
               <video
                 autoPlay
                 loop
