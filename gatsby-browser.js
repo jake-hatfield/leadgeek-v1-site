@@ -1,5 +1,11 @@
 import "./src/styles/app.css"
 
-require("@fontsource/space-mono")
-require("@fontsource/inter")
-require("@fontsource/nanum-pen-script")
+import "@fontsource/nanum-pen-script"
+import "@fontsource/inter/900.css"
+import "@fontsource/inter/700.css"
+import "@fontsource/inter/600.css"
+import "@fontsource/inter/500.css"
+import "@fontsource/inter/300.css"
+import "@fontsource/space-mono/400.css"
+import "@fontsource/space-mono/400.css"
+import "@fontsource/space-mono/700.css"
