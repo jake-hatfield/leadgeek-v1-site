@@ -133,7 +133,7 @@ const Faq = () => {
         <p>
           No worries!{" "}
           <span className="emphasized-text">
-            To cancel your subscription, you can email{" "}
+            To cancel your subscription, email{" "}
             <a
               href="mailto:support@Leadgeek.io"
               target="_blank"

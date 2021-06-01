@@ -37,7 +37,7 @@ const PrimaryHeader = ({
               </div>
             )}
             {outsideLink && (
-              <div>
+              <div className="bg-white">
                 <a
                   href={outsideLink}
                   className="block md:inline-block cta-link inter"
@@ -47,7 +47,7 @@ const PrimaryHeader = ({
               </div>
             )}
             {linkTwo && (
-              <div className="mt-4 lg:mt-6">
+              <div className="mt-4 lg:mt-6 bg-white">
                 <Link
                   to={`/${linkTwo}/`}
                   className="secondary-link text-gray-700"

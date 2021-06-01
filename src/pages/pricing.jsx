@@ -47,7 +47,7 @@ const PricingPage = () => {
             {pricingCards.map((plan, i) => (
               <article
                 key={i}
-                className="relative mt-8 lg:-mt-64 first:ml-0 lg:ml-8 py-4 lg:py-6 px-6 bg-white last:bg-purple-500 last:text-white rounded-lg border border-gray-900 w-80 transition-main shadow-dark transform hover:-rotate-2"
+                className="relative mt-12 lg:-mt-64 first:ml-0 lg:ml-8 py-4 lg:py-6 px-6 bg-white last:bg-purple-500 last:text-white rounded-lg border border-gray-900 w-80 transition-main shadow-dark transform hover:-rotate-2"
               >
                 {plan.title === "Bundle" && (
                   <div className="absolute inset-x-0 top-0 transform translate-y-px">
@@ -59,7 +59,7 @@ const PricingPage = () => {
                   </div>
                 )}
                 <header className="mt-2 text-center">
-                  <h3 className="text-2xl lg:text-3xl xl:text-4xl inter font-black">
+                  <h3 className="text-4xl inter font-black">
                     {`${plan.title}`}
                   </h3>
                   <p className="mt-2 text-center text-sm">{plan.desc}</p>
