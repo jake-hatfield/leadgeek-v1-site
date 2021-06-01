@@ -96,7 +96,7 @@ body {
 
 .emphasized-text {
   @apply px-0.5 rounded-md;
-  background: linear-gradient(90deg, #effcf6 0, #c6f7e2 100%);
+  background: linear-gradient(90deg, #c6f7e2 0, #8eedc7 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;

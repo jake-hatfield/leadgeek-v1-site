@@ -331,7 +331,7 @@ const testimonialsFull = [
     text: (
       <p>
         <span className={classes.emphasizedText}>
-          I really like the (software) setup
+          I really like the [software] setup
         </span>
         .
       </p>
