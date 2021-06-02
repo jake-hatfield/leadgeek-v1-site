@@ -368,9 +368,9 @@ const PricingPage = () => {
                   </div>
                 )}
                 <header className="mt-2 text-center">
-                  <h3 className="text-4xl inter font-black">
+                  <h2 className="text-4xl inter font-black">
                     {`${plan.title}`}
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-center text-sm">{plan.desc}</p>
                   <div
                     className={`mt-4 lg:mt-6 py-4 border-t border-b ${
@@ -399,14 +399,14 @@ const PricingPage = () => {
                     </div>
                   </div>
                 </header>
-                <div className="mt-4 leading-relaxed">
+                <ul className="mt-4 leading-relaxed">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="mt-2 flex">
                       <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
                       <p className="ml-4">{feature.title}</p>
                     </li>
                   ))}
-                </div>
+                </ul>
               </article>
             ))}
           </div>

@@ -42,7 +42,9 @@ const Navbar = () => {
             {/* mobile button */}
             <div className="-mr-2 -my-2 md:hidden">
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                type="button"
+                aria-label="Open mobile menu"
+                onClick={() => setMobileMenuOpen(prev => !prev)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
               >
                 <svg
@@ -108,7 +110,8 @@ const Navbar = () => {
                   <div className="-mt-1 -mr-2">
                     <button
                       type="button"
-                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      aria-label="Close mobile menu"
+                      onClick={() => setMobileMenuOpen(prev => !prev)}
                       className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
                     >
                       <svg
