@@ -2,16 +2,18 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.leadgeek.io`,
     title: `Leadgeek`,
-    description: `Leadgeek offers premium online arbitrage leads to Amazon FBA sellers. Our service provides a reliable output of quality leads every weekday.`,
+    description: `Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.`,
     author: `Leadgeek`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-scroll-reveal`,
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-resolve-src`,
+    `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,19 +21,24 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Leadgeek Arbitrage Leads`,
+        name: `Leadgeek Sourcing & Software`,
         short_name: `Leadgeek`,
         start_url: `/`,
         background_color: `#5d55fa`,
         theme_color: `#5d55fa`,
         display: `minimal-ui`,
-        icon: `src/assets/images/leadgeek-logo.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/leadgeek-logo.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svgs/,
+        },
       },
     },
     {
@@ -55,37 +62,33 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //     omitGoogleFont: true,
-    //   },
-    // },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: "gatsby-plugin-next-seo",
       options: {
-        rule: {
-          include: /svgs/, // See below to configure properly
+        title: "Leadgeek",
+        description:
+          "Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.",
+        openGraph: {
+          type: "website",
+          locale: "en_IE",
+          url: "https://www.leadgeek.io/",
+          site_name: "Leadgeek",
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        tailwind: true, // Enable tailwindcss support
-        ignore: ["/sal.js"], // Ignore files/folders
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true,
+    //     tailwind: true,
+    //     ignore: ["/sal.js"],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         exclude: [`/order-confirmation`, `/contact-success`, `/404`],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const LeadCriteriaPage = ({ data }) => {
+const LeadOwnerShipPage = () => {
+  const title = "Leads Belong to You | Leadgeek"
+  const desc =
+    "Leadgeek puts you in control - and that means that you should be able to download your product leads if you want to. It's easy to export the items you want into a spreadsheet to do whatever you want with."
   return (
     <Layout>
-      <SEO
-        title="Leads Belong to You | Leadgeek"
-        description="Leadgeek puts you in control - and that means that you should be able to download your product leads if you want to. It's easy to export the items you want into a spreadsheet to do whatever you want with."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"lead-ownership"} />
     </Layout>
   )
 }
 
-export default LeadCriteriaPage
+export default LeadOwnerShipPage

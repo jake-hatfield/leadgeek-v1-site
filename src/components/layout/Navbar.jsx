@@ -1,15 +1,19 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
+import { LogoJsonLd } from "gatsby-plugin-next-seo"
+
 import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="relative z-40">
-      {/* notification banner */}
-      {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
+    <>
+      <LogoJsonLd logo={Logo} url="https://www.leadgeek.io/" />
+      <header className="relative z-40">
+        {/* notification banner */}
+        {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
         <div className="py-3 container flex items-center">
           <p>
             Join Leadgeek and start 2021 off with a great way to source daily
@@ -26,136 +30,137 @@ const Navbar = () => {
           </div>
         </div>
       </aside> */}
-      <div className="fixed w-screen bg-white shadow-sm">
-        <div className="w-full py-4 container center-between">
-          {/* logo */}
-          <div className="font-bold text-xl lg:text-2xl group">
-            <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-              <Logo className="w-8 lg:w-10 mr-4" />
-              lead<span className="text-purple-500">geek</span>
-            </Link>
-          </div>
-          {/* mobile button */}
-          <div className="-mr-2 -my-2 md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
-            >
-              <svg
-                className="svg-base"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-          {/* md:+ nav */}
-          <nav className="hidden md:flex md:items-center">
-            <div className="relative all-center inter">
-              {primaryLinks.map(primaryLink => (
-                <Link
-                  key={primaryLink.link}
-                  to={`/${primaryLink.link}/`}
-                  className={classes.navbarLink}
-                  activeClassName="active-secondary-link text-purple-500"
-                >
-                  {primaryLink.title}
-                </Link>
-              ))}
+        <div className="fixed w-screen bg-white shadow-sm">
+          <div className="w-full py-4 container center-between">
+            {/* logo */}
+            <div className="font-bold text-xl lg:text-2xl group">
+              <Link to={`/`} className="all-center text-gray-900 rounded-lg">
+                <Logo className="w-8 lg:w-10 mr-4" />
+                lead<span className="text-purple-500">geek</span>
+              </Link>
             </div>
-            <a
-              href="https://app.Leadgeek.io/login"
-              className={classes.navbarLink}
-            >
-              Log in
-            </a>
-            <Link to={"/pricing/"} className="no-m-first cta-link inter">
-              Sign up
-            </Link>
-          </nav>
-        </div>
-      </div>
-      {/* mobile menu */}
-      <div
-        className={`${
-          mobileMenuOpen ? `block` : `hidden`
-        } fixed top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}
-      >
-        <div className="rounded-md shadow-md">
-          <div className="rounded-md shadow-dark border border-gray-900 bg-white divide-y divide-gray-900">
-            <div className="p-4 space-y-6">
-              <div className="flex items-start justify-between">
-                <div className="font-bold text-xl lg:text-2xl group">
+            {/* mobile button */}
+            <div className="-mr-2 -my-2 md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
+              >
+                <svg
+                  className="svg-base"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+            {/* md:+ nav */}
+            <nav className="hidden md:flex md:items-center">
+              <div className="relative all-center inter">
+                {primaryLinks.map(primaryLink => (
                   <Link
-                    to={`/`}
-                    className="all-center text-gray-900 rounded-lg"
+                    key={primaryLink.link}
+                    to={`/${primaryLink.link}/`}
+                    className={classes.navbarLink}
+                    activeClassName="active-secondary-link text-purple-500"
                   >
-                    <Logo className="w-8 lg:w-10 mr-4" />
-                    lead<span className="text-purple-500">geek</span>
+                    {primaryLink.title}
+                  </Link>
+                ))}
+              </div>
+              <a
+                href="https://app.Leadgeek.io/login"
+                className={classes.navbarLink}
+              >
+                Log in
+              </a>
+              <Link to={"/pricing/"} className="no-m-first cta-link inter">
+                Sign up
+              </Link>
+            </nav>
+          </div>
+        </div>
+        {/* mobile menu */}
+        <div
+          className={`${
+            mobileMenuOpen ? `block` : `hidden`
+          } fixed top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden`}
+        >
+          <div className="rounded-md shadow-md">
+            <div className="rounded-md shadow-dark border border-gray-900 bg-white divide-y divide-gray-900">
+              <div className="p-4 space-y-6">
+                <div className="flex items-start justify-between">
+                  <div className="font-bold text-xl lg:text-2xl group">
+                    <Link
+                      to={`/`}
+                      className="all-center text-gray-900 rounded-lg"
+                    >
+                      <Logo className="w-8 lg:w-10 mr-4" />
+                      lead<span className="text-purple-500">geek</span>
+                    </Link>
+                  </div>
+                  <div className="-mt-1 -mr-2">
+                    <button
+                      type="button"
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
+                    >
+                      <svg
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="py-6 px-4 text-gray-700 font-semibold">
+                <ul className="grid grid-rows gap-4">
+                  {mobileLinks.map((link, i) => (
+                    <li key={i}>
+                      <Link to={`/${link.link}/`} className="flex items-center">
+                        <span className="p-1 rounded-lg bg-gray-900 text-teal-300 shadow-tealSm">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="svg-sm"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            {link.path}
+                          </svg>
+                        </span>
+                        <span className="ml-4">{link.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-4 space-y-6 rounded-b-md">
+                <div className="space-y-6 text-center">
+                  <Link to={`/pricing/`} className="block cta-link inter">
+                    Sign up now
                   </Link>
                 </div>
-                <div className="-mt-1 -mr-2">
-                  <button
-                    type="button"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
-                  >
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="py-6 px-4 text-gray-700 font-semibold">
-              <ul className="grid grid-rows gap-4">
-                {mobileLinks.map((link, i) => (
-                  <li key={i}>
-                    <Link to={`/${link.link}/`} className="flex items-center">
-                      <span className="p-1 rounded-lg bg-gray-900 text-teal-300 shadow-tealSm">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-sm"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          {link.path}
-                        </svg>
-                      </span>
-                      <span className="ml-4">{link.title}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="p-4 space-y-6 rounded-b-md">
-              <div className="space-y-6 text-center">
-                <Link to={`/pricing/`} className="block cta-link inter">
-                  Sign up now
-                </Link>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   )
 }
 

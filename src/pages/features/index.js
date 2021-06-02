@@ -1,20 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 import { featureList } from "components/layout/Features"
 
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 
-const index = () => {
+const FeaturesIndexPage = () => {
+  const title = `Leadgeek Features`
+  const desc = `See the top ${featureList.length} features that supercharge a great online arbitrage sourcing list into a deal-finding machine for your FBA business.`
   return (
     <Layout>
-      <SEO
-        title={`Leadgeek Features`}
-        description={`See the top ${featureList.length} features that supercharge a great online arbitrage sourcing list into a deal-finding machine for your FBA business.`}
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>
@@ -68,4 +76,4 @@ const index = () => {
   )
 }
 
-export default index
+export default FeaturesIndexPage

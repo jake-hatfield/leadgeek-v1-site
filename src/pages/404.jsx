@@ -1,13 +1,15 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
+// import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Page Not Found | Leadgeek" />
+    <GatsbySeo title="404: Page Not Found | Leadgeek" />
     <section className="relative overflow-hidden bg-splatter">
       <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"}>
         <PrimaryHeader

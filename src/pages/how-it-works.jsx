@@ -2,8 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 import FeedMp4 from "assets/video/the-feed.mp4"
@@ -13,14 +14,21 @@ import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
-import Zaggy from "assets/svgs/straight-zaggy.svg"
 
 const IndexPage = ({ data }) => {
+  const title = "How Leadgeek Works"
+  const desc =
+    "Leadgeek is a fresh new take on traditional online arbitrage sourcing lists. Make finding new leads productive, organized, and clear with a simple process."
   return (
     <Layout>
-      <SEO
-        title="How Leadgeek Works"
-        description="Leadgeek is a fresh new take on traditional online arbitrage sourcing lists. Make finding new leads productive, organized, and clear with a simple process."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       {/* hero section */}
       <section className="relative overflow-x-hidden bg-splatter">

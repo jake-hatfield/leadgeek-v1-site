@@ -1,15 +1,24 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import FormField from "components/utils/FormField"
 
 const ContactPage = () => {
+  const title = "Contact Leadgeek"
+  const desc =
+    "Have a question about Leadgeek? We'll do our best to get you some answers."
   return (
     <Layout>
-      <SEO
-        title="Contact Leadgeek"
-        description="Have a question about Leadgeek? We'll do our best to get you some answers."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container lg:flex lg:justify-between lg:items-center">

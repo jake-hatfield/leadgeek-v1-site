@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const CalculationPage = ({ data }) => {
+const RetailersPage = () => {
+  const title = "Solid sources by default | Leadgeek"
+  const desc =
+    "Over 500 trusted US-based retailers are used to source products. This not only gives you variety, but a peace of mind that your items are authentic brands to arbitrage, not some knock-off crap that will get your Seller Central account suspended."
   return (
     <Layout>
-      <SEO
-        title="Strict Criteria | Leadgeek"
-        description="Strict vetting criteria ensure that only the best online arbitrage products are sent to you, without having to source anything yourself."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"retailers"} />
     </Layout>
   )
 }
 
-export default CalculationPage
+export default RetailersPage

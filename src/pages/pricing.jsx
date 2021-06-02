@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { GatsbySeo, ProductJsonLd } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import PricingTable from "../components/PricingTable"
@@ -14,11 +15,319 @@ import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
 const PricingPage = () => {
+  const title = "Leadgeek Pricing"
+  const desc =
+    "Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
   return (
     <Layout>
-      <SEO
-        title="Leadgeek Pricing"
-        description="Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
+      />
+      <ProductJsonLd
+        productName="Leadgeek Grow Plan"
+        images={["../assets/images/leadgeek-app.png"]}
+        description="Leadgeek's Grow plan offers entry-level FBA sellers a great starting point to find high-quality products efficiently."
+        brand="Leadgeek"
+        reviews={[
+          {
+            author: "Charles",
+            reviewBody: `The very first thing I bought as an FBA seller was from your list about
+              33 days ago. I've sold 5 units of that item so far today (it's only 3:50
+              pm CST) and it's my first $100 day. Profit margin is roughly 25% and ROI more than 2x that. Thank you for helping me get started.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Brian",
+            reviewBody: `Delivered their lists as promised daily and always had at least a few
+            items I was interested in. Good value, would recommend.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "William",
+            reviewBody: `Leadgeek delivers on their promises in the promo video on time every day
+            with solid ROI leads. Would definitely recommend giving them a shot if you want to take the guess work out of sourcing for FBA.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Kevin",
+            reviewBody: `I love the leads, they're very good. Leadgeek will pay off in a week... definitely the best site I've found for leads.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Yucheng",
+            reviewBody: `It looks FANTASTIC on my first try! Great work. I look forward to trying it more on my next lead list.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Austin",
+            reviewBody: `5 stars for you guys making this super simple.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Frank",
+            reviewBody: `I want to thank you for the effort you make to find products with such
+            good quality. It has been the best decision I have made in acquiring your list. Thank you!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Dimitry",
+            reviewBody: `I really like the [software] setup.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+        ]}
+        aggregateRating={{
+          ratingValue: "5",
+          reviewCount: 8,
+        }}
+        offers={{
+          price: "129.99",
+          priceCurrency: "USD",
+          itemCondition: "https://schema.org/NewCondition",
+          availability: "https://schema.org/InStock",
+          url: "https://leadgeek.io/signup/grow/",
+          seller: {
+            name: "Leadgeek",
+          },
+        }}
+        mpn="1"
+      />
+      <ProductJsonLd
+        productName="Leadgeek Pro Plan"
+        images={["../assets/images/leadgeek-app.png"]}
+        description="Leadgeek's Pro plan is great for intermediate Amazon sellers who are familiar with online arbitrage and want more leads to choose every day."
+        brand="Leadgeek"
+        reviews={[
+          {
+            author: "Charles",
+            reviewBody: `The very first thing I bought as an FBA seller was from your list about
+              33 days ago. I've sold 5 units of that item so far today (it's only 3:50
+              pm CST) and it's my first $100 day. Profit margin is roughly 25% and ROI more than 2x that. Thank you for helping me get started.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Brian",
+            reviewBody: `Delivered their lists as promised daily and always had at least a few
+            items I was interested in. Good value, would recommend.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "William",
+            reviewBody: `Leadgeek delivers on their promises in the promo video on time every day
+            with solid ROI leads. Would definitely recommend giving them a shot if you want to take the guess work out of sourcing for FBA.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Kevin",
+            reviewBody: `I love the leads, they're very good. Leadgeek will pay off in a week... definitely the best site I've found for leads.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Yucheng",
+            reviewBody: `It looks FANTASTIC on my first try! Great work. I look forward to trying it more on my next lead list.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Austin",
+            reviewBody: `5 stars for you guys making this super simple.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Frank",
+            reviewBody: `I want to thank you for the effort you make to find products with such
+            good quality. It has been the best decision I have made in acquiring your list. Thank you!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Dimitry",
+            reviewBody: `I really like the [software] setup.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+        ]}
+        aggregateRating={{
+          ratingValue: "5",
+          reviewCount: 8,
+        }}
+        offers={{
+          price: "189.99",
+          priceCurrency: "USD",
+          itemCondition: "https://schema.org/NewCondition",
+          availability: "https://schema.org/InStock",
+          url: "https://leadgeek.io/signup/pro/",
+          seller: {
+            name: "Leadgeek",
+          },
+        }}
+        mpn="2"
+      />
+      <ProductJsonLd
+        productName="Leadgeek Bundle"
+        images={["../assets/images/leadgeek-app.png"]}
+        description="Leadgeek's Bundle is a heavily-discounted combination of the Grow plan and Pro plan. It's the perfect mix of quality and volume for arbitrage sourcing."
+        brand="Leadgeek"
+        reviews={[
+          {
+            author: "Charles",
+            reviewBody: `The very first thing I bought as an FBA seller was from your list about
+              33 days ago. I've sold 5 units of that item so far today (it's only 3:50
+              pm CST) and it's my first $100 day. Profit margin is roughly 25% and ROI more than 2x that. Thank you for helping me get started.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Brian",
+            reviewBody: `Delivered their lists as promised daily and always had at least a few
+            items I was interested in. Good value, would recommend.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "William",
+            reviewBody: `Leadgeek delivers on their promises in the promo video on time every day
+            with solid ROI leads. Would definitely recommend giving them a shot if you want to take the guess work out of sourcing for FBA.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Kevin",
+            reviewBody: `I love the leads, they're very good. Leadgeek will pay off in a week... definitely the best site I've found for leads.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Yucheng",
+            reviewBody: `It looks FANTASTIC on my first try! Great work. I look forward to trying it more on my next lead list.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Austin",
+            reviewBody: `5 stars for you guys making this super simple.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Frank",
+            reviewBody: `I want to thank you for the effort you make to find products with such
+            good quality. It has been the best decision I have made in acquiring your list. Thank you!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Dimitry",
+            reviewBody: `I really like the [software] setup.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+        ]}
+        aggregateRating={{
+          ratingValue: "5",
+          reviewCount: 8,
+        }}
+        offers={{
+          price: "263.00",
+          priceCurrency: "USD",
+          itemCondition: "https://schema.org/NewCondition",
+          availability: "https://schema.org/InStock",
+          url: "https://leadgeek.io/signup/bundle/",
+          seller: {
+            name: "Leadgeek",
+          },
+        }}
+        mpn="3"
       />
       <section className="relative overflow-x-hidden bg-splatter">
         <HeaderWrapper bottomPadding={"pb-80"}>

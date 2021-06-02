@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { FAQJsonLd } from "gatsby-plugin-next-seo"
+
 const Faq = () => {
   const questions = [
     {
@@ -178,28 +180,79 @@ const Faq = () => {
     },
   ]
   return (
-    <section className="text-gray-900 bg-splatter">
-      <div className="py-12 lg:pt-32 lg:pb-24 container">
-        <header className="relative">
-          <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
-            Frequently asked questions
-          </h2>
-        </header>
-        <ul className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800 text-center">
-          {questions.map((question, i) => (
-            <li
-              key={i}
-              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
-            >
-              <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
-                {question.title}
-              </h3>
-              <div className="mt-4 lg:mt-6 text-lg">{question.desc}</div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <>
+      <FAQJsonLd
+        questions={[
+          {
+            question: "How is Leadgeek different from other sourcing lists?",
+            answer:
+              "Leageek is hyper-focused on high standards for a small group of dedicated Amazon sellers.",
+          },
+          {
+            question: "Are these products ungated for me?",
+            answer:
+              "It depends on the maturity of your Seller account. Since everyone's account is slightly different,  it's impossible to say until you check eligibility yourself - though certainly some will be. If being restricted in too many products is a concern, we recommend the Grow Plan since we prioritize more ungated products on that list.",
+          },
+          {
+            question: "Are the prep or shipping to Amazon fees included?",
+            answer:
+              "No, they aren't. We'd like to, but it's impossible to account for prep and ship-to-Amazon costs since they'll be different for everyone. However, we do account for FBA fees and have a built-in prep tool.",
+          },
+          {
+            question: "Do you include listings where Amazon is a seller?",
+            answer:
+              "In some cases, yeah. We don't necessarily shy away from listings with Amazon as a seller if there's very strong historic proof that they're sharing the buy box and that it's advantageous for FBA sellers.",
+          },
+          {
+            question: "Can I sell these products on any Amazon marketplace?",
+            answer:
+              "The short answer is that they're for Amazon US only, though you do not have to live in the US to use our service . If you're not based in the US, it's recommended to use a domestic prepper to receive and process your shipments. If you have any questions about international selling, contact us.",
+          },
+          {
+            question: "Do you offer lead samples or free trials?",
+            answer:
+              "In order to protect the integrity of the leads and the exclusivity our members pay for, we do not.",
+          },
+          {
+            question: "How often will my account be charged?",
+            answer:
+              "Your subscription will renew for another month of service on the anniversary of your sign up date. For more information on Leadgeek subscriptions, read our billing policy.",
+          },
+          {
+            question: "What if I decide this isn't for me?",
+            answer:
+              "No worries! To cancel your subscription, email support@leadgeek.io and we'll get you sorted out. Please note: due to the nature of the product, we do not issue refunds for the current month of service. However, we understand that special circumstances arise and honor genuine requests. See our cancellation policy for more info.",
+          },
+          {
+            question: "How do I get in contact with support?",
+            answer:
+              "You can contact our support team weekdays from 9am-5pm CST via our contact page.",
+          },
+        ]}
+      />
+      <section className="text-gray-900 bg-splatter">
+        <div className="py-12 lg:pt-32 lg:pb-24 container">
+          <header className="relative">
+            <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
+              Frequently asked questions
+            </h2>
+          </header>
+          <ul className="mx-auto md:max-w-xl lg:max-w-2xl md:text-lg lg:text-xl leading-relaxed text-gray-800 text-center">
+            {questions.map((question, i) => (
+              <li
+                key={i}
+                className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
+              >
+                <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
+                  {question.title}
+                </h3>
+                <div className="mt-4 lg:mt-6 text-lg">{question.desc}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
   )
 }
 

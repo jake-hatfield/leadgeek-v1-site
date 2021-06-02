@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const LeadCriteriaPage = ({ data }) => {
+const PrepPage = () => {
+  const title = "Account for Prep Costs Automatically | Leadgeek"
+  const desc =
+    "Built-in tools allow you to easily estimate product prep fees. Whether you need to calculate a fee based on quantity or weight, you'll see real-world profitability for each item."
   return (
     <Layout>
-      <SEO
-        title="Account for Prep Costs Automatically | Leadgeek"
-        description="Built-in tools allow you to easily estimate product prep fees. Whether you need to calculate a fee based on quantity or weight, you'll see real-world profitability for each item."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"prep"} />
     </Layout>
   )
 }
 
-export default LeadCriteriaPage
+export default PrepPage

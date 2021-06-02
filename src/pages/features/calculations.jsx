@@ -1,15 +1,24 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const CalculationPage = ({ data }) => {
+const CalculationPage = () => {
+  const title = "Laser-Accurate Number Crunching | Leadgeek"
+  const desc =
+    "With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
   return (
     <Layout>
-      <SEO
-        title="Laser-Accurate Number Crunching | Leadgeek"
-        description="With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"calculations"} />
     </Layout>

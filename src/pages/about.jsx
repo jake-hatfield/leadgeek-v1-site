@@ -1,18 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 
 import Signature from "assets/svgs/signature.svg"
 import Loopy from "assets/svgs/loopy-dashed.svg"
 
 const AboutPage = () => {
+  const title = "About Leadgeek - Est. 2020"
+  const desc =
+    "Our mission: to create the best online arbitrage sourcing tools for FBA businesses of every size."
   return (
     <Layout>
-      <SEO
-        title="About Leadgeek - Est. 2020"
-        description="Our mission: to create the best online arbitrage sourcing tools for FBA businesses of every size."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="py-12 text-gray-700 bg-splatter">
         <div className="container max-w-2xl">

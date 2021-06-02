@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const CalculationPage = ({ data }) => {
+const CategoriesPage = () => {
+  const title = "Source Comprehensive Categories | Leadgeek"
+  const desc =
+    "Building a diversified inventory has never been easier. Choose items sourced from 25+ top-selling Amazon categories to create your ideal product portfolio."
   return (
     <Layout>
-      <SEO
-        title="Source Comprehensive Categories | Leadgeek"
-        description="Building a diversified inventory has never been easier. Choose items sourced from 25+ top-selling Amazon categories to create your ideal product portfolio."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"categories"} />
     </Layout>
   )
 }
 
-export default CalculationPage
+export default CategoriesPage

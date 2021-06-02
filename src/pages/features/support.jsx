@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const LeadCriteriaPage = ({ data }) => {
+const SupportPage = () => {
+  const title = "A+ Member Support | Leadgeek"
+  const desc =
+    "LeadGeek members get dedicated guidance from an experienced arbitrage seller to prevent pitfalls and solve issues. Sell with confidence, not confusion."
   return (
     <Layout>
-      <SEO
-        title="A+ Member Support | Leadgeek"
-        description="LeadGeek members get dedicated guidance from an experienced arbitrage seller to prevent pitfalls and solve issues. Sell with confidence, not confusion."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"support"} />
     </Layout>
   )
 }
 
-export default LeadCriteriaPage
+export default SupportPage

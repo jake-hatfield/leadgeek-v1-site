@@ -1,17 +1,26 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
 const ContactSuccess = () => {
+  const title = "Contact Success | Leadgeek"
+  const desc =
+    "Leadgeek support has received your message and will get to you as soon as possible."
   return (
     <Layout>
-      <SEO
-        title="Contact Success | Leadgeek"
-        description="Leadgeek support has received your message and will get to you as soon as possible."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="relative bg-splatter">
         <HeaderWrapper>

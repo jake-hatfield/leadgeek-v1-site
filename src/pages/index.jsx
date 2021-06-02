@@ -2,8 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "../components/PrimaryHeader"
 import CTA from "../components/Cta"
@@ -16,11 +17,19 @@ import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
 const IndexPage = ({ data }) => {
+  const title = "Leadgeek: Online Arbitrage Sourcing Lists & Software"
+  const desc =
+    "Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
   return (
     <Layout>
-      <SEO
-        title="Leadgeek: Online Arbitrage Sourcing Lists & Software"
-        description="Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">
@@ -94,7 +103,7 @@ const IndexPage = ({ data }) => {
               className="min-w-full rounded-lg stack-sm border border-gray-900"
             />
           </div>
-          <header className="pt-12 container md:text-center text-gray-700">
+          <header className="pt-12 lg:pb-12 container md:text-center text-gray-700">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
               Don't dig through information - surface it.
             </h2>
@@ -111,7 +120,7 @@ const IndexPage = ({ data }) => {
               headaches, and you can focus on getting more important things
               done.
             </p>
-            <div className="mt-6">
+            <div className="mt-6 text-center">
               <Link to={"/features/"} className="secondary-link">
                 See how Leadgeek is built different
               </Link>

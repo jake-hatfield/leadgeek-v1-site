@@ -1,19 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const CalculationPage = ({ data }) => {
+const ReliabilityPage = () => {
+  const title = "Keep 'Em Coming | Leadgeek"
+  const desc =
+    "Leadgeek is all about predictability, especially when it comes to the quantity of leads you can expect. Gone are the days of striking out when sourcing - the Feed delivers a guaranteed number of leads each and every weekday."
   return (
     <Layout>
-      <SEO
-        title="Keep 'Em Coming | Leadgeek"
-        description=" Leadgeek is all about predictability, especially when it comes to the quantity of leads you can expect. Gone are the days of striking out when sourcing - the Feed delivers a guaranteed number of leads each and every weekday."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"reliability"} />
     </Layout>
   )
 }
 
-export default CalculationPage
+export default ReliabilityPage

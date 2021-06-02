@@ -1,18 +1,27 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 
 const TermsPage = () => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io"
+  const title = "Leadgeek Terms of Service"
+  const desc =
+    "All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
   return (
     <Layout>
-      <SEO
-        title="Leadgeek Terms of Service"
-        description="All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="py-8 mdd:py-12 lg:py-16 text-gray-900 bg-splatter">
         <div className="max-w-2xl container">

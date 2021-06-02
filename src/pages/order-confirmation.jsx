@@ -1,7 +1,8 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
@@ -38,11 +39,19 @@ const OrderConfirmationPage = ({ location }) => {
       ),
     },
   ]
+  const title = "Order Confirmation | Leadgeek"
+  const desc =
+    "Your Leadgeek order has been successfully processed. Thank you for your purchase!"
   return (
     <Layout>
-      <SEO
-        title="Order Confirmation | Leadgeek"
-        description="Your Leadgeek order has been successfully processed. Thank you for your purchase!"
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <section className="pb-12 bg-splatter text-gray-900">
         <HeaderWrapper>

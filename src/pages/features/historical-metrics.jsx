@@ -1,20 +1,28 @@
 import React from "react"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import Layout from "components/layout/Layout"
-import SEO from "components/utils/Seo"
 import Features from "components/layout/Features"
 
-const CalculationPage = ({ data }) => {
+const HistoricalMetricsPage = () => {
+  const title = "Check Out Historical Metrics | Leadgeek"
+  const desc =
+    "Leadgeek includes 30 & 90 day metrics and current competition for the buy box. While the price right now is important too, use historical data to see trends like seasonality, out of stock spikes, and more."
   return (
     <Layout>
-      <SEO
-        title="Check Out Historical Metrics | Leadgeek"
-        description="Leadgeek includes 30 & 90 day metrics and current competition for the
-        buy box. While the price right now is important too, use historical data to see trends like seasonality, out of stock spikes, and more."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
       />
       <Features feature={"historical-metrics"} />
     </Layout>
   )
 }
 
-export default CalculationPage
+export default HistoricalMetricsPage
