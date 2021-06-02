@@ -52,6 +52,7 @@ const IndexPage = ({ data }) => {
         <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">
           <Img
             fluid={data.details.childImageSharp.fluid}
+            alt="Leadgeek app details view"
             className="min-w-full rounded-lg border border-gray-900 stack-sm"
           />
         </div>
@@ -96,6 +97,7 @@ const IndexPage = ({ data }) => {
                 muted
                 playsInline
                 className="video-responsive-item"
+                alt="Feed demo"
               >
                 <source src={FeedMp4} type="video/mp4" />
               </video>
@@ -145,6 +147,7 @@ const IndexPage = ({ data }) => {
             <div className="md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl">
               <Img
                 fluid={data.app.childImageSharp.fluid}
+                alt="Online arbitrage lead criteria"
                 className="w-full rounded-lg border border-gray-900 stack-sm transform hover:rotate-2 transition-main"
               />
             </div>
@@ -164,6 +167,7 @@ const IndexPage = ({ data }) => {
                 muted
                 playsInline
                 className="w-full rounded-lg border border-gray-900 stack-sm"
+                alt="Filter demo"
               >
                 <source src={FiltersMp4} type="video/mp4" />
               </video>
@@ -192,6 +196,7 @@ const IndexPage = ({ data }) => {
             <div className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5 transform transition-main hover:-rotate-1">
               <Img
                 fluid={data.detailsClose.childImageSharp.fluid}
+                alt="Detailed view close up"
                 className="w-full rounded-lg border border-gray-900 stack-sm"
               />
             </div>
@@ -243,6 +248,7 @@ const IndexPage = ({ data }) => {
                 muted
                 playsInline
                 className="video-responsive-item"
+                alt="Like and archive demo"
               >
                 <source src={LikeArchiveMp4} type="video/mp4" />
               </video>

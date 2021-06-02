@@ -100,6 +100,7 @@ const IndexPage = ({ data }) => {
             </div>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
+              alt="Leadgeek app feed"
               className="min-w-full rounded-lg stack-sm border border-gray-900"
             />
           </div>

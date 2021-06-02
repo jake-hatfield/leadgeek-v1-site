@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, Img } from "gatsby"
+import { Link } from "gatsby"
 
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
