@@ -11,7 +11,7 @@ import Loopy from "assets/svgs/loopy-dashed.svg"
 const AboutPage = () => {
   const title = "About Leadgeek - Est. 2020"
   const desc =
-    "Our mission: to create the best online arbitrage sourcing tools for FBA businesses of every size."
+    "Our mission: to create the best online arbitrage sourcing tools for FBA businesses of every size. See how Leadgeek is taking a unique approach to e-commerce."
   return (
     <Layout>
       <GatsbySeo

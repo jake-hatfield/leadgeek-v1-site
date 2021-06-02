@@ -8,7 +8,7 @@ import FormField from "components/utils/FormField"
 const ContactPage = () => {
   const title = "Contact Leadgeek"
   const desc =
-    "Have a question about Leadgeek? We'll do our best to get you some answers."
+    "Have a question about Leadgeek? We'll do our best to get you some answers. Ask away and receive a prompt reply."
   return (
     <Layout>
       <GatsbySeo

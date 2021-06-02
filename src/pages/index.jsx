@@ -16,6 +16,8 @@ import Quote from "assets/svgs/quote.svg"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
+import OGimage from "assets/images/og/og-index.jpg"
+
 const IndexPage = ({ data }) => {
   const title = "Leadgeek: Online Arbitrage Sourcing Lists & Software"
   const desc =
@@ -31,7 +33,7 @@ const IndexPage = ({ data }) => {
           url: "https://leadgeek.io/",
           images: [
             {
-              url: "../assets/images/og/og-index.jpg",
+              url: OGimage,
               width: 1200,
               height: 630,
               alt: "Leadgeek Arbitrage Sourcing List & Software",
