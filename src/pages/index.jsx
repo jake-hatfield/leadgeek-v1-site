@@ -29,6 +29,14 @@ const IndexPage = ({ data }) => {
           title,
           description: desc,
           url: "https://leadgeek.io/",
+          images: [
+            {
+              url: "../assets/images/og/og-index.jpg",
+              width: 1200,
+              height: 630,
+              alt: "Leadgeek Arbitrage Sourcing List & Software",
+            },
+          ],
           type: "website",
         }}
         language="en"

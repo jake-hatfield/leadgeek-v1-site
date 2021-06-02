@@ -70,7 +70,7 @@ module.exports = {
           "Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.",
         openGraph: {
           type: "website",
-          locale: "en_IE",
+          locale: "en_US",
           url: "https://leadgeek.io/",
           site_name: "Leadgeek",
         },
