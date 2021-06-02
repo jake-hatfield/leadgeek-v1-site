@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.leadgeek.io`,
+    siteUrl: `https://leadgeek.io/`,
     title: `Leadgeek`,
     description: `Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.`,
     author: `Leadgeek`,
@@ -27,8 +27,8 @@ module.exports = {
         name: `Leadgeek Sourcing & Software`,
         short_name: `Leadgeek`,
         start_url: `/`,
-        background_color: `#5d55fa`,
-        theme_color: `#5d55fa`,
+        background_color: `#7069FA`,
+        theme_color: `#7069FA`,
         display: `minimal-ui`,
         icon: `src/assets/images/leadgeek-logo.png`,
       },
@@ -71,8 +71,12 @@ module.exports = {
         openGraph: {
           type: "website",
           locale: "en_IE",
-          url: "https://www.leadgeek.io/",
+          url: "https://leadgeek.io/",
           site_name: "Leadgeek",
+        },
+        twitter: {
+          site: "@leadgeekAMZ",
+          cardType: "summary_large_image",
         },
       },
     },

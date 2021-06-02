@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <LogoJsonLd logo={Logo} url="https://www.leadgeek.io/" />
+      <LogoJsonLd logo={Logo} url="https://leadgeek.io/" />
       <header className="relative z-40">
         {/* notification banner */}
         {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
