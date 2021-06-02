@@ -131,7 +131,7 @@ const PrivacyPolicyPage = () => {
               your personally-identifying information.
             </p>
           </section>
-          <section className={classes.section}>
+          <section className={classes.section} id="cookies">
             <h2 className={classes.h2}>Cookies</h2>
             <p className={classes.text}>
               To enrich and perfect your online experience, {siteTitle} uses
