@@ -19,6 +19,7 @@ const SellerInsightPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"seller-insight"} />
     </Layout>

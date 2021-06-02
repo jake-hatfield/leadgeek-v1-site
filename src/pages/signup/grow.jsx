@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 
-import SEO from "components/utils/Seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import SignupPage from "components/signupPage"
 
 const GrowSignupPage = () => {
@@ -38,11 +39,20 @@ const GrowSignupPage = () => {
   ]
   const plan = "Grow Plan"
   const productSelected = process.env.GATSBY_GROW_PRODUCT_ID
+  const title = "Grow Plan Signup | Leadgeek"
+  const desc =
+    "Leadgeek's Grow plan offers entry-level FBA sellers a great starting point to find high-quality products efficiently."
   return (
     <Fragment>
-      <SEO
-        title="Grow Plan Signup | Leadgeek"
-        description="Leadgeek's Grow plan offers entry-level FBA sellers a great starting point to find high-quality products efficiently."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
+        language="en"
       />
       <SignupPage
         featureList={featureList}

@@ -19,6 +19,7 @@ const SearchPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"search"} />
     </Layout>

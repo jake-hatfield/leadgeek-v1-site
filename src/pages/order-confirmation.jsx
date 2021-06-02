@@ -52,6 +52,7 @@ const OrderConfirmationPage = ({ location }) => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="pb-12 bg-splatter text-gray-900">
         <HeaderWrapper>

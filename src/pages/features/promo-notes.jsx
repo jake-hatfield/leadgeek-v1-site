@@ -19,6 +19,7 @@ const PromoNotesPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"promo-notes"} />
     </Layout>

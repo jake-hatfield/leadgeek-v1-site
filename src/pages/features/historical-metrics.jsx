@@ -19,6 +19,7 @@ const HistoricalMetricsPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"historical-metrics"} />
     </Layout>

@@ -19,6 +19,7 @@ const DetailsPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"details"} />
     </Layout>

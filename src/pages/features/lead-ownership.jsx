@@ -19,6 +19,7 @@ const LeadOwnerShipPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"lead-ownership"} />
     </Layout>

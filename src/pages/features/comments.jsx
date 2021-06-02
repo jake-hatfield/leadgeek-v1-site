@@ -19,6 +19,7 @@ const CommentsPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"comments"} />
     </Layout>

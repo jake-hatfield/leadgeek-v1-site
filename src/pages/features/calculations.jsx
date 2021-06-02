@@ -19,6 +19,7 @@ const CalculationPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"calculations"} />
     </Layout>

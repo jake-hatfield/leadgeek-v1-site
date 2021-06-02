@@ -23,6 +23,7 @@ const FeaturesIndexPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>

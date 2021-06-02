@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 
-import SEO from "components/utils/Seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
+
 import SignupPage from "components/signupPage"
 
 const ProSignupPage = () => {
@@ -38,11 +39,20 @@ const ProSignupPage = () => {
   ]
   const plan = "Pro Plan"
   const productSelected = process.env.GATSBY_PRO_PRODUCT_ID
+  const title = "Pro Plan Signup | Leadgeek"
+  const desc =
+    "Leadgeek's Pro plan is great for intermediate Amazon sellers who are familiar with online arbitrage and want more leads to choose every day."
   return (
     <Fragment>
-      <SEO
-        title="Pro Plan Signup | Leadgeek"
-        description="Leadgeek's Pro plan is great for intermediate Amazon sellers who are familiar with online arbitrage and want more leads to choose every day."
+      <GatsbySeo
+        title={title}
+        description={desc}
+        openGraph={{
+          title: { title },
+          description: { desc },
+          type: "website",
+        }}
+        language="en"
       />
       <SignupPage
         featureList={featureList}

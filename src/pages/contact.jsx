@@ -19,6 +19,7 @@ const ContactPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container lg:flex lg:justify-between lg:items-center">

@@ -19,6 +19,7 @@ const CategoriesPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"categories"} />
     </Layout>

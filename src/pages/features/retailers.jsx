@@ -19,6 +19,7 @@ const RetailersPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"retailers"} />
     </Layout>

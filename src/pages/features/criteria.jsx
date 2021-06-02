@@ -19,6 +19,7 @@ const LeadCriteriaPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"criteria"} />
     </Layout>

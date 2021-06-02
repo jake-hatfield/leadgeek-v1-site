@@ -21,6 +21,7 @@ const ContactSuccess = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="relative bg-splatter">
         <HeaderWrapper>

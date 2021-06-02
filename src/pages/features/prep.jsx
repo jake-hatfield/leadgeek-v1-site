@@ -19,6 +19,7 @@ const PrepPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"prep"} />
     </Layout>

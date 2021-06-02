@@ -19,6 +19,7 @@ const PredictabilityPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"predictability"} />
     </Layout>

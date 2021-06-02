@@ -30,6 +30,7 @@ const IndexPage = ({ data }) => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">

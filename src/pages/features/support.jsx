@@ -19,6 +19,7 @@ const SupportPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"support"} />
     </Layout>

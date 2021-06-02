@@ -22,6 +22,7 @@ const TermsPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="py-8 mdd:py-12 lg:py-16 text-gray-900 bg-splatter">
         <div className="max-w-2xl container">

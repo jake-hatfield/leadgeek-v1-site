@@ -9,7 +9,7 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 const NotFoundPage = () => (
   <Layout>
-    <GatsbySeo title="404: Page Not Found | Leadgeek" />
+    <GatsbySeo title="404: Page Not Found | Leadgeek" language="en" />
     <section className="relative overflow-hidden bg-splatter">
       <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"}>
         <PrimaryHeader

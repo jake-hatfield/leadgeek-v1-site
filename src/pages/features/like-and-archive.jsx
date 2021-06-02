@@ -19,6 +19,7 @@ const LikeAndArchivePage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"like-and-archive"} />
     </Layout>

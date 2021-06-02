@@ -22,6 +22,7 @@ const AboutPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <section className="py-12 text-gray-700 bg-splatter">
         <div className="container max-w-2xl">

@@ -19,6 +19,7 @@ const FeedPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"feed"} />
     </Layout>

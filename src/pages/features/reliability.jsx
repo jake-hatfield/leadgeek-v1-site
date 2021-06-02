@@ -19,6 +19,7 @@ const ReliabilityPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"reliability"} />
     </Layout>

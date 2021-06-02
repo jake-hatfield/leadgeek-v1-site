@@ -28,6 +28,7 @@ const PricingPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <ProductJsonLd
         productName="Leadgeek Grow Plan"

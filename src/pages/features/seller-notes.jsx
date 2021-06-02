@@ -19,6 +19,7 @@ const SellerNotesPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"seller-notes"} />
     </Layout>

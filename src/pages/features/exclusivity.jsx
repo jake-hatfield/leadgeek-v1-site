@@ -19,6 +19,7 @@ const ExclusivityPage = () => {
           description: { desc },
           type: "website",
         }}
+        language="en"
       />
       <Features feature={"exclusivity"} />
     </Layout>
