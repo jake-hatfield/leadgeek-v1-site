@@ -7,14 +7,17 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-import FeedMp4 from "assets/video/the-feed.mp4"
-import FiltersMp4 from "assets/video/filters.mp4"
-import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
 import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import OgImage from "assets/images/og/og-how-it-works.jpg"
+import FeedMp4 from "assets/video/the-feed.mp4"
+import FiltersMp4 from "assets/video/filters.mp4"
+import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
+import FeedWebm from "assets/video/the-feed.webm"
+import FiltersWebm from "assets/video/filters.webm"
+import LikeArchiveWebm from "assets/video/like-and-archive.webm"
 
 const IndexPage = ({ data }) => {
   const title = "How Leadgeek Works"
@@ -110,6 +113,7 @@ const IndexPage = ({ data }) => {
                 className="video-responsive-item"
                 alt="Feed demo"
               >
+                <source src={FeedWebm} type="video/webm" />
                 <source src={FeedMp4} type="video/mp4" />
               </video>
             </div>
@@ -180,6 +184,7 @@ const IndexPage = ({ data }) => {
                 className="w-full rounded-lg border border-gray-900 stack-sm"
                 alt="Filter demo"
               >
+                <source src={FiltersWebm} type="video/webm" />
                 <source src={FiltersMp4} type="video/mp4" />
               </video>
             </div>
@@ -261,6 +266,7 @@ const IndexPage = ({ data }) => {
                 className="video-responsive-item"
                 alt="Like and archive demo"
               >
+                <source src={LikeArchiveWebm} type="video/webm" />
                 <source src={LikeArchiveMp4} type="video/mp4" />
               </video>
             </div>

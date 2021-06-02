@@ -12,6 +12,13 @@ import FiltersMp4 from "assets/video/filters.mp4"
 import PrepMp4 from "assets/video/prep.mp4"
 import SearchMp4 from "assets/video/search.mp4"
 import ExportMp4 from "assets/video/export.mp4"
+import CommentWebm from "assets/video/comment.webm"
+import FeedWebm from "assets/video/the-feed.webm"
+import LikeArchiveWebm from "assets/video/like-and-archive.webm"
+import FiltersWebm from "assets/video/filters.webm"
+import PrepWebm from "assets/video/prep.webm"
+import SearchWebm from "assets/video/search.webm"
+import ExportWebm from "assets/video/export.webm"
 
 const FeaturePage = ({ feature }) => {
   const [currentFeature, setCurrentFeature] = useState(
@@ -70,7 +77,8 @@ const FeaturePage = ({ feature }) => {
             playsInline
             className="w-full rounded-lg border border-gray-900 stack-sm"
           >
-            <source src={video} type="video/mp4" />
+            <source src={video.webm} type="video/webm" />
+            <source src={video.mp4} type="video/mp4" />
           </video>
         </div>
       )}
@@ -820,7 +828,7 @@ export const featureList = [
       rotate: "-rotate-2 hover:-rotate-1",
     },
     testimonialTwo: null,
-    video: FeedMp4,
+    video: { webm: FeedWebm, mp4: FeedMp4 },
     link: "feed",
     nextLink: "filters",
     prevLink: "seller-insight",
@@ -879,7 +887,7 @@ export const featureList = [
       source: "Austin",
       rotate: "rotate-2 hover:-rotate-2",
     },
-    video: FiltersMp4,
+    video: { webm: FiltersWebm, mp4: FiltersMp4 },
     link: "filters",
     nextLink: "details",
     prevLink: "feed",
@@ -978,7 +986,7 @@ export const featureList = [
     ],
     testimonialOne: null,
     testimonialTwo: null,
-    video: LikeArchiveMp4,
+    video: { webm: LikeArchiveWebm, mp4: LikeArchiveMp4 },
     link: "like-and-archive",
     nextLink: "prep",
     prevLink: "details",
@@ -1029,7 +1037,7 @@ export const featureList = [
         rotate: "-rotate-2 hover:-rotate-1",
       },
     ],
-    video: PrepMp4,
+    video: { webm: PrepWebm, mp4: PrepMp4 },
     link: "prep",
     nextLink: "comments",
     prevLink: "like-and-archive",
@@ -1062,7 +1070,7 @@ export const featureList = [
         rotate: "-rotate-3 hover:-rotate-2",
       },
     ],
-    video: CommentMp4,
+    video: { webm: CommentWebm, mp4: CommentMp4 },
     link: "comments",
     nextLink: "search",
     prevLink: "prep",
@@ -1109,7 +1117,7 @@ export const featureList = [
         rotate: "-rotate-1 hover:rotate-0",
       },
     ],
-    video: SearchMp4,
+    video: { webm: SearchWebm, mp4: SearchMp4 },
     link: "search",
     nextLink: "seller-notes",
     prevLink: "comments",
@@ -1267,7 +1275,7 @@ export const featureList = [
         rotate: "rotate-2 hover:rotate-0",
       },
     ],
-    video: ExportMp4,
+    video: { webm: ExportWebm, mp4: ExportMp4 },
     link: "lead-ownership",
     nextLink: "support",
     prevLink: "promo-notes",
