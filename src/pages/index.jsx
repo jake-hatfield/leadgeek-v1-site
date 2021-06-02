@@ -16,12 +16,14 @@ import Quote from "assets/svgs/quote.svg"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 
-import OGimage from "assets/images/og/og-index.jpg"
+import OgImageLg from "assets/images/og/og-index-lg.jpg"
+import OgImageSm from "assets/images/og/og-index-sm.jpg"
 
 const IndexPage = ({ data }) => {
   const title = "Leadgeek: Online Arbitrage Sourcing Lists & Software"
   const desc =
     "Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
+  const alt = "Leadgeek Arbitrage Sourcing List & Software"
   return (
     <Layout>
       <GatsbySeo
@@ -33,10 +35,16 @@ const IndexPage = ({ data }) => {
           url: "https://leadgeek.io/",
           images: [
             {
-              url: OGimage,
+              url: OgImageLg,
               width: 1200,
               height: 630,
-              alt: "Leadgeek Arbitrage Sourcing List & Software",
+              alt,
+            },
+            {
+              url: OgImageSm,
+              width: 1200,
+              height: 600,
+              alt,
             },
           ],
           type: "website",
