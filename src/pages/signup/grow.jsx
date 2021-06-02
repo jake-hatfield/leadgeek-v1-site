@@ -4,6 +4,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import SignupPage from "components/signupPage"
 
+import OgImage from "assets/images/og/og-grow.jpg"
+
 const GrowSignupPage = () => {
   const growPrice = 129
   const growPlanSeats = 30
@@ -52,6 +54,14 @@ const GrowSignupPage = () => {
           description: desc,
           url: "https://leadgeek.io/signup/grow/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Join the Grow plan & start sourcing",
+            },
+          ],
         }}
         language="en"
       />

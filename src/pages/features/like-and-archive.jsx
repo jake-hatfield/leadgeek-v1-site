@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-like-and-archive.jpg"
+
 const LikeAndArchivePage = () => {
   const title = `Stay Organized with "Like" & "Archive" | Leadgeek`
   const desc =
@@ -19,6 +21,14 @@ const LikeAndArchivePage = () => {
           description: desc,
           url: "https://leadgeek.io/features/like-and-archive/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: `Stay organized with "Like" & "Archive"`,
+            },
+          ],
         }}
         language="en"
       />

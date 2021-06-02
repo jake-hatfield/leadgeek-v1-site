@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-seller-notes.jpg"
+
 const SellerNotesPage = () => {
   const title = "Variation Suggestions Out of the Box | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const SellerNotesPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/seller-notes/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Variation suggestions out of the box",
+            },
+          ],
         }}
         language="en"
       />

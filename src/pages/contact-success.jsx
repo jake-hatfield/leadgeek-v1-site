@@ -7,6 +7,8 @@ import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
+import OgImage from "assets/images/og/og-contact-success.jpg"
+
 const ContactSuccess = () => {
   const title = "Contact Success | Leadgeek"
   const desc =
@@ -21,6 +23,14 @@ const ContactSuccess = () => {
           description: desc,
           url: "https://leadgeek.io/contact-success/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Thank you for contacting us",
+            },
+          ],
         }}
         language="en"
       />

@@ -13,6 +13,7 @@ import Loopy from "assets/svgs/loopy-dashed.svg"
 import Bullet from "assets/svgs/bullet.svg"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+import OgImage from "assets/images/og/og-pricing.jpg"
 
 const PricingPage = () => {
   const title = "Leadgeek Pricing"
@@ -28,6 +29,14 @@ const PricingPage = () => {
           description: desc,
           url: "https://leadgeek.io/pricing/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "See Leadgeek pricing & plans",
+            },
+          ],
         }}
         language="en"
       />

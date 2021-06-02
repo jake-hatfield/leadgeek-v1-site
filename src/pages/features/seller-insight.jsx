@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-seller-insight.jpg"
+
 const SellerInsightPage = () => {
   const title = "Professional Experience in Your Corner | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const SellerInsightPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/seller-insight/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Professional experience in your corner",
+            },
+          ],
         }}
         language="en"
       />

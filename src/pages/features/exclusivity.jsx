@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-exclusivity.jpg"
+
 const ExclusivityPage = () => {
   const title = "The Inner Circle | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const ExclusivityPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/exclusivity/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "The inner circle",
+            },
+          ],
         }}
         language="en"
       />

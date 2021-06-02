@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
 
+import OgImage from "assets/images/og/og-privacy.jpg"
+
 const PrivacyPolicyPage = () => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
@@ -22,6 +24,14 @@ const PrivacyPolicyPage = () => {
           description: desc,
           url: "https://leadgeek.io/privacy/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Leadgeek privacy policy",
+            },
+          ],
         }}
         language="en"
       />

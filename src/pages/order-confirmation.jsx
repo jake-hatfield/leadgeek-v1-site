@@ -7,6 +7,7 @@ import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
 import Bullet from "assets/svgs/bullet.svg"
+import OgImage from "assets/images/og/og-order-confirmation.jpg"
 
 const OrderConfirmationPage = ({ location }) => {
   const nextStepsList = [
@@ -52,6 +53,14 @@ const OrderConfirmationPage = ({ location }) => {
           description: desc,
           url: "https://leadgeek.io/order-confirmation/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Thank you for joining Leadgeek",
+            },
+          ],
         }}
         language="en"
       />

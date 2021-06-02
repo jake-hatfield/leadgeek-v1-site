@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-support.jpg"
+
 const SupportPage = () => {
   const title = "A+ Member Support | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const SupportPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/support/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "A+ member support",
+            },
+          ],
         }}
         language="en"
       />

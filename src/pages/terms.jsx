@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
 
+import OgImage from "assets/images/og/og-terms.jpg"
+
 const TermsPage = () => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
@@ -22,6 +24,14 @@ const TermsPage = () => {
           description: desc,
           url: "https://leadgeek.io/terms/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Leadgeek terms of service",
+            },
+          ],
         }}
         language="en"
       />

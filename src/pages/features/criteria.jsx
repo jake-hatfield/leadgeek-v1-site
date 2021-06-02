@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-criteria.jpg"
+
 const LeadCriteriaPage = () => {
   const title = "Top-Shelf Leads Come Standard | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const LeadCriteriaPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/criteria/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Top-shelf leads come standard",
+            },
+          ],
         }}
         language="en"
       />

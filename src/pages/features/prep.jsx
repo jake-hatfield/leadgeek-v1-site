@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-prep.jpg"
+
 const PrepPage = () => {
   const title = "Account for Prep Costs Automatically | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const PrepPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/prep/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Account for prep costs automatically",
+            },
+          ],
         }}
         language="en"
       />

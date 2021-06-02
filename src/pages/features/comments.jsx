@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-comments.jpg"
+
 const CommentsPage = () => {
   const title = "Leave Your Mark | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const CommentsPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/comments/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Leave your mark",
+            },
+          ],
         }}
         language="en"
       />

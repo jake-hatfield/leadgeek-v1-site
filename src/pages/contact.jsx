@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import FormField from "components/utils/FormField"
 
+import OgImage from "assets/images/og/og-contact.jpg"
+
 const ContactPage = () => {
   const title = "Contact Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const ContactPage = () => {
           description: desc,
           url: "https://leadgeek.io/contact/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Reach out & chat with Leadgeek",
+            },
+          ],
         }}
         language="en"
       />

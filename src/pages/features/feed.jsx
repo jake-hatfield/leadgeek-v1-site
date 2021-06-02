@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-feed.jpg"
+
 const FeedPage = () => {
   const title = "Skim Info in the Feed | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const FeedPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/feed/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Skim info in the Feed",
+            },
+          ],
         }}
         language="en"
       />

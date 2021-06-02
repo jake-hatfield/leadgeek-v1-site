@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-historical-metrics.jpg"
+
 const HistoricalMetricsPage = () => {
   const title = "Check Out Historical Metrics | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const HistoricalMetricsPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/historical-metrics/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Check out historical metrics",
+            },
+          ],
         }}
         language="en"
       />

@@ -9,6 +9,7 @@ import PrimaryHeader from "components/PrimaryHeader"
 import { featureList } from "components/layout/Features"
 
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
+import OgImage from "assets/images/og/og-features-index.jpg"
 
 const FeaturesIndexPage = () => {
   const title = `Leadgeek Features`
@@ -23,6 +24,14 @@ const FeaturesIndexPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "See the top 20 Leadgeek features",
+            },
+          ],
         }}
         language="en"
       />

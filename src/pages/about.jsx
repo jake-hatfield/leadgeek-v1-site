@@ -8,6 +8,8 @@ import Layout from "components/layout/Layout"
 import Signature from "assets/svgs/signature.svg"
 import Loopy from "assets/svgs/loopy-dashed.svg"
 
+import OgImage from "assets/images/og/og-about.jpg"
+
 const AboutPage = () => {
   const title = "About Leadgeek - Est. 2020"
   const desc =
@@ -22,6 +24,14 @@ const AboutPage = () => {
           description: desc,
           url: "https://leadgeek.io/about/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Read about Leadgeek",
+            },
+          ],
         }}
         language="en"
       />

@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-retailers.jpg"
+
 const RetailersPage = () => {
   const title = "Solid sources by default | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const RetailersPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/retailers/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Solid sources by default",
+            },
+          ],
         }}
         language="en"
       />

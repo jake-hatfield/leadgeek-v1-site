@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-reliability.jpg"
+
 const ReliabilityPage = () => {
   const title = "Keep 'Em Coming | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const ReliabilityPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/reliability/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Keep 'em coming",
+            },
+          ],
         }}
         language="en"
       />

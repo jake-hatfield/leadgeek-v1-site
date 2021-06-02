@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-lead-ownership.jpg"
+
 const LeadOwnerShipPage = () => {
   const title = "Leads Belong to You | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const LeadOwnerShipPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/lead-ownership/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Leads belong to you",
+            },
+          ],
         }}
         language="en"
       />

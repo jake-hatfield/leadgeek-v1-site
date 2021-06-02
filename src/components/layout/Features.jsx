@@ -28,7 +28,6 @@ const FeaturePage = ({ feature }) => {
     nextLink,
     prevLink,
     video,
-    image,
   } = currentFeature
   return (
     <section className="pb-12 lg:pb-24 bg-splatter">

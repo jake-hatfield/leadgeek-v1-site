@@ -14,6 +14,7 @@ import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+import OgImage from "assets/images/og/og-how-it-works.jpg"
 
 const IndexPage = ({ data }) => {
   const title = "How Leadgeek Works"
@@ -29,6 +30,14 @@ const IndexPage = ({ data }) => {
           description: desc,
           url: "https://leadgeek.io/how-it-works/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "See how Leadgeek makes things simple",
+            },
+          ],
         }}
         language="en"
       />

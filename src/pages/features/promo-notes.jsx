@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-promo-notes.jpg"
+
 const PromoNotesPage = () => {
   const title = "Your Very Own Research Assistant | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const PromoNotesPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/promo-notes/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Your very own research assistant",
+            },
+          ],
         }}
         language="en"
       />

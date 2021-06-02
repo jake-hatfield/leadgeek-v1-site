@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-filters.jpg"
+
 const FiltersPage = () => {
   const title = "Surface Data, Don't Dig for It | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const FiltersPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/filters/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Surface data, don't dig for it",
+            },
+          ],
         }}
         language="en"
       />

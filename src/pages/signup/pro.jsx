@@ -4,6 +4,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import SignupPage from "components/signupPage"
 
+import OgImage from "assets/images/og/og-pro.jpg"
+
 const ProSignupPage = () => {
   const proPrice = 189
   const proPlanSeats = 15
@@ -52,6 +54,14 @@ const ProSignupPage = () => {
           description: desc,
           url: "https://leadgeek.io/signup/pro/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Join the Pro plan & start scaling",
+            },
+          ],
         }}
         language="en"
       />

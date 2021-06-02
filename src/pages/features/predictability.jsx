@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-predictability.jpg"
+
 const PredictabilityPage = () => {
   const title = "Hot Off the Press | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const PredictabilityPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/predictability/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Hot off the press",
+            },
+          ],
         }}
         language="en"
       />

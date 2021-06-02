@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import Features from "components/layout/Features"
 
+import OgImage from "assets/images/og/og-categories.jpg"
+
 const CategoriesPage = () => {
   const title = "Source Comprehensive Categories | Leadgeek"
   const desc =
@@ -19,6 +21,14 @@ const CategoriesPage = () => {
           description: desc,
           url: "https://leadgeek.io/features/categories/",
           type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Source comprehensive categories",
+            },
+          ],
         }}
         language="en"
       />
