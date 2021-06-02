@@ -15,8 +15,9 @@ const SellerInsightPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/seller-insight/",
           type: "website",
         }}
         language="en"

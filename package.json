@@ -21,6 +21,7 @@
     "gatsby-plugin-netlify": "^2.11.1",
     "gatsby-plugin-next-seo": "^1.7.0",
     "gatsby-plugin-postcss": "^3.7.0",
+    "gatsby-plugin-purgecss": "^6.0.2",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-resolve-src": "^2.1.0",
     "gatsby-plugin-scroll-reveal": "0.0.7",

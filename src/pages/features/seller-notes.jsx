@@ -15,8 +15,9 @@ const SellerNotesPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/seller-notes/",
           type: "website",
         }}
         language="en"

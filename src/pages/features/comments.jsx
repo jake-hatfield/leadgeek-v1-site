@@ -15,8 +15,9 @@ const CommentsPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/comments/",
           type: "website",
         }}
         language="en"

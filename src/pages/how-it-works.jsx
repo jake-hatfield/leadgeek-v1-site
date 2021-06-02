@@ -25,8 +25,9 @@ const IndexPage = ({ data }) => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/how-it-works/",
           type: "website",
         }}
         language="en"

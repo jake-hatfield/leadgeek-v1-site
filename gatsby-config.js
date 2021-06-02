@@ -76,14 +76,14 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true,
-    //     tailwind: true,
-    //     ignore: ["/sal.js"],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        tailwind: true,
+        ignore: ["/sal.js"],
+      },
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

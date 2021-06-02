@@ -15,8 +15,9 @@ const LeadOwnerShipPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/lead-ownership/",
           type: "website",
         }}
         language="en"

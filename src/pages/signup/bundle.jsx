@@ -41,8 +41,9 @@ const BundleSignupPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/signup/bundle/",
           type: "website",
         }}
         language="en"

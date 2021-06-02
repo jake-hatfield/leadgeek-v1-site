@@ -15,8 +15,9 @@ const CalculationPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/calculations/",
           type: "website",
         }}
         language="en"

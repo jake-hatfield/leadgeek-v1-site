@@ -8,7 +8,7 @@ import Layout from "components/layout/Layout"
 const PrivacyPolicyPage = () => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
-  const siteLinkFull = "https://leadgeek.io"
+  const siteLinkFull = "https://leadgeek.io/"
   const title = "Leadgeek Privacy Policy"
   const desc =
     "The privacy policy for Leadgeek website users and customers. We take your data seriously and handle it responsibly."
@@ -18,8 +18,9 @@ const PrivacyPolicyPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/privacy/",
           type: "website",
         }}
         language="en"

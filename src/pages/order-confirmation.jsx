@@ -48,8 +48,9 @@ const OrderConfirmationPage = ({ location }) => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/order-confirmation/",
           type: "website",
         }}
         language="en"

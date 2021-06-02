@@ -48,8 +48,9 @@ const ProSignupPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/signup/pro/",
           type: "website",
         }}
         language="en"

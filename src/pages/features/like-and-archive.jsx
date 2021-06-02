@@ -15,8 +15,9 @@ const LikeAndArchivePage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/like-and-archive/",
           type: "website",
         }}
         language="en"

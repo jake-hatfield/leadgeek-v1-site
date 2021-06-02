@@ -15,8 +15,9 @@ const HistoricalMetricsPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/historical-metrics/",
           type: "website",
         }}
         language="en"

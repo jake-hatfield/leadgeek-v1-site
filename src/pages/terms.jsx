@@ -8,7 +8,7 @@ import Layout from "components/layout/Layout"
 const TermsPage = () => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
-  const siteLinkFull = "https://leadgeek.io"
+  const siteLinkFull = "https://leadgeek.io/"
   const title = "Leadgeek Terms of Service"
   const desc =
     "All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
@@ -18,8 +18,9 @@ const TermsPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/terms/",
           type: "website",
         }}
         language="en"

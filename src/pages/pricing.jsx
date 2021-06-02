@@ -24,8 +24,9 @@ const PricingPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/pricing/",
           type: "website",
         }}
         language="en"

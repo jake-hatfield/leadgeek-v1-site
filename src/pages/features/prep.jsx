@@ -15,8 +15,9 @@ const PrepPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/prep/",
           type: "website",
         }}
         language="en"

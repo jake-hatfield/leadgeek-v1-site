@@ -15,8 +15,9 @@ const LeadCriteriaPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/criteria/",
           type: "website",
         }}
         language="en"

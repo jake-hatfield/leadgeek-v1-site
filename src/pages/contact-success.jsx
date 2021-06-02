@@ -17,8 +17,9 @@ const ContactSuccess = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/contact-success/",
           type: "website",
         }}
         language="en"

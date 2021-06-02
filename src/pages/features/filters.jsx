@@ -15,8 +15,9 @@ const FiltersPage = () => {
         title={title}
         description={desc}
         openGraph={{
-          title: { title },
-          description: { desc },
+          title,
+          description: desc,
+          url: "https://leadgeek.io/features/filters/",
           type: "website",
         }}
         language="en"
