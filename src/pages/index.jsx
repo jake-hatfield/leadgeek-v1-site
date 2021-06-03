@@ -46,8 +46,11 @@ const IndexPage = ({ data }) => {
       />
       {/* hero section */}
       <section className="relative overflow-hidden bg-splatter">
-        <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"}>
-          <section className="md:flex md:items-center md:justify-center mb-4 container">
+        <HeaderWrapper
+          bottomPadding={"pb-24 lg:pb-80"}
+          classes={"flex flex-col-reverse md:flex-col"}
+        >
+          <section className="mt-4 md:mt-0 md:flex md:items-center md:justify-center mb-4 container">
             {testimonialsShort.map((testimonial, i) => (
               <TestimonialShort key={i} text={testimonial} />
             ))}
