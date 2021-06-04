@@ -248,7 +248,7 @@ const IndexPage = ({ data }) => {
               use, but most of all software that's tailored to <i>you</i>.
             </p>
             <p className="mt-4">
-              <span className={classes.emphasizedText}>
+              <span className="emphasized-text">
                 Leadgeek is a reset button to make arbitrage efficient, potent,
                 and fresh - putting you back in control of your business
               </span>
