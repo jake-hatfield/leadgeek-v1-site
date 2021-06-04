@@ -11,6 +11,7 @@ import CTA from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+import RetroSun from "assets/svgs/retro-sun.svg"
 import OgImage from "assets/images/og/og-how-it-works.jpg"
 import FeedMp4 from "assets/video/the-feed.mp4"
 import FiltersMp4 from "assets/video/filters.mp4"
@@ -70,35 +71,38 @@ const IndexPage = ({ data }) => {
             className="min-w-full rounded-lg border border-gray-900 stack-sm"
           />
         </div>
-        <header className="mt-12 container">
-          <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-            The current baloney won't cut it.
-          </h2>
-          <p className="mt-4 lg:mt-6 mx-auto h4">
-            Why should you learn how to tweak a-million-and-one settings and
-            spend hours only to find a small handful of products to arbitrage?
-            That’s like finding a needle in a haystack.{" "}
-            <span className="emphasized-text-light lg:text-lg">
-              You're putting in the time to find{" "}
-              <span className="italic">some</span> gold nuggets, but how many
-              leads are you missing?
-            </span>{" "}
-            And more importantly -{" "}
-            <span className="emphasized-text-light lg:text-lg">
-              how much time are you wasting?
-            </span>
-          </p>
-          <p className="mt-4 lg:mt-6 mx-auto h4">
-            Whether you’ve been screening thousands of products to find the 0.5%
-            of winners or picking leads out from spreadsheets that look like
-            they belong to the last decade,{" "}
-            <span className="emphasized-text-light lg:text-lg">
-              the traditional sourcing process can be quite frustrating
-            </span>
-            . Unless something changes, it doesn’t take long for “traditional”
-            to turn into "painful.”
-          </p>
-        </header>
+        <div className="relative overflow-x-hidden">
+          <RetroSun className="hidden md:block absolute md:w-16 lg:w-32 text-teal-200 bottom-0 right-0 transform -translate-y-12 translate-x-6 lg:translate-x-12" />
+          <header className="mt-12 container">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+              The current baloney won't cut it.
+            </h2>
+            <p className="mt-4 lg:mt-6 mx-auto h4">
+              Why should you learn how to tweak a-million-and-one settings and
+              spend hours only to find a small handful of products to arbitrage?
+              That’s like finding a needle in a haystack.{" "}
+              <span className="emphasized-text-light lg:text-lg">
+                You're putting in the time to find{" "}
+                <span className="italic">some</span> gold nuggets, but how many
+                leads are you missing?
+              </span>{" "}
+              And more importantly -{" "}
+              <span className="emphasized-text-light lg:text-lg">
+                how much time are you wasting?
+              </span>
+            </p>
+            <p className="mt-4 lg:mt-6 mx-auto h4">
+              Whether you’ve been screening thousands of products to find the
+              0.5% of winners or picking leads out from spreadsheets that look
+              like they belong to the last decade,{" "}
+              <span className="emphasized-text-light lg:text-lg">
+                the traditional sourcing process can be quite frustrating
+              </span>
+              . Unless something changes, it doesn’t take long for “traditional”
+              to turn into "painful.”
+            </p>
+          </header>
+        </div>
       </section>
 
       <section className="py-12 md:py-24 text-gray-900 bg-splatter">

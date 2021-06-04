@@ -17,10 +17,7 @@ const Footer = () => {
 
     {
       header: "Company",
-      items: [
-        { title: "About", link: "about" },
-        { title: "Contact", link: "contact" },
-      ],
+      items: [{ title: "Contact", link: "contact" }],
     },
   ]
   return (

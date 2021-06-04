@@ -15,6 +15,12 @@ import TurnyFat from "assets/svgs/turny-fat.svg"
 import Quote from "assets/svgs/quote.svg"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
+import RetroSun from "assets/svgs/retro-sun.svg"
+import RetroSwirl from "assets/svgs/retro-swirl.svg"
+import BirdTracks from "assets/svgs/bird-tracks.svg"
+import DoubleLine from "assets/svgs/plain-line-1.svg"
+import Signature from "assets/svgs/signature.svg"
+import DashLoopLine from "assets/svgs/dash-loop-line.svg"
 
 import OgImage from "assets/images/og/og-index.jpg"
 
@@ -63,7 +69,7 @@ const IndexPage = ({ data }) => {
                 <span className="font-bold">
                   {" "}
                   Receive a daily list of the best online arbitrage products to
-                  flip via Amazon FBA
+                  flip for profit on Amazon.
                 </span>
                 .
               </p>
@@ -77,11 +83,14 @@ const IndexPage = ({ data }) => {
         </HeaderWrapper>
       </section>
       {/* hero image section */}
-      <div className="relative bg-gray-100">
-        <DividerTop className="divider-top text-gray-100" />
-        <DividerBottom className="divider-bottom text-gray-100" />
+      <section className="relative bg-purple-100">
+        <DividerTop className="divider-top text-purple-100" />
+        <DividerBottom className="divider-bottom text-purple-100" />
+        <RetroSun className="hidden md:block absolute w-12 md:w-20 lg:w-28 text-purple-300 bottom-0 right-0 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45" />
+        <RetroSwirl className="hidden md:block absolute w-8 lg:w-12 text-purple-300 bottom-1/2 left-0 transform translate-y-24 translate-x-16" />
         <section className="py-12 relative">
           <div className="relative -mt-24 lg:-mt-40 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
+            <RetroSun className="absolute w-12 md:w-16 lg:w-24 text-purple-300 bottom-0 left-0 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4" />
             <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
               <div className="relative">
                 <LongArrow className="h-40 transform rotate-180 text-gray-500" />
@@ -120,15 +129,16 @@ const IndexPage = ({ data }) => {
               className="min-w-full rounded-lg stack-sm border border-gray-900"
             />
           </div>
-          <header className="pt-12 lg:pb-12 container md:text-center text-gray-700">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter">
-              Don't dig through information - surface it.
+          <header className="pt-12 lg:pb-12 container md:text-center text-gray-900">
+            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+              Your side-hustle is <i>finally</i> manageable.
             </h2>
             <p className="mt-4 lg:mt-6 mx-auto h4">
               <span className="font-semibold">Before using Leadgeek</span>: Your
               process to find new arbitrage leads is disorganized,
               time-consuming, and inconsistent. You feel like time and resources
-              are wasted when you can't find leads that meet your criteria.
+              are wasted when you can't find items to sell that meet your
+              criteria.
             </p>
             <p className="mt-4 lg:mt-6 mx-auto h4">
               <span className="font-semibold">After using Leadgeek</span>: You
@@ -144,20 +154,21 @@ const IndexPage = ({ data }) => {
             </div>
           </header>
         </section>
-      </div>
-      <section className="relative py-12 lg:pt-28 lg:pb-12 md:text-center overflow-hidden bg-splatter">
+      </section>
+      <section className="relative py-20 md:text-center overflow-hidden bg-splatter">
+        <DashLoopLine className="absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24" />
         <div className="container">
           <header>
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white">
               People who love clarity, love Leadgeek.
             </h2>
             <h3 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
-              Entrepreneurs, side-hustlers, newbies, and pro sellers all{" "}
+              Entrepreneurs, newbies, international sellers, and pros all{" "}
               <span className={classes.emphasizedText}>
                 join Leadgeek to fundamentally improve the arbitrage sourcing
                 process
               </span>
-              .
+              . See what members had to say...
             </h3>
           </header>
           <div className="mt-12 px-4">
@@ -168,11 +179,89 @@ const IndexPage = ({ data }) => {
                 source={testimonial.source}
                 desc={testimonial.desc}
                 rotate={testimonial.rotate}
+                position={testimonial.position}
+                bgSvg={testimonial.bgSvg}
               />
             ))}
           </div>
         </div>
       </section>
+      <section className="relative pt-8 lg:pt-0 text-gray-900 bg-splatter">
+        <div className="relative container">
+          <DashLoopLine className="absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24" />
+          <RetroSun className="hidden lg:block absolute w-12 md:w-16 lg:w-24 text-gray-400 bottom-0 left-0 transform -translate-y-12 lg:translate-x-48" />
+          <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-24 -translate-x-40 text-gray-400">
+            <BirdTracks />
+          </div>
+          <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform -translate-y-40 translate-x-40 text-gray-400">
+            <BirdTracks />
+          </div>
+          <div className="max-w-2xl mt-32 lg:mt-48 py-4 container relative bg-white rounded-lg border border-gray-900 stack-sm text-gray-900 leading-relaxed">
+            <p className="mt-4">Howdy!</p>
+            <p className="mt-4">I'm Jake, founder and CEO here at Leadgeek.</p>
+            <p className="mt-4">
+              Raise your hand if you think selling on Amazon shouldn't be that
+              complicated.
+            </p>
+            <p className="mt-4">
+              That's 1, 2, 3, 4, 73, 116... yep - just about everyone.
+            </p>
+            <p className="mt-4">
+              Buy an item low from a retailer like Target, sell it for profit on
+              Amazon's marketplace. The basics of arbitrage sound pretty easy,
+              right? It's a business model that's stood the test of time, and
+              when done well - is actually really rewarding.
+            </p>
+            <p className="mt-4">
+              Discovering something that's mis-valued and selling it in a
+              different marketplace for a profit can be truly enjoyable. Sure,
+              you're making money, but there's a
+              striking-gold-type-of-fulfillment to it. Maybe it's time to
+              refresh Seller Central to check for another sale?
+            </p>
+            <p className="mt-4">But somewhere along the way things changed.</p>
+            <p className="mt-4">
+              Amazon FBA got way too complex. Using software is time-consuming
+              and complicated, and sourcing lists are dated and unreliable.
+              Either solution feels like an incomplete deal-breaker.
+            </p>
+            <p className="mt-4">
+              The truth is, there's a lot to learn in e-commerce. There are
+              countless tools you could use; and with no single point with which
+              to control lead generation, attempting to scale gets messy in no
+              time flat.
+            </p>
+            <p className="mt-4">
+              To say the least, Amazon arbitrage was in desperate need of a
+              dust-off.
+            </p>
+            <p className="mt-4">
+              Enter Leadgeek. Leadgeek believes that simplicty is scalability.
+              Having a predictable source for leads with predictable standards
+              means that you can grow... predictably. And with a singular
+              service, it costs just a fraction of the price if you were to do
+              it all on your own.
+            </p>
+            <p className="mt-4">
+              With lots of input from members, I create software that I'd want
+              myself - software that has a premium feel and is a pleasure to
+              use, but most of all software that's tailored to <i>you</i>.
+            </p>
+            <p className="mt-4">
+              <span className={classes.emphasizedText}>
+                Leadgeek is a reset button to make arbitrage efficient, potent,
+                and fresh - putting you back in control of your business
+              </span>
+              .
+            </p>
+            <p className="mt-4">All the best,</p>
+            <div>
+              <Signature className="w-32 lg:w-40 mt-6 pb-6" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTA
         links={[
           { title: "See how it works", link: "how-it-works" },
@@ -215,24 +304,35 @@ const TestimonialShort = ({ text }) => {
   )
 }
 
-const TestimonialFull = ({ text, source, desc, rotate }) => {
+const TestimonialFull = ({ text, source, desc, rotate, position, bgSvg }) => {
   return (
     <article
-      className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-12 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${rotate}`}
+      className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
     >
-      <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
-        <Quote className="h-8 w-8 text-gray-500 transform rotate-180 -translate-y-4 -translate-x-6" />
-      </div>
-      <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
-        <Quote className="h-8 w-8 text-gray-500 transform -translate-y-2 translate-x-6" />
-      </div>
-      <blockquote className="md:text-lg leading-relaxed text-gray-800">
-        {text}
-      </blockquote>
-      <div className="mt-4 all-center">
-        <cite className="text-sm font-semibold inter">{source}</cite>
-        <span className="mx-2 font-semibold text-purple-500">/</span>
-        <p className="font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
+      <div
+        className={`relative z-40 w-full md:max-w-xl lg:max-w-xl transform ${rotate} transition-main`}
+      >
+        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl negative-z">
+          {bgSvg}
+        </div>
+        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark">
+          <blockquote className="md:text-lg leading-relaxed text-gray-800">
+            {text}
+          </blockquote>
+          <div className="mt-4 all-center">
+            <cite className="text-sm font-semibold inter text-gray-900">
+              {source}
+            </cite>
+            <span className="mx-2 font-semibold text-purple-500">/</span>
+            <p className="font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
+          <Quote className="h-8 w-8 text-gray-900 transform rotate-180 -translate-x-6" />
+        </div>
+        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
+          <Quote className="h-8 w-8 text-gray-900 transform -translate-y-2 translate-x-6" />
+        </div>
       </div>
     </article>
   )
@@ -259,7 +359,13 @@ const testimonialsFull = [
     source: "Charles",
     desc: "New",
     image: null,
-    rotate: "rotate-2 hover:-rotate-2",
+    rotate: "rotate-2 hover:rotate-3",
+    position: "lg:-translate-x-6",
+    bgSvg: (
+      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-8 translate-x-16 text-gray-400">
+        <BirdTracks />
+      </div>
+    ),
   },
   {
     text: (
@@ -276,6 +382,17 @@ const testimonialsFull = [
     desc: "Intermediate",
     image: null,
     rotate: "-rotate-1 hover:rotate-2",
+    position: "justify-start lg:translate-x-16",
+    bgSvg: (
+      <div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform translate-y-8 -translate-x-12 text-gray-400">
+          <DoubleLine />
+        </div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-y-8 translate-x-8 text-gray-400">
+          <DoubleLine />
+        </div>
+      </div>
+    ),
   },
   {
     text: (
@@ -293,6 +410,17 @@ const testimonialsFull = [
     desc: "Intermediate",
     image: null,
     rotate: "rotate-2 hover:-rotate-3",
+    position: "lg:-translate-x-2",
+    bgSvg: (
+      <div>
+        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-16 -translate-x-16 text-gray-400">
+          <BirdTracks />
+        </div>
+        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-16 translate-x-8 text-gray-400">
+          <BirdTracks />
+        </div>
+      </div>
+    ),
   },
   {
     text: (
@@ -307,21 +435,63 @@ const testimonialsFull = [
     source: "Kevin",
     desc: "New",
     image: null,
-    rotate: "hover:-rotate-1",
+    rotate: "-rotate-2 hover:-rotate-3",
+    position: "justify-start lg:translate-x-28",
+    bgSvg: (
+      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform -translate-y-4 -translate-x-16 text-gray-400">
+        <BirdTracks />
+      </div>
+    ),
   },
   {
     text: (
       <p>
         <span className={classes.emphasizedText}>
-          It looks FANTASTIC on my first try!
-        </span>{" "}
-        Great work. I look forward to trying it more on my next lead list.
+          I've been very satisfied so far
+        </span>
+        !
+      </p>
+    ),
+    source: "Dail",
+    desc: "New",
+    image: null,
+    rotate: "hover:rotate-3",
+    position: "lg:translate-x-8",
+    bgSvg: (
+      <div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform -translate-x-12 text-gray-400">
+          <DoubleLine />
+        </div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-x-8 text-gray-400">
+          <DoubleLine />
+        </div>
+      </div>
+    ),
+  },
+  {
+    text: (
+      <p>
+        <span className={classes.emphasizedText}>
+          It looks FANTASTIC on my first try
+        </span>
+        ! Great work. I look forward to trying it more on my next lead list.
       </p>
     ),
     source: "Yucheng",
     desc: "International",
     image: null,
     rotate: "rotate-2 hover:rotate-3",
+    position: "lg:-translate-x-12",
+    bgSvg: (
+      <div>
+        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-8 -translate-x-16 text-gray-400">
+          <BirdTracks />
+        </div>
+        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-8 translate-x-8 text-gray-400">
+          <BirdTracks />
+        </div>
+      </div>
+    ),
   },
   {
     text: (
@@ -336,6 +506,12 @@ const testimonialsFull = [
     desc: "New",
     image: null,
     rotate: "-rotate-1 hover:rotate-2",
+    position: "lg:translate-x-16",
+    bgSvg: (
+      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-10 -translate-x-16 text-gray-400">
+        <BirdTracks />
+      </div>
+    ),
   },
   {
     text: (
@@ -352,6 +528,17 @@ const testimonialsFull = [
     desc: "International",
     image: null,
     rotate: "rotate-2 hover:-rotate-1",
+    position: "lg:-translate-x-8",
+    bgSvg: (
+      <div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform translate-y-8 -translate-x-12 text-gray-400">
+          <DoubleLine />
+        </div>
+        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-y-8 translate-x-8 text-gray-400">
+          <DoubleLine />
+        </div>
+      </div>
+    ),
   },
   {
     text: (
@@ -365,7 +552,13 @@ const testimonialsFull = [
     source: "Dimitry",
     desc: "Intermediate",
     image: null,
-    rotate: "rotate-1 hover:-rotate-1",
+    rotate: "-rotate-2 hover:-rotate-1",
+    position: "",
+    bgSvg: (
+      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-2 translate-x-16 text-gray-400">
+        <BirdTracks />
+      </div>
+    ),
   },
 ]
 

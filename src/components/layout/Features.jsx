@@ -309,7 +309,7 @@ export const featureList = [
       },
     ],
     testimonialOne: {
-      quote: "(My) profit margin is roughly 25% and ROI more than 2x that",
+      quote: "[My] profit margin is roughly 25% and ROI more than 2x that",
       source: "Charles",
       rotate: "-rotate-2 hover:-rotate-3",
     },
