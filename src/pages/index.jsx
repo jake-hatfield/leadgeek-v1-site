@@ -208,9 +208,9 @@ const IndexPage = ({ data }) => {
             </p>
             <p className="mt-4">
               Buy an item low from a retailer like Target, sell it for profit on
-              Amazon's marketplace. The basics of arbitrage sound pretty easy,
-              right? It's a business model that's stood the test of time, and
-              when done well - is actually really rewarding.
+              Amazon. The basics of arbitrage sound pretty easy, right? It's a
+              business model that's stood the test of time, and when done well -
+              is actually really rewarding.
             </p>
             <p className="mt-4">
               Discovering something that's mis-valued and selling it in a
@@ -252,7 +252,7 @@ const IndexPage = ({ data }) => {
                 Leadgeek is a reset button to make arbitrage efficient, potent,
                 and fresh - putting you back in control of your business
               </span>
-              .
+              . So poke around the site and check out how that works.
             </p>
             <p className="mt-4">All the best,</p>
             <div>
@@ -261,7 +261,6 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-
       <CTA
         links={[
           { title: "See how it works", link: "how-it-works" },

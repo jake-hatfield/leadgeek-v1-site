@@ -123,21 +123,32 @@ const PricingPage = () => {
               worstRating: "1",
             },
           },
+          {
+            author: "Dail",
+            reviewBody: `I've been very satisfied so far!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
           ratingValue: "5",
-          reviewCount: 8,
+          reviewCount: 9,
         }}
         offers={{
           price: "129.99",
           priceCurrency: "USD",
+          priceValidUntil: "2025-12-31",
           itemCondition: "https://schema.org/NewCondition",
-          availability: "https://schema.org/InStock",
+          availability: "https://schema.org/LimitedAvailability",
           url: "https://leadgeek.io/signup/grow/",
           seller: {
             name: "Leadgeek",
           },
         }}
+        sku="001"
         mpn="1"
       />
       <ProductJsonLd
@@ -223,21 +234,32 @@ const PricingPage = () => {
               worstRating: "1",
             },
           },
+          {
+            author: "Dail",
+            reviewBody: `I've been very satisfied so far!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
           ratingValue: "5",
-          reviewCount: 8,
+          reviewCount: 9,
         }}
         offers={{
           price: "189.99",
           priceCurrency: "USD",
+          priceValidUntil: "2025-12-31",
           itemCondition: "https://schema.org/NewCondition",
-          availability: "https://schema.org/InStock",
+          availability: "https://schema.org/LimitedAvailability",
           url: "https://leadgeek.io/signup/pro/",
           seller: {
             name: "Leadgeek",
           },
         }}
+        sku="002"
         mpn="2"
       />
       <ProductJsonLd
@@ -323,21 +345,32 @@ const PricingPage = () => {
               worstRating: "1",
             },
           },
+          {
+            author: "Dail",
+            reviewBody: `I've been very satisfied so far!`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
           ratingValue: "5",
-          reviewCount: 8,
+          reviewCount: 9,
         }}
         offers={{
           price: "263.00",
           priceCurrency: "USD",
+          priceValidUntil: "2025-12-31",
           itemCondition: "https://schema.org/NewCondition",
-          availability: "https://schema.org/InStock",
+          availability: "https://schema.org/LimitedAvailability",
           url: "https://leadgeek.io/signup/bundle/",
           seller: {
             name: "Leadgeek",
           },
         }}
+        sku="003"
         mpn="3"
       />
       <section className="relative overflow-x-hidden bg-splatter">
