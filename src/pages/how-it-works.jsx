@@ -19,6 +19,7 @@ import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
 import FeedWebm from "assets/video/the-feed.webm"
 import FiltersWebm from "assets/video/filters.webm"
 import LikeArchiveWebm from "assets/video/like-and-archive.webm"
+import Poster from "assets/images/white-bg.png"
 
 const IndexPage = ({ data }) => {
   const title = "How Leadgeek Works"
@@ -114,6 +115,7 @@ const IndexPage = ({ data }) => {
                 loop
                 muted
                 playsInline
+                poster={Poster}
                 className="video-responsive-item"
                 alt="Feed demo"
               >
@@ -185,6 +187,7 @@ const IndexPage = ({ data }) => {
                 loop
                 muted
                 playsInline
+                poster={Poster}
                 className="w-full rounded-lg border border-gray-900 stack-sm"
                 alt="Filter demo"
               >
@@ -267,6 +270,7 @@ const IndexPage = ({ data }) => {
                 loop
                 muted
                 playsInline
+                poster={Poster}
                 className="video-responsive-item"
                 alt="Like and archive demo"
               >

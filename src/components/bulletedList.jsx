@@ -10,14 +10,7 @@ const bulletedList = ({ items, margin, gridLayout, maxWidth }) => {
         className={`md:mx-auto ${listMaxWidth} md:grid ${gridLayout} text-gray-700`}
       >
         {items.map((item, i) => (
-          <li
-            key={i}
-            className="mt-2 lg:mt-0 flex items-center"
-            data-sal="slide-up"
-            data-sal-duration="2000"
-            data-sal-delay={`${item.delay}00`}
-            data-sal-easing="ease"
-          >
+          <li key={i} className="mt-2 lg:mt-0 flex items-center">
             <Bullet className="svg-sm text-teal-300" />
             <span className="ml-4">{item.title}</span>
           </li>

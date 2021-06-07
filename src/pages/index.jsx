@@ -470,10 +470,11 @@ const testimonialsFull = [
   {
     text: (
       <p>
+        The software is awesome...{" "}
         <span className={classes.emphasizedText}>
           It looks FANTASTIC on my first try
         </span>
-        ! Great work. I look forward to trying it more on my next lead list.
+        ! Great work.
       </p>
     ),
     source: "Yucheng",
