@@ -57,9 +57,7 @@ module.exports = {
         tagmanager: {
           id: "GTM-NNVJ2DH",
         },
-        optimize: {
-          id: "OPT-KXGPFFT",
-        },
+        includeInDevelopment: true,
       },
     },
     {
