@@ -46,7 +46,7 @@ body {
 }
 
 .bg-splatter {
-  background: #fff url("../assets/images/bg-splatter-full.jpg") top;
+  background: #fff url("../assets/images/bg-splatter.png") top;
   background-size: 1132px 1014px;
   @apply relative z-0 overflow-hidden !important;
 }
