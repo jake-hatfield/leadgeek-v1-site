@@ -1047,7 +1047,8 @@ export const featureList = [
     desc: (
       <p>
         <span className={classes.emphasizedFeature}>
-          Personalize each product by writing a comment that only you can see
+          Personalize each product by writing a comment to remind you of
+          something for later
         </span>
         . Interested in a few variations or plan to re-order an item? Write it
         down so you don’t forget!

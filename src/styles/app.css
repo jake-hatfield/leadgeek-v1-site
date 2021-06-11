@@ -137,7 +137,7 @@ body {
 }
 
 .divider-bottom {
-  @apply absolute bottom-0 w-full transform translate-y-2 md:translate-y-6 lg:translate-y-10 z-10;
+  @apply absolute bottom-0 w-full transform translate-y-2 md:translate-y-6 lg:translate-y-10 xl:translate-y-12 z-10;
 }
 
 .form-field {
@@ -193,7 +193,7 @@ body {
 }
 
 .no-m-first {
-  @apply first:ml-0 ml-8;
+  @apply first:ml-0 ml-6;
 }
 
 .cta-link {
@@ -220,7 +220,7 @@ body {
 }
 
 .tertiary-link {
-  @apply text-gray-600 hover:text-purple-500 group transition-colors-main;
+  @apply hover:text-purple-500 group transition-colors-main;
 }
 
 .tertiary-link:hover {

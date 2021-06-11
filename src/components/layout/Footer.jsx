@@ -11,13 +11,15 @@ const Footer = () => {
         { title: "How it works", link: "how-it-works" },
         { title: "Tour features", link: "features" },
         { title: "Pricing", link: "pricing" },
-        // { title: "Demo", link: "demo" },
       ],
     },
 
     {
       header: "Company",
-      items: [{ title: "Contact", link: "contact" }],
+      items: [
+        { title: "Contact", link: "contact" },
+        { title: "Free OA coaching", link: "coaching" },
+      ],
     },
   ]
   return (
@@ -33,7 +35,7 @@ const Footer = () => {
               className="mt-4 md:mt-0 first:ml-0 ml-16"
             >
               <h3 className="h3 font-semibold">{category.header}</h3>
-              <ul className="mt-4">
+              <ul className="mt-4 text-gray-600">
                 {category.items.map(item => (
                   <li key={item.title} className="mb-2 last:mb-0 ">
                     <Link to={`/${item.link}/`} className="tertiary-link inter">

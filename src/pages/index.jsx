@@ -196,7 +196,7 @@ const IndexPage = ({ data }) => {
           <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform -translate-y-40 translate-x-40 text-gray-400">
             <BirdTracks />
           </div>
-          <div className="max-w-2xl mt-32 lg:mt-48 py-4 container relative bg-white rounded-lg border border-gray-900 stack-sm text-gray-900 leading-relaxed">
+          <div className="max-w-2xl mt-32 lg:mt-48 py-4 mb-4 container relative bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed">
             <p className="mt-4">Howdy!</p>
             <p className="mt-4">I'm Jake, founder and CEO here at Leadgeek.</p>
             <p className="mt-4">
@@ -248,14 +248,14 @@ const IndexPage = ({ data }) => {
               use, but most of all software that's tailored to <i>you</i>.
             </p>
             <p className="mt-4">
-              <span className="emphasized-text">
+              <span className="emphasized-text-light">
                 Leadgeek is a reset button to make arbitrage efficient, potent,
                 and fresh - putting you back in control of your business
               </span>
               . So poke around the site and check out how that works.
             </p>
             <p className="mt-4">All the best,</p>
-            <div>
+            <div className="text-purple-300">
               <Signature className="w-32 lg:w-40 mt-6 pb-6" />
             </div>
           </div>
@@ -567,7 +567,7 @@ export const query = graphql`
     heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
+        fluid(maxWidth: 958, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

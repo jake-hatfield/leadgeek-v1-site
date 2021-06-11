@@ -14,22 +14,21 @@ const Navbar = () => {
       <header className="relative z-40">
         {/* notification banner */}
         {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
-        <div className="py-3 container flex items-center">
-          <p>
-            Join Leadgeek and start 2021 off with a great way to source daily
-            products!
-          </p>
-          <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
-            <Link
-              to={"/pricing/"}
-              className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
-            >
-              Sign up now
-            </Link>
-            <ArrowRight className="ml-1 md:group-hover:ml-2 w-4" />
+          <div className="py-3 container flex items-center">
+            <p>
+              Join Leadgeek and start 2021 off with a great way to source daily
+              products!
+            </p>
+            <div className="ml-2 flex items-center text-purple-100 hover:text-purple-200 group transition-colors duration-200">
+              <Link
+                to={"/pricing/"}
+                className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
+              >
+                Sign up now
+              </Link>
+            </div>
           </div>
-        </div>
-      </aside> */}
+        </aside> */}
         <div className="fixed w-screen bg-white shadow-sm">
           <div className="w-full py-4 container center-between">
             {/* logo */}
@@ -66,19 +65,25 @@ const Navbar = () => {
             <nav className="hidden md:flex md:items-center">
               <div className="relative all-center inter">
                 {primaryLinks.map(primaryLink => (
-                  <Link
-                    key={primaryLink.link}
-                    to={`/${primaryLink.link}/`}
-                    className={classes.navbarLink}
-                    activeClassName="active-secondary-link text-purple-500"
-                  >
-                    {primaryLink.title}
-                  </Link>
+                  <div key={primaryLink.link} className={classes.navbarLink}>
+                    <Link
+                      to={`/${primaryLink.link}/`}
+                      className="tertiary-link"
+                      activeClassName="active-secondary-link text-purple-500"
+                    >
+                      {primaryLink.title}
+                    </Link>
+                    {primaryLink.new === true && (
+                      <span className="ml-2 py-0.5 px-2 bg-gray-900 rounded-full text-teal-300 shadow-tealSm text-xs">
+                        New
+                      </span>
+                    )}
+                  </div>
                 ))}
               </div>
               <a
-                href="https://app.Leadgeek.io/login"
-                className={classes.navbarLink}
+                href="https://app.Leadgeek.io/login/"
+                className="no-m-first text-gray-900 font-semibold inter flex items-center tertiary-link"
               >
                 Log in
               </a>
@@ -171,14 +176,22 @@ const primaryLinks = [
   {
     title: "How it works",
     link: "how-it-works",
+    new: false,
   },
   {
     title: "Tour features",
     link: "features",
+    new: false,
+  },
+  {
+    title: "Free OA coaching",
+    link: "coaching",
+    new: true,
   },
   {
     title: "Pricing",
     link: "pricing",
+    new: false,
   },
 ]
 
@@ -203,6 +216,13 @@ const mobileLinks = [
         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
         clipRule="evenodd"
       />
+    ),
+  },
+  {
+    title: "Free OA coaching",
+    link: "coaching",
+    path: (
+      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
     ),
   },
   {
@@ -232,7 +252,7 @@ const mobileLinks = [
 ]
 
 const classes = {
-  navbarLink: "no-m-first secondary-link text-gray-700 inter",
+  navbarLink: "no-m-first text-gray-900 font-semibold inter flex items-center",
 }
 
 export default Navbar

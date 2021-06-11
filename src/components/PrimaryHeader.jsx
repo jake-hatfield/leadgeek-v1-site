@@ -37,7 +37,7 @@ const PrimaryHeader = ({
               </div>
             )}
             {outsideLink && (
-              <div className="bg-white">
+              <div className="inline-block bg-white">
                 <a
                   href={outsideLink}
                   className="block md:inline-block cta-link inter"

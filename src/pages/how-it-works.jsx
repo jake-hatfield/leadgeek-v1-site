@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative mt-12 lg:mt-32 pt-40 pb-12 bg-gray-900 md:text-center text-white">
+      <section className="relative mt-12 lg:mt-32 pt-40 pb-14 bg-gray-900 md:text-center text-white">
         <DividerTop className="divider-top text-gray-900" />{" "}
         <DividerBottom className="divider-bottom text-gray-900" />
         <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">
@@ -105,7 +105,6 @@ const IndexPage = ({ data }) => {
           </header>
         </div>
       </section>
-
       <section className="py-12 md:py-24 text-gray-900 bg-splatter">
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
@@ -303,15 +302,15 @@ export const query = graphql`
     app: file(relativePath: { eq: "leadgeek-app.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 894, quality: 90) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     details: file(relativePath: { eq: "details.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
+        fluid(maxWidth: 958, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
@@ -319,7 +318,7 @@ export const query = graphql`
     detailsClose: file(relativePath: { eq: "details-close.png" }) {
       id
       childImageSharp {
-        fluid(maxWidth: 4096, quality: 90) {
+        fluid(maxWidth: 574, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
