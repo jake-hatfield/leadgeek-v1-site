@@ -50,12 +50,12 @@ const IndexPage = ({ data }) => {
         language="en"
       />
       {/* hero section */}
-      <section className="relative overflow-hidden bg-splatter">
+      <section className={classes.headerWrapper}>
         <HeaderWrapper
           bottomPadding={"pb-24 lg:pb-80"}
           classes={"flex flex-col-reverse md:flex-col"}
         >
-          <section className="mt-4 md:mt-0 md:flex md:items-center md:justify-center mb-4 container">
+          <section className={classes.testimonialWrapper}>
             {testimonialsShort.map((testimonial, i) => (
               <TestimonialShort key={i} text={testimonial} />
             ))}
@@ -82,64 +82,62 @@ const IndexPage = ({ data }) => {
         </HeaderWrapper>
       </section>
       {/* hero image section */}
-      <section className="relative bg-purple-100">
-        <DividerTop className="divider-top text-purple-100" />
-        <DividerBottom className="divider-bottom text-purple-100" />
-        <RetroSun className="hidden md:block absolute w-12 md:w-20 lg:w-28 text-purple-300 bottom-0 right-0 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45" />
-        <RetroSwirl className="hidden md:block absolute w-8 lg:w-12 text-purple-300 bottom-1/2 left-0 transform translate-y-24 translate-x-16" />
-        <section className="py-12 relative">
-          <div className="relative -mt-24 lg:-mt-40 mx-auto max-w-4xl xl:max-w-5xl px-4 lg:px-8 all-center">
-            <RetroSun className="absolute w-12 md:w-16 lg:w-24 text-purple-300 bottom-0 left-0 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4" />
-            <div className="hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8">
+      <section className={classes.heroWrapper}>
+        <DividerTop className={classes.dividerTop} />
+        <DividerBottom className={classes.dividerBottom} />
+        <RetroSun className={classes.retroSun1} />
+        <RetroSwirl className={classes.retroSwirl} />
+        <section className={classes.heroContentWrapper}>
+          <div className={classes.heroImageWrapper}>
+            <RetroSun className={classes.retroSun2} />
+            <div className={classes.filterNoteWrapper}>
               <div className="relative">
-                <LongArrow className="h-40 transform rotate-180 text-gray-500" />
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-6 hover:-rotate-3">
-                  Filter leads on the fly
-                </p>
+                <LongArrow className={classes.longArrow1} />
+                <p className={classes.filterNote}>Filter leads on the fly</p>
               </div>
             </div>
-            <div className="hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56">
+            <div className={classes.searchNoteWrapper}>
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 rotate-3 hover:-rotate-2">
+                <p className={classes.searchNote}>
                   Wicked-fast search by keyword
                 </p>
-                <ShortArrow className="absolute right-0 h-12 transform text-gray-500 translate-x-6 -rotate-12" />
+                <ShortArrow className={classes.shortArrow} />
               </div>
             </div>
-            <div className="hidden lg:block absolute top-0 left-0 z-20 transform -translate-y-36 translate-x-64">
+            <div className={classes.saveNoteWrapper}>
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 -rotate-3 hover:rotate-3">
+                <p className={classes.saveNote}>
                   Save leads you like or archive them for later
                 </p>
-                <LongArrow className="absolute left-0 h-36 transform text-gray-500 translate-x-2 rotate-45" />
+                <LongArrow className={classes.longArrow2} />
               </div>
             </div>
-            <div className="hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16">
+            <div className={classes.metricsNoteWrapper}>
               <div className="relative">
-                <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-48 rotate-3 hover:-rotate-3">
+                <p className={classes.metricsNote}>
                   See all important metrics at a glance
                 </p>
-                <TurnyFat className="absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16" />
+                <TurnyFat className={classes.turnyArrow} />
               </div>
             </div>
             <Img
               fluid={data.heroImage.childImageSharp.fluid}
               alt="Leadgeek app feed"
-              className="min-w-full rounded-lg stack-sm border border-gray-900"
+              className={classes.heroImage}
             />
           </div>
-          <header className="pt-12 lg:pb-12 container md:text-center text-gray-900">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
+          <header className={classes.heroHeader}>
+            <h2 className={classes.heroH2}>
               Your side-hustle is <i>finally</i> manageable.
             </h2>
-            <p className="mt-4 lg:mt-6 mx-auto h4">
+            <p className={classes.heroParagraph}>
               <span className="font-semibold">Before using Leadgeek</span>: Your
               process to find new arbitrage leads is disorganized,
               time-consuming, and inconsistent. You feel like time and resources
               are wasted when you can't find items to sell that meet your
               criteria.
             </p>
-            <p className="mt-4 lg:mt-6 mx-auto h4">
+            <p className={classes.heroParagraph}>
               <span className="font-semibold">After using Leadgeek</span>: You
               know exactly the list quality to expect every day. Your business
               has a predictable growth system in place, there are fewer
@@ -154,14 +152,15 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </section>
-      <section className="relative pt-28 pb-20 md:text-center overflow-hidden bg-splatter">
-        <DashLoopLine className="absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24" />
+      {/* testimonials section */}
+      <section className={classes.testimonialSectionWrapper}>
+        <DashLoopLine className={classes.dashLoopLine1} />
         <div className="container">
           <header>
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white">
+            <h2 className={classes.testimonialSectionH2}>
               People who love clarity, love Leadgeek.
             </h2>
-            <h3 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700">
+            <h3 className={classes.testimonialSectionH3}>
               Entrepreneurs, newbies, international sellers, and pros all{" "}
               <span className={classes.emphasizedText}>
                 join Leadgeek to fundamentally improve the arbitrage sourcing
@@ -170,7 +169,7 @@ const IndexPage = ({ data }) => {
               . See what members had to say...
             </h3>
           </header>
-          <div className="mt-12 px-4">
+          <div className={classes.testimonialsWrapper}>
             {testimonialsFull.map((testimonial, i) => (
               <TestimonialFull
                 key={i}
@@ -184,81 +183,83 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="relative pt-8 lg:pt-0 text-gray-900 bg-splatter">
+      {/* note section */}
+      <section className={classes.noteSectionWrapper}>
         <div className="relative container">
-          <DashLoopLine className="absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24" />
-          <RetroSun className="hidden lg:block absolute w-12 md:w-16 lg:w-24 text-gray-400 bottom-0 left-0 transform -translate-y-12 lg:translate-x-48" />
-          <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-24 -translate-x-40 text-gray-400">
-            <BirdTracks />
-          </div>
-          <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform -translate-y-40 translate-x-40 text-gray-400">
-            <BirdTracks />
-          </div>
-          <div className="max-w-2xl mt-32 lg:mt-48 py-4 mb-4 container relative bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed">
-            <p className="mt-4">Howdy!</p>
-            <p className="mt-4">I'm Jake, founder and CEO here at Leadgeek.</p>
-            <p className="mt-4">
+          <DashLoopLine className={classes.dashLoopLine2} />
+          <RetroSun className={classes.retroSun3} />
+          <BirdTracks className={classes.birdTracks1} />
+          <BirdTracks className={classes.birdTracks2} />
+          <div className={classes.note}>
+            <p className={classes.noteParagraph}>Howdy!</p>
+            <p className={classes.noteParagraph}>
+              I'm Jake, founder and CEO here at Leadgeek.
+            </p>
+            <p className={classes.noteParagraph}>
               Raise your hand if you think selling on Amazon shouldn't be that
               complicated.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               That's 1, 2, 3, 4, 73, 116... yep - just about everyone.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               Buy an item low from a retailer like Target, sell it for profit on
               Amazon. The basics of arbitrage sound pretty easy, right? It's a
               business model that's stood the test of time, and when done well -
               is actually really rewarding.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               Discovering something that's mis-valued and selling it in a
               different marketplace for a profit can be truly enjoyable. Sure,
               you're making money, but there's a
               striking-gold-type-of-fulfillment to it. Maybe it's time to
               refresh Seller Central to check for another sale?
             </p>
-            <p className="mt-4">But somewhere along the way things changed.</p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
+              But somewhere along the way things changed.
+            </p>
+            <p className={classes.noteParagraph}>
               Amazon FBA got way too complex. Using software is time-consuming
               and complicated, and sourcing lists are dated and unreliable.
               Either solution feels like an incomplete deal-breaker.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               The truth is, there's a lot to learn in e-commerce. There are
               countless tools you could use; and with no single point with which
               to control lead generation, attempting to scale gets messy in no
               time flat.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               To say the least, Amazon arbitrage was in desperate need of a
               dust-off.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               Enter Leadgeek. Leadgeek believes that simplicty is scalability.
               Having a predictable source for leads with predictable standards
               means that you can grow... predictably. And with a singular
               service, it costs just a fraction of the price if you were to do
               it all on your own.
             </p>
-            <p className="mt-4">
+            <p className={classes.noteParagraph}>
               With lots of input from members, I create software that I'd want
               myself - software that has a premium feel and is a pleasure to
               use, but most of all software that's tailored to <i>you</i>.
             </p>
-            <p className="mt-4">
-              <span className="emphasized-text-light">
+            <p className={classes.noteParagraph}>
+              <span className={classes.emphasizedTextLight}>
                 Leadgeek is a reset button to make arbitrage efficient, potent,
                 and fresh - putting you back in control of your business
               </span>
               . So poke around the site and check out how that works.
             </p>
-            <p className="mt-4">All the best,</p>
+            <p className={classes.noteParagraph}>All the best,</p>
             <div className="text-purple-300">
-              <Signature className="w-32 lg:w-40 mt-6 pb-6" />
+              <Signature className={classes.signature} />
             </div>
           </div>
         </div>
       </section>
+      {/* cta */}
       <CTA
         links={[
           { title: "See how it works", link: "how-it-works" },
@@ -277,7 +278,71 @@ const IndexPage = ({ data }) => {
 }
 
 const classes = {
+  headerWrapper: "relative overflow-hidden bg-splatter",
+  testimonialWrapper:
+    "md:flex md:items-center md:justify-center mt-4 md:mt-0 mb-4 container",
+  heroWrapper: "relative bg-purple-100",
+  heroContentWrapper: "relative py-12",
+  heroImageWrapper:
+    "relative all-center mx-auto max-w-4xl xl:max-w-5xl -mt-24 lg:-mt-40 px-4 lg:px-8",
+  filterNoteWrapper:
+    "hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8",
+  filterNote:
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-teal-300 text-center transform transition-main -rotate-6 hover:-rotate-3",
+  searchNoteWrapper:
+    "hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56",
+  searchNote:
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-teal-300 text-center transform transition-main rotate-3 hover:-rotate-2",
+  saveNoteWrapper:
+    "hidden lg:block absolute top-0 left-0 z-20 transform -translate-y-36 translate-x-64",
+  saveNote:
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main -rotate-3 hover:rotate-3",
+  metricsNoteWrapper:
+    "hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16",
+  metricsNote:
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
+  heroImage: "min-w-full rounded-lg stack-sm border border-gray-900",
+  heroHeader: "pt-12 lg:pb-12 container md:text-center text-gray-900",
+  heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
+  heroParagraph: "mt-4 lg:mt-6 mx-auto h4",
+  testimonialSectionWrapper:
+    "relative pt-28 pb-20 md:text-center overflow-hidden bg-splatter",
+  testimonialSectionH2:
+    "text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white",
+  testimonialSectionH3: "mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700",
+  testimonialsWrapper: "mt-12 px-4",
+  noteSectionWrapper: "relative pt-8 lg:pt-0 text-gray-900 bg-splatter",
+  note:
+    "relative max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed",
+  noteParagraph: "mt-4",
+  signature: "w-32 lg:w-40 mt-6 pb-6",
+  dividerTop: "divider-top text-purple-100",
+  dividerBottom: "divider-bottom text-purple-100",
+  retroSun1:
+    "hidden md:block absolute bottom-0 right-0 w-12 md:w-20 lg:w-28 text-purple-300 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45",
+  retroSun2:
+    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-purple-300 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
+  retroSun3:
+    "hidden lg:block absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-400 transform -translate-y-12 lg:translate-x-48",
+  retroSwirl:
+    "hidden md:block absolute bottom-1/2 left-0 w-8 lg:w-12 text-purple-300 transform translate-y-24 translate-x-16",
+  longArrow1: "h-40 text-gray-500 transform rotate-180",
+  longArrow2:
+    "absolute left-0 h-36 text-gray-500 transform translate-x-2 rotate-45",
+  shortArrow:
+    "absolute right-0 h-12 text-gray-500 transform translate-x-6 -rotate-12",
+  turnyArrow:
+    "absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16",
+  dashLoopLine1:
+    "absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24",
+  dashLoopLine2:
+    "absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24",
+  birdTracks1:
+    "hidden md:block absolute bottom-1/2 right-0 w-full max-w-2xl text-gray-400 transform translate-y-24 -translate-x-40",
+  birdTracks2:
+    "hidden md:block absolute bottom-1/2 left-0 w-full max-w-2xl text-gray-400 transform -translate-y-40 translate-x-40",
   emphasizedText: "emphasized-text lg:text-lg",
+  emphasizedTextLight: "emphasized-text-light",
 }
 
 const TestimonialShort = ({ text }) => {

@@ -35,9 +35,9 @@ const PrivacyPolicyPage = () => {
         }}
         language="en"
       />
-      <section className="py-8 md:py-12 lg:py-16 text-gray-900 bg-splatter">
-        <div className="max-w-2xl container">
-          <h1 className="mt-4 text-3xl font-black inter bg-white">
+      <section className={classes.mainSectionWrapper}>
+        <div className={classes.container}>
+          <h1 className={classes.h1}>
             Welcome to {siteTitle}'s privacy policy
           </h1>
           <section className={classes.section}>
@@ -45,7 +45,7 @@ const PrivacyPolicyPage = () => {
               It is our policy to respect your privacy regarding any information
               we may collect while operating our website. This Privacy Policy
               applies to{" "}
-              <Link to={siteLink} className="secondary-link">
+              <Link to={siteLink} className={classes.link}>
                 {siteLinkFull}
               </Link>{" "}
               (hereinafter, "us", "we", or "{siteTitle}"). We respect your
@@ -60,7 +60,7 @@ const PrivacyPolicyPage = () => {
             </p>
             <p className={classes.text}>
               This Privacy Policy, together with the{" "}
-              <Link to={`/terms/`} className="secondary-link">
+              <Link to={`/terms/`} className={classes.link}>
                 terms and conditions
               </Link>{" "}
               posted on our Website, set forth the general rules and policies
@@ -201,7 +201,7 @@ const PrivacyPolicyPage = () => {
                 href="https://google.com/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 https://google.com/
               </a>
@@ -210,7 +210,7 @@ const PrivacyPolicyPage = () => {
                 href="https://microsoft.com/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 https://microsoft.com/
               </a>
@@ -219,7 +219,7 @@ const PrivacyPolicyPage = () => {
                 href="https://facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 https://facebook.com/
               </a>
@@ -247,7 +247,7 @@ const PrivacyPolicyPage = () => {
                 href="https://tools.google.com/dlpage/gaoptout/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 https://tools.google.com/dlpage/gaoptout
               </a>
@@ -257,7 +257,7 @@ const PrivacyPolicyPage = () => {
                 href="https://adssettings.google.com/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 Google's Ads Preferences Manager
               </a>
@@ -267,7 +267,7 @@ const PrivacyPolicyPage = () => {
                 href="https://about.ads.microsoft.com/en-us/resources/policies/personalized-ads"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="secondary-link"
+                className={classes.link}
               >
                 Microsoft's Ads Preferences Manager
               </a>
@@ -290,7 +290,7 @@ const PrivacyPolicyPage = () => {
             <p className={classes.text}>
               If you have any questions about our privacy policy, please contact
               us via our{" "}
-              <Link to={`/contact/`} className="secondary-link">
+              <Link to={`/contact/`} className={classes.link}>
                 contact form
               </Link>
               , email us at{" "}
@@ -298,14 +298,14 @@ const PrivacyPolicyPage = () => {
                 href="mailto:hello@leadgeek.io"
                 target="_blank"
                 rel="noreferrer"
-                className="secondary-link"
+                className={classes.link}
               >
                 <span>hel</span>
                 <span>lo@L</span>
                 <span>eadgeek.io</span>
               </a>{" "}
               or call us at{" "}
-              <a href="tel:(214) 810-0564" className="secondary-link">
+              <a href="tel:(214) 810-0564" className={classes.link}>
                 <span>(214) 8</span>
                 <span>10-05</span>64
               </a>
@@ -322,7 +322,12 @@ const PrivacyPolicyPage = () => {
 }
 
 const classes = {
+  mainSectionWrapper: "py-8 md:py-12 lg:py-16 text-gray-900 bg-splatter",
+  container: "max-w-2xl container",
+  lastUpdated: "bg-white font-bold text-sm text-purple-500",
+  h1: "bg-white mt-4 text-3xl font-black inter",
   text: "mt-4",
+  link: "secondary-link",
   section:
     "mt-8 container pt-2 pb-4 border border-gray-900 rounded-lg bg-white stack-sm",
   h2: "mt-4 text-xl font-bold inter bg-white",

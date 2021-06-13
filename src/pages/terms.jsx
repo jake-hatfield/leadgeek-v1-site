@@ -35,12 +35,10 @@ const TermsPage = () => {
         }}
         language="en"
       />
-      <section className="py-8 mdd:py-12 lg:py-16 text-gray-900 bg-splatter">
-        <div className="max-w-2xl container">
-          <p className="font-bold text-sm text-purple-500 bg-white">
-            Last updated: March 10, 2021
-          </p>
-          <h1 className="mt-4 text-3xl font-black inter bg-white">
+      <section className={classes.mainSectionWrapper}>
+        <div className={classes.container}>
+          <p className={classes.lastUpdated}>Last updated: March 10, 2021</p>
+          <h1 className={classes.h1}>
             Welcome to {siteTitle}'s terms of service agreement
           </h1>{" "}
           <section className={classes.section}>
@@ -49,7 +47,7 @@ const TermsPage = () => {
               between you, whether personally or on behalf of an entity Leadgeek
               ("Leadgeek", “we”, “us”, or “our”), concerning your access to and
               use of the{" "}
-              <Link to={siteLink} className="secondary-link">
+              <Link to={siteLink} className={classes.link}>
                 {siteLinkFull}
               </Link>{" "}
               website as well as any other media form, media channel, mobile
@@ -57,7 +55,7 @@ const TermsPage = () => {
               connected thereto (collectively, the “site”). You agree that by
               accessing the site, you have read, understood, and agree to be
               bound by all of these terms of service, including the{" "}
-              <Link to={`/privacy/`} className="secondary-link">
+              <Link to={`/privacy/`} className={classes.link}>
                 privacy policy
               </Link>{" "}
               posted on the site, which are incorporated into these terms of
@@ -213,14 +211,14 @@ const TermsPage = () => {
                 href="mailto:hello@leadgeek.io"
                 target="_blank"
                 rel="noreferrer"
-                className="secondary-link"
+                className={classes.link}
               >
                 <span>hel</span>
                 <span>lo@l</span>
                 <span>eadgeek.io</span>
               </a>{" "}
               (preferred) or call us at{" "}
-              <a href="tel:(214) 810-0564" className="secondary-link">
+              <a href="tel:(214) 810-0564" className={classes.link}>
                 <span>(214) 8</span>
                 <span>10-05</span>64
               </a>
@@ -264,7 +262,7 @@ const TermsPage = () => {
             <p className={classes.text}>
               As a user of the Site, you agree not to:
             </p>
-            <ol className="mt-4">
+            <ol className={classes.text}>
               <li className={classes.text}>
                 1. Systematically retrieve data or other content from the site
                 to create or compile, directly or indirectly, a collection,
@@ -386,7 +384,7 @@ const TermsPage = () => {
             <h2 className={classes.h2}>Site management</h2>
             <p className={classes.text}>
               We reserve the right, but not the obligation, to:
-              <ol className="mt-4">
+              <ol className={classes.text}>
                 <li className={classes.text}>
                   1. monitor the site for violations of these terms of use;
                 </li>
@@ -502,7 +500,7 @@ const TermsPage = () => {
             <p className={classes.text}>
               If you have any questions about our terms of service, please
               contact us via our{" "}
-              <Link to={`/contact/`} className="secondary-link">
+              <Link to={`/contact/`} className={classes.link}>
                 contact form
               </Link>
               , email us at{" "}
@@ -510,14 +508,14 @@ const TermsPage = () => {
                 href="mailto:hello@leadgeek.io"
                 target="_blank"
                 rel="noreferrer"
-                className="secondary-link"
+                className={classes.link}
               >
                 <span>hel</span>
                 <span>lo@l</span>
                 <span>eadgeek.io</span>
               </a>{" "}
               or call us at{" "}
-              <a href="tel:(214) 810-0564" className="secondary-link">
+              <a href="tel:(214) 810-0564" className={classes.link}>
                 <span>(214) 8</span>
                 <span>10-05</span>64
               </a>
@@ -534,7 +532,12 @@ const TermsPage = () => {
 }
 
 const classes = {
+  mainSectionWrapper: "py-8 md:py-12 lg:py-16 text-gray-900 bg-splatter",
+  container: "max-w-2xl container",
+  lastUpdated: "bg-white font-bold text-sm text-purple-500",
+  h1: "bg-white mt-4 text-3xl font-black inter",
   text: "mt-4",
+  link: "secondary-link",
   section:
     "mt-8 container pt-2 pb-4 border border-gray-900 rounded-lg bg-white stack-sm",
   h2: "mt-4 text-xl font-bold inter bg-white",
