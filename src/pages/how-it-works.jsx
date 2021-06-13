@@ -63,7 +63,7 @@ const IndexPage = ({ data }) => {
         </HeaderWrapper>
       </section>
       <section className="relative mt-12 lg:mt-32 pt-40 pb-14 bg-gray-900 md:text-center text-white">
-        <DividerTop className="divider-top text-gray-900" />{" "}
+        <DividerTop className="divider-top text-gray-900" />
         <DividerBottom className="divider-bottom text-gray-900" />
         <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">
           <Img

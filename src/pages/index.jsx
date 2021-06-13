@@ -155,7 +155,7 @@ const IndexPage = ({ data }) => {
           </header>
         </section>
       </section>
-      <section className="relative py-20 md:text-center overflow-hidden bg-splatter">
+      <section className="relative pt-28 pb-20 md:text-center overflow-hidden bg-splatter">
         <DashLoopLine className="absolute top-0 right-1/2 h-36 lg:h-40 text-purple-500 transform -translate-y-40 lg:-translate-y-48 translate-x-24" />
         <div className="container">
           <header>

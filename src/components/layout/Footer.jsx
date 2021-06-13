@@ -18,7 +18,7 @@ const Footer = () => {
       header: "Company",
       items: [
         { title: "Contact", link: "contact" },
-        { title: "Free OA coaching", link: "coaching" },
+        { title: "Free coaching", link: "coaching" },
       ],
     },
   ]

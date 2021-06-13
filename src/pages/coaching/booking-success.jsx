@@ -7,12 +7,11 @@ import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
-import OgImage from "assets/images/og/og-contact-success.jpg"
+import OgImage from "assets/images/og/og-booking-success.jpg"
 
 const ContactSuccess = () => {
-  const title = "Contact Success | Leadgeek"
-  const desc =
-    "Leadgeek support has received your message and will get to you as soon as possible."
+  const title = "Booking Success | Leadgeek"
+  const desc = "Thank you for booking a coaching call with Leadgeek."
   return (
     <Layout>
       <GatsbySeo
@@ -21,14 +20,14 @@ const ContactSuccess = () => {
         openGraph={{
           title,
           description: desc,
-          url: "https://leadgeek.io/contact-success/",
+          url: "https://leadgeek.io/coaching/booking-success/",
           type: "website",
           images: [
             {
               url: OgImage,
               width: 1200,
               height: 630,
-              alt: "Thank you for contacting us",
+              alt: "Thank you for booking a coaching call.",
             },
           ],
         }}
@@ -37,17 +36,19 @@ const ContactSuccess = () => {
       <section className="relative bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={"Message received."}
+            title={"Call. Booked."}
             desc={
               <p>
-                Thanks for reaching out, we'll be in touch soon. Our usual
-                response time is within 24 hours. In the meantime, feel free to
-                learn more about how we can help your Amazon business.
+                HEYO. Thanks for booking a free coaching call with me. You
+                should receive an automated confirmation shortly (check the spam
+                folder if you don't see it in your inbox). I'll also send you a
+                quick questionaire for you to fill out before our call so we can
+                make the most of it together. Talk to ya soon!
               </p>
             }
             nav
-            linkOne={`features`}
-            linkOneText={"See all features"}
+            goHome={true}
+            linkOneText={"Go home"}
           />
         </HeaderWrapper>
       </section>

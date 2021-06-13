@@ -88,7 +88,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        exclude: [`/order-confirmation`, `/contact-success`, `/404`],
+        exclude: [
+          `/order-confirmation`,
+          `/contact-success`,
+          `/coaching/booking-success`,
+          `/404`,
+        ],
       },
     },
   ],

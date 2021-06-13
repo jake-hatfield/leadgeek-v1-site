@@ -5,6 +5,7 @@ const PrimaryHeader = ({
   title,
   desc,
   nav,
+  goHome,
   linkOne,
   linkOneText,
   linkTwo,
@@ -26,6 +27,13 @@ const PrimaryHeader = ({
         </div>
         {nav && (
           <nav className="mt-6 lg:mt-8 font-semibold text-center">
+            {goHome && (
+              <div>
+                <Link to={`/`} className="block md:inline-block cta-link inter">
+                  {linkOneText}
+                </Link>
+              </div>
+            )}
             {linkOne && (
               <div>
                 <Link
@@ -37,7 +45,7 @@ const PrimaryHeader = ({
               </div>
             )}
             {outsideLink && (
-              <div className="inline-block bg-white">
+              <div className="w-full inline-block bg-white">
                 <a
                   href={outsideLink}
                   className="block md:inline-block cta-link inter"
