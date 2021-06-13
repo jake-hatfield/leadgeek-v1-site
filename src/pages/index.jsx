@@ -18,7 +18,6 @@ import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import RetroSun from "assets/svgs/retro-sun.svg"
 import RetroSwirl from "assets/svgs/retro-swirl.svg"
 import BirdTracks from "assets/svgs/bird-tracks.svg"
-import DoubleLine from "assets/svgs/plain-line-1.svg"
 import Signature from "assets/svgs/signature.svg"
 import DashLoopLine from "assets/svgs/dash-loop-line.svg"
 
@@ -180,7 +179,6 @@ const IndexPage = ({ data }) => {
                 desc={testimonial.desc}
                 rotate={testimonial.rotate}
                 position={testimonial.position}
-                bgSvg={testimonial.bgSvg}
               />
             ))}
           </div>
@@ -360,11 +358,6 @@ const testimonialsFull = [
     image: null,
     rotate: "rotate-2 hover:rotate-3",
     position: "lg:-translate-x-6",
-    bgSvg: (
-      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-8 translate-x-16 text-gray-400">
-        <BirdTracks />
-      </div>
-    ),
   },
   {
     text: (
@@ -382,16 +375,6 @@ const testimonialsFull = [
     image: null,
     rotate: "-rotate-1 hover:rotate-2",
     position: "justify-start lg:translate-x-16",
-    bgSvg: (
-      <div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform translate-y-8 -translate-x-12 text-gray-400">
-          <DoubleLine />
-        </div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-y-8 translate-x-8 text-gray-400">
-          <DoubleLine />
-        </div>
-      </div>
-    ),
   },
   {
     text: (
@@ -410,16 +393,6 @@ const testimonialsFull = [
     image: null,
     rotate: "rotate-2 hover:-rotate-3",
     position: "lg:-translate-x-2",
-    bgSvg: (
-      <div>
-        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-16 -translate-x-16 text-gray-400">
-          <BirdTracks />
-        </div>
-        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-16 translate-x-8 text-gray-400">
-          <BirdTracks />
-        </div>
-      </div>
-    ),
   },
   {
     text: (
@@ -436,11 +409,6 @@ const testimonialsFull = [
     image: null,
     rotate: "-rotate-2 hover:-rotate-3",
     position: "justify-start lg:translate-x-28",
-    bgSvg: (
-      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform -translate-y-4 -translate-x-16 text-gray-400">
-        <BirdTracks />
-      </div>
-    ),
   },
   {
     text: (
@@ -456,16 +424,6 @@ const testimonialsFull = [
     image: null,
     rotate: "hover:rotate-3",
     position: "lg:translate-x-8",
-    bgSvg: (
-      <div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform -translate-x-12 text-gray-400">
-          <DoubleLine />
-        </div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-x-8 text-gray-400">
-          <DoubleLine />
-        </div>
-      </div>
-    ),
   },
   {
     text: (
@@ -482,16 +440,6 @@ const testimonialsFull = [
     image: null,
     rotate: "rotate-2 hover:rotate-3",
     position: "lg:-translate-x-12",
-    bgSvg: (
-      <div>
-        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-8 -translate-x-16 text-gray-400">
-          <BirdTracks />
-        </div>
-        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-8 translate-x-8 text-gray-400">
-          <BirdTracks />
-        </div>
-      </div>
-    ),
   },
   {
     text: (
@@ -507,11 +455,6 @@ const testimonialsFull = [
     image: null,
     rotate: "-rotate-1 hover:rotate-2",
     position: "lg:translate-x-16",
-    bgSvg: (
-      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl left-0 transform translate-y-10 -translate-x-16 text-gray-400">
-        <BirdTracks />
-      </div>
-    ),
   },
   {
     text: (
@@ -529,16 +472,6 @@ const testimonialsFull = [
     image: null,
     rotate: "rotate-2 hover:-rotate-1",
     position: "lg:-translate-x-8",
-    bgSvg: (
-      <div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 left-0 transform translate-y-8 -translate-x-12 text-gray-400">
-          <DoubleLine />
-        </div>
-        <div className="hidden md:block absolute bottom-1/2 w-56 right-0 transform translate-y-8 translate-x-8 text-gray-400">
-          <DoubleLine />
-        </div>
-      </div>
-    ),
   },
   {
     text: (
@@ -554,11 +487,6 @@ const testimonialsFull = [
     image: null,
     rotate: "-rotate-2 hover:-rotate-1",
     position: "",
-    bgSvg: (
-      <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl right-0 transform translate-y-2 translate-x-16 text-gray-400">
-        <BirdTracks />
-      </div>
-    ),
   },
 ]
 
