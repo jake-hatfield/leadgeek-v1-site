@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import LoopyDashed from "assets/svgs/loopy-dashed.svg"
-import Loopy from "assets/svgs/slash-loopy-1.svg"
 import BirdTracks from "assets/svgs/bird-tracks.svg"
 
 const Cta = ({ mainHeader, desc, links }) => {
@@ -14,9 +13,9 @@ const Cta = ({ mainHeader, desc, links }) => {
           <BirdTracks />
         </div>
         <header className="mt-6 lg:mt-0 mx-auto md:mx-0 relative z-10 font-semibold md:flex md:items-center md:justify-between bg-gray-900 py-4 lg:py-6 px-6 rounded-lg stack-sm text-white">
-          <div className="max-w-sm lg:max-w-md">
+          <div className="max-w-sm lg:max-w-lg">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-              {mainHeader || `Simplify your sourcing.`}
+              {mainHeader || `Simplify your side-hustle.`}
             </h2>
             <div className="mt-4 lg:mt-6 text-teal-300">
               {desc || "Check out the buttons, do the things."}
@@ -34,7 +33,6 @@ const Cta = ({ mainHeader, desc, links }) => {
             ))}
           </nav>
         </header>
-        <Loopy className="absolute top-0 left-0 h-8 text-teal-300 transform -rotate-45 -translate-y-2 -translate-x-2" />
       </div>
     </section>
   )

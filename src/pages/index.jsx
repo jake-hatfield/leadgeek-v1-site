@@ -28,6 +28,147 @@ const IndexPage = ({ data }) => {
   const desc =
     "Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
   const alt = "Leadgeek Arbitrage Sourcing List & Software"
+
+  const testimonialsFull = [
+    {
+      text: (
+        <p>
+          The very first thing I bought as an FBA seller was from your list
+          about 33 days ago. I've sold 5 units of that item so far today (it's
+          only 3:50 pm CST) and{" "}
+          <span className={classes.emphasizedText}>it's my first $100 day</span>
+          . Profit margin is roughly 25% and ROI more than 2x that. Thank you
+          for helping me get started.
+        </p>
+      ),
+      image: data.testimonialCharles.childImageSharp.fluid,
+      source: "Charles",
+      desc: "New",
+      rotate: "rotate-2 hover:rotate-3",
+    },
+    {
+      text: (
+        <p>
+          Delivered their lists as promised daily and always had at least a few
+          items I was interested in.{" "}
+          <span className={classes.emphasizedText}>
+            Good value, would recommend
+          </span>
+          .
+        </p>
+      ),
+      image: data.testimonialBrian.childImageSharp.fluid,
+      source: "Brian",
+      desc: "Intermediate",
+      rotate: "-rotate-1 hover:rotate-2",
+    },
+    {
+      text: (
+        <p>
+          Leadgeek delivers on their promises in the promo video on time every
+          day with solid ROI leads.{" "}
+          <span className={classes.emphasizedText}>
+            Would definitely recommend giving them a shot if you want to take
+            the guess work out of sourcing for FBA
+          </span>
+          .
+        </p>
+      ),
+      image: data.testimonialWilliam.childImageSharp.fluid,
+      source: "William",
+      desc: "Intermediate",
+      rotate: "rotate-1 hover:-rotate-2",
+    },
+    {
+      text: (
+        <p>
+          I love the leads, they're very good.{" "}
+          <span className={classes.emphasizedText}>
+            Leadgeek will pay off in a week
+          </span>
+          ... definitely the best site I've found for leads.
+        </p>
+      ),
+      image: data.testimonialKevin.childImageSharp.fluid,
+      source: "Kevin",
+      desc: "New",
+      rotate: "-rotate-2 hover:-rotate-3",
+    },
+    {
+      text: (
+        <p>
+          <span className={classes.emphasizedText}>
+            I've been very satisfied so far
+          </span>
+          !
+        </p>
+      ),
+      image: data.testimonialDail.childImageSharp.fluid,
+      source: "Dail",
+      desc: "New",
+      rotate: "hover:rotate-3",
+    },
+    {
+      text: (
+        <p>
+          The software is awesome...{" "}
+          <span className={classes.emphasizedText}>
+            It looks FANTASTIC on my first try
+          </span>
+          ! Great work.
+        </p>
+      ),
+      image: data.testimonialYucheng.childImageSharp.fluid,
+      source: "Yucheng",
+      desc: "International",
+      rotate: "-rotate-1 hover:rotate-3",
+    },
+    {
+      text: (
+        <p>
+          <span className={classes.emphasizedText}>
+            5 stars for you guys making this super simple
+          </span>
+          .
+        </p>
+      ),
+      image: data.testimonialAustin.childImageSharp.fluid,
+      source: "Austin",
+      desc: "New",
+      rotate: "-rotate-1 hover:rotate-2",
+    },
+    {
+      text: (
+        <p>
+          I want to thank you for the effort you make to find products with such
+          good quality.{" "}
+          <span className={classes.emphasizedText}>
+            It has been the best decision I have made in acquiring your list
+          </span>
+          . Thank you!
+        </p>
+      ),
+      image: data.testimonialFrank.childImageSharp.fluid,
+      source: "Frank",
+      desc: "International",
+      rotate: "rotate-2 hover:-rotate-1",
+    },
+    {
+      text: (
+        <p>
+          <span className={classes.emphasizedText}>
+            I really like the [software] setup
+          </span>
+          .
+        </p>
+      ),
+      image: data.testimonialDimitry.childImageSharp.fluid,
+      source: "Dimitry",
+      desc: "Intermediate",
+      rotate: "-rotate-1 hover:-rotate-2",
+    },
+  ]
+
   return (
     <Layout>
       <GatsbySeo
@@ -52,7 +193,7 @@ const IndexPage = ({ data }) => {
       {/* hero section */}
       <section className={classes.headerWrapper}>
         <HeaderWrapper
-          bottomPadding={"pb-24 lg:pb-80"}
+          bottomPadding={"pb-28 lg:pb-80"}
           classes={"flex flex-col-reverse md:flex-col"}
         >
           <section className={classes.testimonialWrapper}>
@@ -61,23 +202,22 @@ const IndexPage = ({ data }) => {
             ))}
           </section>
           <PrimaryHeader
-            title={`Online arbitrage sourcing at its best.`}
+            title={`Online arbitrage leads are now radically better.`}
             desc={
-              <p>
-                Turn "I don't know what to sell" into "I have too much to buy:"
+              <h2>
+                Feel like your arbitrage sourcing is stuck in limbo?{" "}
                 <span className="font-bold">
-                  {" "}
-                  Receive a daily list of the best online arbitrage products to
-                  flip for profit on Amazon.
-                </span>
-                .
-              </p>
+                  Turn "I don't know what to sell" into "I have too much to buy"
+                </span>{" "}
+                with a daily list of the best items to flip for profit on
+                Amazon. .
+              </h2>
             }
             nav
             linkOne={`how-it-works`}
             linkOneText={`See how it works`}
             linkTwo={`pricing`}
-            linkTwoText={`Already know you want to join? Sign up now.`}
+            linkTwoText={`or sign up now`}
           />
         </HeaderWrapper>
       </section>
@@ -93,7 +233,7 @@ const IndexPage = ({ data }) => {
             <div className={classes.filterNoteWrapper}>
               <div className="relative">
                 <LongArrow className={classes.longArrow1} />
-                <p className={classes.filterNote}>Filter leads on the fly</p>
+                <p className={classes.filterNote}>Filter items on the fly</p>
               </div>
             </div>
             <div className={classes.searchNoteWrapper}>
@@ -131,21 +271,21 @@ const IndexPage = ({ data }) => {
               Your side-hustle is <i>finally</i> manageable.
             </h2>
             <p className={classes.heroParagraph}>
-              <span className="font-semibold">Before using Leadgeek</span>: Your
-              process to find new arbitrage leads is disorganized,
-              time-consuming, and inconsistent. You feel like time and resources
-              are wasted when you can't find items to sell that meet your
-              criteria.
+              <span className="font-semibold">Before using Leadgeek</span>: You
+              know selling stuff on Amazon can be a great way to make some cash
+              on the side, but where the heck are you supposed to start?
+              Arbitrage software takes up too much time and sourcing lists
+              aren't cutting it for you.
             </p>
             <p className={classes.heroParagraph}>
-              <span className="font-semibold">After using Leadgeek</span>: You
-              know exactly the list quality to expect every day. Your business
-              has a predictable growth system in place, there are fewer
-              headaches, and you can focus on getting more important things
-              done.
+              <span className="font-semibold">After using Leadgeek</span>:
+              There's no more confusion. You know exactly the quality and
+              quantity of product leads to expect each weekday. In about 10
+              minutes and a few clicks, you have a dependable way to profit off
+              of fresh arbitrage products.
             </p>
-            <div className="mt-6 text-center">
-              <Link to={"/features/"} className="secondary-link">
+            <div className="mt-12 text-center">
+              <Link to={"/features/"} className="cta-link inter">
                 See how Leadgeek is built different
               </Link>
             </div>
@@ -161,12 +301,12 @@ const IndexPage = ({ data }) => {
               People who love clarity, love Leadgeek.
             </h2>
             <h3 className={classes.testimonialSectionH3}>
-              Entrepreneurs, newbies, international sellers, and pros all{" "}
+              Entrepreneurs, newbies, international, and pro FBA sellers all{" "}
               <span className={classes.emphasizedText}>
                 join Leadgeek to fundamentally improve the arbitrage sourcing
                 process
               </span>
-              . See what members had to say...
+              .
             </h3>
           </header>
           <div className={classes.testimonialsWrapper}>
@@ -174,10 +314,10 @@ const IndexPage = ({ data }) => {
               <TestimonialFull
                 key={i}
                 text={testimonial.text}
+                image={testimonial.image}
                 source={testimonial.source}
                 desc={testimonial.desc}
                 rotate={testimonial.rotate}
-                position={testimonial.position}
               />
             ))}
           </div>
@@ -193,25 +333,15 @@ const IndexPage = ({ data }) => {
           <div className={classes.note}>
             <p className={classes.noteParagraph}>Howdy!</p>
             <p className={classes.noteParagraph}>
-              I'm Jake, founder and CEO here at Leadgeek.
-            </p>
-            <p className={classes.noteParagraph}>
-              Raise your hand if you think selling on Amazon shouldn't be that
-              complicated.
-            </p>
-            <p className={classes.noteParagraph}>
-              That's 1, 2, 3, 4, 73, 116... yep - just about everyone.
+              I'm Jake, founder and CEO here at Leadgeek, and I think Amazon
+              arbitrage should be uncomplicated.
             </p>
             <p className={classes.noteParagraph}>
               Buy an item low from a retailer like Target, sell it for profit on
-              Amazon. The basics of arbitrage sound pretty easy, right? It's a
-              business model that's stood the test of time, and when done well -
-              is actually really rewarding.
+              Amazon. It should be pretty basic and rewarding.
             </p>
             <p className={classes.noteParagraph}>
-              Discovering something that's mis-valued and selling it in a
-              different marketplace for a profit can be truly enjoyable. Sure,
-              you're making money, but there's a
+              Sure, you're making money, but there's a
               striking-gold-type-of-fulfillment to it. Maybe it's time to
               refresh Seller Central to check for another sale?
             </p>
@@ -219,9 +349,9 @@ const IndexPage = ({ data }) => {
               But somewhere along the way things changed.
             </p>
             <p className={classes.noteParagraph}>
-              Amazon FBA got way too complex. Using software is time-consuming
-              and complicated, and sourcing lists are dated and unreliable.
-              Either solution feels like an incomplete deal-breaker.
+              Arbitrage on Amazon got way too complex. Using software is
+              time-consuming and complicated, and sourcing lists are dated and
+              unreliable. Either solution feels like an incomplete deal-breaker.
             </p>
             <p className={classes.noteParagraph}>
               The truth is, there's a lot to learn in e-commerce. There are
@@ -230,7 +360,7 @@ const IndexPage = ({ data }) => {
               time flat.
             </p>
             <p className={classes.noteParagraph}>
-              To say the least, Amazon arbitrage was in desperate need of a
+              To say the least, online arbitrage was in desperate need of a
               dust-off.
             </p>
             <p className={classes.noteParagraph}>
@@ -241,19 +371,14 @@ const IndexPage = ({ data }) => {
               it all on your own.
             </p>
             <p className={classes.noteParagraph}>
-              With lots of input from members, I create software that I'd want
-              myself - software that has a premium feel and is a pleasure to
-              use, but most of all software that's tailored to <i>you</i>.
-            </p>
-            <p className={classes.noteParagraph}>
               <span className={classes.emphasizedTextLight}>
-                Leadgeek is a reset button to make arbitrage efficient, potent,
-                and fresh - putting you back in control of your business
+                Leadgeek is a reset button to make online arbitrage sourcing
+                efficient, potent, and fresh by putting you back in control.
               </span>
               . So poke around the site and check out how that works.
             </p>
             <p className={classes.noteParagraph}>All the best,</p>
-            <div className="text-purple-300">
+            <div className="text-teal-300">
               <Signature className={classes.signature} />
             </div>
           </div>
@@ -281,7 +406,7 @@ const classes = {
   headerWrapper: "relative overflow-hidden bg-splatter",
   testimonialWrapper:
     "md:flex md:items-center md:justify-center mt-4 md:mt-0 mb-4 container",
-  heroWrapper: "relative bg-purple-100",
+  heroWrapper: "relative bg-gray-900",
   heroContentWrapper: "relative py-12",
   heroImageWrapper:
     "relative all-center mx-auto max-w-4xl xl:max-w-5xl -mt-24 lg:-mt-40 px-4 lg:px-8",
@@ -302,7 +427,7 @@ const classes = {
   metricsNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
   heroImage: "min-w-full rounded-lg stack-sm border border-gray-900",
-  heroHeader: "pt-12 lg:pb-12 container md:text-center text-gray-900",
+  heroHeader: "pt-12 lg:pb-12 container md:text-center text-white",
   heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
   heroParagraph: "mt-4 lg:mt-6 mx-auto h4",
   testimonialSectionWrapper:
@@ -313,15 +438,15 @@ const classes = {
   testimonialsWrapper: "mt-12 px-4",
   noteSectionWrapper: "relative pt-8 lg:pt-0 text-gray-900 bg-splatter",
   note:
-    "relative max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed",
+    "relative max-w-xl lg:max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed",
   noteParagraph: "mt-4",
   signature: "w-32 lg:w-40 mt-6 pb-6",
-  dividerTop: "divider-top text-purple-100",
-  dividerBottom: "divider-bottom text-purple-100",
+  dividerTop: "divider-top text-gray-900",
+  dividerBottom: "divider-bottom text-gray-900",
   retroSun1:
     "hidden md:block absolute bottom-0 right-0 w-12 md:w-20 lg:w-28 text-purple-300 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45",
   retroSun2:
-    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-purple-300 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
+    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-teal-300 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
   retroSun3:
     "hidden lg:block absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-400 transform -translate-y-12 lg:translate-x-48",
   retroSwirl:
@@ -347,7 +472,7 @@ const classes = {
 
 const TestimonialShort = ({ text }) => {
   return (
-    <div className="mt-4 md:mt-0 first:ml-0 md:ml-8 bg-white">
+    <div className="mt-8 md:mt-0 first:ml-0 md:ml-8 bg-white">
       <div className="flex items-center justify-start md:justify-center text-purple-500">
         {Array.apply(null, { length: 5 }).map((s, i) => (
           <svg
@@ -361,12 +486,20 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-sm text-gray-900 text-left md:text-center">{`"${text}"`}</p>
+      <p className="text-sm text-gray-600 text-left md:text-center">{`"${text}"`}</p>
     </div>
   )
 }
 
-const TestimonialFull = ({ text, source, desc, rotate, position, bgSvg }) => {
+const TestimonialFull = ({
+  text,
+  image,
+  source,
+  desc,
+  rotate,
+  position,
+  bgSvg,
+}) => {
   return (
     <article
       className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
@@ -381,12 +514,20 @@ const TestimonialFull = ({ text, source, desc, rotate, position, bgSvg }) => {
           <blockquote className="md:text-lg leading-relaxed text-gray-800">
             {text}
           </blockquote>
-          <div className="mt-4 all-center">
-            <cite className="text-sm font-semibold inter text-gray-900">
-              {source}
-            </cite>
-            <span className="mx-2 font-semibold text-purple-500">/</span>
-            <p className="font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
+          <div className="mt-4 md:flex md:items-center md:justify-center">
+            <div className="flex items-center justify-center">
+              <Img
+                fluid={image}
+                className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+              />
+              <cite className="ml-4 text-sm font-semibold inter text-gray-900">
+                {source}
+              </cite>
+            </div>
+            <span className="hidden md:block mx-2 font-semibold text-purple-500">
+              /
+            </span>
+            <p className="mt-2 md:mt-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
           </div>
         </div>
         <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
@@ -406,161 +547,85 @@ const testimonialsShort = [
   "Leadgeek delivers on their promises",
 ]
 
-const testimonialsFull = [
-  {
-    text: (
-      <p>
-        The very first thing I bought as an FBA seller was from your list about
-        33 days ago. I've sold 5 units of that item so far today (it's only 3:50
-        pm CST) and{" "}
-        <span className={classes.emphasizedText}>it's my first $100 day</span>.
-        Profit margin is roughly 25% and ROI more than 2x that. Thank you for
-        helping me get started.
-      </p>
-    ),
-    source: "Charles",
-    desc: "New",
-    image: null,
-    rotate: "rotate-2 hover:rotate-3",
-    position: "lg:-translate-x-6",
-  },
-  {
-    text: (
-      <p>
-        Delivered their lists as promised daily and always had at least a few
-        items I was interested in.{" "}
-        <span className={classes.emphasizedText}>
-          Good value, would recommend
-        </span>
-        .
-      </p>
-    ),
-    source: "Brian",
-    desc: "Intermediate",
-    image: null,
-    rotate: "-rotate-1 hover:rotate-2",
-    position: "justify-start lg:translate-x-16",
-  },
-  {
-    text: (
-      <p>
-        Leadgeek delivers on their promises in the promo video on time every day
-        with solid ROI leads.{" "}
-        <span className={classes.emphasizedText}>
-          Would definitely recommend giving them a shot if you want to take the
-          guess work out of sourcing for FBA
-        </span>
-        .
-      </p>
-    ),
-    source: "William",
-    desc: "Intermediate",
-    image: null,
-    rotate: "rotate-2 hover:-rotate-3",
-    position: "lg:-translate-x-2",
-  },
-  {
-    text: (
-      <p>
-        I love the leads, they're very good.{" "}
-        <span className={classes.emphasizedText}>
-          Leadgeek will pay off in a week
-        </span>
-        ... definitely the best site I've found for leads.
-      </p>
-    ),
-    source: "Kevin",
-    desc: "New",
-    image: null,
-    rotate: "-rotate-2 hover:-rotate-3",
-    position: "justify-start lg:translate-x-28",
-  },
-  {
-    text: (
-      <p>
-        <span className={classes.emphasizedText}>
-          I've been very satisfied so far
-        </span>
-        !
-      </p>
-    ),
-    source: "Dail",
-    desc: "New",
-    image: null,
-    rotate: "hover:rotate-3",
-    position: "lg:translate-x-8",
-  },
-  {
-    text: (
-      <p>
-        The software is awesome...{" "}
-        <span className={classes.emphasizedText}>
-          It looks FANTASTIC on my first try
-        </span>
-        ! Great work.
-      </p>
-    ),
-    source: "Yucheng",
-    desc: "International",
-    image: null,
-    rotate: "rotate-2 hover:rotate-3",
-    position: "lg:-translate-x-12",
-  },
-  {
-    text: (
-      <p>
-        <span className={classes.emphasizedText}>
-          5 stars for you guys making this super simple
-        </span>
-        .
-      </p>
-    ),
-    source: "Austin",
-    desc: "New",
-    image: null,
-    rotate: "-rotate-1 hover:rotate-2",
-    position: "lg:translate-x-16",
-  },
-  {
-    text: (
-      <p>
-        I want to thank you for the effort you make to find products with such
-        good quality.{" "}
-        <span className={classes.emphasizedText}>
-          It has been the best decision I have made in acquiring your list
-        </span>
-        . Thank you!
-      </p>
-    ),
-    source: "Frank",
-    desc: "International",
-    image: null,
-    rotate: "rotate-2 hover:-rotate-1",
-    position: "lg:-translate-x-8",
-  },
-  {
-    text: (
-      <p>
-        <span className={classes.emphasizedText}>
-          I really like the [software] setup
-        </span>
-        .
-      </p>
-    ),
-    source: "Dimitry",
-    desc: "Intermediate",
-    image: null,
-    rotate: "-rotate-2 hover:-rotate-1",
-    position: "",
-  },
-]
-
 export const query = graphql`
   query {
     heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 958, quality: 90) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialCharles: file(relativePath: { eq: "charles.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialBrian: file(relativePath: { eq: "brian.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialWilliam: file(relativePath: { eq: "william.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+
+    testimonialDail: file(relativePath: { eq: "dail.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialYucheng: file(relativePath: { eq: "yucheng.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialAustin: file(relativePath: { eq: "austin.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialFrank: file(relativePath: { eq: "frank.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialDimitry: file(relativePath: { eq: "dimitry.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

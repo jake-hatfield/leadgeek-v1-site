@@ -18,7 +18,7 @@ const PrimaryHeader = ({
     <header
       className={`relative container overflow-hidden lg:overflow-visible md:text-center`}
     >
-      <div className="md:mx-auto relative z-10 max-w-2xl">
+      <div className="md:mx-auto relative z-10 max-w-3xl">
         <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter text-shadow">
           {title}
         </h1>
