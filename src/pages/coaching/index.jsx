@@ -39,7 +39,7 @@ const CoachingIndexPage = ({ data }) => {
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={`Book a free 1:1 online arbitrage coaching session.`}
+            title={`Book a free 1:1 online arbitrage coaching call.`}
             desc={
               <p>
                 Selling on Amazon can be a whole 'nother beast. Bring some
@@ -49,7 +49,7 @@ const CoachingIndexPage = ({ data }) => {
             }
             nav
             outsideLink={`https://scheduling.leadgeek.io/`}
-            linkOneText={`Book a free session`}
+            linkOneText={`Book a free call`}
             svgOne={
               <div className="hidden lg:block absolute z-20 right-1/2 transform -translate-y-12 -translate-x-80">
                 <div className="relative">
@@ -117,7 +117,7 @@ const CoachingIndexPage = ({ data }) => {
               <div className="mt-8 bg-gray-900 py-4 lg:py-6 px-6 rounded-lg stack-sm text-white text-left">
                 <ul>
                   {youWillList.map((item, i) => (
-                    <li className="first:mt-0 mt-4 lg:mt-6">
+                    <li key={i} className="first:mt-0 mt-4 lg:mt-6">
                       <span className="font-bold italic">You will</span> {item}
                     </li>
                   ))}
@@ -133,7 +133,7 @@ const CoachingIndexPage = ({ data }) => {
               <div className="mt-8 bg-gray-900 py-4 lg:py-6 px-6 rounded-lg stack-sm text-white text-left">
                 <ul>
                   {youWillNotList.map((item, i) => (
-                    <li className="first:mt-0 mt-4 lg:mt-6">
+                    <li key={i} className="first:mt-0 mt-4 lg:mt-6">
                       <span className="font-bold italic">You will not</span>{" "}
                       {item}
                     </li>
@@ -168,7 +168,7 @@ const CoachingIndexPage = ({ data }) => {
                   href="https://scheduling.leadgeek.io/"
                   className="block md:inline-block cta-link inter"
                 >
-                  Book a free session
+                  Book a free call
                 </a>
               </div>
             </header>

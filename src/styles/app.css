@@ -19,6 +19,10 @@ body {
   text-shadow: 3px 3px 0px #a2a5fc, 5px -4px 0px #8eedc7;
 }
 
+.header-height {
+  @apply leading-tight !important;
+}
+
 .handwritten {
   font-family: "Nanum Pen Script" !important;
 }
@@ -99,7 +103,7 @@ body {
 }
 
 .emphasized-text {
-  @apply px-0.5 rounded-md;
+  @apply px-0.5 rounded-md text-teal-900;
   background: linear-gradient(90deg, #c6f7e2 0, #8eedc7 100%);
   -moz-border-bottom-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;

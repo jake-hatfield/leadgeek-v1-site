@@ -50,7 +50,7 @@ const IndexPage = ({ data }) => {
       <section className="relative overflow-x-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={`The uncomplicated arbitrage software.`}
+            title={`Arbitrage software doesn't need to be complicated.`}
             desc={
               <p>
                 Leadgeek is a tool that makes FBA sourcing productive,

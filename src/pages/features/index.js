@@ -38,7 +38,7 @@ const FeaturesIndexPage = () => {
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={`Online arbitrage leads made waaay better.`}
+            title={`The arbitrage sourcing list that's loaded with features.`}
             desc={
               <p>
                 Leadgeek lets you to find the products you want, when you want
