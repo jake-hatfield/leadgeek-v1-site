@@ -50,14 +50,14 @@ const IndexPage = ({ data }) => {
       <section className="relative overflow-x-hidden bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={`Arbitrage software doesn't need to be complicated.`}
+            title={`Simplify your Amazon selling.`}
             desc={
-              <p>
+              <h2>
                 Leadgeek is a tool that makes FBA sourcing productive,
                 organized, and clear. People that use Leadgeek are more
                 efficient at finding fresh arbitrage leads day in and day out.
                 Here's how the magic happens.
-              </p>
+              </h2>
             }
           />
         </HeaderWrapper>

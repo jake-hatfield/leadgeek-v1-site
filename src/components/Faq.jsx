@@ -23,18 +23,15 @@ const Faq = () => {
           </span>
         </p>
       ),
-      rotate: "rotate-3 hover:rotate-2",
+      rotate: "rotate-2 hover:rotate-3",
     },
     {
       title: "Are these products ungated for me?",
       desc: (
         <p>
-          It depends on the maturity of your Seller account. Since everyone's
-          account is slightly different,{" "}
-          <span className="emphasized-text">
-            it's impossible to say until you check eligibility yourself - though
-            certainly some will be
-          </span>
+          Since everyone's account is slightly different, it's impossible to say
+          until you check eligibility yourself - though{" "}
+          <span className="emphasized-text">certainly some will be</span>
           .
           <br />
           <br />
@@ -47,40 +44,6 @@ const Faq = () => {
         </p>
       ),
       rotate: "-rotate-2 hover:rotate-1",
-    },
-    {
-      title: "Are the prep or shipping to Amazon fees included?",
-      desc: (
-        <p>
-          <span className="emphasized-text">
-            No, they aren't. We'd like to, but it's impossible to account for
-            prep and ship-to-Amazon costs since they'll be different for
-            everyone
-          </span>
-          . However, we <i>do</i> account for{" "}
-          <Link to={`/features/calculations/`} className="secondary-link">
-            FBA fees
-          </Link>{" "}
-          and a have a built-in{" "}
-          <Link to={`/features/prep/`} className="secondary-link">
-            prep tool
-          </Link>
-          .
-        </p>
-      ),
-      rotate: "rotate-2 hover:rotate-1",
-    },
-    {
-      title: "Do you include listings where Amazon is a seller?",
-      desc: (
-        <p>
-          <span className="emphasized-text">In some cases, yeah</span>. We don't
-          necessarily shy away from listings with Amazon as a seller if there's
-          very strong historic proof that they're sharing the buy box and that
-          it's advantageous for FBA sellers.
-        </p>
-      ),
-      rotate: "rotate-1 hover:-rotate-1",
     },
     {
       title: "Can I sell these products on any Amazon marketplace?",
@@ -100,34 +63,7 @@ const Faq = () => {
           .
         </p>
       ),
-      rotate: "-rotate-3 hover:rotate-2",
-    },
-    {
-      title: "Do you offer lead samples or free trials?",
-      desc: (
-        <p>
-          In order to protect the integrity of the leads and the exclusivity our
-          members pay for, <span className="emphasized-text">we do not</span>.
-        </p>
-      ),
-      rotate: "rotate-1 hover:rotate-3",
-    },
-    {
-      title: "How often will my account be charged?",
-      desc: (
-        <p>
-          <span className="emphasized-text">
-            Your subscription will renew for another month of service on the
-            anniversary of your sign up date
-          </span>
-          . For more information on Leadgeek subscriptions, read our{" "}
-          <Link to={`/terms/#subscription-policy`} className="secondary-link">
-            billing policy
-          </Link>
-          .
-        </p>
-      ),
-      rotate: "rotate-3 hover:-rotate-1",
+      rotate: "-rotate-1 hover:rotate-2",
     },
     {
       title: "What if I decide this isn't for me?",
@@ -176,7 +112,7 @@ const Faq = () => {
           .
         </p>
       ),
-      rotate: "-rotate-3 hover:-rotate-1",
+      rotate: "rotate-2 hover:-rotate-1",
     },
   ]
   return (
@@ -199,24 +135,9 @@ const Faq = () => {
               "No, they aren't. We'd like to, but it's impossible to account for prep and ship-to-Amazon costs since they'll be different for everyone. However, we do account for FBA fees and have a built-in prep tool.",
           },
           {
-            question: "Do you include listings where Amazon is a seller?",
-            answer:
-              "In some cases, yeah. We don't necessarily shy away from listings with Amazon as a seller if there's very strong historic proof that they're sharing the buy box and that it's advantageous for FBA sellers.",
-          },
-          {
             question: "Can I sell these products on any Amazon marketplace?",
             answer:
               "The short answer is that they're for Amazon US only, though you do not have to live in the US to use our service . If you're not based in the US, it's recommended to use a domestic prepper to receive and process your shipments. If you have any questions about international selling, contact us.",
-          },
-          {
-            question: "Do you offer lead samples or free trials?",
-            answer:
-              "In order to protect the integrity of the leads and the exclusivity our members pay for, we do not.",
-          },
-          {
-            question: "How often will my account be charged?",
-            answer:
-              "Your subscription will renew for another month of service on the anniversary of your sign up date. For more information on Leadgeek subscriptions, read our billing policy.",
           },
           {
             question: "What if I decide this isn't for me?",

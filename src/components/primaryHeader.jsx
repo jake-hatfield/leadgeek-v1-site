@@ -55,7 +55,7 @@ const PrimaryHeader = ({
               </div>
             )}
             {linkTwo && (
-              <div className="mt-4 lg:mt-6 bg-white">
+              <div className="inline-block mt-4 lg:mt-6 bg-white">
                 <Link
                   to={`/${linkTwo}/`}
                   className="secondary-link text-gray-700"

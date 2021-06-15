@@ -411,6 +411,15 @@ const PricingPage = () => {
                     </div>
                   </div>
                 )}
+                {plan.limited && (
+                  <div className="absolute inset-x-0 top-0 transform translate-y-px">
+                    <div className="flex justify-center transform -translate-y-1/2">
+                      <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                        Only a few spots left<span className="inter">!</span>
+                      </span>
+                    </div>
+                  </div>
+                )}
                 <header className="mt-2 text-center">
                   <h2 className="text-4xl inter font-black">
                     {`${plan.title}`}
@@ -476,11 +485,6 @@ const PricingPage = () => {
           featureRows={criteriaFeatureRows}
           id={`lead-standards`}
         />
-        <PricingTable
-          tableHeader={`Software features`}
-          featureRows={softwareFeatureRows}
-          id={`software-features`}
-        />
       </section>
       <Faq growPlanSeats={growPlanSeats} proPlanSeats={proPlanSeats} />
     </Layout>
@@ -497,7 +501,7 @@ const proPlanSeats = 15
 const pricingCards = [
   {
     title: "Grow",
-    desc: "For people who are brand-spankin' new to arbitrage.",
+    desc: "For people who are new to arbitrage and ready to jump in.",
     price: growPrice,
     features: [
       {
@@ -543,6 +547,7 @@ const pricingCards = [
         title: "Full software access",
       },
     ],
+    limited: true,
   },
   {
     title: "Pro",
@@ -592,6 +597,7 @@ const pricingCards = [
         title: "Full software access",
       },
     ],
+    limited: true,
   },
   {
     title: "Bundle",
@@ -621,6 +627,7 @@ const pricingCards = [
         title: "Early access and discounts on new tools",
       },
     ],
+    limited: false,
   },
 ]
 
@@ -775,119 +782,6 @@ const criteriaFeatureRows = [
       {
         description: true,
         value: "No hazmat status",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-]
-
-const softwareFeatureRows = [
-  {
-    cells: [
-      {
-        description: true,
-        value: "The Feed",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Filters",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Detailed view",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Like & Archive",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Prep estimator",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Comments",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Lead search",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Variation notes",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Promo code notes",
-      },
-      { description: false, value: true },
-      { description: false, value: true },
-      { description: false, value: true },
-    ],
-  },
-  {
-    cells: [
-      {
-        description: true,
-        value: "Cashback offers",
       },
       { description: false, value: true },
       { description: false, value: true },

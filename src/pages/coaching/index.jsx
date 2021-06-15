@@ -102,7 +102,7 @@ const CoachingIndexPage = ({ data }) => {
       <section className="pt-12 pb-16 md:text-center bg-splatter">
         <div className="container">
           <header className="mx-auto max-w-2xl">
-            <h2 className="text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white">
+            <h2 className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3">
               Here's a list of things you will and will not learn from our call
               together.
             </h2>

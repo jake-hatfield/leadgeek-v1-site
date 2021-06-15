@@ -41,7 +41,14 @@ const SignupPage = ({
               of sourcing for FBA" - <cite>William</cite>
             </blockquote>
           </div>
-
+          <div
+            className={`hidden lg:block absolute bottom-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-y-24 -translate-x-6 shadow-tealMd text-center transition-main w-56 rotate-6 hover:rotate-3`}
+          >
+            <blockquote>
+              "It has been the best decision I have made in acquiring your
+              list." - <cite>Frank</cite>
+            </blockquote>
+          </div>
           <header className="relative z-20">
             <h1 className="pt-4 lg:pt-6 font-bold text-xl lg:text-2xl group bg-white">
               <Link

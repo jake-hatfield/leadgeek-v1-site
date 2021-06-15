@@ -33,18 +33,17 @@ const IndexPage = ({ data }) => {
     {
       text: (
         <p>
-          The very first thing I bought as an FBA seller was from your list
-          about 33 days ago. I've sold 5 units of that item so far today (it's
-          only 3:50 pm CST) and{" "}
-          <span className={classes.emphasizedText}>it's my first $100 day</span>
-          . Profit margin is roughly 25% and ROI more than 2x that. Thank you
-          for helping me get started.
+          I love the leads, they're very good.{" "}
+          <span className={classes.emphasizedText}>
+            Leadgeek will pay off in a week
+          </span>
+          ... definitely the best site I've found for leads.
         </p>
       ),
-      image: data.testimonialCharles.childImageSharp.fluid,
-      source: "Charles",
+      image: data.testimonialKevin.childImageSharp.fluid,
+      source: "Kevin",
       desc: "New",
-      rotate: "rotate-2 hover:rotate-3",
+      rotate: "-rotate-2 hover:-rotate-3",
     },
     {
       text: (
@@ -82,50 +81,6 @@ const IndexPage = ({ data }) => {
     {
       text: (
         <p>
-          I love the leads, they're very good.{" "}
-          <span className={classes.emphasizedText}>
-            Leadgeek will pay off in a week
-          </span>
-          ... definitely the best site I've found for leads.
-        </p>
-      ),
-      image: data.testimonialKevin.childImageSharp.fluid,
-      source: "Kevin",
-      desc: "New",
-      rotate: "-rotate-2 hover:-rotate-3",
-    },
-    {
-      text: (
-        <p>
-          <span className={classes.emphasizedText}>
-            I've been very satisfied so far
-          </span>
-          !
-        </p>
-      ),
-      image: data.testimonialDail.childImageSharp.fluid,
-      source: "Dail",
-      desc: "New",
-      rotate: "hover:rotate-3",
-    },
-    {
-      text: (
-        <p>
-          The software is awesome...{" "}
-          <span className={classes.emphasizedText}>
-            It looks FANTASTIC on my first try
-          </span>
-          ! Great work.
-        </p>
-      ),
-      image: data.testimonialYucheng.childImageSharp.fluid,
-      source: "Yucheng",
-      desc: "International",
-      rotate: "-rotate-1 hover:rotate-3",
-    },
-    {
-      text: (
-        <p>
           <span className={classes.emphasizedText}>
             5 stars for you guys making this super simple
           </span>
@@ -152,20 +107,6 @@ const IndexPage = ({ data }) => {
       source: "Frank",
       desc: "International",
       rotate: "rotate-2 hover:-rotate-1",
-    },
-    {
-      text: (
-        <p>
-          <span className={classes.emphasizedText}>
-            I really like the [software] setup
-          </span>
-          .
-        </p>
-      ),
-      image: data.testimonialDimitry.childImageSharp.fluid,
-      source: "Dimitry",
-      desc: "Intermediate",
-      rotate: "-rotate-1 hover:-rotate-2",
     },
   ]
 
@@ -210,7 +151,7 @@ const IndexPage = ({ data }) => {
                   Turn "I don't know what to sell" into "I have too much to buy"
                 </span>{" "}
                 with a daily list of the best items to flip for profit on
-                Amazon. .
+                Amazon.
               </h2>
             }
             nav
@@ -289,6 +230,19 @@ const IndexPage = ({ data }) => {
                 See how Leadgeek is built different
               </Link>
             </div>
+            <article
+              className={`hidden xl:block xl:absolute xl:bottom-0 xl:left-0 xl:z-20 w-72 mt-16 mx-auto py-4 lg:py-6 px-6 bg-purple-500 rounded-lg border border-gray-900 text-left text-sm text-white transition-main shadow-purpleSm transform xl:-translate-y-24 xl:-translate-x-32 -rotate-6`}
+            >
+              <div className="flex items-center">
+                <h3 className="font-bold inter">Amazon online arbitrage</h3>{" "}
+                <span className="ml-1 text-teal-300">&#8226;</span>
+                <div className="ml-1 italic">noun</div>
+              </div>
+              <p className="mt-2 text-xs">
+                The act of buying items at a low price from retailers and
+                selling them for a higher price on Amazon. Cha-ching.
+              </p>
+            </article>
           </header>
         </section>
       </section>
@@ -321,6 +275,15 @@ const IndexPage = ({ data }) => {
               />
             ))}
           </div>
+          <div className="mt-20 mx-auto relative max-w-xl py-4 lg:py-6 px-6 bg-purple-500 rounded-lg border border-gray-900 shadow-dark text-center text-white leading-relaxed">
+            <p className="h4">And there's plenty more where these came from.</p>
+            <Link
+              to={"/stories/"}
+              className="mt-4 lg:mt-6 block md:inline-block py-3 px-4 rounded-lg shadow-tealSm hover:shadow-tealMd border border-gray-900 bg-gray-900 font-semibold text-sm inter hover:bg-gray-800 text-teal-300 transition-main ring-teal"
+            >
+              Read more customer stories
+            </Link>
+          </div>
         </div>
       </section>
       {/* note section */}
@@ -338,7 +301,8 @@ const IndexPage = ({ data }) => {
             </p>
             <p className={classes.noteParagraph}>
               Buy an item low from a retailer like Target, sell it for profit on
-              Amazon. It should be pretty basic and rewarding.
+              Amazon. While a simple enough concept, it should also be
+              rewarding.
             </p>
             <p className={classes.noteParagraph}>
               Sure, you're making money, but there's a
@@ -366,9 +330,7 @@ const IndexPage = ({ data }) => {
             <p className={classes.noteParagraph}>
               Enter Leadgeek. Leadgeek believes that simplicty is scalability.
               Having a predictable source for leads with predictable standards
-              means that you can grow... predictably. And with a singular
-              service, it costs just a fraction of the price if you were to do
-              it all on your own.
+              means that you can grow... predictably.
             </p>
             <p className={classes.noteParagraph}>
               <span className={classes.emphasizedTextLight}>
@@ -427,11 +389,11 @@ const classes = {
   metricsNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
   heroImage: "min-w-full rounded-lg stack-sm border border-gray-900",
-  heroHeader: "pt-12 lg:pb-12 container md:text-center text-white",
+  heroHeader: "relative pt-12 lg:pb-12 container md:text-center text-white",
   heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
   heroParagraph: "mt-4 lg:mt-6 mx-auto h4",
   testimonialSectionWrapper:
-    "relative pt-28 pb-20 md:text-center overflow-hidden bg-splatter",
+    "relative pt-28 pb-12 md:text-center overflow-hidden bg-splatter",
   testimonialSectionH2:
     "text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white",
   testimonialSectionH3: "mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-700",
@@ -446,7 +408,7 @@ const classes = {
   retroSun1:
     "hidden md:block absolute bottom-0 right-0 w-12 md:w-20 lg:w-28 text-purple-300 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45",
   retroSun2:
-    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-teal-300 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
+    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-teal-200 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
   retroSun3:
     "hidden lg:block absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-400 transform -translate-y-12 lg:translate-x-48",
   retroSwirl:
@@ -518,6 +480,7 @@ const TestimonialFull = ({
             <div className="flex items-center justify-center">
               <Img
                 fluid={image}
+                alt={`${source}'s testimonial`}
                 className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
               />
               <cite className="ml-4 text-sm font-semibold inter text-gray-900">
@@ -557,7 +520,7 @@ export const query = graphql`
         }
       }
     }
-    testimonialCharles: file(relativePath: { eq: "charles.png" }) {
+    testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 200, quality: 100) {
@@ -581,31 +544,6 @@ export const query = graphql`
         }
       }
     }
-    testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-
-    testimonialDail: file(relativePath: { eq: "dail.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    testimonialYucheng: file(relativePath: { eq: "yucheng.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
     testimonialAustin: file(relativePath: { eq: "austin.png" }) {
       id
       childImageSharp {
@@ -615,14 +553,6 @@ export const query = graphql`
       }
     }
     testimonialFrank: file(relativePath: { eq: "frank.png" }) {
-      id
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    testimonialDimitry: file(relativePath: { eq: "dimitry.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 200, quality: 100) {
