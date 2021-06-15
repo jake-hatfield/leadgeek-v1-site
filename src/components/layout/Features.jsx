@@ -665,7 +665,7 @@ export const featureList = [
         <span className={classes.emphasizedFeature}>
           fresh leads every morning by 9 am CST
         </span>
-        . These guaranteed arbitrage opportunties let you be the first one to
+        . These guaranteed arbitrage opportunities let you be the first one to
         order - and the first one to sell.
       </p>
     ),

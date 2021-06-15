@@ -10,7 +10,7 @@ import OgImage from "assets/images/og/og-predictability.jpg"
 const PredictabilityPage = () => {
   const title = "Hot Off the Press | Leadgeek"
   const desc =
-    "Leadgeek helps you make sourcing a system by releasing fresh leads every morning by 9 am CST. These guaranteed arbitrage opportunties let you be the first one to order - and the first one to sell."
+    "Leadgeek helps you make sourcing a system by releasing fresh leads every morning by 9 am CST. These guaranteed arbitrage opportunities let you be the first one to order - and the first one to sell."
   return (
     <Layout>
       <GatsbySeo
