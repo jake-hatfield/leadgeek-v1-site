@@ -27,7 +27,6 @@ const SignupPage = ({
     navigate("/order-confirmation/", {
       state: { email, firstName },
     })
-    console.log(email, firstName)
   }
   return (
     <section className="relative text-gray-700">

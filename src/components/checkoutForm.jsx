@@ -347,7 +347,6 @@ const CheckoutForm = ({
             planId: priceId,
           }
         )
-        console.log(userRes.message)
         if (userRes.message === "User successfully added.") {
           addToMailchimp(lowerCaseEmail, {
             FNAME: firstNameCapitalized,
@@ -362,9 +361,12 @@ const CheckoutForm = ({
           setProcessingTo(false)
         }
       } else {
-        setCheckoutError(subscriptionRes.msg)
-        setProcessingTo(false)
-        return
+        if (subscriptionRes.msg) {
+          setCheckoutError(subscriptionRes.msg)
+        } else {
+          setCheckoutError(subscriptionRes)
+        }
+        return setProcessingTo(false)
       }
     } catch (error) {
       console.log(error.message)
