@@ -62,14 +62,14 @@ const IndexPage = ({ data }) => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative mt-12 lg:mt-32 pt-40 pb-14 bg-gray-900 md:text-center text-white">
-        <DividerTop className="divider-top text-gray-900" />
-        <DividerBottom className="divider-bottom text-gray-900" />
+      <section className="relative mt-12 lg:mt-32 pt-40 pb-14 bg-gray-100 md:text-center text-gray-900">
+        <DividerTop className="divider-top text-gray-100" />
+        <DividerBottom className="divider-bottom text-gray-100" />
         <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">
           <Img
             fluid={data.details.childImageSharp.fluid}
             alt="Leadgeek app details view"
-            className="min-w-full rounded-lg border border-gray-900 stack-sm"
+            className="min-w-full rounded-lg border border-gray-900 shadow-2xl"
           />
         </div>
         <div className="relative overflow-x-hidden">
@@ -82,13 +82,13 @@ const IndexPage = ({ data }) => {
               Why should you learn how to tweak a-million-and-one settings and
               spend hours only to find a small handful of products to arbitrage?
               That’s like finding a needle in a haystack.{" "}
-              <span className="emphasized-text-light lg:text-lg">
+              <span className="emphasized-text lg:text-lg">
                 You're putting in the time to find{" "}
                 <span className="italic">some</span> gold nuggets, but how many
                 leads are you missing?
               </span>{" "}
               And more importantly -{" "}
-              <span className="emphasized-text-light lg:text-lg">
+              <span className="emphasized-text lg:text-lg">
                 how much time are you wasting?
               </span>
             </p>
@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
               Whether you’ve been screening thousands of products to find the
               0.5% of winners or picking leads out from spreadsheets that look
               like they belong to the last decade,{" "}
-              <span className="emphasized-text-light lg:text-lg">
+              <span className="emphasized-text lg:text-lg">
                 the traditional sourcing process can be quite frustrating
               </span>
               . Unless something changes, it doesn’t take long for “traditional”

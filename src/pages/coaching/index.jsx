@@ -50,16 +50,6 @@ const CoachingIndexPage = ({ data }) => {
             nav
             outsideLink={`https://scheduling.leadgeek.io/`}
             linkOneText={`Book a free call`}
-            svgOne={
-              <div className="hidden lg:block absolute z-20 right-1/2 transform -translate-y-12 -translate-x-80">
-                <div className="relative">
-                  <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3">
-                    "Strings attached" is totally lame. This is string-free.
-                  </p>
-                  <LongArrow className="absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-gray-500" />
-                </div>
-              </div>
-            }
           />
         </HeaderWrapper>
       </section>

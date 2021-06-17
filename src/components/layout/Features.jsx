@@ -57,7 +57,7 @@ const FeaturePage = ({ feature }) => {
           svgTwo={
             testimonialTwo && (
               <div
-                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-12 shadow-tealMd text-center transition-main w-56 ${testimonialTwo.rotate}`}
+                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-20 shadow-tealMd text-center transition-main w-56 ${testimonialTwo.rotate}`}
               >
                 <blockquote>
                   "{testimonialTwo.quote}" -{" "}
@@ -445,10 +445,10 @@ export const featureList = [
           <p>
             <span className={classes.emphasizedFeature}>
               You surely cannot. These are{" "}
-              <span className="italic">retailers</span>, not distributors.
-            </span>{" "}
-            Unlike with wholesale that gets you an invoice, retailers just send
-            you a receipt. If you have a question about ungating,{" "}
+              <span className="italic">retailers</span>, not distributors
+            </span>
+            . Unlike with wholesale that gets you an invoice, retailers just
+            send you a receipt. If you have a question about ungating,{" "}
             <Link to="/contact/" className="secondary-link">
               contact us
             </Link>{" "}
@@ -510,13 +510,11 @@ export const featureList = [
         title: "Will I get the buy box?",
         desc: (
           <p>
-            <span className={classes.emphasizedFeature}>
-              Quite likely, yes!
-            </span>{" "}
-            That's why the current competition is included. For example: if the
-            buy box is controlled by a merchant fulfilled seller, swoop in and
-            grab those sales out from under them. Does an FBA seller have the
-            buy box? Match and share, there's plenty to go around.
+            <span className={classes.emphasizedFeature}>Quite likely, yes</span>
+            ! That's why the current competition is included. For example: if
+            the buy box is controlled by a merchant fulfilled seller, swoop in
+            and grab those sales out from under them. Does an FBA seller have
+            the buy box? Match and share, there's plenty to go around.
           </p>
         ),
         rotate: "rotate-2 hover:rotate-3",

@@ -64,7 +64,7 @@ const FeaturesIndexPage = () => {
         </HeaderWrapper>
       </section>
       <section className="relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-screen-2xl mx-auto">
           <ol className="mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left">
             {featureList.map((feature, i) => (
               <Link key={i} to={`/features/${feature.link}/`}>

@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,

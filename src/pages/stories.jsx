@@ -181,11 +181,17 @@ const IndexPage = ({ data }) => {
       />
       {/* hero section */}
       <section className={classes.headerWrapper}>
-        <HeaderWrapper classes={"flex flex-col-reverse md:flex-col"}>
+        <HeaderWrapper
+          classes={"flex flex-col-reverse md:flex-col"}
+          bottomPadding={`pb-0`}
+        >
           <PrimaryHeader
             title={`Customer stories`}
             desc={
-              <p>Have your own story to share? It would 100% make our day.</p>
+              <p>
+                Have your own story to share? It would 100% make our day if you
+                shared it with us.
+              </p>
             }
             nav
             outsideLink={`mailto:support@leadgeek.io?subject=Here's my Leadgeek experience...`}
