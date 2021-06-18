@@ -307,13 +307,8 @@ const IndexPage = ({ data }) => {
             </p>
             <p className={classes.noteParagraph}>
               Buy an item low from a retailer like Target, sell it for profit on
-              Amazon. While a simple enough concept, it should also be
-              rewarding.
-            </p>
-            <p className={classes.noteParagraph}>
-              Sure, you're making money, but there's a
-              striking-gold-type-of-fulfillment to it. Maybe it's time to
-              refresh Seller Central to check for another sale?
+              Amazon. Super simple and rewarding. Maybe it's time to refresh
+              Seller Central to check for another sale?
             </p>
             <p className={classes.noteParagraph}>
               But somewhere along the way things changed.
