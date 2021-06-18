@@ -28,14 +28,24 @@ const PrimaryHeader = ({
         {nav && (
           <nav className="mt-6 lg:mt-8 font-semibold text-center">
             {goHome && (
-              <div>
+              <div
+                data-sal="slide-up"
+                data-sal-delay="500"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
+              >
                 <Link to={`/`} className="block md:inline-block cta-link inter">
                   {linkOneText}
                 </Link>
               </div>
             )}
             {linkOne && (
-              <div>
+              <div
+                data-sal="slide-up"
+                data-sal-delay="500"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
+              >
                 <Link
                   to={`/${linkOne}/`}
                   className="block md:inline-block cta-link inter"
@@ -45,7 +55,13 @@ const PrimaryHeader = ({
               </div>
             )}
             {outsideLink && (
-              <div className="w-full inline-block bg-white">
+              <div
+                className="w-full inline-block bg-white"
+                data-sal="slide-up"
+                data-sal-delay="500"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
+              >
                 <a
                   href={outsideLink}
                   className="block md:inline-block cta-link inter"
@@ -55,7 +71,13 @@ const PrimaryHeader = ({
               </div>
             )}
             {linkTwo && (
-              <div className="inline-block mt-4 lg:mt-6 bg-white">
+              <div
+                className="inline-block mt-4 lg:mt-6 bg-white"
+                data-sal="fade"
+                data-sal-delay="800"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
+              >
                 <Link
                   to={`/${linkTwo}/`}
                   className="secondary-link text-gray-700"

@@ -392,7 +392,7 @@ const PricingPage = () => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative text-gray-900 bg-gray-900">
+      <section id="plans" className="relative text-gray-900 bg-gray-900">
         <DividerTop className="divider-top text-gray-900" />
         <Loopy className="absolute top-0 right-1/2 h-32 lg:h-40 text-purple-500 transform -translate-y-80" />
         <div className="mt-8 pt-20 lg:pt-32 pb-12 px-8 max-w-7xl mx-auto">

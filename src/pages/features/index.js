@@ -51,7 +51,13 @@ const FeaturesIndexPage = () => {
             linkOne={`features/criteria`}
             linkOneText={`Start the tour`}
             svgOne={
-              <div className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72">
+              <div
+                className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72"
+                data-sal="fade"
+                data-sal-delay="900"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
+              >
                 <div className="relative">
                   <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3">
                     Start the tour or click on a feature to learn more

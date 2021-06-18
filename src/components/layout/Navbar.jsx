@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
@@ -87,9 +88,13 @@ const Navbar = () => {
               >
                 Log in
               </a>
-              <Link to={"/pricing/"} className="no-m-first cta-link inter">
+              <AnchorLink
+                to={"/pricing#plans"}
+                title="Leadgeek pricing plans"
+                className="no-m-first cta-link inter"
+              >
                 Sign up
-              </Link>
+              </AnchorLink>
             </nav>
           </div>
         </div>

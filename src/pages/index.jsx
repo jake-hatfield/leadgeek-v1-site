@@ -225,7 +225,13 @@ const IndexPage = ({ data }) => {
               minutes and a few clicks, you have a dependable way to profit off
               of fresh arbitrage products.
             </p>
-            <div className="mt-12 text-center">
+            <div
+              className="mt-12 text-center"
+              data-sal="slide-up"
+              data-sal-delay="600"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <Link to={"/features/"} className="cta-link inter">
                 See how Leadgeek is built different
               </Link>
@@ -465,6 +471,10 @@ const TestimonialFull = ({
   return (
     <article
       className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
+      data-sal="slide-up"
+      data-sal-delay="500"
+      data-sal-duration="500"
+      data-sal-easing="ease in out"
     >
       <div
         className={`relative z-40 w-full md:max-w-xl lg:max-w-xl transform ${rotate} transition-main`}

@@ -108,7 +108,13 @@ const IndexPage = ({ data }) => {
       <section className="py-12 md:py-24 text-gray-900 bg-splatter">
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
-            <div className="md:mx-auto lg:mx-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1">
+            <div
+              className="md:mx-auto lg:mx-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <video
                 autoPlay
                 loop
@@ -164,11 +170,21 @@ const IndexPage = ({ data }) => {
                 doing this repetitive process yourself.
               </p>
             </header>
-            <div className="md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl">
+            <div
+              className="md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <Img
                 fluid={data.app.childImageSharp.fluid}
                 alt="Online arbitrage lead criteria"
                 className="w-full rounded-lg border border-gray-900 stack-sm transform hover:rotate-2 transition-main"
+                data-sal="slide-up"
+                data-sal-delay="500"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
               />
             </div>
           </div>
@@ -189,6 +205,10 @@ const IndexPage = ({ data }) => {
                 poster={Poster}
                 className="w-full rounded-lg border border-gray-900 stack-sm"
                 alt="Filter demo"
+                data-sal="fade"
+                data-sal-delay="500"
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
               >
                 <source src={FiltersWebm} type="video/webm" />
                 <source src={FiltersMp4} type="video/mp4" />
@@ -215,7 +235,13 @@ const IndexPage = ({ data }) => {
       <section className="py-12 lg:py-24 text-gray-900 bg-splatter">
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
-            <div className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5 transform transition-main hover:-rotate-1">
+            <div
+              className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5 transform transition-main hover:-rotate-1"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <Img
                 fluid={data.detailsClose.childImageSharp.fluid}
                 alt="Detailed view close up"
@@ -263,7 +289,13 @@ const IndexPage = ({ data }) => {
                 .
               </p>
             </header>
-            <div className="md:mx-auto lg:ml-12 lg:mr-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:rotate-2">
+            <div
+              className="md:mx-auto lg:ml-12 lg:mr-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:rotate-2"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <video
                 autoPlay
                 loop

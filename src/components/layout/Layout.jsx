@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import "styles/app.css"
 
 import CookieConsent from "react-cookie-consent"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import Navbar from "./Navbar"
 import Footer from "./Footer"
@@ -33,9 +33,13 @@ const Layout = ({ children, scrollRef, popup }) => {
         buttonClasses="block w-full md:w-auto cta-link inter"
       >
         We use third-party{" "}
-        <Link to={`/privacy#cookies`} className="secondary-link">
+        <AnchorLink
+          to={`/privacy#cookies`}
+          title="Leadgeek cookie policy"
+          className="secondary-link"
+        >
           cookies
-        </Link>{" "}
+        </AnchorLink>{" "}
         to personalize your site experience.
       </CookieConsent>
     </div>
