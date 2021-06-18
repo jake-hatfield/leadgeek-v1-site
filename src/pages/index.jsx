@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
       image: data.testimonialKevin.childImageSharp.fluid,
       source: "Kevin",
       desc: "New",
-      rotate: "-rotate-2 hover:-rotate-3",
+      rotate: "-rotate-2",
     },
     {
       text: (
@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => {
       image: data.testimonialBrian.childImageSharp.fluid,
       source: "Brian",
       desc: "Intermediate",
-      rotate: "-rotate-1 hover:rotate-2",
+      rotate: "rotate-2",
     },
     {
       text: (
@@ -76,7 +76,7 @@ const IndexPage = ({ data }) => {
       image: data.testimonialWilliam.childImageSharp.fluid,
       source: "William",
       desc: "Intermediate",
-      rotate: "rotate-1 hover:-rotate-2",
+      rotate: "rotate-1",
     },
     {
       text: (
@@ -90,7 +90,7 @@ const IndexPage = ({ data }) => {
       image: data.testimonialAustin.childImageSharp.fluid,
       source: "Austin",
       desc: "New",
-      rotate: "-rotate-1 hover:rotate-2",
+      rotate: "-rotate-1",
     },
     {
       text: (
@@ -106,7 +106,7 @@ const IndexPage = ({ data }) => {
       image: data.testimonialFrank.childImageSharp.fluid,
       source: "Frank",
       desc: "International",
-      rotate: "rotate-2 hover:-rotate-1",
+      rotate: "rotate-2",
     },
   ]
 
@@ -471,7 +471,7 @@ const TestimonialFull = ({
   return (
     <article
       className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
-      data-sal="slide-up"
+      data-sal="fade"
       data-sal-delay="500"
       data-sal-duration="500"
       data-sal-easing="ease in out"

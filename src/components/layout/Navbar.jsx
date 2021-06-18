@@ -89,7 +89,7 @@ const Navbar = () => {
                 Log in
               </a>
               <AnchorLink
-                to={"/pricing#plans"}
+                to={"/pricing#top"}
                 title="Leadgeek pricing plans"
                 className="no-m-first cta-link inter"
               >
@@ -164,7 +164,7 @@ const Navbar = () => {
               </div>
               <div className="p-4 space-y-6 rounded-b-md">
                 <div className="space-y-6 text-center">
-                  <Link to={`/pricing/`} className="block cta-link inter">
+                  <Link to={`/pricing#top`} className="block cta-link inter">
                     Sign up now
                   </Link>
                 </div>

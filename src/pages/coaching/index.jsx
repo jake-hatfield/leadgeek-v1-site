@@ -75,6 +75,10 @@ const CoachingIndexPage = ({ data }) => {
                 <li
                   key={i}
                   className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-12 md:mt-16 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${exp.rotate}`}
+                  data-sal="fade"
+                  data-sal-delay="500"
+                  data-sal-duration="500"
+                  data-sal-easing="ease in out"
                 >
                   <span className="absolute top-0 left-0 transform -translate-y-4 -translate-x-4 inline-flex items-center justify-center bg-gray-900 text-teal-300 shadow-tealSm py-2 w-8 h-8 px-4 rounded-full text-lg">
                     {i + 1}
@@ -162,7 +166,13 @@ const CoachingIndexPage = ({ data }) => {
                 </a>
               </div>
             </header>
-            <div className="relative md:mx-auto md:ml-24 lg:ml-48 lg:mr-0 w-full max-w-xs">
+            <div
+              className="relative md:mx-auto md:ml-24 lg:ml-48 lg:mr-0 w-full max-w-xs"
+              data-sal="fade"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <Img
                 fluid={data.headshot.childImageSharp.fluid}
                 alt="Online arbitrage lead criteria"

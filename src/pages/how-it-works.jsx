@@ -12,6 +12,8 @@ import CTA from "components/Cta"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import RetroSun from "assets/svgs/retro-sun.svg"
+import LongArrow from "assets/svgs/arrow-straight-solid.svg"
+import TurnyFat from "assets/svgs/turny-fat.svg"
 import OgImage from "assets/images/og/og-how-it-works.jpg"
 import FeedMp4 from "assets/video/the-feed.mp4"
 import FiltersMp4 from "assets/video/filters.mp4"
@@ -109,8 +111,8 @@ const IndexPage = ({ data }) => {
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
             <div
-              className="md:mx-auto lg:mx-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:-rotate-1"
-              data-sal="slide-up"
+              className="md:mx-auto lg:mx-0 max-w-2xl lg:max-w-4xl video-responsive border border-gray-900"
+              data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"
               data-sal-easing="ease in out"
@@ -171,21 +173,35 @@ const IndexPage = ({ data }) => {
               </p>
             </header>
             <div
-              className="md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl"
-              data-sal="slide-up"
+              className="relative md:mx-auto lg:ml-12 lg:mr-0 w-full lg:w-3/5 max-w-2xl lg:max-w-4xl"
+              data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"
               data-sal-easing="ease in out"
             >
-              <Img
-                fluid={data.app.childImageSharp.fluid}
-                alt="Online arbitrage lead criteria"
-                className="w-full rounded-lg border border-gray-900 stack-sm transform hover:rotate-2 transition-main"
-                data-sal="slide-up"
-                data-sal-delay="500"
-                data-sal-duration="500"
-                data-sal-easing="ease in out"
-              />
+              <div className="relative">
+                <Img
+                  fluid={data.app.childImageSharp.fluid}
+                  alt="Online arbitrage lead criteria"
+                  className="w-full rounded-lg border border-gray-900 stack-sm"
+                />
+                <div className="hidden xl:block absolute top-0 right-1/2 z-20 transform -translate-y-4 translate-x-80">
+                  <div className="relative">
+                    <p className="w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main -rotate-3 hover:rotate-3">
+                      Minimum profit of $4 with an average of $12.96
+                    </p>
+                    <LongArrow className="absolute left-0 h-36 text-gray-500 transform translate-x-2 rotate-45" />
+                  </div>
+                </div>
+                <div className="hidden xl:block absolute bottom-0 left-1/2 z-20 transform -translate-y-24 translate-x-4">
+                  <div className="relative">
+                    <p className="w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main -rotate-3 hover:rotate-3">
+                      Minimum ROI of 40% with an average of 84%
+                    </p>
+                    <TurnyFat className="absolute left-0 h-10 transform text-gray-500 translate-y-4 translate-x-16" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -196,7 +212,13 @@ const IndexPage = ({ data }) => {
             Filters are your friend.
           </h2>
           <div className="relative mt-4 lg:mt-6 mx-auto md:max-w-4xl xl:max-w-5xl md:px-8 all-center">
-            <div className="w-full relative z-40">
+            <div
+              className="w-full relative z-40"
+              data-sal="fade"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
               <video
                 autoPlay
                 loop
@@ -205,10 +227,6 @@ const IndexPage = ({ data }) => {
                 poster={Poster}
                 className="w-full rounded-lg border border-gray-900 stack-sm"
                 alt="Filter demo"
-                data-sal="fade"
-                data-sal-delay="500"
-                data-sal-duration="500"
-                data-sal-easing="ease in out"
               >
                 <source src={FiltersWebm} type="video/webm" />
                 <source src={FiltersMp4} type="video/mp4" />
@@ -236,8 +254,8 @@ const IndexPage = ({ data }) => {
         <div className="px-4 lg:px-12 xl:px-16">
           <div className="lg:flex lg:items-center lg:justify-center mx-auto max-w-3xl lg:max-w-none">
             <div
-              className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5 transform transition-main hover:-rotate-1"
-              data-sal="slide-up"
+              className="md:mx-auto lg:mx-0 max-w-lg lg:max-w-xl lg:w-3/5"
+              data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"
               data-sal-easing="ease in out"
@@ -290,8 +308,8 @@ const IndexPage = ({ data }) => {
               </p>
             </header>
             <div
-              className="md:mx-auto lg:ml-12 lg:mr-0 max-w-2xl lg:max-w-4xl video-responsive transform transition-main border border-gray-900 hover:rotate-2"
-              data-sal="slide-up"
+              className="md:mx-auto lg:ml-12 lg:mr-0 max-w-2xl lg:max-w-4xl video-responsive border border-gray-900"
+              data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"
               data-sal-easing="ease in out"

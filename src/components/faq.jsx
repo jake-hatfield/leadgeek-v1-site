@@ -10,7 +10,6 @@ const Faq = () => {
       title: "How is Leadgeek different from other sourcing lists?",
       desc: (
         <p>
-          {" "}
           <span className="emphasized-text">
             Leadgeek is hyper-focused on{" "}
             <Link to="/features/criteria/" className="secondary-link">
@@ -24,7 +23,7 @@ const Faq = () => {
           </span>
         </p>
       ),
-      rotate: "rotate-2 hover:rotate-3",
+      rotate: "rotate-2",
     },
     {
       title: "Are these products ungated for me?",
@@ -44,7 +43,7 @@ const Faq = () => {
           since we prioritize more ungated products on that list.
         </p>
       ),
-      rotate: "-rotate-2 hover:rotate-1",
+      rotate: "-rotate-2",
     },
     {
       title: "Can I sell these products on any Amazon marketplace?",
@@ -64,7 +63,7 @@ const Faq = () => {
           .
         </p>
       ),
-      rotate: "-rotate-1 hover:rotate-2",
+      rotate: "-rotate-1",
     },
     {
       title: "What if I decide this isn't for me?",
@@ -99,7 +98,7 @@ const Faq = () => {
           for more info.
         </p>
       ),
-      rotate: "-rotate-1 hover:-rotate-2",
+      rotate: "-rotate-1",
     },
     {
       title: "How do I get in contact with support?",
@@ -117,7 +116,7 @@ const Faq = () => {
           .
         </p>
       ),
-      rotate: "rotate-2 hover:-rotate-1",
+      rotate: "rotate-2",
     },
   ]
   return (
@@ -168,7 +167,7 @@ const Faq = () => {
               <li
                 key={i}
                 className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${question.rotate}`}
-                data-sal="slide-up"
+                data-sal="fade"
                 data-sal-delay="500"
                 data-sal-duration="500"
                 data-sal-easing="ease in out"

@@ -373,7 +373,7 @@ const PricingPage = () => {
         sku="003"
         mpn="3"
       />
-      <section className="relative overflow-x-hidden bg-splatter">
+      <section id="top" className="relative overflow-x-hidden bg-splatter">
         <HeaderWrapper bottomPadding={"pb-80"}>
           <PrimaryHeader
             title={`Leadgeek pricing`}
@@ -392,7 +392,7 @@ const PricingPage = () => {
           />
         </HeaderWrapper>
       </section>
-      <section id="plans" className="relative text-gray-900 bg-gray-900">
+      <section className="relative text-gray-900 bg-gray-900">
         <DividerTop className="divider-top text-gray-900" />
         <Loopy className="absolute top-0 right-1/2 h-32 lg:h-40 text-purple-500 transform -translate-y-80" />
         <div className="mt-8 pt-20 lg:pt-32 pb-12 px-8 max-w-7xl mx-auto">
@@ -400,66 +400,78 @@ const PricingPage = () => {
             {pricingCards.map((plan, i) => (
               <article
                 key={i}
-                className="relative mt-12 lg:-mt-64 first:ml-0 lg:ml-8 py-4 lg:py-6 px-6 bg-white last:bg-purple-500 last:text-white rounded-lg border border-gray-900 w-80 transition-main shadow-dark transform hover:-rotate-2"
+                className="mt-12 lg:-mt-64 first:ml-0 lg:ml-8 "
+                data-sal="fade"
+                data-sal-delay={plan.delay}
+                data-sal-duration="500"
+                data-sal-easing="ease in out"
               >
-                {plan.title === "Bundle" && (
-                  <div className="absolute inset-x-0 top-0 transform translate-y-px">
-                    <div className="flex justify-center transform -translate-y-1/2">
-                      <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                        Get both plans & save {discount}%
-                      </span>
+                <div
+                  className={`relative py-4 lg:py-6 px-6 ${
+                    plan.title === "Bundle"
+                      ? "bg-purple-500 text-white "
+                      : "bg-white"
+                  } rounded-lg border border-gray-900 w-80 transition-main shadow-dark transform hover:-rotate-2`}
+                >
+                  {plan.title === "Bundle" && (
+                    <div className="absolute inset-x-0 top-0 transform translate-y-px">
+                      <div className="flex justify-center transform -translate-y-1/2">
+                        <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                          Get both plans & save {discount}%
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                )}
-                {plan.limited && (
-                  <div className="absolute inset-x-0 top-0 transform translate-y-px">
-                    <div className="flex justify-center transform -translate-y-1/2">
-                      <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                        Only a few spots left<span className="inter">!</span>
-                      </span>
+                  )}
+                  {plan.limited && (
+                    <div className="absolute inset-x-0 top-0 transform translate-y-px">
+                      <div className="flex justify-center transform -translate-y-1/2">
+                        <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                          Only a few spots left<span className="inter">!</span>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                )}
-                <header className="mt-2 text-center">
-                  <h2 className="text-4xl inter font-black">
-                    {`${plan.title}`}
-                  </h2>
-                  <p className="mt-2 text-center text-sm">{plan.desc}</p>
-                  <div
-                    className={`mt-4 lg:mt-6 py-4 border-t border-b ${
-                      plan.title === "Bundle"
-                        ? "border-teal-300"
-                        : "border-gray-900"
-                    }`}
-                  >
-                    <div className="all-center">
-                      <p className="text-3xl lg:text-4xl xl:text-5xl font-black">
-                        {`$${plan.price}`}
-                      </p>
-                      <span className="ml-2">/mo</span>
+                  )}
+                  <header className="mt-2 text-center">
+                    <h2 className="text-4xl inter font-black">
+                      {`${plan.title}`}
+                    </h2>
+                    <p className="mt-2 text-center text-sm">{plan.desc}</p>
+                    <div
+                      className={`mt-4 lg:mt-6 py-4 border-t border-b ${
+                        plan.title === "Bundle"
+                          ? "border-teal-300"
+                          : "border-gray-900"
+                      }`}
+                    >
+                      <div className="all-center">
+                        <p className="text-3xl lg:text-4xl xl:text-5xl font-black">
+                          {`$${plan.price}`}
+                        </p>
+                        <span className="ml-2">/mo</span>
+                      </div>
+                      <div className="mt-4 lg:mt-6">
+                        <Link
+                          to={`/signup/${plan.title.toLowerCase()}/`}
+                          className={`${
+                            plan.title === "Bundle"
+                              ? "py-3 px-4 rounded-lg shadow-tealSm hover:shadow-tealMd border border-gray-900 bg-gray-900 font-semibold text-sm hover:bg-gray-800 text-teal-300 transition-main ring-teal"
+                              : "cta-link"
+                          } inter block`}
+                        >
+                          Get the {plan.title} plan
+                        </Link>
+                      </div>
                     </div>
-                    <div className="mt-4 lg:mt-6">
-                      <Link
-                        to={`/signup/${plan.title.toLowerCase()}/`}
-                        className={`${
-                          plan.title === "Bundle"
-                            ? "py-3 px-4 rounded-lg shadow-tealSm hover:shadow-tealMd border border-gray-900 bg-gray-900 font-semibold text-sm hover:bg-gray-800 text-teal-300 transition-main ring-teal"
-                            : "cta-link"
-                        } inter block`}
-                      >
-                        Get the {plan.title} plan
-                      </Link>
-                    </div>
-                  </div>
-                </header>
-                <ul className="mt-4 leading-relaxed">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="mt-2 flex">
-                      <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
-                      <p className="ml-4">{feature.title}</p>
-                    </li>
-                  ))}
-                </ul>
+                  </header>
+                  <ul className="mt-4 leading-relaxed">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="mt-2 flex">
+                        <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
+                        <p className="ml-4">{feature.title}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
@@ -548,6 +560,7 @@ const pricingCards = [
       },
     ],
     limited: true,
+    delay: "500",
   },
   {
     title: "Pro",
@@ -598,6 +611,7 @@ const pricingCards = [
       },
     ],
     limited: true,
+    delay: "700",
   },
   {
     title: "Bundle",
@@ -628,6 +642,7 @@ const pricingCards = [
       },
     ],
     limited: false,
+    delay: "900",
   },
 ]
 

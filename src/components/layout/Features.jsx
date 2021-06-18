@@ -87,8 +87,8 @@ const FeaturePage = ({ feature }) => {
           {faqs.map((faq, i) => (
             <li
               key={i}
-              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform ${faq.rotate}`}
-              data-sal="slide-up"
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark transform ${faq.rotate}`}
+              data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"
               data-sal-easing="ease in out"
@@ -161,7 +161,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "What's the base ROI?",
@@ -174,7 +174,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-3",
+        rotate: "-rotate-1",
       },
       {
         title: "What's the base sales velocity?",
@@ -188,7 +188,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "Ok - what about the averages?",
@@ -206,7 +206,7 @@ export const featureList = [
             . Not too shabby!
           </p>
         ),
-        rotate: "rotate-1 hover:-rotate-1",
+        rotate: "rotate-1",
       },
       {
         title: "How did you pick these criteria?",
@@ -221,7 +221,7 @@ export const featureList = [
             sold on Amazon's US marketplace.
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-2",
+        rotate: "-rotate-2",
       },
     ],
     testimonialOne: {
@@ -274,7 +274,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-3 hover:-rotate-2",
+        rotate: "-rotate-3",
       },
       {
         title: "What costs are included?",
@@ -294,7 +294,7 @@ export const featureList = [
             (an often-neglected charge) are bundled into this calculator.
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-2",
+        rotate: "-rotate-1",
       },
       {
         title: "Are the values updated periodically?",
@@ -309,7 +309,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
     ],
     testimonialOne: {
@@ -372,7 +372,7 @@ export const featureList = [
             />
           </div>
         ),
-        rotate: "-rotate-1 hover:rotate-1",
+        rotate: "-rotate-1",
       },
       {
         title: "What are the most commonly included?",
@@ -387,7 +387,7 @@ export const featureList = [
             as well.
           </p>
         ),
-        rotate: "rotate-2 hover:-rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "Will I be gated in some of the products from these categories?",
@@ -407,7 +407,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-3",
+        rotate: "-rotate-1",
       },
     ],
     testimonialOne: null,
@@ -441,7 +441,7 @@ export const featureList = [
             legit retailers have reasonable minimums for free shipping.
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-2",
+        rotate: "-rotate-1",
       },
       {
         title: "Can I use these sources for ungating?",
@@ -459,7 +459,7 @@ export const featureList = [
             and we can likely point you in the right direction.
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-2",
+        rotate: "-rotate-2",
       },
       {
         title: "Do you source from XYZ retailer?",
@@ -472,7 +472,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-3 hover:-rotate-1",
+        rotate: "rotate-3",
       },
     ],
     link: "retailers",
@@ -508,7 +508,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-1",
+        rotate: "-rotate-1",
       },
       {
         title: "Will I get the buy box?",
@@ -521,7 +521,7 @@ export const featureList = [
             the buy box? Match and share, there's plenty to go around.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "How are these values tracked?",
@@ -535,7 +535,7 @@ export const featureList = [
             before the lead is posted.
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-3",
+        rotate: "-rotate-1",
       },
     ],
     link: "historical-metrics",
@@ -569,7 +569,7 @@ export const featureList = [
             (100/week, 400/month) for a substantial discount.
           </p>
         ),
-        rotate: "rotate-1 hover:rotate-2",
+        rotate: "rotate-1",
       },
       {
         title: "Are there ever any extra leads?",
@@ -583,7 +583,7 @@ export const featureList = [
             thrown in to increase your chances of being able to sell more stuff.
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-3",
+        rotate: "-rotate-1",
       },
       {
         title: "Do you take any holidays off?",
@@ -596,7 +596,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-1",
+        rotate: "-rotate-2",
       },
     ],
     testimonialOne: {
@@ -639,7 +639,7 @@ export const featureList = [
             tightest-knit lists in the industry.
           </p>
         ),
-        rotate: "-rotate-3 hover:-rotate-1",
+        rotate: "-rotate-3",
       },
       {
         title: "What's a no-budge cap?",
@@ -652,7 +652,7 @@ export const featureList = [
             you'll get it.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-1",
+        rotate: "rotate-2",
       },
     ],
     link: "exclusivity",
@@ -686,7 +686,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "Why 9 am CST?",
@@ -699,7 +699,7 @@ export const featureList = [
             , but not so late that all that's left are root vegetables...
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-2",
+        rotate: "-rotate-1",
       },
     ],
     testimonialOne: {
@@ -746,7 +746,7 @@ export const featureList = [
             . No cutting corners 'round these parts.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "Which part is evaluated by the experienced seller?",
@@ -761,7 +761,7 @@ export const featureList = [
             a reasonable degree of certainty.
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-2",
+        rotate: "-rotate-1",
       },
       {
         title: "Does that mean I can just purchase stuff willy-nilly?",
@@ -775,7 +775,7 @@ export const featureList = [
             ; Since when have double-checks been a bad idea?
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-2",
+        rotate: "-rotate-2",
       },
     ],
     link: "seller-insight",
@@ -807,7 +807,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-1 hover:rotate-2",
+        rotate: "rotate-1",
       },
       {
         title: "Can I see more?",
@@ -821,7 +821,7 @@ export const featureList = [
             , along with some extra shortcuts to make your life easier.
           </p>
         ),
-        rotate: "-rotate-3 hover:-rotate-2",
+        rotate: "-rotate-3",
       },
     ],
     testimonialOne: {
@@ -864,7 +864,7 @@ export const featureList = [
             <span className={classes.emphasizedFeature}>date</span>.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "Only 9 filters? That doesn't seem like a lot...",
@@ -880,7 +880,7 @@ export const featureList = [
             are quite powerful.
           </p>
         ),
-        rotate: "-rotate-1 hover:-rotate-3",
+        rotate: "-rotate-1",
       },
     ],
     testimonialOne: null,
@@ -925,7 +925,7 @@ export const featureList = [
             </span>
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-3",
+        rotate: "-rotate-2",
       },
       {
         title: "Alright, what else?",
@@ -938,7 +938,7 @@ export const featureList = [
             in a jiffy.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
     ],
     testimonialOne: null,
@@ -968,7 +968,7 @@ export const featureList = [
             like and archive away!
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "Why include both liked and archived lists?",
@@ -983,7 +983,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-1",
+        rotate: "-rotate-1",
       },
     ],
     testimonialOne: null,
@@ -1021,7 +1021,7 @@ export const featureList = [
             center.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-0",
+        rotate: "rotate-2",
       },
       {
         title: "How can I account for prep expenses?",
@@ -1036,7 +1036,7 @@ export const featureList = [
             prices for every product in the Feed.
           </p>
         ),
-        rotate: "-rotate-2 hover:-rotate-1",
+        rotate: "-rotate-2",
       },
     ],
     video: { webm: PrepWebm, mp4: PrepMp4 },
@@ -1070,7 +1070,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-3 hover:-rotate-2",
+        rotate: "-rotate-3",
       },
     ],
     video: { webm: CommentWebm, mp4: CommentMp4 },
@@ -1102,7 +1102,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:-rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "Ugh! I don't remember the product's name exactly...",
@@ -1117,7 +1117,7 @@ export const featureList = [
             including non-matches.
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-0",
+        rotate: "-rotate-1",
       },
     ],
     video: { webm: SearchWebm, mp4: SearchMp4 },
@@ -1152,7 +1152,7 @@ export const featureList = [
             Color: Black/Red)
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-3",
+        rotate: "rotate-2",
       },
       {
         title: "What is a seller-to-seller note?",
@@ -1167,7 +1167,7 @@ export const featureList = [
             stock, increase the buy box price.)
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-0",
+        rotate: "-rotate-1",
       },
     ],
     link: "seller-notes",
@@ -1187,7 +1187,7 @@ export const featureList = [
         .
       </p>
     ),
-    rotate: "-rotate-1 hover:rotate-0",
+    rotate: "-rotate-1",
     faqs: [
       {
         title: "Wait...how does cashback work?",
@@ -1204,7 +1204,7 @@ export const featureList = [
             inventory.
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-1",
+        rotate: "-rotate-2",
       },
       {
         title: "How do I take advantage of this?",
@@ -1218,7 +1218,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "rotate-2 hover:-rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "Is the cashback calculated into the purchase price?",
@@ -1231,7 +1231,7 @@ export const featureList = [
             .
           </p>
         ),
-        rotate: "-rotate-1 hover:rotate-0",
+        rotate: "-rotate-1",
       },
     ],
     link: "promo-notes",
@@ -1263,7 +1263,7 @@ export const featureList = [
             convert it to a .xlsx or other spreadsheet format.
           </p>
         ),
-        rotate: "-rotate-2 hover:rotate-2",
+        rotate: "-rotate-2",
       },
       {
         title: "How do I download them?",
@@ -1275,7 +1275,7 @@ export const featureList = [
             . After a few seconds, your list will be ready to download.
           </p>
         ),
-        rotate: "rotate-2 hover:rotate-0",
+        rotate: "rotate-2",
       },
     ],
     video: { webm: ExportWebm, mp4: ExportMp4 },
@@ -1311,7 +1311,7 @@ export const featureList = [
             dealing with Amazon/Seller Central are common questions.
           </p>
         ),
-        rotate: "rotate-2 hover:-rotate-1",
+        rotate: "rotate-2",
       },
       {
         title: "What are your hours?",
@@ -1324,7 +1324,7 @@ export const featureList = [
             no sweat getting your questions answered quickly.
           </p>
         ),
-        rotate: "rotate-2 hover:-rotate-1",
+        rotate: "rotate-2",
       },
     ],
     link: "support",
