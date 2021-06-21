@@ -387,12 +387,12 @@ const classes = {
     "hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16",
   metricsNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
-  heroImage: "min-w-full rounded-lg border border-gray-900 shadow-2xl",
+  heroImage: "min-w-full rounded-lg border-2 border-gray-900 shadow-2xl",
   heroHeader: "relative pt-12 lg:pb-12 container md:text-center text-gray-900",
   heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
   heroParagraph: "mt-4 lg:mt-6 mx-auto h4",
   testimonialSectionWrapper:
-    "relative pt-36 pb-12 md:text-center overflow-hidden bg-splatter",
+    "relative pt-16 lg:pt-36 pb-12 md:text-center overflow-hidden bg-splatter",
   testimonialSectionH2:
     "text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white",
   testimonialSectionH3: "mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900",

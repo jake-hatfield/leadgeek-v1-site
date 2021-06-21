@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-
-import Quote from "assets/svgs/quote.svg"
+import TestimonialFull from "components/utils/TestimonialFull"
 
 import OgImage from "assets/images/og/og-stories.jpg"
 
@@ -227,60 +225,6 @@ const classes = {
   testimonialsWrapper: "mt-12 px-4",
   emphasizedText: "emphasized-text lg:text-lg",
   emphasizedTextLight: "emphasized-text-light",
-}
-const TestimonialFull = ({
-  text,
-  image,
-  source,
-  desc,
-  rotate,
-  position,
-  bgSvg,
-}) => {
-  return (
-    <article
-      className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
-      data-sal="fade"
-      data-sal-delay="500"
-      data-sal-duration="500"
-      data-sal-easing="ease in out"
-    >
-      <div
-        className={`relative z-40 w-full md:max-w-xl lg:max-w-xl transform ${rotate} transition-main`}
-      >
-        <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl negative-z">
-          {bgSvg}
-        </div>
-        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark">
-          <blockquote className="md:text-lg leading-relaxed text-gray-800">
-            {text}
-          </blockquote>
-          <div className="mt-4 md:flex md:items-center md:justify-center">
-            <div className="flex items-center justify-center">
-              <Img
-                fluid={image}
-                alt={`${source}'s testimonial`}
-                className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
-              />
-              <cite className="ml-4 text-sm font-semibold inter text-gray-900">
-                {source}
-              </cite>
-            </div>
-            <span className="hidden md:block mx-2 font-semibold text-purple-500">
-              /
-            </span>
-            <p className="mt-2 md:mt-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
-          </div>
-        </div>
-        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
-          <Quote className="h-8 w-8 text-gray-900 transform rotate-180 -translate-x-6" />
-        </div>
-        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
-          <Quote className="h-8 w-8 text-gray-900 transform -translate-y-2 translate-x-6" />
-        </div>
-      </div>
-    </article>
-  )
 }
 
 export const query = graphql`

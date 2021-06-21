@@ -71,7 +71,7 @@ const IndexPage = ({ data }) => {
           <Img
             fluid={data.details.childImageSharp.fluid}
             alt="Leadgeek app details view"
-            className="min-w-full rounded-lg border border-gray-900 shadow-2xl"
+            className="min-w-full rounded-lg border-2 border-gray-900 shadow-2xl"
           />
         </div>
         <div className="relative overflow-x-hidden">
