@@ -35,7 +35,7 @@ const FeaturesIndexPage = () => {
         }}
         language="en"
       />
-      <section className="relative overflow-hidden bg-splatter">
+      <section className={classes.headerWrapper}>
         <HeaderWrapper>
           <PrimaryHeader
             title={`The arbitrage sourcing list that's loaded with features.`}
@@ -52,37 +52,33 @@ const FeaturesIndexPage = () => {
             linkOneText={`Start the tour`}
             svgOne={
               <div
-                className="hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72"
+                className={classes.noteWrapper}
                 data-sal="fade"
                 data-sal-delay="900"
                 data-sal-duration="500"
                 data-sal-easing="ease in out"
               >
                 <div className="relative">
-                  <p className="py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3">
+                  <p className={classes.note}>
                     Start the tour or click on a feature to learn more
                   </p>
-                  <LongArrow className="absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-gray-500" />
+                  <LongArrow className={classes.longArrow} />
                 </div>
               </div>
             }
           />
         </HeaderWrapper>
       </section>
-      <section className="relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter">
-        <div className="max-w-screen-2xl mx-auto">
-          <ol className="mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left">
+      <section className={classes.featuresWrapper}>
+        <div className={classes.featuresContainer}>
+          <ol className={classes.featuresList}>
             {featureList.map((feature, i) => (
               <Link key={i} to={`/features/${feature.link}/`}>
-                <li className="mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-64 transition-main shadow-dark">
-                  <header className="text-gray-900 group-hover:text-white">
-                    <h2 className="text-lg xl:text-xl inter font-black">
-                      {feature.title}
-                    </h2>
+                <li className={classes.feature}>
+                  <header className={classes.featureHeader}>
+                    <h2 className={classes.featureTitle}>{feature.title}</h2>
                   </header>
-                  <div className="mt-2 lg:mt-4 leading-relaxed">
-                    {feature.desc}
-                  </div>
+                  <div className={classes.featureDesc}>{feature.desc}</div>
                 </li>
               </Link>
             ))}
@@ -91,6 +87,26 @@ const FeaturesIndexPage = () => {
       </section>
     </Layout>
   )
+}
+
+const classes = {
+  headerWrapper: "relative overflow-hidden bg-splatter",
+  noteWrapper:
+    "hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72",
+  note:
+    "py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3",
+  featuresWrapper:
+    "relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter",
+  featuresContainer: "max-w-screen-2xl mx-auto",
+  featuresList:
+    "mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left",
+  feature:
+    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-64 transition-main shadow-dark",
+  featureHeader: "text-gray-900 group-hover:text-white",
+  featureTitle: "text-lg xl:text-xl inter font-black",
+  featureDesc: "mt-2 lg:mt-4 leading-relaxed",
+  longArrow:
+    "absolute right-0 h-48 transform -rotate-90 -translate-y-32 translate-x-28 text-gray-500",
 }
 
 export default FeaturesIndexPage

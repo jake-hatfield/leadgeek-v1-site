@@ -378,7 +378,7 @@ const PricingPage = () => {
           <PrimaryHeader
             title={`Leadgeek pricing`}
             desc={
-              "From starting out to scaling up - here are your monthly membership options."
+              "From starting out to scaling up - here are your monthly membership options. Zero contracts. Zero hassle."
             }
             svgTwo={
               <div

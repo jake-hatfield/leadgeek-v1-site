@@ -212,18 +212,16 @@ const IndexPage = ({ data }) => {
               Leadgeek is made for busy Amazon sellers.
             </h2>
             <p className={classes.heroParagraph}>
-              <span className="font-semibold">Before using Leadgeek</span>: You
-              know selling stuff on Amazon can be a great way to make some cash
-              on the side, but where the heck are you supposed to start?
-              Arbitrage software takes up too much time and sourcing lists
-              aren't cutting it for you.
+              <span className="font-semibold">Before using Leadgeek</span>:
+              Finding new things to sell on Amazon is a boring time-suck. Some
+              words you'd use to describe this process are "sluggish,"
+              "inconsistent," and "barf-worthy."
             </p>
             <p className={classes.heroParagraph}>
-              <span className="font-semibold">After using Leadgeek</span>:
-              There's no more confusion. You know exactly the quality and
-              quantity of product leads to expect each weekday. In about 10
-              minutes and a few clicks, you have a dependable way to profit off
-              of fresh arbitrage products.
+              <span className="font-semibold">After using Leadgeek</span>: In
+              quite literally one click, you have day's 10 best arbitrage leads
+              on your screen just begging to make you money. And the next day,
+              and the next day...
             </p>
             <div
               className="mt-12 text-center"
