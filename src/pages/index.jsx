@@ -219,9 +219,9 @@ const IndexPage = ({ data }) => {
             </p>
             <p className={classes.heroParagraph}>
               <span className="font-semibold">After using Leadgeek</span>: In
-              quite literally one click, you have day's 10 best arbitrage leads
-              on your screen just begging to make you money. And the next day,
-              and the next day...
+              quite literally one click, you have the day's 10 best arbitrage
+              leads on your screen just begging to make you money. And the next
+              day, and the next day...
             </p>
             <div
               className="mt-12 text-center"
