@@ -233,6 +233,14 @@ body {
   text-decoration-color: #5455fa;
 }
 
+.text-decoration-dark {
+  text-decoration-color: #243b53;
+}
+
+.text-decoration-bright {
+  text-decoration-color: #f224f2;
+}
+
 .row-border {
   @apply border-b border-gray-800 !important;
 }

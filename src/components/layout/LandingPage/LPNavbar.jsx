@@ -38,7 +38,7 @@ const Navbar = () => {
               </Link>
             </div>
             {/* md:+ nav */}
-            <nav className="hidden lg:flex lg:items-center">
+            <nav className="lg:flex lg:items-center mr-4">
               <AnchorLink
                 to={"#pricing"}
                 title="Leadgeek pricing plans"

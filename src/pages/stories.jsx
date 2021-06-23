@@ -11,10 +11,10 @@ import TestimonialFull from "components/utils/TestimonialFull"
 import OgImage from "assets/images/og/og-stories.jpg"
 
 const IndexPage = ({ data }) => {
-  const title = "Customer Stories"
+  const title = "Seller Stories"
   const desc =
     "Read how Leadgeek helped the arbitrage sourcing for real Amazon sellers around the world."
-  const alt = "Leadgeek Customer Stories"
+  const alt = "Leadgeek Seller Stories"
 
   const testimonialsFull = [
     {
@@ -184,7 +184,7 @@ const IndexPage = ({ data }) => {
           bottomPadding={`pb-0`}
         >
           <PrimaryHeader
-            title={`Customer stories`}
+            title={`Seller stories`}
             desc={
               <p>
                 Have your own story to share? It would 100% make our day if you

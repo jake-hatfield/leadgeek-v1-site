@@ -301,7 +301,7 @@ const PrivacyPolicyPage = () => {
                 className={classes.link}
               >
                 <span>hel</span>
-                <span>lo@L</span>
+                <span>lo@l</span>
                 <span>eadgeek.io</span>
               </a>{" "}
               or call us at{" "}
