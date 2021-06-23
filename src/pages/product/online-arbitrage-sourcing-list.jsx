@@ -2,16 +2,39 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 
 import LPLayout from "components/layout/LandingPage/LPLayout"
-import TestimonialFull from "components/utils/TestimonialFull"
 import PricingCards from "components/PricingCards"
+import LoopyDashed from "assets/svgs/loopy-dashed.svg"
 
 const OnlineArbitrageSourcingListPage = ({ data }) => {
+  const title = "Online Arbitrage Sourcing List | Leadgeek"
+  const desc = "Online arbitrage sourcing list."
+
   return (
     <LPLayout>
+      <GatsbySeo
+        title={title}
+        description={desc}
+        // openGraph={{
+        //   title,
+        //   description: desc,
+        //   url: "https://leadgeek.io/",
+        //   images: [
+        //     {
+        //       url: OgImage,
+        //       width: 1200,
+        //       height: 630,
+        //       alt,
+        //     },
+        //   ],
+        //   type: "website",
+        // }}
+        language="en"
+      />
       <section className="relative overflow-hidden bg-splatter">
         <div className="relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-48 px-4 flex flex-col-reverse lg:flex-none">
           <header className="relative z-30 max-w-xl">
@@ -72,7 +95,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               <Img
                 fluid={data.heroImage.childImageSharp.fluid}
                 alt="Leadgeek app feed"
-                className="w-full rounded-lg ring-8 ring-purple-500 shadow-2xl"
+                className="w-full rounded-lg ring-8 ring-pink-600 ring-opacity-50 shadow-2xl"
               />
             </div>
           </div>
@@ -83,30 +106,38 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           speed="100"
           pauseOnHover={true}
         >
-          <p>
-            Say "see ya" to spreadsheets! Leadgeek is all the best parts of a
-            traditional online arbitrage sourcing list amplified by a software
-            interface that helps you find amazing products in a fraction of the
-            time.{" "}
+          <p className="pl-10">
+            <span className="text-pink-600">
+              There's only 1 thing you need to know about Leadgeek
+            </span>
+            : It's all the best parts of a traditional online arbitrage sourcing
+            list made better by an interface that helps you find amazing product
+            leads in a fraction of the normal time.{" "}
             <span role="img" aria-label="Rocket Emoji">
               🚀
             </span>
           </p>
         </Marquee>
       </section>
+      {/* section 1 */}
       <section className="relative overflow-hidden bg-splatter">
-        <div className="mt-8 md:mt-12 lg:mt-36 mb-20 max-w-7xl md:mx-auto relative z-10 md:flex md:justify-between md:items-center">
+        <div className="mt-8 md:mt-12 lg:mt-36 mb-72 max-w-7xl md:mx-auto relative z-10 md:flex md:justify-between md:items-center">
           <header className="relative overflow-hidden lg:overflow-visible">
             <h2 className="max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
-              The only modern tool for{" "}
-              <span className="emphasized-text">online arbitrage sourcing</span>{" "}
-              in {new Date().getFullYear()}.
+              <span className="emphasized-text">Online arbitrage sourcing</span>{" "}
+              for the modern era.
             </h2>
             <p className="max-w-lg mt-4 lg:mt-6 text-gray-900 text-lg bg-white">
               Upgrade your Amazon arbitrage sourcing setup from smoke signals,
-              carrier pigeons, and spreadsheets. 🤢{" "}
+              carrier pigeons, and clunky spreadsheets.{" "}
+              <span role="img" aria-label="Puke Emoji">
+                🤢
+              </span>{" "}
               <strong>Get more things done</strong> with a simple, flexible
-              interface.
+              interface.{" "}
+              <span role="img" aria-label="Muscle Emoji">
+                💪
+              </span>
             </p>
             <div
               className="mt-4 lg:mt-6 flex items-center"
@@ -122,27 +153,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 Join now
               </AnchorLink>
             </div>
-            {/* <TestimonialFull
-              size={`sm`}
-              margin={`mt-20`}
-              position={`md:flex items-start`}
-              text={
-                <p>
-                  I want to thank you for the effort you make to find products
-                  with such good quality.{" "}
-                  <span className="emphasized-text">
-                    It has been the best decision I have made in acquiring your
-                    list
-                  </span>
-                  .
-                </p>
-              }
-              image={data.testimonialFrank.childImageSharp.fluid}
-              source="Frank"
-              desc="International"
-              rotate="-rotate-2"
-            /> */}
-            <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg p-4 text-gray-700">
+            <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
               <blockquote>
                 I want to thank you for the effort you make to find products
                 with such good quality.{" "}
@@ -167,8 +178,114 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 </div>
               </blockquote>
             </div>
+            <LoopyDashed className="absolute bottom-0 h-28 lg:h-56 text-purple-500 transform translate-y-64 translate-x-12" />
           </header>
-          <div>hello!</div>
+          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-16 transform lg:translate-x-56 xl:translate-x-24">
+            <div className="lg:h-full mx-auto pl-4 lg:pl-12 lg:-mr-64">
+              <Img
+                fluid={data.heroImage.childImageSharp.fluid}
+                alt="Leadgeek app feed"
+                className="w-full rounded-lg ring-8 ring-teal-500 ring-opacity-50 shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* section 2 */}
+      <section className="relative overflow-hidden bg-splatter">
+        <div className="mt-8 md:mt-12 lg:mt-0 lg:mb-64 max-w-7xl md:mx-auto relative z-10 md:flex md:justify-between md:items-center">
+          <header className="relative overflow-hidden lg:overflow-visible">
+            <h2 className="max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
+              Your <span className="emphasized-text">side-hustle</span> should
+              stay on the side.
+            </h2>
+            <p className="max-w-lg mt-4 lg:mt-6 text-gray-900 text-lg bg-white">
+              Let's face it - OA sourcing is a grind. Free up time, find
+              profitable inventory, and{" "}
+              <strong>blow up your Amazon sales</strong> by letting Leadgeek do
+              the arbitrage research for you.{" "}
+              <span role="img" aria-label="Microscope Emoji">
+                🔬
+              </span>{" "}
+            </p>
+            <div
+              className="mt-4 lg:mt-6 flex items-center"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
+              <AnchorLink
+                to={"#pricing"}
+                className="inline-block cta-link inter"
+              >
+                Join now
+              </AnchorLink>
+            </div>
+            <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
+              <blockquote>
+                Delivered their lists as promised daily and always had at least
+                a few items I was interested in.{" "}
+                <strong>Good value, would recommend</strong>.
+                <div className="mt-2 lg:mt-4 flex items-center">
+                  <Img
+                    fluid={data.testimonialBrian.childImageSharp.fluid}
+                    alt={`Frank's testimonial`}
+                    className="w-10 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                  />
+                  <div className="flex items-center">
+                    <cite className="ml-4 inter font-black">Brian</cite>
+                    <span className="hidden md:block mx-2 font-semibold text-pink-600">
+                      /
+                    </span>
+                    <p className="mt-2 md:mt-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`Intermediate FBA seller`}</p>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+          </header>
+          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-16 transform lg:translate-x-56 xl:translate-x-24">
+            <div className="lg:h-full mx-auto pl-4 lg:pl-12 lg:-mr-64">
+              <Img
+                fluid={data.heroImage.childImageSharp.fluid}
+                alt="Leadgeek app feed"
+                className="w-full rounded-lg ring-8 ring-purple-500 ring-opacity-50 shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-splatter">
+        <div className="mt-8 md:mt-12 lg:mt-0 lg:mb-64 container md:mx-auto relative z-10">
+          <header className="relative text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 inter header-height">
+              Your <span className="emphasized-text">side-hustle</span> should
+              stay on the side.
+            </h2>
+            <p className="max-w-2xl mt-4 lg:mt-6 mx-auto text-gray-900 text-lg bg-white">
+              Let's face it - OA sourcing is a grind. Free up time, find
+              profitable inventory, and{" "}
+              <strong>blow up your Amazon sales</strong> by letting Leadgeek do
+              the arbitrage research for you.{" "}
+              <span role="img" aria-label="Microscope Emoji">
+                🔬
+              </span>{" "}
+            </p>
+            <div
+              className="mt-4 lg:mt-6 flex items-center"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
+              <AnchorLink
+                to={"#pricing"}
+                className="inline-block cta-link inter"
+              >
+                Join now
+              </AnchorLink>
+            </div>
+          </header>
         </div>
       </section>
       <section
@@ -197,6 +314,14 @@ export const query = graphql`
       }
     }
     testimonialFrank: file(relativePath: { eq: "frank.png" }) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 200, quality: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    testimonialBrian: file(relativePath: { eq: "brian.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 200, quality: 100) {
