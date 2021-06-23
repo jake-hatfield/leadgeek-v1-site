@@ -30,24 +30,35 @@ const Footer = () => {
           <Logo className="w-8 lg:w-10" />
         </div>
       </div>
-      <div className="mt-16 text-xs font-bold text-gray-600">
+      <div className="mt-8 lg:mt-16 text-xs font-bold text-gray-600">
         <div className="w-full" />
-        <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="flex justify-center md:justify-start">
-            {footerLinks.map(footerLink => (
-              <li
-                key={footerLink.title}
-                className="no-m-first tertiary-link inter"
-              >
-                <Link to={`/${footerLink.link}/`}>{footerLink.title}</Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 md:mt-0 text-center md:text-left">
-            <p>
-              Copyright <span className="inter">&copy;</span>{" "}
+        <div className="mt-6 container md:flex md:items-center md:justify-between">
+          <div className="text-center md:text-left inter">
+            <ul>6333 E Mockingbird Lane, Suite 147 Dallas, TX</ul>
+            <a
+              href="mailto:hello@leadgeek.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 secondary-link"
+            >
+              hello@leadgeek.io
+            </a>
+          </div>
+          <div className="mt-4 md:mt-0 text-center md:text-left flex flex-col-reverse md:flex-col">
+            <p className="mt-4 md:mt-0">
+              Copyright <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
             </p>
+            <ul className="md:mt-4 flex justify-center md:justify-between">
+              {footerLinks.map(footerLink => (
+                <li
+                  key={footerLink.title}
+                  className="no-m-first secondary-link inter"
+                >
+                  <Link to={`/${footerLink.link}/`}>{footerLink.title}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
