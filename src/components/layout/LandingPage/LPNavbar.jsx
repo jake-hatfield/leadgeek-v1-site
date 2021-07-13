@@ -28,7 +28,7 @@ const Navbar = () => {
             </div>
           </div>
         </aside>
-        <div className="absolute w-screen bg-white shadow-sm">
+        <div className="absolute w-full bg-white shadow-sm">
           <div className="w-full py-4 container center-between">
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">

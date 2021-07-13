@@ -19,8 +19,11 @@ const Faq = () => {
             <Link to={`/features/exclusivity/`} className="secondary-link">
               small group
             </Link>{" "}
-            of dedicated Amazon sellers.
+            of dedicated, modern Amazon sellers
           </span>
+          . By curating your daily leads by hand and displaying them in a
+          powerful software, Leadgeek creates a seamless experience that allows
+          you to sell better products, faster.
         </p>
       ),
       rotate: "rotate-2",
@@ -29,14 +32,14 @@ const Faq = () => {
       title: "Are these products ungated for me?",
       desc: (
         <p>
-          Since everyone's account is slightly different, it's impossible to say
-          until you check eligibility yourself - though{" "}
-          <span className="emphasized-text">certainly some will be</span>
-          .
+          <span className="emphasized-text">
+            Leadgeek is built for sellers of every level
+          </span>
+          , but since everyone's account is slightly different, it's impossible
+          to say until you check eligibility yourself. .
           <br />
-          <br />
-          If being restricted in too many products is a concern, we recommend
-          the{" "}
+          Certainly some will be, but if being restricted in too many products
+          is a concern, we recommend the{" "}
           <Link to={`/signup/grow/`} className="secondary-link">
             Grow Plan
           </Link>{" "}
@@ -51,8 +54,8 @@ const Faq = () => {
         <p>
           The short answer is that{" "}
           <span className="emphasized-text">
-            they're for Amazon US only, though you do not have to live in the US
-            to use our service
+            they're for Amazon US only, though you do <strong>not</strong> have
+            to live in the US to use our service
           </span>
           . If you're not based in the US, it's recommended to use a domestic
           prepper to receive and process your shipments. If you have any
@@ -69,9 +72,9 @@ const Faq = () => {
       title: "What if I decide this isn't for me?",
       desc: (
         <p>
-          No worries!{" "}
+          No worries! There are no contracts, and you can cancel anytime. Just{" "}
           <span className="emphasized-text">
-            To cancel your subscription, email{" "}
+            email{" "}
             <a
               href="mailto:support@Leadgeek.io"
               target="_blank"
@@ -84,10 +87,10 @@ const Faq = () => {
             </a>
           </span>{" "}
           and we'll get you sorted out. <br /> <br />{" "}
-          <strong>Please note:</strong> due to the nature of the product, we do
-          not issue refunds for the current month of service. However, we
-          understand that special circumstances arise and honor genuine
-          requests. See our{" "}
+          <strong>Please note:</strong> due to the exclusive nature of the
+          product, we do not issue refunds for the current month of service.
+          However, we absolutely understand that special circumstances arise and
+          honor genuine requests. See our{" "}
           <AnchorLink
             to={`/terms/#cancellation-policy`}
             title="Leadgeek cancellation policy"

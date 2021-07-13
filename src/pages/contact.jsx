@@ -41,8 +41,7 @@ const ContactPage = () => {
                   Get in touch.
                 </h1>
                 <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
-                  Have a question? Shoot! We're sharp as a tack but please don't
-                  sit on us.
+                  Have a question? Shoot! We're sharp as a tack.
                 </p>
                 <div className="mt-2 bg-white">
                   <h3 className="text-lg xl:text-xl inter font-black">

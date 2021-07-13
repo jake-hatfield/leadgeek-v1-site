@@ -5,15 +5,21 @@ import Img from "gatsby-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
+import { DateTime } from "luxon"
 
 import LPLayout from "components/layout/LandingPage/LPLayout"
 import PricingCards from "components/PricingCards"
+import Faq from "components/Faq"
 import LoopyDashed from "assets/svgs/loopy-dashed.svg"
 
 const OnlineArbitrageSourcingListPage = ({ data }) => {
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const desc = "Online arbitrage sourcing list."
 
+  const startDate = DateTime.fromISO("2020-10-12T12:00")
+  const currentDate = DateTime.now()
+  const difference = startDate.diff(currentDate, ["days"])
+  const differenceInDays = Math.abs(difference.toObject().days).toFixed()
   return (
     <LPLayout>
       <GatsbySeo
@@ -58,7 +64,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   to={"#pricing"}
                   className="block md:inline-block cta-link inter text-center"
                 >
-                  Join now
+                  Start sourcing now
                 </AnchorLink>
               </div>
               <div className="pt-8 md:pt-0 md:pl-10 text-sm text-gray-900 text-center md:text-left font-semibold transform -rotate-2">
@@ -85,7 +91,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   <span className="line-through text-lg text-pink-600 text-decoration-dark">
                     15
                   </span>{" "}
-                  limited spots left
+                  <span className="underline">limited</span> spots left
                 </p>
               </div>
             </div>
@@ -128,13 +134,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               for the modern era.
             </h2>
             <p className="max-w-lg mt-4 lg:mt-6 text-gray-900 text-lg bg-white">
-              Upgrade your Amazon arbitrage sourcing setup from smoke signals,
-              carrier pigeons, and clunky spreadsheets.{" "}
-              <span role="img" aria-label="Puke Emoji">
-                🤢
-              </span>{" "}
-              <strong>Get more things done</strong> with a simple, flexible
-              interface.{" "}
+              It's {new Date().getFullYear()}: Upgrade your Amazon arbitrage
+              sourcing setup from smoke signals, carrier pigeons, and clunky
+              spreadsheets. <strong>Get more things done</strong> by viewing a
+              daily arbitrage list in a powerful, flexible interface.{" "}
               <span role="img" aria-label="Muscle Emoji">
                 💪
               </span>
@@ -150,7 +153,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 to={"#pricing"}
                 className="inline-block cta-link inter"
               >
-                Join now
+                Start sourcing now
               </AnchorLink>
             </div>
             <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -180,7 +183,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
             </div>
             <LoopyDashed className="absolute bottom-0 h-28 lg:h-56 text-purple-500 transform translate-y-64 translate-x-12" />
           </header>
-          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-16 transform lg:translate-x-56 xl:translate-x-24">
+          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto pl-4 lg:pl-12 lg:-mr-64">
               <Img
                 fluid={data.heroImage.childImageSharp.fluid}
@@ -203,7 +206,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               Let's face it - OA sourcing is a grind. Free up time, find
               profitable inventory, and{" "}
               <strong>blow up your Amazon sales</strong> by letting Leadgeek do
-              the arbitrage research for you.{" "}
+              the research for you every morning, M-F.{" "}
               <span role="img" aria-label="Microscope Emoji">
                 🔬
               </span>{" "}
@@ -219,7 +222,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 to={"#pricing"}
                 className="inline-block cta-link inter"
               >
-                Join now
+                Start sourcing now
               </AnchorLink>
             </div>
             <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -244,7 +247,55 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               </blockquote>
             </div>
           </header>
-          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-16 transform lg:translate-x-56 xl:translate-x-24">
+          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
+            <div className="lg:h-full mx-auto pl-4 lg:pl-12 lg:-mr-64">
+              <Img
+                fluid={data.heroImage.childImageSharp.fluid}
+                alt="Leadgeek app feed"
+                className="w-full rounded-lg ring-8 ring-purple-500 ring-opacity-50 shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* section 3 */}
+      <section className="relative overflow-hidden bg-splatter">
+        <div className="mt-8 md:mt-12 lg:mt-0 lg:mb-64 max-w-7xl md:mx-auto relative z-10 md:flex md:justify-between md:items-center">
+          <header className="relative overflow-hidden lg:overflow-visible">
+            <h2 className="max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
+              The <span className="emphasized-text">OA leads list</span> that
+              doesn't cut corners on criteria.
+            </h2>
+            <p className="max-w-lg mt-4 lg:mt-6 text-gray-900 text-lg bg-white">
+              Since profitable leads are undeniably the most vital part of a
+              successful arbitrage business, quality is at the core of Leadgeek.
+              By sourcing 500+ US retailers, you get only the best of the best
+              hand-selected products to choose from.{" "}
+              <span role="img" aria-label="Trophy Emoji">
+                🏆
+              </span>
+            </p>
+            <div
+              className="mt-4 lg:mt-6 flex items-center"
+              data-sal="slide-up"
+              data-sal-delay="500"
+              data-sal-duration="500"
+              data-sal-easing="ease in out"
+            >
+              <AnchorLink
+                to={"#pricing"}
+                className="inline-block cta-link inter"
+              >
+                Start sourcing now
+              </AnchorLink>
+            </div>
+            <div className="max-w-lg mt-6 lg:mt-8 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
+              <h3 className="ml-4 inter font-black">
+                Leadgeek's average stats over 274 days
+              </h3>
+            </div>
+          </header>
+          <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-16 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto pl-4 lg:pl-12 lg:-mr-64">
               <Img
                 fluid={data.heroImage.childImageSharp.fluid}
@@ -292,12 +343,12 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
         id="pricing"
         className="py-12 md:py-20 lg:py-36 text-gray-900 overflow-hidden bg-splatter"
       >
-        <div className="w-full bg-white">
+        <div className="w-full pb-4 bg-white">
           <PricingCards margin={"lg:mt-0"} />
         </div>
-        <h1 className="max-w-2xl text-3xl md:text-5xl lg:text-6xl font-black text-gray-900 inter header-height">
-          There's only one thing you need to know about Leadgeek:
-        </h1>
+      </section>
+      <section id="faq">
+        <Faq />
       </section>
     </LPLayout>
   )
