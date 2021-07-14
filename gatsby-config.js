@@ -35,6 +35,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-mongodb`,
+      options: {
+        connectionString: `***REMOVED***`,
+        dbName: `LeadGeek`,
+        collection: `leads`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {

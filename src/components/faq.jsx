@@ -160,8 +160,8 @@ const Faq = () => {
       />
       <section className="text-gray-900 bg-splatter">
         <div className="py-12 lg:pt-32 lg:pb-24 container">
-          <header className="relative">
-            <h2 className="relative text-3xl lg:text-4xl xl:text-5xl font-bold inter text-center bg-white">
+          <header className="relative text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 inter header-height">
               Frequently asked questions
             </h2>
           </header>

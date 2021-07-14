@@ -19,12 +19,13 @@ const Navbar = () => {
               things to sell on Amazon.
             </p>
             <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
-              <Link
+              <AnchorLink
                 to={"#pricing"}
+                title="Leadgeek pricing plans"
                 className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
               >
-                Join now
-              </Link>
+                Start sourcing now
+              </AnchorLink>
             </div>
           </div>
         </aside>
@@ -38,13 +39,13 @@ const Navbar = () => {
               </Link>
             </div>
             {/* md:+ nav */}
-            <nav className="lg:flex lg:items-center mr-4">
+            <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
                 to={"#pricing"}
                 title="Leadgeek pricing plans"
                 className="no-m-first cta-link inter"
               >
-                Join now
+                Start sourcing now
               </AnchorLink>
             </nav>
           </div>

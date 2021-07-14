@@ -118,14 +118,14 @@ const pricingCards = [
       {
         title: (
           <span>
-            $<strong className="font-semibold">4-30+</strong> profit per unit
+            Minimum $<strong className="font-semibold">4-30+</strong> profit
           </span>
         ),
       },
       {
         title: (
           <span>
-            <strong className="font-semibold">40</strong>%+ ROI per unit
+            Minimum <strong className="font-semibold">40</strong>%+ ROI
           </span>
         ),
       },
@@ -169,14 +169,14 @@ const pricingCards = [
       {
         title: (
           <span>
-            $<strong className="font-semibold">7-50+</strong> profit per unit
+            Minimum $<strong className="font-semibold">7-50+</strong> profit
           </span>
         ),
       },
       {
         title: (
           <span>
-            <strong className="font-semibold">50</strong>%+ ROI per unit
+            Minimum <strong className="font-semibold">50</strong>%+ ROI
           </span>
         ),
       },
