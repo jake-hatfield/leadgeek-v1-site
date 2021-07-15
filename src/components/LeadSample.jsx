@@ -14,7 +14,7 @@ const LeadSampleTable = ({ leads }) => {
   const classes = {
     tableWrapper: "relative mt-6 container",
     table:
-      "w-full table-auto bg-white ring-4 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg",
+      "w-full table-auto bg-white ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg",
     tableHeadWrapper: "border-b border-gray-200",
     tableHead:
       "text-left font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap",
@@ -24,16 +24,12 @@ const LeadSampleTable = ({ leads }) => {
   }
 
   const ITEMS_PER_PAGE = 15
-  const [pageCount, setPageCount] = useState(leads.length / ITEMS_PER_PAGE)
+  const [pageCount] = useState(leads.length / ITEMS_PER_PAGE)
   const [activeLeads, setActiveLeads] = useState(
     leads.slice(0, ITEMS_PER_PAGE * 1)
   )
 
   const onPageChange = cp => {
-    console.log(
-      cp.selected * ITEMS_PER_PAGE,
-      (cp.selected + 1) * ITEMS_PER_PAGE
-    )
     setActiveLeads(
       leads.slice(
         cp.selected * ITEMS_PER_PAGE,
@@ -47,12 +43,13 @@ const LeadSampleTable = ({ leads }) => {
       <table className={classes.table} id="leadSample">
         <thead className={classes.tableHeadWrapper}>
           <tr className={classes.tableHead}>
+            <th className={classes.tableHeadCell} />
             <th className={classes.tableHeadCellResponsive}>Category</th>
             <th className={classes.tableHeadCellResponsive}>Buy Price</th>
             <th className={classes.tableHeadCellResponsive}>Sell Price</th>
             <th className={classes.tableHeadCell}>Profit</th>
             <th className={classes.tableHeadCell}>ROI</th>
-            <th className={classes.tableHeadCell}>BSR</th>
+            <th className={classes.tableHeadCell}>BSR (%)</th>
             <th className={classes.tableHeadCell}>Sales</th>
             <th className={classes.tableHeadCell}>Date</th>
           </tr>
@@ -68,11 +65,11 @@ const LeadSampleTable = ({ leads }) => {
         initialPage={0}
         pageCount={pageCount}
         marginPagesDisplayed={0}
-        pageRangeDisplayed={0}
+        pageRangeDisplayed={4}
         previousLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-7 w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -86,7 +83,7 @@ const LeadSampleTable = ({ leads }) => {
         nextLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-7 w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -97,12 +94,14 @@ const LeadSampleTable = ({ leads }) => {
             />
           </svg>
         }
-        activeLinkClassName={"text-pink-600"}
+        activeLinkClassName={"text-purple-500"}
         containerClassName={"flex items-center justify-center mt-8"}
         previousClassName="py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        pageClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        nextClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        breakClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        pageClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-lg font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        nextClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        previousLinkClassName="hover:text-purple-500"
+        nextLinkClassName="hover:text-purple-500"
+        breakClassName="ml-1 p-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         disabledClassName="pointer-events-none bg-gray-200 opacity-50"
       />
     </>
@@ -125,6 +124,13 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
 
   return (
     <tr className={classes.rowWrapper}>
+      <td className={classes.defaultCellWrapper}>
+        {(data.monthlySales > 100 || data.netProfit > 18 || data.roi > 1.4) && (
+          <span role="img" aria-label="Fire Emoji">
+            🔥
+          </span>
+        )}
+      </td>
       {/* category */}
       <td className={classes.responsiveCell}>{truncate(data.category, 28)}</td>
       {/* buy price */}

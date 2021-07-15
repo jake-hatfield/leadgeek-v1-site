@@ -15,8 +15,11 @@ const Navbar = () => {
         <aside className="hidden lg:block bg-pink-600 text-white inter">
           <div className="py-3 container flex items-center">
             <p className="font-semibold">
-              👋 Hey you! Leadgeek gives you a radical, modern way to find
-              things to sell on Amazon.
+              <span role="img" aria-label="Wave emoji">
+                👋
+              </span>{" "}
+              Hey you! Leadgeek gives you a radical, modern way to find things
+              to sell on Amazon.
             </p>
             <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
               <AnchorLink

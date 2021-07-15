@@ -11,9 +11,9 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
       {pricingCards.map((plan, i) => (
         <article
           key={i}
-          className={`mt-12 ${
+          className={`mt-12 lg:mx-2 xl:mx-8 ${
             negativeMarginCards ? "lg:-mt-64" : ""
-          } first:ml-0 lg:ml-8`}
+          } `}
           data-sal="fade"
           data-sal-delay={plan.delay}
           data-sal-duration="500"
@@ -137,6 +137,9 @@ const pricingCards = [
         ),
       },
       {
+        title: "US seller lead review",
+      },
+      {
         title: "Seller support",
       },
       {
@@ -188,6 +191,9 @@ const pricingCards = [
         ),
       },
       {
+        title: "US seller lead review",
+      },
+      {
         title: "Seller support",
       },
       {
@@ -214,6 +220,9 @@ const pricingCards = [
       },
       {
         title: "All Pro Plan leads",
+      },
+      {
+        title: "US seller lead review",
       },
       {
         title: "Seller support",

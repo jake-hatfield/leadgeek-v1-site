@@ -37,12 +37,15 @@ const TestimonialFull = ({
           </blockquote>
           <div className="mt-4 md:flex md:items-center md:justify-center">
             <div className="flex items-center justify-center">
-              <Img
-                fluid={image}
-                alt={`${source}'s testimonial`}
-                className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
-              />
-              <cite className="ml-4 text-sm font-semibold inter text-gray-900">
+              {image && (
+                <Img
+                  fluid={image}
+                  alt={`${source}'s testimonial`}
+                  className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                />
+              )}
+
+              <cite className="md:ml-4 text-sm font-semibold inter text-gray-900">
                 {source}
               </cite>
             </div>

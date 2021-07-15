@@ -208,19 +208,14 @@ const TermsPage = () => {
             <p className={classes.text}>
               Please email us at{" "}
               <a
-                href="mailto:hello@leadgeek.io"
+                href="mailto:support@leadgeek.io"
                 target="_blank"
                 rel="noreferrer"
                 className={classes.link}
               >
-                <span>hel</span>
-                <span>lo@l</span>
+                <span>sup</span>
+                <span>port@l</span>
                 <span>eadgeek.io</span>
-              </a>{" "}
-              (preferred) or call us at{" "}
-              <a href="tel:(214) 810-0564" className={classes.link}>
-                <span>(214) 8</span>
-                <span>10-05</span>64
               </a>
               .
             </p>

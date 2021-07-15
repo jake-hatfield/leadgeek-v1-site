@@ -4,25 +4,6 @@ import { Link } from "gatsby"
 import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const Footer = () => {
-  const categories = [
-    {
-      header: "Product",
-      items: [
-        { title: "How it works", link: "how-it-works" },
-        { title: "Tour features", link: "features" },
-        { title: "Pricing", link: "pricing" },
-      ],
-    },
-
-    {
-      header: "Company",
-      items: [
-        { title: "Contact", link: "contact" },
-        { title: "Free coaching", link: "coaching" },
-        { title: "Customer stories", link: "stories" },
-      ],
-    },
-  ]
   return (
     <footer className="py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
@@ -34,21 +15,19 @@ const Footer = () => {
         <div className="w-full" />
         <div className="mt-6 container md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left inter">
-            <ul>6333 E Mockingbird Lane, Suite 147 Dallas, TX</ul>
             <a
               href="mailto:hello@leadgeek.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 secondary-link"
+              className="inline-block md:mt-4 secondary-link"
             >
               hello@leadgeek.io
             </a>
+            <address className="mt-4 not-italic">
+              6333 E Mockingbird Lane, Suite 147 Dallas, TX
+            </address>
           </div>
           <div className="mt-4 md:mt-0 text-center md:text-left flex flex-col-reverse md:flex-col">
-            <p className="mt-4 md:mt-0">
-              Copyright <span className="inter">&copy;</span> 2020-
-              {new Date().getFullYear()} Leadgeek
-            </p>
             <ul className="md:mt-4 flex justify-center md:justify-between">
               {footerLinks.map(footerLink => (
                 <li
@@ -59,6 +38,10 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            <p className="mt-4">
+              Copyright <span className="inter">&copy;</span> 2020-
+              {new Date().getFullYear()} Leadgeek
+            </p>
           </div>
         </div>
       </div>
