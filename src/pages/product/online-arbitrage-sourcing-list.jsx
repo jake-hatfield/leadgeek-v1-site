@@ -29,12 +29,13 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const desc =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
+  const cta = `/product/online-arbitrage-sourcing-list#pricing`
 
   const startDate = DateTime.fromISO("2020-10-12T12:00")
   const currentDate = DateTime.now()
   const difference = startDate.diff(currentDate, ["days"])
   const differenceInDays = Math.abs(difference.toObject().days).toFixed()
-
+  // average lead metrics
   const allLeads = data.allMongodbLeadGeekLeads.edges
   const allTimeAverageProfit =
     allLeads.reduce((total, next) => total + next.node.data.netProfit, 0) /
@@ -46,7 +47,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
   const allTimeAverageMonthlySales =
     allLeads.reduce((total, next) => total + next.node.data.monthlySales, 0) /
     allLeads.length
-
+  // calculate business days
   const dt = DateTime.now()
   const { availableHolidayMatchers } = dt
   const businessHolidays = [
@@ -58,6 +59,11 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
   const prevTwoWeekLeads = allLeads.filter(
     lead => lead.node.data.date >= prevTwoWeeks
   )
+  // calculate last updated
+  const mostRecentlyUpdatedRaw = allLeads.slice(-1)[0].node.data.date
+  const mostRecentlyUpdatedDay = DateTime.fromISO(
+    mostRecentlyUpdatedRaw
+  ).toFormat("LLL dd")
 
   return (
     <LPLayout>
@@ -103,8 +109,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 data-sal-easing="ease in out"
               >
                 <AnchorLink
-                  to={"#pricing"}
+                  to={cta}
+                  title="See Leadgeek pricing plans"
                   className="block md:inline-block cta-link inter text-center"
+                  gatsbyLinkProps={{ id: "cta" }}
                 >
                   Start sourcing now
                 </AnchorLink>
@@ -189,8 +197,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               data-sal-easing="ease in out"
             >
               <AnchorLink
-                to={"#pricing"}
+                to={cta}
+                title="See Leadgeek pricing plans"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
@@ -266,8 +276,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               data-sal-easing="ease in out"
             >
               <AnchorLink
-                to={"#pricing"}
+                to={cta}
+                title="See Leadgeek pricing plans"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
@@ -314,7 +326,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
       </section>
       {/* section 3: Criteria */}
       <section className="relative overflow-hidden bg-splatter">
-        <div className="mt-8 md:mt-12 mb-24 md:mb-12 relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-0 px-4 flex flex-col-reverse lg:flex-none">
+        <div className="mt-8 md:mt-12 mb-12 relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-0 px-4 flex flex-col-reverse lg:flex-none">
           <header className="relative md:text-center lg:text-left">
             <h2 className="lg:max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
               The <span className="emphasized-text">Amazon arbitrage list</span>{" "}
@@ -338,15 +350,18 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               data-sal-easing="ease in out"
             >
               <AnchorLink
-                to={"#pricing"}
+                to={cta}
+                title="See Leadgeek pricing plans"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 lg:top-auto lg:bottom-0 right-0 p-2 rounded-lg transform lg:-rotate-6 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:translate-y-0 translate-x-4 lg:translate-x-24">
-                Last updated: {currentDate.toFormat("LLL dd")}
+              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:-translate-y-2 translate-x-2 lg:translate-x-24">
+                Last updated:{" "}
+                {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd")}
               </div>
               <p>
                 Real-time lead averages over the past{" "}
@@ -409,8 +424,8 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           </div>
         </div>
       </section>
-      {/* section 4: Real-time leads (hidden on mobile)*/}
-      <section className="hidden md:block relative pb-56 md:pb-24 lg:pb-48 bg-splatter">
+      {/* section 4: Real-time leads */}
+      <section className="block relative pb-24 md:pb-24 lg:pb-48 bg-splatter">
         <div className="mt-8 md:mt-12 lg:mt-48 pb-16 container md:mx-auto relative z-10">
           <header className="relative md:text-center">
             <ArrowTurnyFat
@@ -444,8 +459,9 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
             ></div>
           </header>
           <div className="relative mt-16">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-8 xl:-translate-y-4 translate-x-6 xl:translate-x-24">
-              Last updated: {currentDate.toFormat("LLL dd")}
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-7 lg:-translate-y-8 xl:-translate-y-4 translate-x-2 lg:translate-x-6 xl:translate-x-24">
+              Last updated:{" "}
+              {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd")}
             </div>
             <LeadSample />
           </div>
@@ -457,24 +473,24 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
         className="relative py-12 md:py-20 text-gray-900 bg-gray-100"
       >
         <ArrowShortFat
-          //   data-sal="fade"
-          //   data-sal-delay="500"
-          //   data-sal-duration="1000"
-          //   data-sal-easing="ease in out"
+          data-sal="fade"
+          data-sal-delay="500"
+          data-sal-duration="1000"
+          data-sal-easing="ease in out"
           className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-24 lg:-translate-y-48 -translate-x-20 lg:-translate-x-64 -rotate-12"
         />
         <ArrowShortFat
-          //   data-sal="fade"
-          //   data-sal-delay="700"
-          //   data-sal-duration="1000"
-          //   data-sal-easing="ease in out"
+          data-sal="fade"
+          data-sal-delay="700"
+          data-sal-duration="1000"
+          data-sal-easing="ease in out"
           className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-20 lg:-translate-y-40"
         />
         <ArrowShortFat
-          //   data-sal="fade"
-          //   data-sal-delay="1000"
-          //   data-sal-duration="1000"
-          //   data-sal-easing="ease in out"
+          data-sal="fade"
+          data-sal-delay="1000"
+          data-sal-duration="1000"
+          data-sal-easing="ease in out"
           className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-24 lg:-translate-y-32 translate-x-24 lg:translate-x-56 rotate-12"
         />
         <DividerTop className="divider-top text-gray-100" />
@@ -625,8 +641,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           data-sal-easing="ease in out"
         >
           <AnchorLink
-            to={"#pricing"}
+            to={cta}
+            title="See Leadgeek pricing plans"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+            gatsbyLinkProps={{ id: "cta" }}
           >
             Start sourcing now
           </AnchorLink>

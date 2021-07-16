@@ -20,6 +20,7 @@ const LeadSampleTable = ({ leads }) => {
       "text-left font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap",
     tableHeadCell: "lg:p-2",
     tableHeadCellResponsive: "hidden lg:table-cell lg:p-2",
+    tableHeadCellMobileResponsive: "hidden md:table-cell lg:p-2",
     tableBody: "text-sm text-gray-800",
   }
 
@@ -49,9 +50,9 @@ const LeadSampleTable = ({ leads }) => {
             <th className={classes.tableHeadCellResponsive}>Sell Price</th>
             <th className={classes.tableHeadCell}>Profit</th>
             <th className={classes.tableHeadCell}>ROI</th>
-            <th className={classes.tableHeadCell}>BSR (%)</th>
+            <th className={classes.tableHeadCellMobileResponsive}>BSR (%)</th>
             <th className={classes.tableHeadCell}>Sales</th>
-            <th className={classes.tableHeadCell}>Date</th>
+            <th className={classes.tableHeadCellMobileResponsive}>Date</th>
           </tr>
         </thead>
         <tbody className={classes.tableBody}>
@@ -69,7 +70,7 @@ const LeadSampleTable = ({ leads }) => {
         previousLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7"
+            className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -83,7 +84,7 @@ const LeadSampleTable = ({ leads }) => {
         nextLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7"
+            className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -96,13 +97,13 @@ const LeadSampleTable = ({ leads }) => {
         }
         activeLinkClassName={"text-pink-600"}
         containerClassName={"flex items-center justify-center mt-8"}
-        previousClassName="py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        pageClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-lg font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        pageClassName="ml-0.5 lg:ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-xs lg:text-lg font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         pageLinkClassName="hover:text-pink-600 cursor-pointer"
-        nextClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        previousClassName="p-1 lg:py-2 lg:px-3 rounded-lg bg-white shadow-sm text-xs lg:text-lg font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         previousLinkClassName="hover:text-pink-600 cursor-pointer"
+        nextClassName="ml-0.5 lg:ml-1 p-1 lg:py-2 lg:px-3 rounded-lg bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         nextLinkClassName="hover:text-pink-600 cursor-pointer"
-        breakClassName="ml-1 p-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        breakClassName="ml-0.5 lg:ml-1 p-2 lg:p-3 rounded-lg bg-white shadow-sm text-xs lg:text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         disabledClassName="pointer-events-none bg-gray-200 opacity-50"
       />
     </>
@@ -118,6 +119,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
     rowWrapper: "relative lg:px-1 border-b border-gray-200 hover:bg-gray-100",
     responsiveCell: "hidden lg:table-cell lg:p-2",
     profitCellWrapper: "lg:p-2 uppercase",
+    mobileCellWrapper: "hidden md:table-cell lg:p-2",
     defaultCellWrapper: "lg:p-2",
     defaultSvg: "svg-base",
     valueIndicator: "ml-1 text-gray-400 font-semibold",
@@ -126,7 +128,14 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
   return (
     <tr className={classes.rowWrapper}>
       <td className={classes.defaultCellWrapper}>
-        {(data.monthlySales > 100 || data.netProfit > 18 || data.roi > 1.4) && (
+        {((data.netProfit >= 7 && data.monthlySales >= 150) ||
+          (data.netProfit >= 16 && data.roi >= 0.5) ||
+          (data.netProfit >= 8 && data.roi >= 1.5) ||
+          (data.netProfit >= 6 && data.roi >= 2) ||
+          (data.netProfit >= 9 && data.monthlySales >= 80) ||
+          (data.netProfit >= 40 && data.monthlySales >= 30) ||
+          (data.roi >= 0.7 && data.monthlySales >= 90) ||
+          (data.roi >= 0.9 && data.monthlySales >= 150)) && (
           <span role="img" aria-label="Fire Emoji">
             🔥
           </span>
@@ -162,7 +171,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
         <span className={classes.valueIndicator}>%</span>
       </td>
       {/* bsr */}
-      <td className={classes.defaultCellWrapper}>
+      <td className={classes.mobileCellWrapper}>
         {numberWithCommas(data.bsrCurrent)}
         <span className={classes.valueIndicator}>
           ({calculateBSR(data.bsrCurrent, data.category)})
@@ -170,11 +179,11 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
         </span>
       </td>
       {/* monthly sales */}
-      <td className={classes.bsrCellWrapper}>
+      <td className={classes.defaultCellWrapper}>
         {numberWithCommas(data.monthlySales)}
       </td>
       {/* date */}
-      <td className={classes.defaultCellWrapper}>{datePosted}</td>
+      <td className={classes.mobileCellWrapper}>{datePosted}</td>
     </tr>
   )
 }

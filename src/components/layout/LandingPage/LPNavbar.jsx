@@ -24,8 +24,9 @@ const Navbar = () => {
             <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
               <AnchorLink
                 to={"#pricing"}
-                title="Leadgeek pricing plans"
+                title="See Leadgeek pricing plans"
                 className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
+                gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
@@ -45,8 +46,9 @@ const Navbar = () => {
             <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
                 to={"#pricing"}
-                title="Leadgeek pricing plans"
+                title="See Leadgeek pricing plans"
                 className="no-m-first cta-link inter"
+                gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
