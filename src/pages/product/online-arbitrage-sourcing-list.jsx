@@ -154,11 +154,10 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
         >
           <p className="pl-10">
             <span className="text-pink-600">
-              There's only 1 thing you need to know about Leadgeek
+              There's only 1 thing you need to know
             </span>
-            : It's all the best parts of a traditional online arbitrage sourcing
-            list made better by a powerful interface that saves you tons of
-            time.{" "}
+            : Leadgeek is all the best parts of a traditional online arbitrage
+            sourcing list amplified by an interface that saves you tons of time.{" "}
             <span role="img" aria-label="Rocket Emoji">
               🚀
             </span>
@@ -345,8 +344,8 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 Start sourcing now
               </AnchorLink>
             </div>
-            <aside className="relative max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="hidden lg:block absolute bottom-0 right-0 p-2 rounded-lg transform -rotate-6 text-xs bg-gray-900 text-teal-300 shadow-tealSm translate-x-24">
+            <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
+              <div className="block absolute top-0 lg:bottom-0 right-0 p-2 rounded-lg transform lg:-rotate-6 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:translate-y-0 translate-x-4 lg:translate-x-24">
                 Last updated: {currentDate.toFormat("LLL dd")}
               </div>
               <p>
