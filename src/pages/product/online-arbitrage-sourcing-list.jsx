@@ -345,7 +345,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 lg:bottom-0 right-0 p-2 rounded-lg transform lg:-rotate-6 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:translate-y-0 translate-x-4 lg:translate-x-24">
+              <div className="block absolute top-0 lg:top-auto lg:bottom-0 right-0 p-2 rounded-lg transform lg:-rotate-6 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:translate-y-0 translate-x-4 lg:translate-x-24">
                 Last updated: {currentDate.toFormat("LLL dd")}
               </div>
               <p>

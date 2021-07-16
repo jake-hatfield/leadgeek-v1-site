@@ -94,13 +94,14 @@ const LeadSampleTable = ({ leads }) => {
             />
           </svg>
         }
-        activeLinkClassName={"text-purple-500"}
+        activeLinkClassName={"text-pink-600"}
         containerClassName={"flex items-center justify-center mt-8"}
         previousClassName="py-2 px-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         pageClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-lg font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
+        pageLinkClassName="hover:text-pink-600 cursor-pointer"
         nextClassName="ml-1 py-2 px-3 rounded-lg bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        previousLinkClassName="hover:text-purple-500"
-        nextLinkClassName="hover:text-purple-500"
+        previousLinkClassName="hover:text-pink-600 cursor-pointer"
+        nextLinkClassName="hover:text-pink-600 cursor-pointer"
         breakClassName="ml-1 p-3 rounded-lg bg-white shadow-sm text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         disabledClassName="pointer-events-none bg-gray-200 opacity-50"
       />
