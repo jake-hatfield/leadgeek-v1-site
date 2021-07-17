@@ -196,7 +196,7 @@ const LeadSample = () => {
     availableHolidayMatchers.isChristmasDay,
   ]
   dt.setupBusiness({ holidayMatchers: businessHolidays })
-  const prevTwoWeeks = dt.minusBusiness({ days: 10 }).endOf("day").toISO()
+  const prevTwoWeeks = dt.minusBusiness({ days: 10 }).startOf("day").toISO()
 
   return (
     <StaticQuery
