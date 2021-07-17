@@ -8,7 +8,6 @@ import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
-import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import OgImage from "assets/images/og/og-coaching.jpg"
 

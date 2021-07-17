@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -6,12 +6,14 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 import { DateTime } from "luxon"
+import exitIntent from "exit-intent"
 
 import LPLayout from "components/layout/LandingPage/LPLayout"
 import LeadSample from "components/LeadSample"
 import PricingCards from "components/PricingCards"
 import TestimonialFull from "components/utils/TestimonialFull"
 import Faq from "components/Faq"
+import Popup from "components/utils/Popup"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import LoopyDashed from "assets/svgs/loopy-dashed.svg"
@@ -63,7 +65,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
   const mostRecentlyUpdatedRaw = allLeads.slice(-1)[0].node.data.date
   const mostRecentlyUpdatedDay = DateTime.fromISO(
     mostRecentlyUpdatedRaw
-  ).toFormat("LLL dd")
+  ).toFormat("LLL dd @ t")
 
   return (
     <LPLayout>
@@ -111,28 +113,12 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 <AnchorLink
                   to={cta}
                   title="See Leadgeek pricing plans"
-                  className="block md:inline-block cta-link inter text-center"
+                  className="block md:inline-block cta-link inter text-center text-base"
                   gatsbyLinkProps={{ id: "cta" }}
                 >
                   Start sourcing now
                 </AnchorLink>
               </div>
-              <aside className="mt-4 lg:mt-0 pt-8 md:pt-0 md:pl-10 text-sm text-gray-900 text-center lg:text-left font-semibold">
-                <p className="flex items-center lg:items-end justify-center lg:justify-start">
-                  <span className="flex-none">Leads you will</span>
-                  <span className="ml-1" role="img" aria-label="Heart emoji">
-                    💜
-                  </span>
-                  <span className="ml-1 flex-none">without a contract</span>
-                </p>
-                <p className="mt-2">
-                  Hurry!{" "}
-                  <span className="line-through text-lg text-pink-600 text-decoration-dark">
-                    15
-                  </span>{" "}
-                  <span className="underline">limited</span> spots left
-                </p>
-              </aside>
             </div>
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-16 transform lg:translate-x-56 xl:translate-x-24">
@@ -199,7 +185,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               <AnchorLink
                 to={cta}
                 title="See Leadgeek pricing plans"
-                className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
@@ -278,7 +264,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               <AnchorLink
                 to={cta}
                 title="See Leadgeek pricing plans"
-                className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
@@ -352,16 +338,22 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               <AnchorLink
                 to={cta}
                 title="See Leadgeek pricing plans"
-                className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+                className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
                 Start sourcing now
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-5 lg:-translate-y-2 translate-x-2 lg:translate-x-24">
-                Last updated:{" "}
-                {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd")}
+              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-8 translate-x-2 lg:translate-x-12">
+                <span>
+                  <span role="img" aria-label="Clock emoji">
+                    🕒
+                  </span>{" "}
+                  Last updated:
+                </span>
+                <br />
+                {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd t")}
               </div>
               <p>
                 Real-time lead averages over the past{" "}
@@ -413,7 +405,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   muted
                   playsInline
                   poster={Poster}
-                  className="ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
+                  className="ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50 shadow-2xl rounded-lg"
                   alt="Amazon online arbitrage list video"
                 >
                   <source src={FiltersWebm} type="video/webm" />
@@ -459,9 +451,15 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
             ></div>
           </header>
           <div className="relative mt-16">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-7 lg:-translate-y-8 xl:-translate-y-4 translate-x-2 lg:translate-x-6 xl:translate-x-24">
-              Last updated:{" "}
-              {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd")}
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
+              <span>
+                <span role="img" aria-label="Clock emoji">
+                  🕒
+                </span>{" "}
+                Last updated:
+              </span>
+              <br />
+              {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd t")}
             </div>
             <LeadSample />
           </div>
@@ -543,7 +541,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   <span className="emphasized-text">
                     Would definitely recommend giving them a shot
                   </span>{" "}
-                  if you want to take the guess work out of sourcing for FBA .
+                  if you want to take the guess work out of sourcing for FBA.
                 </p>
               }
               source={"William"}
@@ -597,7 +595,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 </p>
               }
               source={"Yucheng"}
-              desc={"International"}
+              desc={"Intl."}
               rotate={"-rotate-2 lg:-rotate-6"}
             />
             <TestimonialFull
@@ -614,7 +612,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
             />
             <TestimonialFull
               size={"sm"}
-              position={"lg:translate-x-24 lg:translate-y-8"}
+              position={"lg:translate-x-16 lg:translate-y-8"}
               text={
                 <p>
                   <span className="emphasized-text">
@@ -624,7 +622,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                 </p>
               }
               source={"Dimitry"}
-              desc={"International"}
+              desc={"Intl."}
               rotate={"-rotate-2"}
             />
           </div>
@@ -643,7 +641,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           <AnchorLink
             to={cta}
             title="See Leadgeek pricing plans"
-            className="w-full md:w-auto block md:inline-block cta-link inter text-center"
+            className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
             gatsbyLinkProps={{ id: "cta" }}
           >
             Start sourcing now

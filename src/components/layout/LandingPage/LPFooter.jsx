@@ -5,7 +5,7 @@ import Logo from "assets/svgs/leadgeek-logo-light.svg"
 
 const Footer = () => {
   return (
-    <footer className="py-12 relative z-10 border-t border-gray-900">
+    <footer className="py-12 relative z-20 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
           <Logo className="w-8 lg:w-10" />

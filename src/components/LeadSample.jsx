@@ -44,7 +44,7 @@ const LeadSampleTable = ({ leads }) => {
       <table className={classes.table} id="leadSample">
         <thead className={classes.tableHeadWrapper}>
           <tr className={classes.tableHead}>
-            <th className={classes.tableHeadCell} />
+            <th className={classes.tableHeadCell} aria-label="Hot lead" />
             <th className={classes.tableHeadCellResponsive}>Category</th>
             <th className={classes.tableHeadCellResponsive}>Buy Price</th>
             <th className={classes.tableHeadCellResponsive}>Sell Price</th>

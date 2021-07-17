@@ -21,7 +21,7 @@ import SearchWebm from "assets/video/search.webm"
 import ExportWebm from "assets/video/export.webm"
 
 const FeaturePage = ({ feature }) => {
-  const [currentFeature, setCurrentFeature] = useState(
+  const [currentFeature] = useState(
     featureList.filter(f => f.link === feature)[0]
   )
 

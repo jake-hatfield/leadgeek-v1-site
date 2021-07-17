@@ -56,11 +56,10 @@ export const calculateBSR = (currentRank, category) => {
   } else if (category === "Video Games") {
     totalItems = 730691
   }
-  let bsrPercentage
   if (!totalItems) {
-    return (bsrPercentage = "-")
+    return "-"
   } else {
-    return (bsrPercentage = ((currentRank / totalItems) * 100).toFixed(3))
+    return ((currentRank / totalItems) * 100).toFixed(3)
   }
 }
 

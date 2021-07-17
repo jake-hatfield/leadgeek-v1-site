@@ -14,6 +14,7 @@
     "autoprefixer": "^10.2.5",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
+    "exit-intent": "^1.1.0",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-google-marketing-platform": "^0.1.21",
