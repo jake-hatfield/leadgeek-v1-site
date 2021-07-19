@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from "react"
 
-import axios from "axios"
-
 import { useOutsideMousedown, addToMailchimp } from "./utils"
 import FormField from "components/utils/FormField"
 import Bullet from "assets/svgs/bullet.svg"
-import SoloSellingMp4 from "assets/video/solo-selling-before.mp4"
-import SoloSellingBeforeGif from "assets/video/solo-selling-after.gif"
+import SoloSellingBefore from "assets/video/solo-selling-before.mp4"
+import SoloSellingAfter from "assets/video/solo-selling-after.gif"
 
 const Popup = ({ show, setShow }) => {
   const [showPopup, setShowPopup] = useState(show)
@@ -41,9 +39,9 @@ const Popup = ({ show, setShow }) => {
 
   // form data handling
   const [formData, setFormData] = useState({
-    email: "",
     firstName: "",
     lastName: "",
+    email: "",
   })
   const { firstName, lastName, email } = formData
   const onChange = e => {
@@ -53,6 +51,7 @@ const Popup = ({ show, setShow }) => {
     })
   }
 
+  //   two step modal
   const [count, setCount] = useState(1)
 
   // handle submit
@@ -94,10 +93,9 @@ const Popup = ({ show, setShow }) => {
               muted
               playsInline
               className="hidden md:block mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
-              alt="Learning how to sell on Amazon"
+              alt="Before an online arbitrage coaching call"
             >
-              {/* <source src={FeedWebm} type="video/webm" /> */}
-              <source src={SoloSellingMp4} type="video/mp4" />
+              <source src={SoloSellingBefore} type="video/mp4" />
             </video>
             <header className="mt-4 lg:mt-8 md:text-center">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black inter header-height">
@@ -144,15 +142,7 @@ const Popup = ({ show, setShow }) => {
                 onChange={onChange}
                 required
               />
-              <button
-                type="submit"
-                // className={`${
-                //   isProcessing
-                //     ? `bg-gray-200 text-gray-500 ring-gray cursor-not-allowed`
-                //     : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
-                // } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
-                className="w-full mt-4 cta-link inter"
-              >
+              <button type="submit" className="w-full mt-4 cta-link inter">
                 Request a free coaching call
               </button>
               <div className="mt-2 md:mt-4 flex items-center justify-center text-gray-500">
@@ -178,8 +168,8 @@ const Popup = ({ show, setShow }) => {
         ) : (
           <div>
             <img
-              src={SoloSellingBeforeGif}
-              alt=""
+              src={SoloSellingAfter}
+              alt="After an online arbitrage coaching call"
               className="hidden md:block max-w-xs mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
             />
             <header className="mt-4 lg:mt-8 md:text-center">
@@ -212,7 +202,6 @@ const Popup = ({ show, setShow }) => {
             </div>
           </div>
         )}
-
         <button
           onClick={() => setShow(e => !e)}
           className="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-500 rounded-md transition duration-100 ease-in-out ring-gray"
