@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -6,14 +6,12 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 import { DateTime } from "luxon"
-import exitIntent from "exit-intent"
 
 import LPLayout from "components/layout/LandingPage/LPLayout"
 import LeadSample from "components/LeadSample"
 import PricingCards from "components/PricingCards"
 import TestimonialFull from "components/utils/TestimonialFull"
 import Faq from "components/Faq"
-import Popup from "components/utils/Popup"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import LoopyDashed from "assets/svgs/loopy-dashed.svg"
@@ -146,7 +144,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           speed="100"
           pauseOnHover={true}
         >
-          <p className="pl-10">
+          <p className="pl-24">
             <span className="text-pink-600">
               There's only 1 thing you need to know
             </span>

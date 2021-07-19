@@ -1,3 +1,7 @@
+import { useEffect } from "react"
+
+import axios from "axios"
+
 // bsr / category % calculator
 export const calculateBSR = (currentRank, category) => {
   let totalItems
@@ -71,4 +75,35 @@ export const truncate = (str, n) => {
 // add commas to numbers
 export const numberWithCommas = x => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
+// close on ref mouseup
+export const useOutsideMousedown = (ref, setState_1, setState_2) => {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setState_1(false)
+        if (setState_2) {
+          setState_2(false)
+        }
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [ref, setState_1, setState_2])
+}
+
+// add contact to mailchimp with optional MERGE data and tags
+export const addToMailchimp = async (email, subscriberData) => {
+  const { FNAME, LNAME, PLAN, LEAD, tags } = subscriberData
+  await axios.post("/.netlify/functions/create-email-subscriber", {
+    email,
+    FNAME,
+    LNAME,
+    PLAN: PLAN || "",
+    LEAD: LEAD || "",
+    tags: tags || [],
+  })
 }

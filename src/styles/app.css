@@ -19,6 +19,13 @@ body {
   text-shadow: 3px 3px 0px #a2a5fc, 5px -3px 0px #8eedc7;
 }
 
+::selection {
+  background: #c6f7e2;
+}
+::-moz-selection {
+  background: #c6f7e2;
+}
+
 .header-height {
   @apply leading-tight !important;
 }
@@ -201,7 +208,7 @@ body {
 }
 
 .cta-link {
-  @apply py-3 px-4 lg:px-6 rounded-lg shadow-purpleSm hover:shadow-purpleMd border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-base hover:bg-purple-600 text-white transition-main ring-purple;
+  @apply py-3 px-4 lg:px-6 rounded-lg shadow-purpleSm hover:shadow-purpleMd border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm md:text-base hover:bg-purple-600 text-white transition-main ring-purple;
 }
 
 .cta-link-center {

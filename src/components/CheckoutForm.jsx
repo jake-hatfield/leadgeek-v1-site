@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
-import addToMailchimp from "gatsby-plugin-mailchimp"
 
+import { addToMailchimp } from "components/utils/utils"
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 import Spinner from "components/utils/Spinner"
@@ -348,11 +348,14 @@ const CheckoutForm = ({
           }
         )
         if (userRes.message === "User successfully added.") {
-          addToMailchimp(lowerCaseEmail, {
+          const subscriberData = {
             FNAME: firstNameCapitalized,
             LNAME: lastNameCapitalized,
             PLAN: `${plan} subscriber`,
-          })
+            tags: [`${plan} Subscriber`, "Active Subscriber"],
+          }
+          addToMailchimp(lowerCaseEmail, subscriberData)
+
           onSuccessfulCheckout()
         } else {
           setCheckoutError(

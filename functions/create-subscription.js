@@ -103,7 +103,6 @@ exports.handler = async function (event, context, callback) {
         headers,
         body: JSON.stringify(subscription),
       }
-      //   callback(null, JSON.stringify(response))
     }
   } catch (error) {
     console.log(error)

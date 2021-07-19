@@ -28,7 +28,7 @@ const Footer = () => {
             </address>
           </div>
           <div className="mt-4 md:mt-0 text-center md:text-left flex flex-col-reverse md:flex-col">
-            <ul className="md:mt-4 flex justify-center md:justify-between">
+            <ul className="md:mt-4 flex justify-center md:justify-end">
               {footerLinks.map(footerLink => (
                 <li
                   key={footerLink.title}
@@ -38,8 +38,8 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-4">
-              Copyright <span className="inter">&copy;</span> 2020-
+            <p className="mt-4 text-right">
+              <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
             </p>
           </div>
