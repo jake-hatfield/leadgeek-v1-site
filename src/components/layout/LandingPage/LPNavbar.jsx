@@ -18,8 +18,8 @@ const Navbar = () => {
               <span role="img" aria-label="Wave emoji">
                 👋
               </span>{" "}
-              Hey you! Leadgeek gives you a radical, modern way to find things
-              to sell on Amazon.
+              Hey you! Leadgeek is an easy-to-use, high-tech way of finding
+              things to flip on Amazon.
             </p>
             <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
               <AnchorLink

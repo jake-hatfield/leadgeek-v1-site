@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
-import { addToMailchimp } from "components/utils/utils"
+import { addToMailchimp, readCookie } from "components/utils/utils"
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 import Spinner from "components/utils/Spinner"
@@ -24,6 +24,7 @@ const CheckoutForm = ({
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
   const [count, setCount] = useState(1)
+  //   const [lgid] = useState(readCookie("lgid"))
 
   useEffect(() => {
     if (checkedTOS) {
@@ -354,8 +355,20 @@ const CheckoutForm = ({
             PLAN: `${plan} subscriber`,
             tags: [`${plan} Subscriber`, "Active Subscriber"],
           }
+          //   if (lgid) {
+          //     const { data: affRes } = await axios.post(
+          //       "/.netlify/functions/credit-affiliate",
+          //       {
+          //         email: lowerCaseEmail,
+          //         customerId: customer,
+          //         planId: priceId,
+          //         subId: subscriptionRes,
+          //         lgid,
+          //       }
+          //     )
+          //     console.log(affRes)
+          //   }
           addToMailchimp(lowerCaseEmail, subscriberData)
-
           onSuccessfulCheckout()
         } else {
           setCheckoutError(

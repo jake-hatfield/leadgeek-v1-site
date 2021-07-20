@@ -8,7 +8,7 @@ import LPNavbar from "./LPNavbar"
 import LPFooter from "./LPFooter"
 import Popup from "components/utils/Popup"
 
-const Layout = ({ children, scrollRef }) => {
+const Layout = ({ children, location }) => {
   const [showPopup, setShowPopup] = useState(false)
   useEffect(() => {
     if (showPopup) {
@@ -38,9 +38,7 @@ const Layout = ({ children, scrollRef }) => {
   return (
     <div className="relative flex flex-col h-screen justify-between">
       <LPNavbar siteTitle={"Leadgeek"} />
-      <main ref={scrollRef} className="mt-16 md:mt-20">
-        {children}
-      </main>
+      <main className="mt-16 md:mt-20">{children}</main>
       <LPFooter />
       {/* exit popup */}
       {showPopup && <Popup show={showPopup} setShow={setShowPopup} />}

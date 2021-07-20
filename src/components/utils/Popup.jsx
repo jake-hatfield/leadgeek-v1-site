@@ -12,8 +12,7 @@ const Popup = ({ show, setShow }) => {
   //   set cookie if popup has already been seen
   useEffect(() => {
     if (showPopup) {
-      let expiryDate = new Date(Date.now() + 14 * (1000 * 60 * 60 * 24))
-      expiryDate.setFullYear(expiryDate.getFullYear() + 1)
+      let expiryDate = new Date(Date.now() + 14 * 1000 * 60 * 60 * 24)
       document.cookie = `popupSeen=true; expires=${expiryDate.toUTCString()}`
     }
     setShowPopup(showPopup)

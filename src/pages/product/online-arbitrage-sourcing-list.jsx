@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -7,6 +7,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 import { DateTime } from "luxon"
 
+import { handleLGID } from "components/utils/utils"
 import LPLayout from "components/layout/LandingPage/LPLayout"
 import LeadSample from "components/LeadSample"
 import PricingCards from "components/PricingCards"
@@ -25,11 +26,15 @@ import FiltersMp4 from "assets/video/filters.mp4"
 import FiltersWebm from "assets/video/filters.webm"
 import Poster from "assets/images/white-bg.png"
 
-const OnlineArbitrageSourcingListPage = ({ data }) => {
+const OnlineArbitrageSourcingListPage = ({ data, location }) => {
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const desc =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
   const cta = `/product/online-arbitrage-sourcing-list#pricing`
+
+  useEffect(() => {
+    handleLGID(location)
+  }, [])
 
   const startDate = DateTime.fromISO("2020-10-12T12:00")
   const currentDate = DateTime.now()
@@ -46,6 +51,9 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
     100
   const allTimeAverageMonthlySales =
     allLeads.reduce((total, next) => total + next.node.data.monthlySales, 0) /
+    allLeads.length
+  const allTimeASP =
+    allLeads.reduce((total, next) => total + next.node.data.sellPrice, 0) /
     allLeads.length
   // calculate business days
   const dt = DateTime.now()
@@ -90,16 +98,19 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
       <section className="relative overflow-hidden bg-splatter">
         <div className="relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-48 px-4 flex flex-col-reverse lg:flex-none">
           <header className="relative z-30 lg:max-w-xl mx-auto lg:mx-0 md:text-center lg:text-left">
-            <h1 className="text-3xl md:text-5xl font-black text-gray-900 inter header-height">
+            <p className="uppercase font-bold text-sm md:text-base text-purple-500">
+              To the modern Amazon FBA seller:
+            </p>
+            <h1 className="mt-2 text-3xl md:text-5xl font-black text-gray-900 inter header-height">
               Behold!{" "}
               <span className="emphasized-text">The online arbitrage list</span>{" "}
               you've been searching for.
             </h1>
             <h2 className="lg:max-w-lg mt-4 lg:mt-6 mx-auto lg:mx-0 text-gray-900 text-lg bg-white">
               Online arbitrage sourcing just got a huge upgrade: Leadgeek is
-              hands-down the <strong>easiest</strong> and{" "}
-              <strong>smoothest</strong> way to find new products to flip for
-              profit on Amazon. Day in. Day out.
+              hands-down the <strong>latest</strong> and{" "}
+              <strong>most reliable</strong> way to find new products to flip
+              for profit on Amazon. Day in. Day out.
             </h2>
             <div className="lg:flex lg:items-center mt-4 lg:mt-6">
               <div
@@ -145,11 +156,9 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
           pauseOnHover={true}
         >
           <p className="pl-24">
-            <span className="text-pink-600">
-              There's only 1 thing you need to know
-            </span>
-            : Leadgeek is all the best parts of a traditional online arbitrage
-            sourcing list amplified by an interface that saves you tons of time.{" "}
+            <span className="text-pink-600">1 thing you need to know</span>:
+            Leadgeek is all the best parts of a traditional online arbitrage
+            sourcing list amplified by software that's a piece of cake to use.{" "}
             <span role="img" aria-label="Rocket Emoji">
               🚀
             </span>
@@ -270,21 +279,23 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
               <blockquote>
-                "Delivered their lists as promised daily and always had at least
-                a few items I was interested in.{" "}
-                <strong>Good value, would recommend</strong>."
+                "I’ve been able to double my profits using this list.{" "}
+                <strong>
+                  So much better than hours of pouring over Tactical Arbitrage
+                </strong>
+                ."
                 <div className="mt-4 flex items-center">
                   <Img
-                    fluid={data.testimonialBrian.childImageSharp.fluid}
-                    alt={`Frank's testimonial`}
+                    fluid={data.testimonialCris.childImageSharp.fluid}
+                    alt={`Cris's testimonial`}
                     className="w-10 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
                   />
-                  <div className="md:flex md:items-center">
-                    <cite className="ml-4 inter font-black">Brian</cite>
+                  <div className="md:flex items-center">
+                    <cite className="ml-4 inter font-black">Cris</cite>
                     <span className="hidden md:block mx-2 font-semibold text-pink-600">
                       /
                     </span>
-                    <p className="mt-1 md:mt-0 ml-4 md:ml-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`Intermediate FBA seller`}</p>
+                    <p className="mt-1 md:mt-0 ml-4 md:ml-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`New FBA seller`}</p>
                   </div>
                 </div>
               </blockquote>
@@ -359,7 +370,7 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   {differenceInDays} days
                 </span>
               </p>
-              <ol className="flex items-center md:justify-center lg:justify-start mt-4">
+              <ol className="flex items-center md:justify-center lg:justify-start mt-4 text-left">
                 <li>
                   <p className="font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap">
                     Profit
@@ -389,6 +400,17 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
                   <div className="mt-2 text-xl lg:text-3xl font-black">
                     {allTimeAverageMonthlySales.toFixed()}
                     <span className="text-base">/mo</span>
+                  </div>
+                </li>
+                <span className="hidden md:block ml-3 lg:ml-6 font-semibold text-pink-600 text-3xl">
+                  /
+                </span>
+                <li className="hidden md:block ml-3 lg:ml-6">
+                  <p className="font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap">
+                    Sale Price
+                  </p>
+                  <div className="mt-2 text-xl lg:text-3xl font-black">
+                    ${allTimeASP.toFixed()}
                   </div>
                 </li>
               </ol>
@@ -423,22 +445,26 @@ const OnlineArbitrageSourcingListPage = ({ data }) => {
               data-sal-delay="1000"
               data-sal-duration="1000"
               data-sal-easing="ease in out"
-              className="hidden lg:block absolute z-40 top-0 w-16 lg:h-56 text-purple-500 transform -translate-y-32"
+              className="hidden lg:block absolute z-40 top-0 w-16 lg:h-56 text-purple-500 transform -translate-y-32 -translate-x-12"
             />
             <h2 className="text-3xl md:text-5xl font-black text-gray-900 inter header-height">
-              <span className="emphasized-text">No BS</span>. Here's exactly
-              what you get.
+              No BS. Here are the{" "}
+              <span className="emphasized-text">exact leads</span> we find.
             </h2>
             <p className="max-w-2xl mt-4 lg:mt-6 mx-auto text-gray-900 text-lg bg-white">
-              Using Leadgeek is like having an exclusive online arbitrage
-              sourcing team. Get the most representative idea of how that can
-              change your Amazon business with a real-time list of the{" "}
+              We get it, it's hard to trust screenshots.{" "}
+              <span role="img" aria-label="Camera emoji">
+                📷
+              </span>{" "}
+              Get the most representative idea of how Leadgeek can upgrade your
+              FBA business with the{" "}
               <strong>
                 exact{" "}
                 <span className="text-pink-600">{prevTwoWeekLeads.length}</span>{" "}
-                product leads
+                arbitrage leads
               </strong>{" "}
-              members got over the last 2 weeks.
+              members got over the last 2 weeks. And there's more where these
+              came from.
             </p>
             <div
               className="mt-4 lg:mt-6 flex items-center"
@@ -660,6 +686,7 @@ export const query = graphql`
             netProfit
             monthlySales
             roi
+            sellPrice
             date
           }
         }
@@ -689,7 +716,7 @@ export const query = graphql`
         }
       }
     }
-    testimonialBrian: file(relativePath: { eq: "brian.png" }) {
+    testimonialCris: file(relativePath: { eq: "cris.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 200, quality: 100) {

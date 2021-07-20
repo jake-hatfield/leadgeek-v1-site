@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 
 import axios from "axios"
+import crypto from "crypto"
 
 // bsr / category % calculator
 export const calculateBSR = (currentRank, category) => {
@@ -106,4 +107,41 @@ export const addToMailchimp = async (email, subscriberData) => {
     LEAD: LEAD || "",
     tags: tags || [],
   })
+}
+
+// generate LGID
+export const generateLGID = () => {
+  return crypto.randomBytes(64).toString("hex")
+}
+
+// get the query params from URL
+const grabQueryParam = (location, name) => {
+  const params = new URLSearchParams(location.search)
+  return params.get(name)
+}
+
+// check for cookie in local storage, returns -1 if not found
+export const checkCookie = name => {
+  return document.cookie.indexOf(name)
+}
+
+// read cookie value
+export const readCookie = name => {
+  if (checkCookie(name) >= 0) {
+    return (
+      document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() ||
+      ""
+    )
+  } else {
+    return ""
+  }
+}
+
+// create LGID 90-day cookie if one doesn't exist
+export const handleLGID = location => {
+  const lgid = grabQueryParam(location, "lgid")
+  if (lgid !== null && !readCookie("lgid")) {
+    let expiryDate = new Date(Date.now() + 1000 * 3600 * 24 * 90)
+    document.cookie = `lgid=${lgid}; expires=${expiryDate.toUTCString()}`
+  }
 }
