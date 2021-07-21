@@ -75,13 +75,9 @@ const OrderConfirmationPage = ({ location }) => {
             title={`Whoop! A great big thanks for joining.`}
             desc={
               <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700 bg-white">
-                Your sourcing is about to get pretty stinkin' neat
-                {location.state.firstName
-                  ? `, ${location.state.firstName}`
-                  : ""}
-                . You should receive a confirmation notice shortly to{" "}
-                {<strong>{location.state.email}</strong> || "your email"}, but
-                also check spam folders if you don't see it right away.
+                Your sourcing is about to get pretty stinkin' neat. You should
+                receive a confirmation notice shortly to your email, but also
+                check spam folders if you don't see it right away.
               </p>
             }
             nav
