@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-criteria.jpg"
 
-const LeadCriteriaPage = () => {
+const LeadCriteriaPage = ({ location }) => {
   const title = "Top-Shelf Leads Come Standard | Leadgeek"
   const desc =
     "Scale your business without sacrificing quality in your inventory Carefully-tailored criteria and vetting methods allow you to get professional-grade arbitrage sourcing at a fraction of the price."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

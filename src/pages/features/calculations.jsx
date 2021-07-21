@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-calculations.jpg"
 
-const CalculationPage = () => {
+const CalculationPage = ({ location }) => {
   const title = "Laser-Accurate Number Crunching | Leadgeek"
   const desc =
     "With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

@@ -6,9 +6,14 @@ import exitIntent from "exit-intent"
 
 import LPNavbar from "./LPNavbar"
 import LPFooter from "./LPFooter"
+import { handleLGID } from "components/utils/utils"
 import Popup from "components/utils/Popup"
 
 const Layout = ({ children, location }) => {
+  useEffect(() => {
+    handleLGID(location)
+  }, [])
+
   const [showPopup, setShowPopup] = useState(false)
   useEffect(() => {
     if (showPopup) {

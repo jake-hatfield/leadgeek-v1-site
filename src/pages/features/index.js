@@ -11,11 +11,11 @@ import { featureList } from "components/layout/Features"
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import OgImage from "assets/images/og/og-features-index.jpg"
 
-const FeaturesIndexPage = () => {
+const FeaturesIndexPage = ({ location }) => {
   const title = `Leadgeek Features`
   const desc = `See the top ${featureList.length} features that supercharge a great online arbitrage sourcing list into a deal-finding machine for your FBA business.`
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

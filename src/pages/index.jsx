@@ -23,7 +23,7 @@ import DashLoopLine from "assets/svgs/dash-loop-line.svg"
 
 import OgImage from "assets/images/og/og-index.jpg"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const title = "Leadgeek: Online Arbitrage Sourcing Lists & Software"
   const desc =
     "Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
@@ -111,7 +111,7 @@ const IndexPage = ({ data }) => {
   ]
 
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

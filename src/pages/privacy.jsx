@@ -7,7 +7,7 @@ import Layout from "components/layout/Layout"
 
 import OgImage from "assets/images/og/og-privacy.jpg"
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = ({ location }) => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io/"
@@ -15,7 +15,7 @@ const PrivacyPolicyPage = () => {
   const desc =
     "The privacy policy for Leadgeek website users and customers. We take your data seriously and handle it responsibly."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

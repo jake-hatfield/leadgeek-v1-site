@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-support.jpg"
 
-const SupportPage = () => {
+const SupportPage = ({ location }) => {
   const title = "A+ Member Support | Leadgeek"
   const desc =
     "LeadGeek members get dedicated guidance from an experienced arbitrage seller to prevent pitfalls and solve issues. Sell with confidence, not confusion."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

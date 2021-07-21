@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-comments.jpg"
 
-const CommentsPage = () => {
+const CommentsPage = ({ location }) => {
   const title = "Leave Your Mark | Leadgeek"
   const desc =
     "Personalize each product by writing a comment that only you can see. Interested in a few variations or plan to re-order an item? Write it down so you don’t forget!"
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

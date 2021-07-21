@@ -9,7 +9,7 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 import OgImage from "assets/images/og/og-booking-success.jpg"
 
-const ContactSuccess = () => {
+const BookingSuccessPage = () => {
   const title = "Booking Success | Leadgeek"
   const desc = "Thank you for booking a coaching call with Leadgeek."
   return (
@@ -56,4 +56,4 @@ const ContactSuccess = () => {
   )
 }
 
-export default ContactSuccess
+export default BookingSuccessPage

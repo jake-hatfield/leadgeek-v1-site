@@ -129,7 +129,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
     <tr className={classes.rowWrapper}>
       <td className={classes.defaultCellWrapper}>
         {((data.netProfit >= 7 && data.monthlySales >= 150) ||
-          (data.netProfit >= 16 && data.roi >= 0.5) ||
+          (data.netProfit >= 16 && data.roi >= 0.5 && data.monthlySales > 20) ||
           (data.netProfit >= 8 && data.roi >= 1.5) ||
           (data.netProfit >= 6 && data.roi >= 2) ||
           (data.netProfit >= 9 && data.monthlySales >= 80) ||

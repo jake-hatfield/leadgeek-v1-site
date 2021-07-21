@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-search.jpg"
 
-const SearchPage = () => {
+const SearchPage = ({ location }) => {
   const title = "Keyword Central | Leadgeek"
   const desc =
     "Powerful search lets you find what you’re interested in without hunting through thousands of leads. Input keywords to search by the source store, title, or ASIN."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

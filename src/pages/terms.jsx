@@ -7,15 +7,16 @@ import Layout from "components/layout/Layout"
 
 import OgImage from "assets/images/og/og-terms.jpg"
 
-const TermsPage = () => {
+const TermsPage = ({ location }) => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io/"
   const title = "Leadgeek Terms of Service"
   const desc =
     "All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
+
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

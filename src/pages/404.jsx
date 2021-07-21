@@ -6,8 +6,8 @@ import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <GatsbySeo title="404: Page Not Found | Leadgeek" language="en" />
     <section className="relative overflow-hidden bg-splatter">
       <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"}>

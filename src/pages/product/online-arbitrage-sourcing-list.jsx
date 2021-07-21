@@ -32,10 +32,6 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
   const cta = `/product/online-arbitrage-sourcing-list#pricing`
 
-  useEffect(() => {
-    handleLGID(location)
-  }, [])
-
   const startDate = DateTime.fromISO("2020-10-12T12:00")
   const currentDate = DateTime.now()
   const difference = startDate.diff(currentDate, ["days"])
@@ -74,7 +70,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
   ).toFormat("LLL dd @ t")
 
   return (
-    <LPLayout>
+    <LPLayout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

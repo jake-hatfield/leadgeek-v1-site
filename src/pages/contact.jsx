@@ -7,12 +7,12 @@ import FormField from "components/utils/FormField"
 
 import OgImage from "assets/images/og/og-contact.jpg"
 
-const ContactPage = () => {
+const ContactPage = ({ location }) => {
   const title = "Contact Leadgeek"
   const desc =
     "Have a question about Leadgeek? We'll do our best to get you some answers. Ask away and receive a prompt reply."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-exclusivity.jpg"
 
-const ExclusivityPage = () => {
+const ExclusivityPage = ({ location }) => {
   const title = "The Inner Circle | Leadgeek"
   const desc =
     "Leadgeek takes seller exclusivity seriously, which is why there are no-budge caps on the number of people allowed on a list at any given time: 30 members for the Grow plan and 15 for the Pro plan - cutting competition significantly."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-prep.jpg"
 
-const PrepPage = () => {
+const PrepPage = ({ location }) => {
   const title = "Account for Prep Costs Automatically | Leadgeek"
   const desc =
     "Built-in tools allow you to easily estimate product prep fees. Whether you need to calculate a fee based on quantity or weight, you'll see real-world profitability for each item."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

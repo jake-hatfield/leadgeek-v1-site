@@ -5,10 +5,15 @@ import "styles/app.css"
 import CookieConsent from "react-cookie-consent"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
+import { handleLGID } from "components/utils/utils"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 
-const Layout = ({ children, scrollRef, popup }) => {
+const Layout = ({ children, location, popup }) => {
+  useEffect(() => {
+    handleLGID(location)
+  }, [])
+
   useEffect(() => {
     if (popup) {
       document.body.style.overflow = "hidden"
@@ -17,12 +22,11 @@ const Layout = ({ children, scrollRef, popup }) => {
       document.body.style.overflow = "unset"
     }
   }, [popup])
+
   return (
     <div className="relative flex flex-col h-screen justify-between">
       <Navbar siteTitle={"Leadgeek"} />
-      <main ref={scrollRef} className="mt-16 md:mt-20">
-        {children}
-      </main>
+      <main className="mt-16 md:mt-20">{children}</main>
       <Footer />
       <CookieConsent
         buttonText="Got it"

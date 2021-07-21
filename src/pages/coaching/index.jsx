@@ -11,11 +11,11 @@ import PrimaryHeader from "components/PrimaryHeader"
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import OgImage from "assets/images/og/og-coaching.jpg"
 
-const CoachingIndexPage = ({ data }) => {
+const CoachingIndexPage = ({ data, location }) => {
   const title = `Free Online Arbitrage Coaching`
   const desc = `Selling on Amazon can be a whole 'nother beast. Bring some questions about online arbitrage and leave with answers - totally free. It's not a demo, it's a 20 minute chat.`
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

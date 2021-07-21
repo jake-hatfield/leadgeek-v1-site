@@ -23,12 +23,12 @@ import LikeArchiveMp4 from "assets/video/like-and-archive.mp4"
 import LikeArchiveWebm from "assets/video/like-and-archive.webm"
 import Poster from "assets/images/white-bg.png"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const title = "How Leadgeek Works"
   const desc =
     "Leadgeek is a fresh new take on traditional online arbitrage sourcing lists. Make finding new leads productive, organized, and clear with a simple process."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

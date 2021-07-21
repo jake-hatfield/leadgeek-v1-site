@@ -24,7 +24,7 @@ const CheckoutForm = ({
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
   const [count, setCount] = useState(1)
-  //   const [lgid] = useState(readCookie("lgid"))
+  const [lgid] = useState(readCookie("lgid"))
 
   useEffect(() => {
     if (checkedTOS) {
@@ -346,6 +346,7 @@ const CheckoutForm = ({
             paymentMethod,
             subId: subscriptionRes,
             planId: priceId,
+            lgid,
           }
         )
         if (userRes.message === "User successfully added.") {
@@ -355,19 +356,6 @@ const CheckoutForm = ({
             PLAN: `${plan} subscriber`,
             tags: [`${plan} Subscriber`, "Active Subscriber"],
           }
-          //   if (lgid) {
-          //     const { data: affRes } = await axios.post(
-          //       "/.netlify/functions/credit-affiliate",
-          //       {
-          //         email: lowerCaseEmail,
-          //         customerId: customer,
-          //         planId: priceId,
-          //         subId: subscriptionRes,
-          //         lgid,
-          //       }
-          //     )
-          //     console.log(affRes)
-          //   }
           addToMailchimp(lowerCaseEmail, subscriberData)
           onSuccessfulCheckout()
         } else {
@@ -387,7 +375,7 @@ const CheckoutForm = ({
     } catch (error) {
       console.log(error.message)
       setCheckoutError(
-        "Your payment could not be processed. Please make sure your information is correct or contact support to complete your purchase."
+        "Your payment may have been processed, but there was an error. Please make sure your information is correct or contact support to complete your purchase."
       )
       setProcessingTo(false)
     }

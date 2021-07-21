@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-seller-insight.jpg"
 
-const SellerInsightPage = () => {
+const SellerInsightPage = ({ location }) => {
   const title = "Professional Experience in Your Corner | Leadgeek"
   const desc =
     "The Leadgeek sourcing process includes review by a seasoned US Amazon seller for each and every lead. That way, the only products you see are ones that have been approved by years of FBA know-how."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

@@ -14,12 +14,12 @@ import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import OgImage from "assets/images/og/og-pricing.jpg"
 
-const PricingPage = () => {
+const PricingPage = ({ location }) => {
   const title = "Leadgeek Pricing"
   const desc =
     "Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

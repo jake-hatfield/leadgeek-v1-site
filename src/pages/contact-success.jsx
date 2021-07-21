@@ -9,7 +9,7 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 import OgImage from "assets/images/og/og-contact-success.jpg"
 
-const ContactSuccess = () => {
+const ContactSuccessPage = () => {
   const title = "Contact Success | Leadgeek"
   const desc =
     "Leadgeek support has received your message and will get to you as soon as possible."
@@ -55,4 +55,4 @@ const ContactSuccess = () => {
   )
 }
 
-export default ContactSuccess
+export default ContactSuccessPage

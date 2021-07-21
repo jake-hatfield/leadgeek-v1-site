@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-promo-notes.jpg"
 
-const PromoNotesPage = () => {
+const PromoNotesPage = ({ location }) => {
   const title = "Your Very Own Research Assistant | Leadgeek"
   const desc =
     "Are you ever curious if there’s a promo or some discount you’re missing before you order? Now you don’t have to wonder. Any available promotional code, free shipping minimum, and cashback is automatically noted."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

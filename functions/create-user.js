@@ -2,14 +2,17 @@ require("dotenv").config()
 const MongoClient = require("mongodb").MongoClient
 const MONGODB_URI = process.env.GATSBY_MONGODB_URI
 const DB_NAME = process.env.GATSBY_DB_NAME
-const CO_NAME = process.env.GATSBY_CO_NAME_1
+const CO_NAME = process.env.GATSBY_CO_NAME
+
 const bcrypt = require("bcryptjs")
 const User = require("../models/User")
+
 const statusCode = 200
 const headers = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "Content-Type",
 }
+
 let cachedDb = null
 const connectToDatabase = async uri => {
   if (cachedDb) return cachedDb
@@ -19,6 +22,7 @@ const connectToDatabase = async uri => {
   cachedDb = client.db(DB_NAME)
   return cachedDb
 }
+
 const pushToDatabase = async (db, data) => {
   const {
     name,
@@ -28,7 +32,9 @@ const pushToDatabase = async (db, data) => {
     paymentMethod,
     subId,
     planId,
+    lgid,
   } = data
+
   // Ensure we have the required data before proceeding
   if (
     !name ||
@@ -98,11 +104,29 @@ const pushToDatabase = async (db, data) => {
         brand: paymentMethod.card.brand,
       },
       role,
+      referrals: {
+        referred: {
+          wasReferred: lgid && true,
+          referrerlgid: lgid || null,
+        },
+      },
       resetPasswordToken: null,
       resetPasswordExpires: null,
     })
     await db.collection(CO_NAME).insertMany([user])
     const message = "User successfully added."
+    if (lgid) {
+      console.log("Attempting to credit the affiliate...")
+      const affiliate = await db.collection(CO_NAME).updateOne(
+        { "referrals.referrer.lgid": lgid },
+        {
+          $push: {
+            "referrals.referrer.clients": user._id,
+          },
+        }
+      )
+    }
+
     return {
       statusCode,
       headers,

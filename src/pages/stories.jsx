@@ -10,7 +10,7 @@ import TestimonialFull from "components/utils/TestimonialFull"
 
 import OgImage from "assets/images/og/og-stories.jpg"
 
-const IndexPage = ({ data }) => {
+const StoriesPage = ({ data, location }) => {
   const title = "Seller Stories"
   const desc =
     "Read how Leadgeek helped the arbitrage sourcing for real Amazon sellers around the world."
@@ -157,7 +157,7 @@ const IndexPage = ({ data }) => {
   ]
 
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}
@@ -305,4 +305,4 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+export default StoriesPage

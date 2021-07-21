@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-
+import { deleteCookie } from "components/utils/utils"
 import Bullet from "assets/svgs/bullet.svg"
 import OgImage from "assets/images/og/og-order-confirmation.jpg"
 
@@ -43,8 +43,13 @@ const OrderConfirmationPage = ({ location }) => {
   const title = "Order Confirmation | Leadgeek"
   const desc =
     "Your Leadgeek order has been successfully processed. Thank you for your purchase!"
+
+  useEffect(() => {
+    deleteCookie("lgid")
+  }, [])
+
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}
@@ -71,10 +76,12 @@ const OrderConfirmationPage = ({ location }) => {
             desc={
               <p className="mt-4 lg:mt-6 lg:max-w-3xl lg:text-lg leading-relaxed text-gray-700 bg-white">
                 Your sourcing is about to get pretty stinkin' neat
-                {location.firstName ? ` ${location.firstName}` : ""}. You should
-                receive a confirmation notice shortly to{" "}
-                {location.email || "your email"}, but also check spam folders if
-                you don't see it right away.
+                {location.state.firstName
+                  ? `, ${location.state.firstName}`
+                  : ""}
+                . You should receive a confirmation notice shortly to{" "}
+                {<strong>{location.state.email}</strong> || "your email"}, but
+                also check spam folders if you don't see it right away.
               </p>
             }
             nav

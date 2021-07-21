@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-details.jpg"
 
-const DetailsPage = () => {
+const DetailsPage = ({ location }) => {
   const title = "View Details on the Fly | Leadgeek"
   const desc =
     "See primary metrics, historical data, and helpful notes all in one place. Also included are helpful links to the source retailer, Amazon listing, and Seller Central to see if the product is ungated for you."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}

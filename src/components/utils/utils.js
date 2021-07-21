@@ -137,11 +137,15 @@ export const readCookie = name => {
   }
 }
 
+export const deleteCookie = name => {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+}
+
 // create LGID 90-day cookie if one doesn't exist
 export const handleLGID = location => {
   const lgid = grabQueryParam(location, "lgid")
   if (lgid !== null && !readCookie("lgid")) {
     let expiryDate = new Date(Date.now() + 1000 * 3600 * 24 * 90)
-    document.cookie = `lgid=${lgid}; expires=${expiryDate.toUTCString()}`
+    document.cookie = `lgid=${lgid}; path=/; expires=${expiryDate.toUTCString()}`
   }
 }

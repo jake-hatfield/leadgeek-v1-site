@@ -7,12 +7,12 @@ import Features from "components/layout/Features"
 
 import OgImage from "assets/images/og/og-categories.jpg"
 
-const CategoriesPage = () => {
+const CategoriesPage = ({ location }) => {
   const title = "Source Comprehensive Categories | Leadgeek"
   const desc =
     "Building a diversified inventory has never been easier. Choose items sourced from 25+ top-selling Amazon categories to create your ideal product portfolio."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}
