@@ -122,12 +122,14 @@ const grabQueryParam = (location, name) => {
 
 // check for cookie in local storage, returns -1 if not found
 export const checkCookie = name => {
-  return document.cookie.indexOf(name)
+  if (typeof document !== undefined) {
+    return document.cookie.indexOf(name)
+  }
 }
 
 // read cookie value
 export const readCookie = name => {
-  if (checkCookie(name) >= 0) {
+  if (checkCookie(name) >= 0 && typeof document !== undefined) {
     return (
       document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() ||
       ""
@@ -138,7 +140,9 @@ export const readCookie = name => {
 }
 
 export const deleteCookie = name => {
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+  if (typeof document !== undefined) {
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+  }
 }
 
 // create LGID 90-day cookie if one doesn't exist
@@ -146,6 +150,8 @@ export const handleLGID = location => {
   const lgid = grabQueryParam(location, "lgid")
   if (lgid !== null && !readCookie("lgid")) {
     let expiryDate = new Date(Date.now() + 1000 * 3600 * 24 * 90)
-    document.cookie = `lgid=${lgid}; path=/; expires=${expiryDate.toUTCString()}`
+    if (typeof document !== undefined) {
+      document.cookie = `lgid=${lgid}; path=/; expires=${expiryDate.toUTCString()}`
+    }
   }
 }
