@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
-import { addToMailchimp, readCookie } from "components/utils/utils"
+import { addToMailchimp, getCookie } from "components/utils/utils"
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 import Spinner from "components/utils/Spinner"
@@ -24,7 +24,11 @@ const CheckoutForm = ({
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
   const [count, setCount] = useState(1)
-  const [lgid] = useState(readCookie("lgid"))
+
+  let lgid
+  useEffect(() => {
+    lgid = getCookie("lgid")
+  }, [])
 
   useEffect(() => {
     if (checkedTOS) {

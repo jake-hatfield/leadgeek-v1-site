@@ -11,7 +11,9 @@ import Footer from "./Footer"
 
 const Layout = ({ children, location, popup }) => {
   useEffect(() => {
-    handleLGID(location)
+    if (typeof document !== undefined) {
+      handleLGID(location)
+    }
   }, [])
 
   useEffect(() => {

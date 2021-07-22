@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 import axios from "axios"
 import crypto from "crypto"
@@ -120,22 +120,23 @@ const grabQueryParam = (location, name) => {
   return params.get(name)
 }
 
-// check for cookie in local storage, returns -1 if not found
-export const checkCookie = name => {
+export const getCookie = key => {
   if (typeof document !== undefined) {
-    return document.cookie.indexOf(name)
+    document.cookie.split(`; `).reduce((total, currentCookie) => {
+      const item = currentCookie.split(`=`)
+      const storedKey = item[0]
+      const storedValue = item[1]
+
+      return key === storedKey ? decodeURIComponent(storedValue) : total
+    }, ``)
   }
 }
 
-// read cookie value
-export const readCookie = name => {
-  if (checkCookie(name) >= 0 && typeof document !== undefined) {
-    return (
-      document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() ||
-      ""
-    )
-  } else {
-    return ""
+const setCookie = (key, value, numberOfDays) => {
+  const now = new Date()
+  now.setTime(now.getTime() + numberOfDays * 60 * 60 * 24 * 1000)
+  if (typeof document !== undefined) {
+    document.cookie = `${key}=${value}; expires=${now.toUTCString()}; path=/`
   }
 }
 
@@ -148,10 +149,18 @@ export const deleteCookie = name => {
 // create LGID 90-day cookie if one doesn't exist
 export const handleLGID = location => {
   const lgid = grabQueryParam(location, "lgid")
-  if (lgid !== null && !readCookie("lgid")) {
-    let expiryDate = new Date(Date.now() + 1000 * 3600 * 24 * 90)
-    if (typeof document !== undefined) {
-      document.cookie = `lgid=${lgid}; path=/; expires=${expiryDate.toUTCString()}`
-    }
+  if (document !== undefined && lgid !== null && !getCookie("lgid")) {
+    setCookie("lgid", lgid, 90)
   }
+}
+
+export const useCookie = (key, defaultValue) => {
+  const getCookie = () => getCookie(key) || defaultValue
+  const [cookie, setCookie] = useState(getCookie())
+  const updateCookie = (value, numberOfDays) => {
+    setCookie(value)
+    setCookie(key, value, numberOfDays)
+  }
+
+  return [cookie, updateCookie]
 }

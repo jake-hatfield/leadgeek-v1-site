@@ -11,7 +11,9 @@ import Popup from "components/utils/Popup"
 
 const Layout = ({ children, location }) => {
   useEffect(() => {
-    handleLGID(location)
+    if (typeof document !== undefined) {
+      handleLGID(location)
+    }
   }, [])
 
   const [showPopup, setShowPopup] = useState(false)
