@@ -69,24 +69,26 @@ const ContactPage = ({ location }) => {
           </header>
           <article className="mt-10 lg:mt-0 lg:w-2/5 lg:flex lg:items-start lg:justify-end">
             <form
-              name="contact"
-              method="post"
+              name="Primary Contact"
+              method="POST"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
+              netlify-honeypot="bot-field"
               action="/contact-success/"
               className="mx-auto lg:mx-0 w-full max-w-md rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1 hover:rotate-0"
             >
               <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="Primary Contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <FormField
                   label="Name"
-                  type="name"
+                  type="text"
+                  name="name"
                   placeholder="Dave Saunders"
                   required={true}
                 />
                 <FormField
                   label="Email"
+                  name="name"
                   type="email"
                   placeholder="dsaunders@gmail.com"
                   required={true}
