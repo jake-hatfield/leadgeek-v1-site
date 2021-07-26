@@ -9,11 +9,11 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 import OgImage from "assets/images/og/og-booking-success.jpg"
 
-const BookingSuccessPage = () => {
+const BookingSuccessPage = ({ location }) => {
   const title = "Booking Success | Leadgeek"
   const desc = "Thank you for booking a coaching call with Leadgeek."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}
@@ -36,19 +36,17 @@ const BookingSuccessPage = () => {
       <section className="relative bg-splatter">
         <HeaderWrapper>
           <PrimaryHeader
-            title={"Call. Booked."}
+            title={"Call booked!"}
             desc={
               <p>
-                HEYO. Thanks for booking a free coaching call with me. You
-                should receive an automated confirmation shortly (check the spam
-                folder if you don't see it in your inbox). I'll also send you a
-                quick questionaire for you to fill out before our call so we can
-                make the most of it together. Talk to ya soon!
+                Hey, thanks for booking a free coaching call with me. You should
+                receive an automated confirmation shortly (check the spam folder
+                if you don't see it in your inbox).
               </p>
             }
             nav
             goHome={true}
-            linkOneText={"Go home"}
+            linkOneText={"Go back home"}
           />
         </HeaderWrapper>
       </section>

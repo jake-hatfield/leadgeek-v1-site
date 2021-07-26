@@ -9,12 +9,12 @@ import PrimaryHeader from "components/PrimaryHeader"
 
 import OgImage from "assets/images/og/og-contact-success.jpg"
 
-const ContactSuccessPage = () => {
+const ContactSuccessPage = ({ location }) => {
   const title = "Contact Success | Leadgeek"
   const desc =
     "Leadgeek support has received your message and will get to you as soon as possible."
   return (
-    <Layout>
+    <Layout location={location}>
       <GatsbySeo
         title={title}
         description={desc}
