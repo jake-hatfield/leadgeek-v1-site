@@ -88,7 +88,7 @@ const ContactPage = ({ location }) => {
                 />
                 <FormField
                   label="Email"
-                  name="name"
+                  name="email"
                   type="email"
                   placeholder="dsaunders@gmail.com"
                   required={true}
