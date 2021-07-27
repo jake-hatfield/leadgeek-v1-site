@@ -120,16 +120,15 @@ const grabQueryParam = (location, name) => {
   return params.get(name)
 }
 
-export const getCookie = key => {
-  if (typeof document !== undefined) {
-    document.cookie.split(`; `).reduce((total, currentCookie) => {
-      const item = currentCookie.split(`=`)
-      const storedKey = item[0]
-      const storedValue = item[1]
-
-      return key === storedKey ? decodeURIComponent(storedValue) : total
-    }, ``)
+export const getCookie = name => {
+  var nameEQ = name + "="
+  var ca = document.cookie.split(";")
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]
+    while (c.charAt(0) == " ") c = c.substring(1, c.length)
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length)
   }
+  return null
 }
 
 const setCookie = (key, value, numberOfDays) => {
@@ -142,14 +141,14 @@ const setCookie = (key, value, numberOfDays) => {
 
 export const deleteCookie = name => {
   if (typeof document !== undefined) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+    setCookie(name, "", -1)
   }
 }
 
 // create LGID 90-day cookie if one doesn't exist
 export const handleLGID = location => {
   const lgid = grabQueryParam(location, "lgid")
-  if (document !== undefined && lgid !== null && !getCookie("lgid")) {
+  if (document !== undefined && lgid !== null && getCookie("lgid") === null) {
     setCookie("lgid", lgid, 90)
   }
 }

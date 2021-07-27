@@ -115,6 +115,7 @@ const pushToDatabase = async (db, data) => {
     })
     await db.collection(CO_NAME).insertMany([user])
     const message = "User successfully added."
+
     if (lgid) {
       console.log("Attempting to credit the affiliate...")
       const affiliate = await db.collection(CO_NAME).updateOne(

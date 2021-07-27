@@ -24,10 +24,10 @@ const CheckoutForm = ({
   const [isProcessing, setProcessingTo] = useState(false)
   const [checkedTOS, setCheckedTOS] = useState(false)
   const [count, setCount] = useState(1)
+  const [lgid, setLgid] = useState(null)
 
-  let lgid
   useEffect(() => {
-    lgid = getCookie("lgid")
+    setLgid(getCookie("lgid"))
   }, [])
 
   useEffect(() => {
@@ -289,12 +289,14 @@ const CheckoutForm = ({
       setCheckoutError("")
     }
   }, [password, email])
+
   const onChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value.trim(),
     })
   }
+
   const onSubmit = async e => {
     e.preventDefault()
     const firstNameCapitalized =
