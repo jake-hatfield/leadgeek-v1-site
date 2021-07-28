@@ -46,6 +46,7 @@ const LeadSampleTable = ({ leads }) => {
           <tr className={classes.tableHead}>
             <th className={classes.tableHeadCell} aria-label="Hot lead" />
             <th className={classes.tableHeadCellResponsive}>Category</th>
+            <th className={classes.tableHeadCellResponsive}>ASIN</th>
             <th className={classes.tableHeadCellResponsive}>Buy Price</th>
             <th className={classes.tableHeadCellResponsive}>Sell Price</th>
             <th className={classes.tableHeadCell}>Profit</th>
@@ -141,8 +142,17 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
           </span>
         )}
       </td>
+
       {/* category */}
       <td className={classes.responsiveCell}>{truncate(data.category, 28)}</td>
+      {/* asin */}
+      <td
+        className={
+          "relative filter blur select-none hidden lg:table-cell lg:p-2"
+        }
+      >
+        Restricted
+      </td>
       {/* buy price */}
       <td className={classes.responsiveCell}>
         <span>$</span>

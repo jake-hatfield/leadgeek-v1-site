@@ -30,7 +30,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const desc =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
-  const cta = `/product/online-arbitrage-sourcing-list#pricing`
+  const cta = `/product/online-arbitrage-sourcing-list#leads`
 
   const startDate = DateTime.fromISO("2020-10-12T12:00")
   const currentDate = DateTime.now()
@@ -117,11 +117,11 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               >
                 <AnchorLink
                   to={cta}
-                  title="See Leadgeek pricing plans"
+                  title="See the latest arbitrage leads"
                   className="block md:inline-block cta-link inter text-center text-base"
                   gatsbyLinkProps={{ id: "cta" }}
                 >
-                  Start sourcing now
+                  View the latest leads
                 </AnchorLink>
               </div>
             </div>
@@ -187,11 +187,11 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
             >
               <AnchorLink
                 to={cta}
-                title="See Leadgeek pricing plans"
+                title="See the latest arbitrage leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start sourcing now
+                View the latest leads
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -266,11 +266,11 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
             >
               <AnchorLink
                 to={cta}
-                title="See Leadgeek pricing plans"
+                title="See the latest arbitrage leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start sourcing now
+                View the latest leads
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -342,11 +342,11 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
             >
               <AnchorLink
                 to={cta}
-                title="See Leadgeek pricing plans"
+                title="See the latest arbitrage leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start sourcing now
+                View the latest leads
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -433,9 +433,12 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         </div>
       </section>
       {/* section 4: Real-time leads */}
-      <section className="block relative pb-24 md:pb-24 lg:pb-48 bg-splatter">
-        <div className="mt-8 md:mt-12 lg:mt-48 pb-16 container md:mx-auto relative z-10">
-          <header className="relative md:text-center">
+      <section
+        id="leads"
+        className="block relative pb-24 md:pb-24 lg:pb-48 bg-splatter"
+      >
+        <div className="mt-8 md:mt-12 lg:mt-48 pb-16 md:mx-auto relative z-10">
+          <header className="relative container md:text-center">
             <ArrowTurnyFat
               data-sal="fade"
               data-sal-delay="1000"
@@ -470,7 +473,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               data-sal-easing="ease in out"
             ></div>
           </header>
-          <div className="relative mt-16">
+          <div className="relative mt-16 w-full max-w-7xl mx-auto">
             <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
               <span>
                 <span role="img" aria-label="Clock emoji">
@@ -660,11 +663,11 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         >
           <AnchorLink
             to={cta}
-            title="See Leadgeek pricing plans"
+            title="See the latest arbitrage leads"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
             gatsbyLinkProps={{ id: "cta" }}
           >
-            Start sourcing now
+            View the latest leads
           </AnchorLink>
         </div>
       </section>

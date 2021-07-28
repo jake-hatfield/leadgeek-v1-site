@@ -45,12 +45,12 @@ const Navbar = () => {
             {/* md:+ nav */}
             <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
-                to={"#pricing"}
-                title="See Leadgeek pricing plans"
+                to={"#leads"}
+                title="See the latest arbitrage leads"
                 className="no-m-first cta-link inter"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start sourcing now
+                View the latest leads
               </AnchorLink>
             </nav>
           </div>
