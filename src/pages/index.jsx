@@ -209,19 +209,19 @@ const IndexPage = ({ data, location }) => {
           </div>
           <header className={classes.heroHeader}>
             <h2 className={classes.heroH2}>
-              Leadgeek is made for busy Amazon sellers.
+              Leadgeek is made for modern Amazon sellers.
             </h2>
             <p className={classes.heroParagraph}>
               <span className="font-semibold">Before using Leadgeek</span>:
-              Finding new things to sell on Amazon is a boring time-suck. Some
-              words you'd use to describe this process are "sluggish,"
-              "inconsistent," and "barf-worthy."
+              Finding new things to sell on Amazon felt like it was sluggish and
+              outdated. Spreadsheets are ok, but is it the way a legit business
+              finds new leads?
             </p>
             <p className={classes.heroParagraph}>
               <span className="font-semibold">After using Leadgeek</span>: In
-              quite literally one click, you have the day's 10 best arbitrage
-              leads on your screen just begging to make you money. And the next
-              day, and the next day...
+              quite literally one click, you have the day's 10+ best arbitrage
+              leads displayed in a seamless software made by an Amazon seller,
+              for Amazon sellers.
             </p>
             <div
               className="mt-12 text-center"
