@@ -88,12 +88,21 @@ const UserSchema = new Schema({
         type: String,
         unique: true,
       },
+      paypalEmail: {
+        type: String,
+        unique: true,
+        default: null,
+      },
       dateCreated: {
         type: Date,
       },
       clients: [
         {
           userId: { type: Schema.Types.ObjectId, ref: "User" },
+          cusId: {
+            type: String,
+            unique: true,
+          },
         },
       ],
     },

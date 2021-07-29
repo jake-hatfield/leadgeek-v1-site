@@ -122,7 +122,10 @@ const pushToDatabase = async (db, data) => {
         { "referrals.referrer.lgid": lgid },
         {
           $push: {
-            "referrals.referrer.clients": user._id,
+            "referrals.referrer.clients": {
+              userId: user._id,
+              cusId: user.subscription.cusId,
+            },
           },
         }
       )
