@@ -16,58 +16,73 @@ mailchimp.setConfig({
   server,
 })
 
-exports.handler = async function (event, context, callback) {
-  try {
-    const { email, FNAME, LNAME, PLAN, LEAD, tags } = JSON.parse(event.body)
+const createSubscriber = async data => {
+  const { email, FNAME, LNAME, PLAN, LEAD, tags } = data
+
+  // check if subscriber already exists
+  const checkEmail = await mailchimp.searchMembers.search(email)
+  //   if they exist, update their tag
+  if (checkEmail.exact_matches.total_items > 0) {
     const subscriberHash = md5(email)
-    async function createSubscriber() {
-      // check if subscriber already exists
-      const checkEmail = await mailchimp.searchMembers.search(email)
-      //   if they exist, update their tag
-      if (checkEmail.exact_matches.total_items > 0) {
-        await mailchimp.lists.updateListMemberTags(listId, subscriberHash, {
-          tags: [
-            {
-              name: tags[0],
-              status: "active",
-            },
-          ],
-        })
-        return { statusCode, headers, body: "Contact was updated." }
-      } else {
-        //   create a new subscriber w/ tags
-        const res = await mailchimp.lists.addListMember(listId, {
-          email_address: email,
-          status: "subscribed",
-          merge_fields: {
-            FNAME,
-            LNAME,
-            PLAN,
-            LEAD,
-          },
-          tags,
-        })
-        let message
-        if (res.id) {
-          message = "Contact was added successfully."
-          return {
-            statusCode,
-            headers,
-            body: message,
-          }
-        } else {
-          message = "Contact could not be added."
-          return {
-            statusCode: 400,
-            headers,
-            body: message,
-          }
-        }
+    await mailchimp.lists.updateListMemberTags(listId, subscriberHash, {
+      tags: [
+        {
+          name: tags[0],
+          status: "active",
+        },
+      ],
+    })
+    return { statusCode, headers, body: "Contact was updated." }
+  } else {
+    //   create a new subscriber w/ tags
+    const res = await mailchimp.lists.addListMember(listId, {
+      email_address: email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME,
+        LNAME,
+        PLAN,
+        LEAD,
+      },
+      tags,
+    })
+    let message
+    if (res.id) {
+      message = "Contact was added successfully."
+      return {
+        statusCode,
+        headers,
+        body: JSON.stringify({ status: "success", message }),
+      }
+    } else {
+      message = "Contact could not be added."
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ status: "failed", message }),
       }
     }
+  }
+}
 
-    createSubscriber()
+exports.handler = async function (event) {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode,
+      headers,
+      body: JSON.stringify({
+        status: "failed",
+        message: "This was not a POST request",
+      }),
+    }
+  }
+  const data = JSON.parse(event.body)
+
+  try {
+    createSubscriber(data)
   } catch (error) {
+    console.log("There was an error")
     console.log(error)
+    console.log(error.message)
   }
 }

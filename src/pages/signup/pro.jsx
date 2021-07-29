@@ -39,7 +39,7 @@ const ProSignupPage = () => {
       desc: <p>Full software access</p>,
     },
   ]
-  const plan = "Pro Plan"
+  const plan = "Pro"
   const productSelected = process.env.GATSBY_PRO_PRODUCT_ID
   const title = "Pro Plan Signup | Leadgeek"
   const desc =

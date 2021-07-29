@@ -118,7 +118,7 @@ const pushToDatabase = async (db, data) => {
 
     if (lgid) {
       console.log("Attempting to credit the affiliate...")
-      const affiliate = await db.collection(CO_NAME).updateOne(
+      await db.collection(CO_NAME).updateOne(
         { "referrals.referrer.lgid": lgid },
         {
           $push: {
@@ -136,14 +136,14 @@ const pushToDatabase = async (db, data) => {
         message,
       }),
     }
-  } catch (err) {
-    console.log(err.message)
+  } catch (error) {
+    console.log(error.message)
     return {
       statusCode: 424,
       headers,
       body: JSON.stringify({
         status: "failed",
-        message: err.message,
+        message: error.message,
       }),
     }
   }
@@ -164,7 +164,7 @@ exports.handler = async (event, context) => {
   const db = await connectToDatabase(MONGODB_URI)
   try {
     return pushToDatabase(db, data)
-  } catch (err) {
-    console.log(err.message)
+  } catch (error) {
+    console.log(error.message)
   }
 }

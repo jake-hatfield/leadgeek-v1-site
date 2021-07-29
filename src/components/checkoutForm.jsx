@@ -359,8 +359,8 @@ const CheckoutForm = ({
           const subscriberData = {
             FNAME: firstNameCapitalized,
             LNAME: lastNameCapitalized,
-            PLAN: `${plan} subscriber`,
-            tags: [`${plan} Subscriber`, "Active Subscriber"],
+            PLAN: `${plan} Plan Subscriber`,
+            tags: [`${plan} Plan Subscriber`, "Active Subscriber"],
           }
           addToMailchimp(lowerCaseEmail, subscriberData)
           onSuccessfulCheckout()
@@ -586,7 +586,7 @@ const CheckoutForm = ({
         <aside>
           <div className="mt-6 text-xs md:text-sm text-gray-700">
             <h2 className="mt-4 text-lg lg:text-xl font-bold inter text-gray-900">
-              {plan}
+              {plan} plan
             </h2>
             <div className="mt-2">
               <div className="flex items-center justify-between">

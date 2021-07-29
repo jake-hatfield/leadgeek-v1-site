@@ -39,7 +39,7 @@ const GrowSignupPage = () => {
       desc: <p>Full software access</p>,
     },
   ]
-  const plan = "Grow Plan"
+  const plan = "Grow"
   const productSelected = process.env.GATSBY_GROW_PRODUCT_ID
   const title = "Grow Plan Signup | Leadgeek"
   const desc =
