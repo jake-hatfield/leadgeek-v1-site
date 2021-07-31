@@ -334,7 +334,7 @@ const IndexPage = ({ data, location }) => {
             <p className={classes.noteParagraph}>
               <span className={classes.emphasizedTextLight}>
                 Leadgeek is a reset button to make online arbitrage sourcing
-                efficient, potent, and fresh by putting you back in control.
+                efficient, potent, and fresh by putting you back in control
               </span>
               . So poke around the site and check out how that works.
             </p>

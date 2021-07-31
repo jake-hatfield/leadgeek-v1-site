@@ -66,14 +66,14 @@ exports.handler = async function (event) {
         body: createCustomer.id,
       }
     }
-  } catch (err) {
-    console.error(err.message)
+  } catch (error) {
+    console.error(error.message)
     return {
       statusCode: 424,
       headers,
       body: JSON.stringify({
         status: "failed",
-        message: err.message,
+        message: error.message,
       }),
     }
   }

@@ -74,27 +74,27 @@ const ContactPage = ({ location }) => {
               data-netlify="true"
               netlify-honeypot="bot-field"
               action="/contact-success/"
-              className="mx-auto lg:mx-0 w-full max-w-md rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1 hover:rotate-0"
+              className="mx-auto lg:mx-0 w-full max-w-md rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1"
             >
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="Primary Contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <FormField
-                  label="Name"
+                  label="Name*"
                   type="text"
                   name="name"
                   placeholder="Dave Saunders"
                   required={true}
                 />
                 <FormField
-                  label="Email"
+                  label="Email*"
                   name="email"
                   type="email"
                   placeholder="dsaunders@gmail.com"
                   required={true}
                 />
                 <label className="pt-4 form-field-label">
-                  Message
+                  Message*
                   <textarea
                     name="message"
                     placeholder="So...what is arbitrage?"

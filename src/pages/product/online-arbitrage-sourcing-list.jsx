@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -7,7 +7,6 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 import { DateTime } from "luxon"
 
-import { handleLGID } from "components/utils/utils"
 import LPLayout from "components/layout/LandingPage/LPLayout"
 import LeadSample from "components/LeadSample"
 import PricingCards from "components/PricingCards"
