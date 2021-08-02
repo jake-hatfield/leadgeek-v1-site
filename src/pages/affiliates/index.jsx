@@ -3,7 +3,6 @@ import { navigate, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import axios from "axios"
-import * as qs from "query-string"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
@@ -96,13 +95,13 @@ const ContactPage = ({ data, location }) => {
       }
 
       console.log(formData)
-      console.log(qs.stringify(formData))
+      console.log(JSON.stringify(formData))
 
       const axiosOptions = {
         url: location.pathname,
         method: "post",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        data: qs.stringify(formData),
+        data: JSON.stringify(formData),
       }
       onSuccessfulSubmission(axiosOptions)
       //   const { data: userRes } = await axios.post(
