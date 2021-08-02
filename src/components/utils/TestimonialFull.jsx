@@ -19,10 +19,6 @@ const TestimonialFull = ({
   return (
     <article
       className={`relative ${cardPosition} ${cardMargin} text-center transform`}
-      data-sal="fade"
-      data-sal-delay="500"
-      data-sal-duration="500"
-      data-sal-easing="ease in out"
     >
       <div
         className={`relative z-40 w-full ${cardWidth} transform ${rotate} transition-main`}

@@ -546,13 +546,6 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                 📣
               </span>
             </p>
-            <div
-              className="mt-4 lg:mt-6 flex items-center"
-              data-sal="slide-up"
-              data-sal-delay="500"
-              data-sal-duration="500"
-              data-sal-easing="ease in out"
-            ></div>
           </header>
           <div className="relative md:flex md:flex-col lg:flex-row md:items-center mx-4">
             <TestimonialFull
@@ -653,13 +646,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
       {/* section 7: FAQ */}
       <section id="faq" className="mb-24 mx-4">
         <Faq />
-        <div
-          className="mt-4 lg:mt-6 flex items-center justify-center"
-          data-sal="slide-up"
-          data-sal-delay="500"
-          data-sal-duration="500"
-          data-sal-easing="ease in out"
-        >
+        <div className="mt-4 lg:mt-6 flex items-center justify-center">
           <AnchorLink
             to={cta}
             title="See the latest arbitrage leads"
