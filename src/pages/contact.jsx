@@ -80,21 +80,21 @@ const ContactPage = ({ location }) => {
               <input type="hidden" name="form-name" value="Primary Contact" />
               <div className="pt-6 pb-2 px-4 md:px-8">
                 <FormField
-                  label="Name*"
+                  label="Name *"
                   type="text"
                   name="name"
                   placeholder="Dave Saunders"
                   required={true}
                 />
                 <FormField
-                  label="Email*"
+                  label="Email *"
                   name="email"
                   type="email"
                   placeholder="dsaunders@gmail.com"
                   required={true}
                 />
                 <label className="pt-4 form-field-label">
-                  Message*
+                  Message *
                   <textarea
                     name="message"
                     placeholder="Have any questions about Leadgeek or arbitrage? Ask away..."

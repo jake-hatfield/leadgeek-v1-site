@@ -3,6 +3,7 @@ import { navigate, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import axios from "axios"
+import * as qs from "query-string"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
@@ -13,6 +14,7 @@ import PasswordFormField from "components/utils/PasswordFormField"
 import Marquee from "react-fast-marquee"
 import Spinner from "components/utils/Spinner"
 import Bullet from "assets/svgs/bullet.svg"
+import { QueryCursor } from "mongoose"
 // import OgImage from "assets/images/og/og-contact.jpg"
 
 const ContactPage = ({ data, location }) => {
@@ -35,10 +37,10 @@ const ContactPage = ({ data, location }) => {
     lastName: "",
     email: "",
     password: "",
-    method: "",
-    audienceSize: null,
+    platform: "",
+    audience: "",
   })
-  const { email, password, firstName, lastName } = formData
+  const { email, password, firstName, lastName, platform, audience } = formData
 
   const onChange = e => {
     setFormData({
@@ -53,8 +55,18 @@ const ContactPage = ({ data, location }) => {
     }
   }, [checkedTOS])
 
-  const onSuccessfulSubmission = () =>
-    navigate("/affiliates/application-success/")
+  const onSuccessfulSubmission = axiosOptions => {
+    axios(axiosOptions)
+      .then(res => {
+        console.log(res)
+        return navigate("/affiliates/application-success/")
+      })
+      .catch(error => {
+        console.log(error)
+        setCheckoutError("There was an error submitting the application.")
+        return setProcessing(false)
+      })
+  }
 
   const onSubmit = async e => {
     e.preventDefault()
@@ -64,6 +76,7 @@ const ContactPage = ({ data, location }) => {
       setProcessing(false)
       return
     }
+
     const firstNameCapitalized =
       firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
     const lastNameCapitalized =
@@ -73,24 +86,41 @@ const ContactPage = ({ data, location }) => {
     // create affiliate
     try {
       setProcessing(true)
+
       const lowerCaseEmail = email.toLowerCase()
-      console.log(lowerCaseEmail)
-      const { data: userRes } = await axios.post(
-        "/.netlify/functions/create-affiliate",
-        {
-          name,
-          email: lowerCaseEmail,
-          password,
-        }
-      )
-      if (userRes.message === "User successfully added.") {
-        onSuccessfulSubmission()
-      } else {
-        setCheckoutError(
-          "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."
-        )
-        setProcessing(false)
+      const formData = {
+        name,
+        email: lowerCaseEmail,
+        platform,
+        audience,
       }
+
+      console.log(formData)
+      console.log(qs.stringify(formData))
+
+      const axiosOptions = {
+        url: location.pathname,
+        method: "post",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        data: qs.stringify(formData),
+      }
+      onSuccessfulSubmission(axiosOptions)
+      //   const { data: userRes } = await axios.post(
+      //     "/.netlify/functions/create-affiliate",
+      //     {
+      //       name,
+      //       email: lowerCaseEmail,
+      //       password,
+      //     }
+      //   )
+      //   if (userRes.message === "User successfully added.") {
+      //     onSuccessfulSubmission()
+      //   } else {
+      //     setCheckoutError(
+      //       "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."
+      //     )
+      //     setProcessing(false)
+      //   }
     } catch (error) {
       console.log(error.message)
       setCheckoutError(
@@ -272,13 +302,17 @@ const ContactPage = ({ data, location }) => {
                     label="Method(s) of promotion *"
                     type="text"
                     name="platform"
+                    value={platform}
+                    onChange={onChange}
                     placeholder="YouTube Channel, Discord, www.myblog.com"
                     required={true}
                   />
                   <FormField
                     label="Approximate audience size"
                     type="number"
-                    name="name"
+                    name="audience"
+                    value={audience}
+                    onChange={onChange}
                     placeholder="3000"
                   />
                   <div className="mt-6 md:flex md:items-center text-gray-800">
