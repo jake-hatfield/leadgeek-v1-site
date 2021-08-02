@@ -6,6 +6,7 @@ const CO_NAME = process.env.GATSBY_CO_NAME
 
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
+const nodemailer = require("nodemailer")
 const User = require("../models/User")
 
 const statusCode = 200
@@ -25,11 +26,12 @@ const connectToDatabase = async uri => {
 }
 
 const pushToDatabase = async (db, data) => {
-  const { name, email, password } = data
+  const { name, email, password, audience, platform } = data
 
   // Ensure we have the required data before proceeding
   if (!name || !email || !password) {
     const message = "Required information is missing."
+    console.log(message)
     return {
       statusCode,
       headers,
@@ -39,6 +41,7 @@ const pushToDatabase = async (db, data) => {
       }),
     }
   }
+
   try {
     let user = await db.collection(CO_NAME).findOne({ email })
     if (user) {
@@ -77,16 +80,69 @@ const pushToDatabase = async (db, data) => {
 
     await db.collection(CO_NAME).insertMany([user])
     const message = "User successfully added."
+    console.log(message)
 
-    return {
-      statusCode,
-      headers,
-      body: JSON.stringify({
-        status: "success",
-        message,
-      }),
+    // send email
+    const transporter = nodemailer.createTransport({
+      name: "improvmx",
+      host: "smtp.improvmx.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.GATSBY_EMAIL_ADDRESS,
+        pass: process.env.GATSBY_EMAIL_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+      debug: true,
+    })
+
+    const mailOptions = {
+      from: '"Leadgeek Support" <support@leadgeek.io>',
+      to: `"Leadgeek Affiliates" <affiliates@leadgeek.io`,
+      subject: "New Affiliate Submission",
+      text:
+        `${name} (${email}) has submitted an affiliate application.\n\n` +
+        "Details:\n\n" +
+        `Audience size: ${audience}\n` +
+        `Method(s) of promotion: ${platform}\n\n` +
+        "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
     }
+
+    console.log("Sending email...")
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error)
+      } else {
+        console.log("Server is ready to take our messages")
+        transporter.sendMail(mailOptions, (err, res) => {
+          if (err) {
+            console.error("There was an error sending the email: ", err)
+            return {
+              statusCode,
+              headers,
+              body: JSON.stringify({
+                status: "failure",
+                message: "There was an error. Please contact support",
+              }),
+            }
+          } else {
+            console.log("Email sent successfully. Here are the details:", res)
+            return {
+              statusCode,
+              headers,
+              body: JSON.stringify({
+                status: "success",
+                message,
+              }),
+            }
+          }
+        })
+      }
+    })
   } catch (error) {
+    console.log("There was an error.")
     console.log(error.message)
     return {
       statusCode: 424,
@@ -99,9 +155,7 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-exports.handler = async (event, context) => {
-  context.callbackWaitsForEmptyEventLoop = false
-  //   Ensure we're making a POST request
+exports.handler = (event, context) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode,
@@ -111,10 +165,5 @@ exports.handler = async (event, context) => {
   }
   // Parse the body into an object
   const data = JSON.parse(event.body)
-  const db = await connectToDatabase(MONGODB_URI)
-  try {
-    return pushToDatabase(db, data)
-  } catch (error) {
-    console.log(error.message)
-  }
+  connectToDatabase(MONGODB_URI).then(db => pushToDatabase(db, data))
 }

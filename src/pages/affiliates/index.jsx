@@ -13,10 +13,9 @@ import PasswordFormField from "components/utils/PasswordFormField"
 import Marquee from "react-fast-marquee"
 import Spinner from "components/utils/Spinner"
 import Bullet from "assets/svgs/bullet.svg"
-import { QueryCursor } from "mongoose"
 // import OgImage from "assets/images/og/og-contact.jpg"
 
-const ContactPage = ({ data, location }) => {
+const AffiliatePage = ({ data, location }) => {
   const title = "Leadgeek Affiliate Program"
   const desc =
     "Become a Leadgeek affiliate and start earning 25% lifetime recurring commissions."
@@ -39,6 +38,7 @@ const ContactPage = ({ data, location }) => {
     platform: "",
     audience: "",
   })
+
   const { email, password, firstName, lastName, platform, audience } = formData
 
   const onChange = e => {
@@ -54,72 +54,49 @@ const ContactPage = ({ data, location }) => {
     }
   }, [checkedTOS])
 
-  const onSuccessfulSubmission = axiosOptions => {
-    axios(axiosOptions)
-      .then(res => {
-        console.log(res)
-        return navigate("/affiliates/application-success/")
-      })
-      .catch(error => {
-        console.log(error)
-        setCheckoutError("There was an error submitting the application.")
-        return setProcessing(false)
-      })
-  }
-
   const onSubmit = async e => {
     e.preventDefault()
-
-    if (!checkedTOS) {
-      setCheckoutError("Please accept the affiliate terms of service.")
-      setProcessing(false)
-      return
-    }
-
-    const firstNameCapitalized =
-      firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
-    const lastNameCapitalized =
-      lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
-    const name = `${firstNameCapitalized} ${lastNameCapitalized}`
 
     // create affiliate
     try {
       setProcessing(true)
 
+      if (!checkedTOS) {
+        setCheckoutError("Please accept the affiliate terms of service.")
+        return setProcessing(false)
+      }
+
+      const firstNameCapitalized =
+        firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
+      const lastNameCapitalized =
+        lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
+      const name = `${firstNameCapitalized} ${lastNameCapitalized}`
       const lowerCaseEmail = email.toLowerCase()
+
       const formData = {
         name,
         email: lowerCaseEmail,
+        password,
         platform,
         audience,
       }
 
-      console.log(formData)
-      console.log(JSON.stringify(formData))
-
-      const axiosOptions = {
-        url: location.pathname,
-        method: "post",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        data: JSON.stringify(formData),
+      const { data: userRes } = await axios.post(
+        "/.netlify/functions/create-affiliate",
+        formData,
+        {
+          "Content-Type": "application/json",
+        }
+      )
+      console.log(userRes.message)
+      if (userRes.message === "User successfully added.") {
+        return navigate("/affiliates/application-success/")
+      } else {
+        setCheckoutError(
+          "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."
+        )
+        setProcessing(false)
       }
-      onSuccessfulSubmission(axiosOptions)
-      //   const { data: userRes } = await axios.post(
-      //     "/.netlify/functions/create-affiliate",
-      //     {
-      //       name,
-      //       email: lowerCaseEmail,
-      //       password,
-      //     }
-      //   )
-      //   if (userRes.message === "User successfully added.") {
-      //     onSuccessfulSubmission()
-      //   } else {
-      //     setCheckoutError(
-      //       "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."
-      //     )
-      //     setProcessing(false)
-      //   }
     } catch (error) {
       console.log(error.message)
       setCheckoutError(
@@ -225,9 +202,7 @@ const ContactPage = ({ data, location }) => {
         <div className="mt-8 md:mt-12 xl:mt-0 xl:mb-32 relative max-w-2xl xl:max-w-7xl md:mx-auto py-8 md:py-16 xl:py-48 px-4">
           <header className="relative md:text-center xl:text-left">
             <h2 className="xl:max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
-              <span className="emphasized-text">
-                Increase your passive income
-              </span>{" "}
+              <span className="emphasized-text">Grow your passive income</span>{" "}
               with these affiliate benefits:
             </h2>
             <ul className="lg:max-w-lg mt-4 xl:mt-6 mx-auto xl:mx-0 bg-white leading-relaxed text-left text-gray-800">
@@ -415,4 +390,4 @@ export const query = graphql`
   }
 `
 
-export default ContactPage
+export default AffiliatePage
