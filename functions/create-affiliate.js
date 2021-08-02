@@ -26,7 +26,7 @@ const connectToDatabase = async uri => {
 }
 
 const pushToDatabase = async (db, data) => {
-  const { name, email, password, audience, platform } = data
+  const { name, email, password } = data
 
   // Ensure we have the required data before proceeding
   if (!name || !email || !password) {
@@ -81,66 +81,6 @@ const pushToDatabase = async (db, data) => {
     await db.collection(CO_NAME).insertMany([user])
     const message = "User successfully added."
     console.log(message)
-
-    // send email
-    const transporter = nodemailer.createTransport({
-      name: "improvmx",
-      host: "smtp.improvmx.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.GATSBY_EMAIL_ADDRESS,
-        pass: process.env.GATSBY_EMAIL_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      debug: true,
-    })
-
-    const mailOptions = {
-      from: '"Leadgeek Support" <support@leadgeek.io>',
-      to: `"Leadgeek Affiliates" <affiliates@leadgeek.io`,
-      subject: "New Affiliate Submission",
-      text:
-        `${name} (${email}) has submitted an affiliate application.\n\n` +
-        "Details:\n\n" +
-        `Audience size: ${audience}\n` +
-        `Method(s) of promotion: ${platform}\n\n` +
-        "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
-    }
-
-    console.log("Sending email...")
-    transporter.verify(function (error, success) {
-      if (error) {
-        console.log(error)
-      } else {
-        console.log("Server is ready to take our messages")
-        transporter.sendMail(mailOptions, (err, res) => {
-          if (err) {
-            console.error("There was an error sending the email: ", err)
-            return {
-              statusCode,
-              headers,
-              body: JSON.stringify({
-                status: "failure",
-                message: "There was an error. Please contact support",
-              }),
-            }
-          } else {
-            console.log("Email sent successfully. Here are the details:", res)
-            return {
-              statusCode,
-              headers,
-              body: JSON.stringify({
-                status: "success",
-                message,
-              }),
-            }
-          }
-        })
-      }
-    })
   } catch (error) {
     console.log("There was an error.")
     console.log(error.message)
@@ -155,7 +95,7 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-exports.handler = (event, context) => {
+exports.handler = (event, context, callback) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode,
@@ -166,4 +106,53 @@ exports.handler = (event, context) => {
   // Parse the body into an object
   const data = JSON.parse(event.body)
   connectToDatabase(MONGODB_URI).then(db => pushToDatabase(db, data))
+
+  // send email
+  const transporter = nodemailer.createTransport({
+    name: "improvmx",
+    host: "smtp.improvmx.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.GATSBY_EMAIL_ADDRESS,
+      pass: process.env.GATSBY_EMAIL_PASSWORD,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+    debug: true,
+  })
+
+  const { name, email, audience, platform } = data
+
+  const mailOptions = {
+    from: '"Leadgeek Support" <support@leadgeek.io>',
+    to: `"Leadgeek Affiliates" <affiliates@leadgeek.io`,
+    subject: "New Affiliate Submission",
+    text:
+      `${name} (${email}) has submitted an affiliate application.\n\n` +
+      "Details:\n\n" +
+      `Audience size: ${audience}\n` +
+      `Method(s) of promotion: ${platform}\n\n` +
+      "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
+  }
+
+  console.log("Sending email...")
+
+  console.log("Server is ready to take our messages")
+  transporter.sendMail(mailOptions, (err, res) => {
+    if (err) {
+      console.error("There was an error sending the email: ", err)
+      callback(error)
+    } else {
+      console.log("Email sent successfully. Here are the details:", res)
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({
+          status: "success",
+          message: "Affiliate submission successful.",
+        }),
+      })
+    }
+  })
 }

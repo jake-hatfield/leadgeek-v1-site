@@ -81,15 +81,14 @@ const AffiliatePage = ({ data, location }) => {
         audience,
       }
 
-      const { data: userRes } = await axios.post(
+      const { data } = await axios.post(
         "/.netlify/functions/create-affiliate",
         formData,
         {
           "Content-Type": "application/json",
         }
       )
-      console.log(userRes.message)
-      if (userRes.message === "User successfully added.") {
+      if (data.message === "Affiliate submission successful.") {
         return navigate("/affiliates/application-success/")
       } else {
         setCheckoutError(
