@@ -64,7 +64,7 @@ const IndexPage = ({ data, location }) => {
           />
         </HeaderWrapper>
       </section>
-      <section className="relative mt-12 lg:mt-32 pt-40 pb-14 bg-gray-100 md:text-center text-gray-900">
+      <section className="relative mt-12 lg:mt-32 pt-40 pb-16 bg-gray-100 md:text-center text-gray-900">
         <DividerTop className="divider-top text-gray-100" />
         <DividerBottom className="divider-bottom text-gray-100" />
         <div className="-mt-56 lg:-mt-72 mx-auto px-4 lg:px-8 max-w-4xl lg:max-w-5xl">

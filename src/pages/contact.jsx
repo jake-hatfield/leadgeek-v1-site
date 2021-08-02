@@ -97,7 +97,7 @@ const ContactPage = ({ location }) => {
                   Message*
                   <textarea
                     name="message"
-                    placeholder="So...what is arbitrage?"
+                    placeholder="Have any questions about Leadgeek or arbitrage? Ask away..."
                     required
                     className="mt-2 resize-none pt-2 px-2 pb-16 w-full rounded-md text-sm border border-gray-200 hover:border-purple-300 placeholder-gray-300 ring-purple"
                   />

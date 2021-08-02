@@ -464,10 +464,6 @@ const TestimonialFull = ({
   return (
     <article
       className={`relative mt-16 lg:mt-24 md:flex justify-center text-center transform ${position}`}
-      data-sal="fade"
-      data-sal-delay="500"
-      data-sal-duration="500"
-      data-sal-easing="ease in out"
     >
       <div
         className={`relative z-40 w-full md:max-w-xl lg:max-w-xl transform ${rotate} transition-main`}

@@ -38,7 +38,10 @@ const Layout = ({ children, location, popup }) => {
         buttonWrapperClasses="mt-4 md:mt-0 md:ml-4 flex-none"
         buttonClasses="block w-full md:w-auto cta-link inter"
       >
-        We use{" "}
+        <span role="img" aria-label="Waving Emoji">
+          👋
+        </span>{" "}
+        Hi there! We use{" "}
         <AnchorLink
           to={`/privacy#cookies`}
           title="Leadgeek cookie policy"
