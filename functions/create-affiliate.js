@@ -140,7 +140,7 @@ exports.handler = async (event, context) => {
     }
 
     console.log("Sending email...")
-    transporter.sendMail(mailOptions, (error, res) => {
+    await transporter.sendMail(mailOptions, (error, res) => {
       if (error) {
         console.error("There was an error sending the email: ", error)
         return {
