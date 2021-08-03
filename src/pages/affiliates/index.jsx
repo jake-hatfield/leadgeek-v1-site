@@ -289,7 +289,7 @@ const AffiliatePage = ({ data, location }) => {
                       <span className="text-xs md:text-sm">
                         I agree to the affiliate{" "}
                         <a
-                          href="/terms/#affiliates"
+                          href="/affiliates/terms/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="secondary-link"
