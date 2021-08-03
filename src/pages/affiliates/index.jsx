@@ -170,7 +170,7 @@ const AffiliatePage = ({ data, location }) => {
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-24 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
               <Img
-                fluid={data.detailsImage.childImageSharp.fluid}
+                fluid={data.affPanel.childImageSharp.fluid}
                 alt="Leadgeek app feed"
                 className="w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl"
               />
@@ -368,7 +368,7 @@ const benefits = [
 
 export const query = graphql`
   query {
-    detailsImage: file(relativePath: { eq: "details.png" }) {
+    affPanel: file(relativePath: { eq: "aff-screenshot.png" }) {
       id
       childImageSharp {
         fluid(maxWidth: 958, quality: 90) {
