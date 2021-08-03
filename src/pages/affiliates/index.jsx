@@ -216,20 +216,10 @@ const AffiliatePage = ({ data, location }) => {
           <div className="mt-12 xl:mt-0 block xl:absolute xl:inset-y-0 xl:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 xl:py-4 transform xl:translate-y-48 xl:translate-x-24">
             <div className="xl:h-full xl:pl-12 xl:-mr-64">
               <form
-                name="Affiliate Application"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={e => onSubmit(e)}
                 id="affiliate-application"
                 className="w-full max-w-md mx-auto rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1"
               >
-                <input type="hidden" name="bot-field" />
-                <input
-                  type="hidden"
-                  name="form-name"
-                  value="Affiliate Application"
-                />
                 <div className="pt-6 pb-2 px-4 md:px-8">
                   <div className="md:flex justify-between">
                     <FormField

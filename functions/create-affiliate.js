@@ -138,8 +138,6 @@ exports.handler = (event, context, callback) => {
   }
 
   console.log("Sending email...")
-
-  console.log("Server is ready to take our messages")
   transporter.sendMail(mailOptions, (err, res) => {
     if (err) {
       console.error("There was an error sending the email: ", err)
