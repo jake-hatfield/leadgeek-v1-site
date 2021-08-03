@@ -97,6 +97,11 @@ exports.handler = async function (event) {
 
   try {
     createSubscriber(data)
+    return {
+      statusCode,
+      headers,
+      body: JSON.stringify({ status: "success", message }),
+    }
   } catch (error) {
     console.log(error)
   }
