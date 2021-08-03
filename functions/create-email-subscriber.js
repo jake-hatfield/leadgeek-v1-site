@@ -100,7 +100,10 @@ exports.handler = async function (event) {
     return {
       statusCode,
       headers,
-      body: JSON.stringify({ status: "success", message }),
+      body: JSON.stringify({
+        status: "success",
+        message: "Contact was added successfully.",
+      }),
     }
   } catch (error) {
     console.log(error)
