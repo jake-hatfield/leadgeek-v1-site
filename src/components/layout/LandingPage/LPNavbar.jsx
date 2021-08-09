@@ -23,12 +23,12 @@ const Navbar = () => {
             </p>
             <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
               <AnchorLink
-                to={"#pricing"}
-                title="See Leadgeek pricing plans"
+                to={"#leads"}
+                title="See the latest arbitrage leads"
                 className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start sourcing now
+                View the latest leads
               </AnchorLink>
             </div>
           </div>

@@ -32,7 +32,14 @@ const createSubscriber = async data => {
         },
       ],
     })
-    return { statusCode, headers, body: "Contact was updated." }
+    return {
+      statusCode,
+      headers,
+      body: JSON.stringify({
+        status: "success",
+        message: "Contact was updated.",
+      }),
+    }
   } else {
     //   create a new subscriber w/ tags
     const res = await mailchimp.lists.addListMember(listId, {
@@ -49,6 +56,7 @@ const createSubscriber = async data => {
     let message
     if (res.id) {
       message = "Contact was added successfully."
+      console.log(message)
       const addToAutomation = await mailchimp.customerJourneys.trigger(
         2472,
         39572,
@@ -56,7 +64,6 @@ const createSubscriber = async data => {
           email_address: email,
         }
       )
-      console.log(addToAutomation)
       if (addToAutomation === null) {
         return {
           statusCode,
@@ -65,8 +72,10 @@ const createSubscriber = async data => {
         }
       } else {
         message = "Contact could not be added."
+        console.log(message)
+        console.log(res)
         return {
-          statusCode: 400,
+          statusCode,
           headers,
           body: JSON.stringify({ status: "failed", message }),
         }
@@ -74,7 +83,7 @@ const createSubscriber = async data => {
     } else {
       message = "Contact could not be added."
       return {
-        statusCode: 400,
+        statusCode,
         headers,
         body: JSON.stringify({ status: "failed", message }),
       }
@@ -96,7 +105,8 @@ exports.handler = async function (event) {
   const data = JSON.parse(event.body)
 
   try {
-    createSubscriber(data)
+    await createSubscriber(data)
+
     return {
       statusCode,
       headers,

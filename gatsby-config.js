@@ -101,6 +101,7 @@ module.exports = {
           `/order-confirmation`,
           `/contact-success`,
           `/coaching/booking-success`,
+          `/affiliates/application-success`,
           `/404`,
         ],
       },
