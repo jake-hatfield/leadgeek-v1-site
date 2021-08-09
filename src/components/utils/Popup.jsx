@@ -141,7 +141,11 @@ const Popup = ({ show, setShow }) => {
                 onChange={onChange}
                 required
               />
-              <button type="submit" className="w-full mt-4 cta-link inter">
+              <button
+                type="submit"
+                id="submitPopup"
+                className="w-full mt-4 cta-link inter"
+              >
                 Request a free coaching call
               </button>
               <div className="mt-2 md:mt-4 flex items-center justify-center text-gray-500">
@@ -159,7 +163,7 @@ const Popup = ({ show, setShow }) => {
                 </svg>
 
                 <p className="block ml-1 text-xs text-gray-600">
-                  Your email is kept confidential
+                  No spam, your email is kept confidential
                 </p>
               </div>
             </form>
@@ -194,6 +198,7 @@ const Popup = ({ show, setShow }) => {
             <div className="max-w-sm mt-4 mx-auto">
               <button
                 onClick={() => setShow(e => !e)}
+                id="closePopup"
                 className="w-full cta-link inter"
               >
                 Close
@@ -203,6 +208,7 @@ const Popup = ({ show, setShow }) => {
         )}
         <button
           onClick={() => setShow(e => !e)}
+          id="closePopup"
           className="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-500 rounded-md transition duration-100 ease-in-out ring-gray"
         >
           <svg
@@ -219,7 +225,10 @@ const Popup = ({ show, setShow }) => {
           </svg>
         </button>
       </article>
-      <div className="fixed z-30 top-0 right-0 h-screen w-full bg-gray-900 opacity-75" />
+      <div
+        id="closePopup"
+        className="fixed z-30 top-0 right-0 h-screen w-full bg-gray-900 opacity-75"
+      />
     </div>
   )
 }
