@@ -458,7 +458,7 @@ const CheckoutForm = ({
             required
           />
           {checkoutError && (
-            <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 shadow-tealSm rounded-lg">
+            <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 rounded-lg">
               <div className="flex">
                 <div>
                   <svg
@@ -500,7 +500,7 @@ const CheckoutForm = ({
               <span className="text-xs md:text-sm">
                 I agree to the{" "}
                 <a
-                  href="/terms"
+                  href="/terms/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="secondary-link"

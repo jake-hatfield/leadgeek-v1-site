@@ -15,10 +15,6 @@ body {
   font-family: Inter, sans-serif !important;
 }
 
-.text-shadow {
-  text-shadow: 3px 3px 0px #a2a5fc, 5px -3px 0px #8eedc7;
-}
-
 ::selection {
   background: #c6f7e2;
 }
@@ -74,9 +70,41 @@ body {
   box-shadow: 3px 3px 0 #243b53;
 }
 
-.svg-shadow-purple {
-  -webkit-filter: drop-shadow(3px 3px 0 #a2a5fc);
-  filter: drop-shadow(3px 3px 0 #a2a5fc);
+.shadow-purpleSm {
+  @apply ring-2 md:ring-4 ring-purple-500 ring-opacity-50 shadow-lg;
+}
+
+.shadow-purpleMd {
+  @apply ring-8 ring-purple-500 ring-opacity-50 shadow-2xl;
+}
+
+.shadow-pinkSm {
+  @apply ring-2 md:ring-4 ring-pink-600 ring-opacity-50 shadow-lg;
+}
+
+.shadow-pinkMd {
+  @apply ring-8 ring-pink-600 ring-opacity-50 shadow-2xl;
+}
+
+.shadow-tealSm {
+  @apply ring-2 md:ring-4 ring-teal-500 ring-opacity-50 shadow-lg;
+}
+
+.shadow-tealMd {
+  @apply ring-8 ring-teal-500 ring-opacity-50 shadow-2xl;
+}
+
+.shadow-graySm {
+  @apply ring-2 md:ring-4 ring-gray-900 ring-opacity-50 shadow-lg;
+}
+
+.shadow-grayMd {
+  @apply ring-8 ring-gray-900 ring-opacity-50 shadow-2xl;
+}
+
+.svg-shadow {
+  -webkit-filter: drop-shadow(3px 3px 0 #9fb3c8);
+  filter: drop-shadow(3px 3px 0 #9fb3c8);
 }
 
 .card {
@@ -208,7 +236,7 @@ body {
 }
 
 .cta-link {
-  @apply py-3 px-4 lg:px-6 rounded-lg shadow-purpleSm hover:shadow-purpleMd border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm md:text-base hover:bg-purple-600 text-white transition-main ring-purple;
+  @apply py-3 px-4 lg:px-6 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm md:text-base hover:bg-purple-600 text-white transition-main ring-purple;
 }
 
 .cta-link-center {
@@ -217,6 +245,13 @@ body {
 
 .secondary-link {
   @apply font-semibold hover:text-purple-500 group transition-colors-main;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #486581;
+}
+
+.secondary-link-dark {
+  @apply font-semibold hover:text-pink-600 group transition-colors-main;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: #486581;
@@ -351,7 +386,7 @@ td:last-child {
   position: relative;
   display: block;
   overflow: hidden;
-  @apply rounded-lg w-full stack-sm;
+  @apply rounded-lg w-full shadow-grayMd;
 }
 
 @screen lg {

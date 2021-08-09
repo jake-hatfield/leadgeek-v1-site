@@ -53,16 +53,6 @@ module.exports = {
           900: "#243B53",
         },
       },
-      boxShadow: {
-        purpleSm:
-          "0 1px 3px 0 rgba(93, 85, 250, 0.6), 0 1px 2px 0 rgba(93, 85, 250, 0.3)",
-        purpleMd:
-          "0 4px 6px -1px rgba(93, 85, 250, 0.6), 0 2px 4px -1px rgba(93, 85, 250, 0.3)",
-        tealSm:
-          "0 1px 3px 0 rgba(142,237,199, 0.6), 0 1px 2px 0 rgba(142,237,199, 0.6)",
-        tealMd:
-          "0 4px 6px -1px rgba(142,237,199, 0.6), 0 2px 4px -1px rgba(142,237,199, 0.6)",
-      },
       width: {
         72: "18rem",
       },

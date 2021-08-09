@@ -45,7 +45,7 @@ const FeaturePage = ({ feature }) => {
           svgOne={
             testimonialOne && (
               <div
-                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 shadow-tealMd text-center transition-main w-56 ${testimonialOne.rotate}`}
+                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 text-center transition-main w-56 ${testimonialOne.rotate}`}
               >
                 <blockquote>
                   "{testimonialOne.quote}" -{" "}
@@ -57,7 +57,7 @@ const FeaturePage = ({ feature }) => {
           svgTwo={
             testimonialTwo && (
               <div
-                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-20 shadow-tealMd text-center transition-main w-56 ${testimonialTwo.rotate}`}
+                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-20 text-center transition-main w-56 ${testimonialTwo.rotate}`}
               >
                 <blockquote>
                   "{testimonialTwo.quote}" -{" "}
@@ -75,7 +75,7 @@ const FeaturePage = ({ feature }) => {
             loop
             muted
             playsInline
-            className="w-full rounded-lg border border-gray-900 stack-sm"
+            className="w-full rounded-lg border border-gray-900 shadow-pinkMd"
           >
             <source src={video.webm} type="video/webm" />
             <source src={video.mp4} type="video/mp4" />
@@ -87,7 +87,7 @@ const FeaturePage = ({ feature }) => {
           {faqs.map((faq, i) => (
             <li
               key={i}
-              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark transform ${faq.rotate}`}
+              className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-graySm transform ${faq.rotate}`}
               data-sal="fade"
               data-sal-delay="500"
               data-sal-duration="500"

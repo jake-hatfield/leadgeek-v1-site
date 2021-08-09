@@ -94,14 +94,14 @@ const classes = {
   noteWrapper:
     "hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72",
   note:
-    "py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform shadow-tealMd text-center transition-main w-56 -rotate-6 hover:-rotate-3",
+    "py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform text-center transition-main w-56 -rotate-6 hover:-rotate-3",
   featuresWrapper:
     "relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter",
   featuresContainer: "max-w-screen-2xl mx-auto",
   featuresList:
     "mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left",
   feature:
-    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-64 transition-main shadow-dark",
+    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-80 md:w-64 transition-main shadow-graySm",
   featureHeader: "text-gray-900 group-hover:text-white",
   featureTitle: "text-lg xl:text-xl inter font-black",
   featureDesc: "mt-2 lg:mt-4 leading-relaxed",

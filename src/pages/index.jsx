@@ -6,8 +6,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
-import PrimaryHeader from "../components/PrimaryHeader"
-import CTA from "../components/Cta"
+import PrimaryHeader from "components/PrimaryHeader"
+import CTA from "components/Cta"
 
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "assets/svgs/arrow-short-fat.svg"
@@ -143,7 +143,7 @@ const IndexPage = ({ data, location }) => {
             ))}
           </section>
           <PrimaryHeader
-            title={`Online arbitrage leads are now radically better.`}
+            title={`Amazon online arbitrage is now radically better.`}
             desc={
               <h2>
                 Feel like your arbitrage sourcing is stuck in limbo?{" "}
@@ -235,7 +235,7 @@ const IndexPage = ({ data, location }) => {
               </Link>
             </div>
             <article
-              className={`hidden xl:block xl:absolute xl:bottom-0 xl:left-0 xl:z-20 w-72 mt-16 mx-auto py-4 lg:py-6 px-6 bg-gray-900 rounded-lg text-left text-sm text-teal-300 transition-main shadow-tealSm transform xl:-translate-y-24 xl:-translate-x-32 -rotate-6`}
+              className={`hidden xl:block xl:absolute xl:bottom-0 xl:left-0 xl:z-20 w-72 mt-16 mx-auto py-4 lg:py-6 px-6 bg-gray-900 rounded-lg text-left text-sm text-teal-300 transition-main transform xl:-translate-y-24 xl:-translate-x-32 -rotate-6`}
             >
               <div className="flex items-center text-white">
                 <h3 className="font-bold inter">Amazon online arbitrage</h3>{" "}
@@ -279,11 +279,11 @@ const IndexPage = ({ data, location }) => {
               />
             ))}
           </div>
-          <div className="mt-20 mx-auto relative max-w-xl py-4 lg:py-6 px-6 bg-purple-500 rounded-lg border border-gray-900 shadow-dark text-center text-white leading-relaxed">
+          <div className="mt-20 mx-auto relative max-w-xl py-4 lg:py-6 px-6 bg-gray-100 rounded-lg border border-gray-900 shadow-pinkSm text-center text-gray-900 leading-relaxed">
             <p className="h4">And there's plenty more where these came from.</p>
             <Link
               to={"/stories/"}
-              className="mt-4 lg:mt-6 block md:inline-block py-3 px-4 rounded-lg shadow-tealSm hover:shadow-tealMd border border-gray-900 bg-gray-900 font-semibold text-sm inter hover:bg-gray-800 text-teal-300 transition-main ring-teal"
+              className="mt-4 lg:mt-6 block md:inline-block py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm inter hover:bg-gray-800 text-teal-300 transition-main"
             >
               Read more customer stories
             </Link>
@@ -366,7 +366,7 @@ const IndexPage = ({ data, location }) => {
 const classes = {
   headerWrapper: "relative overflow-hidden bg-splatter",
   testimonialWrapper:
-    "md:flex md:items-center md:justify-center mt-4 md:mt-0 mb-4 container",
+    "hidden md:block md:flex md:items-center md:justify-center mt-4 md:mt-0 mb-4 container",
   heroWrapper: "relative bg-gray-100",
   heroContentWrapper: "relative py-12",
   heroImageWrapper:
@@ -374,20 +374,21 @@ const classes = {
   filterNoteWrapper:
     "hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8",
   filterNote:
-    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-teal-300 text-center transform transition-main -rotate-6 hover:-rotate-3",
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 text-center transform transition-main -rotate-6 hover:-rotate-3",
   searchNoteWrapper:
     "hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56",
   searchNote:
-    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-teal-300 text-center transform transition-main rotate-3 hover:-rotate-2",
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 text-center transform transition-main rotate-3 hover:-rotate-2",
   saveNoteWrapper:
     "hidden lg:block absolute top-0 left-0 z-20 transform -translate-y-36 translate-x-64",
   saveNote:
-    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main -rotate-3 hover:rotate-3",
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-center text-teal-300 transform transition-main -rotate-3 hover:rotate-3",
   metricsNoteWrapper:
     "hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16",
   metricsNote:
-    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 shadow-tealMd text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
-  heroImage: "min-w-full rounded-lg border-2 border-gray-900 shadow-2xl",
+    "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
+  heroImage:
+    "min-w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl",
   heroHeader: "relative pt-12 lg:pb-12 container md:text-center text-gray-900",
   heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
   heroParagraph: "mt-4 lg:mt-6 mx-auto h4",
@@ -399,17 +400,17 @@ const classes = {
   testimonialsWrapper: "mt-12 px-4",
   noteSectionWrapper: "relative pt-8 lg:pt-0 bg-splatter",
   note:
-    "relative max-w-xl lg:max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 stack-sm text-white leading-relaxed",
+    "relative max-w-xl lg:max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 shadow-purpleSm text-white leading-relaxed",
   noteParagraph: "mt-4",
   signature: "w-32 lg:w-40 mt-6 pb-6",
   dividerTop: "divider-top text-gray-100",
   dividerBottom: "divider-bottom text-gray-100",
   retroSun1:
-    "hidden md:block absolute bottom-0 right-0 w-12 md:w-20 lg:w-28 text-purple-500 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45",
+    "hidden md:block absolute bottom-0 right-0 w-12 md:w-20 lg:w-28 text-purple-300 transform md:-translate-y-12 lg:-translate-y-32 -translate-x-12 rotate-45",
   retroSun2:
-    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-600 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
+    "absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-300 transform -translate-y-12 md:-translate-x-2 lg:-translate-x-4",
   retroSun3:
-    "hidden lg:block absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-400 transform -translate-y-12 lg:translate-x-48",
+    "hidden lg:block absolute bottom-0 left-0 w-12 md:w-16 lg:w-24 text-gray-300 transform -translate-y-12 lg:translate-x-48",
   retroSwirl:
     "hidden md:block absolute bottom-1/2 left-0 w-8 lg:w-12 text-purple-300 transform translate-y-24 translate-x-16",
   longArrow1: "h-40 text-gray-500 transform rotate-180",
@@ -447,7 +448,7 @@ const TestimonialShort = ({ text }) => {
           </svg>
         ))}
       </div>
-      <p className="text-sm text-gray-600 text-left md:text-center">{`"${text}"`}</p>
+      <p className="text-sm text-gray-800 text-left md:text-center">{`"${text}"`}</p>
     </div>
   )
 }
@@ -471,7 +472,7 @@ const TestimonialFull = ({
         <div className="hidden md:block absolute bottom-1/2 w-full max-w-2xl negative-z">
           {bgSvg}
         </div>
-        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark">
+        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-graySm">
           <blockquote className="md:text-lg leading-relaxed text-gray-800">
             {text}
           </blockquote>
@@ -480,7 +481,7 @@ const TestimonialFull = ({
               <Img
                 fluid={image}
                 alt={`${source}'s testimonial`}
-                className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                className="w-12 rounded-full shadow-purpleSm border border-gray-900 bg-gray-900 transform -rotate-6"
               />
               <cite className="ml-4 text-sm font-semibold inter text-gray-900">
                 {source}
@@ -492,10 +493,10 @@ const TestimonialFull = ({
             <p className="mt-2 md:mt-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
           </div>
         </div>
-        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
+        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow">
           <Quote className="h-8 w-8 text-gray-900 transform rotate-180 -translate-x-6" />
         </div>
-        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
+        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow">
           <Quote className="h-8 w-8 text-gray-900 transform -translate-y-2 translate-x-6" />
         </div>
       </div>

@@ -46,7 +46,7 @@ const SignupPage = ({
           </header>
           <div className="md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 mt-6 xl:mt-10">
             <div className="mx-auto h-full w-full max-w-md">
-              <div className="py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark">
+              <div className="py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50">
                 <Elements stripe={stripePromise}>
                   <CheckoutForm
                     plan={plan}

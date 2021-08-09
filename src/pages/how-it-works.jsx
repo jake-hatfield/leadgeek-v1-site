@@ -71,7 +71,7 @@ const IndexPage = ({ data, location }) => {
           <Img
             fluid={data.details.childImageSharp.fluid}
             alt="Leadgeek app details view"
-            className="min-w-full rounded-lg border-2 border-gray-900 shadow-2xl"
+            className="min-w-full rounded-lg shadow-pinkMd"
           />
         </div>
         <div className="relative overflow-x-hidden">
@@ -183,7 +183,7 @@ const IndexPage = ({ data, location }) => {
                 <Img
                   fluid={data.app.childImageSharp.fluid}
                   alt="Online arbitrage lead criteria"
-                  className="w-full rounded-lg border border-gray-900 stack-sm"
+                  className="w-full rounded-lg border border-gray-900 shadow-grayMd"
                 />
                 <div className="hidden xl:block absolute top-0 right-1/2 z-20 transform -translate-y-4 translate-x-80">
                   <div className="relative">
@@ -225,7 +225,7 @@ const IndexPage = ({ data, location }) => {
                 muted
                 playsInline
                 poster={Poster}
-                className="w-full rounded-lg border border-gray-900 stack-sm"
+                className="w-full rounded-lg border border-gray-900 shadow-grayMd"
                 alt="Filter demo"
               >
                 <source src={FiltersWebm} type="video/webm" />
@@ -263,7 +263,7 @@ const IndexPage = ({ data, location }) => {
               <Img
                 fluid={data.detailsClose.childImageSharp.fluid}
                 alt="Detailed view close up"
-                className="w-full rounded-lg border border-gray-900 stack-sm"
+                className="w-full rounded-lg border border-gray-900 shadow-grayMd"
               />
             </div>
             <header className="md:mx-auto lg:mx-0 max-w-xl text-left md:text-center lg:text-left mt-8 lg:mt-0 lg:ml-12 lg:w-2/5 bg-white">

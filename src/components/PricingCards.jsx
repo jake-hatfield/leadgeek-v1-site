@@ -21,13 +21,15 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              plan.title === "Bundle" ? "bg-purple-500 text-white " : "bg-white"
-            } rounded-lg border border-gray-900 w-80 transition-main shadow-dark transform hover:-rotate-2`}
+              plan.title === "Bundle"
+                ? "bg-purple-500 text-white shadow-tealSm"
+                : "bg-white shadow-graySm"
+            } rounded-lg border border-gray-900 w-80 transition-main`}
           >
             {plan.title === "Bundle" && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
-                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300">
                     Get both plans & save {discount}%
                   </span>
                 </div>
@@ -36,7 +38,7 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
             {plan.limited && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
-                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300">
                     Only a few spots left<span className="inter">!</span>
                   </span>
                 </div>
@@ -63,7 +65,7 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
                     to={`/signup/${plan.title.toLowerCase()}/`}
                     className={`${
                       plan.title === "Bundle"
-                        ? "py-3 px-4 rounded-lg shadow-tealSm hover:shadow-tealMd border border-gray-900 bg-gray-900 font-semibold text-sm hover:bg-gray-800 text-teal-300 transition-main ring-teal"
+                        ? "py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm hover:bg-gray-800 text-teal-300 transition-main ring-teal"
                         : "cta-link"
                     } inter block`}
                   >

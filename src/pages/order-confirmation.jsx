@@ -85,7 +85,7 @@ const OrderConfirmationPage = ({ location }) => {
             linkOneText={"Log into the software"}
             svgOne={
               <div
-                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-24 shadow-tealMd text-center transition-main w-56 -rotate-3 hover:-rotate-2`}
+                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-24 text-center transition-main w-56 -rotate-3 hover:-rotate-2`}
               >
                 <blockquote>
                   "Definitely the best site I've found for leads" -{" "}
@@ -95,7 +95,7 @@ const OrderConfirmationPage = ({ location }) => {
             }
             svgTwo={
               <div
-                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-28 shadow-tealMd text-center transition-main w-56 rotate-6 hover:rotate-2`}
+                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-28 text-center transition-main w-56 rotate-6 hover:rotate-2`}
               >
                 <blockquote>
                   "It has been the best decision I have made in acquiring your
@@ -106,7 +106,7 @@ const OrderConfirmationPage = ({ location }) => {
           />
         </HeaderWrapper>
         <section className="container">
-          <header className="relative mx-auto md:max-w-xl lg:max-w-2xl py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-dark transform -rotate-2 hover:rotate-0">
+          <header className="relative mx-auto md:max-w-xl lg:max-w-2xl py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-pinkSm transform -rotate-2 hover:rotate-0">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Next steps...
             </h2>

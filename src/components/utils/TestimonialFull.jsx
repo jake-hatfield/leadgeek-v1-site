@@ -23,7 +23,7 @@ const TestimonialFull = ({
       <div
         className={`relative z-40 w-full ${cardWidth} transform ${rotate} transition-main`}
       >
-        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-dark">
+        <div className="relative py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-graySm">
           <blockquote
             className={`${
               size === "sm" ? "text-sm" : "md:text-lg"
@@ -51,7 +51,7 @@ const TestimonialFull = ({
             <p className="mt-2 md:mt-0 font-semibold text-xs lg:text-sm text-gray-600 inter">{`${desc} FBA seller`}</p>
           </div>
         </div>
-        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow-purple">
+        <div className="absolute top-0 left-0 font-bold text-5xl svg-shadow">
           <Quote
             className={`${
               size === "sm"
@@ -60,7 +60,7 @@ const TestimonialFull = ({
             } text-gray-900 transform rotate-180`}
           />
         </div>
-        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow-purple">
+        <div className="absolute bottom-0 right-0 font-bold text-5xl svg-shadow">
           <Quote
             className={`${
               size === "sm" ? "h-6 w-6 translate-x-4" : "h-8 w-8 translate-x-6"

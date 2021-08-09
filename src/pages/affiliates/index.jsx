@@ -172,7 +172,7 @@ const AffiliatePage = ({ data, location }) => {
               <Img
                 fluid={data.affPanel.childImageSharp.fluid}
                 alt="Leadgeek app feed"
-                className="w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl"
+                className="w-full rounded-lg shadow-purpleMd ring-opacity-50 shadow-2xl"
               />
             </div>
           </div>
@@ -218,7 +218,7 @@ const AffiliatePage = ({ data, location }) => {
               <form
                 onSubmit={e => onSubmit(e)}
                 id="affiliate-application"
-                className="w-full max-w-md mx-auto rounded-lg bg-white border border-gray-900 shadow-dark transform -rotate-1"
+                className="w-full max-w-md mx-auto rounded-lg bg-white border border-gray-900 shadow-pinkSm transform md:-rotate-1"
               >
                 <div className="pt-6 pb-2 px-4 md:px-8">
                   <div className="md:flex justify-between">

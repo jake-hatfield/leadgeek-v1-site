@@ -134,7 +134,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                   muted
                   playsInline
                   poster={Poster}
-                  className="ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
+                  className="shadow-pinkMd rounded-lg"
                   alt="Amazon online arbitrage list video"
                 >
                   <source src={FeedWebm} type="video/webm" />
@@ -206,7 +206,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                   <Img
                     fluid={data.testimonialFrank.childImageSharp.fluid}
                     alt={`Frank's testimonial`}
-                    className="w-10 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                    className="w-10 rounded-full border border-gray-900 bg-gray-900 transform -rotate-6"
                   />
                   <div className="md:flex items-center">
                     <cite className="ml-4 inter font-black">Frank</cite>
@@ -231,7 +231,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               <Img
                 fluid={data.heroImage.childImageSharp.fluid}
                 alt="Leadgeek app feed"
-                className="w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-teal-500 ring-opacity-50 shadow-2xl"
+                className="w-full rounded-lg shadow-tealMd"
               />
             </div>
           </div>
@@ -283,7 +283,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                   <Img
                     fluid={data.testimonialCris.childImageSharp.fluid}
                     alt={`Cris's testimonial`}
-                    className="w-10 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                    className="w-10 rounded-full border border-gray-900 bg-gray-900 transform -rotate-6"
                   />
                   <div className="md:flex items-center">
                     <cite className="ml-4 inter font-black">Cris</cite>
@@ -308,7 +308,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               <Img
                 fluid={data.detailsImage.childImageSharp.fluid}
                 alt="Leadgeek detailed view"
-                className="w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl"
+                className="w-full rounded-lg shadow-pinkMd"
               />
             </div>
           </div>
@@ -349,7 +349,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-8 translate-x-2 lg:translate-x-12">
+              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-8 translate-x-2 lg:translate-x-12">
                 <span>
                   <span role="img" aria-label="Clock emoji">
                     🕒
@@ -420,7 +420,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                   muted
                   playsInline
                   poster={Poster}
-                  className="ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50 shadow-2xl rounded-lg"
+                  className="shadow-purpleMd rounded-lg"
                   alt="Amazon online arbitrage list video"
                 >
                   <source src={FiltersWebm} type="video/webm" />
@@ -473,7 +473,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
             ></div>
           </header>
           <div className="relative mt-16 w-full max-w-7xl mx-auto">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
               <span>
                 <span role="img" aria-label="Clock emoji">
                   🕒

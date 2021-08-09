@@ -43,9 +43,9 @@ const Layout = ({ children, location, popup }) => {
         </span>{" "}
         Hi there! We use{" "}
         <AnchorLink
-          to={`/privacy#cookies`}
+          to={`/privacy/#cookies`}
           title="Leadgeek cookie policy"
-          className="secondary-link"
+          className="secondary-link-dark"
         >
           cookies
         </AnchorLink>{" "}

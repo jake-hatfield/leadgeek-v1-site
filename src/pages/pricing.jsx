@@ -381,7 +381,7 @@ const PricingPage = ({ location }) => {
             }
             svgTwo={
               <div
-                className={`hidden lg:block absolute bottom-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 translate-y-32 shadow-tealMd text-center transition-main w-56 rotate-3 hover:rotate-6`}
+                className={`hidden lg:block absolute bottom-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-12 translate-y-32 text-center transition-main w-56 rotate-3 hover:rotate-6`}
               >
                 <blockquote>
                   "Leadgeek will pay off in a week" - <cite>Kevin</cite>

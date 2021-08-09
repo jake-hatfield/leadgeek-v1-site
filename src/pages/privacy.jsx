@@ -329,7 +329,7 @@ const classes = {
   text: "mt-4",
   link: "secondary-link",
   section:
-    "mt-8 container pt-2 pb-4 border border-gray-900 rounded-lg bg-white stack-sm",
+    "mt-8 container pt-2 pb-4 border border-gray-900 rounded-lg bg-white shadow-graySm",
   h2: "mt-4 text-xl font-bold inter bg-white",
 }
 
