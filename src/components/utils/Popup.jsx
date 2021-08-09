@@ -198,7 +198,7 @@ const Popup = ({ show, setShow }) => {
             <div className="max-w-sm mt-4 mx-auto">
               <button
                 onClick={() => setShow(e => !e)}
-                id="closePopup"
+                id="closeSubmittedPopup"
                 className="w-full cta-link inter"
               >
                 Close
