@@ -18,12 +18,12 @@ import LoopyDashed from "assets/svgs/loopy-dashed.svg"
 import WigglyDashed from "assets/svgs/wiggly-2-dashed.svg"
 import ArrowTurnyFat from "assets/svgs/turny-fat.svg"
 import ArrowShortFat from "assets/svgs/arrow-short-fat.svg"
-import OgImage from "assets/images/og/og-online-arbitrage-sourcing-list.jpg"
 import FeedMp4 from "assets/video/the-feed.mp4"
 import FeedWebm from "assets/video/the-feed.webm"
 import FiltersMp4 from "assets/video/filters.mp4"
 import FiltersWebm from "assets/video/filters.webm"
 import Poster from "assets/images/white-bg.png"
+import OgImage from "assets/images/og/og-online-arbitrage-sourcing-list.jpg"
 
 const OnlineArbitrageSourcingListPage = ({ data, location }) => {
   const title = "Online Arbitrage Sourcing List | Leadgeek"

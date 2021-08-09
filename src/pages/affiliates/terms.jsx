@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "components/layout/Layout"
-import OgImage from "assets/images/og/og-terms.jpg"
+import OgImage from "assets/images/og/og-affiliate-terms.jpg"
 
 const AffTermsPage = ({ location }) => {
   const siteTitle = "Leadgeek"

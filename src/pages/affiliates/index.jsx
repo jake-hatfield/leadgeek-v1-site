@@ -13,7 +13,7 @@ import PasswordFormField from "components/utils/PasswordFormField"
 import Marquee from "react-fast-marquee"
 import Spinner from "components/utils/Spinner"
 import Bullet from "assets/svgs/bullet.svg"
-// import OgImage from "assets/images/og/og-contact.jpg"
+import OgImage from "assets/images/og/og-affiliate-index.jpg"
 
 const AffiliatePage = ({ data, location }) => {
   const title = "Leadgeek Affiliate Program"
@@ -115,14 +115,14 @@ const AffiliatePage = ({ data, location }) => {
           description: desc,
           url: "https://leadgeek.io/affliliates/",
           type: "website",
-          //   images: [
-          //     {
-          //       url: OgImage,
-          //       width: 1200,
-          //       height: 630,
-          //       alt: "Become a Leadgeek affiliate",
-          //     },
-          //   ],
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Become a Leadgeek affiliate",
+            },
+          ],
         }}
         language="en"
       />
