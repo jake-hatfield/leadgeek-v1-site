@@ -567,7 +567,6 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               size={"sm"}
               text={
                 <p>
-                  {" "}
                   I love the leads, they're very good.{" "}
                   <span className="emphasized-text">
                     Leadgeek will pay off in a week

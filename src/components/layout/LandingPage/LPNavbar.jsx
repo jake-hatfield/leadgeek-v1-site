@@ -12,7 +12,7 @@ const Navbar = () => {
       <LogoJsonLd logo={Logo} url="https://leadgeek.io/" />
       <header className="relative z-20">
         {/* notification banner */}
-        <aside className="hidden lg:block bg-pink-600 text-white inter">
+        <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
           <div className="py-3 container flex items-center">
             <p className="font-semibold">
               <span role="img" aria-label="Wave emoji">
@@ -21,7 +21,7 @@ const Navbar = () => {
               Hey you! Leadgeek is an easy-to-use, high-tech way of finding
               things to flip on Amazon.
             </p>
-            <div className="ml-2 flex items-center hover:text-gray-900 group transition-colors duration-200">
+            <div className="ml-2 flex items-center hover:text-pink-600 group transition-colors duration-200">
               <AnchorLink
                 to={"#leads"}
                 title="See the latest arbitrage leads"

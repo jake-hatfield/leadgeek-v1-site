@@ -13,8 +13,7 @@ import {
 const LeadSampleTable = ({ leads }) => {
   const classes = {
     tableWrapper: "relative mt-6 container",
-    table:
-      "w-full table-auto bg-white ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg",
+    table: "w-full table-auto bg-white shadow-grayMd rounded-lg",
     tableHeadWrapper: "border-b border-gray-200",
     tableHead:
       "text-left font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap",
