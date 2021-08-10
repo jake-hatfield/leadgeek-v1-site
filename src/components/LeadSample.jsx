@@ -126,7 +126,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
   }
 
   return (
-    <tr className={classes.rowWrapper}>
+    <tr id="leadSampleRow" className={classes.rowWrapper}>
       <td className={classes.defaultCellWrapper}>
         {((data.netProfit >= 7 && data.monthlySales >= 150) ||
           (data.netProfit >= 16 && data.roi >= 0.5 && data.monthlySales > 20) ||
