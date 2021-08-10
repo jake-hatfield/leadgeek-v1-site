@@ -208,11 +208,11 @@ const Popup = ({ show, setShow }) => {
         )}
         <button
           onClick={() => setShow(e => !e)}
-          id="closePopup"
           className="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-500 rounded-md transition duration-100 ease-in-out ring-gray"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            id="closePopup"
             className="h-6 w-6"
             viewBox="0 0 20 20"
             fill="currentColor"

@@ -70,6 +70,7 @@ const LeadSampleTable = ({ leads }) => {
         previousLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            id="leadSamplePrev"
             className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -84,6 +85,7 @@ const LeadSampleTable = ({ leads }) => {
         nextLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            id="leadSampleNext"
             className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -126,7 +128,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
   }
 
   return (
-    <tr id="leadSampleRow" className={classes.rowWrapper}>
+    <tr className={classes.rowWrapper}>
       <td className={classes.defaultCellWrapper}>
         {((data.netProfit >= 7 && data.monthlySales >= 150) ||
           (data.netProfit >= 16 && data.roi >= 0.5 && data.monthlySales > 20) ||
