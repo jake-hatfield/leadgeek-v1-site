@@ -70,7 +70,7 @@ const LeadSampleTable = ({ leads }) => {
         previousLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            id="leadSamplePrev"
+            id="leadSampleNav"
             className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -85,7 +85,7 @@ const LeadSampleTable = ({ leads }) => {
         nextLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            id="leadSampleNext"
+            id="leadSampleNav"
             className="w-6 lg:w-7"
             viewBox="0 0 20 20"
             fill="currentColor"
