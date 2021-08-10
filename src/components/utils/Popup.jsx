@@ -82,6 +82,7 @@ const Popup = ({ show, setShow }) => {
     <div className="relative w-screen">
       <article
         ref={wrapperRef}
+        id="popup"
         className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-40 w-80 md:w-full md:max-w-xl p-4 lg:py-8 lg:px-6 rounded-lg bg-gray-100 ring-4 md:ring-6 lg:ring-8 ring-gray-900 ring-opacity-75 shadow-2xl text-gray-900"
       >
         {count === 1 ? (
@@ -198,7 +199,6 @@ const Popup = ({ show, setShow }) => {
             <div className="max-w-sm mt-4 mx-auto">
               <button
                 onClick={() => setShow(e => !e)}
-                id="closeSubmittedPopup"
                 className="w-full cta-link inter"
               >
                 Close
@@ -212,7 +212,6 @@ const Popup = ({ show, setShow }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            id="closePopup"
             className="h-6 w-6"
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -225,10 +224,7 @@ const Popup = ({ show, setShow }) => {
           </svg>
         </button>
       </article>
-      <div
-        id="closePopup"
-        className="fixed z-30 top-0 right-0 h-screen w-full bg-gray-900 opacity-75"
-      />
+      <div className="fixed z-30 top-0 right-0 h-screen w-full bg-gray-900 opacity-75" />
     </div>
   )
 }
