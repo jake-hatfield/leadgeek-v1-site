@@ -236,7 +236,9 @@ const PrivacyPolicyPage = ({ location }) => {
               other similar technologies may be used to serve you with
               advertisements that may be relevant to you and your interests on
               other websites, applications, and devices, and to regulate the
-              advertisements you receive and measure their effectiveness.
+              advertisements you receive and measure their effectiveness or to
+              use tools such at heatmaps/recordings to better understand how
+              people use our site.
             </p>
             <p className={classes.text}>
               By continuing to navigate our website without changing your cookie

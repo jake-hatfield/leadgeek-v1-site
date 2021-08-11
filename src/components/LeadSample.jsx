@@ -115,6 +115,8 @@ const LeadSampleTable = ({ leads }) => {
 const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
   const { data } = lead
 
+  const [note, setNote] = useState(false)
+
   const datePosted = DateTime.fromISO(data.date).toFormat("LLL dd")
 
   const classes = {
@@ -128,7 +130,15 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
   }
 
   return (
-    <tr className={classes.rowWrapper}>
+    <tr
+      onClick={() => {
+        setNote(true)
+        setTimeout(function () {
+          setNote(false)
+        }, 2000)
+      }}
+      className={classes.rowWrapper}
+    >
       <td className={classes.defaultCellWrapper}>
         {((data.netProfit >= 7 && data.monthlySales >= 150) ||
           (data.netProfit >= 16 && data.roi >= 0.5 && data.monthlySales > 20) ||
@@ -195,6 +205,11 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
       </td>
       {/* date */}
       <td className={classes.mobileCellWrapper}>{datePosted}</td>
+      {note && (
+        <td className="absolute z-10 w-full left-1/2 bg-gray-900 text-teal-300 transform -translate-x-1/2 text-xs md:text-sm lg:text-base text-center uppercase">
+          Details are only for Leadgeek members
+        </td>
+      )}
     </tr>
   )
 }

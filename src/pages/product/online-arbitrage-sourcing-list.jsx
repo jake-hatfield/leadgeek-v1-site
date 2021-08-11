@@ -454,15 +454,14 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               <span role="img" aria-label="Camera emoji">
                 📷
               </span>{" "}
-              Get the most representative idea of how Leadgeek can upgrade your
-              FBA business with the{" "}
+              Get the most representative idea of how Leadgeek can change your
+              FBA business by seeing the metrics of the{" "}
               <strong>
                 exact{" "}
                 <span className="text-pink-600">{prevTwoWeekLeads.length}</span>{" "}
                 arbitrage leads
               </strong>{" "}
-              members got over the last 2 weeks. And there's more where these
-              came from.
+              members got over the last 2 weeks.
             </p>
             <div
               className="mt-4 lg:mt-6 flex items-center"

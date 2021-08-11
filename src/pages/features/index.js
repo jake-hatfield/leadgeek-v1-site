@@ -38,7 +38,7 @@ const FeaturesIndexPage = ({ location }) => {
       <section className={classes.headerWrapper}>
         <HeaderWrapper>
           <PrimaryHeader
-            title={`The arbitrage sourcing list that's loaded with features.`}
+            title={`The arbitrage sourcing list that's loaded with features`}
             desc={
               <p>
                 Leadgeek lets you to find the products you want, when you want

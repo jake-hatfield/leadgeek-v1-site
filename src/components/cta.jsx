@@ -17,7 +17,7 @@ const Cta = ({ mainHeader, desc, links }) => {
         >
           <div className="max-w-sm lg:max-w-lg">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
-              {mainHeader || `Simplify your side-hustle.`}
+              {mainHeader || `Simplify your side-hustle`}
             </h2>
             <div className="mt-4 lg:mt-6 text-gray-800">
               {desc || "Check out the buttons, do the things."}

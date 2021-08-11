@@ -143,7 +143,7 @@ const IndexPage = ({ data, location }) => {
             ))}
           </section>
           <PrimaryHeader
-            title={`Amazon online arbitrage is now radically better.`}
+            title={`Amazon online arbitrage is now radically better`}
             desc={
               <h2>
                 Feel like your arbitrage sourcing is stuck in limbo?{" "}
@@ -209,7 +209,7 @@ const IndexPage = ({ data, location }) => {
           </div>
           <header className={classes.heroHeader}>
             <h2 className={classes.heroH2}>
-              Leadgeek is made for modern Amazon sellers.
+              Leadgeek is made for modern Amazon sellers
             </h2>
             <p className={classes.heroParagraph}>
               <span className="font-semibold">Before using Leadgeek</span>:
@@ -256,7 +256,7 @@ const IndexPage = ({ data, location }) => {
         <div className="container">
           <header>
             <h2 className={classes.testimonialSectionH2}>
-              People who love clarity, love Leadgeek.
+              People who love clarity, love Leadgeek
             </h2>
             <h3 className={classes.testimonialSectionH3}>
               Entrepreneurs, newbies, international, and pro FBA sellers all{" "}

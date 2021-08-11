@@ -38,7 +38,7 @@ const ContactPage = ({ location }) => {
             <div className="relative mx-auto lg:mx-0 max-w-md">
               <div className="relative z-10">
                 <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter">
-                  Get in touch.
+                  Get in touch
                 </h1>
                 <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
                   Have a question? Shoot! We're sharp as a tack.
