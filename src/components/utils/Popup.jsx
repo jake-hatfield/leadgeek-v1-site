@@ -83,29 +83,32 @@ const Popup = ({ show, setShow }) => {
       <article
         ref={wrapperRef}
         id="popup"
-        className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-40 w-80 md:w-full md:max-w-xl p-4 lg:py-8 lg:px-6 rounded-lg bg-gray-100 ring-4 md:ring-6 lg:ring-8 ring-gray-900 ring-opacity-75 shadow-2xl text-gray-900"
+        className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-40 w-72 md:w-full md:max-w-xl p-4 lg:py-8 lg:px-6 rounded-lg bg-gray-100 ring-4 md:ring-6 lg:ring-8 ring-gray-900 ring-opacity-75 shadow-2xl text-gray-900"
       >
         {count === 1 ? (
           <div>
-            <video
+            {/* <video
               autoPlay
               loop
               muted
               playsInline
-              className="hidden md:block mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
+              className="hidden md:block w-56 mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
               alt="Before an online arbitrage coaching call"
             >
               <source src={SoloSellingBefore} type="video/mp4" />
-            </video>
-            <header className="mt-4 lg:mt-8 md:text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black inter header-height">
-                Figuring out how to sell on Amazon by yourself sucks...
+            </video> */}
+            <header className="md:text-center">
+              <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
+                Figuring out how to sell on Amazon by yourself isn't any fun...
               </h2>
-              <p className="mt-2 text-sm md:text-base lg:text-lg">
-                But it doesn't have to <i>stay</i> that way. Schedule a{" "}
-                <span className="font-bold text-pink-600">100% free</span>{" "}
-                coaching call with an experienced FBA arbitrage seller.{" "}
-                <strong>No strings attached</strong>.{" "}
+              <p className="mt-2 text-xs md:text-sm lg:text-base">
+                But it doesn't have to <i>stay</i> that way.{" "}
+                <strong>
+                  Schedule a{" "}
+                  <span className="font-bold text-pink-600">100% free</span>{" "}
+                  coaching call with an experienced FBA arbitrage seller
+                </strong>
+                . No strings attached.{" "}
                 <span role="img" aria-label="Party emoji">
                   🎉
                 </span>
@@ -152,7 +155,7 @@ const Popup = ({ show, setShow }) => {
               <div className="mt-2 md:mt-4 flex items-center justify-center text-gray-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
+                  className="hidden md:block h-4 w-4"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -162,8 +165,7 @@ const Popup = ({ show, setShow }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-
-                <p className="block ml-1 text-xs text-gray-600">
+                <p className="block ml-1 text-xs text-gray-600 text-center">
                   No spam, your email is kept confidential
                 </p>
               </div>
@@ -171,23 +173,23 @@ const Popup = ({ show, setShow }) => {
           </div>
         ) : (
           <div>
-            <img
+            {/* <img
               src={SoloSellingAfter}
               alt="After an online arbitrage coaching call"
               className="hidden md:block max-w-xs mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
-            />
-            <header className="mt-4 lg:mt-8 md:text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black inter header-height">
+            /> */}
+            <header className="md:text-center">
+              <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
                 Raise the roof!
               </h2>
-              <p className="mt-2 text-sm md:text-base lg:text-lg">
+              <p className="mt-2 text-xs md:text-sm lg:text-base">
                 <strong>
                   Check your email for a link to schedule the call
                 </strong>
                 . If you have any questions, bring 'em on! Otherwise, here are
                 some things we'll discuss:
               </p>
-              <ul className="max-w-md mt-4 mx-auto text-sm md:text-base">
+              <ul className="max-w-md mt-4 mx-auto text-xs md:text-sm lg:text-base">
                 {coachingItems.map((item, i) => (
                   <li key={i} className="mt-2 flex text-left">
                     <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
@@ -208,7 +210,7 @@ const Popup = ({ show, setShow }) => {
         )}
         <button
           onClick={() => setShow(e => !e)}
-          className="absolute top-0 right-0 mt-2 mr-2 text-gray-400 hover:text-gray-500 rounded-md transition duration-100 ease-in-out ring-gray"
+          className="absolute top-0 right-0 p-1 mt-1 mr-1 text-gray-400 hover:text-gray-500 hover:bg-gray-200 rounded-md transition duration-100 ease-in-out ring-gray"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
