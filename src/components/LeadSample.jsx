@@ -13,14 +13,14 @@ import {
 const LeadSampleTable = ({ leads }) => {
   const classes = {
     tableWrapper: "relative mt-6 container",
-    table: "w-full table-auto bg-white shadow-grayMd rounded-lg",
+    table: "w-full max-w-full table-auto bg-white shadow-grayMd rounded-lg",
     tableHeadWrapper: "border-b border-gray-200",
     tableHead:
       "text-left font-semibold text-xs text-gray-600 uppercase tracking-widest whitespace-no-wrap",
-    tableHeadCell: "lg:p-2",
-    tableHeadCellResponsive: "hidden lg:table-cell lg:p-2",
-    tableHeadCellMobileResponsive: "hidden md:table-cell lg:p-2",
-    tableBody: "text-sm text-gray-800",
+    tableHeadCell: "lg:p-1 xl:p-2",
+    tableHeadCellResponsive: "hidden lg:table-cell lg:p-1 xl:p-2",
+    tableHeadCellMobileResponsive: "hidden md:table-cell lg:p-1 xl:p-2",
+    tableBody: "text-xs xl:text-sm text-gray-800",
   }
 
   const ITEMS_PER_PAGE = 15
@@ -119,10 +119,10 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
 
   const classes = {
     rowWrapper: "relative lg:px-1 border-b border-gray-200 hover:bg-gray-100",
-    responsiveCell: "hidden lg:table-cell lg:p-2",
-    profitCellWrapper: "lg:p-2 uppercase",
-    mobileCellWrapper: "hidden md:table-cell lg:p-2",
-    defaultCellWrapper: "lg:p-2",
+    responsiveCell: "hidden lg:table-cell lg:p-1 xl:p-2",
+    profitCellWrapper: "lg:p-1 xl:p-2 uppercase",
+    mobileCellWrapper: "hidden md:table-cell lg:p-1 xl:p-2",
+    defaultCellWrapper: "lg:p-1 xl:p-2",
     defaultSvg: "svg-base",
     valueIndicator: "ml-1 text-gray-400 font-semibold",
   }
@@ -149,7 +149,7 @@ const LeadSampleRow = ({ lead, unitFee, lbFee }) => {
       {/* asin */}
       <td
         className={
-          "relative filter blur select-none hidden lg:table-cell lg:p-2"
+          "relative filter blur select-none hidden lg:table-cell lg:p-1 xl:p-2"
         }
       >
         Restricted

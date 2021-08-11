@@ -187,8 +187,8 @@ const StoriesPage = ({ data, location }) => {
             title={`Seller stories`}
             desc={
               <p>
-                Have your own story to share? It would 100% make our day if you
-                shared it with us.
+                Have your own story to share about Leadgeek? It would 100% make
+                our day if you would let us know about it.
               </p>
             }
             nav

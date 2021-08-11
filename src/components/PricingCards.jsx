@@ -14,22 +14,22 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
           className={`mt-12 lg:mx-2 xl:mx-8 ${
             negativeMarginCards ? "lg:-mt-64" : ""
           } `}
-          data-sal="fade"
-          data-sal-delay={plan.delay}
-          data-sal-duration="500"
-          data-sal-easing="ease in out"
+          //   data-sal="fade"
+          //   data-sal-delay={plan.delay}
+          //   data-sal-duration="500"
+          //   data-sal-easing="ease in out"
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
               plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"
                 : "bg-white shadow-graySm"
-            } rounded-lg border border-gray-900 w-80 transition-main`}
+            } rounded-lg border border-gray-900 w-72 md:w-80 transition-main`}
           >
             {plan.title === "Bundle" && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
-                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300">
+                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
                     Get both plans & save {discount}%
                   </span>
                 </div>
@@ -38,7 +38,7 @@ const PricingCards = ({ margin, negativeMarginCards }) => {
             {plan.limited && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
-                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300">
+                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
                     Only a few spots left<span className="inter">!</span>
                   </span>
                 </div>
