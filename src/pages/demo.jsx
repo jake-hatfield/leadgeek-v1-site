@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { DateTime } from "luxon"
@@ -8,6 +8,7 @@ import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
 import LeadSample from "components/LeadSample"
+import ArrowShortFat from "assets/svgs/arrow-short-fat.svg"
 
 const DemoPage = ({ data, location }) => {
   const title = "See How Leadgeek Works"
@@ -57,36 +58,61 @@ const DemoPage = ({ data, location }) => {
       />
       <section className="relative overflow-hidden bg-splatter">
         <HeaderWrapper
-          bottomPadding={"pb-28 lg:pb-80"}
+          bottomPadding={"pb-28 lg:pb-48"}
           classes={"flex flex-col-reverse md:flex-col"}
         >
           <PrimaryHeader
-            title={`Online arbitrage leads are now radically better.`}
+            title={`Don't dig through information, surface it.`}
             desc={
               <h2>
-                Feel like your arbitrage sourcing is stuck in limbo?{" "}
-                <span className="font-bold">
-                  Turn "I don't know what to sell" into "I have too much to buy"
-                </span>{" "}
-                with a daily list of the best items to flip for profit on
-                Amazon.
+                Sourcing workarounds are over with, sourcing workflows are
+                taking over. LeadGeek feels familiar to how you find products
+                now, but it's a much more efficient experience.{" "}
+                <span className="emphasized-text">
+                  Watch a full walkthrough to see our product in action
+                </span>
+                .
               </h2>
             }
-            nav
-            linkOne={`pricing`}
-            linkOneText={`See Leadgeek plans`}
           />
         </HeaderWrapper>
       </section>
-      <section className="-mt-20 md:-mt-16 relative container flex justify-center">
-        <div className="video-responsive">
+      <section
+        id="demo"
+        className="block relative px-4 pt-4 pb-48 md:pb-56 bg-splatter"
+      >
+        <div className="relative max-w-7xl mx-auto video-responsive">
           <iframe
-            className="video-responsive-item"
-            title="Leadgeek Demo"
-            src="https://player.vimeo.com/video/461992164"
+            src="https://player.vimeo.com/video/587929562?autoplay=1&amp;autopause=0&amp;muted=1"
             frameBorder="0"
-            allow="autoplay; fullscreen"
+            allow="autoplay; fullscreen;"
             allowFullScreen
+            title="Take a Tour of Leadgeek"
+            className="video-responsive-item"
+          />
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div>
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="500"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-x-20 lg:-translate-x-64 -rotate-12"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="700"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="1000"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-x-24 lg:translate-x-56 rotate-12"
           />
         </div>
       </section>
@@ -123,7 +149,7 @@ const DemoPage = ({ data, location }) => {
               data-sal-easing="ease in out"
             ></div>
           </header>
-          <div className="relative mt-16 w-full max-w-7xl mx-auto">
+          <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
             <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
               <span>
                 <span role="img" aria-label="Clock emoji">
@@ -136,6 +162,15 @@ const DemoPage = ({ data, location }) => {
             </div>
             <LeadSample />
           </div>
+        </div>
+        <div className="mt-4 lg:mt-6 flex items-center justify-center">
+          <Link
+            to={"/pricing/"}
+            title="See Leadgeek plans"
+            className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
+          >
+            See Leadgeek plans
+          </Link>
         </div>
       </section>
     </Layout>

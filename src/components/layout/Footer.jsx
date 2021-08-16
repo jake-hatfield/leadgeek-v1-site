@@ -8,7 +8,7 @@ const Footer = () => {
     {
       header: "Product",
       items: [
-        { title: "How it works", link: "how-it-works" },
+        { title: "How it works", link: "demo" },
         { title: "Tour features", link: "features" },
         { title: "Pricing", link: "pricing" },
       ],

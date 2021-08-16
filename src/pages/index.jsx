@@ -155,7 +155,7 @@ const IndexPage = ({ data, location }) => {
               </h2>
             }
             nav
-            linkOne={`how-it-works`}
+            linkOne={`demo`}
             linkOneText={`See how it works`}
             linkTwo={`pricing`}
             linkTwoText={`or sign up now`}
@@ -348,7 +348,7 @@ const IndexPage = ({ data, location }) => {
       {/* cta */}
       <CTA
         links={[
-          { title: "See how it works", link: "how-it-works" },
+          { title: "See how it works", link: "demo" },
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "pricing" },
         ]}
