@@ -485,9 +485,9 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
       >
         <div className="relative max-w-7xl mx-auto video-responsive">
           <iframe
-            src="https://player.vimeo.com/video/587929562"
+            src="https://player.vimeo.com/video/587929562?autoplay=1&amp;autopause=0&amp;muted=1"
             frameBorder="0"
-            allow="fullscreen;"
+            allow="autoplay; fullscreen;"
             allowFullScreen
             title="Take a Tour of Leadgeek"
             className="video-responsive-item"
