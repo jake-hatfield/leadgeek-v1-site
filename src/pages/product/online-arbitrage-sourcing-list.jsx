@@ -548,7 +548,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
       >
         <DividerTop className="divider-top text-gray-100" />
         <DividerBottom className="divider-bottom text-gray-100" />
-        <header className="relative md:text-center px-4">
+        <header className="relative max-w-7xl mx-auto md:text-center px-4">
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 inter header-height">
             <span className="emphasized-text">Fair, no-nonsense</span> pricing
             on every plan.
@@ -559,6 +559,17 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
             needs. Subscriptions are straightforward with{" "}
             <strong>no "gotchas," contracts, or hidden fees</strong>.
           </p>
+          <span className="block md:inline-block xl:absolute xl:right-0 mt-4 p-2 rounded-lg transform xl:rotate-12 bg-pink-600 text-center text-white inter text-sm font-bold">
+            Get 100% peace of mind - we{" "}
+            <AnchorLink
+              to={"/terms/#price-matching"}
+              title="See Leadgeek's price matching policy"
+              className="underline hover:text-gray-900"
+            >
+              price match
+            </AnchorLink>
+            !
+          </span>
         </header>
         <div className="w-full mt-8 lg:mt-16 px-4 pb-4">
           <PricingCards margin={"lg:mt-0"} />

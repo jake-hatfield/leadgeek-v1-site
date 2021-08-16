@@ -201,7 +201,7 @@ const TermsPage = ({ location }) => {
             <h2 id="cancellation-policy" className={classes.h2}>
               Cancellations and refunds
             </h2>
-            <p className={classes.paragrap}>
+            <p className={classes.text}>
               You can cancel your subscription at any time by contacting us
               using the contact information provided below. Your cancellation
               will take effect at the end of the current paid term.
@@ -246,6 +246,24 @@ const TermsPage = ({ location }) => {
               ungated for the majority of established Amazon Seller accounts, so
               please ensure your account meets these criteria before joining.
             </p>{" "}
+          </section>
+          <section className={classes.section}>
+            <h2 id="price-matching" className={classes.h2}>
+              Price matching
+            </h2>
+            <p className={classes.text}>
+              We firmly believe that Leadgeek offers the best way to source new
+              products to arbitrage on Amazon. Consequently, we will price match
+              any competitor offering the same quality and quantity of daily
+              leads. This includes, at minimum, exact matches to profit, ROI,
+              and sales velocity criteria.
+            </p>
+            <p className={classes.text}>
+              In order to qualify for a price-matched rate, please message via
+              the contact page or by email with a link to the competitor you'd
+              like us to look into price matching. A successful price match and
+              reduced rate is solely up to the discretion of Leadgeek members.
+            </p>
           </section>
           <section className={classes.section}>
             <h2 className={classes.h2}>Prohibited activities</h2>
