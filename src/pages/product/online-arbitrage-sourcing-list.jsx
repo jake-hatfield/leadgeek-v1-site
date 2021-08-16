@@ -315,7 +315,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         </div>
       </section>
       {/* section 3: Criteria */}
-      <section className="relative overflow-hidden bg-splatter">
+      <section className="relative overflow-hidden lg:pb-48 bg-splatter">
         <div className="mt-8 md:mt-12 mb-12 relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-0 px-4 flex flex-col-reverse lg:flex-none">
           <header className="relative md:text-center lg:text-left">
             <h2 className="lg:max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
@@ -432,11 +432,10 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         </div>
       </section>
       {/* section 4: Real-time leads */}
-      <section
-        id="leads"
-        className="block relative pb-24 md:pb-24 lg:pb-48 bg-splatter"
-      >
-        <div className="mt-8 md:mt-12 lg:mt-48 pb-16 md:mx-auto relative z-10">
+      <section id="leads" className="block relative py-12 md:py-20 bg-gray-100">
+        <DividerTop className="divider-top text-gray-100" />
+        <DividerBottom className="divider-bottom text-gray-100" />
+        <div className="md:mx-auto relative z-10">
           <header className="relative container md:text-center">
             <ArrowTurnyFat
               data-sal="fade"
@@ -449,7 +448,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               No BS. Here are the{" "}
               <span className="emphasized-text">exact leads</span> we find.
             </h2>
-            <p className="max-w-2xl mt-4 lg:mt-6 mx-auto text-gray-900 text-lg bg-white">
+            <p className="max-w-2xl mt-4 lg:mt-6 mx-auto text-gray-900 text-lg">
               We get it, it's hard to trust screenshots.{" "}
               <span role="img" aria-label="Camera emoji">
                 📷
@@ -463,13 +462,6 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               </strong>{" "}
               members got over the last 2 weeks.
             </p>
-            <div
-              className="mt-4 lg:mt-6 flex items-center"
-              data-sal="slide-up"
-              data-sal-delay="1000"
-              data-sal-duration="1000"
-              data-sal-easing="ease in out"
-            ></div>
           </header>
           <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
             <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 lg:translate-x-6 xl:translate-x-12">
@@ -486,32 +478,74 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
           </div>
         </div>
       </section>
-      {/* section 5: Pricing */}
+      {/* section 5: Demo */}
+      <section
+        id="demo"
+        className="block relative px-4 py-48 md:py-56 lg:py-96 bg-splatter"
+      >
+        <div className="relative max-w-7xl mx-auto video-responsive">
+          <iframe
+            src="https://player.vimeo.com/video/587929562?autoplay=1&amp;autopause=0&amp;muted=1"
+            frameBorder="0"
+            allow="autoplay; fullscreen;"
+            allowFullScreen
+            title="Take a Tour of Leadgeek"
+            className="video-responsive-item"
+          />
+          <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+        <div>
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="500"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-10 lg:translate-y-24 -translate-x-20 lg:-translate-x-64 -rotate-12"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="700"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-12 lg:translate-y-16"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="1000"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-16 lg:translate-y-32 translate-x-24 lg:translate-x-56 rotate-12"
+          />
+        </div>
+        <div className="transform rotate-180">
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="700"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-8 lg:-translate-y-16"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="1000"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-12 lg:-translate-y-20 translate-x-24 lg:translate-x-56 rotate-12"
+          />
+          <ArrowShortFat
+            data-sal="fade"
+            data-sal-delay="500"
+            data-sal-duration="1000"
+            data-sal-easing="ease in out"
+            className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-10 lg:-translate-y-12 -translate-x-20 lg:-translate-x-64 -rotate-12"
+          />
+        </div>
+      </section>
+      {/* section 6: Pricing */}
       <section
         id="pricing"
         className="relative py-12 md:py-20 text-gray-900 bg-gray-100"
       >
-        <ArrowShortFat
-          data-sal="fade"
-          data-sal-delay="500"
-          data-sal-duration="1000"
-          data-sal-easing="ease in out"
-          className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-24 lg:-translate-y-48 -translate-x-20 lg:-translate-x-64 -rotate-12"
-        />
-        <ArrowShortFat
-          data-sal="fade"
-          data-sal-delay="700"
-          data-sal-duration="1000"
-          data-sal-easing="ease in out"
-          className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-20 lg:-translate-y-40"
-        />
-        <ArrowShortFat
-          data-sal="fade"
-          data-sal-delay="1000"
-          data-sal-duration="1000"
-          data-sal-easing="ease in out"
-          className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-24 lg:-translate-y-32 translate-x-24 lg:translate-x-56 rotate-12"
-        />
         <DividerTop className="divider-top text-gray-100" />
         <DividerBottom className="divider-bottom text-gray-100" />
         <header className="relative md:text-center px-4">
@@ -530,7 +564,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
           <PricingCards margin={"lg:mt-0"} />
         </div>
       </section>
-      {/* section 6: Testimonials */}
+      {/* section 7: Testimonials */}
       <section className="pt-12 md:pt-20 lg:pt-36 relative bg-splatter">
         <div className="mt-8 md:mt-12 lg:mt-0 pb-16 container md:mx-auto relative z-10">
           <header className="relative md:text-center">
@@ -641,7 +675,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
           </div>
         </div>
       </section>
-      {/* section 7: FAQ */}
+      {/* section 8: FAQ */}
       <section id="faq" className="mb-24 mx-4">
         <Faq />
         <div className="mt-4 lg:mt-6 flex items-center justify-center">

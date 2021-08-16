@@ -106,7 +106,7 @@ const LeadSampleTable = ({ leads }) => {
         nextClassName="ml-0.5 lg:ml-1 p-1 lg:py-2 lg:px-3 rounded-lg bg-white shadow-sm border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
         nextLinkClassName="hover:text-pink-600 cursor-pointer"
         breakClassName="ml-0.5 lg:ml-1 p-2 lg:p-3 rounded-lg bg-white shadow-sm text-xs lg:text-sm font-semibold border border-gray-200 text-gray-600 hover:text-gray-700 transition duration-100 ease-in-out ring-purple"
-        disabledClassName="pointer-events-none bg-gray-200 opacity-50"
+        disabledClassName="pointer-events-none bg-gray-300 opacity-50"
       />
     </>
   )
