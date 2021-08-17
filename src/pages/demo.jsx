@@ -10,14 +10,16 @@ import PrimaryHeader from "components/PrimaryHeader"
 import LeadSample from "components/LeadSample"
 import ArrowShortFat from "assets/svgs/arrow-short-fat.svg"
 
+import OgImage from "assets/images/og/og-demo.jpg"
+
 const DemoPage = ({ data, location }) => {
   const title = "See How Leadgeek Works"
   const desc =
     "Watch a demo and check out the metrics for every arbitrage lead the Leadgeek team has found in the past 2 weeks."
 
   const allLeads = data.allMongodbLeadGeekLeads.edges
-  // calculate business days
 
+  // calculate business days
   const dt = DateTime.now()
   const { availableHolidayMatchers } = dt
   const businessHolidays = [
@@ -43,16 +45,16 @@ const DemoPage = ({ data, location }) => {
         openGraph={{
           title,
           description: desc,
-          url: "https://leadgeek.io/affliliates/",
+          url: "https://leadgeek.io/demo/",
           type: "website",
-          //   images: [
-          //     {
-          //       url: OgImage,
-          //       width: 1200,
-          //       height: 630,
-          //       alt: "Become a Leadgeek affiliate",
-          //     },
-          //   ],
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "See Leadgeek in action",
+            },
+          ],
         }}
         language="en"
       />
