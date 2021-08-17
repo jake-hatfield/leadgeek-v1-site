@@ -3,7 +3,12 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
 
-import { addToMailchimp, getCookie } from "components/utils/utils"
+import {
+  getCookie,
+  stringBeforeAt,
+  capitalize,
+  addToMailchimp,
+} from "components/utils/utils"
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 import Spinner from "components/utils/Spinner"
@@ -20,276 +25,29 @@ const CheckoutForm = ({
   setFormData,
   onSuccessfulCheckout,
 }) => {
-  const { email, password, firstName, lastName } = formData
-  const [isProcessing, setProcessingTo] = useState(false)
-  const [checkedTOS, setCheckedTOS] = useState(false)
+  const { firstName, lastName, email, password } = formData
+
   const [count, setCount] = useState(1)
+  const [isProcessing, setProcessing] = useState(false)
+  const [checkoutError, setCheckoutError] = useState()
+  const [checkedTOS, setCheckedTOS] = useState(false)
   const [lgid, setLgid] = useState(null)
 
+  //   set LGID for affiliate tracking
   useEffect(() => {
     setLgid(getCookie("lgid"))
   }, [])
 
-  useEffect(() => {
-    if (checkedTOS) {
-      setCheckoutError("")
-    }
-  }, [checkedTOS])
-
-  const [passwordShown, setPasswordShown] = useState(false)
-  const togglePasswordVisibility = () => {
-    setPasswordShown(passwordShown ? false : true)
-  }
-  const [checkoutError, setCheckoutError] = useState()
+  //   initialize stripe
   const stripe = useStripe()
   const elements = useElements()
+
+  //   set checkout error if stripe catches one
   const handleCardDetailsChange = ev => {
     ev.error ? setCheckoutError(ev.error.message) : setCheckoutError()
   }
-  const formPagniationTitles = [
-    {
-      title: "Account",
-      numberClasses: `${
-        count < 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
-      } inter`,
-      titleClasses: `${count < 2 ? "text-gray-900" : "text-gray-500"} inter`,
-    },
-    {
-      title: "Billing",
-      numberClasses: `${
-        count === 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
-      } inter`,
-      titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"} inter`,
-    },
-  ]
-  let listSize = 5
-  //   password validation
-  const [lengthValidated, setLengthValidated] = useState(false)
-  const [emailValidated, setEmailValidated] = useState(false)
-  const [pwEmailValidated, setpwEmailValidated] = useState(false)
-  const [commonPasswordValidated, setCommonPasswordValidated] = useState(false)
-  const notValidPassword =
-    !lengthValidated || !pwEmailValidated || !commonPasswordValidated
-  const handleNextPage = (email, notValidPassword, checkedTOS) => {
-    if (!email) {
-      return setCheckoutError("A valid email is required.")
-    } else if (notValidPassword) {
-      return setCheckoutError("A valid password is required.")
-    } else if (!checkedTOS) {
-      setCheckoutError("Please accept the terms of service.")
-    } else {
-      setCount(count + 1)
-      setCheckoutError("")
-    }
-  }
-  const successStyles = "inline-block h-4 w-4 text-teal-400"
-  const errorStyles = "inline-block h-4 w-4 text-red-400"
-  const securityMeasureBullets = [
-    {
-      svg: (
-        <span>
-          {lengthValidated ? (
-            <Bullet className={successStyles} />
-          ) : (
-            <Bullet className={errorStyles} />
-          )}
-        </span>
-      ),
-      content: "Is 7 characters or longer",
-    },
-    {
-      svg: (
-        <span>
-          {pwEmailValidated ? (
-            <Bullet className={successStyles} />
-          ) : (
-            <Bullet className={errorStyles} />
-          )}
-        </span>
-      ),
-      content: `Does not match or significantly contain your email, e.g. don't use "email123"`,
-    },
-    {
-      svg: (
-        <span>
-          {commonPasswordValidated ? (
-            <Bullet className={successStyles} />
-          ) : (
-            <Bullet className={errorStyles} />
-          )}
-        </span>
-      ),
-      content: (
-        <span>
-          Is not a member of this list of{" "}
-          <a
-            href="https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-100.txt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="secondary-link"
-          >
-            truly terrible passwords
-          </a>
-        </span>
-      ),
-    },
-  ]
-  const terriblePasswords = [
-    "123456",
-    "password",
-    "12345678",
-    "qwerty",
-    "123456789",
-    "12345",
-    "1234",
-    "111111",
-    "1234567",
-    "dragon",
-    "123123",
-    "baseball",
-    "abc123",
-    "football",
-    "monkey",
-    "letmein",
-    "696969",
-    "shadow",
-    "master",
-    "666666",
-    "qwertyuiop",
-    "123321",
-    "mustang",
-    "1234567890",
-    "michael",
-    "654321",
-    "pussy",
-    "superman",
-    "1qaz2wsx",
-    "7777777",
-    "fuckyou",
-    "121212",
-    "000000",
-    "qazwsx",
-    "123qwe",
-    "killer",
-    "trustno1",
-    "jordan",
-    "jennifer",
-    "zxcvbnm",
-    "asdfgh",
-    "hunter",
-    "buster",
-    "soccer",
-    "harley",
-    "batman",
-    "andrew",
-    "tigger",
-    "sunshine",
-    "iloveyou",
-    "fuckme",
-    "2000",
-    "charlie",
-    "robert",
-    "thomas",
-    "hockey",
-    "ranger",
-    "daniel",
-    "starwars",
-    "klaster",
-    "112233",
-    "george",
-    "asshole",
-    "computer",
-    "michelle",
-    "jessica",
-    "pepper",
-    "1111",
-    "zxcvbn",
-    "555555",
-    "11111111",
-    "131313",
-    "freedom",
-    "777777",
-    "pass",
-    "fuck",
-    "maggie",
-    "159753",
-    "aaaaaa",
-    "ginger",
-    "princess",
-    "joshua",
-    "cheese",
-    "amanda",
-    "summer",
-    "love",
-    "ashley",
-    "6969",
-    "nicole",
-    "chelsea",
-    "biteme",
-    "matthew",
-    "access",
-    "yankees",
-    "987654321",
-    "dallas",
-    "austin",
-    "thunder",
-    "taylor",
-    "matrix",
-    "minecraft",
-  ]
-  useEffect(() => {
-    if (email) {
-      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
-        setCheckoutError("Invalid email address.")
-        setEmailValidated(false)
-      } else {
-        setCheckoutError("")
-        setEmailValidated(true)
-      }
-    }
-    if (password) {
-      setCommonPasswordValidated(false)
-      const stringBeforeAt = string => {
-        let splitString = string.split("@")
-        return splitString[0]
-      }
-      if (email) {
-        let emailBeforeAt = stringBeforeAt(email)
-        if (password.length >= 7) {
-          setLengthValidated(true)
-          if (password.includes(emailBeforeAt)) {
-            setpwEmailValidated(false)
-            setCheckoutError(
-              "The password is too similar to your email. Please choose another password."
-            )
-          } else if (!terriblePasswords.includes(password)) {
-            setCheckoutError("")
-            setCommonPasswordValidated(true)
-          } else {
-            setCommonPasswordValidated(false)
-            setCheckoutError(
-              "The provided password is too common. Please pick a more unique password."
-            )
-          }
-        } else {
-          setCheckoutError("")
-          setpwEmailValidated(true)
-        }
-        if (password.length < 7) {
-          setLengthValidated(false)
-          return
-        }
-      } else {
-        setCheckoutError("Please enter your email first")
-      }
-    } else {
-      setpwEmailValidated(false)
-      setLengthValidated(false)
-      setCommonPasswordValidated(false)
-      setCheckoutError("")
-    }
-  }, [password, email])
 
+  //   set form data to state from input and trim excess spacing
   const onChange = e => {
     setFormData({
       ...formData,
@@ -297,20 +55,124 @@ const CheckoutForm = ({
     })
   }
 
+  //   clear checkout error when TOS check status changes
+  useEffect(() => {
+    if (checkedTOS) {
+      setCheckoutError("")
+    }
+  }, [checkedTOS])
+
+  //   toggle password visibility in the input
+  const [passwordShown, setPasswordShown] = useState(false)
+  const togglePasswordVisibility = () => {
+    setPasswordShown(passwordShown ? false : true)
+  }
+
+  //   password validation
+  const [lengthValidated, setLengthValidated] = useState(false)
+  const [emailValidated, setEmailValidated] = useState(false)
+  const [passwordEmailValidated, setPasswordEmailValidated] = useState(false)
+  const [commonPasswordValidated, setCommonPasswordValidated] = useState(false)
+  const notValidPassword =
+    !lengthValidated || !passwordEmailValidated || !commonPasswordValidated
+
+  const emailValidator = email => {
+    //   if email exists, test against regex for a valid format
+    if (email) {
+      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+        setEmailValidated(false)
+        return setCheckoutError("Please enter a valid email address.")
+      } else {
+        setEmailValidated(true)
+        setCheckoutError("")
+      }
+    } else {
+      // email doesn't exist
+      setEmailValidated(false)
+      return setCheckoutError("Please enter an email address.")
+    }
+  }
+
+  const passwordValidator = (emailBeforeAt, password) => {
+    if (!password) {
+      return setCheckoutError("Please enter a password")
+    }
+    if (password.length >= 7) {
+      setLengthValidated(true)
+      if (password.includes(emailBeforeAt)) {
+        setPasswordEmailValidated(false)
+        return setCheckoutError(
+          "The password is too similar to your email. Please choose another password."
+        )
+      } else {
+        setPasswordEmailValidated(true)
+        if (terriblePasswords.includes(password)) {
+          setCommonPasswordValidated(false)
+          return setCheckoutError(
+            "The password is too common. Please choose a more unique password."
+          )
+        } else {
+          setCheckoutError("")
+          setCommonPasswordValidated(true)
+          return
+        }
+      }
+    } else {
+      setLengthValidated(false)
+      return setCheckoutError("The password must be at least 7 characters.")
+    }
+  }
+
+  // handle next page click
+  const handleNextPage = async (firstName, lastName, email, checkedTOS) => {
+    //   test for first and last name
+    if (!firstName || !lastName) {
+      return setCheckoutError("Please enter your full name.")
+    } else {
+      emailValidator(email)
+      if (emailValidated) {
+        const emailBeforeAt = stringBeforeAt(email)
+        // test if password contains elements from email
+        passwordValidator(emailBeforeAt, password)
+        if (
+          lengthValidated &&
+          passwordEmailValidated &&
+          commonPasswordValidated
+        ) {
+          if (!checkedTOS) {
+            setCheckoutError("Please accept the terms of service.")
+          } else {
+            addToMailchimp({
+              email: email.toLowerCase(),
+              FNAME: capitalize(firstName),
+              LNAME: capitalize(lastName),
+              tags: [
+                { name: `${plan} Plan Lead`, status: "active" },
+                { name: `Abandoned Cart`, status: "active" },
+              ],
+            })
+            setCount(count + 1)
+            setCheckoutError("")
+          }
+        }
+      }
+    }
+  }
+
+  //   handle form submit
   const onSubmit = async e => {
     e.preventDefault()
-    const firstNameCapitalized =
-      firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
-    const lastNameCapitalized =
-      lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
+    const firstNameCapitalized = capitalize(firstName)
+    const lastNameCapitalized = capitalize(lastName)
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
+    console.log(name)
     // check for default error states
     if (!stripe || !elements) {
       return
     }
     // create customer
     try {
-      setProcessingTo(true)
+      setProcessing(true)
       const lowerCaseEmail = email.toLowerCase()
       const { data: customer } = await axios.post(
         "/.netlify/functions/create-customer",
@@ -328,7 +190,7 @@ const CheckoutForm = ({
       })
       if (error) {
         console.log("Create payment method error:", error)
-        setProcessingTo(false)
+        setProcessing(false)
         setCheckoutError(error.message)
         return
       }
@@ -356,19 +218,24 @@ const CheckoutForm = ({
           }
         )
         if (userRes.message === "User successfully added.") {
-          const subscriberData = {
+          await addToMailchimp({
+            email: lowerCaseEmail,
             FNAME: firstNameCapitalized,
             LNAME: lastNameCapitalized,
             PLAN: `${plan} Plan Subscriber`,
-            tags: [`${plan} Plan Subscriber`, "Active Subscriber"],
-          }
-          addToMailchimp(lowerCaseEmail, subscriberData)
+            tags: [
+              { name: `${plan} Plan Subscriber`, status: "active" },
+              { name: "Active Subscriber", status: "active" },
+              { name: `${plan} Plan Lead`, status: "inactive" },
+              { name: `Abandoned Cart`, status: "inactive" },
+            ],
+          })
           onSuccessfulCheckout()
         } else {
           setCheckoutError(
             "Your payment method was processed, but there was an additional error. Please contact support to finish creating your Leadgeek account."
           )
-          setProcessingTo(false)
+          setProcessing(false)
         }
       } else {
         if (subscriptionRes.msg) {
@@ -376,45 +243,42 @@ const CheckoutForm = ({
         } else {
           setCheckoutError(subscriptionRes)
         }
-        return setProcessingTo(false)
+        return setProcessing(false)
       }
     } catch (error) {
       console.log(error.message)
       setCheckoutError(
         "Your payment may have been processed, but there was an error. Please make sure your information is correct or contact support to complete your purchase."
       )
-      setProcessingTo(false)
+      setProcessing(false)
     }
   }
 
+  // style form heading
+  const formPagniationTitles = [
+    {
+      title: "Account",
+      numberClasses: `${
+        count < 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
+      } inter`,
+      titleClasses: `${count < 2 ? "text-gray-900" : "text-gray-500"} inter`,
+    },
+    {
+      title: "Billing",
+      numberClasses: `${
+        count === 2 ? "bg-purple-500 text-white" : "bg-gray-200 text-gray-500"
+      } inter`,
+      titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"} inter`,
+    },
+  ]
+
+  //   set list size for the plan bullets
+  let listSize = 5
+
   const disabled = !emailValidated || notValidPassword || !checkedTOS
 
-  const iframeStyles = {
-    base: {
-      fontSize: "15.75px",
-      fontFamily: "Space Mono",
-      color: "#486581",
-      iconColor: "#BCCCDC",
-      "::placeholder": {
-        color: "#D9E2EC",
-      },
-    },
-    invalid: {
-      iconColor: "#fc8181",
-      color: "#fc8181",
-    },
-    complete: {
-      iconColor: "#65D6AD",
-    },
-  }
-
-  const cardElementOpts = {
-    iconStyle: "solid",
-    style: iframeStyles,
-  }
-
   return (
-    <form onSubmit={onSubmit} className="mx-auto">
+    <form onSubmit={onSubmit}>
       <aside className="pb-3 border-b-2 border-gray-100">
         <h3 className="mt-3 mb-5 text-xl md:text-2xl lg:text-3xl font-black text-gray-900 inter">
           {count === 1 ? "Create an account" : "Billing information"}
@@ -438,6 +302,27 @@ const CheckoutForm = ({
       </aside>
       {count === 1 ? (
         <aside>
+          <div className="md:flex justify-between">
+            <FormField
+              name="firstName"
+              label="First name"
+              type="text"
+              placeholder="Dave"
+              value={firstName}
+              onChange={onChange}
+              required
+            />
+            <FormField
+              name="lastName"
+              label="Last name"
+              type="text"
+              placeholder="Saunders"
+              value={lastName}
+              width="md:ml-4"
+              onChange={onChange}
+              required
+            />
+          </div>
           <FormField
             name="email"
             label="Email"
@@ -478,17 +363,6 @@ const CheckoutForm = ({
               </div>
             </aside>
           )}
-          <div className="mt-6 text-xs md:text-sm">
-            In order to protect your account, please make sure your password:
-            <ul className="mt-4">
-              {securityMeasureBullets.map((bullet, i) => (
-                <li key={i} className="mt-2 flex">
-                  <span>{bullet.svg}</span>
-                  <span className="ml-2">{bullet.content}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
           <div className="mt-6 md:flex md:items-center">
             <label className="flex items-center text-xs">
               <input
@@ -513,7 +387,7 @@ const CheckoutForm = ({
           <button
             type="button"
             onClick={() =>
-              handleNextPage(emailValidated, notValidPassword, checkedTOS)
+              handleNextPage(firstName, lastName, email, checkedTOS)
             }
             className={`${
               disabled
@@ -527,27 +401,6 @@ const CheckoutForm = ({
       ) : null}
       {count === 2 ? (
         <aside>
-          <div className="md:flex justify-between">
-            <FormField
-              name="firstName"
-              label="First name"
-              type="text"
-              placeholder="Dave"
-              value={firstName}
-              onChange={onChange}
-              required
-            />
-            <FormField
-              name="lastName"
-              label="Last name"
-              type="text"
-              placeholder="Saunders"
-              value={lastName}
-              width="md:ml-4"
-              onChange={onChange}
-              required
-            />
-          </div>
           <div className="mt-4">
             <label htmlFor="card-element" className="form-field-label">
               Payment information
@@ -675,5 +528,135 @@ const CheckoutForm = ({
     </form>
   )
 }
+
+//   stripe element input styles
+const iframeStyles = {
+  base: {
+    fontSize: "15.75px",
+    fontFamily: "Space Mono",
+    color: "#486581",
+    iconColor: "#BCCCDC",
+    "::placeholder": {
+      color: "#D9E2EC",
+    },
+  },
+  invalid: {
+    iconColor: "#fc8181",
+    color: "#fc8181",
+  },
+  complete: {
+    iconColor: "#65D6AD",
+  },
+}
+
+const cardElementOpts = {
+  iconStyle: "solid",
+  style: iframeStyles,
+}
+
+// list to check for unsecure passwords in input
+const terriblePasswords = [
+  "123456",
+  "password",
+  "12345678",
+  "qwerty",
+  "123456789",
+  "12345",
+  "1234",
+  "111111",
+  "1234567",
+  "dragon",
+  "123123",
+  "baseball",
+  "abc123",
+  "football",
+  "monkey",
+  "letmein",
+  "696969",
+  "shadow",
+  "master",
+  "666666",
+  "qwertyuiop",
+  "123321",
+  "mustang",
+  "1234567890",
+  "michael",
+  "654321",
+  "pussy",
+  "superman",
+  "1qaz2wsx",
+  "7777777",
+  "fuckyou",
+  "121212",
+  "000000",
+  "qazwsx",
+  "123qwe",
+  "killer",
+  "trustno1",
+  "jordan",
+  "jennifer",
+  "zxcvbnm",
+  "asdfgh",
+  "hunter",
+  "buster",
+  "soccer",
+  "harley",
+  "batman",
+  "andrew",
+  "tigger",
+  "sunshine",
+  "iloveyou",
+  "fuckme",
+  "2000",
+  "charlie",
+  "robert",
+  "thomas",
+  "hockey",
+  "ranger",
+  "daniel",
+  "starwars",
+  "klaster",
+  "112233",
+  "george",
+  "asshole",
+  "computer",
+  "michelle",
+  "jessica",
+  "pepper",
+  "1111",
+  "zxcvbn",
+  "555555",
+  "11111111",
+  "131313",
+  "freedom",
+  "777777",
+  "pass",
+  "fuck",
+  "maggie",
+  "159753",
+  "aaaaaa",
+  "ginger",
+  "princess",
+  "joshua",
+  "cheese",
+  "amanda",
+  "summer",
+  "love",
+  "ashley",
+  "6969",
+  "nicole",
+  "chelsea",
+  "biteme",
+  "matthew",
+  "access",
+  "yankees",
+  "987654321",
+  "dallas",
+  "austin",
+  "thunder",
+  "taylor",
+  "matrix",
+  "minecraft",
+]
 
 export default CheckoutForm

@@ -78,6 +78,17 @@ export const numberWithCommas = x => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
+// capitalize the first letter of a string
+export const capitalize = string => {
+  return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase()
+}
+
+//   break up the email to the part before the @
+export const stringBeforeAt = string => {
+  let splitString = string.split("@")
+  return splitString[0]
+}
+
 // close on ref mouseup
 export const useOutsideMousedown = (ref, setState_1, setState_2) => {
   useEffect(() => {
@@ -97,16 +108,20 @@ export const useOutsideMousedown = (ref, setState_1, setState_2) => {
 }
 
 // add contact to mailchimp with optional MERGE data and tags
-export const addToMailchimp = async (email, subscriberData) => {
-  const { FNAME, LNAME, PLAN, LEAD, tags } = subscriberData
-  await axios.post("/.netlify/functions/create-email-subscriber", {
-    email,
-    FNAME,
-    LNAME,
-    PLAN: PLAN || "",
-    LEAD: LEAD || "",
-    tags: tags || [],
-  })
+export const addToMailchimp = async subscriberData => {
+  const { email, FNAME, LNAME, PLAN, LEAD, tags } = subscriberData
+  const { data } = await axios.post(
+    "/.netlify/functions/create-email-subscriber",
+    {
+      email,
+      FNAME,
+      LNAME,
+      PLAN: PLAN || "",
+      LEAD: LEAD || "",
+      tags: tags || [],
+    }
+  )
+  console.log(`Email status: ${data.status}`)
 }
 
 // generate LGID

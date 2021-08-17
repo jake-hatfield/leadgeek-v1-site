@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react"
 
-import { useOutsideMousedown, addToMailchimp } from "./utils"
+import { useOutsideMousedown, addToMailchimp, capitalize } from "./utils"
 import FormField from "components/utils/FormField"
 import Bullet from "assets/svgs/bullet.svg"
-import SoloSellingBefore from "assets/video/solo-selling-before.mp4"
-import SoloSellingAfter from "assets/video/solo-selling-after.gif"
 
 const Popup = ({ show, setShow }) => {
   const [showPopup, setShowPopup] = useState(show)
@@ -42,7 +40,9 @@ const Popup = ({ show, setShow }) => {
     lastName: "",
     email: "",
   })
+
   const { firstName, lastName, email } = formData
+
   const onChange = e => {
     setFormData({
       ...formData,
@@ -56,18 +56,13 @@ const Popup = ({ show, setShow }) => {
   // handle submit
   const onSubmit = async e => {
     e.preventDefault()
-    const firstNameCapitalized =
-      firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()
-    const lastNameCapitalized =
-      lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()
-    const lowerCaseEmail = email.toLowerCase()
-    const subscriberData = {
-      FNAME: firstNameCapitalized,
-      LNAME: lastNameCapitalized,
+    addToMailchimp({
+      email: email.toLowerCase(),
+      FNAME: capitalize(firstName),
+      LNAME: capitalize(lastName),
       LEAD: `Coaching Call Lead`,
-      tags: ["Coaching Call Lead"],
-    }
-    addToMailchimp(lowerCaseEmail, subscriberData)
+      tags: [{ name: `Coaching Call Lead`, status: "active" }],
+    })
     setCount(count + 1)
   }
 
@@ -87,16 +82,6 @@ const Popup = ({ show, setShow }) => {
       >
         {count === 1 ? (
           <div>
-            {/* <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="hidden md:block w-56 mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
-              alt="Before an online arbitrage coaching call"
-            >
-              <source src={SoloSellingBefore} type="video/mp4" />
-            </video> */}
             <header className="md:text-center">
               <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
                 Figuring out how to sell on Amazon by yourself isn't any fun...
@@ -173,11 +158,6 @@ const Popup = ({ show, setShow }) => {
           </div>
         ) : (
           <div>
-            {/* <img
-              src={SoloSellingAfter}
-              alt="After an online arbitrage coaching call"
-              className="hidden md:block max-w-xs mx-auto ring-4 ring-pink-600 ring-opacity-50 shadow-2xl rounded-lg"
-            /> */}
             <header className="md:text-center">
               <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
                 Raise the roof!

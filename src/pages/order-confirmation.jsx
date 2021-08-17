@@ -106,7 +106,7 @@ const OrderConfirmationPage = ({ location }) => {
           />
         </HeaderWrapper>
         <section className="container">
-          <header className="relative mx-auto md:max-w-xl lg:max-w-2xl py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-pinkSm transform -rotate-2 hover:rotate-0">
+          <header className="relative mx-auto md:max-w-xl lg:max-w-2xl py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main shadow-pinkSm transform -rotate-2">
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               Next steps...
             </h2>

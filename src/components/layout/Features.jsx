@@ -88,10 +88,6 @@ const FeaturePage = ({ feature }) => {
             <li
               key={i}
               className={`relative mx-auto md:max-w-xl lg:max-w-2xl mt-8 lg:mt-24 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 shadow-graySm transform ${faq.rotate}`}
-              data-sal="fade"
-              data-sal-delay="500"
-              data-sal-duration="500"
-              data-sal-easing="ease in out"
             >
               <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                 {faq.title}
