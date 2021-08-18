@@ -5,9 +5,11 @@ const containerId = "GTM-NNVJ2DH"
 const createDataLayer = () => ({
   __html: "window.dataLayer = window.dataLayer || []",
 })
+
 const optimizeAntiFlickerStyle = () => ({
   __html: ".async-hide { opacity: 0 !important}",
 })
+
 const optimizeAntiFlickerScript = containerId => ({
   __html: `(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
@@ -26,6 +28,10 @@ const googleTagManagerScript = containerId => ({
 
 const customHeadComponents = [
   <script key="data-layer" dangerouslySetInnerHTML={createDataLayer()} />,
+  <script
+    key="optimize"
+    src="https://www.googleoptimize.com/optimize.js?id=OPT-KXGPFFT"
+  ></script>,
   <style
     key="optimize-afs-style"
     dangerouslySetInnerHTML={optimizeAntiFlickerStyle()}
