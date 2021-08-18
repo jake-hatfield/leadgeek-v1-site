@@ -51,14 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-marketing-platform",
-      options: {
-        tagmanager: {
-          id: "GTM-NNVJ2DH",
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-next-seo",
       options: {
         title: "Leadgeek",
@@ -96,5 +88,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-anti-flicker`,
   ],
 }

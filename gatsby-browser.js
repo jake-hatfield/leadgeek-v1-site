@@ -9,3 +9,12 @@ import "@fontsource/inter/300.css"
 import "@fontsource/space-mono/400.css"
 import "@fontsource/space-mono/400.css"
 import "@fontsource/space-mono/700.css"
+
+// Activates Google Optimize experiments
+const activateOptimize = () => {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event: "optimize.activate" })
+}
+export const onRouteUpdate = () => {
+  activateOptimize()
+}
