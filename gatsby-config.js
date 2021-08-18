@@ -51,18 +51,8 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-mailchimp`,
-      options: {
-        endpoint:
-          "https://leadgeek.us2.list-manage.com/subscribe/post?u=78aa88c3633ef35c7c1ce0995&amp;id=d456eb75e8",
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-marketing-platform",
       options: {
-        dataLayer: {
-          gaPropertyId: "UA-177232307-1",
-        },
         tagmanager: {
           id: "GTM-NNVJ2DH",
         },
