@@ -97,9 +97,8 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
               To the modern Amazon FBA seller:
             </p>
             <h1 className="mt-2 text-3xl md:text-5xl font-black text-gray-900 inter header-height">
-              Behold!{" "}
-              <span className="emphasized-text">The online arbitrage list</span>{" "}
-              you've been searching for.
+              Find the best things to flip on Amazon with this
+              <span className="emphasized-text">online arbitrage list</span>.
             </h1>
             <h2 className="lg:max-w-lg mt-4 lg:mt-6 mx-auto lg:mx-0 text-gray-900 text-lg bg-white">
               Online arbitrage sourcing just got a huge upgrade: Leadgeek is
@@ -497,21 +496,21 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         <div>
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="500"
+            data-sal-delay="100"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-10 lg:translate-y-24 -translate-x-20 lg:-translate-x-64 -rotate-12"
           />
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="700"
+            data-sal-delay="200"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-12 lg:translate-y-16"
           />
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="1000"
+            data-sal-delay="300"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 top-0 left-1/2 w-4 lg:w-6 text-purple-500 transform translate-y-16 lg:translate-y-32 translate-x-24 lg:translate-x-56 rotate-12"
@@ -520,21 +519,21 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
         <div className="transform rotate-180">
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="700"
+            data-sal-delay="100"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-8 lg:-translate-y-16"
           />
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="1000"
+            data-sal-delay="200"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-12 lg:-translate-y-20 translate-x-24 lg:translate-x-56 rotate-12"
           />
           <ArrowShortFat
             data-sal="fade"
-            data-sal-delay="500"
+            data-sal-delay="300"
             data-sal-duration="1000"
             data-sal-easing="ease in out"
             className="absolute z-40 bottom-0 left-1/2 w-4 lg:w-6 text-purple-500 transform -translate-y-10 lg:-translate-y-12 -translate-x-20 lg:-translate-x-64 -rotate-12"
