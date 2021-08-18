@@ -13,7 +13,7 @@ const optimizeAntiFlickerScript = containerId => ({
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
 })(window,document.documentElement,'async-hide','dataLayer',2000,
-{${containerId}:true});`,
+{'${containerId}':true});`,
 })
 
 const googleTagManagerScript = containerId => ({
@@ -21,7 +21,7 @@ const googleTagManagerScript = containerId => ({
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NNVJ2DH');`,
+    })(window,document,'script','dataLayer','${containerId}');`,
 })
 
 const customHeadComponents = [
@@ -30,6 +30,7 @@ const customHeadComponents = [
   <script dangerouslySetInnerHTML={optimizeAntiFlickerScript(containerId)} />,
   <script dangerouslySetInnerHTML={googleTagManagerScript(containerId)} />,
 ]
+
 export const onPreRenderHTML = ({
   getHeadComponents,
   replaceHeadComponents,
