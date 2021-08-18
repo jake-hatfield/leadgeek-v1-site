@@ -32,7 +32,7 @@ const SignupPage = ({
     <section className="relative text-gray-700">
       <div className="absolute inset-x-0 top-0 border-b-8 border-purple-500 z-10"></div>
       <div className="relative min-h-screen py-6 h-100 md:min-h-screen bg-splatter">
-        <article className="mx-auto container">
+        <section className="mx-auto container">
           <header>
             <h1 className="pt-4 lg:pt-6 font-bold text-xl lg:text-2xl group">
               <Link
@@ -45,7 +45,7 @@ const SignupPage = ({
             </h1>
           </header>
           <div className="md:absolute w-full max-w-md md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 mt-6 md:mt-0">
-            <div className="py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50">
+            <div className="mt-12 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50">
               <Elements stripe={stripePromise}>
                 <CheckoutForm
                   plan={plan}
@@ -60,7 +60,7 @@ const SignupPage = ({
               </Elements>
             </div>
           </div>
-        </article>
+        </section>
       </div>
     </section>
   )

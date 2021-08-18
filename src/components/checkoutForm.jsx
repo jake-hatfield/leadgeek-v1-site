@@ -12,7 +12,7 @@ import {
 import FormField from "components/utils/FormField"
 import PasswordFormField from "components/utils/PasswordFormField"
 import Spinner from "components/utils/Spinner"
-
+import StripeLogo from "assets/svgs/stripe-logo.svg"
 import Bullet from "assets/svgs/bullet.svg"
 
 const CheckoutForm = ({
@@ -146,6 +146,7 @@ const CheckoutForm = ({
               email: email.toLowerCase(),
               FNAME: capitalize(firstName),
               LNAME: capitalize(lastName),
+              LEAD: `${plan} Plan Lead`,
               tags: [
                 { name: `${plan} Plan Lead`, status: "active" },
                 { name: `Abandoned Cart`, status: "active" },
@@ -305,7 +306,7 @@ const CheckoutForm = ({
           <div className="md:flex justify-between">
             <FormField
               name="firstName"
-              label="First name"
+              label="First name *"
               type="text"
               placeholder="Dave"
               value={firstName}
@@ -314,7 +315,7 @@ const CheckoutForm = ({
             />
             <FormField
               name="lastName"
-              label="Last name"
+              label="Last name *"
               type="text"
               placeholder="Saunders"
               value={lastName}
@@ -325,7 +326,7 @@ const CheckoutForm = ({
           </div>
           <FormField
             name="email"
-            label="Email"
+            label="Email *"
             type="email"
             placeholder={"dsaunders@gmail.com"}
             value={email}
@@ -334,7 +335,7 @@ const CheckoutForm = ({
           />
           <PasswordFormField
             name="password"
-            label="Password"
+            label="Password *"
             placeholder={"Create a new password"}
             value={password}
             onChange={onChange}
@@ -510,20 +511,9 @@ const CheckoutForm = ({
           )}
         </aside>
       )}
-      <div className="mt-4 flex items-start md:items-center justify-center text-xs text-gray-400">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="mr-2 w-4 h-4 flex-none"
-        >
-          <path
-            fillRule="evenodd"
-            d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <span>Your transaction is powered by Stripe</span>
+      <div className="mt-4 flex items-center justify-center text-gray-600 font-bold text-sm inter">
+        Powered by
+        <StripeLogo className="h-8" />
       </div>
     </form>
   )
