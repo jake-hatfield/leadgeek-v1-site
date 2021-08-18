@@ -25,10 +25,19 @@ const googleTagManagerScript = containerId => ({
 })
 
 const customHeadComponents = [
-  <script dangerouslySetInnerHTML={createDataLayer()} />,
-  <style dangerouslySetInnerHTML={optimizeAntiFlickerStyle()} />,
-  <script dangerouslySetInnerHTML={optimizeAntiFlickerScript(containerId)} />,
-  <script dangerouslySetInnerHTML={googleTagManagerScript(containerId)} />,
+  <script key="data-layer" dangerouslySetInnerHTML={createDataLayer()} />,
+  <style
+    key="optimize-afs-style"
+    dangerouslySetInnerHTML={optimizeAntiFlickerStyle()}
+  />,
+  <script
+    key="optimize-afs-timeout"
+    dangerouslySetInnerHTML={optimizeAntiFlickerScript(containerId)}
+  />,
+  <script
+    key="gtm-head"
+    dangerouslySetInnerHTML={googleTagManagerScript(containerId)}
+  />,
 ]
 
 export const onPreRenderHTML = ({
@@ -37,4 +46,19 @@ export const onPreRenderHTML = ({
 }) => {
   const mergedHeadComponents = [...customHeadComponents, ...getHeadComponents()]
   replaceHeadComponents(mergedHeadComponents)
+}
+
+const BodyAttributes = [
+  <noscript key="gtm-body">
+    <iframe
+      src={`https://www.googletagmanager.com/ns.html?id=${containerId}`}
+      height="0"
+      width="0"
+      style={{ display: "none", visibility: "hidden" }}
+    />
+  </noscript>,
+]
+
+export const onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents(BodyAttributes)
 }
