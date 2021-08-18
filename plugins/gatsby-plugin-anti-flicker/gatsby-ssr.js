@@ -28,10 +28,6 @@ const googleTagManagerScript = containerId => ({
 
 const customHeadComponents = [
   <script key="data-layer" dangerouslySetInnerHTML={createDataLayer()} />,
-  <script
-    key="optimize"
-    src="https://www.googleoptimize.com/optimize.js?id=OPT-KXGPFFT"
-  ></script>,
   <style
     key="optimize-afs-style"
     dangerouslySetInnerHTML={optimizeAntiFlickerStyle()}
@@ -39,6 +35,10 @@ const customHeadComponents = [
   <script
     key="optimize-afs-timeout"
     dangerouslySetInnerHTML={optimizeAntiFlickerScript(containerId)}
+  />,
+  <script
+    key="optimize"
+    src="https://www.googleoptimize.com/optimize.js?id=OPT-KXGPFFT"
   />,
   <script
     key="gtm-head"
