@@ -256,13 +256,14 @@ const TermsPage = ({ location }) => {
               products to arbitrage on Amazon. Consequently, we will price match
               any competitor offering the same quality and quantity of daily
               leads. This includes, at minimum, exact matches to profit, ROI,
-              and sales velocity criteria.
+              and sales velocity criteria, as well as daily minimum quantities
+              of leads.
             </p>
             <p className={classes.text}>
               In order to qualify for a price-matched rate, please message via
               the contact page or by email with a link to the competitor you'd
               like us to look into price matching. A successful price match and
-              reduced rate is solely up to the discretion of Leadgeek members.
+              reduced rate is solely up to the discretion of Leadgeek operators.
             </p>
           </section>
           <section className={classes.section}>
