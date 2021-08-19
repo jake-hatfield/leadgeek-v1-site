@@ -192,7 +192,7 @@ const PricingCards = ({
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              plan.seatsLeft === 0
+              plan.seatsLeft <= 0
                 ? "bg-gray-200 shadow-graySm"
                 : plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"
@@ -202,7 +202,7 @@ const PricingCards = ({
             <div className="absolute inset-x-0 top-0 transform translate-y-px">
               <div className="flex justify-center transform -translate-y-1/2">
                 <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                  {plan.seatsLeft === 0
+                  {plan.seatsLeft <= 0
                     ? "Sold out"
                     : plan.seatsLeft <= 7
                     ? `${plan.seatsLeft} seats left`
@@ -231,7 +231,7 @@ const PricingCards = ({
                   <span className="ml-2">/mo</span>
                 </div>
                 <div className="mt-4 lg:mt-6">
-                  {plan.seatsLeft === 0 ? (
+                  {plan.seatsLeft <= 0 ? (
                     <button
                       onClick={() => {
                         setSelectedPlan(plan.title)
@@ -261,7 +261,7 @@ const PricingCards = ({
                 <li key={i} className="mt-2 flex">
                   <Bullet
                     className={`mt-1 svg-sm ${
-                      plan.seatsLeft === 0 ? "text-gray-400" : "text-teal-300"
+                      plan.seatsLeft <= 0 ? "text-gray-400" : "text-teal-300"
                     } flex-none`}
                   />
                   <p className="ml-4">{feature.title}</p>
