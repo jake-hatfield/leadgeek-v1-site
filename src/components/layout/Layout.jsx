@@ -14,7 +14,7 @@ const Layout = ({ children, location, popup }) => {
     if (typeof document !== undefined) {
       handleLGID(location)
     }
-  }, [])
+  })
 
   useEffect(() => {
     if (popup) {

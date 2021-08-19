@@ -40,7 +40,7 @@ const GrowSignupPage = () => {
     },
   ]
   const plan = "Grow"
-  const productSelected = process.env.GATSBY_GROW_PRODUCT_ID
+  const productSelected = process.env.GATSBY_GROW_PRICE_ID
   const title = "Grow Plan Signup | Leadgeek"
   const desc =
     "Leadgeek's Grow plan offers entry-level FBA sellers a great starting point to find high-quality products efficiently."

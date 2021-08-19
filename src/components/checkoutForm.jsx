@@ -72,9 +72,8 @@ const CheckoutForm = ({
   const [emailValidated, setEmailValidated] = useState(false)
   const [passwordEmailValidated, setPasswordEmailValidated] = useState(false)
   const [commonPasswordValidated, setCommonPasswordValidated] = useState(false)
-  const notValidPassword =
-    !lengthValidated || !passwordEmailValidated || !commonPasswordValidated
 
+  //   validate email and return checkout errors
   const emailValidator = email => {
     //   if email exists, test against regex for a valid format
     if (email) {
@@ -92,6 +91,7 @@ const CheckoutForm = ({
     }
   }
 
+  //   validate password and return checkout errors
   const passwordValidator = (emailBeforeAt, password) => {
     if (!password) {
       return setCheckoutError("Please enter a password")
@@ -120,6 +120,7 @@ const CheckoutForm = ({
     }
   }
 
+  //   clear checkout errors and validate password on input change
   useEffect(() => {
     if (firstName && lastName) {
       setCheckoutError("")
@@ -165,6 +166,7 @@ const CheckoutForm = ({
     }
   }
 
+  //   state for disabled "next page" button
   const [disabled, setDisabled] = useState(true)
   //   enable next step button if all the fields are filled out (but not validated)
   useEffect(() => {

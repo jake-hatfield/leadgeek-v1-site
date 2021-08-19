@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from "react"
 
 import { useOutsideMousedown, addToMailchimp, capitalize } from "./utils"
 import FormField from "components/utils/FormField"
-import Bullet from "assets/svgs/bullet.svg"
 
-const Popup = ({ show, setShow }) => {
+const Popup = ({ show, setShow, details }) => {
   const [showPopup, setShowPopup] = useState(show)
 
   //   set cookie if popup has already been seen
@@ -60,43 +59,26 @@ const Popup = ({ show, setShow }) => {
       email: email.toLowerCase(),
       FNAME: capitalize(firstName),
       LNAME: capitalize(lastName),
-      LEAD: `Coaching Call Lead`,
-      tags: [{ name: `Coaching Call Lead`, status: "active" }],
+      tags: details.tags,
     })
     setCount(count + 1)
   }
 
-  const coachingItems = [
-    "How to develop your own unique selling style",
-    "How to get ungated in more brands & categories",
-    "Which sourcing tools are important (and which aren't)",
-    "Best practices to keep your Amazon account healthy",
-  ]
-
   return (
-    <div className="relative w-screen">
+    <div className="relative">
       <article
         ref={wrapperRef}
-        id="popup"
-        className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-40 w-72 md:w-full md:max-w-xl p-4 lg:py-8 lg:px-6 rounded-lg bg-gray-100 ring-4 md:ring-6 lg:ring-8 ring-gray-900 ring-opacity-75 shadow-2xl text-gray-900"
+        id={details.id || "popup"}
+        className="fixed top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 z-40 w-72 md:w-full md:max-w-xl py-6 px-4 lg:py-8 lg:px-6 rounded-lg bg-gray-100 ring-4 md:ring-6 lg:ring-8 ring-gray-900 ring-opacity-75 shadow-2xl text-gray-900"
       >
         {count === 1 ? (
           <div>
             <header className="md:text-center">
               <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
-                Figuring out how to sell on Amazon by yourself isn't any fun...
+                {details.headers[0]}
               </h2>
               <p className="mt-2 text-xs md:text-sm lg:text-base">
-                But it doesn't have to <i>stay</i> that way.{" "}
-                <strong>
-                  Schedule a{" "}
-                  <span className="font-bold text-pink-600">100% free</span>{" "}
-                  coaching call with an experienced FBA arbitrage seller
-                </strong>
-                . No strings attached.{" "}
-                <span role="img" aria-label="Party emoji">
-                  🎉
-                </span>
+                {details.subheaders[0]}
               </p>
             </header>
             <form onSubmit={onSubmit} className="lg:mt-4 mx-auto max-w-sm">
@@ -135,7 +117,7 @@ const Popup = ({ show, setShow }) => {
                 id="submitPopup"
                 className="w-full mt-4 cta-link inter"
               >
-                Request a free coaching call
+                {details.cta || "Submit"}
               </button>
               <div className="mt-2 md:mt-4 flex items-center justify-center text-gray-500">
                 <svg
@@ -160,23 +142,12 @@ const Popup = ({ show, setShow }) => {
           <div>
             <header className="md:text-center">
               <h2 className="text-lg md:text-2xl lg:text-3xl font-black inter header-height">
-                Raise the roof!
+                {details.headers[1]}
               </h2>
               <p className="mt-2 text-xs md:text-sm lg:text-base">
-                <strong>
-                  Check your email for a link to schedule the call
-                </strong>
-                . If you have any questions, bring 'em on! Otherwise, here are
-                some things we'll discuss:
+                {details.subheaders[1]}
               </p>
-              <ul className="max-w-md mt-4 mx-auto text-xs md:text-sm lg:text-base">
-                {coachingItems.map((item, i) => (
-                  <li key={i} className="mt-2 flex text-left">
-                    <Bullet className="mt-1 svg-sm text-teal-300 flex-none" />
-                    <p className="ml-4">{item}</p>
-                  </li>
-                ))}
-              </ul>
+              {details.additionalInfo && details.additionalInfo}
             </header>
             <div className="max-w-sm mt-4 mx-auto">
               <button
@@ -194,7 +165,7 @@ const Popup = ({ show, setShow }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-5 w-5 md:h-6 md:w-6"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -206,7 +177,7 @@ const Popup = ({ show, setShow }) => {
           </svg>
         </button>
       </article>
-      <div className="fixed z-30 top-0 right-0 h-screen w-full bg-gray-900 opacity-75" />
+      <div className="fixed z-30 top-0 right-0 h-full w-full bg-gray-900 opacity-75" />
     </div>
   )
 }

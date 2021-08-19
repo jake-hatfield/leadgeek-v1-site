@@ -35,6 +35,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Subscription"],
+        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
+      },
+    },
+    {
       resolve: `gatsby-source-mongodb`,
       options: {
         connectionString: `***REMOVED***`,

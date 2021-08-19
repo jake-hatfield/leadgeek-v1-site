@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       <LogoJsonLd logo={Logo} url="https://leadgeek.io/" />
-      <header className="relative z-40">
+      <header className="relative z-30">
         {/* notification banner */}
         {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
           <div className="py-3 container flex items-center">

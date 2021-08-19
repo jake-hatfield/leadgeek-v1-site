@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import { graphql } from "gatsby"
 
 import { GatsbySeo, ProductJsonLd } from "gatsby-plugin-next-seo"
 
@@ -14,10 +15,31 @@ import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
 import OgImage from "assets/images/og/og-pricing.jpg"
 
-const PricingPage = ({ location }) => {
+const PricingPage = ({ data, location }) => {
   const title = "Leadgeek Pricing"
   const desc =
     "Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
+
+  //   check active subscriptions
+  const activeSubscriptions = data.allStripeSubscription.nodes.filter(
+    subscription => subscription.status === "active"
+  )
+  const bundleSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID
+  )
+  const proSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_PRO_PRODUCT_ID
+  )
+  const growSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_GROW_PRODUCT_ID
+  )
+
+  //   out-of-stock popup state
+  const [showWaitlistPopup, setShowWaitlistPopup] = useState(false)
+
   return (
     <Layout location={location}>
       <GatsbySeo
@@ -399,6 +421,11 @@ const PricingPage = ({ location }) => {
             <PricingCards
               margin={"-mt-64 lg:mt-0"}
               negativeMarginCards={true}
+              bundleSubscriptions={bundleSubscriptions}
+              proSubscriptions={proSubscriptions}
+              growSubscriptions={growSubscriptions}
+              showWaitlistPopup={showWaitlistPopup}
+              setShowWaitlistPopup={setShowWaitlistPopup}
             />
           </div>
         </div>
@@ -590,5 +617,19 @@ const criteriaFeatureRows = [
     ],
   },
 ]
+
+export const query = graphql`
+  query {
+    allStripeSubscription {
+      nodes {
+        status
+        plan {
+          id
+          product
+        }
+      }
+    }
+  }
+`
 
 export default PricingPage

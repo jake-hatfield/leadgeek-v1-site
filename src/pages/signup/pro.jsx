@@ -40,7 +40,7 @@ const ProSignupPage = () => {
     },
   ]
   const plan = "Pro"
-  const productSelected = process.env.GATSBY_PRO_PRODUCT_ID
+  const productSelected = process.env.GATSBY_PRO_PRICE_ID
   const title = "Pro Plan Signup | Leadgeek"
   const desc =
     "Leadgeek's Pro plan is great for intermediate Amazon sellers who are familiar with online arbitrage and want more leads to choose every day."

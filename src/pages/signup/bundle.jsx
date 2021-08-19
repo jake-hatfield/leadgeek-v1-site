@@ -33,7 +33,7 @@ const BundleSignupPage = () => {
     },
   ]
   const plan = "Bundle"
-  const productSelected = process.env.GATSBY_BUNDLE_PRODUCT_ID
+  const productSelected = process.env.GATSBY_BUNDLE_PRICE_ID
   const title = "Bundle Signup | Leadgeek"
   const desc =
     "Leadgeek's Bundle is a heavily-discounted combination of the Grow plan and Pro plan. It's the perfect mix of quality and volume for arbitrage sourcing."

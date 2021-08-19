@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -67,6 +67,26 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
   const mostRecentlyUpdatedDay = DateTime.fromISO(
     mostRecentlyUpdatedRaw
   ).toFormat("LLL dd @ t")
+
+  //   check active subscriptions
+  const activeSubscriptions = data.allStripeSubscription.nodes.filter(
+    subscription => subscription.status === "active"
+  )
+  const bundleSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID
+  )
+  const proSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_PRO_PRODUCT_ID
+  )
+  const growSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_GROW_PRODUCT_ID
+  )
+
+  //   out-of-stock popup state
+  const [showWaitlistPopup, setShowWaitlistPopup] = useState(false)
 
   return (
     <LPLayout location={location}>
@@ -217,13 +237,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                 </div>
               </blockquote>
             </aside>
-            <LoopyDashed
-              data-sal="fade"
-              data-sal-delay="1000"
-              data-sal-duration="1000"
-              data-sal-easing="ease in out"
-              className="hidden lg:block absolute bottom-0 h-56 text-purple-500 transform translate-y-64 translate-x-24"
-            />
+            <LoopyDashed className="hidden lg:block absolute bottom-0 h-56 text-purple-500 transform translate-y-64 translate-x-24" />
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-y-48 lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
@@ -294,13 +308,7 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
                 </div>
               </blockquote>
             </aside>
-            <WigglyDashed
-              data-sal="fade"
-              data-sal-delay="1000"
-              data-sal-duration="1000"
-              data-sal-easing="ease in out"
-              className="absolute bottom-0 h-36 lg:h-56 text-purple-500 transform translate-y-64 translate-x-32"
-            />
+            <WigglyDashed className="absolute bottom-0 h-36 lg:h-56 text-purple-500 transform translate-y-64 translate-x-32" />
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
@@ -571,7 +579,14 @@ const OnlineArbitrageSourcingListPage = ({ data, location }) => {
           </span>
         </header>
         <div className="w-full mt-8 lg:mt-16 px-4 pb-4">
-          <PricingCards margin={"lg:mt-0"} />
+          <PricingCards
+            margin={"lg:mt-0"}
+            bundleSubscriptions={bundleSubscriptions}
+            proSubscriptions={proSubscriptions}
+            growSubscriptions={growSubscriptions}
+            showWaitlistPopup={showWaitlistPopup}
+            setShowWaitlistPopup={setShowWaitlistPopup}
+          />
         </div>
       </section>
       {/* section 7: Testimonials */}
@@ -716,6 +731,15 @@ export const query = graphql`
             sellPrice
             date
           }
+        }
+      }
+    }
+    allStripeSubscription {
+      nodes {
+        status
+        plan {
+          id
+          product
         }
       }
     }

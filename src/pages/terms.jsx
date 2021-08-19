@@ -399,35 +399,35 @@ const TermsPage = ({ location }) => {
             <h2 className={classes.h2}>Site management</h2>
             <p className={classes.text}>
               We reserve the right, but not the obligation, to:
-              <ol className={classes.text}>
-                <li className={classes.text}>
-                  1. monitor the site for violations of these terms of use;
-                </li>
-                <li className={classes.text}>
-                  2. take appropriate legal action against anyone who, in our
-                  sole discretion, violates the law or these terms of use,
-                  including without limitation, reporting such user to law
-                  enforcement authorities;
-                </li>
-                <li className={classes.text}>
-                  3. in our sole discretion and without limitation, refuse,
-                  restrict access to, limit the availability of, or disable (to
-                  the extent technologically feasible) any of your contributions
-                  or any portion thereof;
-                </li>
-                <li className={classes.text}>
-                  4. in our sole discretion and without limitation, notice, or
-                  liability, to remove from the site or otherwise disable all
-                  files and content that are excessive in size or are in any way
-                  burdensome to our systems;
-                </li>
-                <li className={classes.text}>
-                  5. otherwise manage the site in a manner designed to protect
-                  our rights and property and to facilitate the proper
-                  functioning of the site.
-                </li>
-              </ol>
             </p>
+            <ol className={classes.text}>
+              <li className={classes.text}>
+                1. monitor the site for violations of these terms of use;
+              </li>
+              <li className={classes.text}>
+                2. take appropriate legal action against anyone who, in our sole
+                discretion, violates the law or these terms of use, including
+                without limitation, reporting such user to law enforcement
+                authorities;
+              </li>
+              <li className={classes.text}>
+                3. in our sole discretion and without limitation, refuse,
+                restrict access to, limit the availability of, or disable (to
+                the extent technologically feasible) any of your contributions
+                or any portion thereof;
+              </li>
+              <li className={classes.text}>
+                4. in our sole discretion and without limitation, notice, or
+                liability, to remove from the site or otherwise disable all
+                files and content that are excessive in size or are in any way
+                burdensome to our systems;
+              </li>
+              <li className={classes.text}>
+                5. otherwise manage the site in a manner designed to protect our
+                rights and property and to facilitate the proper functioning of
+                the site.
+              </li>
+            </ol>
           </section>
           <section className={classes.section}>
             <h2 className={classes.h2}>Term and termination</h2>
