@@ -18,7 +18,6 @@
     "exit-intent": "^1.1.0",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-google-marketing-platform": "^0.1.21",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-netlify": "^2.11.1",
     "gatsby-plugin-next-seo": "^1.7.0",

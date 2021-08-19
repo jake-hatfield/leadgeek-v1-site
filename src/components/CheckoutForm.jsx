@@ -58,7 +58,6 @@ const CheckoutForm = ({
   //   clear checkout error when TOS check status changes
   useEffect(() => {
     if (checkedTOS) {
-      setCheckoutError("")
     }
   }, [checkedTOS])
 
@@ -83,11 +82,11 @@ const CheckoutForm = ({
         setEmailValidated(false)
         return setCheckoutError("Please enter a valid email address.")
       } else {
-        setEmailValidated(true)
         setCheckoutError("")
+        return setEmailValidated(true)
       }
     } else {
-      // email doesn't exist
+      // email hasn't been entered
       setEmailValidated(false)
       return setCheckoutError("Please enter an email address.")
     }
@@ -112,9 +111,7 @@ const CheckoutForm = ({
             "The password is too common. Please choose a more unique password."
           )
         } else {
-          setCheckoutError("")
-          setCommonPasswordValidated(true)
-          return
+          return setCommonPasswordValidated(true)
         }
       }
     } else {
@@ -123,8 +120,19 @@ const CheckoutForm = ({
     }
   }
 
+  useEffect(() => {
+    if (firstName && lastName) {
+      setCheckoutError("")
+    }
+
+    if (emailValidated) {
+      const emailBeforeAt = stringBeforeAt(email)
+      passwordValidator(emailBeforeAt, password)
+    }
+  }, [firstName, lastName, email, emailValidated, password])
+
   // handle next page click
-  const handleNextPage = async (firstName, lastName, email, checkedTOS) => {
+  const handleNextPage = (firstName, lastName, email, checkedTOS) => {
     //   test for first and last name
     if (!firstName || !lastName) {
       return setCheckoutError("Please enter your full name.")
@@ -134,11 +142,9 @@ const CheckoutForm = ({
         const emailBeforeAt = stringBeforeAt(email)
         // test if password contains elements from email
         passwordValidator(emailBeforeAt, password)
-        if (
-          lengthValidated &&
-          passwordEmailValidated &&
-          commonPasswordValidated
-        ) {
+        const passwordValidated =
+          lengthValidated && passwordEmailValidated && commonPasswordValidated
+        if (passwordValidated) {
           if (!checkedTOS) {
             setCheckoutError("Please accept the terms of service.")
           } else {
@@ -153,12 +159,22 @@ const CheckoutForm = ({
               ],
             })
             setCount(count + 1)
-            setCheckoutError("")
           }
         }
       }
     }
   }
+
+  const [disabled, setDisabled] = useState(true)
+  //   enable next step button if all the fields are filled out (but not validated)
+  useEffect(() => {
+    if (firstName && lastName && email && password && checkedTOS) {
+      setDisabled(false)
+      setCheckoutError("")
+    } else {
+      setDisabled(true)
+    }
+  }, [firstName, lastName, email, password, checkedTOS])
 
   //   handle form submit
   const onSubmit = async e => {
@@ -166,7 +182,6 @@ const CheckoutForm = ({
     const firstNameCapitalized = capitalize(firstName)
     const lastNameCapitalized = capitalize(lastName)
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
-    console.log(name)
     // check for default error states
     if (!stripe || !elements) {
       return
@@ -203,7 +218,6 @@ const CheckoutForm = ({
           priceId: priceId,
         }
       )
-      // const parsedSubscriptionRes = JSON.parse(subscriptionRes)
       if (subscriptionRes.status === "active") {
         const { data: userRes } = await axios.post(
           "/.netlify/functions/create-user",
@@ -275,8 +289,6 @@ const CheckoutForm = ({
 
   //   set list size for the plan bullets
   let listSize = 5
-
-  const disabled = !emailValidated || notValidPassword || !checkedTOS
 
   return (
     <form onSubmit={onSubmit}>
@@ -413,7 +425,7 @@ const CheckoutForm = ({
               options={cardElementOpts}
             />
             {checkoutError && (
-              <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 shadow-tealSm rounded-lg">
+              <aside className="mt-4 py-2 px-4 bg-gray-900 text-teal-300 rounded-lg">
                 <div className="flex">
                   <div>
                     <svg
