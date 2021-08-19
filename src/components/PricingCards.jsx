@@ -19,8 +19,8 @@ const PricingCards = ({
   //   subtract possible available seats from the total # of relevant subscriptions + bundle subscriptions
   const proSeatsLeft =
     proPlanSeats - (proSubscriptions.length + bundleSubscriptions.length)
-  const growSeatsLeft = 0
-  // growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
+  const growSeatsLeft =
+    growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
   const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
 
