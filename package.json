@@ -38,7 +38,7 @@
     "md5": "^2.3.0",
     "mongodb": "^3.6.8",
     "mongoose": "^5.12.10",
-    "netlify-cli": "^2.71.0",
+    "netlify-cli": "^6.7.1",
     "nodemailer": "^6.6.3",
     "postcss": "^8.3.0",
     "prop-types": "^15.7.2",
