@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 
 import axios from "axios"
-import crypto from "crypto"
 
 // bsr / category % calculator
 export const calculateBSR = (currentRank, category) => {
@@ -122,11 +121,6 @@ export const addToMailchimp = async subscriberData => {
     }
   )
   console.log(`Email status: ${data.status}`)
-}
-
-// generate LGID
-export const generateLGID = () => {
-  return crypto.randomBytes(64).toString("hex")
 }
 
 // get the query params from URL

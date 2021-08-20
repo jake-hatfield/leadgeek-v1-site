@@ -7,7 +7,7 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-import CTA from "components/Cta"
+import Cta from "components/Cta"
 
 import DividerTop from "assets/svgs/section-divider-top.svg"
 import DividerBottom from "assets/svgs/section-divider-bottom.svg"
@@ -331,7 +331,7 @@ const IndexPage = ({ data, location }) => {
         </div>
       </section>
 
-      <CTA
+      <Cta
         links={[
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "pricing" },

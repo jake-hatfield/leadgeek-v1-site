@@ -7,7 +7,7 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 import Layout from "components/layout/Layout"
 import HeaderWrapper from "components/HeaderWrapper"
 import PrimaryHeader from "components/PrimaryHeader"
-import CTA from "components/Cta"
+import Cta from "components/Cta"
 
 import LongArrow from "assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "assets/svgs/arrow-short-fat.svg"
@@ -346,7 +346,7 @@ const IndexPage = ({ data, location }) => {
         </div>
       </section>
       {/* cta */}
-      <CTA
+      <Cta
         links={[
           { title: "See how it works", link: "demo" },
           { title: "Tour the features", link: "features" },

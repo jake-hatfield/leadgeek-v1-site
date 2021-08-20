@@ -59,7 +59,7 @@ const pushToDatabase = async (db, data) => {
     encryptedPassword = await bcrypt.hash(password, salt)
 
     // create LGID
-    const lgid = await crypto.randomBytes(4).toString("hex")
+    const lgid = await crypto.randomBytes(8).toString("hex")
 
     // create user
     user = await new User({
