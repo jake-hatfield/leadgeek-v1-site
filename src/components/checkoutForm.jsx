@@ -235,7 +235,7 @@ const CheckoutForm = ({
           }
         )
         if (userRes.message === "User successfully added.") {
-          await addToMailchimp({
+          addToMailchimp({
             email: lowerCaseEmail,
             FNAME: firstNameCapitalized,
             LNAME: lastNameCapitalized,
@@ -247,6 +247,10 @@ const CheckoutForm = ({
               { name: `Abandoned Cart`, status: "inactive" },
             ],
           })
+
+          await axios.post(
+            "https://api.netlify.com/build_hooks/611fd7ae85726687cf7baf51"
+          )
           onSuccessfulCheckout()
         } else {
           setCheckoutError(
