@@ -22,7 +22,7 @@ const PricingCards = ({
   const growSeatsLeft =
     growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
 
-  console.log(growPlanSeats)
+  console.log(growSeatsLeft)
   const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
 
