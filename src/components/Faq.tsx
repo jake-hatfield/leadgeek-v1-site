@@ -5,10 +5,14 @@ import { FAQJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Faq = () => {
-  const questions = [
+  const questions: {
+    title: string
+    description: JSX.Element
+    rotate: string
+  }[] = [
     {
       title: "How is Leadgeek different from other sourcing lists?",
-      desc: (
+      description: (
         <p>
           <span className="emphasized-text">
             Leadgeek is hyper-focused on{" "}
@@ -30,7 +34,7 @@ const Faq = () => {
     },
     {
       title: "Are these products ungated for me?",
-      desc: (
+      description: (
         <p>
           <span className="emphasized-text">
             Leadgeek is built for sellers of every level
@@ -50,7 +54,7 @@ const Faq = () => {
     },
     {
       title: "Can I sell these products on any Amazon marketplace?",
-      desc: (
+      description: (
         <p>
           The short answer is that{" "}
           <span className="emphasized-text">
@@ -70,7 +74,7 @@ const Faq = () => {
     },
     {
       title: "What if I decide this isn't for me?",
-      desc: (
+      description: (
         <p>
           No worries! There are no contracts, and you can cancel anytime. Just{" "}
           <span className="emphasized-text">
@@ -105,9 +109,8 @@ const Faq = () => {
     },
     {
       title: "How do I get in contact with support?",
-      desc: (
+      description: (
         <p>
-          {" "}
           You can contact our support team weekdays from 9am-5pm CST{" "}
           <span className="emphasized-text">
             via our{" "}
@@ -174,7 +177,9 @@ const Faq = () => {
                 <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                   {question.title}
                 </h3>
-                <div className="mt-4 lg:mt-6 text-lg">{question.desc}</div>
+                <div className="mt-4 lg:mt-6 text-lg">
+                  {question.description}
+                </div>
               </li>
             ))}
           </ul>

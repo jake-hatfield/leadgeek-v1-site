@@ -21,6 +21,8 @@ const PricingCards = ({
     proPlanSeats - (proSubscriptions.length + bundleSubscriptions.length)
   const growSeatsLeft =
     growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
+
+  console.log(growPlanSeats)
   const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
 
@@ -204,6 +206,8 @@ const PricingCards = ({
                 <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
                   {plan.seatsLeft <= 0
                     ? "Sold out"
+                    : plan.seatsLeft === 1
+                    ? "1 seat left"
                     : plan.seatsLeft <= 7
                     ? `${plan.seatsLeft} seats left`
                     : plan.title === "Bundle"
