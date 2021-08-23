@@ -74,11 +74,11 @@ const pushToDatabase = async (db, data) => {
     encryptedPassword = await bcrypt.hash(password, salt)
     // assign plan to string
     let role
-    if (planId === process.env.GATSBY_BUNDLE_PRODUCT_ID) {
+    if (planId === process.env.GATSBY_BUNDLE_PRICE_ID) {
       role = "bundle"
-    } else if (planId === process.env.GATSBY_PRO_PRODUCT_ID) {
+    } else if (planId === process.env.GATSBY_PRO_PRICE_ID) {
       role = "pro"
-    } else if (planId === process.env.GATSBY_GROW_PRODUCT_ID) {
+    } else if (planId === process.env.GATSBY_GROW_PRICE_ID) {
       role = "grow"
     } else {
       role = "user"
