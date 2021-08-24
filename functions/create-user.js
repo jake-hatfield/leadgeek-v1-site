@@ -1,11 +1,12 @@
+const bcrypt = require("bcryptjs")
+const User = require("../models/User")
+
 require("dotenv").config()
+
 const MongoClient = require("mongodb").MongoClient
 const MONGODB_URI = process.env.GATSBY_MONGODB_URI
 const DB_NAME = process.env.GATSBY_DB_NAME
 const CO_NAME = process.env.GATSBY_CO_NAME
-
-const bcrypt = require("bcryptjs")
-const User = require("../models/User")
 
 const statusCode = 200
 const headers = {

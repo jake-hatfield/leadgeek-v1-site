@@ -1,5 +1,3 @@
-import { Handler } from "@netlify/functions"
-
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
 const nodemailer = require("nodemailer")
@@ -97,7 +95,7 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-const handler: Handler = async event => {
+exports.handler = async event => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -175,5 +173,3 @@ const handler: Handler = async event => {
     console.log(error)
   }
 }
-
-export { handler }
