@@ -87,9 +87,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
         reviews={[
           {
             author: "Charles",
-            reviewBody: `The very first thing I bought as an FBA seller was from your list about
-              33 days ago. I've sold 5 units of that item so far today (it's only 3:50
-              pm CST) and it's my first $100 day. Profit margin is roughly 25% and ROI more than 2x that. Thank you for helping me get started.`,
+            reviewBody: `Leads were well researched and actionable. Excellent and only getting better. Highly recommend. The very first thing I bought as an FBA seller was from your list about 33 days ago. I've sold 5 units of that item so far today (it's only 3:50 pm CST) and it's my first $100 day. Profit margin is roughly 25% and ROI more than 2x that. Thank you for helping me get started.`,
             reviewRating: {
               bestRating: "5",
               ratingValue: "5",
@@ -98,8 +96,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           },
           {
             author: "Brian",
-            reviewBody: `Delivered their lists as promised daily and always had at least a few
-            items I was interested in. Good value, would recommend.`,
+            reviewBody: `Delivered their lists as promised daily and always had at least a few items I was interested in. Good value, would recommend.`,
             reviewRating: {
               bestRating: "5",
               ratingValue: "5",
@@ -108,8 +105,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           },
           {
             author: "William",
-            reviewBody: `Leadgeek delivers on their promises in the promo video on time every day
-            with solid ROI leads. Would definitely recommend giving them a shot if you want to take the guess work out of sourcing for FBA.`,
+            reviewBody: `Leadgeek delivers on their promises in the promo video on time every day with solid ROI leads. Would definitely recommend giving them a shot if you want to take the guess work out of sourcing for FBA.`,
             reviewRating: {
               bestRating: "5",
               ratingValue: "5",
@@ -145,8 +141,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           },
           {
             author: "Frank",
-            reviewBody: `I want to thank you for the effort you make to find products with such
-            good quality. It has been the best decision I have made in acquiring your list. Thank you!`,
+            reviewBody: `I want to thank you for the effort you make to find products with such good quality. It has been the best decision I have made in acquiring your list. Thank you!`,
             reviewRating: {
               bestRating: "5",
               ratingValue: "5",
@@ -171,10 +166,28 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
               worstRating: "1",
             },
           },
+          {
+            author: "Cris",
+            reviewBody: `Great product you provide. It's allowed me to grow to the point where I needed more listings and the other list I subscribed to wasn't doing it for me. Always has high quality leads and many more leads than a different more expensive list. Overall I highly recommend this list over other lists I have purchased in the past. Support is always responsive and the leads are great. I’ve been able to double my profits using this list. So much better than hours of pouring over Tactical Arbitrage.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Cage",
+            reviewBody: `Great source for retail and online arbitrage leads. Easy-to-use interface with links to retailer site and Amazon, daily lists, key information about each item like estimated number of monthly sales. Overall I am happy with leadgeek and plan to continue using the service; I started with the Grow plan and will upgrade to the Pro plan soon.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "4",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
-          ratingValue: "5",
-          reviewCount: 9,
+          ratingValue: "4.91",
+          reviewCount: 11,
         }}
         offers={{
           price: "129.99",
@@ -282,10 +295,28 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
               worstRating: "1",
             },
           },
+          {
+            author: "Cris",
+            reviewBody: `Great product you provide. It's allowed me to grow to the point where I needed more listings and the other list I subscribed to wasn't doing it for me. Always has high quality leads and many more leads than a different more expensive list. Overall I highly recommend this list over other lists I have purchased in the past. Support is always responsive and the leads are great. I’ve been able to double my profits using this list. So much better than hours of pouring over Tactical Arbitrage.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Cage",
+            reviewBody: `Great source for retail and online arbitrage leads. Easy-to-use interface with links to retailer site and Amazon, daily lists, key information about each item like estimated number of monthly sales. Overall I am happy with leadgeek and plan to continue using the service; I started with the Grow plan and will upgrade to the Pro plan soon.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "4",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
-          ratingValue: "5",
-          reviewCount: 9,
+          ratingValue: "4.91",
+          reviewCount: 11,
         }}
         offers={{
           price: "189.99",
@@ -393,10 +424,28 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
               worstRating: "1",
             },
           },
+          {
+            author: "Cris",
+            reviewBody: `Great product you provide. It's allowed me to grow to the point where I needed more listings and the other list I subscribed to wasn't doing it for me. Always has high quality leads and many more leads than a different more expensive list. Overall I highly recommend this list over other lists I have purchased in the past. Support is always responsive and the leads are great. I’ve been able to double my profits using this list. So much better than hours of pouring over Tactical Arbitrage.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "5",
+              worstRating: "1",
+            },
+          },
+          {
+            author: "Cage",
+            reviewBody: `Great source for retail and online arbitrage leads. Easy-to-use interface with links to retailer site and Amazon, daily lists, key information about each item like estimated number of monthly sales. Overall I am happy with leadgeek and plan to continue using the service; I started with the Grow plan and will upgrade to the Pro plan soon.`,
+            reviewRating: {
+              bestRating: "5",
+              ratingValue: "4",
+              worstRating: "1",
+            },
+          },
         ]}
         aggregateRating={{
-          ratingValue: "5",
-          reviewCount: 9,
+          ratingValue: "4.91",
+          reviewCount: 11,
         }}
         offers={{
           price: "263.00",
