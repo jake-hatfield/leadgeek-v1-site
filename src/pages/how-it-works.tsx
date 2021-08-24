@@ -25,21 +25,9 @@ import OgImage from "@assets/images/og/og-how-it-works.jpg"
 
 interface HowItWorksPageProps {
   data: {
-    app: {
-      childImageSharp: {
-        fluid: GatsbyImageProps
-      }
-    }
-    details: {
-      childImageSharp: {
-        fluid: GatsbyImageProps
-      }
-    }
-    detailsClose: {
-      childImageSharp: {
-        fluid: GatsbyImageProps
-      }
-    }
+    app: GatsbyImageProps
+    details: GatsbyImageProps
+    detailsClose: GatsbyImageProps
   }
   location: Location
 }
@@ -363,15 +351,13 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ data, location }) => {
       </section>
 
       <Cta
+        mainHeader={"Simplify your side-hustle"}
         links={[
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "pricing" },
         ]}
-        desc={
-          <p>
-            See the 20 features that make Leadgeek rad or join today.{" "}
-            <span className="italic">Or</span> both!
-          </p>
+        description={
+          "See the 20 features that make Leadgeek rad or join today."
         }
       />
     </Layout>

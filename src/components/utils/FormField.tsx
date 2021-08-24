@@ -5,9 +5,9 @@ interface FormFieldProps {
   type: string
   name: string
   placeholder: string
-  value: string | null
+  value: string | number | null
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  required: boolean | null
+  required: boolean
   styles: string | null
 }
 

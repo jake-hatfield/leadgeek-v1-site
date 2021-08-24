@@ -25,9 +25,9 @@ const Cta: React.FC<CtaProps> = ({ mainHeader, description, links }) => {
             <h2 className="text-2xl md:text-3xl xl:text-4xl font-black inter">
               {mainHeader || `Simplify your side-hustle`}
             </h2>
-            <div className="mt-4 lg:mt-6 text-gray-800">
+            <p className="mt-4 lg:mt-6 text-gray-800">
               {description || "Check out the buttons, do the things."}
-            </div>
+            </p>
           </div>
           <nav className="mt-10 lg:mt-0 flex flex-col text-center md:text-left">
             {links.map(link => (

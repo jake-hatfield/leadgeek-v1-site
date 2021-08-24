@@ -50,7 +50,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   const [isProcessing, setProcessing] = useState(false)
   const [checkoutError, setCheckoutError] = useState("")
   const [checkedTOS, setCheckedTOS] = useState(false)
-  const [lgid, setLgid] = useState(null)
+  const [lgid, setLgid] = useState<string | null>(null)
 
   //   set LGID for affiliate tracking
   useEffect(() => {
@@ -67,7 +67,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   }
 
   //   set form data to state from input and trim excess spacing
-  const onChange = e => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value.trim(),
@@ -224,7 +224,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           email: lowerCaseEmail,
         }
       )
-      const cardElement = elements.getElement("card")
+      const cardElement = elements.getElement("card")!
       const priceId = productSelected
       //  create payment method
       const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -234,7 +234,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       if (error) {
         console.log("Create payment method error:", error)
         setProcessing(false)
-        setCheckoutError(error.message)
+        setCheckoutError(error.message || "")
         return
       }
       const { data: subscriptionRes } = await axios.post(
@@ -572,28 +572,26 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 }
 
 //   stripe element input styles
-const iframeStyles = {
-  base: {
-    fontSize: "15.75px",
-    fontFamily: "Space Mono",
-    color: "#486581",
-    iconColor: "#BCCCDC",
-    "::placeholder": {
-      color: "#D9E2EC",
-    },
-  },
-  invalid: {
-    iconColor: "#fc8181",
-    color: "#fc8181",
-  },
-  complete: {
-    iconColor: "#65D6AD",
-  },
-}
-
 const cardElementOpts = {
-  iconStyle: "solid",
-  style: iframeStyles,
+  style: {
+    base: {
+      fontSize: "15.75px",
+      fontFamily: "Space Mono",
+      color: "#486581",
+      iconColor: "#BCCCDC",
+      "::placeholder": {
+        color: "#D9E2EC",
+      },
+    },
+    invalid: {
+      iconColor: "#fc8181",
+      color: "#fc8181",
+    },
+    complete: {
+      iconColor: "#65D6AD",
+    },
+    iconStyle: "solid",
+  },
 }
 
 // list to check for unsecure passwords in input

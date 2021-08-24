@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
+import Img, { GatsbyImageProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -24,12 +24,12 @@ import OgImage from "@assets/images/og/og-index.jpg"
 
 interface IndexPageProps {
   data: {
-    heroImage: GatsbyImageFluidProps
-    testimonialAustin: GatsbyImageFluidProps
-    testimonialBrian: GatsbyImageFluidProps
-    testimonialFrank: GatsbyImageFluidProps
-    testimonialKevin: GatsbyImageFluidProps
-    testimonialWilliam: GatsbyImageFluidProps
+    heroImage: GatsbyImageProps
+    testimonialAustin: GatsbyImageProps
+    testimonialBrian: GatsbyImageProps
+    testimonialFrank: GatsbyImageProps
+    testimonialKevin: GatsbyImageProps
+    testimonialWilliam: GatsbyImageProps
   }
   location: Location
 }
@@ -45,7 +45,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
     margin: string | null
     position: string | null
     text: JSX.Element
-    image: GatsbyImageFluidProps
+    image: GatsbyImageProps
     source: string
     description: string
     rotate: string
@@ -391,16 +391,14 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
       </section>
       {/* cta */}
       <Cta
+        mainHeader={"Simplify your side-hustle"}
         links={[
           { title: "See how it works", link: "demo" },
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "pricing" },
         ]}
-        desc={
-          <p>
-            See how Leadgeek works, the 20 features that make it rad, or join
-            today.
-          </p>
+        description={
+          "See how Leadgeek works, the 20 features that make it rad, or join today."
         }
       />
     </Layout>

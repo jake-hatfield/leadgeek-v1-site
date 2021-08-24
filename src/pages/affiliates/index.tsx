@@ -18,17 +18,12 @@ import OgImage from "@assets/images/og/og-affiliate-index.jpg"
 
 interface AffiliatePageProps {
   data: {
-    affiliatePanel: {
-      childImageSharp: {
-        fluid: GatsbyImageFluidProps
-      }
-    }
+    affiliatePanel: GatsbyImageFluidProps
   }
   location: Location
 }
 
 const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
-  console.log(data)
   const title = "Leadgeek Affiliate Program"
   const description =
     "Become a Leadgeek affiliate and start earning 25% lifetime recurring commissions."
@@ -54,7 +49,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
 
   const { email, password, firstName, lastName, platform, audience } = formData
 
-  const onChange = e => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value.trim(),
@@ -95,10 +90,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
 
       const { data } = await axios.post(
         "/.netlify/functions/create-affiliate",
-        formData,
-        {
-          "Content-Type": "application/json",
-        }
+        formData
       )
       if (data.message === "Affiliate submission successful.") {
         return navigate("/affiliates/application-success/")
@@ -235,31 +227,30 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
                 <div className="pt-6 pb-2 px-4 md:px-8">
                   <div className="md:flex justify-between">
                     <FormField
-                      name="firstName"
-                      label="First name *"
-                      type="text"
-                      placeholder="Dave"
+                      name={"firstName"}
+                      label={"First name *"}
+                      type={"text"}
+                      placeholder={"Dave"}
                       value={firstName}
                       onChange={onChange}
                       required
                       styles={null}
                     />
                     <FormField
-                      name="lastName"
-                      label="Last name *"
-                      type="text"
-                      placeholder="Saunders"
+                      name={"lastName"}
+                      label={"Last name *"}
+                      type={"text"}
+                      placeholder={"Saunders"}
                       value={lastName}
-                      width="md:ml-4"
                       onChange={onChange}
                       required
-                      styles={null}
+                      styles={"md:ml-4"}
                     />
                   </div>
                   <FormField
-                    label="Email *"
-                    name="email"
-                    type="email"
+                    label={"Email *"}
+                    name={"email"}
+                    type={"email"}
                     value={email}
                     onChange={onChange}
                     placeholder="dsaunders@gmail.com"
@@ -267,7 +258,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
                     styles={null}
                   />
                   <PasswordFormField
-                    label="Password *"
+                    label={"Password *"}
                     placeholder={"Create a new password"}
                     value={password}
                     onChange={onChange}
@@ -277,22 +268,22 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
                     styles={null}
                   />
                   <FormField
-                    label="Method(s) of promotion *"
-                    type="text"
-                    name="platform"
+                    label={"Method(s) of promotion *"}
+                    type={"text"}
+                    name={"platform"}
                     value={platform}
                     onChange={onChange}
-                    placeholder="YouTube Channel, Discord, www.myblog.com"
+                    placeholder={"YouTube Channel, Discord, www.myblog.com"}
                     required={true}
                     styles={null}
                   />
                   <FormField
-                    label="Approximate audience size"
-                    type="number"
-                    name="audience"
+                    label={"Approximate audience size"}
+                    type={"number"}
+                    name={"audience"}
                     value={audience}
                     onChange={onChange}
-                    placeholder="3000"
+                    placeholder={"3000"}
                     required={false}
                     styles={null}
                   />

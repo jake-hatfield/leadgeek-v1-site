@@ -53,28 +53,11 @@ interface OnlineArbitrageSourcingListPageProps {
       edges: Lead[]
     }
     allStripeSubscription: { nodes: SubscriptionItem[] }
-    heroImage: {
-      childImageSharp: {
-        fluid: GatsbyImageFluidProps
-      }
-    }
-    detailsImage: {
-      childImageSharp: {
-        fluid: GatsbyImageFluidProps
-      }
-    }
-    testimonialFrank: {
-      childImageSharp: {
-        fluid: GatsbyImageFluidProps
-      }
-    }
-    testimonialCris: {
-      childImageSharp: {
-        fluid: GatsbyImageFluidProps
-      }
-    }
+    heroImage: GatsbyImageFluidProps
+    detailsImage: GatsbyImageFluidProps
+    testimonialFrank: GatsbyImageFluidProps
+    testimonialCris: GatsbyImageFluidProps
   }
-
   location: Location
 }
 

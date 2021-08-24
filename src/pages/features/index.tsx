@@ -88,7 +88,9 @@ const FeaturesIndexPage: React.FC<FeaturesIndexPageProps> = ({ location }) => {
                   <header className={classes.featureHeader}>
                     <h2 className={classes.featureTitle}>{feature.title}</h2>
                   </header>
-                  <div className={classes.featureDesc}>{feature.desc}</div>
+                  <div className={classes.featureDesc}>
+                    {feature.description}
+                  </div>
                 </li>
               </Link>
             ))}
