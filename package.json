@@ -43,7 +43,6 @@
     "netlify-cli": "^6.7.1",
     "nodemailer": "^6.6.3",
     "postcss": "^8.3.6",
-    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-cookie-consent": "^6.3.0",
     "react-dom": "npm:@hot-loader/react-dom@^17.0.0",
@@ -54,6 +53,11 @@
     "stripe": "^8.170.0"
   },
   "devDependencies": {
+    "@graphql-codegen/introspection": "^2.1.0",
+    "@graphql-codegen/typescript": "^2.1.1",
+    "@graphql-codegen/typescript-operations": "^2.1.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.1.1",
+    "@types/luxon": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
@@ -61,10 +65,12 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "gatsby": "^3.12.0",
+    "gatsby-plugin-tsconfig-paths": "^1.0.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "prettier": "2.0.5",
     "tailwind-scrollbar": "^1.3.1",
     "tailwindcss": "^2.2.7",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
   },
   "keywords": [
@@ -79,7 +85,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx"
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "ggl-types": "graphql-codegen --config codegen.yml",
+    "ggl-types:watch": "graphql-codegen --config codegen.yml -w"
   },
   "repository": {
     "type": "git",
