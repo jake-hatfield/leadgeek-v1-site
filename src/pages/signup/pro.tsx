@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-import SignupPage from "@components/signupPage"
+import SignupPage from "@components/SignupPage"
 
 import OgImage from "@assets/images/og/og-pro.jpg"
 
