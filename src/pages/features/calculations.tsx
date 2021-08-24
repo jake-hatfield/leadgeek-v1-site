@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-calculations.jpg"
 
-const CalculationPage = ({ location }) => {
+interface CalculationsPageProps {
+  location: Location
+}
+
+const CalculationPage: React.FC<CalculationsPageProps> = ({ location }) => {
   const title = "Laser-Accurate Number Crunching | Leadgeek"
-  const desc =
+  const description =
     "With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/calculations/",
           type: "website",
           images: [

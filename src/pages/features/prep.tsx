@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-prep.jpg"
 
-const PrepPage = ({ location }) => {
+interface PrepPageProps {
+  location: Location
+}
+
+const PrepPage: React.FC<PrepPageProps> = ({ location }) => {
   const title = "Account for Prep Costs Automatically | Leadgeek"
-  const desc =
+  const description =
     "Built-in tools allow you to easily estimate product prep fees. Whether you need to calculate a fee based on quantity or weight, you'll see real-world profitability for each item."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/prep/",
           type: "website",
           images: [

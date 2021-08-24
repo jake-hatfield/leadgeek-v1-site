@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImageFluidProps } from "gatsby-image"
+import { GatsbyImageProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -13,15 +13,15 @@ import OgImage from "@assets/images/og/og-stories.jpg"
 
 interface StoriesPageProps {
   data: {
-    testimonialAustin: GatsbyImageFluidProps
-    testimonialBrian: GatsbyImageFluidProps
-    testimonialCharles: GatsbyImageFluidProps
-    testimonialDail: GatsbyImageFluidProps
-    testimonialDimitry: GatsbyImageFluidProps
-    testimonialFrank: GatsbyImageFluidProps
-    testimonialKevin: GatsbyImageFluidProps
-    testimonialWilliam: GatsbyImageFluidProps
-    testimonialYucheng: GatsbyImageFluidProps
+    testimonialAustin: GatsbyImageProps
+    testimonialBrian: GatsbyImageProps
+    testimonialCharles: GatsbyImageProps
+    testimonialDail: GatsbyImageProps
+    testimonialDimitry: GatsbyImageProps
+    testimonialFrank: GatsbyImageProps
+    testimonialKevin: GatsbyImageProps
+    testimonialWilliam: GatsbyImageProps
+    testimonialYucheng: GatsbyImageProps
   }
   location: Location
 }

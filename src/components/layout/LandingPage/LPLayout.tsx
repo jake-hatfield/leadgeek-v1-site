@@ -9,7 +9,12 @@ import { handleLGID } from "@components/utils/utils"
 import Popup from "@components/utils/Popup"
 import Bullet from "@assets/svgs/bullet.svg"
 
-const LPLayout = ({ children, location }) => {
+interface LPLayoutProps {
+  children: React.ReactNode
+  location: Location
+}
+
+const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
   useEffect(() => {
     if (typeof document !== undefined) {
       handleLGID(location.search)

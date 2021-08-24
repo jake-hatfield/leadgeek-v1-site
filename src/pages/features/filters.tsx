@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-filters.jpg"
 
-const FiltersPage = ({ location }) => {
+interface FiltersPageProps {
+  location: Location
+}
+
+const FiltersPage: React.FC<FiltersPageProps> = ({ location }) => {
   const title = "Surface Data, Don't Dig for It | Leadgeek"
-  const desc =
+  const description =
     "Leadgeek allows you to combine simple filters in a powerful way to only show the information that’s important to you."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/filters/",
           type: "website",
           images: [

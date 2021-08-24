@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-comments.jpg"
 
-const CommentsPage = ({ location }) => {
+interface CommentsPageProps {
+  location: Location
+}
+
+const CommentsPage: React.FC<CommentsPageProps> = ({ location }) => {
   const title = "Leave Your Mark | Leadgeek"
-  const desc =
+  const description =
     "Personalize each product by writing a comment that only you can see. Interested in a few variations or plan to re-order an item? Write it down so you don’t forget!"
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/comments/",
           type: "website",
           images: [

@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-seller-notes.jpg"
 
-const SellerNotesPage = ({ location }) => {
+interface SellerNotesPageProps {
+  location: Location
+}
+
+const SellerNotesPage: React.FC<SellerNotesPageProps> = ({ location }) => {
   const title = "Variation Suggestions Out of the Box | Leadgeek"
-  const desc =
+  const description =
     "With Leadgeek, variation research is done for you. These suggestions and seller-to-seller notes give you clarity on how to order your inventory."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/seller-notes/",
           type: "website",
           images: [

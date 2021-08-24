@@ -4,12 +4,13 @@ import { Link } from "gatsby"
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Logo from "@assets/svgs/leadgeek-logo-light.svg"
+import LogoSvg from "@assets/svgs/leadgeek-logo-light.svg"
+import LogoPng from "@assets/images/leadgeek-logo.png"
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <>
-      <LogoJsonLd logo={Logo} url="https://leadgeek.io/" />
+      <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
       <header className="relative z-20">
         {/* notification banner */}
         <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
@@ -38,7 +39,7 @@ const Navbar = () => {
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
               <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <Logo className="w-8 lg:w-10 mr-4" />
+                <LogoSvg className="w-8 lg:w-10 mr-4" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </div>

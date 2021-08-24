@@ -20,14 +20,18 @@ import PrepWebm from "@assets/video/prep.webm"
 import SearchWebm from "@assets/video/search.webm"
 import ExportWebm from "@assets/video/export.webm"
 
-const FeaturePage = ({ feature }) => {
+interface FeaturePageProps {
+  feature: string
+}
+
+const FeaturePage: React.FC<FeaturePageProps> = ({ feature }) => {
   const [currentFeature] = useState(
     featureList.filter(f => f.link === feature)[0]
   )
 
   const {
     title,
-    desc,
+    description,
     faqs,
     testimonialOne,
     testimonialTwo,
@@ -36,12 +40,20 @@ const FeaturePage = ({ feature }) => {
     prevLink,
     video,
   } = currentFeature
+
   return (
     <section className="pb-12 lg:pb-24 bg-splatter">
-      <HeaderWrapper>
+      <HeaderWrapper bottomPadding={null} styles={null}>
         <PrimaryHeader
           title={title}
-          desc={desc}
+          description={description}
+          nav={false}
+          goHome={false}
+          linkOne={null}
+          linkOneText={null}
+          linkTwo={null}
+          linkTwoText={null}
+          outsideLink={null}
           svgOne={
             testimonialOne && (
               <div
@@ -76,6 +88,7 @@ const FeaturePage = ({ feature }) => {
             muted
             playsInline
             className="w-full rounded-lg border border-gray-900 shadow-pinkMd"
+            title={video.title}
           >
             <source src={video.webm} type="video/webm" />
             <source src={video.mp4} type="video/mp4" />
@@ -92,7 +105,7 @@ const FeaturePage = ({ feature }) => {
               <h3 className="text-xl md:text-2xl xl:text-3xl font-black text-gray-900 inter">
                 {faq.title}
               </h3>
-              <div className="mt-4 lg:mt-6 h4">{faq.desc}</div>
+              <div className="mt-4 lg:mt-6 h4">{faq.description}</div>
             </li>
           ))}
         </ul>
@@ -131,10 +144,34 @@ const classes = {
   emphasizedFeature: "emphasized-text group-hover:text-gray-700",
 }
 
-export const featureList = [
+interface Faq {
+  title: string
+  description: JSX.Element
+  rotate: string | null
+}
+
+interface Testimonial {
+  quote: string
+  source: string
+  rotate: string
+}
+
+interface Feature {
+  title: string
+  description: JSX.Element
+  faqs: Faq[]
+  testimonialOne: Testimonial | null
+  testimonialTwo: Testimonial | null
+  video: { webm: string; mp4: string; title: string } | null
+  link: string
+  nextLink: string
+  prevLink: string
+}
+
+export const featureList: Feature[] = [
   {
     title: "Top-shelf leads come standard",
-    desc: (
+    description: (
       <p>
         Scale your business without sacrificing quality in your inventory.
         Carefully-tailored criteria and vetting methods allow you to get
@@ -148,7 +185,7 @@ export const featureList = [
     faqs: [
       {
         title: "What's the base net profit?",
-        desc: (
+        description: (
           <p>
             The minimum profit (after FBA fees) a product must meet is{" "}
             <span className={classes.emphasizedFeature}>
@@ -161,7 +198,7 @@ export const featureList = [
       },
       {
         title: "What's the base ROI?",
-        desc: (
+        description: (
           <p>
             On top of the profit criteria, any item has to have at least a{" "}
             <span className={classes.emphasizedFeature}>
@@ -174,7 +211,7 @@ export const featureList = [
       },
       {
         title: "What's the base sales velocity?",
-        desc: (
+        description: (
           <p>
             The minimum sales criteria are{" "}
             <span className={classes.emphasizedFeature}>
@@ -188,7 +225,7 @@ export const featureList = [
       },
       {
         title: "Ok - what about the averages?",
-        desc: (
+        description: (
           <p>
             Over 2500+ products,{" "}
             <span className={classes.emphasizedFeature}>
@@ -206,7 +243,7 @@ export const featureList = [
       },
       {
         title: "How did you pick these criteria?",
-        desc: (
+        description: (
           <p>
             When you combine the profit, ROI, BSR, and monthly sales minimums,
             there's reasonable padding built in for any fluctuations. To boot -{" "}
@@ -232,13 +269,14 @@ export const featureList = [
       source: "Frank",
       rotate: "rotate-3 hover:rotate-2",
     },
+    video: null,
     link: "criteria",
     nextLink: "calculations",
     prevLink: "support",
   },
   {
     title: "Laser-accurate number crunching",
-    desc: (
+    description: (
       <p>
         If the profit estimations aren’t accurate, you’re often stuck with
         products that are breakeven or even lose you money. With Leadgeek,{" "}
@@ -251,7 +289,7 @@ export const featureList = [
     faqs: [
       {
         title: "Sorry, *which* tool do you use to estimate fees?",
-        desc: (
+        description: (
           <p>
             <a
               href="https://sellercentral.amazon.com/hz/fba/profitabilitycalculator/index"
@@ -274,7 +312,7 @@ export const featureList = [
       },
       {
         title: "What costs are included?",
-        desc: (
+        description: (
           <p>
             Two big fees - and one kinda-hidden fee - are built into Leadgeek's
             estimations.{" "}
@@ -294,7 +332,7 @@ export const featureList = [
       },
       {
         title: "Are the values updated periodically?",
-        desc: (
+        description: (
           <p>
             Nope, they aren't. A big part of arbitrage in general is timing, and
             things are bound to change. While it would be nice to keep the
@@ -314,13 +352,14 @@ export const featureList = [
       rotate: "-rotate-2 hover:-rotate-3",
     },
     testimonialTwo: null,
+    video: null,
     link: "calculations",
     nextLink: "categories",
     prevLink: "criteria",
   },
   {
     title: "Source comprehensive categories",
-    desc: (
+    description: (
       <p>
         Building a diversified inventory has never been easier.{" "}
         <span className={classes.emphasizedFeature}>
@@ -332,7 +371,7 @@ export const featureList = [
     faqs: [
       {
         title: "Which categories are sourced?",
-        desc: (
+        description: (
           <div>
             <BulletedList
               maxWidth={"max-w-2xl"}
@@ -372,7 +411,7 @@ export const featureList = [
       },
       {
         title: "What are the most commonly included?",
-        desc: (
+        description: (
           <p>
             There's a good bit of{" "}
             <span className={classes.emphasizedFeature}>
@@ -387,7 +426,7 @@ export const featureList = [
       },
       {
         title: "Will I be gated in some of the products from these categories?",
-        desc: (
+        description: (
           <p>
             Most definitely. If you're not gated in at least some, hit me up and
             we'll talk all about how you're a super-seller.{" "}
@@ -408,13 +447,14 @@ export const featureList = [
     ],
     testimonialOne: null,
     testimonialTwo: null,
+    video: null,
     link: "categories",
     nextLink: "retailers",
     prevLink: "calculations",
   },
   {
     title: "Solid sources by default",
-    desc: (
+    description: (
       <p>
         <span className={classes.emphasizedFeature}>
           Over 500 trusted US-based retailers are used to source products
@@ -427,7 +467,7 @@ export const featureList = [
     faqs: [
       {
         title: "How can I trust that these retailers are the real deal?",
-        desc: (
+        description: (
           <p>
             When we say "authentic," we mean it.{" "}
             <span className={classes.emphasizedFeature}>
@@ -441,7 +481,7 @@ export const featureList = [
       },
       {
         title: "Can I use these sources for ungating?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               You surely cannot. These are{" "}
@@ -459,7 +499,7 @@ export const featureList = [
       },
       {
         title: "Do you source from XYZ retailer?",
-        desc: (
+        description: (
           <p>
             I dunno! You'll have to{" "}
             <Link to="/contact/" className="secondary-link">
@@ -471,13 +511,16 @@ export const featureList = [
         rotate: "rotate-3",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "retailers",
     nextLink: "historical-metrics",
     prevLink: "categories",
   },
   {
     title: "Check out historical metrics",
-    desc: (
+    description: (
       <p>
         History tends to repeat itself, and you deserve the full picture. That’s
         why{" "}
@@ -491,7 +534,7 @@ export const featureList = [
     faqs: [
       {
         title: "What's the benefit of watching 30 & 90 day metrics?",
-        desc: (
+        description: (
           <p>
             There are a lot of benefits, actually. Arbitrage is sorta volatile,
             which creates the price gaps you can take advantage of. A downside
@@ -508,7 +551,7 @@ export const featureList = [
       },
       {
         title: "Will I get the buy box?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>Quite likely, yes</span>
             ! That's why the current competition is included. For example: if
@@ -521,7 +564,7 @@ export const featureList = [
       },
       {
         title: "How are these values tracked?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               With a really cool tool called Keepa
@@ -534,13 +577,16 @@ export const featureList = [
         rotate: "-rotate-1",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "historical-metrics",
     nextLink: "reliability",
     prevLink: "retailers",
   },
   {
     title: "Keep 'em coming",
-    desc: (
+    description: (
       <p>
         Leadgeek is all about predictability, especially when it comes to the
         quantity of leads you can expect. Gone are the days of striking out when
@@ -554,7 +600,7 @@ export const featureList = [
     faqs: [
       {
         title: "How many leads will I get?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               Leadgeek guarantees 10 products for you to check out every day,
@@ -569,7 +615,7 @@ export const featureList = [
       },
       {
         title: "Are there ever any extra leads?",
-        desc: (
+        description: (
           <p>
             Heck yeah.{" "}
             <span className={classes.emphasizedFeature}>
@@ -583,7 +629,7 @@ export const featureList = [
       },
       {
         title: "Do you take any holidays off?",
-        desc: (
+        description: (
           <p>
             Indeed we do, but it's not like we're throwing a rager on Earth Day.{" "}
             <span className={classes.emphasizedFeature}>
@@ -605,13 +651,14 @@ export const featureList = [
       source: "Kevin",
       rotate: "rotate-6 hover:-rotate-1",
     },
+    video: null,
     link: "reliability",
     nextLink: "exclusivity",
     prevLink: "historical-metrics",
   },
   {
     title: "The inner circle",
-    desc: (
+    description: (
       <p>
         Leadgeek takes seller exclusivity seriously, which is why{" "}
         <span className={classes.emphasizedFeature}>
@@ -625,7 +672,7 @@ export const featureList = [
     faqs: [
       {
         title: `Will there be a "race to the bottom"?`,
-        desc: (
+        description: (
           <p>
             We have no crystal ball to see into the future, but{" "}
             <span className={classes.emphasizedFeature}>
@@ -639,7 +686,7 @@ export const featureList = [
       },
       {
         title: "What's a no-budge cap?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               The limit of members is the limit of members
@@ -651,13 +698,16 @@ export const featureList = [
         rotate: "rotate-2",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "exclusivity",
     nextLink: "predictability",
     prevLink: "reliability",
   },
   {
     title: "Hot off the press",
-    desc: (
+    description: (
       <p>
         Leadgeek helps you make sourcing a system by releasing{" "}
         <span className={classes.emphasizedFeature}>
@@ -670,7 +720,7 @@ export const featureList = [
     faqs: [
       {
         title: "Why release leads at a scheduled time?",
-        desc: (
+        description: (
           <p>
             Much of arbitrage is about developing a practical system and
             nurturing habits. Many people have full-time jobs on top of doing
@@ -686,7 +736,7 @@ export const featureList = [
       },
       {
         title: "Why 9 am CST?",
-        desc: (
+        description: (
           <p>
             Think of it like the opening of a farmer's market:{" "}
             <span className={classes.emphasizedFeature}>
@@ -708,13 +758,14 @@ export const featureList = [
       source: "Brian",
       rotate: "rotate-3 hover:rotate-6",
     },
+    video: null,
     link: "predictability",
     nextLink: "seller-insight",
     prevLink: "exclusivity",
   },
   {
     title: "Professional experience in your corner",
-    desc: (
+    description: (
       <p>
         <span className={classes.emphasizedFeature}>
           The Leadgeek sourcing process includes review by a seasoned US Amazon
@@ -727,7 +778,7 @@ export const featureList = [
     faqs: [
       {
         title: "Huh? Amazon seller review?",
-        desc: (
+        description: (
           <p>
             Yup!{" "}
             <span className={classes.emphasizedFeature}>
@@ -746,7 +797,7 @@ export const featureList = [
       },
       {
         title: "Which part is evaluated by the experienced seller?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               Everything about each and every lead
@@ -761,7 +812,7 @@ export const featureList = [
       },
       {
         title: "Does that mean I can just purchase stuff willy-nilly?",
-        desc: (
+        description: (
           <p>
             Probably not.{" "}
             <span className={classes.emphasizedFeature}>
@@ -774,13 +825,16 @@ export const featureList = [
         rotate: "-rotate-2",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "seller-insight",
     nextLink: "feed",
     prevLink: "predictability",
   },
   {
     title: "Skim info in the Feed",
-    desc: (
+    description: (
       <p>
         The Feed shows the most important product metrics by design, making it
         easy to see the leads you’re interested in and breeze through the ones
@@ -794,7 +848,7 @@ export const featureList = [
     faqs: [
       {
         title: "What kind of stuff is included in the Feed?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               The title, category, image, competition, profit, ROI, BSR, monthly
@@ -807,7 +861,7 @@ export const featureList = [
       },
       {
         title: "Can I see more?",
-        desc: (
+        description: (
           <p>
             Very easily.{" "}
             <span className={classes.emphasizedFeature}>
@@ -826,14 +880,14 @@ export const featureList = [
       rotate: "-rotate-2 hover:-rotate-1",
     },
     testimonialTwo: null,
-    video: { webm: FeedWebm, mp4: FeedMp4 },
+    video: { webm: FeedWebm, mp4: FeedMp4, title: "The Leadgeek Feed" },
     link: "feed",
     nextLink: "filters",
     prevLink: "seller-insight",
   },
   {
     title: "Surface data, don't dig for it",
-    desc: (
+    description: (
       <p>
         You’ve finally got 30 minutes to sit down and check out some arbitrage
         leads. But there’s tons of information to sort through and so many
@@ -848,7 +902,7 @@ export const featureList = [
     faqs: [
       {
         title: "What can I filter by?",
-        desc: (
+        description: (
           <p>
             There are 7 min/max value filters:{" "}
             <span className={classes.emphasizedFeature}>
@@ -864,7 +918,7 @@ export const featureList = [
       },
       {
         title: "Only 9 filters? That doesn't seem like a lot...",
-        desc: (
+        description: (
           <p>
             Exactly!{" "}
             <span className={classes.emphasizedFeature}>
@@ -885,14 +939,14 @@ export const featureList = [
       source: "Austin",
       rotate: "rotate-2 hover:-rotate-2",
     },
-    video: { webm: FiltersWebm, mp4: FiltersMp4 },
+    video: { webm: FiltersWebm, mp4: FiltersMp4, title: "Using filters" },
     link: "filters",
     nextLink: "details",
     prevLink: "feed",
   },
   {
     title: "View details on the fly",
-    desc: (
+    description: (
       <p>
         Don't miss a beat with the detailed view for each item.{" "}
         <span className={classes.emphasizedFeature}>
@@ -906,7 +960,7 @@ export const featureList = [
     faqs: [
       {
         title: "How detailed are we talking here?",
-        desc: (
+        description: (
           <p>
             Pretty detailed. It's good to understand what it is you'll
             potentially be selling:{" "}
@@ -925,7 +979,7 @@ export const featureList = [
       },
       {
         title: "Alright, what else?",
-        desc: (
+        description: (
           <p>
             Managerial tasks are really easy from the detailed view -{" "}
             <span className={classes.emphasizedFeature}>
@@ -939,13 +993,14 @@ export const featureList = [
     ],
     testimonialOne: null,
     testimonialTwo: null,
+    video: null,
     link: "details",
     nextLink: "like-and-archive",
     prevLink: "filters",
   },
   {
     title: `Stay organized with "Like" & "Archive"`,
-    desc: (
+    description: (
       <p>
         <span className={classes.emphasizedFeature}>
           Things are right where you expect to find them
@@ -958,7 +1013,7 @@ export const featureList = [
     faqs: [
       {
         title: "How many leads can I like or archive?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>There's no limit</span>,
             like and archive away!
@@ -968,7 +1023,7 @@ export const featureList = [
       },
       {
         title: "Why include both liked and archived lists?",
-        desc: (
+        description: (
           <p>
             It's helpful to like the leads you're interested in double-checking
             or ordering every day as you source through the Feed.{" "}
@@ -984,14 +1039,18 @@ export const featureList = [
     ],
     testimonialOne: null,
     testimonialTwo: null,
-    video: { webm: LikeArchiveWebm, mp4: LikeArchiveMp4 },
+    video: {
+      webm: LikeArchiveWebm,
+      mp4: LikeArchiveMp4,
+      title: "Like & archive leads",
+    },
     link: "like-and-archive",
     nextLink: "prep",
     prevLink: "details",
   },
   {
     title: "Account for prep costs automatically",
-    desc: (
+    description: (
       <p>
         Built-in tools allow you to{" "}
         <span className={classes.emphasizedFeature}>
@@ -1004,7 +1063,7 @@ export const featureList = [
     faqs: [
       {
         title: `What do you mean by "prep?"`,
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               When you order from a retailer, they'll ship products that need to
@@ -1021,7 +1080,7 @@ export const featureList = [
       },
       {
         title: "How can I account for prep expenses?",
-        desc: (
+        description: (
           <p>
             If your prep is cost calculated by the unit (eg. $0.90) or by weight
             (eg. $0.20/lb),{" "}
@@ -1035,14 +1094,16 @@ export const featureList = [
         rotate: "-rotate-2",
       },
     ],
-    video: { webm: PrepWebm, mp4: PrepMp4 },
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: { webm: PrepWebm, mp4: PrepMp4, title: "Account for prep costs" },
     link: "prep",
     nextLink: "comments",
     prevLink: "like-and-archive",
   },
   {
     title: "Leave your mark",
-    desc: (
+    description: (
       <p>
         <span className={classes.emphasizedFeature}>
           Personalize each product by writing a comment to remind you of
@@ -1055,7 +1116,7 @@ export const featureList = [
     faqs: [
       {
         title: "What kinds of comments would be helpful?",
-        desc: (
+        description: (
           <p>
             Anything to make life easier for your future self. Many people like
             to include the{" "}
@@ -1069,14 +1130,20 @@ export const featureList = [
         rotate: "-rotate-3",
       },
     ],
-    video: { webm: CommentWebm, mp4: CommentMp4 },
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: {
+      webm: CommentWebm,
+      mp4: CommentMp4,
+      title: "Comment on arbitrage leads",
+    },
     link: "comments",
     nextLink: "search",
     prevLink: "prep",
   },
   {
     title: "Keyword central",
-    desc: (
+    description: (
       <p>
         Looking for something in particular?{" "}
         <span className={classes.emphasizedFeature}>
@@ -1089,7 +1156,7 @@ export const featureList = [
     faqs: [
       {
         title: "What values can I search for?",
-        desc: (
+        description: (
           <p>
             There are 4 search parameters:{" "}
             <span className={classes.emphasizedFeature}>
@@ -1102,7 +1169,7 @@ export const featureList = [
       },
       {
         title: "Ugh! I don't remember the product's name exactly...",
-        desc: (
+        description: (
           <p>
             Don't worry! The search bar has what's called "fuzzy" search,
             meaning{" "}
@@ -1116,14 +1183,20 @@ export const featureList = [
         rotate: "-rotate-1",
       },
     ],
-    video: { webm: SearchWebm, mp4: SearchMp4 },
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: {
+      webm: SearchWebm,
+      mp4: SearchMp4,
+      title: "Search the sourcing list",
+    },
     link: "search",
     nextLink: "seller-notes",
     prevLink: "comments",
   },
   {
     title: "Variation suggestions out of the box",
-    desc: (
+    description: (
       <p>
         Finding the right variation is great, but it takes valuable time to
         determine which ones are worth selling. With Leadgeek,{" "}
@@ -1137,7 +1210,7 @@ export const featureList = [
     faqs: [
       {
         title: "What kinds of variation suggestions will I get?",
-        desc: (
+        description: (
           <p>
             Anything to help make the buying process more clear, though it
             usually looks like 3 main types of notes:{" "}
@@ -1152,7 +1225,7 @@ export const featureList = [
       },
       {
         title: "What is a seller-to-seller note?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               These are notes offering help in a way that metrics maybe don't
@@ -1166,13 +1239,16 @@ export const featureList = [
         rotate: "-rotate-1",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "seller-notes",
     nextLink: "promo-notes",
     prevLink: "search",
   },
   {
     title: "Your very own research assistant",
-    desc: (
+    description: (
       <p>
         Are you ever curious if there’s a promo or some discount you’re missing
         before you order? Now you don’t have to wonder.{" "}
@@ -1183,11 +1259,10 @@ export const featureList = [
         .
       </p>
     ),
-    rotate: "-rotate-1",
     faqs: [
       {
         title: "Wait...how does cashback work?",
-        desc: (
+        description: (
           <p>
             Sites like Rakuten or TopCashback get a small affiliate commission
             for referring people to certain retailers like Target, Sierra,
@@ -1204,7 +1279,7 @@ export const featureList = [
       },
       {
         title: "How do I take advantage of this?",
-        desc: (
+        description: (
           <p>
             With one click! If there's any discount available, you can{" "}
             <span className={classes.emphasizedFeature}>
@@ -1218,7 +1293,7 @@ export const featureList = [
       },
       {
         title: "Is the cashback calculated into the purchase price?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               Nope, which means that you'll be able to shave 1-3% on your
@@ -1230,13 +1305,16 @@ export const featureList = [
         rotate: "-rotate-1",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "promo-notes",
     nextLink: "lead-ownership",
     prevLink: "seller-notes",
   },
   {
     title: "Leads belong to you",
-    desc: (
+    description: (
       <p>
         Leadgeek puts you in control - and that means that you should be able to
         download your product leads if you want to.{" "}
@@ -1249,7 +1327,7 @@ export const featureList = [
     faqs: [
       {
         title: "What format are my leads put in?",
-        desc: (
+        description: (
           <p>
             When exported,{" "}
             <span className={classes.emphasizedFeature}>
@@ -1263,7 +1341,7 @@ export const featureList = [
       },
       {
         title: "How do I download them?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               Just click on "Export" in the top right of the Leads panel
@@ -1274,14 +1352,20 @@ export const featureList = [
         rotate: "rotate-2",
       },
     ],
-    video: { webm: ExportWebm, mp4: ExportMp4 },
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: {
+      webm: ExportWebm,
+      mp4: ExportMp4,
+      title: "Download arbitrage leads",
+    },
     link: "lead-ownership",
     nextLink: "support",
     prevLink: "promo-notes",
   },
   {
     title: "A+ member support",
-    desc: (
+    description: (
       <p>
         Navigating Amazon's marketplace can be a challenge, but there's no need
         to go through it alone.{" "}
@@ -1296,7 +1380,7 @@ export const featureList = [
     faqs: [
       {
         title: "What kinds of things can you help me with?",
-        desc: (
+        description: (
           <p>
             Our support is handled by an Amazon seller who knows their stuff.
             They're{" "}
@@ -1311,7 +1395,7 @@ export const featureList = [
       },
       {
         title: "What are your hours?",
-        desc: (
+        description: (
           <p>
             <span className={classes.emphasizedFeature}>
               9 am-5 pm CST Monday-Friday
@@ -1323,6 +1407,9 @@ export const featureList = [
         rotate: "rotate-2",
       },
     ],
+    testimonialOne: null,
+    testimonialTwo: null,
+    video: null,
     link: "support",
     nextLink: "criteria",
     prevLink: "lead-ownership",

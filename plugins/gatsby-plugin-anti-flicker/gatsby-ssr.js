@@ -1,6 +1,16 @@
 import React from "react"
 
-const containerId = "GTM-NNVJ2DH"
+let containerId
+let optimizeId
+
+if (process.env.NODE_ENV !== "production") {
+  console.log("This is a dev environment. Not injecting analytics scripts.")
+  containerId = ""
+  optimizeId = ""
+} else {
+  containerId = "GTM-NNVJ2DH"
+  optimizeId = "OPT-KXGPFFT"
+}
 
 const createDataLayer = () => ({
   __html: "window.dataLayer = window.dataLayer || []",
@@ -14,7 +24,7 @@ const optimizeAntiFlickerScript = containerId => ({
   __html: `(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-})(window,document.documentElement,'async-hide','dataLayer',3500,
+})(window,document.documentElement,'async-hide','dataLayer',4000,
 {'${containerId}':true});`,
 })
 
@@ -38,7 +48,7 @@ const customHeadComponents = [
   />,
   <script
     key="optimize"
-    src="https://www.googleoptimize.com/optimize.js?id=OPT-KXGPFFT"
+    src={`https://www.googleoptimize.com/optimize.js?id=${optimizeId}`}
   />,
   <script
     key="gtm-head"

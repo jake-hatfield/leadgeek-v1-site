@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-search.jpg"
 
-const SearchPage = ({ location }) => {
+interface SearchPageProps {
+  location: Location
+}
+
+const SearchPage: React.FC<SearchPageProps> = ({ location }) => {
   const title = "Keyword Central | Leadgeek"
-  const desc =
+  const description =
     "Powerful search lets you find what you’re interested in without hunting through thousands of leads. Input keywords to search by the source store, title, or ASIN."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/search/",
           type: "website",
           images: [

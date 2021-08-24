@@ -7,18 +7,25 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-like-and-archive.jpg"
 
-const LikeAndArchivePage = ({ location }) => {
+interface LikeAndArchivePageProps {
+  location: Location
+}
+
+const LikeAndArchivePage: React.FC<LikeAndArchivePageProps> = ({
+  location,
+}) => {
   const title = `Stay Organized with "Like" & "Archive" | Leadgeek`
-  const desc =
+  const description =
     "Things are right where you expect to find them with Leadgeek's simple but powerful like and archive system. Like the leads you want to order soon and archive the ones that deserve a second look at some point in the future."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/like-and-archive/",
           type: "website",
           images: [

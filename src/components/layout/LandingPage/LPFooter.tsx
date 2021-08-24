@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Logo from "@assets/svgs/leadgeek-logo-light.svg"
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="py-12 relative z-20 border-t border-gray-900">
       <div className="mx-auto max-w-xl">

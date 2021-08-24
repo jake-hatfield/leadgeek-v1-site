@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-lead-ownership.jpg"
 
-const LeadOwnerShipPage = ({ location }) => {
+interface LeadOwnerShipPageProps {
+  location: Location
+}
+
+const LeadOwnerShipPage: React.FC<LeadOwnerShipPageProps> = ({ location }) => {
   const title = "Leads Belong to You | Leadgeek"
-  const desc =
+  const description =
     "Leadgeek puts you in control - and that means that you should be able to download your product leads if you want to. It's easy to export the items you want into a spreadsheet to do whatever you want with."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/lead-ownership/",
           type: "website",
           images: [

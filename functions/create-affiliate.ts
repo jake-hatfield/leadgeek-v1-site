@@ -1,13 +1,15 @@
-require("dotenv").config()
-const MongoClient = require("mongodb").MongoClient
-const MONGODB_URI = process.env.GATSBY_MONGODB_URI
-const DB_NAME = process.env.GATSBY_DB_NAME
-const CO_NAME = process.env.GATSBY_CO_NAME
+import { Handler } from "@netlify/functions"
 
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
 const nodemailer = require("nodemailer")
 const User = require("../models/User")
+
+require("dotenv").config()
+const MongoClient = require("mongodb").MongoClient
+const MONGODB_URI = process.env.GATSBY_MONGODB_URI
+const DB_NAME = process.env.GATSBY_DB_NAME
+const CO_NAME = process.env.GATSBY_CO_NAME
 
 const statusCode = 200
 const headers = {
@@ -56,7 +58,7 @@ const pushToDatabase = async (db, data) => {
     }
     // encrypt password
     const salt = await bcrypt.genSalt(10)
-    encryptedPassword = await bcrypt.hash(password, salt)
+    const encryptedPassword = await bcrypt.hash(password, salt)
 
     // create LGID
     const lgid = await crypto.randomBytes(8).toString("hex")
@@ -95,7 +97,7 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-exports.handler = async (event, context) => {
+const handler: Handler = async event => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -173,3 +175,5 @@ exports.handler = async (event, context) => {
     console.log(error)
   }
 }
+
+export { handler }

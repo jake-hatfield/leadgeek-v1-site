@@ -3,26 +3,7 @@ import { Link } from "gatsby"
 
 import Logo from "@assets/svgs/leadgeek-logo-light.svg"
 
-const Footer = () => {
-  const categories = [
-    {
-      header: "Product",
-      items: [
-        { title: "How it works", link: "demo" },
-        { title: "Tour features", link: "features" },
-        { title: "Pricing", link: "pricing" },
-      ],
-    },
-
-    {
-      header: "Company",
-      items: [
-        { title: "Contact", link: "contact" },
-        { title: "Affiliates", link: "affiliates" },
-        { title: "Seller stories", link: "stories" },
-      ],
-    },
-  ]
+const Footer: React.FC = () => {
   return (
     <footer className="py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
@@ -77,6 +58,26 @@ const Footer = () => {
     </footer>
   )
 }
+
+const categories = [
+  {
+    header: "Product",
+    items: [
+      { title: "How it works", link: "demo" },
+      { title: "Tour features", link: "features" },
+      { title: "Pricing", link: "pricing" },
+    ],
+  },
+
+  {
+    header: "Company",
+    items: [
+      { title: "Contact", link: "contact" },
+      { title: "Affiliates", link: "affiliates" },
+      { title: "Seller stories", link: "stories" },
+    ],
+  },
+]
 
 const footerLinks = [
   {

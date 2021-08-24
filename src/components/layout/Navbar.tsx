@@ -4,14 +4,15 @@ import { Link } from "gatsby"
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Logo from "@assets/svgs/leadgeek-logo-light.svg"
+import LogoSvg from "@assets/svgs/leadgeek-logo-light.svg"
+import LogoPng from "@assets/images/leadgeek-logo.png"
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <>
-      <LogoJsonLd logo={Logo} url="https://leadgeek.io/" />
+      <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
       <header className="relative z-30">
         {/* notification banner */}
         {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
               <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <Logo className="w-8 lg:w-10 mr-4" />
+                <LogoSvg className="w-8 lg:w-10 mr-4" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </div>
@@ -113,7 +114,7 @@ const Navbar: React.FC = () => {
                       to={`/`}
                       className="all-center text-gray-900 rounded-lg"
                     >
-                      <Logo className="w-8 lg:w-10 mr-4" />
+                      <LogoSvg className="w-8 lg:w-10 mr-4" />
                       lead<span className="text-purple-500">geek</span>
                     </Link>
                   </div>

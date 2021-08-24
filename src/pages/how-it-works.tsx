@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
+import Img, { GatsbyImageProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -27,17 +27,17 @@ interface HowItWorksPageProps {
   data: {
     app: {
       childImageSharp: {
-        fluid: GatsbyImageFluidProps
+        fluid: GatsbyImageProps
       }
     }
     details: {
       childImageSharp: {
-        fluid: GatsbyImageFluidProps
+        fluid: GatsbyImageProps
       }
     }
     detailsClose: {
       childImageSharp: {
-        fluid: GatsbyImageFluidProps
+        fluid: GatsbyImageProps
       }
     }
   }

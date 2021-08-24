@@ -3,7 +3,6 @@ import React from "react"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "@components/layout/Layout"
-
 import HeaderWrapper from "@components/HeaderWrapper"
 import PrimaryHeader from "@components/PrimaryHeader"
 

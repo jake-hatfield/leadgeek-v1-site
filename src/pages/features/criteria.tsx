@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-criteria.jpg"
 
-const LeadCriteriaPage = ({ location }) => {
+interface LeadCriteriaPageProps {
+  location: Location
+}
+
+const LeadCriteriaPage: React.FC<LeadCriteriaPageProps> = ({ location }) => {
   const title = "Top-Shelf Leads Come Standard | Leadgeek"
-  const desc =
+  const description =
     "Scale your business without sacrificing quality in your inventory Carefully-tailored criteria and vetting methods allow you to get professional-grade arbitrage sourcing at a fraction of the price."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/criteria/",
           type: "website",
           images: [

@@ -7,18 +7,25 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-historical-metrics.jpg"
 
-const HistoricalMetricsPage = ({ location }) => {
+interface HistoricalMetricsPageProps {
+  location: Location
+}
+
+const HistoricalMetricsPage: React.FC<HistoricalMetricsPageProps> = ({
+  location,
+}) => {
   const title = "Check Out Historical Metrics | Leadgeek"
-  const desc =
+  const description =
     "Leadgeek includes 30 & 90 day metrics and current competition for the buy box. While the price right now is important too, use historical data to see trends like seasonality, out of stock spikes, and more."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/historical-metrics/",
           type: "website",
           images: [

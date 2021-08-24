@@ -31,7 +31,6 @@ interface LeadSampleTableProps {
 }
 
 const LeadSampleTable: React.FC<LeadSampleTableProps> = ({ leads }) => {
-  console.log(leads)
   const classes = {
     tableWrapper: "relative mt-6 container",
     table: "w-full max-w-full table-auto bg-white shadow-grayMd rounded-lg",
@@ -209,7 +208,7 @@ const LeadSampleRow: React.FC<LeadSampleRowProps> = ({ lead }) => {
       </td>
       {/* roi */}
       <td className={classes.defaultCellWrapper}>
-        {data.netProfit.toFixed(2)}
+        {((data.netProfit / data.buyPrice) * 100).toFixed(0)}
         <span className={classes.valueIndicator}>%</span>
       </td>
       {/* bsr */}

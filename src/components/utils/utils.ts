@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, RefObject } from "react"
 
 import axios from "axios"
 
@@ -93,7 +93,7 @@ export const stringBeforeAt = (string: string): string => {
 
 // close on ref mouseup
 export const useOutsideMousedown = (
-  ref: HTMLElement,
+  ref: RefObject<HTMLElement>,
   setState_1: React.Dispatch<boolean>,
   setState_2: React.Dispatch<boolean> | null
 ) => {

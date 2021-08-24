@@ -7,18 +7,23 @@ import Features from "@components/layout/Features"
 
 import OgImage from "@assets/images/og/og-support.jpg"
 
-const SupportPage = ({ location }) => {
+interface SupportPageProps {
+  location: Location
+}
+
+const SupportPage: React.FC<SupportPageProps> = ({ location }) => {
   const title = "A+ Member Support | Leadgeek"
-  const desc =
+  const description =
     "LeadGeek members get dedicated guidance from an experienced arbitrage seller to prevent pitfalls and solve issues. Sell with confidence, not confusion."
+
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
-        description={desc}
+        description={description}
         openGraph={{
           title,
-          description: desc,
+          description,
           url: "https://leadgeek.io/features/support/",
           type: "website",
           images: [
