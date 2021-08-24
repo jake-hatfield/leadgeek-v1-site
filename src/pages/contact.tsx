@@ -89,10 +89,6 @@ const ContactPage: React.FC<ContactPageProps> = ({ location }) => {
                   type="text"
                   name="name"
                   placeholder="Dave Saunders"
-                  value={""}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    e
-                  }}
                   required={true}
                   styles={null}
                 />
@@ -101,10 +97,6 @@ const ContactPage: React.FC<ContactPageProps> = ({ location }) => {
                   name="email"
                   type="email"
                   placeholder="dsaunders@gmail.com"
-                  value={""}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    e
-                  }}
                   required={true}
                   styles={null}
                 />
