@@ -100,8 +100,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         setEmailValidated(false)
         return setCheckoutError("Please enter a valid email address.")
       } else {
-        setEmailValidated(true)
-        return setCheckoutError("")
+        return setEmailValidated(true)
       }
     } else {
       // email hasn't been entered
@@ -141,8 +140,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
   //   clear checkout errors and validate password on input change
   useEffect(() => {
-    if (firstName && lastName) {
+    const fullName = firstName && lastName
+    if (fullName) {
       setCheckoutError("")
+      if ((!email || !emailValidated) && password) {
+        emailValidator(email)
+      }
     }
 
     if (emailValidated) {
@@ -167,9 +170,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         const emailBeforeAt = stringBeforeAt(email)
         // test if password contains elements from email
         passwordValidator(emailBeforeAt, password)
-        const passwordValidated =
+        const passwordIsValid =
           lengthValidated && passwordEmailValidated && commonPasswordValidated
-        if (passwordValidated) {
+        if (passwordIsValid) {
           if (!checkedTOS) {
             setCheckoutError("Please accept the terms of service.")
           } else {
@@ -184,7 +187,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
                 { name: `Abandoned Cart`, status: "active" },
               ],
             })
-            setCount(count + 1)
+            return setCount(count + 1)
           }
         }
       }
