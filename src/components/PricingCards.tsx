@@ -236,7 +236,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                     ? "Sold out"
                     : plan.seatsLeft === 1
                     ? "1 seat left"
-                    : plan.seatsLeft <= 7
+                    : plan.seatsLeft <= 9
                     ? `${plan.seatsLeft} seats left`
                     : plan.title === "Bundle"
                     ? `Get both plans & save ${discount}%`
