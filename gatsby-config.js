@@ -97,6 +97,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "@sentry/gatsby",
+      options: {
+        dsn:
+          "https://c364570692be47cbab74cc3f2b152d46@o975120.ingest.sentry.io/5931063",
+        sampleRate: 0.7,
+      },
+    },
     `gatsby-plugin-anti-flicker`,
   ],
 }
