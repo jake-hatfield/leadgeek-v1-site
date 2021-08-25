@@ -82,9 +82,9 @@ exports.handler = async function (event) {
       customer: data.customerId,
       limit: 8,
     })
-    const checkSubscriptionMatch = customerSubscriptions.some(
-      subscription => subscription.plan.id === data.priceId
-    )
+    const checkSubscriptionMatch = customerSubscriptions
+      .filter(subscription => subscription.status === "active")
+      .some(subscription => subscription.plan.id === data.priceId)
     if (checkSubscriptionMatch) {
       return {
         statusCode,
@@ -99,10 +99,21 @@ exports.handler = async function (event) {
         customer: data.customerId,
         items: [{ price: data.priceId }],
       })
-      return {
-        statusCode,
-        headers,
-        body: JSON.stringify(subscription),
+      if (subscription.status !== "active") {
+        return {
+          statusCode,
+          headers,
+          body: JSON.stringify({
+            msg:
+              "Your card was declined. Please contact your bank or Leadgeek support for more details.",
+          }),
+        }
+      } else {
+        return {
+          statusCode,
+          headers,
+          body: JSON.stringify(subscription),
+        }
       }
     }
   } catch (error) {

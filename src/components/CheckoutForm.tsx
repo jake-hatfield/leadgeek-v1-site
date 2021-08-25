@@ -287,21 +287,21 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           )
           setProcessing(false)
         }
+      } else if (subscriptionRes.msg) {
+        setCheckoutError(subscriptionRes.msg)
       } else {
-        if (subscriptionRes.msg) {
-          setCheckoutError(subscriptionRes.msg)
-        } else {
-          setCheckoutError(subscriptionRes)
-        }
-        return setProcessing(false)
+        setCheckoutError(
+          "Your payment may have been processed, but there was an error. Please make sure your information is correct or contact support to complete your purchase."
+        )
       }
+      return setProcessing(false)
     } catch (error) {
       console.log(error.message)
       setCheckoutError(
         "Your payment may have been processed, but there was an error. Please make sure your information is correct or contact support to complete your purchase."
       )
-      setProcessing(false)
     }
+    setProcessing(false)
   }
 
   // style form heading
@@ -536,7 +536,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           <button
             disabled={count > 2}
             type="button"
-            onClick={() => setCount(count - 1)}
+            onClick={() => {
+              setCheckoutError("")
+              setCount(count - 1)
+            }}
             className={`mt-4 text-sm text-gray-700 secondary-link rounded-md ring-gray`}
           >
             Back

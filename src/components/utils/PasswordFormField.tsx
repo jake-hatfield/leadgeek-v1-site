@@ -3,7 +3,7 @@ import React from "react"
 import EyeOpen from "@assets/svgs/eye-open.svg"
 import EyeClosed from "@assets/svgs/eye-closed.svg"
 
-interface FormFieldProps {
+interface PasswordFormFieldProps {
   label: string
   placeholder: string
   value: string
@@ -14,7 +14,7 @@ interface FormFieldProps {
   styles: string | null
 }
 
-const FormField: React.FC<FormFieldProps> = ({
+const PasswordFormField: React.FC<PasswordFormFieldProps> = ({
   label,
   placeholder,
   value,
@@ -56,4 +56,4 @@ const FormField: React.FC<FormFieldProps> = ({
   )
 }
 
-export default FormField
+export default PasswordFormField
