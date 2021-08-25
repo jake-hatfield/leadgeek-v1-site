@@ -71,7 +71,7 @@ exports.handler = async function (event) {
     return {
       statusCode,
       headers,
-      body: error.raw.message,
+      body: JSON.stringify({ msg: error.raw.message }),
     }
   }
 
@@ -118,5 +118,10 @@ exports.handler = async function (event) {
     }
   } catch (error) {
     console.log(error)
+    return {
+      statusCode,
+      headers,
+      body: JSON.stringify({ msg: error.raw.message }),
+    }
   }
 }
