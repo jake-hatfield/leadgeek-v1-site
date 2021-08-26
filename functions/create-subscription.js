@@ -34,6 +34,7 @@ exports.handler = async function (event) {
       }),
     }
   }
+
   // payment method handling
   try {
     //   get all payment methods on file
@@ -82,16 +83,47 @@ exports.handler = async function (event) {
       customer: data.customerId,
       limit: 8,
     })
-    const checkSubscriptionMatch = customerSubscriptions
-      .filter(subscription => subscription.status === "active")
-      .some(subscription => subscription.plan.id === data.priceId)
-    if (checkSubscriptionMatch) {
-      return {
-        statusCode,
-        headers,
-        body: JSON.stringify({
-          msg: "You've already subscribed to this plan.",
-        }),
+    const matchedSubscriptions = customerSubscriptions.filter(
+      subscription => subscription.plan.id === data.priceId
+    )
+    // if they have a subscription corresponding to the current planID, handle active or incomplete
+    if (matchedSubscriptions.length > 0) {
+      const matchedSubscriptionStatus =
+        matchedSubscriptions.filter(
+          subscription => subscription.status === "active"
+        ).length > 0
+          ? "active"
+          : matchedSubscriptions[0].status
+      console.log(matchedSubscriptionStatus)
+      if (matchedSubscriptionStatus === "active") {
+        return {
+          statusCode,
+          headers,
+          body: JSON.stringify({
+            msg: "You've already subscribed to this plan.",
+          }),
+        }
+      } else {
+        //   retry payment
+        const latestInvoice = matchedSubscriptions[0].latest_invoice
+        const retryInvoicePayment = await stripe.invoices.pay(latestInvoice)
+        if (retryInvoicePayment.paid === true) {
+          return {
+            statusCode,
+            headers,
+            body: JSON.stringify({ status: "active" }),
+          }
+        } else {
+          //   send error message for incomplete subscription
+          return {
+            statusCode,
+            headers,
+            body: JSON.stringify({
+              msg:
+                "Your subscription payment is incomplete. Please contact Leadgeek support to complete your purchase.",
+            }),
+          }
+        }
       }
     } else {
       // subscription for this plan doesn't yet exist, so create it

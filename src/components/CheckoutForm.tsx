@@ -209,6 +209,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   //   handle form submit
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setCheckoutError("")
     const firstNameCapitalized = capitalize(firstName)
     const lastNameCapitalized = capitalize(lastName)
     const name = `${firstNameCapitalized} ${lastNameCapitalized}`
