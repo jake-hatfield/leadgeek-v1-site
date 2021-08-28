@@ -650,7 +650,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
           </header>
           <div className="relative md:flex md:flex-col lg:flex-row md:items-center mx-4">
             <TestimonialFull
-              key={null}
+              key={1}
               size={"sm"}
               margin={null}
               position={"lg:-translate-x-12 lg:-translate-y-12"}
@@ -668,7 +668,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
               rotate={"-rotate-2"}
             />
             <TestimonialFull
-              key={null}
+              key={2}
               size={"sm"}
               margin={null}
               position={null}
@@ -687,7 +687,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
               rotate={"-rotate-1"}
             />
             <TestimonialFull
-              key={null}
+              key={3}
               size={"sm"}
               margin={null}
               position={"lg:translate-x-24 lg:translate-y-8"}
@@ -708,7 +708,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
           </div>
           <div className="relative md:flex md:flex-col lg:flex-row md:items-center mx-4">
             <TestimonialFull
-              key={null}
+              key={4}
               size={"sm"}
               margin={null}
               position={"lg:-translate-x-12 lg:-translate-y-12"}
@@ -727,7 +727,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
               rotate={"-rotate-2 lg:-rotate-6"}
             />
             <TestimonialFull
-              key={null}
+              key={5}
               size={"sm"}
               margin={null}
               position={null}
@@ -743,7 +743,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
               rotate={"rotate-2"}
             />
             <TestimonialFull
-              key={null}
+              key={6}
               size={"sm"}
               margin={null}
               position={"lg:translate-x-16 lg:translate-y-8"}
