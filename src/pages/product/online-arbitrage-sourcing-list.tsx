@@ -112,8 +112,12 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
 
   //   check active subscriptions
   const activeSubscriptions = data.allStripeSubscription.nodes.filter(
-    subscription => subscription.status === "active"
+    subscription =>
+      subscription.status === "active" ||
+      subscription.status === "trialing" ||
+      subscription.status === "past_due"
   )
+
   const bundleSubscriptions = activeSubscriptions.filter(
     subscription =>
       subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID

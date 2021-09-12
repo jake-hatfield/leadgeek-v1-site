@@ -39,7 +39,10 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
 
   //   check active subscriptions
   const activeSubscriptions = data.allStripeSubscription.nodes.filter(
-    subscription => subscription.status === "active"
+    subscription =>
+      subscription.status === "active" ||
+      subscription.status === "trialing" ||
+      subscription.status === "past_due"
   )
 
   const bundleSubscriptions = activeSubscriptions.filter(

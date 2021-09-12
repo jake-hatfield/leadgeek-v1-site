@@ -229,21 +229,23 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                 : "bg-white shadow-graySm"
             } rounded-lg border border-gray-900 w-72 md:w-80 transition-main`}
           >
-            <div className="absolute inset-x-0 top-0 transform translate-y-px">
-              <div className="flex justify-center transform -translate-y-1/2">
-                <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                  {plan.seatsLeft <= 0
-                    ? "Sold out"
-                    : plan.seatsLeft === 1
-                    ? "1 seat left"
-                    : plan.seatsLeft <= 9
-                    ? `${plan.seatsLeft} seats left`
-                    : plan.title === "Bundle"
-                    ? `Get both plans & save ${discount}%`
-                    : "Only a few seats left"}
-                </span>
+            {(plan.seatsLeft <= 6 || plan.title === "Bundle") && (
+              <div className="absolute inset-x-0 top-0 transform translate-y-px">
+                <div className="flex justify-center transform -translate-y-1/2">
+                  <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
+                    {plan.seatsLeft <= 0
+                      ? "Sold out"
+                      : plan.seatsLeft === 1
+                      ? "1 seat left"
+                      : plan.seatsLeft <= 6
+                      ? `${plan.seatsLeft} seats left`
+                      : plan.title === "Bundle" &&
+                        `Get both plans & save ${discount}%`}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
+
             <header className="mt-2 text-center">
               <h2 className="text-4xl inter font-black">{`${plan.title}`}</h2>
               <p className="mt-2 text-center text-sm">{plan.description}</p>
