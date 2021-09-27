@@ -29,6 +29,7 @@ interface PricingCard {
   price: number
   features: { title: JSX.Element | string }[]
   seatsLeft: number
+  waitlist: boolean
 }
 
 const PricingCards: React.FC<PricingCardsProps> = ({
@@ -115,8 +116,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Full software access",
         },
       ],
-
       seatsLeft: growSeatsLeft,
+      waitlist: true,
     },
     {
       title: "Pro",
@@ -169,8 +170,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Full software access",
         },
       ],
-
       seatsLeft: proSeatsLeft,
+      waitlist: true,
     },
     {
       title: "Bundle",
@@ -203,8 +204,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Early access and discounts on new tools",
         },
       ],
-
       seatsLeft: bundleSeatsLeft,
+      waitlist: true,
     },
   ]
 
@@ -234,7 +235,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
                   <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                    {plan.seatsLeft <= 0 && waitlist
+                    {plan.seatsLeft <= 0 || plan.waitlist
                       ? "Sold out"
                       : plan.seatsLeft === 1
                       ? "1 seat left"
