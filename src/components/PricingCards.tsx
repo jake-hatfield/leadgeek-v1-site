@@ -224,7 +224,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              plan.seatsLeft <= 0
+              plan.seatsLeft <= 0 || plan.waitlist
                 ? "bg-gray-200 shadow-graySm"
                 : plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"
@@ -253,7 +253,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
               <p className="mt-2 text-center text-sm">{plan.description}</p>
               <div
                 className={`mt-4 lg:mt-6 py-4 border-t border-b ${
-                  plan.seatsLeft === 0
+                  plan.seatsLeft <= 0 || plan.waitlist
                     ? "border-gray-900"
                     : plan.title === "Bundle"
                     ? "border-teal-300"
@@ -267,7 +267,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                   <span className="ml-2">/mo</span>
                 </div>
                 <div className="mt-4 lg:mt-6">
-                  {plan.seatsLeft <= 0 ? (
+                  {plan.seatsLeft <= 0 || plan.waitlist ? (
                     <button
                       onClick={() => {
                         setSelectedPlan(plan.title)
@@ -297,7 +297,9 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                 <li key={i} className="mt-2 flex">
                   <Bullet
                     className={`mt-1 svg-sm ${
-                      plan.seatsLeft <= 0 ? "text-gray-400" : "text-teal-300"
+                      plan.seatsLeft <= 0 || plan.waitlist
+                        ? "text-gray-400"
+                        : "text-teal-300"
                     } flex-none`}
                   />
                   <p className="ml-4">{feature.title}</p>
