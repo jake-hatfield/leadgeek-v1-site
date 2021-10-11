@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import LogoSvg from "@assets/svgs/leadgeek-logo-light.svg"
-import LogoPng from "@assets/images/leadgeek-logo.png"
+import LogoSvg from "@assets/svgs/logo.svg"
+import LogoPng from "@assets/images/logo.png"
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
               <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <LogoSvg className="w-8 lg:w-10 mr-4" />
+                <LogoSvg className="w-8 lg:w-12 mr-4 text-purple-500" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </div>
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
                       to={`/`}
                       className="all-center text-gray-900 rounded-lg"
                     >
-                      <LogoSvg className="w-8 lg:w-10 mr-4" />
+                      <LogoSvg className="w-8 lg:w-12 mr-4 text-purple-500" />
                       lead<span className="text-purple-500">geek</span>
                     </Link>
                   </div>

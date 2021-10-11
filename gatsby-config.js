@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#7069FA`,
         theme_color: `#7069FA`,
         display: `minimal-ui`,
-        icon: `src/assets/images/leadgeek-logo.png`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
     {

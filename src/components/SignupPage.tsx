@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
 
 import CheckoutForm from "@components/CheckoutForm"
-import Logo from "@assets/svgs/leadgeek-logo-light.svg"
+import Logo from "@assets/svgs/logo.svg"
 
 interface SignupPageProps {
   plan: string
@@ -46,7 +46,7 @@ const SignupPage: React.FC<SignupPageProps> = ({
                 to={`/pricing/`}
                 className="all-center text-gray-900 rounded-lg"
               >
-                <Logo className="w-8 lg:w-10 mr-4" />
+                <Logo className="w-8 lg:w-12 mr-4 text-purple-500" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </h1>

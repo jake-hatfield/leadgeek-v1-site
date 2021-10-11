@@ -17,7 +17,7 @@ const UserSchema = new Schema({
   },
   dateCreated: {
     type: Date,
-    default: Date.now,
+    default: new Date(),
   },
   lastLogin: {
     type: Date,
@@ -116,9 +116,16 @@ const UserSchema = new Schema({
       leadId: { type: Schema.Types.ObjectId, ref: "Lead" },
     },
   ],
-  unviewedLeads: [
+  comments: [
     {
-      leadId: { type: Schema.Types.ObjectId, ref: "Lead" },
+      date: { type: Date, default: null },
+      leadId: { type: Schema.Types.ObjectId },
+      comment: { type: String },
+    },
+  ],
+  notifications: [
+    {
+      notificationId: { type: Schema.Types.ObjectId },
     },
   ],
 })

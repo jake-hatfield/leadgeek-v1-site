@@ -9,7 +9,6 @@
     "@fontsource/nanum-pen-script": "^4.5.0",
     "@fontsource/space-mono": "^4.5.0",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
-    "@netlify/functions": "^0.7.2",
     "@sentry/gatsby": "^6.11.0",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.17.1",
@@ -53,13 +52,7 @@
     "stripe": "^8.170.0"
   },
   "devDependencies": {
-    "@graphql-codegen/introspection": "^2.1.0",
-    "@graphql-codegen/typescript": "^2.1.1",
-    "@graphql-codegen/typescript-operations": "^2.1.1",
-    "@graphql-codegen/typescript-react-apollo": "^3.1.1",
-    "@types/luxon": "^2.0.0",
     "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9",
     "@types/react-paginate": "^7.1.1",
     "eslint": "^7.32.0",
     "gatsby": "^3.12.0",

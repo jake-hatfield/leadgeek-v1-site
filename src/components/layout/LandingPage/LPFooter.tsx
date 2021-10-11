@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Logo from "@assets/svgs/leadgeek-logo-light.svg"
+import Logo from "@assets/svgs/logo.svg"
 
 const Footer: React.FC = () => {
   return (
     <footer className="py-12 relative z-20 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
-          <Logo className="w-8 lg:w-10" />
+          <Logo className="w-8 lg:w-12 mr-4 text-purple-500" />
         </div>
       </div>
       <div className="mt-8 lg:mt-16 text-xs font-bold text-gray-600">
