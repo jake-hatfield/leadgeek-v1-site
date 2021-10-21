@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs")
 const User = require("../models/User")
+const WaitlistUser = require("../models/WaitlistUser")
 
 require("dotenv").config()
 
@@ -7,6 +8,7 @@ const MongoClient = require("mongodb").MongoClient
 const MONGODB_URI = process.env.GATSBY_MONGODB_URI
 const DB_NAME = process.env.GATSBY_DB_NAME
 const CO_NAME = process.env.GATSBY_CO_NAME
+const CO_NAME_2 = process.env.GATSBY_CO_NAME_2
 
 const statusCode = 200
 const headers = {
@@ -131,6 +133,8 @@ const pushToDatabase = async (db, data) => {
         }
       )
     }
+
+    await db.collection(CO_NAME_2).deleteOne({ email })
 
     return {
       statusCode,

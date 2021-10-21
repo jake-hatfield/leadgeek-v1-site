@@ -120,7 +120,7 @@ export const addToMailchimp = async (subscriberData: {
   LNAME: string
   PLAN: string
   LEAD: string
-  tags: { name: string; status: string }[]
+  tags: { name: string; status: "active" | "inactive" }[]
 }) => {
   const { email, FNAME, LNAME, PLAN, LEAD, tags } = subscriberData
   const { data } = await axios.post(

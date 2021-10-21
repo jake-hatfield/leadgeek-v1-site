@@ -17,9 +17,13 @@ interface PopupProps {
       status: string
     }[]
   }
+  sendToAPI: {
+    fn: any
+    var: any
+  }
 }
 
-const Popup: React.FC<PopupProps> = ({ show, setShow, details }) => {
+const Popup: React.FC<PopupProps> = ({ show, setShow, details, sendToAPI }) => {
   const [showPopup, setShowPopup] = useState<boolean>(show)
 
   //   set cookie if popup has already been seen
@@ -79,6 +83,11 @@ const Popup: React.FC<PopupProps> = ({ show, setShow, details }) => {
       PLAN: "",
       tags: details.tags,
     })
+    await sendToAPI.fn(
+      `${capitalize(firstName)} ${capitalize(lastName)}`,
+      email.toLowerCase(),
+      sendToAPI.var
+    )
     setCount(count + 1)
   }
 

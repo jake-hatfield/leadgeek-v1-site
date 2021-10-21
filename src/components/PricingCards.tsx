@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
+import axios from "axios"
+
 import Popup from "@components/utils/Popup"
 
 import Bullet from "@assets/svgs/bullet.svg"
@@ -51,8 +53,6 @@ const PricingCards: React.FC<PricingCardsProps> = ({
     growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
   const bundleSeatsLeft: number =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
-
-  const waitlist = true
 
   //   pricing
   const bundlePrice = 263
@@ -211,6 +211,22 @@ const PricingCards: React.FC<PricingCardsProps> = ({
 
   const [selectedPlan, setSelectedPlan] = useState("")
 
+  const addToWaitlist = async (name: string, email: string, plan: string) => {
+    const body = JSON.stringify({
+      name,
+      email,
+      plan,
+    })
+
+    const res = await axios.post(
+      "/.netlify/functions/create-waitlist-user",
+      body
+    )
+
+    console.log(res)
+    return
+  }
+
   return (
     <div
       className={`${margin} flex flex-col lg:flex-row items-center lg:justify-center`}
@@ -321,8 +337,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
             ],
             subheaders: [
               <>
-                OOF! We're at capacity right now on the {selectedPlan} plan. But
-                put your contact details down and we'll add you to our waitlist.{" "}
+                We're at capacity right now on the {selectedPlan} plan. But put
+                your contact details down and we'll add you to our waitlist.{" "}
                 <span role="img" aria-label="Laptop emoji">
                   💻
                 </span>
@@ -336,6 +352,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
             cta: `Join the ${selectedPlan} plan waitlist`,
             tags: [{ name: `${selectedPlan} Plan Waitlist`, status: "active" }],
           }}
+          sendToAPI={{ fn: addToWaitlist, var: selectedPlan.toLowerCase() }}
         />
       )}
     </div>
