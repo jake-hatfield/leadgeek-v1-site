@@ -14,10 +14,10 @@ interface PopupProps {
     cta: string
     tags: {
       name: string
-      status: string
+      status: "active" | "inactive"
     }[]
   }
-  sendToAPI: {
+  sendToAPI?: {
     fn: any
     var: any
   }
@@ -79,15 +79,16 @@ const Popup: React.FC<PopupProps> = ({ show, setShow, details, sendToAPI }) => {
       email: email.toLowerCase(),
       FNAME: capitalize(firstName),
       LNAME: capitalize(lastName),
-      LEAD: "",
+      LEAD: details.tags[0].name,
       PLAN: "",
       tags: details.tags,
     })
-    await sendToAPI.fn(
-      `${capitalize(firstName)} ${capitalize(lastName)}`,
-      email.toLowerCase(),
-      sendToAPI.var
-    )
+    sendToAPI &&
+      (await sendToAPI.fn(
+        `${capitalize(firstName)} ${capitalize(lastName)}`,
+        email.toLowerCase(),
+        sendToAPI.var
+      ))
     setCount(count + 1)
   }
 

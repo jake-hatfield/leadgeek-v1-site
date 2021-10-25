@@ -218,12 +218,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
       plan,
     })
 
-    const res = await axios.post(
-      "/.netlify/functions/create-waitlist-user",
-      body
-    )
+    await axios.post("/.netlify/functions/create-waitlist-user", body)
 
-    console.log(res)
     return
   }
 
