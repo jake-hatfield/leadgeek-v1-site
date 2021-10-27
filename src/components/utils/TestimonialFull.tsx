@@ -56,7 +56,7 @@ const TestimonialFull: React.FC<TestimonialFullProps> = ({
                 />
               )}
 
-              <cite className="md:ml-4 text-sm font-semibold inter text-gray-900">
+              <cite className="ml-4 text-sm font-semibold inter text-gray-900">
                 {source}
               </cite>
             </div>

@@ -40,7 +40,9 @@ module.exports = {
       options: {
         objects: ["Subscription"],
         secretKey:
-          "***REMOVED***",
+          process.env.NODE_ENV === "production"
+            ? "***REMOVED***"
+            : "***REMOVED***",
       },
     },
     {
@@ -48,7 +50,7 @@ module.exports = {
       options: {
         connectionString: `***REMOVED***`,
         dbName: `LeadGeek`,
-        collection: `leads`,
+        collection: [`leads`, `waitlist`],
       },
     },
     {

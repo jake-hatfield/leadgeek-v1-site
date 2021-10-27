@@ -2,6 +2,8 @@ import React, { useEffect, RefObject } from "react"
 
 import axios from "axios"
 
+import { MongoDBWaitlistItem } from "pages/pricing"
+
 // bsr / category % calculator
 export const calculateBSR = (
   currentRank: number,
@@ -174,4 +176,71 @@ export const handleLGID = (search: string) => {
   if (document !== undefined && lgid !== null && getCookie("lgid") === null) {
     setCookie("lgid", lgid, 90)
   }
+}
+
+export const formatActiveSubscriptions = (
+  rawSubscriptions: {
+    plan: {
+      id: string
+      product: string
+    }
+    status: string
+  }[]
+) => {
+  //   check active subscriptions
+  const activeSubscriptions = rawSubscriptions.filter(
+    subscription =>
+      subscription.status === "active" ||
+      subscription.status === "trialing" ||
+      subscription.status === "past_due"
+  )
+
+  const bundleSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID
+  )
+  const proSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_PRO_PRODUCT_ID
+  )
+  const growSubscriptions = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_GROW_PRODUCT_ID
+  )
+  const bundleSubscriptions_2 = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID_2
+  )
+  const proSubscriptions_2 = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_PRO_PRODUCT_ID_2
+  )
+  const growSubscriptions_2 = activeSubscriptions.filter(
+    subscription =>
+      subscription.plan.product === process.env.GATSBY_GROW_PRODUCT_ID_2
+  )
+
+  return {
+    bundleSubscriptions,
+    proSubscriptions,
+    growSubscriptions,
+    bundleSubscriptions_2,
+    proSubscriptions_2,
+    growSubscriptions_2,
+  }
+}
+
+export const getWaitlistPlanCount = (
+  data: MongoDBWaitlistItem[],
+  type: "bundle" | "pro" | "grow"
+) => {
+  return data
+    .filter((w: MongoDBWaitlistItem) =>
+      w.plans.some(plan => plan.type === type)
+    )
+    .map(i => {
+      return Object.assign({}, i, {
+        plans: i.plans.filter(plan => plan.type === type),
+      })
+    }).length
 }

@@ -18,9 +18,19 @@ interface SubscriptionItem {
 interface PricingCardsProps {
   margin: string
   negativeMarginCards: boolean
-  bundleSubscriptions: SubscriptionItem[]
-  proSubscriptions: SubscriptionItem[]
-  growSubscriptions: SubscriptionItem[]
+  subscriptions: {
+    bundleSubscriptions: SubscriptionItem[]
+    proSubscriptions: SubscriptionItem[]
+    growSubscriptions: SubscriptionItem[]
+    bundleSubscriptions_2: SubscriptionItem[]
+    proSubscriptions_2: SubscriptionItem[]
+    growSubscriptions_2: SubscriptionItem[]
+  }
+  waitlist: {
+    bundle: number
+    pro: number
+    grow: number
+  }
   showWaitlistPopup: boolean
   setShowWaitlistPopup: React.Dispatch<boolean>
 }
@@ -31,26 +41,44 @@ interface PricingCard {
   price: number
   features: { title: JSX.Element | string }[]
   seatsLeft: number
-  waitlist: boolean
+  available: boolean
 }
 
 const PricingCards: React.FC<PricingCardsProps> = ({
   margin,
   negativeMarginCards,
-  bundleSubscriptions,
-  proSubscriptions,
-  growSubscriptions,
+  subscriptions,
+  waitlist,
   showWaitlistPopup,
   setShowWaitlistPopup,
 }) => {
+  // destructure necessary items
+  const {
+    bundleSubscriptions,
+    proSubscriptions,
+    growSubscriptions,
+    bundleSubscriptions_2,
+    proSubscriptions_2,
+    growSubscriptions_2,
+  } = subscriptions
+
   // calculate remaining seats
   const proPlanSeats = 15
   const growPlanSeats = 30
+
   //   subtract possible available seats from the total # of relevant subscriptions + bundle subscriptions
   const proSeatsLeft =
-    proPlanSeats - (proSubscriptions.length + bundleSubscriptions.length)
+    proPlanSeats -
+    (proSubscriptions.length +
+      proSubscriptions_2.length +
+      bundleSubscriptions.length +
+      bundleSubscriptions_2.length)
   const growSeatsLeft =
-    growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
+    growPlanSeats -
+    (growSubscriptions.length +
+      growSubscriptions_2.length +
+      bundleSubscriptions.length +
+      bundleSubscriptions_2.length)
   const bundleSeatsLeft: number =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
 
@@ -117,7 +145,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         },
       ],
       seatsLeft: growSeatsLeft,
-      waitlist: true,
+      available: growSeatsLeft <= 0 || waitlist.grow > 0 ? false : true,
     },
     {
       title: "Pro",
@@ -171,7 +199,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         },
       ],
       seatsLeft: proSeatsLeft,
-      waitlist: true,
+      available: proSeatsLeft <= 0 || waitlist.pro > 0 ? false : true,
     },
     {
       title: "Bundle",
@@ -205,7 +233,10 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         },
       ],
       seatsLeft: bundleSeatsLeft,
-      waitlist: true,
+      available:
+        bundleSeatsLeft && waitlist.grow === 0 && waitlist.pro === 0
+          ? true
+          : false,
     },
   ]
 
@@ -232,22 +263,24 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           key={i}
           className={`mt-12 lg:mx-2 xl:mx-8 ${
             negativeMarginCards ? "lg:-mt-64" : ""
-          } `}
+          }`}
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              plan.seatsLeft <= 0 || plan.waitlist
+              !plan.available
                 ? "bg-gray-200 shadow-graySm"
                 : plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"
                 : "bg-white shadow-graySm"
             } rounded-lg border border-gray-900 w-72 md:w-80 transition-main`}
           >
-            {(plan.seatsLeft <= 6 || plan.title === "Bundle") && (
+            {(!plan.available ||
+              plan.seatsLeft <= 6 ||
+              plan.title === "Bundle") && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
                   <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                    {plan.seatsLeft <= 0 || plan.waitlist
+                    {!plan.available || plan.seatsLeft < 0
                       ? "Sold out"
                       : plan.seatsLeft === 1
                       ? "1 seat left"
@@ -259,13 +292,12 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                 </div>
               </div>
             )}
-
             <header className="mt-2 text-center">
               <h2 className="text-4xl inter font-black">{`${plan.title}`}</h2>
               <p className="mt-2 text-center text-sm">{plan.description}</p>
               <div
                 className={`mt-4 lg:mt-6 py-4 border-t border-b ${
-                  plan.seatsLeft <= 0 || plan.waitlist
+                  !plan.available
                     ? "border-gray-900"
                     : plan.title === "Bundle"
                     ? "border-teal-300"
@@ -279,7 +311,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                   <span className="ml-2">/mo</span>
                 </div>
                 <div className="mt-4 lg:mt-6">
-                  {plan.seatsLeft <= 0 || plan.waitlist ? (
+                  {!plan.available ? (
                     <button
                       onClick={() => {
                         setSelectedPlan(plan.title)
@@ -309,9 +341,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                 <li key={i} className="mt-2 flex">
                   <Bullet
                     className={`mt-1 svg-sm ${
-                      plan.seatsLeft <= 0 || plan.waitlist
-                        ? "text-gray-400"
-                        : "text-teal-300"
+                      !plan.available ? "text-gray-400" : "text-teal-300"
                     } flex-none`}
                   />
                   <p className="ml-4">{feature.title}</p>

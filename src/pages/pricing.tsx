@@ -9,6 +9,10 @@ import PrimaryHeader from "@components/PrimaryHeader"
 import PricingCards from "@components/PricingCards"
 import PricingTable from "@components/PricingTable"
 import Faq from "@components/Faq"
+import {
+  formatActiveSubscriptions,
+  getWaitlistPlanCount,
+} from "@components/utils/utils"
 
 import Loopy from "@assets/svgs/loopy-dashed.svg"
 import DividerTop from "@assets/svgs/section-divider-top.svg"
@@ -28,8 +32,16 @@ interface PricingPageProps {
     allStripeSubscription: {
       nodes: SubscriptionItem[]
     }
+    allMongodbLeadGeekWaitlist: {
+      nodes: MongoDBWaitlistItem[]
+    }
   }
   location: Location
+}
+
+export interface MongoDBWaitlistItem {
+  mongodb_id: string
+  plans: { type: "bundle" | "grow" | "pro" }[]
 }
 
 const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
@@ -38,25 +50,17 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
     "Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
 
   //   check active subscriptions
-  const activeSubscriptions = data.allStripeSubscription.nodes.filter(
-    subscription =>
-      subscription.status === "active" ||
-      subscription.status === "trialing" ||
-      subscription.status === "past_due"
+  const subscriptions = formatActiveSubscriptions(
+    data.allStripeSubscription.nodes
   )
 
-  const bundleSubscriptions = activeSubscriptions.filter(
-    subscription =>
-      subscription.plan.product === process.env.GATSBY_BUNDLE_PRODUCT_ID
-  )
-  const proSubscriptions = activeSubscriptions.filter(
-    subscription =>
-      subscription.plan.product === process.env.GATSBY_PRO_PRODUCT_ID
-  )
-  const growSubscriptions = activeSubscriptions.filter(
-    subscription =>
-      subscription.plan.product === process.env.GATSBY_GROW_PRODUCT_ID
-  )
+  const rawWaitlist = data.allMongodbLeadGeekWaitlist.nodes
+
+  const waitlist = {
+    bundle: getWaitlistPlanCount(rawWaitlist, "bundle"),
+    pro: getWaitlistPlanCount(rawWaitlist, "pro"),
+    grow: getWaitlistPlanCount(rawWaitlist, "grow"),
+  }
 
   //   out-of-stock popup state
   const [showWaitlistPopup, setShowWaitlistPopup] = useState(false)
@@ -502,9 +506,8 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
             <PricingCards
               margin={"-mt-64 lg:mt-0"}
               negativeMarginCards={true}
-              bundleSubscriptions={bundleSubscriptions}
-              proSubscriptions={proSubscriptions}
-              growSubscriptions={growSubscriptions}
+              subscriptions={subscriptions}
+              waitlist={waitlist}
               showWaitlistPopup={showWaitlistPopup}
               setShowWaitlistPopup={setShowWaitlistPopup}
             />
@@ -712,6 +715,16 @@ export const query = graphql`
         plan {
           id
           product
+        }
+      }
+    }
+    allMongodbLeadGeekWaitlist(
+      filter: { plans: { elemMatch: { active: { eq: true } } } }
+    ) {
+      nodes {
+        mongodb_id
+        plans {
+          type
         }
       }
     }

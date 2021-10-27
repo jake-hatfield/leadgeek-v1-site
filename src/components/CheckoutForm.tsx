@@ -62,7 +62,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   const elements = useElements()
 
   //   set checkout error if stripe catches one
-  const handleCardDetailsChange = e => {
+  const handleCardDetailsChange = (e: any) => {
     e.error ? setCheckoutError(e.error.message) : setCheckoutError("")
   }
 
@@ -245,8 +245,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         "/.netlify/functions/create-subscription",
         {
           customerId: customer,
-          paymentMethod: paymentMethod,
-          priceId: priceId,
+          paymentMethod,
+          priceId,
         }
       )
       if (subscriptionRes.status === "active") {
@@ -297,7 +297,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       }
       return setProcessing(false)
     } catch (error) {
-      console.log(error.message)
       setCheckoutError(
         "Your payment may have been processed, but there was an error. Please make sure your information is correct or contact support to complete your purchase."
       )

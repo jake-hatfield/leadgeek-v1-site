@@ -1,3 +1,5 @@
+const axios = require("axios")
+
 const WaitlistUser = require("../models/WaitlistUser")
 
 require("dotenv").config()
@@ -78,6 +80,10 @@ const pushToDatabase = async (db, data) => {
       )
       user.plans.push({ type: plan, active: true })
 
+      await axios.post(
+        "https://api.netlify.com/build_hooks/617853f27edc3d00a7908dc1"
+      )
+
       return {
         statusCode,
         headers,
@@ -97,6 +103,10 @@ const pushToDatabase = async (db, data) => {
 
     await db.collection(CO_NAME).insertOne(newUser)
     const message = "User successfully added."
+
+    await axios.post(
+      "https://api.netlify.com/build_hooks/617853f27edc3d00a7908dc1"
+    )
 
     return {
       statusCode,
