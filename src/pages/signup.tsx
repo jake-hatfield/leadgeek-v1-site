@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { graphql, Link, navigate } from "gatsby"
 
 import { loadStripe } from "@stripe/stripe-js"
@@ -7,7 +7,11 @@ import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "@components/CheckoutForm"
 import Logo from "@assets/svgs/logo.svg"
 
-import { capitalize, formatActiveSubscriptions } from "@components/utils/utils"
+import {
+  capitalize,
+  formatActiveSubscriptions,
+  stringBeforeAt,
+} from "@components/utils/utils"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -21,52 +25,283 @@ interface SubscriptionItem {
   }
 }
 
-const BundleSignupPage: React.FC<{
+const SignupPage: React.FC<{
   data: {
     allStripeSubscription: {
       nodes: SubscriptionItem[]
     }
   }
 }> = ({ data }) => {
-  // plan details
-  const plan = "Bundle"
-  const productSelected = process.env.GATSBY_BUNDLE_PRICE_ID
-  const growPrice = 129
-  const proPrice = 189
-  const bundlePrice = 263
-  const discount = Math.trunc((1 - bundlePrice / (proPrice + growPrice)) * 100)
+  // local state
+  const [planDetails, setPlanDetails] = useState<{
+    productId: string | null
+    price: number | null
+    discount: number | null
+    features: { description: JSX.Element }[]
+  }>({
+    productId: "",
+    price: null,
+    discount: null,
+    features: [],
+  })
 
-  const featureList = [
-    {
-      description: (
-        <p>
-          <strong>100+</strong> products per week
-        </p>
-      ),
-    },
-    {
-      description: <p>All Grow plan leads</p>,
-    },
-    {
-      description: <p>All Pro plan leads</p>,
-    },
-    {
-      description: <p>Full software access</p>,
-    },
-    {
-      description: <p>Early access/discounts on new tools</p>,
-    },
-  ]
+  // plan details
+  const bundlePlanSeats = 15
+  const proPlanSeats = 15
+  const growPlanSeats = 30
+  const bundlePlanPrice = 263
+  const proPlanPrice = 189
+  const growPlanPrice = 129
+  const discount = Math.trunc(
+    (1 - bundlePlanPrice / (proPlanPrice + growPlanPrice)) * 100
+  )
 
   const subscriptions = formatActiveSubscriptions(
     data.allStripeSubscription.nodes
   )
 
+  //   plan details
+
   const query = location.search && location.search.replace(/\?/g, "")
 
-  //   TODO: Fn that checks if there's space on plan_1 and returns product_1 if so, if not, checks plan_2 and returns product_2, if not returns false
-  //   TODO: Fn that returns price by title in query params
-  //   TODO: Check if query param is available and have a select list of plans if not
+  const validatePlanFromQueryParam = (plan: string) => {
+    if (plan === "bundle" || plan === "pro" || plan === "grow") {
+      return plan
+    } else {
+      return ""
+    }
+  }
+
+  const planType = validatePlanFromQueryParam(query)
+
+  const getPlanDetails = (plan: "bundle" | "pro" | "grow") => {
+    let totalSeats: number, price: number, discount: number | null
+    const getSubscriptionCount = (
+      subscription: {
+        status: string
+        plan: {
+          id: string
+          product: string
+        }
+      }[]
+    ) => {
+      return subscription.length
+    }
+
+    console.log(subscriptions)
+
+    switch (plan) {
+      case "bundle":
+        totalSeats = bundlePlanSeats
+        price = bundlePlanPrice
+        discount = Math.trunc((1 - 263 / (189 + 129)) * 100)
+        const bundlePlanCount =
+          getSubscriptionCount(subscriptions.bundleSubscriptions) +
+          getSubscriptionCount(subscriptions.proSubscriptions) +
+          getSubscriptionCount(subscriptions.growSubscriptions)
+        if (bundlePlanCount < totalSeats) {
+          return {
+            productId: process.env.GATSBY_BUNDLE_PRICE_ID!,
+            price,
+            discount,
+            features: featureList[0],
+          }
+        } else {
+          const bundlePlanTwoCount =
+            getSubscriptionCount(subscriptions.bundleSubscriptions_2) +
+            getSubscriptionCount(subscriptions.proSubscriptions_2) +
+            getSubscriptionCount(subscriptions.growSubscriptions_2)
+
+          if (bundlePlanTwoCount < totalSeats) {
+            return {
+              productId: process.env.GATSBY_BUNDLE_PRICE_ID_2!,
+              price,
+              discount,
+              features: featureList[0],
+            }
+          } else {
+            return {
+              productId: null,
+              price: null,
+              discount: null,
+              features: [],
+            }
+          }
+        }
+
+      case "pro":
+        totalSeats = proPlanSeats
+        price = proPlanPrice
+        discount = null
+        const proPlanCount = getSubscriptionCount(
+          subscriptions.proSubscriptions
+        )
+
+        if (proPlanCount < totalSeats) {
+          return {
+            productId: process.env.GATSBY_PRO_PRICE_ID!,
+            price,
+            discount: null,
+            features: featureList[1],
+          }
+        } else {
+          const proPlanTwoCount = getSubscriptionCount(
+            subscriptions.proSubscriptions_2
+          )
+
+          if (proPlanTwoCount < totalSeats) {
+            return {
+              productId: process.env.GATSBY_PRO_PRICE_ID_2!,
+              price,
+              discount: null,
+              features: featureList[1],
+            }
+          } else {
+            return {
+              productId: null,
+              price: null,
+              discount: null,
+              features: [],
+            }
+          }
+        }
+
+      case "grow":
+        totalSeats = growPlanSeats
+        price = growPlanPrice
+        discount = null
+        const growPlanCount = getSubscriptionCount(
+          subscriptions.growSubscriptions
+        )
+
+        if (growPlanCount < totalSeats) {
+          return {
+            productId: process.env.GATSBY_GROW_PRICE_ID!,
+            price,
+            discount: null,
+            features: featureList[2],
+          }
+        } else {
+          const growPlanTwoCount = getSubscriptionCount(
+            subscriptions.growSubscriptions_2
+          )
+
+          if (growPlanTwoCount < totalSeats) {
+            return {
+              productId: process.env.GATSBY_GROW_PRICE_ID_2!,
+              price,
+              discount: null,
+              features: featureList[2],
+            }
+          } else {
+            return {
+              productId: null,
+              price: null,
+              discount: null,
+              features: [],
+            }
+          }
+        }
+
+      default:
+        return {
+          productId: null,
+          price: null,
+          discount: null,
+          features: [],
+        }
+    }
+  }
+
+  const featureList = [
+    [
+      {
+        description: (
+          <p>
+            <strong>100+</strong> products per week
+          </p>
+        ),
+      },
+      {
+        description: <p>All Grow plan leads</p>,
+      },
+      {
+        description: <p>All Pro plan leads</p>,
+      },
+      {
+        description: <p>Full software access</p>,
+      },
+      {
+        description: <p>Early access/discounts on new tools</p>,
+      },
+    ],
+    [
+      {
+        description: (
+          <p>
+            Limited to <strong className="font-semibold">{proPlanSeats}</strong>{" "}
+            members
+          </p>
+        ),
+      },
+      {
+        description: <p>50+ products per week</p>,
+      },
+      {
+        description: (
+          <p>
+            $<strong className="font-semibold">7</strong>-50+ profit per unit
+          </p>
+        ),
+      },
+      {
+        description: (
+          <p>
+            <strong className="font-semibold">50</strong>%+ ROI per unit
+          </p>
+        ),
+      },
+      {
+        description: <p>Full software access</p>,
+      },
+    ],
+    [
+      {
+        description: (
+          <p>
+            Limited to{" "}
+            <strong className="font-semibold">{growPlanSeats}</strong> members
+          </p>
+        ),
+      },
+      {
+        description: <p>50+ products per week</p>,
+      },
+      {
+        description: (
+          <p>
+            $<strong className="font-semibold">4</strong>-30+ profit per unit
+          </p>
+        ),
+      },
+      {
+        description: (
+          <p>
+            <strong className="font-semibold">40</strong>%+ ROI per unit
+          </p>
+        ),
+      },
+      {
+        description: <p>Full software access</p>,
+      },
+    ],
+  ]
+
+  useEffect(() => {
+    planType && setPlanDetails(getPlanDetails(planType))
+  }, [planType])
+
+  //   TODO: Check if query param is available and have a select list of plans if not || list of plans are a link that change the query params in the url
 
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY!)
   const [formData, setFormData] = useState({
@@ -82,16 +317,6 @@ const BundleSignupPage: React.FC<{
       state: { email, firstName },
     })
   }
-
-  const validPlanChecker = (plan: string) => {
-    if (plan === "bundle" || plan === "pro" || plan === "grow") {
-      return plan
-    } else {
-      return ""
-    }
-  }
-
-  const planType = validPlanChecker(query)
 
   //   seo
   const title = `${planType && capitalize(planType)} Plan Signup | Leadgeek`
@@ -136,13 +361,13 @@ const BundleSignupPage: React.FC<{
             </header>
             <div className="md:absolute w-full max-w-md md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 mt-6 md:mt-0">
               <div className="mt-12 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50">
-                {planType ? (
+                {planType && planDetails ? (
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
-                      plan={plan}
-                      price={bundlePrice}
-                      productSelected={productSelected}
-                      featureList={featureList}
+                      plan={capitalize(planType)}
+                      price={planDetails.price}
+                      productSelected={planDetails.productId}
+                      featureList={planDetails.features}
                       discount={discount}
                       formData={formData}
                       setFormData={setFormData}
@@ -175,4 +400,4 @@ export const query = graphql`
   }
 `
 
-export default BundleSignupPage
+export default SignupPage
