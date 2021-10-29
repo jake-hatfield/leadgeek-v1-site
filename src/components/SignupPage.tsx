@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, navigate } from "gatsby"
+import { graphql, Link, navigate, StaticQuery } from "gatsby"
 
 import { loadStripe } from "@stripe/stripe-js"
 import { Elements } from "@stripe/react-stripe-js"
@@ -7,21 +7,79 @@ import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "@components/CheckoutForm"
 import Logo from "@assets/svgs/logo.svg"
 
+import { formatActiveSubscriptions } from "@components/utils/utils"
+
 interface SignupPageProps {
+  discount: number | null
+  featureList: { description: JSX.Element }[]
+  location: any
   plan: string
   productSelected: string | undefined
-  featureList: { description: JSX.Element }[]
   price: number
-  discount: number | null
 }
 
 const SignupPage: React.FC<SignupPageProps> = ({
+  discount,
+  featureList,
+  location,
   plan,
   productSelected,
-  featureList,
   price,
-  discount,
 }) => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query SignupQuery {
+          allStripeSubscription {
+            nodes {
+              status
+              plan {
+                active
+                product
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <SignupComponent
+          data={data}
+          discount={discount}
+          featureList={featureList}
+          location={location}
+          plan={plan}
+          productSelected={productSelected}
+          price={price}
+        />
+      )}
+    />
+  )
+}
+
+interface SignupComponentProps extends SignupPageProps {
+  data: any
+}
+
+const SignupComponent: React.FC<SignupComponentProps> = ({
+  data,
+  discount,
+  featureList,
+  location,
+  plan,
+  productSelected,
+  price,
+}) => {
+  //   check active subscriptions
+  const subscriptions = formatActiveSubscriptions(
+    data.allStripeSubscription.nodes
+  )
+
+  console.log(location)
+  console.log(subscriptions)
+
+  //   TODO: Fn that checks if there's space on plan_1 and returns product_1 if so, if not, checks plan_2 and returns product_2, if not returns false
+  //   TODO: Fn that returns price by title in query params
+
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY!)
   const [formData, setFormData] = useState({
     firstName: "",

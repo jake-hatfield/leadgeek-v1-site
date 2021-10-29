@@ -59,7 +59,8 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
   const waitlist = {
     bundle: getWaitlistPlanCount(rawWaitlist, "bundle"),
     pro: getWaitlistPlanCount(rawWaitlist, "pro"),
-    grow: getWaitlistPlanCount(rawWaitlist, "grow"),
+    // grow: getWaitlistPlanCount(rawWaitlist, "grow"),
+    grow: 0,
   }
 
   //   out-of-stock popup state
