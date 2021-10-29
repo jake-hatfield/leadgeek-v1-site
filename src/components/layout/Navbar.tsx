@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
                 Log in
               </a>
               <AnchorLink
-                to={"/pricing#top"}
+                to={"/signup/"}
                 title="Leadgeek pricing plans"
                 className="no-m-first cta-link inter"
               >

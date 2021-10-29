@@ -354,7 +354,7 @@ const HowItWorksPage: React.FC<HowItWorksPageProps> = ({ data, location }) => {
         mainHeader={"Simplify your side-hustle"}
         links={[
           { title: "Tour the features", link: "features" },
-          { title: "Sign up now", link: "pricing" },
+          { title: "Sign up now", link: "signup" },
         ]}
         description={
           "See the 20 features that make Leadgeek rad or join today."

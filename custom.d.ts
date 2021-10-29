@@ -24,3 +24,4 @@ declare module "*.webm" {
 }
 
 declare module "luxon-business-days"
+declare module "exit-intent"

@@ -93,7 +93,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
         formData
       )
       if (data.message === "Affiliate submission successful.") {
-        return navigate("/affiliates/application-success/")
+        return navigate("/affiliates/confirmation/")
       } else {
         setFormError(
           "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."

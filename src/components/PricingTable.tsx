@@ -41,17 +41,17 @@ const PricingTable: React.FC<PricingTableProps> = ({
         <tr className="mt-24 hidden md:table-row inter">
           <td className="py-6 text-gray-900 border-0 text-xs lg:text-base" />
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/grow/`} className="cta-link ">
+            <Link to={`/signup/?grow`} className="cta-link ">
               Sign up
             </Link>
           </td>
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/pro/`} className="cta-link">
+            <Link to={`/signup/?pro`} className="cta-link">
               Sign up
             </Link>
           </td>
           <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/bundle/`} className="cta-link">
+            <Link to={`/signup/?bundle`} className="cta-link">
               Sign up
             </Link>
           </td>

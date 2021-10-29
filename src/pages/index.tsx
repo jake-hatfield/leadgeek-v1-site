@@ -395,7 +395,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
         links={[
           { title: "See how it works", link: "demo" },
           { title: "Tour the features", link: "features" },
-          { title: "Sign up now", link: "pricing" },
+          { title: "Sign up now", link: "signup" },
         ]}
         description={
           "See how Leadgeek works, the 20 features that make it rad, or join today."

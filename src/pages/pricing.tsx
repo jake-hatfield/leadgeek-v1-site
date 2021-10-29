@@ -59,8 +59,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
   const waitlist = {
     bundle: getWaitlistPlanCount(rawWaitlist, "bundle"),
     pro: getWaitlistPlanCount(rawWaitlist, "pro"),
-    // grow: getWaitlistPlanCount(rawWaitlist, "grow"),
-    grow: 0,
+    grow: getWaitlistPlanCount(rawWaitlist, "grow"),
   }
 
   //   out-of-stock popup state
@@ -203,7 +202,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           priceValidUntil: "2025-12-31",
           itemCondition: "NewCondition",
           availability: "LimitedAvailability",
-          url: "https://leadgeek.io/signup/grow/",
+          url: "https://leadgeek.io/signup/?grow",
           seller: {
             name: "Leadgeek",
           },
@@ -332,7 +331,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           priceValidUntil: "2025-12-31",
           itemCondition: "NewCondition",
           availability: "LimitedAvailability",
-          url: "https://leadgeek.io/signup/pro/",
+          url: "https://leadgeek.io/signup/?pro",
           seller: {
             name: "Leadgeek",
           },
@@ -461,7 +460,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
           priceValidUntil: "2025-12-31",
           itemCondition: "NewCondition",
           availability: "LimitedAvailability",
-          url: "https://leadgeek.io/signup/bundle/",
+          url: "https://leadgeek.io/signup/?bundle",
           seller: {
             name: "Leadgeek",
           },

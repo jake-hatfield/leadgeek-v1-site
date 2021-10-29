@@ -323,7 +323,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                     </button>
                   ) : (
                     <Link
-                      to={`/signup/${plan.title.toLowerCase()}/`}
+                      to={`/signup/?${plan.title.toLowerCase()}`}
                       className={`${
                         plan.title === "Bundle"
                           ? "py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base hover:bg-gray-800 text-teal-300 transition-main ring-teal"

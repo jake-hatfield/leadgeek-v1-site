@@ -44,7 +44,7 @@ const Faq = () => {
           <br />
           Certainly some will be, but if being restricted in too many products
           is a concern, we recommend the{" "}
-          <Link to={`/signup/grow/`} className="secondary-link">
+          <Link to={`/signup/?grow`} className="secondary-link">
             Grow Plan
           </Link>{" "}
           since we prioritize more ungated products on that list.

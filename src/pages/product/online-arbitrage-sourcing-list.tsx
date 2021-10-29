@@ -119,7 +119,6 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
   )
 
   const rawWaitlist = data.allMongodbLeadGeekWaitlist.nodes
-
   const waitlist = {
     bundle: getWaitlistPlanCount(rawWaitlist, "bundle"),
     pro: getWaitlistPlanCount(rawWaitlist, "pro"),

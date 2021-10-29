@@ -7,11 +7,11 @@ import Layout from "@components/layout/Layout"
 import HeaderWrapper from "@components/HeaderWrapper"
 import PrimaryHeader from "@components/PrimaryHeader"
 
-interface AffiliateApplicationSuccessPageProps {
+interface AffiliateConfirmationPageProps {
   location: Location
 }
 
-const AffiliateApplicationSuccessPage: React.FC<AffiliateApplicationSuccessPageProps> = ({
+const AffiliateConfirmationPage: React.FC<AffiliateConfirmationPageProps> = ({
   location,
 }) => {
   const title = "Affiliate Application Submitted | Leadgeek"
@@ -49,4 +49,4 @@ const AffiliateApplicationSuccessPage: React.FC<AffiliateApplicationSuccessPageP
   )
 }
 
-export default AffiliateApplicationSuccessPage
+export default AffiliateConfirmationPage

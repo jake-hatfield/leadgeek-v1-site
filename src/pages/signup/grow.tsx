@@ -2,8 +2,6 @@ import React, { Fragment } from "react"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
-import SignupPage from "@components/SignupPage"
-
 import OgImage from "@assets/images/og/og-grow.jpg"
 
 const GrowSignupPage = () => {
@@ -69,13 +67,6 @@ const GrowSignupPage = () => {
           ],
         }}
         language="en"
-      />
-      <SignupPage
-        plan={plan}
-        productSelected={productSelected}
-        featureList={featureList}
-        price={growPrice}
-        discount={null}
       />
     </Fragment>
   )

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import "styles/app.css"
 
-import exitIntent from "exit-intent"
+// import exitIntent from "exit-intent"
 
 import LPNavbar from "./LPNavbar"
 import LPFooter from "./LPFooter"
 import { handleLGID } from "@components/utils/utils"
-import Popup from "@components/utils/Popup"
-import Bullet from "@assets/svgs/bullet.svg"
+// import Popup from "@components/utils/Popup"
+// import Bullet from "@assets/svgs/bullet.svg"
 
 interface LPLayoutProps {
   children: React.ReactNode
@@ -21,38 +21,38 @@ const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
     }
   })
 
-  const [showExitPopup, setShowExitPopup] = useState(false)
-  useEffect(() => {
-    if (showExitPopup) {
-      document.body.style.overflow = "hidden"
-    }
-    return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [showExitPopup])
+  //   const [showExitPopup, setShowExitPopup] = useState(false)
+  //   useEffect(() => {
+  //     if (showExitPopup) {
+  //       document.body.style.overflow = "hidden"
+  //     }
+  //     return () => {
+  //       document.body.style.overflow = "unset"
+  //     }
+  //   }, [showExitPopup])
 
-  useEffect(() => {
-    if (document.cookie.indexOf("popupSeen=true") < 0) {
-      const removeExitIntent = exitIntent({
-        threshold: 30,
-        eventThrottle: 100,
-        maxDisplays: 1,
-        onExitIntent: () => {
-          setShowExitPopup(true)
-        },
-      })
-      return () => {
-        removeExitIntent()
-      }
-    }
-  })
+  //   useEffect(() => {
+  //     if (document.cookie.indexOf("popupSeen=true") < 0) {
+  //       const removeExitIntent = exitIntent({
+  //         threshold: 30,
+  //         eventThrottle: 100,
+  //         maxDisplays: 1,
+  //         onExitIntent: () => {
+  //           setShowExitPopup(true)
+  //         },
+  //       })
+  //       return () => {
+  //         removeExitIntent()
+  //       }
+  //     }
+  //   })
 
-  const coachingItems = [
-    "How to develop your own unique selling style",
-    "How to get ungated in more brands & categories",
-    "Which sourcing tools are important (and which aren't)",
-    "Best practices to keep your Amazon account healthy",
-  ]
+  //   const coachingItems = [
+  //     "How to develop your own unique selling style",
+  //     "How to get ungated in more brands & categories",
+  //     "Which sourcing tools are important (and which aren't)",
+  //     "Best practices to keep your Amazon account healthy",
+  //   ]
 
   return (
     <div className="relative flex flex-col h-screen justify-between">
@@ -60,7 +60,7 @@ const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
       <main className="mt-16 md:mt-20">{children}</main>
       <LPFooter />
       {/* exit popup */}
-      {showExitPopup && (
+      {/* {showExitPopup && (
         <Popup
           show={showExitPopup}
           setShow={setShowExitPopup}
@@ -107,7 +107,7 @@ const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
             tags: [{ name: `Coaching Call Lead`, status: "active" }],
           }}
         />
-      )}
+      )} */}
     </div>
   )
 }
