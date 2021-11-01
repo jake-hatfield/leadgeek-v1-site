@@ -88,8 +88,6 @@ const SignupPage: React.FC<{
       return subscription.length
     }
 
-    console.log(subscriptions)
-
     switch (plan) {
       case "bundle":
         totalSeats = bundlePlanSeats
@@ -297,11 +295,27 @@ const SignupPage: React.FC<{
     ],
   ]
 
+  const planList = [
+    {
+      title: "Grow",
+      description: "New FBA sellers",
+      price: growPlanPrice,
+    },
+    {
+      title: "Pro",
+      description: "Intermediate FBA sellers",
+      price: proPlanPrice,
+    },
+    {
+      title: "Bundle",
+      description: "Advanced FBA sellers",
+      price: bundlePlanPrice,
+    },
+  ]
+
   useEffect(() => {
     planType && setPlanDetails(getPlanDetails(planType))
   }, [planType])
-
-  //   TODO: Check if query param is available and have a select list of plans if not || list of plans are a link that change the query params in the url
 
   const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY!)
   const [formData, setFormData] = useState({
@@ -361,7 +375,7 @@ const SignupPage: React.FC<{
             </header>
             <div className="md:absolute w-full max-w-md md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 mt-6 md:mt-0">
               <div className="mt-12 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-purple-500 ring-opacity-50">
-                {planType && planDetails ? (
+                {planType && planDetails.price && planDetails.productId ? (
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
                       plan={capitalize(planType)}
@@ -375,7 +389,31 @@ const SignupPage: React.FC<{
                     />
                   </Elements>
                 ) : (
-                  <div>Hello</div>
+                  <ul>
+                    <h3 className="mt-3 mb-5 text-xl md:text-2xl lg:text-3xl font-black text-gray-900 inter">
+                      Choose a plan
+                    </h3>
+                    <li>
+                      {planList.map((plan, i) => (
+                        <Link
+                          key={i}
+                          to={`?${plan.title.toLowerCase()}`}
+                          className="flex items-center md:justify-between mt-2 py-2 px-4 rounded-lg border border-gray-600 shadow-sm hover:bg-purple-500 hover:text-white transition-main"
+                        >
+                          <div>
+                            <h4 className="inter font-black">{plan.title}</h4>
+                            <p className="text-xs md:text-sm">
+                              {plan.description}
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <span className="font-semibold">${plan.price}</span>
+                            <span className="block">/mo</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </li>
+                  </ul>
                 )}
               </div>
             </div>

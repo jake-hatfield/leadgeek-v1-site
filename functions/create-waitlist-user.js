@@ -80,9 +80,11 @@ const pushToDatabase = async (db, data) => {
       )
       user.plans.push({ type: plan, active: true })
 
-      await axios.post(
-        "https://api.netlify.com/build_hooks/617853f27edc3d00a7908dc1"
-      )
+      if (process.env.NODE_ENV === "production") {
+        await axios.post(
+          "https://api.netlify.com/build_hooks/617853f27edc3d00a7908dc1"
+        )
+      }
 
       return {
         statusCode,

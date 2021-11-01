@@ -128,14 +128,6 @@ exports.handler = async function (event) {
     } else {
       // subscription for this plan doesn't yet exist, so create it
 
-      // TODO:
-      // set subscription limits
-      // see if the subscription is full
-      // if not, add to first plan
-      // if so, see if second subscription is full
-      // if not, add to second plan,
-      // if not, return that both plans are full
-
       const subscription = await stripe.subscriptions.create({
         customer: data.customerId,
         items: [{ price: data.priceId }],

@@ -46,6 +46,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 }) => {
   const { firstName, lastName, email, password } = formData
 
+  console.log(plan, productSelected)
+
   const [count, setCount] = useState(1)
   const [isProcessing, setProcessing] = useState(false)
   const [checkoutError, setCheckoutError] = useState("")
@@ -278,9 +280,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
             ],
           })
 
-          await axios.post(
-            "https://api.netlify.com/build_hooks/611fd7ae85726687cf7baf51"
-          )
+          if (process.env.NODE_ENV === "production") {
+            await axios.post(
+              "https://api.netlify.com/build_hooks/611fd7ae85726687cf7baf51"
+            )
+          }
+
           onSuccessfulCheckout()
         } else {
           setCheckoutError(

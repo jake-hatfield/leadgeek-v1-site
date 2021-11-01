@@ -1,6 +1,5 @@
 const bcrypt = require("bcryptjs")
 const User = require("../models/User")
-const WaitlistUser = require("../models/WaitlistUser")
 
 require("dotenv").config()
 
@@ -9,6 +8,12 @@ const MONGODB_URI = process.env.GATSBY_MONGODB_URI
 const DB_NAME = process.env.GATSBY_DB_NAME
 const CO_NAME = process.env.GATSBY_CO_NAME
 const CO_NAME_2 = process.env.GATSBY_CO_NAME_2
+const BUNDLE_PRICE_ID = process.env.GATSBY_BUNDLE_PRICE_ID
+const BUNDLE_PRICE_ID_2 = process.env.GATSBY_BUNDLE_PRICE_ID_2
+const PRO_PRICE_ID = process.env.GATSBY_PRO_PRICE_ID
+const PRO_PRICE_ID_2 = process.env.GATSBY_PRO_PRICE_ID_2
+const GROW_PRICE_ID = process.env.GATSBY_GROW_PRICE_ID
+const GROW_PRICE_ID_2 = process.env.GATSBY_GROW_PRICE_ID_2
 
 const statusCode = 200
 const headers = {
@@ -72,20 +77,35 @@ const pushToDatabase = async (db, data) => {
         }),
       }
     }
+
     // encrypt password
     const salt = await bcrypt.genSalt(10)
     encryptedPassword = await bcrypt.hash(password, salt)
     // assign plan to string
     let role
-    if (planId === process.env.GATSBY_BUNDLE_PRICE_ID) {
-      role = "bundle"
-    } else if (planId === process.env.GATSBY_PRO_PRICE_ID) {
-      role = "pro"
-    } else if (planId === process.env.GATSBY_GROW_PRICE_ID) {
-      role = "grow"
-    } else {
-      role = "user"
+    switch (planId) {
+      case BUNDLE_PRICE_ID:
+        role = "bundle"
+        break
+      case BUNDLE_PRICE_ID_2:
+        role = "bundle_2"
+        break
+      case PRO_PRICE_ID:
+        role = "pro"
+        break
+      case PRO_PRICE_ID_2:
+        role = "pro_2"
+        break
+      case GROW_PRICE_ID:
+        role = "grow"
+        break
+      case GROW_PRICE_ID_2:
+        role = "grow_2"
+        break
+      default:
+        role = "user"
     }
+
     // create user
     user = await new User({
       name,
@@ -116,9 +136,12 @@ const pushToDatabase = async (db, data) => {
       resetPasswordToken: null,
       resetPasswordExpires: null,
     })
+
+    // add new user to DB
     await db.collection(CO_NAME).insertMany([user])
     const message = "User successfully added."
 
+    // credit affiliate if applicable
     if (lgid) {
       console.log("Attempting to credit the affiliate...")
       await db.collection(CO_NAME).updateOne(
@@ -134,6 +157,7 @@ const pushToDatabase = async (db, data) => {
       )
     }
 
+    // delete waitlist document
     await db.collection(CO_NAME_2).deleteOne({ email })
 
     return {
