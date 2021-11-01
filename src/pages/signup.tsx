@@ -61,8 +61,10 @@ const SignupPage: React.FC<{
   )
 
   //   plan details
-
-  const query = location.search && location.search.replace(/\?/g, "")
+  let query = ""
+  if (typeof window !== "undefined") {
+    query = location.search && location.search.replace(/\?/g, "")
+  }
 
   const validatePlanFromQueryParam = (plan: string) => {
     if (plan === "bundle" || plan === "pro" || plan === "grow") {
