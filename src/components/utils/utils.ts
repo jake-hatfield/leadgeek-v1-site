@@ -101,7 +101,7 @@ export const useOutsideMousedown = (
 ) => {
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target)) {
+      if (ref.current && !ref.current.contains(e.target as HTMLElement)) {
         setState_1(false)
         if (setState_2) {
           setState_2(false)

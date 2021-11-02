@@ -7,11 +7,7 @@ import { Elements } from "@stripe/react-stripe-js"
 import CheckoutForm from "@components/CheckoutForm"
 import Logo from "@assets/svgs/logo.svg"
 
-import {
-  capitalize,
-  formatActiveSubscriptions,
-  stringBeforeAt,
-} from "@components/utils/utils"
+import { capitalize, formatActiveSubscriptions } from "@components/utils/utils"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -400,7 +396,7 @@ const SignupPage: React.FC<{
                         <Link
                           key={i}
                           to={`?${plan.title.toLowerCase()}`}
-                          className="flex items-center md:justify-between mt-2 py-2 px-4 rounded-lg border border-gray-600 shadow-sm hover:bg-purple-500 hover:text-white transition-main"
+                          className="flex items-center md:justify-between mt-4 py-2 px-4 rounded-lg ring ring-gray-300 shadow-sm hover:bg-purple-500 hover:text-white transition-main"
                         >
                           <div>
                             <h4 className="inter font-black">{plan.title}</h4>

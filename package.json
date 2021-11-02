@@ -1,5 +1,5 @@
 {
-  "name": "Leadgeek",
+  "name": "leadgeek",
   "private": true,
   "description": "The Leadgeek marketing website for online arbitrage sourcing.",
   "version": "0.1.0",
@@ -30,6 +30,7 @@
     "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-plugin-sitemap": "^2.12.0",
     "gatsby-plugin-typescript": "^3.14.0",
+    "gatsby-plugin-typescript-checker": "^1.1.1",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-source-mongodb": "^3.14.0",
     "gatsby-source-stripe": "^3.2.2",
@@ -53,9 +54,12 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
     "@types/react-paginate": "^7.1.1",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^7.32.0",
     "gatsby": "^3.14.5",
+    "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-tsconfig-paths": "^1.0.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "prettier": "2.0.5",
@@ -69,14 +73,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "netlify dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "ggl-types": "graphql-codegen --config codegen.yml",
-    "ggl-types:watch": "graphql-codegen --config codegen.yml -w"
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

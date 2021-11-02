@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-tsconfig-paths`,
@@ -93,8 +94,7 @@ module.exports = {
         exclude: [
           `/order-confirmation`,
           `/contact-success`,
-          `/coaching/booking-success`,
-          `/affiliates/application-success`,
+          `/affiliates/confirmation`,
           `/404`,
         ],
       },
@@ -108,5 +108,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-anti-flicker`,
+    `gatsby-plugin-remove-console`,
   ],
 }

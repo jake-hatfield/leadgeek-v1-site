@@ -1,3 +1,6 @@
+declare module "luxon-business-days"
+declare module "exit-intent"
+
 declare module "*.jpg" {
   const content: any
   export default content
@@ -22,6 +25,3 @@ declare module "*.webm" {
   const content: any
   export default content
 }
-
-declare module "luxon-business-days"
-declare module "exit-intent"

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img, { GatsbyImageProps } from "gatsby-image"
+import Img, { GatsbyImageFluidProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -24,12 +24,12 @@ import OgImage from "@assets/images/og/og-index.jpg"
 
 interface IndexPageProps {
   data: {
-    heroImage: GatsbyImageProps
-    testimonialAustin: GatsbyImageProps
-    testimonialBrian: GatsbyImageProps
-    testimonialFrank: GatsbyImageProps
-    testimonialKevin: GatsbyImageProps
-    testimonialWilliam: GatsbyImageProps
+    heroImage: { childImageSharp: GatsbyImageFluidProps }
+    testimonialAustin: { childImageSharp: GatsbyImageFluidProps }
+    testimonialBrian: { childImageSharp: GatsbyImageFluidProps }
+    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
+    testimonialKevin: { childImageSharp: GatsbyImageFluidProps }
+    testimonialWilliam: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }
@@ -45,7 +45,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
     margin: string | null
     position: string | null
     text: JSX.Element
-    image: GatsbyImageProps
+    image: any
     source: string
     description: string
     rotate: string
@@ -478,7 +478,7 @@ const TestimonialShort: React.FC<{ text: string }> = ({ text }) => {
   return (
     <div className="mt-8 md:mt-0 first:ml-0 md:ml-8 bg-white">
       <div className="flex items-center justify-start md:justify-center text-pink-600">
-        {Array.apply(null, { length: 5 }).map((s, i) => (
+        {Array.apply(null, { length: 5 } as any).map((_, i) => (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="svg-sm"

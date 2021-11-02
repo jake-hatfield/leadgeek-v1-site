@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImageProps } from "gatsby-image"
+import { GatsbyImageFluidProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -13,15 +13,15 @@ import OgImage from "@assets/images/og/og-stories.jpg"
 
 interface StoriesPageProps {
   data: {
-    testimonialAustin: GatsbyImageProps
-    testimonialBrian: GatsbyImageProps
-    testimonialCharles: GatsbyImageProps
-    testimonialDail: GatsbyImageProps
-    testimonialDimitry: GatsbyImageProps
-    testimonialFrank: GatsbyImageProps
-    testimonialKevin: GatsbyImageProps
-    testimonialWilliam: GatsbyImageProps
-    testimonialYucheng: GatsbyImageProps
+    testimonialAustin: { childImageSharp: GatsbyImageFluidProps }
+    testimonialBrian: { childImageSharp: GatsbyImageFluidProps }
+    testimonialCharles: { childImageSharp: GatsbyImageFluidProps }
+    testimonialDail: { childImageSharp: GatsbyImageFluidProps }
+    testimonialDimitry: { childImageSharp: GatsbyImageFluidProps }
+    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
+    testimonialKevin: { childImageSharp: GatsbyImageFluidProps }
+    testimonialWilliam: { childImageSharp: GatsbyImageFluidProps }
+    testimonialYucheng: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }
@@ -279,71 +279,45 @@ const classes = {
   emphasizedTextLight: "emphasized-text-light",
 }
 
+export const testimonialImage = graphql`
+  fragment testimonialImage on File {
+    childImageSharp {
+      fluid(maxWidth: 200, quality: 100) {
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+`
+
 export const query = graphql`
   query {
     testimonialCharles: file(relativePath: { eq: "charles.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialBrian: file(relativePath: { eq: "brian.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialWilliam: file(relativePath: { eq: "william.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
 
     testimonialDail: file(relativePath: { eq: "dail.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialYucheng: file(relativePath: { eq: "yucheng.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialAustin: file(relativePath: { eq: "austin.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialFrank: file(relativePath: { eq: "frank.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
     testimonialDimitry: file(relativePath: { eq: "dimitry.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+      ...testimonialImage
     }
   }
 `

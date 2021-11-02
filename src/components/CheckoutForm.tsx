@@ -46,8 +46,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 }) => {
   const { firstName, lastName, email, password } = formData
 
-  console.log(plan, productSelected)
-
   const [count, setCount] = useState(1)
   const [isProcessing, setProcessing] = useState(false)
   const [checkoutError, setCheckoutError] = useState("")

@@ -10,8 +10,9 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": false,
+    "removeComments": true,
     "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./src",
     "paths": {

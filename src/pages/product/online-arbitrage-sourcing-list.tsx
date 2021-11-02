@@ -30,6 +30,8 @@ import FiltersWebm from "@assets/video/filters.webm"
 import Poster from "@assets/images/white-bg.png"
 import OgImage from "@assets/images/og/og-online-arbitrage-sourcing-list.jpg"
 
+import { MongoDBWaitlistItem } from "../pricing"
+
 interface Lead {
   node: {
     id: string
@@ -56,11 +58,14 @@ interface OnlineArbitrageSourcingListPageProps {
     allMongodbLeadGeekLeads: {
       edges: Lead[]
     }
+    allMongodbLeadGeekWaitlist: {
+      nodes: MongoDBWaitlistItem[]
+    }
     allStripeSubscription: { nodes: SubscriptionItem[] }
-    heroImage: GatsbyImageFluidProps
-    detailsImage: GatsbyImageFluidProps
-    testimonialFrank: GatsbyImageFluidProps
-    testimonialCris: GatsbyImageFluidProps
+    heroImage: { childImageSharp: GatsbyImageFluidProps }
+    detailsImage: { childImageSharp: GatsbyImageFluidProps }
+    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
+    testimonialCris: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }
@@ -69,6 +74,7 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
   data,
   location,
 }) => {
+  console.log(data.heroImage)
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const description =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."

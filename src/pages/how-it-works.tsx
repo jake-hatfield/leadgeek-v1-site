@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img, { GatsbyImageProps } from "gatsby-image"
+import Img, { GatsbyImageFluidProps } from "gatsby-image"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -25,9 +25,9 @@ import OgImage from "@assets/images/og/og-how-it-works.jpg"
 
 interface HowItWorksPageProps {
   data: {
-    app: GatsbyImageProps
-    details: GatsbyImageProps
-    detailsClose: GatsbyImageProps
+    app: { childImageSharp: GatsbyImageFluidProps }
+    details: { childImageSharp: GatsbyImageFluidProps }
+    detailsClose: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }

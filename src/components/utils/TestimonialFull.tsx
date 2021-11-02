@@ -1,5 +1,5 @@
 import React from "react"
-import Img, { GatsbyImageProps } from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 
 import Quote from "@assets/svgs/quote.svg"
 
@@ -9,7 +9,7 @@ interface TestimonialFullProps {
   margin: string | null
   position: string | null
   text: JSX.Element
-  image: GatsbyImageProps | null
+  image: FluidObject | FluidObject[] | null
   source: string
   description: string
   rotate: string

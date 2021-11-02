@@ -18,7 +18,7 @@ import OgImage from "@assets/images/og/og-affiliate-index.jpg"
 
 interface AffiliatePageProps {
   data: {
-    affiliatePanel: GatsbyImageFluidProps
+    affiliatePanel: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }
@@ -101,7 +101,6 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
         setProcessing(false)
       }
     } catch (error) {
-      console.log(error.message)
       setFormError(
         "There was an error creating your affiliate account. Please contact affiliates@leadgeek.io to finish the setup process."
       )
