@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
               </div>
               <div className="p-4 space-y-6 rounded-b-md">
                 <div className="space-y-6 text-center">
-                  <Link to={`/pricing#top`} className="block cta-link inter">
+                  <Link to={`/signup/`} className="block cta-link inter">
                     Sign up now
                   </Link>
                 </div>

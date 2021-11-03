@@ -1,11 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import axios from "axios"
-
-import Popup from "@components/utils/Popup"
-
+// assets
 import Bullet from "@assets/svgs/bullet.svg"
+import WaitlistPopup from "./utils/WaitlistPopup"
 
 interface SubscriptionItem {
   status: string
@@ -36,7 +34,7 @@ interface PricingCardsProps {
 }
 
 interface PricingCard {
-  title: string
+  title: "Bundle" | "Pro" | "Grow"
   description: string
   price: number
   features: { title: JSX.Element | string }[]
@@ -240,19 +238,9 @@ const PricingCards: React.FC<PricingCardsProps> = ({
     },
   ]
 
-  const [selectedPlan, setSelectedPlan] = useState("")
-
-  const addToWaitlist = async (name: string, email: string, plan: string) => {
-    const body = JSON.stringify({
-      name,
-      email,
-      plan,
-    })
-
-    await axios.post("/.netlify/functions/create-waitlist-user", body)
-
-    return
-  }
+  const [selectedPlan, setSelectedPlan] = useState<
+    "Bundle" | "Pro" | "Grow" | ""
+  >("")
 
   return (
     <div
@@ -311,7 +299,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                   <span className="ml-2">/mo</span>
                 </div>
                 <div className="mt-4 lg:mt-6">
-                  {!plan.available ? (
+                  {!plan.available && plan.title ? (
                     <button
                       onClick={() => {
                         setSelectedPlan(plan.title)
@@ -351,34 +339,11 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           </div>
         </article>
       ))}
-      {showWaitlistPopup && (
-        <Popup
-          show={showWaitlistPopup}
-          setShow={setShowWaitlistPopup}
-          details={{
-            id: "waitlistPopup",
-            headers: [
-              <>Join the {selectedPlan} plan waitlist</>,
-              <>Gotcha, you're in!</>,
-            ],
-            subheaders: [
-              <>
-                We're at capacity right now on the {selectedPlan} plan. But put
-                your contact details down and we'll add you to our waitlist.{" "}
-                <span role="img" aria-label="Laptop emoji">
-                  💻
-                </span>
-              </>,
-              <>
-                You should receive an email confirmation shortly, and we'll
-                email you again once some space frees up.
-              </>,
-            ],
-            additionalInfo: null,
-            cta: `Join the ${selectedPlan} plan waitlist`,
-            tags: [{ name: `${selectedPlan} Plan Waitlist`, status: "active" }],
-          }}
-          sendToAPI={{ fn: addToWaitlist, var: selectedPlan.toLowerCase() }}
+      {showWaitlistPopup && selectedPlan && (
+        <WaitlistPopup
+          showWaitlistPopup={showWaitlistPopup}
+          setShowWaitlistPopup={setShowWaitlistPopup}
+          selectedPlan={selectedPlan}
         />
       )}
     </div>
