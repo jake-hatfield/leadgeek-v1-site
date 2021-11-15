@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
-          <Logo className="w-8 lg:w-12 mr-4 text-purple-500" />
+          <Logo className="w-16 mr-4 text-purple-500" />
         </div>
         <nav className="w-full relative z-10 mt-8 lg:mt-12 flex justify-center container">
           {categories.map(category => (

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="py-12 relative z-20 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
-          <Logo className="w-8 lg:w-12 mr-4 text-purple-500" />
+          <Logo className="w-16 mr-4 text-purple-500" />
         </div>
       </div>
       <div className="mt-8 lg:mt-16 text-xs font-bold text-gray-600">
@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               6333 E Mockingbird Lane, Suite 147 Dallas, TX
             </address>
           </div>
-          <div className="mt-4 md:mt-0 text-center md:text-left flex flex-col-reverse md:flex-col">
+          <div className="mt-4 md:mt-0 text-center md:text-left flex flex-col">
             <ul className="md:mt-4 flex justify-center md:justify-end">
               {footerLinks.map(footerLink => (
                 <li
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-right">
+            <p className="mt-4 text-center md:text-right">
               <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
             </p>

@@ -163,8 +163,8 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
               To the modern Amazon FBA seller:
             </p>
             <h1 className="mt-2 text-3xl md:text-5xl font-black text-gray-900 inter header-height">
-              Find the best things to flip on Amazon with this{" "}
-              <span className="emphasized-text">online arbitrage list</span>.
+              The <span className="emphasized-text">online arbitrage list</span>{" "}
+              made for {new Date().getFullYear()}.
             </h1>
             <h2 className="lg:max-w-lg mt-4 lg:mt-6 mx-auto lg:mx-0 text-gray-900 text-lg bg-white">
               Online arbitrage sourcing just got a huge upgrade: Leadgeek is
