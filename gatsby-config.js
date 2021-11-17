@@ -30,7 +30,7 @@ module.exports = {
         name: `Leadgeek Sourcing & Software`,
         short_name: `Leadgeek`,
         start_url: `/`,
-        background_color: `#7069FA`,
+        background_color: `#ffffff`,
         theme_color: `#7069FA`,
         display: `minimal-ui`,
         icon: `src/assets/images/favicon.png`,

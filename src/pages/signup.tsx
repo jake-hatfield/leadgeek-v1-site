@@ -39,11 +39,13 @@ const SignupPage: React.FC<{
   // local state
   const [planDetails, setPlanDetails] = useState<{
     productId: string | null
+    plan: string | null
     price: number | null
     discount: number | null
     features: { description: JSX.Element }[]
   }>({
     productId: "",
+    plan: null,
     price: null,
     discount: null,
     features: [],
@@ -128,6 +130,7 @@ const SignupPage: React.FC<{
         if (bundlePlanCount < totalSeats) {
           return {
             productId: process.env.GATSBY_BUNDLE_PRICE_ID!,
+            plan: "bundle",
             price,
             discount,
             features: featureList[0],
@@ -141,6 +144,7 @@ const SignupPage: React.FC<{
           if (bundlePlanTwoCount < totalSeats) {
             return {
               productId: process.env.GATSBY_BUNDLE_PRICE_ID_2!,
+              plan: "bundle_2",
               price,
               discount,
               features: featureList[0],
@@ -148,6 +152,7 @@ const SignupPage: React.FC<{
           } else {
             return {
               productId: null,
+              plan: null,
               price: null,
               discount: null,
               features: [],
@@ -161,9 +166,10 @@ const SignupPage: React.FC<{
         discount = null
         const proPlanCount = getSubscriptionCount(proSubscriptions)
 
-        if (proPlanCount < totalSeats) {
+        if (proPlanCount < 2) {
           return {
             productId: process.env.GATSBY_PRO_PRICE_ID!,
+            plan: "pro",
             price,
             discount: null,
             features: featureList[1],
@@ -174,6 +180,7 @@ const SignupPage: React.FC<{
           if (proPlanTwoCount < totalSeats) {
             return {
               productId: process.env.GATSBY_PRO_PRICE_ID_2!,
+              plan: "pro_2",
               price,
               discount: null,
               features: featureList[1],
@@ -181,6 +188,7 @@ const SignupPage: React.FC<{
           } else {
             return {
               productId: null,
+              plan: null,
               price: null,
               discount: null,
               features: [],
@@ -197,6 +205,7 @@ const SignupPage: React.FC<{
         if (growPlanCount < totalSeats) {
           return {
             productId: process.env.GATSBY_GROW_PRICE_ID!,
+            plan: "grow",
             price,
             discount: null,
             features: featureList[2],
@@ -207,6 +216,7 @@ const SignupPage: React.FC<{
           if (growPlanTwoCount < totalSeats) {
             return {
               productId: process.env.GATSBY_GROW_PRICE_ID_2!,
+              plan: "grow_2",
               price,
               discount: null,
               features: featureList[2],
@@ -214,6 +224,7 @@ const SignupPage: React.FC<{
           } else {
             return {
               productId: null,
+              plan: null,
               price: null,
               discount: null,
               features: [],
@@ -224,6 +235,7 @@ const SignupPage: React.FC<{
       default:
         return {
           productId: null,
+          plan: null,
           price: null,
           discount: null,
           features: [],
@@ -422,10 +434,14 @@ const SignupPage: React.FC<{
             </header>
             <div className="md:absolute w-full max-w-md md:top-1/2 md:left-1/2 md:transform md:-translate-y-1/2 md:-translate-x-1/2 mt-6 md:mt-0">
               <div className="mt-12 py-4 lg:py-6 px-6 bg-white rounded-lg border border-gray-900 transition-main ring-4 md:ring-6 lg:ring-8 ring-gray-400 ring-opacity-50">
-                {planType && planDetails.price && planDetails.productId ? (
+                {planType &&
+                planDetails.plan &&
+                planDetails.price &&
+                planDetails.productId ? (
                   <Elements stripe={stripePromise}>
                     <CheckoutForm
-                      plan={capitalize(planType)}
+                      type={capitalize(planType)}
+                      plan={capitalize(planDetails.plan)}
                       price={planDetails.price}
                       productSelected={planDetails.productId}
                       featureList={planDetails.features}

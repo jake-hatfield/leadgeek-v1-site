@@ -24,6 +24,7 @@ interface FormData {
 }
 
 interface CheckoutFormProps {
+  type: string
   plan: string
   productSelected: string | undefined
   featureList: { description: JSX.Element }[]
@@ -35,6 +36,7 @@ interface CheckoutFormProps {
 }
 
 const CheckoutForm: React.FC<CheckoutFormProps> = ({
+  type,
   plan,
   productSelected,
   featureList,
@@ -180,7 +182,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
               email: email.toLowerCase(),
               FNAME: capitalize(firstName),
               LNAME: capitalize(lastName),
-              LEAD: `${plan} Plan Lead`,
+              LEAD: `${type} Plan Lead`,
               PLAN: "",
               tags: [
                 { name: `${plan} Plan Lead`, status: "active" },
