@@ -61,7 +61,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
   } = subscriptions
 
   // calculate remaining seats
-  const proPlanSeats = 15
+  const proPlanSeats = 30
   const growPlanSeats = 30
 
   //   subtract possible available seats from the total # of relevant subscriptions + bundle subscriptions
@@ -79,8 +79,6 @@ const PricingCards: React.FC<PricingCardsProps> = ({
       bundleSubscriptions_2.length)
   const bundleSeatsLeft: number =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
-
-  console.log(subscriptions, waitlist, proSeatsLeft)
 
   //   pricing
   const bundlePrice = 263

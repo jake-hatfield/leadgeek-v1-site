@@ -57,7 +57,7 @@ const SignupPage: React.FC<{
 
   // plan details
   const bundlePlanSeats = 15
-  const proPlanSeats = 15
+  const proPlanSeats = 30
   const growPlanSeats = 30
   const bundlePlanPrice = 263
   const proPlanPrice = 189
