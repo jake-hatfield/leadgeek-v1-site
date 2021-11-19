@@ -57,7 +57,7 @@ const SignupPage: React.FC<{
 
   // plan details
   const bundlePlanSeats = 15
-  const proPlanSeats = 30
+  const proPlanSeats = 15
   const growPlanSeats = 30
   const bundlePlanPrice = 263
   const proPlanPrice = 189
@@ -87,8 +87,6 @@ const SignupPage: React.FC<{
     pro: getWaitlistPlanCount(rawWaitlist, "pro"),
     grow: getWaitlistPlanCount(rawWaitlist, "grow"),
   }
-
-  console.log(rawWaitlist)
 
   //   plan details
   let query = ""
