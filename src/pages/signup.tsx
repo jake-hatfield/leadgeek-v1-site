@@ -166,7 +166,7 @@ const SignupPage: React.FC<{
         discount = null
         const proPlanCount = getSubscriptionCount(proSubscriptions)
 
-        if (proPlanCount < 2) {
+        if (proPlanCount < totalSeats) {
           return {
             productId: process.env.GATSBY_PRO_PRICE_ID!,
             plan: "pro",
