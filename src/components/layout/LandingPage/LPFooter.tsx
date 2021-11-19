@@ -11,9 +11,8 @@ const Footer: React.FC = () => {
           <Logo className="w-16 mr-4 text-purple-500" />
         </div>
       </div>
-      <div className="mt-8 lg:mt-16 text-xs font-bold text-gray-600">
-        <div className="w-full" />
-        <div className="mt-6 container md:flex md:items-center md:justify-between">
+      <div className="mt-8 text-xs font-bold text-gray-600">
+        <div className="container md:flex md:items-center md:justify-between">
           <div className="text-center md:text-left inter">
             <a
               href="mailto:hello@leadgeek.io"
