@@ -80,6 +80,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
   const bundleSeatsLeft: number =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
 
+  console.log(subscriptions, waitlist, proSeatsLeft)
+
   //   pricing
   const bundlePrice = 263
   const proPrice = 189
