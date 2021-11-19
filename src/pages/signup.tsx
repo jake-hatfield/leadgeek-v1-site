@@ -243,20 +243,19 @@ const SignupPage: React.FC<{
     }
   }
 
-  const growSeatsLeft =
-    growPlanSeats -
-    (growSubscriptions.length +
-      growSubscriptions_2.length +
-      bundleSubscriptions.length +
-      bundleSubscriptions_2.length)
+  //   subtract possible available seats from the total # of relevant subscriptions + bundle subscriptions
   const proSeatsLeft =
-    proPlanSeats -
-    (proSubscriptions.length +
-      proSubscriptions_2.length +
-      bundleSubscriptions.length +
-      bundleSubscriptions_2.length)
-  const bundleSeatsLeft: number =
+    proPlanSeats - (proSubscriptions.length + bundleSubscriptions.length)
+  const proSeatsLeft_2 =
+    proPlanSeats - (proSubscriptions_2.length + bundleSubscriptions_2.length)
+  const growSeatsLeft =
+    growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
+  const growSeatsLeft_2 =
+    growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
+  const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
+  //   const bundleSeatsLeft_2 =
+  //     proSeatsLeft_2 <= growSeatsLeft_2 ? proSeatsLeft_2 : growSeatsLeft_2
 
   const featureList = [
     [
@@ -352,20 +351,31 @@ const SignupPage: React.FC<{
       title: "Grow",
       description: "New FBA sellers",
       price: growPlanPrice,
-      available: growSeatsLeft <= 0 || waitlist.grow > 0 ? false : true,
+      //   second list not open yet
+      available:
+        (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
+          ? false
+          : true,
     },
     {
       title: "Pro",
       description: "Intermediate FBA sellers",
       price: proPlanPrice,
-      available: proSeatsLeft <= 0 || waitlist.pro > 0 ? false : true,
+      available:
+        (proSeatsLeft <= 0 && proSeatsLeft_2 <= 0) || waitlist.pro > 0
+          ? false
+          : true,
     },
     {
       title: "Bundle",
       description: "Advanced FBA sellers",
       price: bundlePlanPrice,
+      //   second list not open yet
       available:
-        bundleSeatsLeft && waitlist.grow === 0 && waitlist.pro === 0
+        bundleSeatsLeft &&
+        waitlist.grow === 0 &&
+        waitlist.pro === 0 &&
+        waitlist.bundle === 0
           ? true
           : false,
     },
