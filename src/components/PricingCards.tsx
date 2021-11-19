@@ -66,19 +66,17 @@ const PricingCards: React.FC<PricingCardsProps> = ({
 
   //   subtract possible available seats from the total # of relevant subscriptions + bundle subscriptions
   const proSeatsLeft =
-    proPlanSeats -
-    (proSubscriptions.length +
-      proSubscriptions_2.length +
-      bundleSubscriptions.length +
-      bundleSubscriptions_2.length)
+    proPlanSeats - (proSubscriptions.length + bundleSubscriptions.length)
+  const proSeatsLeft_2 =
+    proPlanSeats - (proSubscriptions_2.length + bundleSubscriptions_2.length)
   const growSeatsLeft =
-    growPlanSeats -
-    (growSubscriptions.length +
-      growSubscriptions_2.length +
-      bundleSubscriptions.length +
-      bundleSubscriptions_2.length)
-  const bundleSeatsLeft: number =
+    growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
+  const growSeatsLeft_2 =
+    growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
+  const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
+  //   const bundleSeatsLeft_2 =
+  //     proSeatsLeft_2 <= growSeatsLeft_2 ? proSeatsLeft_2 : growSeatsLeft_2
 
   //   pricing
   const bundlePrice = 263
@@ -142,8 +140,12 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Full software access",
         },
       ],
+      //   second list not open yet
       seatsLeft: growSeatsLeft,
-      available: growSeatsLeft <= 0 || waitlist.grow > 0 ? false : true,
+      available:
+        (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
+          ? false
+          : true,
     },
     {
       title: "Pro",
@@ -196,8 +198,11 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Full software access",
         },
       ],
-      seatsLeft: proSeatsLeft,
-      available: proSeatsLeft <= 0 || waitlist.pro > 0 ? false : true,
+      seatsLeft: proSeatsLeft + proSeatsLeft_2,
+      available:
+        (proSeatsLeft <= 0 && proSeatsLeft_2 <= 0) || waitlist.pro > 0
+          ? false
+          : true,
     },
     {
       title: "Bundle",
@@ -230,9 +235,13 @@ const PricingCards: React.FC<PricingCardsProps> = ({
           title: "Early access and discounts on new tools",
         },
       ],
+      //   second list not open yet
       seatsLeft: bundleSeatsLeft,
       available:
-        bundleSeatsLeft && waitlist.grow === 0 && waitlist.pro === 0
+        bundleSeatsLeft &&
+        waitlist.grow === 0 &&
+        waitlist.pro === 0 &&
+        waitlist.bundle === 0
           ? true
           : false,
     },
