@@ -88,6 +88,8 @@ const SignupPage: React.FC<{
     grow: getWaitlistPlanCount(rawWaitlist, "grow"),
   }
 
+  console.log(rawWaitlist)
+
   //   plan details
   let query = ""
   if (typeof window !== "undefined") {
@@ -551,6 +553,7 @@ export const query = graphql`
         mongodb_id
         plans {
           type
+          active
         }
       }
     }
