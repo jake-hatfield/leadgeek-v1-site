@@ -41,7 +41,7 @@ interface PricingPageProps {
 
 export interface MongoDBWaitlistItem {
   mongodb_id: string
-  plans: { type: "bundle" | "grow" | "pro" }[]
+  plans: { type: "bundle" | "grow" | "pro"; active: boolean }[]
 }
 
 const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
@@ -725,6 +725,7 @@ export const query = graphql`
         mongodb_id
         plans {
           type
+          active
         }
       }
     }

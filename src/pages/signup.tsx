@@ -342,7 +342,6 @@ const SignupPage: React.FC<{
     ],
   ]
 
-  //   TODO: set availability dynamically
   const planList: {
     title: "Bundle" | "Pro" | "Grow"
     description: string

@@ -235,8 +235,10 @@ export const getWaitlistPlanCount = (
   type: "bundle" | "pro" | "grow"
 ) => {
   return data
-    .filter((w: MongoDBWaitlistItem) =>
-      w.plans.some(plan => plan.type === type)
+    .filter((waitlistItem: MongoDBWaitlistItem) =>
+      waitlistItem.plans.some(
+        plan => plan.type === type && plan.active === true
+      )
     )
     .map(i => {
       return Object.assign({}, i, {
