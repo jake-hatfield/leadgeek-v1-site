@@ -74,7 +74,6 @@ const OnlineArbitrageSourcingListPage: React.FC<OnlineArbitrageSourcingListPageP
   data,
   location,
 }) => {
-  console.log(data.heroImage)
   const title = "Online Arbitrage Sourcing List | Leadgeek"
   const description =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
@@ -807,6 +806,7 @@ export const query = graphql`
         mongodb_id
         plans {
           type
+          active
         }
       }
     }

@@ -25,6 +25,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Leadgeek`,
@@ -36,6 +43,30 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     extensions: [".mdx", ".md"],
+    //     gatsbyRemarkPlugins: [
+    //       `gatsby-remark-vscode`,
+    //       `gatsby-remark-copy-linked-files`,
+    //       `gatsby-remark-smartypants`,
+    //       `gatsby-remark-relative-images`,
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 590,
+    //         },
+    //       },
+    //       {
+    //         resolve: `gatsby-remark-responsive-iframe`,
+    //         options: {
+    //           wrapperStyle: `margin-bottom: 1.0725rem`,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-source-stripe`,
       options: {
