@@ -43,15 +43,18 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
+    `gatsby-transformer-remark`,
     //   options: {
-    //     extensions: [".mdx", ".md"],
-    //     gatsbyRemarkPlugins: [
-    //       `gatsby-remark-vscode`,
-    //       `gatsby-remark-copy-linked-files`,
-    //       `gatsby-remark-smartypants`,
-    //       `gatsby-remark-relative-images`,
+    //     // Footnotes mode (default: true)
+    //     footnotes: true,
+    //     // GitHub Flavored Markdown mode (default: true)
+    //     gfm: true,
+    //     // Plugins configs
+    //     plugins: [
+    //       { resolve: `gatsby-remark-vscode` },
+    //       { resolve: `gatsby-remark-copy-linked-files` },
+    //       { resolve: `gatsby-remark-smartypants` },
+    //       { resolve: `gatsby-remark-relative-images` },
     //       {
     //         resolve: `gatsby-remark-images`,
     //         options: {
@@ -66,7 +69,6 @@ module.exports = {
     //       },
     //     ],
     //   },
-    // },
     {
       resolve: `gatsby-source-stripe`,
       options: {
@@ -133,8 +135,7 @@ module.exports = {
     {
       resolve: "@sentry/gatsby",
       options: {
-        dsn:
-          "https://c364570692be47cbab74cc3f2b152d46@o975120.ingest.sentry.io/5931063",
+        dsn: "https://c364570692be47cbab74cc3f2b152d46@o975120.ingest.sentry.io/5931063",
         sampleRate: 0.7,
       },
     },

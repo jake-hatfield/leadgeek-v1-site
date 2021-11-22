@@ -68,7 +68,6 @@ const categories = [
       { title: "Pricing", link: "pricing" },
     ],
   },
-
   {
     header: "Company",
     items: [
@@ -77,6 +76,13 @@ const categories = [
       { title: "Seller stories", link: "stories" },
     ],
   },
+  //   {
+  //     header: "Resources",
+  //     items: [
+  //       { title: "Blog", link: "blog" },
+  //       { title: "Changelog", link: "changelog" },
+  //     ],
+  //   },
 ]
 
 const footerLinks = [

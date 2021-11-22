@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import PricingTableRow from "@components/PricingTableRow"
 
@@ -38,24 +37,6 @@ const PricingTable: React.FC<PricingTableProps> = ({
         {featureRows.map((row, i) => (
           <PricingTableRow key={i} cells={row.cells} />
         ))}
-        <tr className="mt-24 hidden md:table-row inter">
-          <td className="py-6 text-gray-900 border-0 text-xs lg:text-base" />
-          <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/?grow`} className="cta-link ">
-              Sign up
-            </Link>
-          </td>
-          <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/?pro`} className="cta-link">
-              Sign up
-            </Link>
-          </td>
-          <td className="lg:py-6 text-gray-900 border-0 text-xs lg:text-base text-center">
-            <Link to={`/signup/?bundle`} className="cta-link">
-              Sign up
-            </Link>
-          </td>
-        </tr>
       </tbody>
     </table>
   )
