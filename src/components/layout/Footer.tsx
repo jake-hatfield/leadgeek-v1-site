@@ -10,12 +10,9 @@ const Footer: React.FC = () => {
         <div className="flex justify-center">
           <Logo className="w-16 mr-4 text-purple-500" />
         </div>
-        <nav className="w-full relative z-10 mt-8 lg:mt-12 flex justify-center container">
+        <nav className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-3 w-full relative z-10 mt-8 lg:mt-12 container">
           {categories.map(category => (
-            <div
-              key={category.header}
-              className="mt-4 md:mt-0 first:ml-0 ml-16"
-            >
+            <div key={category.header} className="">
               <h3 className="h3 font-semibold">{category.header}</h3>
               <ul className="mt-4 text-gray-600">
                 {category.items.map(item => (
@@ -49,7 +46,7 @@ const Footer: React.FC = () => {
           </ul>
           <div className="mt-4 md:mt-0 text-center md:text-left">
             <p>
-              Copyright <span className="inter">&copy;</span>{" "}
+              <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
             </p>
           </div>
@@ -76,13 +73,13 @@ const categories = [
       { title: "Seller stories", link: "stories" },
     ],
   },
-  //   {
-  //     header: "Resources",
-  //     items: [
-  //       { title: "Blog", link: "blog" },
-  //       { title: "Changelog", link: "changelog" },
-  //     ],
-  //   },
+  {
+    header: "Resources",
+    items: [
+      //   { title: "Blog", link: "blog" },
+      { title: "Changelog", link: "changelog" },
+    ],
+  },
 ]
 
 const footerLinks = [

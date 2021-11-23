@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
           <div className="py-3 container flex items-center">
             <p className="font-semibold">
-              <span role="img" aria-label="Wave emoji">
+              <span role="img" aria-label="Wave emoji" className="font-normal">
                 👋
               </span>{" "}
               Hey you! Leadgeek is an easy-to-use, high-tech way of finding

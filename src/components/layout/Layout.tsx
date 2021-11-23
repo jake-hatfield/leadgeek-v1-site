@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
         buttonWrapperClasses="mt-4 md:mt-0 md:ml-4 flex-none"
         buttonClasses="block w-full md:w-auto py-2 px-3 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-xs md:text-sm hover:bg-purple-600 text-white transition-main ring-purple inter"
       >
-        <span role="img" aria-label="Waving Emoji">
+        <span role="img" aria-label="Waving Emoji" className="font-normal">
           👋
         </span>{" "}
         Hi there! We use{" "}

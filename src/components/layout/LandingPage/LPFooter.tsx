@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             </ul>
             <p className="mt-4 text-center md:text-right">
               <span className="inter">&copy;</span> 2020-
-              {new Date().getFullYear()} Leadgeek
+              {new Date().getFullYear()} <span className="inter">Leadgeek</span>
             </p>
           </div>
         </div>

@@ -45,7 +45,11 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
       <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
         <div className="py-3 container flex items-center">
           <p className="font-semibold">
-            <span role="img" aria-label="Loudspeaker emoji">
+            <span
+              role="img"
+              aria-label="Loudspeaker emoji"
+              className="font-normal"
+            >
               📢
             </span>{" "}
             Hey you! Leadgeek is an easy-to-use, high-tech way of finding things
@@ -83,9 +87,9 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
               </div>
               <div className="w-3/5 py-4 lg:py-6 px-6">
                 <span>date</span>
-                <h2 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white">
+                <h3 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white">
                   Blog
-                </h2>
+                </h3>
                 <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
                   Stay up to date with every change made to Leadgeek since Q4
                   2021.

@@ -138,7 +138,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
             </p>
             <h1 className="mt-2 text-3xl md:text-5xl font-black text-gray-900 inter header-height">
               Start earning some{" "}
-              <span role="img" aria-label="Fire Emoji">
+              <span role="img" aria-label="Fire Emoji" className="font-normal">
                 🔥
               </span>{" "}
               <span className="emphasized-text">recurring commissions</span>
@@ -193,7 +193,11 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
             : You've worked hard building an audience that respects you. We
             recognize that and want to provide an awesome service to your FBA
             community while rewarding you at the same time.{" "}
-            <span role="img" aria-label="Moneybag Emoji">
+            <span
+              role="img"
+              aria-label="Moneybag Emoji"
+              className="font-normal"
+            >
               💰
             </span>
           </p>

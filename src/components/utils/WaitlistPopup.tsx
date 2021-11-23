@@ -42,7 +42,7 @@ const WaitlistPopup: React.FC<WaitlistPopupProps> = ({
           <>
             We're at capacity right now on the {selectedPlan} plan. But put your
             contact details down and we'll add you to our waitlist.{" "}
-            <span role="img" aria-label="Laptop emoji">
+            <span role="img" aria-label="Laptop emoji" className="font-normal">
               💻
             </span>
           </>,

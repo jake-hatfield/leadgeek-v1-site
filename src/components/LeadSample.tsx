@@ -172,7 +172,7 @@ const LeadSampleRow: React.FC<LeadSampleRowProps> = ({ lead }) => {
           (data.netProfit >= 40 && data.monthlySales >= 30) ||
           (data.roi >= 0.7 && data.monthlySales >= 90) ||
           (data.roi >= 0.9 && data.monthlySales >= 150)) && (
-          <span role="img" aria-label="Fire Emoji">
+          <span role="img" aria-label="Fire Emoji" className="font-normal">
             🔥
           </span>
         )}

@@ -81,7 +81,7 @@ const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
                   coaching call with an experienced FBA arbitrage seller
                 </strong>
                 . No strings attached.{" "}
-                <span role="img" aria-label="Party emoji">
+                <span role="img" aria-label="Party emoji" className="font-normal">
                   🎉
                 </span>
               </>,

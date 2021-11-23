@@ -161,7 +161,11 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
             </h2>
             <p className="max-w-2xl mt-4 lg:mt-6 mx-auto text-gray-900 text-lg bg-white">
               We get it, it's hard to trust screenshots.{" "}
-              <span role="img" aria-label="Camera emoji">
+              <span
+                role="img"
+                aria-label="Camera emoji"
+                className="font-normal"
+              >
                 📷
               </span>{" "}
               Get the most representative idea of how Leadgeek can upgrade your
@@ -185,7 +189,11 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
           <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
             <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
               <span>
-                <span role="img" aria-label="Clock emoji">
+                <span
+                  role="img"
+                  aria-label="Clock emoji"
+                  className="font-normal"
+                >
                   🕒
                 </span>{" "}
                 Last updated:
