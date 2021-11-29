@@ -108,7 +108,7 @@ body {
 }
 
 .card {
-  @apply mx-auto py-4 lg:py-6 px-6 w-full bg-white border-main rounded-lg shadow-lg;
+  @apply mx-auto py-4 lg:py-6 px-6 w-full bg-white rounded-lg shadow-lg;
 }
 
 .feature-list {

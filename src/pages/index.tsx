@@ -441,8 +441,7 @@ const classes = {
   testimonialSectionH3: "mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900",
   testimonialsWrapper: "mt-12 px-4",
   noteSectionWrapper: "relative pt-8 lg:pt-0 bg-splatter",
-  note:
-    "relative max-w-xl lg:max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 shadow-purpleSm text-white leading-relaxed",
+  note: "relative max-w-xl lg:max-w-2xl mt-32 lg:mt-48 mb-4 py-4 container bg-gray-900 rounded-lg border border-gray-900 shadow-purpleSm text-white leading-relaxed",
   noteParagraph: "mt-4",
   signature: "w-32 lg:w-40 mt-6 pb-6",
   dividerTop: "divider-top text-gray-100",

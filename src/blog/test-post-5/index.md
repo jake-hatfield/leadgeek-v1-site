@@ -1,7 +1,7 @@
 ---
-slug: "test-post"
+slug: "test-post-5"
 date: "2019-05-04"
-title: "My first blog post"
+title: "My fifth blog post"
 featured: false
 ---
 

@@ -21,9 +21,9 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   })
 
   return (
-    <div className="relative flex flex-col h-screen justify-between">
+    <div className="relative flex flex-col h-auto justify-between">
       <Navbar />
-      <main className="mt-16 md:mt-20">{children}</main>
+      <main className="">{children}</main>
       <Footer />
       <CookieConsent
         buttonText="Got it"

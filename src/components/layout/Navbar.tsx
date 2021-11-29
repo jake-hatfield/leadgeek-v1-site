@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
-      <header className="relative z-30">
+      <header className="sticky top-0 z-30">
         {/* notification banner */}
         {/* <aside className="hidden lg:block bg-purple-600 text-purple-100">
           <div className="py-3 container flex items-center">
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </aside> */}
-        <div className="fixed w-screen bg-white shadow-sm">
+        <div className="bg-white shadow-sm">
           <div className="w-full py-4 container center-between">
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
