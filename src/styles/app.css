@@ -404,3 +404,25 @@ td:last-child {
   height: 100%;
   @apply rounded-lg;
 }
+
+@media only screen and (max-width: 1199px) {
+  .side-blog {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .side-blog {
+    display: block;
+    position: fixed;
+    top: 200px;
+  }
+}
+
+.side-blog-w {
+  max-width: 240px;
+}
+
+.alt-container {
+  max-width: 1150px;
+}

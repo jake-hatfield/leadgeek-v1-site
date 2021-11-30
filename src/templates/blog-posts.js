@@ -5,6 +5,8 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 import Layout from "@components/layout/Layout"
 
+import OgImage from "@assets/images/og/og-blog.jpg"
+
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
   const { currentPage, numPages } = pageContext
@@ -16,29 +18,29 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
 
   const featuredPost = data.markdownRemark
 
-  const title = "Contact Leadgeek"
+  const title = "Leadgeek Blog"
   const description =
-    "Have a question about Leadgeek? We'll do our best to get you some answers. Ask away and receive a prompt reply."
+    "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
 
   return (
     <Layout location={location}>
       <GatsbySeo
         title={title}
         description={description}
-        // openGraph={{
-        //   title,
-        //   description,
-        //   url: "https://leadgeek.io/contact/",
-        //   type: "website",
-        //   images: [
-        //     {
-        //       url: OgImage,
-        //       width: 1200,
-        //       height: 630,
-        //       alt: "Reach out & chat with Leadgeek",
-        //     },
-        //   ],
-        // }}
+        openGraph={{
+          title,
+          description,
+          url: "https://leadgeek.io/blog/",
+          type: "website",
+          images: [
+            {
+              url: OgImage,
+              width: 1200,
+              height: 630,
+              alt: "Learn from the Leadgeek blog.",
+            },
+          ],
+        }}
         language="en"
       />
       {/* notification banner */}
@@ -52,14 +54,14 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
             >
               📢
             </span>{" "}
-            TEST
+            Stuck with too many product restrictions? Try this 100% free
           </p>
-          <div className="ml-2 flex items-center hover:text-pink-600 group transition-colors duration-200">
+          <div className="ml-1 flex items-center hover:text-pink-600 group transition-colors duration-200">
             <button
               //   to={"#leads"}
               className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
             >
-              View the latest leads
+              auto-ungate ASIN list
             </button>
           </div>
         </div>

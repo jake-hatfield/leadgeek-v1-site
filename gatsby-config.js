@@ -43,32 +43,28 @@ module.exports = {
         icon: `src/assets/images/favicon.png`,
       },
     },
-    `gatsby-transformer-remark`,
-    //   options: {
-    //     // Footnotes mode (default: true)
-    //     footnotes: true,
-    //     // GitHub Flavored Markdown mode (default: true)
-    //     gfm: true,
-    //     // Plugins configs
-    //     plugins: [
-    //       { resolve: `gatsby-remark-vscode` },
-    //       { resolve: `gatsby-remark-copy-linked-files` },
-    //       { resolve: `gatsby-remark-smartypants` },
-    //       { resolve: `gatsby-remark-relative-images` },
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //         options: {
-    //           maxWidth: 590,
-    //         },
-    //       },
-    //       {
-    //         resolve: `gatsby-remark-responsive-iframe`,
-    //         options: {
-    //           wrapperStyle: `margin-bottom: 1.0725rem`,
-    //         },
-    //       },
-    //     ],
-    //   },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-stripe`,
       options: {

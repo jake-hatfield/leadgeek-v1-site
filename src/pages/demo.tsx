@@ -90,7 +90,7 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
             description={
               <h2>
                 Sourcing workarounds are over with, sourcing workflows are
-                taking over. LeadGeek feels familiar to how you find products
+                taking over. Leadgeek feels familiar to how you find products
                 now, but it's a much more efficient experience.{" "}
                 <span className="emphasized-text">
                   Watch a full walkthrough to see our product in action
