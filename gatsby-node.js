@@ -12,17 +12,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
               frontmatter {
                 title
+                slug
               }
               id
             }
@@ -40,7 +38,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.allMdx.edges
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "src/blog"
@@ -52,7 +50,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].node.id
 
       createPage({
-        path: `blog${post.node.fields.slug}`,
+        path: `blog/${post.node.frontmatter.slug}`,
         component: blogPost,
         context: {
           id: post.node.id,
@@ -83,7 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
 
     createNodeField({
@@ -98,19 +96,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
   createTypes(`
-    type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: Social
-    }
-    type Author {
-      name: String
-      summary: String
-    }
-    type Social {
-      twitter: String
-    }
-    type MarkdownRemark implements Node {
+     type Mdx implements Node {
       frontmatter: Frontmatter
       fields: Fields
     }
@@ -118,9 +104,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      featured: Boolean
     }
     type Fields {
       slug: String
+      date: Date @dateFormat
     }
   `)
 }

@@ -32,18 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Leadgeek`,
-        short_name: `Leadgeek`,
-        start_url: `/`,
-        background_color: `#7069FA`,
-        theme_color: `#ffffff`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/favicon.png`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -63,6 +51,18 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Leadgeek`,
+        short_name: `Leadgeek`,
+        start_url: `/`,
+        background_color: `#7069FA`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/favicon.png`,
       },
     },
     {

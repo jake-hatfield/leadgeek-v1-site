@@ -8,7 +8,9 @@ import Layout from "@components/layout/Layout"
 import OgImage from "@assets/images/og/og-blog.jpg"
 
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMdx.edges
+
+  console.log(posts)
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -16,7 +18,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
     currentPage - 1 === 1 ? "/blog/" : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
 
-  const featuredPost = data.markdownRemark
+  const featuredPost = data.mdx
 
   const title = "Leadgeek Blog"
   const description =
@@ -61,7 +63,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
               //   to={"#leads"}
               className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
             >
-              auto-ungate ASIN list
+              auto-ungate ASIN lists
             </button>
           </div>
         </div>
@@ -163,7 +165,7 @@ const BlogPost = ({ slug, title, description }) => {
     <li className="w-full">
       <Link
         key={slug}
-        to={`/blog${slug}`}
+        to={`/blog/${slug}/`}
         className="inline-block card hover:bg-purple-500 hover:text-white group transition-main shadow-graySm"
       >
         {title}
@@ -177,7 +179,7 @@ const BlogPostsGrid = ({ posts }) => {
   return (
     <ul className="grid grid-cols-3 gap-12 mt-16">
       {posts.map(({ node }) => {
-        const slug = node.fields.slug
+        const slug = node.frontmatter.slug
         const title = node.frontmatter.title || slug
         const description = node.frontmatter.description
         return <BlogPost slug={slug} title={title} description={description} />
@@ -188,35 +190,24 @@ const BlogPostsGrid = ({ posts }) => {
 
 export const blogPostsQuery = graphql`
   query blogPostsQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+    allMdx(
+      sort: { fields: [frontmatter___title], order: DESC }
       filter: { frontmatter: { featured: { eq: false } } }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
-          fields {
-            slug
-          }
           frontmatter {
             title
-            description
+            slug
             featured
+            date
           }
         }
       }
     }
-    markdownRemark(frontmatter: { featured: { eq: true } }) {
-      id
-      frontmatter {
-        date
-        description
-        featured
-        title
-        slug
-      }
-    }
   }
 `
+
 export default BlogPostsTemplate

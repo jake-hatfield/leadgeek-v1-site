@@ -1,3 +1,4 @@
+// import React, { useState } from "react"
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 
@@ -14,12 +15,12 @@ import SocialShare from "@components/utils/SocialShare"
 // import EmailInput from "@components/emailInput"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const topic = post.frontmatter.topic || `online arbitrage`
-  const [email, setEmail] = useState("")
-  const [success, setSuccess] = useState(false)
-  const [failure, setFailure] = useState(false)
-  const [redundant, setRedundant] = useState(false)
+  const [email, setEmail] = React.useState("")
+  const [success, setSuccess] = React.useState(false)
+  const [failure, setFailure] = React.useState(false)
+  const [redundant, setRedundant] = React.useState(false)
   const handleSubmit = async e => {
     e.preventDefault()
     // const data = await addToMailchimp(email)
@@ -154,7 +155,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </h2>
           <aside className="mt-8 lg:flex lg:flex-wrap lg:justify-between lg:items-end body-font font-light text-sm md:text-base text-gray-600">
             <div className="flex items-center justify-center">
-              <Image
+              {/* <Image
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={post.frontmatter.author}
                 style={{
@@ -165,7 +166,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 imgStyle={{
                   borderRadius: `50%`,
                 }}
-              />
+              /> */}
               <div className="ml-4">
                 <address className="mr-4 mb-0 not-italic text-gray-800">
                   <Link to={`/about`} rel="author" className="alt-link">
@@ -178,12 +179,12 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
             </div>
             <div className="mt-6 lg:mt-0">
-              <SocialShare
+              {/* <SocialShare
                 url={`${data.site.siteMetadata.siteUrl}/blog${post.fields.slug}`}
                 title={post.frontmatter.title}
                 twitterTags={post.frontmatter.twitterTags}
                 siteUrl={data.site.siteMetadata.siteUrl}
-              />
+              /> */}
             </div>
             <section
               id="blog-body"
@@ -204,15 +205,13 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
       }
+      body
     }
   }
 `
