@@ -40,12 +40,19 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal: false,
             },
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-zoom`,
+            options: {
+              background: `#5b6c7e`,
             },
           },
           `gatsby-remark-copy-linked-files`,

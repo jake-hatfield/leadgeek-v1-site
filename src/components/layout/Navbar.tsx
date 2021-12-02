@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </aside> */}
-        <div className="bg-white shadow-sm">
+        <div className="bg-white shadow-sm border-b border-gray-900">
           <div className="w-full py-4 container center-between">
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">

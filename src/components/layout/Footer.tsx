@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           ))}
         </nav>
       </div>
-      <div className="mt-10 text-xs font-bold text-gray-600">
+      <div className="mt-12 text-xs font-bold text-gray-600">
         <div className="w-full" />
         <div className="mt-6 container md:flex md:items-start md:justify-between">
           <ul className="flex justify-center md:justify-start">
@@ -76,7 +76,7 @@ const categories = [
   {
     header: "Resources",
     items: [
-      //   { title: "Blog", link: "blog" },
+      { title: "Blog", link: "blog" },
       { title: "Changelog", link: "changelog" },
     ],
   },

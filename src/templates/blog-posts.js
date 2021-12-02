@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql, Img, Link } from "gatsby"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { DateTime } from "luxon"
 
 import Layout from "@components/layout/Layout"
 
@@ -10,7 +11,6 @@ import OgImage from "@assets/images/og/og-blog.jpg"
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMdx.edges
 
-  console.log(posts)
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -63,7 +63,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
               //   to={"#leads"}
               className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
             >
-              auto-ungate ASIN lists
+              auto-ungate ASIN list
             </button>
           </div>
         </div>
@@ -71,6 +71,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
       <section className="min-h-screen py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container">
           <header className="relative mx-auto lg:mx-0 max-w-md">
+            <span className="font-semibold">The Leadgeek</span>
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter bg-white">
               Blog
             </h1>
@@ -81,6 +82,8 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
                 slug={featuredPost.frontmatter.slug}
                 title={featuredPost.frontmatter.title}
                 description={featuredPost.frontmatter.description}
+                date={featuredPost.frontmatter.date}
+                readTime={featuredPost.frontmatter.readTime}
               />
             )}
             <BlogPostsGrid posts={posts} />
@@ -131,7 +134,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
   )
 }
 
-const FeaturedBlogPost = ({ slug, title, description }) => {
+const FeaturedBlogPost = ({ slug, title, description, date, readTime }) => {
   return (
     <article>
       <Link
@@ -147,7 +150,17 @@ className="rounded-tl-lg rounded-bl-lg"
 /> */}
         </div>
         <div className="w-3/5 py-4 lg:py-6 px-6">
-          <span>date</span>
+          <div>
+            <time dateTime={date}>
+              {DateTime.fromISO(date).toFormat("LLL dd, yyyy")}
+            </time>
+            {readTime && (
+              <>
+                <span className="ml-2">&#x2022;</span>
+                <span className="ml-2">{readTime} min</span>
+              </>
+            )}
+          </div>
           <h3 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white">
             {title}
           </h3>
@@ -160,7 +173,7 @@ className="rounded-tl-lg rounded-bl-lg"
   )
 }
 
-const BlogPost = ({ slug, title, description }) => {
+const BlogPost = ({ slug, title, description, date }) => {
   return (
     <li className="w-full">
       <Link
@@ -205,6 +218,15 @@ export const blogPostsQuery = graphql`
             date
           }
         }
+      }
+    }
+    mdx(frontmatter: { featured: { eq: true } }) {
+      frontmatter {
+        date
+        description
+        featured
+        slug
+        title
       }
     }
   }

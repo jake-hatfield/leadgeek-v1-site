@@ -405,6 +405,10 @@ td:last-child {
   @apply rounded-lg;
 }
 
+.blog-hero-image {
+  max-height: 45vh;
+}
+
 @media only screen and (max-width: 1199px) {
   .side-blog {
     display: none;
@@ -426,3 +430,75 @@ td:last-child {
 .alt-container {
   max-width: 1150px;
 }
+
+/*! purgecss start ignore */
+@media only screen and (max-width: 640px) {
+  .full-width {
+    width: 100vw;
+    position: relative;
+    z-index: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+.full-width {
+  width: 99.5vw;
+  position: relative;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  margin-left: calc(-50vw - 0px);
+  margin-right: calc(-50vw + 0px);
+}
+
+#blog-body > h2 {
+  @apply mt-8 inter text-2xl font-bold;
+}
+
+#blog-body > h3 {
+  @apply mt-6 inter text-xl font-semibold;
+}
+
+#blog-body > h4,
+h5,
+h6 {
+  @apply mt-6 inter text-base font-semibold;
+}
+
+#blog-body > p {
+  @apply mt-5;
+}
+
+#blog-body > pre {
+  @apply mt-5;
+}
+
+#blog-body > hr {
+  @apply my-8;
+}
+
+#blog-body > gatsby-resp-image-image {
+  border: 4px solid #050505 !important;
+}
+
+#blog-body > ul,
+#blog-article > div > ul {
+  list-style: disc !important;
+  margin-left: 1.25rem !important;
+  margin-top: 1.25rem;
+}
+
+#blog-body > ol {
+  list-style: decimal !important;
+  margin-left: 1.25rem !important;
+  margin-top: 1.25rem;
+}
+
+#blog-body > blockquote {
+  margin: 20px 0px 0px 0px !important;
+  @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
+}
+/*! purgecss end ignore */
