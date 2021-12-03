@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               >
                 {footerLink.title === "Sitemap" ||
                 footerLink.title === "RSS" ? (
-                  <a href={`/${footerLink.link}/`}>{footerLink.title}</a>
+                  <a href={`/${footerLink.link}`}>{footerLink.title}</a>
                 ) : (
                   <Link to={`/${footerLink.link}/`}>{footerLink.title}</Link>
                 )}

@@ -282,7 +282,7 @@ const classes = {
 export const testimonialImage = graphql`
   fragment testimonialImage on File {
     childImageSharp {
-      fluid(maxWidth: 200, quality: 100) {
+      fluid(maxWidth: 200, quality: 90) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }

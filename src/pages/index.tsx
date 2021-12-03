@@ -195,7 +195,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
             goHome={false}
             linkOne={`demo`}
             linkOneText={`See how it works`}
-            linkTwo={`pricing`}
+            linkTwo={`signup`}
             linkTwoText={`or sign up now`}
             outsideLink={null}
             svgOne={null}
@@ -511,35 +511,35 @@ export const query = graphql`
     }
     testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
+        fluid(maxWidth: 200, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     testimonialBrian: file(relativePath: { eq: "brian.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
+        fluid(maxWidth: 200, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     testimonialWilliam: file(relativePath: { eq: "william.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
+        fluid(maxWidth: 200, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     testimonialAustin: file(relativePath: { eq: "austin.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
+        fluid(maxWidth: 200, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
     testimonialFrank: file(relativePath: { eq: "frank.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 100) {
+        fluid(maxWidth: 200, quality: 90) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

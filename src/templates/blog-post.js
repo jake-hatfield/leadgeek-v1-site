@@ -5,12 +5,12 @@ import { Link, graphql } from "gatsby"
 // packages
 import Image from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { DateTime } from "luxon"
 import { useScrollPercentage } from "react-scroll-percentage"
 import { useSpring, animated, config } from "react-spring"
 import { MDXProvider } from "@mdx-js/react"
 
 // components
+import Comments from "@components/layout/Blog/Comments"
 import Layout from "@components/layout/Layout"
 import SocialShare from "@components/layout/Blog/SocialShare"
 import Chapter from "@components/layout/Blog/Chapter"
@@ -179,7 +179,7 @@ const BlogPostTemplate = ({ data, location }) => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>See all articles</span>
+                  <span>See all posts</span>
                 </div>
               </Link>
               <Image
@@ -203,7 +203,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   alt={frontmatter.author}
                   className="w-16 md:w-20 lg:w-24 rounded-full shadow-graySm bg-gray-900"
                 />
-                <div className="ml-4">
+                <div className="ml-4 bg-white">
                   <address
                     className="font-semibold inter text-gray-900"
                     rel="author"
@@ -211,10 +211,7 @@ const BlogPostTemplate = ({ data, location }) => {
                     {frontmatter.author}
                   </address>
                   <time pubdate={frontmatter.date}>
-                    Last updated:{" "}
-                    {DateTime.fromISO(frontmatter.date).toFormat(
-                      "LLL dd, yyyy"
-                    )}
+                    Last updated: {frontmatter.date}
                   </time>
                 </div>
               </div>
@@ -237,6 +234,12 @@ const BlogPostTemplate = ({ data, location }) => {
             </MDXProvider>
           </section>
         </article>
+        <section
+          id="comments"
+          className="my-8 container md:max-w-xl lg:max-w-2xl relative z-20"
+        >
+          <Comments id={post.frontmatter.postID} />
+        </section>
       </section>
     </Layout>
   )
@@ -251,7 +254,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    avatar: file(absolutePath: { regex: "/headshot.png/" }) {
+    avatar: file(absolutePath: { regex: "/profile-picture.png/" }) {
       childImageSharp {
         fixed(width: 65, height: 65) {
           ...GatsbyImageSharpFixed_tracedSVG
@@ -260,10 +263,8 @@ export const pageQuery = graphql`
     }
     mdx(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
       frontmatter {
-        date
-        description
+        date(formatString: "LL")
         title
         author
         image {
@@ -274,6 +275,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      excerpt(pruneLength: 100, truncate: true)
       body
       slug
     }

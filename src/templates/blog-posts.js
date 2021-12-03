@@ -1,11 +1,15 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
+// packages
 import Image from "gatsby-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import { DateTime } from "luxon"
 
+// components
 import Layout from "@components/layout/Layout"
+
+// utils
+import { truncate } from "@components/utils/utils"
 
 import OgImage from "@assets/images/og/og-blog.jpg"
 
@@ -70,9 +74,9 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
           </div>
         </div>
       </aside>
-      <section className="min-h-screen py-12 md:py-24 relative text-gray-900 bg-splatter">
+      <section className="min-h-screen py-12 lg:py-20 relative text-gray-900 bg-splatter">
         <div className="container">
-          <header className="relative mx-auto lg:mx-0 max-w-md">
+          <header className="relative mx-auto md:mx-0 max-w-md">
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter bg-white">
               Blog
             </h1>
@@ -129,82 +133,88 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
   )
 }
 
-const FeaturedBlogPost = ({ data }) => {
-  // destructure necessary items
-  const {
+const FeaturedBlogPost = ({
+  data: {
+    excerpt,
     slug,
-    frontmatter: { title, description, date, readTime, image },
-  } = data
-
-  console.log(data)
-
+    timeToRead,
+    frontmatter: { title, date, image },
+  },
+}) => {
   return (
-    <article className="w-full md:flex md:justify-between bg-white rounded-lg shadow-pinkMd transform -rotate-1">
-      <Image
-        fluid={image.childImageSharp.fluid}
-        alt="Leadgeek app feed"
-        className="w-2/5 rounded-tl-lg rounded-bl-lg"
-      />
-      <div className="w-3/5 py-4 lg:py-6 px-6">
-        <div>
-          <time dateTime={date}>
-            {DateTime.fromISO(date).toFormat("LLL dd, yyyy")}
-          </time>
-          {readTime && (
+    <article className="relative w-72 md:w-full max-w-lg lg:max-w-none flex flex-col-reverse lg:flex-row lg:justify-between mx-auto lg:mx-0 bg-white rounded-lg shadow-pinkSm transform lg:-rotate-1">
+      <div className="lg:w-3/5 py-4 lg:py-6 px-6">
+        <div className="text-sm lg:text-base">
+          <time dateTime={date}>{date}</time>
+          {timeToRead && (
             <>
               <span className="ml-2">&#x2022;</span>
-              <span className="ml-2">{readTime} min. read</span>
+              <span className="ml-2">{timeToRead} min. read</span>
             </>
           )}
-        </div>{" "}
+        </div>
+        {/* keep this link first for SEO */}
         <Link key={slug} to={`/blog/${slug}`}>
-          <h3 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white tertiary-link">
-            {title}
+          <h3 className="mt-2 text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white tertiary-link">
+            {truncate(title, "55")}
           </h3>
         </Link>
-        <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
-          {description}
-        </p>
+        <p className="mt-4 lg:mt-6 h4 text-gray-700">{excerpt}</p>
       </div>
+      <Link to={`/blog/${slug}`} className="lg:w-2/5">
+        <Image
+          fluid={image.childImageSharp.fluid}
+          alt={title}
+          className="bg-cover rounded-t-lg lg:rounded-t-none lg:rounded-r-lg"
+        />
+      </Link>
     </article>
   )
 }
 
-const BlogPost = ({ data }) => {
-  // destructure necessary items
-  const {
+const BlogPost = ({
+  data: {
+    excerpt,
     slug,
-    frontmatter: { title, description, date, readTime, image },
-  } = data
-
+    timeToRead,
+    frontmatter: { title, date, image },
+  },
+}) => {
   return (
-    <li className="w-full bg-white rounded-lg shadow-lg shadow-graySm">
-      <Image
-        fluid={image.childImageSharp.fluid}
-        alt="Leadgeek app feed"
-        className="rounded-tl-lg rounded-tr-lg"
-      />
-      <Link
-        key={slug}
-        to={`/blog/${slug}`}
-        className="inline-block py-4 lg:py-6 px-6 "
-      >
-        <h3 className="mt-2 text-xl md:text-2xl font-black text-gray-900 inter bg-white tertiary-link">
-          {title}
-        </h3>
+    <li className="flex flex-col-reverse justify-end w-72 md:w-80 h-auto mt-8 md:mt-0 mx-auto bg-white rounded-lg shadow-lg shadow-graySm">
+      <header className="inline-block py-4 lg:py-6 px-6">
+        <div className="text-sm lg:text-base">
+          <time dateTime={date}>{date}</time>
+          {timeToRead && (
+            <>
+              <span className="ml-2">&#x2022;</span>
+              <span className="ml-2">{timeToRead} min. read</span>
+            </>
+          )}
+        </div>
+        {/* keep this link first for SEO */}
+        <Link key={slug} to={`/blog/${slug}`}>
+          <h3 className="mt-2 text-xl md:text-2xl font-black text-gray-900 inter bg-white tertiary-link">
+            {truncate(title, "45")}
+          </h3>
+        </Link>
+        <p className="mt-4 lg:mt-6 h4 text-gray-700">{excerpt}</p>
+      </header>
+      <Link to={`/blog/${slug}`}>
+        <Image
+          fluid={image.childImageSharp.fluid}
+          alt={title}
+          className="rounded-t-lg"
+        />
       </Link>
-      {description}
     </li>
   )
 }
 
 const BlogPostsGrid = ({ posts }) => {
   return (
-    <ul className="md:grid grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+    <ul className="md:mx-0 md:grid grid-flow-row grid-cols-2 xl:grid-cols-3 gap-12 md:mt-16">
       {posts.map(({ node }, i) => {
-        const slug = node.slug
-        const title = node.frontmatter.title || slug
-        const description = node.frontmatter.description
         return <BlogPost key={i} data={node} />
       })}
     </ul>
@@ -222,9 +232,8 @@ export const blogPostsQuery = graphql`
       edges {
         node {
           frontmatter {
+            date(formatString: "LL")
             title
-            featured
-            date
             image {
               childImageSharp {
                 fluid {
@@ -233,14 +242,15 @@ export const blogPostsQuery = graphql`
               }
             }
           }
+          excerpt(pruneLength: 120, truncate: true)
           slug
+          timeToRead
         }
       }
     }
     mdx(frontmatter: { featured: { eq: true } }) {
       frontmatter {
-        date
-        description
+        date(formatString: "LL")
         featured
         image {
           childImageSharp {
@@ -250,9 +260,10 @@ export const blogPostsQuery = graphql`
           }
         }
         title
-        readTime
       }
+      excerpt(pruneLength: 120, truncate: true)
       slug
+      timeToRead
     }
   }
 `
