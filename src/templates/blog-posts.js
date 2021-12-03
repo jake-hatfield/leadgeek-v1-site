@@ -1,6 +1,7 @@
 import * as React from "react"
-import { graphql, Img, Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
+import Image from "gatsby-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { DateTime } from "luxon"
 
@@ -10,6 +11,7 @@ import OgImage from "@assets/images/og/og-blog.jpg"
 
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMdx.edges
+  console.log(posts)
 
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
@@ -71,20 +73,13 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
       <section className="min-h-screen py-12 md:py-24 relative text-gray-900 bg-splatter">
         <div className="container">
           <header className="relative mx-auto lg:mx-0 max-w-md">
-            <span className="font-semibold">The Leadgeek</span>
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter bg-white">
               Blog
             </h1>
           </header>
           <section className="mt-16">
             {currentPage === 1 && featuredPost && (
-              <FeaturedBlogPost
-                slug={featuredPost.frontmatter.slug}
-                title={featuredPost.frontmatter.title}
-                description={featuredPost.frontmatter.description}
-                date={featuredPost.frontmatter.date}
-                readTime={featuredPost.frontmatter.readTime}
-              />
+              <FeaturedBlogPost data={featuredPost} />
             )}
             <BlogPostsGrid posts={posts} />
           </section>
@@ -134,68 +129,83 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
   )
 }
 
-const FeaturedBlogPost = ({ slug, title, description, date, readTime }) => {
+const FeaturedBlogPost = ({ data }) => {
+  // destructure necessary items
+  const {
+    slug,
+    frontmatter: { title, description, date, readTime, image },
+  } = data
+
+  console.log(data)
+
   return (
-    <article>
-      <Link
-        key={slug}
-        to={`/blog/${slug}/`}
-        className="w-full md:flex md:justify-between bg-white rounded-lg shadow-pinkMd"
-      >
-        <div className="w-2/5">
-          {/* <Img
-fluid={data.dummyImage.childImageSharp.fluid}
-alt="Leadgeek app feed"
-className="rounded-tl-lg rounded-bl-lg"
-/> */}
-        </div>
-        <div className="w-3/5 py-4 lg:py-6 px-6">
-          <div>
-            <time dateTime={date}>
-              {DateTime.fromISO(date).toFormat("LLL dd, yyyy")}
-            </time>
-            {readTime && (
-              <>
-                <span className="ml-2">&#x2022;</span>
-                <span className="ml-2">{readTime} min</span>
-              </>
-            )}
-          </div>
-          <h3 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white">
+    <article className="w-full md:flex md:justify-between bg-white rounded-lg shadow-pinkMd transform -rotate-1">
+      <Image
+        fluid={image.childImageSharp.fluid}
+        alt="Leadgeek app feed"
+        className="w-2/5 rounded-tl-lg rounded-bl-lg"
+      />
+      <div className="w-3/5 py-4 lg:py-6 px-6">
+        <div>
+          <time dateTime={date}>
+            {DateTime.fromISO(date).toFormat("LLL dd, yyyy")}
+          </time>
+          {readTime && (
+            <>
+              <span className="ml-2">&#x2022;</span>
+              <span className="ml-2">{readTime} min. read</span>
+            </>
+          )}
+        </div>{" "}
+        <Link key={slug} to={`/blog/${slug}`}>
+          <h3 className="mt-2 text-2xl md:text-4xl font-black text-gray-900 inter bg-white tertiary-link">
             {title}
           </h3>
-          <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
-            {description}
-          </p>
-        </div>
-      </Link>
+        </Link>
+        <p className="mt-4 lg:mt-6 pb-4 h4 bg-white text-gray-700">
+          {description}
+        </p>
+      </div>
     </article>
   )
 }
 
-const BlogPost = ({ slug, title, description, date }) => {
+const BlogPost = ({ data }) => {
+  // destructure necessary items
+  const {
+    slug,
+    frontmatter: { title, description, date, readTime, image },
+  } = data
+
   return (
-    <li className="w-full">
+    <li className="w-full bg-white rounded-lg shadow-lg shadow-graySm">
+      <Image
+        fluid={image.childImageSharp.fluid}
+        alt="Leadgeek app feed"
+        className="rounded-tl-lg rounded-tr-lg"
+      />
       <Link
         key={slug}
-        to={`/blog/${slug}/`}
-        className="inline-block card hover:bg-purple-500 hover:text-white group transition-main shadow-graySm"
+        to={`/blog/${slug}`}
+        className="inline-block py-4 lg:py-6 px-6 "
       >
-        {title}
-        {description}
+        <h3 className="mt-2 text-xl md:text-2xl font-black text-gray-900 inter bg-white tertiary-link">
+          {title}
+        </h3>
       </Link>
+      {description}
     </li>
   )
 }
 
 const BlogPostsGrid = ({ posts }) => {
   return (
-    <ul className="grid grid-cols-3 gap-12 mt-16">
-      {posts.map(({ node }) => {
-        const slug = node.frontmatter.slug
+    <ul className="md:grid grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
+      {posts.map(({ node }, i) => {
+        const slug = node.slug
         const title = node.frontmatter.title || slug
         const description = node.frontmatter.description
-        return <BlogPost slug={slug} title={title} description={description} />
+        return <BlogPost key={i} data={node} />
       })}
     </ul>
   )
@@ -213,10 +223,17 @@ export const blogPostsQuery = graphql`
         node {
           frontmatter {
             title
-            slug
             featured
             date
+            image {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
+          slug
         }
       }
     }
@@ -225,9 +242,17 @@ export const blogPostsQuery = graphql`
         date
         description
         featured
-        slug
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         title
+        readTime
       }
+      slug
     }
   }
 `

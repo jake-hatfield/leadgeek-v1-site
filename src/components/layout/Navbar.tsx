@@ -65,13 +65,13 @@ const Navbar: React.FC = () => {
             </div>
             {/* md:+ nav */}
             <nav className="hidden lg:flex lg:items-center">
-              <div className="relative all-center inter">
+              <div className="relative all-center">
                 {primaryLinks.map(primaryLink => (
                   <div key={primaryLink.link} className={classes.navbarLink}>
                     <Link
                       to={`/${primaryLink.link}/`}
                       className="tertiary-link"
-                      activeClassName="active-secondary-link text-purple-500"
+                      activeClassName="active-secondary-link text-purple-500 inter"
                     >
                       {primaryLink.title}
                     </Link>

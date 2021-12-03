@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { DateTime } from "luxon"
@@ -159,8 +159,8 @@ const ChangelogList: React.FC<ChangelogListProps> = ({
       </header>
       <ul className="mt-2 ml-6">
         {items.map((item: any, i: number) => (
-          <>
-            <li key={i} className="mt-2 list-disc">
+          <Fragment key={i}>
+            <li className="mt-2 list-disc">
               <span className="inline-block px-2 py-1 bg-gray-100 rounded-lg text-sm font-semibold border border-gray-900">
                 {item.title}
               </span>
@@ -174,7 +174,7 @@ const ChangelogList: React.FC<ChangelogListProps> = ({
                 ))}
               </ul>
             </li>
-          </>
+          </Fragment>
         ))}
       </ul>
     </article>

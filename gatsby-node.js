@@ -20,8 +20,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               frontmatter {
                 title
-                slug
               }
+              slug
               id
             }
           }
@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         index === posts.length - 1 ? null : posts[index + 1].node.id
 
       createPage({
-        path: `blog/${post.node.frontmatter.slug}`,
+        path: `blog/${post.node.slug}`,
         component: blogPost,
         context: {
           id: post.node.id,
@@ -92,23 +92,34 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
 
-  createTypes(`
-     type Mdx implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
-      featured: Boolean
-    }
-    type Fields {
-      slug: String
-      date: Date @dateFormat
-    }
-  `)
-}
+//   createTypes(`
+//      type Mdx implements Node {
+//       frontmatter: Frontmatter
+//       fields: Fields
+//     }
+//     type Frontmatter {
+//       slug: String
+//       date: Date @dateformat
+//       title: String
+//       description: String
+//       author: String
+//       featured: Boolean
+//       readTime: Int
+//       image: Image
+//     }
+//     type Fields {
+//       slug: String
+//       date: Date @dateFormat
+//     }
+//     type Image {
+//         childImageSharp: {
+//             fluid: {
+//                 tracedSVG: String
+//             }
+//         }
+//     }
+//   `)
+// }

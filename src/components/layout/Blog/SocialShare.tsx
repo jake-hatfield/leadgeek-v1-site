@@ -43,7 +43,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
         url={url}
         title={title}
         hashtags={twitterTags}
-        className="ml-4 focus:outline-none focus:shadow-outline"
+        className="ml-2 focus:outline-none focus:shadow-outline"
       >
         <TwitterIcon
           size={32}
@@ -56,7 +56,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
         url={url}
         source={siteUrl}
         title={title}
-        className="ml-4 focus:outline-none focus:shadow-outline"
+        className="ml-2 focus:outline-none focus:shadow-outline"
       >
         <LinkedinIcon
           size={32}
@@ -68,7 +68,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
       <RedditShareButton
         url={url}
         title={title}
-        className="ml-4 focus:outline-none focus:shadow-outline"
+        className="ml-2 focus:outline-none focus:shadow-outline"
       >
         <RedditIcon
           size={32}

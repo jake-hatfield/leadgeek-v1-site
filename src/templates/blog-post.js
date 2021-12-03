@@ -7,7 +7,7 @@ import Image from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { DateTime } from "luxon"
 import { useScrollPercentage } from "react-scroll-percentage"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated, config } from "react-spring"
 import { MDXProvider } from "@mdx-js/react"
 
 // components
@@ -20,6 +20,7 @@ const shortcodes = { Chapter }
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx
+  const frontmatter = data.mdx.frontmatter
   const topic = post.frontmatter.topic || `online arbitrage`
   const [email, setEmail] = React.useState("")
   const [success, setSuccess] = React.useState(false)
@@ -60,45 +61,42 @@ const BlogPostTemplate = ({ data, location }) => {
     setEmail(event.currentTarget.value)
   }
 
+  let optin = false
+  let secondaryOptinContent = false
+
   const [ref, percentage] = useScrollPercentage({
     threshold: 0,
   })
 
-  let optin = false
-  let secondaryContent = false
-
-  useEffect(() => {
-    if (percentage > 0.1 && percentage < 0.6 && !optin) {
-      optin = true
-    } else if (percentage > 0.400001 && percentage < 0.95 && optin) {
-      secondaryContent = true
-    } else {
-      optin = false
-    }
-  }, [percentage, optin, secondaryContent])
-
+  if (percentage < 0.3) {
+    optin = false
+  } else if ((percentage > 0.300001) & (percentage < 0.6)) {
+    optin = true
+  } else if ((percentage > 0.600001) & (percentage < 0.9)) {
+    optin = true
+    secondaryOptinContent = true
+  }
   const fade = useSpring({
-    opacity: success || failure || redundant ? 1 : 0,
+    opacity: optin ? 1 : 0,
+    config: config.slow,
   })
   const primaryFade = useSpring({
-    opacity: secondaryContent ? 0 : 1,
+    opacity: secondaryOptinContent ? 0 : 1,
+    config: config.gentle,
   })
   const secondaryFade = useSpring({
-    opacity: secondaryContent ? 1 : 0,
+    opacity: secondaryOptinContent ? 1 : 0,
+    config: config.gentle,
   })
 
   return (
     <Layout location={location}>
       <section className="h-full" ref={ref}>
         {/* side optin */}
-        <aside
-          className={`${
-            optin ? `opacity-100` : `opacity-0`
-          } w-full side-blog transition-main z-40`}
-        >
+        <animated.aside style={fade} className={"z-40 w-full side-blog"}>
           <div className="flex justify-center">
             <div className="alt-container w-full">
-              <div className="px-4 side-blog-w relative z-40 bg-white rounded-lg shadow-graySm">
+              <div className="side-blog-w relative z-40 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm">
                 <h2 className="text-lg text-gray-900 font-bold">Leadgeek</h2>
                 <animated.div style={primaryFade} className="absolute pr-4">
                   <h4 className="mt-2 body-font text-sm text-gray-600 leading-relaxed">
@@ -116,7 +114,7 @@ const BlogPostTemplate = ({ data, location }) => {
                     You'll be able to learn about {topic} and so much more.
                   </h4>
                 </animated.div>
-                <form onSubmit={handleSubmit} className="mb-0">
+                {/* <form onSubmit={handleSubmit} className="mb-0">
                   <input
                     placeholder="Enter your email"
                     onChange={handleEmailChange}
@@ -131,7 +129,7 @@ const BlogPostTemplate = ({ data, location }) => {
                   >
                     Join the Leadgeek newsletter
                   </button>
-                </form>
+                </form> */}
                 <animated.p
                   className={`${
                     success ? `block` : `hidden`
@@ -155,7 +153,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
             </div>
           </div>
-        </aside>
+        </animated.aside>
         {/* blog post */}
         <article
           itemScope
@@ -163,7 +161,7 @@ const BlogPostTemplate = ({ data, location }) => {
           className="relative pb-16"
         >
           <div className="py-8 lg:py-16 bg-splatter border-b border-gray-900">
-            <div className="max-w-4xl mx-auto px-8 transform -rotate-3">
+            <div className="max-w-4xl mx-auto px-8 transform -rotate-2">
               <Link
                 to={"/blog/"}
                 className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 text-lg handwritten"
@@ -184,36 +182,37 @@ const BlogPostTemplate = ({ data, location }) => {
                   <span>See all articles</span>
                 </div>
               </Link>
-              <img
-                className="mt-4 blog-hero-image mx-auto rounded-lg shadow-pinkMd"
-                src={"https://statamic.com/img/blog/new-docs.jpg"}
+              <Image
+                fluid={frontmatter.image.childImageSharp.fluid}
+                alt={frontmatter.title}
+                className="mt-4 h-full blog-hero-image mx-auto rounded-lg shadow-pinkMd"
               />
             </div>
             <header className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl">
               <h1 className="inline-block bg-white text-2xl md:text-4xl font-black text-gray-900 inter">
-                {post.frontmatter.title}
+                {frontmatter.title}
               </h1>
               <h2 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900">
-                {post.frontmatter.description}
+                {frontmatter.description}
               </h2>
             </header>
             <div className="mt-8 container md:max-w-xl lg:max-w-2xl lg:flex lg:flex-wrap lg:justify-between lg:items-end body-font font-light text-sm md:text-base text-gray-800">
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <Image
                   fixed={data.avatar.childImageSharp.fixed}
-                  alt={post.frontmatter.author}
-                  className="w-24 rounded-full shadow-graySm bg-gray-900"
+                  alt={frontmatter.author}
+                  className="w-16 md:w-20 lg:w-24 rounded-full shadow-graySm bg-gray-900"
                 />
                 <div className="ml-4">
                   <address
                     className="font-semibold inter text-gray-900"
                     rel="author"
                   >
-                    {post.frontmatter.author}
+                    {frontmatter.author}
                   </address>
-                  <time pubdate={post.frontmatter.date}>
+                  <time pubdate={frontmatter.date}>
                     Last updated:{" "}
-                    {DateTime.fromISO(post.frontmatter.date).toFormat(
+                    {DateTime.fromISO(frontmatter.date).toFormat(
                       "LLL dd, yyyy"
                     )}
                   </time>
@@ -221,9 +220,9 @@ const BlogPostTemplate = ({ data, location }) => {
               </div>
               <div className="mt-6 lg:mt-0">
                 <SocialShare
-                  url={`${data.site.siteMetadata.siteUrl}/blog/${post.frontmatter.slug}`}
-                  title={post.frontmatter.title}
-                  twitterTags={post.frontmatter.twitterTags}
+                  url={`${data.site.siteMetadata.siteUrl}/blog/${post.slug}`}
+                  title={frontmatter.title}
+                  twitterTags={frontmatter.twitterTags}
                   siteUrl={data.site.siteMetadata.siteUrl}
                 />
               </div>
@@ -263,12 +262,20 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       frontmatter {
-        author
         date
         description
         title
+        author
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       body
+      slug
     }
   }
 `

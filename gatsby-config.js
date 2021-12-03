@@ -53,6 +53,8 @@ module.exports = {
             resolve: `gatsby-remark-images-zoom`,
             options: {
               background: `#5b6c7e`,
+              margin: 30,
+              zIndex: 20,
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -132,6 +134,62 @@ module.exports = {
           `/contact-success`,
           `/affiliates/confirmation`,
           `/404`,
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed-mdx`,
+      options: {
+        query: `
+            {
+              site {
+                siteMetadata {
+                  title
+                  description
+                  siteUrl
+                  site_url: siteUrl
+                }
+              }
+            }
+          `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  guid:
+                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+                {
+                  allMdx(
+                    sort: { order: DESC, fields: [frontmatter___date] },
+                  ) {
+                    edges {
+                      node {
+                        excerpt
+                        body
+                        fields { slug }
+                        frontmatter {
+                          title
+                          date
+                        }
+                      }
+                    }
+                  }
+                }
+              `,
+            output: "/rss.xml",
+            title: "Leadgeek's RSS Feed",
+            match: "^/blog/",
+          },
         ],
       },
     },

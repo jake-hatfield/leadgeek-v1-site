@@ -5,7 +5,7 @@ import Logo from "@assets/svgs/logo.svg"
 
 const Footer: React.FC = () => {
   return (
-    <footer className="py-12 relative z-10 border-t border-gray-900">
+    <footer className="py-8 md:py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
           <Logo className="w-16 mr-4 text-purple-500" />
@@ -27,24 +27,25 @@ const Footer: React.FC = () => {
           ))}
         </nav>
       </div>
-      <div className="mt-12 text-xs font-bold text-gray-600">
+      <div className="mt-6 md:mt-12 text-xs font-bold text-gray-600">
         <div className="w-full" />
         <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="flex justify-center md:justify-start">
+          <ul className="grid grid-flow-col grid-cols-2 md:flex md:items-center gap-2">
             {footerLinks.map(footerLink => (
               <li
                 key={footerLink.title}
-                className="no-m-first tertiary-link inter"
+                className="first:ml-0 ml-4 tertiary-link inter"
               >
-                {footerLink.title === "Sitemap" ? (
-                  <a href={`/${footerLink.link}`}>{footerLink.title}</a>
+                {footerLink.title === "Sitemap" ||
+                footerLink.title === "RSS" ? (
+                  <a href={`/${footerLink.link}/`}>{footerLink.title}</a>
                 ) : (
                   <Link to={`/${footerLink.link}/`}>{footerLink.title}</Link>
                 )}
               </li>
             ))}
           </ul>
-          <div className="mt-4 md:mt-0 text-center md:text-left">
+          <div className="mt-4 md:mt-0">
             <p>
               <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
@@ -94,6 +95,10 @@ const footerLinks = [
   {
     title: "Sitemap",
     link: "sitemap.xml",
+  },
+  {
+    title: "RSS",
+    link: "rss.xml",
   },
 ]
 
