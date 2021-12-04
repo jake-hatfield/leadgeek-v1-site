@@ -1,15 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
 
+// packages
 import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { StaticImage } from "gatsby-plugin-image"
 
+// components
 import Layout from "@components/layout/Layout"
 import HeaderWrapper from "@components/HeaderWrapper"
 import PrimaryHeader from "@components/PrimaryHeader"
 import TestimonialFull from "@components/utils/TestimonialFull"
 import Cta from "@components/Cta"
 
+// assets
 import LongArrow from "@assets/svgs/arrow-straight-solid.svg"
 import ShortArrow from "@assets/svgs/arrow-short-fat.svg"
 import TurnyFat from "@assets/svgs/turny-fat.svg"
@@ -24,12 +27,12 @@ import OgImage from "@assets/images/og/og-index.jpg"
 
 interface IndexPageProps {
   data: {
-    heroImage: { childImageSharp: GatsbyImageFluidProps }
-    testimonialAustin: { childImageSharp: GatsbyImageFluidProps }
-    testimonialBrian: { childImageSharp: GatsbyImageFluidProps }
-    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
-    testimonialKevin: { childImageSharp: GatsbyImageFluidProps }
-    testimonialWilliam: { childImageSharp: GatsbyImageFluidProps }
+    heroImage: { childImageSharp: any }
+    testimonialAustin: { childImageSharp: any }
+    testimonialBrian: { childImageSharp: any }
+    testimonialFrank: { childImageSharp: any }
+    testimonialKevin: { childImageSharp: any }
+    testimonialWilliam: { childImageSharp: any }
   }
   location: Location
 }
@@ -242,8 +245,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
                 <TurnyFat className={classes.turnyArrow} />
               </div>
             </div>
-            <Img
-              fluid={data.heroImage.childImageSharp.fluid}
+            <StaticImage
+              src={"../assets/images/leadgeek-app.png"}
               alt="Leadgeek app feed"
               className={classes.heroImage}
             />

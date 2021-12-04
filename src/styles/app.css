@@ -481,7 +481,7 @@ h6 {
 }
 
 #blog-body > gatsby-resp-image-image {
-  border: 4px solid #050505 !important;
+  border: 4px solid #243b53 !important;
 }
 
 #blog-body > ul,
@@ -501,4 +501,120 @@ h6 {
   margin: 20px 0px 0px 0px !important;
   @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
 }
+
+#commento.commento-root * {
+  font-family: inherit;
+  text-transform: none;
+}
+
+#commento.commento-root .commento-button,
+#commento.commento-root .commento-email-button {
+  font-weight: normal;
+}
+
+#commento.commento-root .commento-button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+#commento.commento-root .commento-submit-button,
+#commento.commento-root .commento-github-button,
+#commento.commento-root .commento-twitter-button,
+#commento.commento-root .commento-google-button,
+#commento.commento-root .commento-email-button {
+  background-color: #243b53 !important;
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+}
+
+#commento.commento-root .commento-github-button,
+#commento.commento-root .commento-twitter-button,
+#commento.commento-root .commento-google-button {
+  background-color: #7069fa;
+  padding: 6px 8px;
+}
+
+#commento.commento-root .commento-submit-button {
+  background: #243b53 !important;
+}
+#commento.commento-root .commento-login-box {
+  border-radius: 0.75rem;
+  background: #8eedc7;
+}
+#commento.commento-root .commento-input {
+  border-radius: 0.75rem;
+}
+#commento.commento-root .commento-login-link {
+  color: #243b53;
+}
+#commento.commento-root .commento-login-text,
+#commento.commento-root .commento-logout {
+  display: inline-block;
+  color: #243b53;
+  text-decoration: none;
+}
+
+#commento.commento-root .commento-mod-tools:before {
+  color: #8eedc7;
+}
+#commento.commento-root .commento-email {
+  border-radius: 0.75rem;
+}
+#commento.commento-root .commento-card .commento-body {
+  overflow-x: auto;
+}
+#commento.commento-root .commento-card .commento-body * {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+#commento.commento-root .commento-card .commento-moderator:after {
+  background: #243b53;
+}
+#commento.commento-root .commento-card .commento-option-approve:hover,
+#commento.commento-root .commento-card .commento-option-remove:hover,
+#commento.commento-root .commento-card .commento-option-sticky:hover,
+#commento.commento-root .commento-card .commento-option-reply:hover,
+#commento.commento-root .commento-card .commento-option-edit:hover,
+#commento.commento-root .commento-card .commento-option-collapse:hover,
+#commento.commento-root .commento-card .commento-option-uncollapse:hover,
+#commento.commento-root .commento-card .commento-option-cancel:hover,
+#commento.commento-root .commento-card .commento-option-upvote:hover,
+#commento.commento-root .commento-card .commento-option-downvote:hover {
+  background-color: #243b53;
+}
+#commento.commento-root .commento-card .commento-option-remove,
+#commento.commento-root .commento-card .commento-option-unsticky,
+#commento.commento-root .commento-card .commento-option-approve {
+  background-color: #243b53;
+}
+#commento.commento-root .commento-card .commento-upvoted,
+#commento.commento-root .commento-card .commento-downvoted {
+  background-color: #8eedc7;
+}
+#commento.commento-root
+  .commento-round-check
+  input[type="checkbox"]:checked
+  + label:before {
+  border-color: #243b53;
+  background-color: #243b53;
+}
+#commento.commento-root input[type="text"],
+.commento-root textarea {
+  color: #8eedc7;
+}
+
+#commento.commento-root .commento-logo-container {
+  display: none;
+}
+
+#commento.commento-root .commento-sort-policy-button-selected {
+  color: #243b53;
+}
+
+#commento.commento-root .commento-textarea-container {
+  margin: 0px;
+}
+
 /*! purgecss end ignore */

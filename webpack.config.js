@@ -1,6 +1,6 @@
 module.exports = {
-  stats: "errors-only",
   infrastructureLogging: {
     level: "error",
   },
+  stats: { assets: false, modules: false },
 }

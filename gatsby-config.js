@@ -7,8 +7,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-scroll-reveal`,
@@ -137,62 +138,62 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-feed-mdx`,
-      options: {
-        query: `
-            {
-              site {
-                siteMetadata {
-                  title
-                  description
-                  siteUrl
-                  site_url: siteUrl
-                }
-              }
-            }
-          `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url:
-                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
-                  guid:
-                    site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-                {
-                  allMdx(
-                    sort: { order: DESC, fields: [frontmatter___date] },
-                  ) {
-                    edges {
-                      node {
-                        excerpt
-                        body
-                        fields { slug }
-                        frontmatter {
-                          title
-                          date
-                        }
-                      }
-                    }
-                  }
-                }
-              `,
-            output: "/rss.xml",
-            title: "Leadgeek's RSS Feed",
-            match: "^/blog/",
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-feed-mdx`,
+    //   options: {
+    //     query: `
+    //         {
+    //           site {
+    //             siteMetadata {
+    //               title
+    //               description
+    //               siteUrl
+    //               site_url: siteUrl
+    //             }
+    //           }
+    //         }
+    //       `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMdx } }) => {
+    //           return allMdx.edges.map(edge => {
+    //             return Object.assign({}, edge.node.frontmatter, {
+    //               description: edge.node.excerpt,
+    //               date: edge.node.frontmatter.date,
+    //               url:
+    //                 site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+    //               guid:
+    //                 site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+    //               custom_elements: [{ "content:encoded": edge.node.html }],
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //             {
+    //               allMdx(
+    //                 sort: { order: DESC, fields: [frontmatter___date] },
+    //               ) {
+    //                 edges {
+    //                   node {
+    //                     excerpt
+    //                     body
+    //                     fields { slug }
+    //                     frontmatter {
+    //                       title
+    //                       date
+    //                     }
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           `,
+    //         output: "/rss.xml",
+    //         title: "Leadgeek's RSS Feed",
+    //         match: "^/blog/",
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: "@sentry/gatsby",
       options: {
