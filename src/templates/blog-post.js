@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 
 // packages
 import Image from "gatsby-image"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useScrollPercentage } from "react-scroll-percentage"
 import { useSpring, animated, config } from "react-spring"
@@ -89,8 +90,31 @@ const BlogPostTemplate = ({ data, location }) => {
     config: config.gentle,
   })
 
+  const title = "Leadgeek Blog"
+  const description =
+    "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
+
   return (
     <Layout location={location}>
+      <GatsbySeo
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
+          url: "https://leadgeek.io/blog/",
+          type: "website",
+          images: [
+            {
+              url: frontmatter.ogImage,
+              width: 1200,
+              height: 630,
+              alt: "Learn from the Leadgeek blog.",
+            },
+          ],
+        }}
+        language="en"
+      />
       <section className="h-full" ref={ref}>
         {/* side optin */}
         <animated.aside style={fade} className={"z-40 w-full side-blog"}>
