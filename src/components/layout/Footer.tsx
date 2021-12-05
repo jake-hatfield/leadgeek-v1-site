@@ -95,10 +95,10 @@ const footerLinks = [
     title: "Sitemap",
     link: "sitemap.xml",
   },
-  {
-    title: "RSS",
-    link: "rss.xml",
-  },
+  //   {
+  //     title: "RSS",
+  //     link: "rss.xml",
+  //   },
 ]
 
 export default Footer
