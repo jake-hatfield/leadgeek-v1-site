@@ -28,7 +28,6 @@ const Footer: React.FC = () => {
         </nav>
       </div>
       <div className="mt-6 md:mt-12 text-xs font-bold text-gray-600">
-        <div className="w-full" />
         <div className="mt-6 container md:flex md:items-start md:justify-between">
           <ul className="grid grid-flow-col grid-cols-2 md:flex md:items-center gap-2">
             {footerLinks.map(footerLink => (

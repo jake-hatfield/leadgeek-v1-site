@@ -14,14 +14,14 @@ interface SocialShareProps {
   siteUrl: string
   url: string
   title: string
-  twitterTags: string[]
+  tags: string[]
 }
 
 const SocialShare: React.FC<SocialShareProps> = ({
   siteUrl,
   url,
   title,
-  twitterTags,
+  tags,
 }) => {
   const bgColor = `#243B53`
   const iconColor = `#8EEDC7`
@@ -42,7 +42,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
       <TwitterShareButton
         url={url}
         title={title}
-        hashtags={twitterTags}
+        hashtags={tags}
         className="ml-2 focus:outline-none focus:shadow-outline"
       >
         <TwitterIcon

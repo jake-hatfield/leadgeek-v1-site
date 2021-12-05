@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
                       {primaryLink.title}
                     </Link>
                     {primaryLink.new === true && (
-                      <span className="ml-2 py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 text-xs">
+                      <span className="ml-2 px-2 bg-gray-900 rounded-lg text-lg text-teal-300 handwritten tracking-wider font-normal">
                         New
                       </span>
                     )}

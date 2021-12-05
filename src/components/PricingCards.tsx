@@ -314,7 +314,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                         setSelectedPlan(plan.title)
                         setShowWaitlistPopup(!showWaitlistPopup)
                       }}
-                      className="block w-full py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base hover:bg-gray-800 text-teal-300 transition-main ring-gray inter"
+                      className="block w-full py-2 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base hover:bg-gray-800 text-teal-300 transition-main ring-gray inter"
                     >
                       Join the waitlist
                     </button>

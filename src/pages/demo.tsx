@@ -196,7 +196,9 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
                 >
                   🕒
                 </span>{" "}
-                Last updated:
+                <span className="handwritten text-base tracking-wider">
+                  Last updated:
+                </span>
               </span>
               <br />
               {mostRecentlyUpdatedDay || dt.toFormat("LLL dd t")}

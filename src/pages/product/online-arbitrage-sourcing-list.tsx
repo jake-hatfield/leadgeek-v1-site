@@ -421,7 +421,9 @@ const OnlineArbitrageSourcingListPage: React.FC<
                   >
                     🕒
                   </span>{" "}
-                  Last updated:
+                  <span className="handwritten text-base tracking-wider">
+                    Last updated:
+                  </span>
                 </span>
                 <br />
                 {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd t")}
@@ -544,7 +546,9 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 >
                   🕒
                 </span>{" "}
-                Last updated:
+                <span className="handwritten text-base tracking-wider">
+                  Last updated:
+                </span>
               </span>
               <br />
               {mostRecentlyUpdatedDay || currentDate.toFormat("LLL dd t")}

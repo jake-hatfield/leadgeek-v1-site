@@ -69,7 +69,8 @@ const FeaturesIndexPage: React.FC<FeaturesIndexPageProps> = ({ location }) => {
               >
                 <div className="relative">
                   <p className={classes.note}>
-                    Start the tour or click on a feature to learn more
+                    See all {featureList.length} features with a tour of
+                    Leadgeek
                   </p>
                   <LongArrow className={classes.longArrow} />
                 </div>
@@ -105,8 +106,7 @@ const classes = {
   headerWrapper: "relative overflow-hidden bg-splatter",
   noteWrapper:
     "hidden lg:block absolute right-1/2 transform -translate-y-16 -translate-x-72",
-  note:
-    "py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform text-center transition-main w-56 -rotate-6 hover:-rotate-3",
+  note: "py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 transform text-center transition-main w-56 -rotate-6 hover:-rotate-3 tracking-wider",
   featuresWrapper:
     "relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter",
   featuresContainer: "max-w-screen-2xl mx-auto",

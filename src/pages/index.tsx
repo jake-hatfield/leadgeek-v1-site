@@ -232,7 +232,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
             <div className={classes.saveNoteWrapper}>
               <div className="relative">
                 <p className={classes.saveNote}>
-                  Save leads you like or archive them for later
+                  Like and archive leads that catch your eye
                 </p>
                 <LongArrow className={classes.longArrow2} />
               </div>
@@ -415,7 +415,7 @@ const classes = {
   heroWrapper: "relative bg-gray-100",
   heroContentWrapper: "relative py-12",
   heroImageWrapper:
-    "relative all-center mx-auto max-w-4xl xl:max-w-5xl -mt-24 lg:-mt-40 px-4 lg:px-8",
+    "relative all-center mx-auto max-w-4xl xl:max-w-5xl -mt-24 lg:-mt-40 px-4 lg:px-8 tracking-wider",
   filterNoteWrapper:
     "hidden lg:block absolute top-0 right-0 z-20 text-purple-500 transform translate-y-20 -translate-x-8",
   filterNote:

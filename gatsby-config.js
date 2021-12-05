@@ -158,12 +158,14 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
+                  title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url:
                     site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
                   guid:
                     site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
+                  categories: edge.node.frontmatter.tags,
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
@@ -190,6 +192,10 @@ module.exports = {
             output: "/rss.xml",
             title: "Leadgeek's RSS Feed",
             match: "^/blog/",
+            language: "en",
+            webmaster: "jake@leadgeek.io",
+            managingEditor: "jake@leadgeek.io",
+            copyright: `${new Date().getFullYear()} Leadgeek`,
           },
         ],
       },

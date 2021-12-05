@@ -114,7 +114,7 @@ const FeaturePage: React.FC<FeaturePageProps> = ({ feature }) => {
         {prevLink && (
           <Link
             to={`/features/${prevLink}/`}
-            className="ml-2 lg:ml-8 fixed left-0 all-center transition-main group"
+            className="ml-2 lg:ml-8 fixed left-0 lg:left-16 xl:right-2/3 all-center transition-main group"
           >
             <span className="cta-link">prev</span>
           </Link>
@@ -122,7 +122,7 @@ const FeaturePage: React.FC<FeaturePageProps> = ({ feature }) => {
         {nextLink && (
           <Link
             to={`/features/${nextLink}/`}
-            className="mr-2 lg:mr-8 fixed right-0 all-center transition-main group"
+            className="mr-2 lg:mr-8 fixed right-0 lg:right-16 xl:left-2/3 all-center transition-main group"
           >
             <span className="cta-link">next</span>
           </Link>

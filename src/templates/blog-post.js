@@ -188,7 +188,7 @@ const BlogPostTemplate = ({ data, location }) => {
             <div className="max-w-4xl mx-auto px-8 transform -rotate-2">
               <Link
                 to={"/blog/"}
-                className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 text-lg handwritten"
+                className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 hover:bg-purple-500 hover:text-white"
               >
                 <div className="flex items-center">
                   <svg
@@ -203,7 +203,9 @@ const BlogPostTemplate = ({ data, location }) => {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>See all posts</span>
+                  <span className="text-xl handwritten tracking-wider">
+                    See all posts
+                  </span>
                 </div>
               </Link>
               <Image
@@ -243,7 +245,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 <SocialShare
                   url={`${data.site.siteMetadata.siteUrl}/blog/${post.slug}`}
                   title={frontmatter.title}
-                  twitterTags={frontmatter.twitterTags}
+                  tags={frontmatter.tags}
                   siteUrl={data.site.siteMetadata.siteUrl}
                 />
               </div>
