@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   const mobileMenuAnimation = useSpring({
     opacity: mobileMenuOpen ? 1 : 0,
-    display: mobileMenuOpen ? "block" : "hidden",
+    display: mobileMenuOpen ? "block" : "none",
   })
   return (
     <>
@@ -42,37 +42,36 @@ const Navbar: React.FC = () => {
         <div className="bg-white shadow-sm border-b border-gray-900">
           <div className="w-full py-4 container center-between">
             {/* logo */}
-            <div className="font-bold text-xl lg:text-2xl group">
-              <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <LogoSvg className="w-12 mr-4 text-purple-500" />
-                lead<span className="text-purple-500">geek</span>
-              </Link>
-            </div>
+            <Link
+              to={`/`}
+              className="all-center font-bold text-xl lg:text-2xl text-gray-900 rounded-lg"
+            >
+              <LogoSvg className="w-12 mr-4 text-purple-500" />
+              lead<span className="text-purple-500">geek</span>
+            </Link>
             {/* mobile button */}
-            <div className="md:pr-2 lg:hidden">
-              <button
-                type="button"
-                aria-label="Open mobile menu"
-                onClick={() => setMobileMenuOpen(prev => !prev)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
+            <button
+              type="button"
+              aria-label="Open mobile menu"
+              onClick={() => setMobileMenuOpen(prev => !prev)}
+              className="md:pr-2 lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:text-gray-500 transition duration-200 ease-in-out"
+            >
+              <svg
+                className="svg-base"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <svg
-                  className="svg-base"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
             {/* md:+ nav */}
-            <nav className="hidden lg:flex lg:items-center">
+            <nav className="hidden lg:flex">
               <div className="relative all-center">
                 {primaryLinks.map(primaryLink => (
                   <div key={primaryLink.link} className={classes.navbarLink}>
@@ -110,73 +109,63 @@ const Navbar: React.FC = () => {
         {/* mobile menu */}
         <animated.nav
           style={mobileMenuAnimation}
-          className="fixed top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
+          className="fixed top-1 inset-x-0 mx-1 max-w-2xl md:max-w-5xl lg:hidden rounded-md shadow-graySm border border-gray-900 bg-white divide-y divide-gray-900"
         >
-          <div className="rounded-md shadow-md">
-            <div className="rounded-md shadow-graySm border border-gray-900 bg-white divide-y divide-gray-900 shadow-2xl">
-              <div className="p-4 space-y-6">
-                <div className="flex items-start justify-between">
-                  <div className="font-bold text-xl lg:text-2xl group">
-                    <Link
-                      to={`/`}
-                      className="all-center text-gray-900 rounded-lg"
-                    >
-                      <LogoSvg className="w-12 mr-4 text-purple-500" />
-                      lead<span className="text-purple-500">geek</span>
-                    </Link>
-                  </div>
-                  <div className="-mt-2 -mr-2">
-                    <button
-                      type="button"
-                      aria-label="Close mobile menu"
-                      onClick={() => setMobileMenuOpen(prev => !prev)}
-                      className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
-                    >
+          <div className="py-3.5 px-4 md:px-6 center-between">
+            <Link
+              to={`/`}
+              className="flex items-center justify-between font-bold text-xl lg:text-2xl text-gray-900 rounded-lg"
+            >
+              <LogoSvg className="w-12 mr-4 text-purple-500" />
+              lead<span className="text-purple-500">geek</span>
+            </Link>
+            <button
+              type="button"
+              aria-label="Close mobile menu"
+              onClick={() => setMobileMenuOpen(prev => !prev)}
+              className="inline-flex items-center justify-center -mr-1 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 ring-gray transition-main"
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="py-6 px-4 md:px-6 text-gray-700 font-semibold">
+            <ul className="grid grid-rows gap-4">
+              {mobileLinks.map((link, i) => (
+                <li key={i}>
+                  <Link to={`/${link.link}/`} className="flex items-center">
+                    <span className="p-1 rounded-lg bg-gray-900 text-teal-300">
                       <svg
-                        className="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="svg-sm"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
+                        {link.path}
                       </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="py-6 px-4 text-gray-700 font-semibold">
-                <ul className="grid grid-rows gap-4">
-                  {mobileLinks.map((link, i) => (
-                    <li key={i}>
-                      <Link to={`/${link.link}/`} className="flex items-center">
-                        <span className="p-1 rounded-lg bg-gray-900 text-teal-300">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="svg-sm"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            {link.path}
-                          </svg>
-                        </span>
-                        <span className="ml-4">{link.title}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="p-4 space-y-6 rounded-b-md">
-                <div className="space-y-6 text-center">
-                  <Link to={`/signup/`} className="block cta-link inter">
-                    Sign up now
+                    </span>
+                    <span className="ml-4">{link.title}</span>
                   </Link>
-                </div>
-              </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="py-4 px-4 md:px-6 space-y-6 rounded-b-md">
+            <div className="space-y-6 text-center">
+              <Link to={`/signup/`} className="block cta-link inter">
+                Sign up now
+              </Link>
             </div>
           </div>
         </animated.nav>

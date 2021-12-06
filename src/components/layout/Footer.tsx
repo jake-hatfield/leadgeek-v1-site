@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="py-8 md:py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
         <div className="flex justify-center">
-          <Logo className="w-16 mr-4 text-purple-500" />
+          <Logo className="w-12 lg:w-16 mr-4 text-purple-500" />
         </div>
         <nav className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-3 w-full relative z-10 mt-8 lg:mt-12 container">
           {categories.map(category => (
@@ -76,7 +76,7 @@ const categories = [
   {
     header: "Resources",
     items: [
-      { title: "Blog", link: "blog" },
+      //   { title: "Blog", link: "blog" },
       { title: "Changelog", link: "changelog" },
     ],
   },

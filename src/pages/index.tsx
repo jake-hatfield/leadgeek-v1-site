@@ -275,7 +275,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
               data-sal-duration="500"
               data-sal-easing="ease in out"
             >
-              <Link to={"/features/"} className="cta-link inter">
+              <Link
+                to={"/features/"}
+                className="block md:inline-block cta-link inter"
+              >
                 See how Leadgeek is built different
               </Link>
             </div>
@@ -397,7 +400,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
       <Cta
         mainHeader={"Simplify your side-hustle"}
         links={[
-          { title: "See how it works", link: "demo" },
+          { title: "Watch a demo", link: "demo" },
           { title: "Tour the features", link: "features" },
           { title: "Sign up now", link: "signup" },
         ]}
@@ -422,7 +425,7 @@ const classes = {
   filterNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 text-center transform transition-main -rotate-6 hover:-rotate-3",
   searchNoteWrapper:
-    "hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-28 -translate-x-56",
+    "hidden lg:block absolute top-0 right-0 z-20 transform -translate-y-24 -translate-x-56",
   searchNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-teal-300 text-center transform transition-main rotate-3 hover:-rotate-2",
   saveNoteWrapper:

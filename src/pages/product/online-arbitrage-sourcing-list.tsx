@@ -260,7 +260,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 View the latest leads
               </AnchorLink>
             </div>
-            <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
+            <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
               <blockquote>
                 "I want to thank you for the effort you make to find products
                 with such good quality.{" "}
@@ -341,7 +341,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 View the latest leads
               </AnchorLink>
             </div>
-            <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
+            <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
               <blockquote>
                 "I’ve been able to double my profits using this list.{" "}
                 <strong>
@@ -419,8 +419,8 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 View the latest leads
               </AnchorLink>
             </div>
-            <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 -translate-x-2 md:translate-x-2 lg:translate-x-6 xl:translate-x-12">
+            <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 border-main shadow-lg rounded-lg py-4 px-6 text-gray-700">
+              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 md:translate-x-2 lg:translate-x-6 xl:translate-x-12">
                 <span>
                   <span
                     role="img"
