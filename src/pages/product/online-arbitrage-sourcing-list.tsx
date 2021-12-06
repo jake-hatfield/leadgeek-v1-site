@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
 
+// packages
+import { StaticImage } from "gatsby-plugin-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 import { DateTime } from "luxon-business-days"
 
+// components
 import LPLayout from "@components/layout/LandingPage/LPLayout"
 import LeadSample from "@components/LeadSample"
 import PricingCards from "@components/PricingCards"
@@ -17,6 +19,7 @@ import {
   getWaitlistPlanCount,
 } from "@components/utils/utils"
 
+// assets
 import DividerTop from "@assets/svgs/section-divider-top.svg"
 import DividerBottom from "@assets/svgs/section-divider-bottom.svg"
 import LoopyDashed from "@assets/svgs/loopy-dashed.svg"
@@ -30,6 +33,7 @@ import FiltersWebm from "@assets/video/filters.webm"
 import Poster from "@assets/images/white-bg.png"
 import OgImage from "@assets/images/og/og-online-arbitrage-sourcing-list.jpg"
 
+// types
 import { MongoDBWaitlistItem } from "../pricing"
 
 interface Lead {
@@ -62,10 +66,6 @@ interface OnlineArbitrageSourcingListPageProps {
       nodes: MongoDBWaitlistItem[]
     }
     allStripeSubscription: { nodes: SubscriptionItem[] }
-    heroImage: { childImageSharp: GatsbyImageFluidProps }
-    detailsImage: { childImageSharp: GatsbyImageFluidProps }
-    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
-    testimonialCris: { childImageSharp: GatsbyImageFluidProps }
   }
   location: Location
 }
@@ -270,9 +270,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 </strong>
                 ."
                 <div className="mt-4 flex items-center">
-                  <Img
-                    fluid={data.testimonialFrank.childImageSharp.fluid}
-                    alt={`Frank's testimonial`}
+                  <StaticImage
+                    src="../../assets/images/frank.png"
+                    placeholder="tracedSVG"
+                    alt="Frank's testimonial"
+                    title="Frank's testimonial"
                     className="w-10 rounded-full border border-gray-900 bg-gray-900 transform -rotate-6"
                   />
                   <div className="md:flex items-center">
@@ -289,9 +291,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-y-48 lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
-              <Img
-                fluid={data.heroImage.childImageSharp.fluid}
+              <StaticImage
+                src="../../assets/images/leadgeek-app.png"
+                placeholder="tracedSVG"
                 alt="Leadgeek app feed"
+                title="Leadgeek app feed"
                 className="w-full rounded-lg shadow-tealMd"
               />
             </div>
@@ -345,9 +349,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 </strong>
                 ."
                 <div className="mt-4 flex items-center">
-                  <Img
-                    fluid={data.testimonialCris.childImageSharp.fluid}
-                    alt={`Cris's testimonial`}
+                  <StaticImage
+                    src="../../assets/images/cris.png"
+                    placeholder="tracedSVG"
+                    alt="Cris's testimonial"
+                    title="Cris's testimonial"
                     className="w-10 rounded-full border border-gray-900 bg-gray-900 transform -rotate-6"
                   />
                   <div className="md:flex items-center">
@@ -364,9 +370,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
-              <Img
-                fluid={data.detailsImage.childImageSharp.fluid}
+              <StaticImage
+                src="../../assets/images/details.png"
+                placeholder="tracedSVG"
                 alt="Leadgeek detailed view"
+                title="Leadgeek detailed view"
                 className="w-full rounded-lg shadow-pinkMd"
               />
             </div>
@@ -847,34 +855,6 @@ export const query = graphql`
         plan {
           id
           product
-        }
-      }
-    }
-    heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 958, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    detailsImage: file(relativePath: { eq: "details.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 958, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    testimonialFrank: file(relativePath: { eq: "frank.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    testimonialCris: file(relativePath: { eq: "cris.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

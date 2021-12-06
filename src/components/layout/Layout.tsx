@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   return (
     <div className="relative flex flex-col h-auto justify-between">
       <Navbar />
-      <main className="">{children}</main>
+      <main>{children}</main>
       <Footer />
       <CookieConsent
         buttonText="Got it"

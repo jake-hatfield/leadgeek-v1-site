@@ -1,6 +1,9 @@
 import React from "react"
-import Img, { FluidObject } from "gatsby-image"
 
+// packages
+import { GatsbyImage } from "gatsby-plugin-image"
+
+// assets
 import Quote from "@assets/svgs/quote.svg"
 
 interface TestimonialFullProps {
@@ -9,7 +12,7 @@ interface TestimonialFullProps {
   margin: string | null
   position: string | null
   text: JSX.Element
-  image: FluidObject | FluidObject[] | null
+  image: any
   source: string
   description: string
   rotate: string
@@ -49,13 +52,13 @@ const TestimonialFull: React.FC<TestimonialFullProps> = ({
           <div className="mt-4 md:flex md:items-center md:justify-center">
             <div className="flex items-center justify-center">
               {image && (
-                <Img
-                  fluid={image}
+                <GatsbyImage
+                  image={image}
                   alt={`${source}'s testimonial`}
-                  className="w-12 rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
+                  title={`${source}'s testimonial`}
+                  className="rounded-full shadow-tealSm border border-gray-900 bg-gray-900 transform -rotate-6"
                 />
               )}
-
               <cite className="ml-4 text-sm font-semibold inter text-gray-900">
                 {source}
               </cite>

@@ -206,7 +206,7 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
             <LeadSample />
           </div>
         </div>
-        <div className="mt-4 lg:mt-6 flex items-center justify-center">
+        <div className="mt-4 lg:mt-6 flex items-center justify-center container">
           <Link
             to={"/pricing/"}
             title="See Leadgeek plans"

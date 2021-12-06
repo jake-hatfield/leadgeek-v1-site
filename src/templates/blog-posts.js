@@ -1,8 +1,8 @@
-import * as React from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 
 // packages
-import Image from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 // components
@@ -11,6 +11,7 @@ import Layout from "@components/layout/Layout"
 // utils
 import { truncate } from "@components/utils/utils"
 
+// assets
 import OgImage from "@assets/images/og/og-blog.jpg"
 
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
@@ -52,7 +53,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
         language="en"
       />
       {/* notification banner */}
-      <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
+      {/* <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
         <div className="py-3 container flex items-center">
           <p className="font-semibold">
             <span
@@ -73,7 +74,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
             </button>
           </div>
         </div>
-      </aside>
+      </aside> */}
       <section className="min-h-screen py-12 lg:py-20 relative text-gray-900 bg-splatter">
         <div className="container">
           <header className="relative mx-auto md:mx-0 max-w-md">
@@ -87,47 +88,40 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
             )}
             <BlogPostsGrid posts={posts} />
           </section>
+          {numPages >= 2 && (
+            <ul className="mt-8 all-center">
+              {!isFirst && (
+                <Link to={prevPage} rel="prev">
+                  ← Previous Page
+                </Link>
+              )}
+              {Array.from({ length: numPages }, (_, i) => (
+                <li
+                  key={`pagination-number${i + 1}`}
+                  style={{
+                    margin: 0,
+                  }}
+                >
+                  <Link
+                    to={`/blog/${i === 0 ? "" : i + 1}`}
+                    className={`${
+                      i + 1 === currentPage
+                        ? "text-pink-600"
+                        : "text-gray-600 hover:text-gray-700"
+                    } ml-0.5 lg:ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-xs lg:text-lg font-semibold border-main transition-main ring-purple`}
+                  >
+                    {i + 1}
+                  </Link>
+                </li>
+              ))}
+              {!isLast && (
+                <Link to={nextPage} rel="next">
+                  Next Page →
+                </Link>
+              )}
+            </ul>
+          )}
         </div>
-        {/* <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            alignItems: "center",
-            listStyle: "none",
-            padding: 0,
-          }}
-        >
-          {!isFirst && (
-            <Link to={prevPage} rel="prev">
-              ← Previous Page
-            </Link>
-          )}
-          {Array.from({ length: numPages }, (_, i) => (
-            <li
-              key={`pagination-number${i + 1}`}
-              style={{
-                margin: 0,
-              }}
-            >
-              <Link
-                to={`/blog/${i === 0 ? "" : i + 1}`}
-                style={{
-                  textDecoration: "none",
-                  color: i + 1 === currentPage ? "#ffffff" : "",
-                  background: i + 1 === currentPage ? "#007acc" : "",
-                }}
-              >
-                {i + 1}
-              </Link>
-            </li>
-          ))}
-          {!isLast && (
-            <Link to={nextPage} rel="next">
-              Next Page →
-            </Link>
-          )}
-        </ul> */}
       </section>
     </Layout>
   )
@@ -138,7 +132,7 @@ const FeaturedBlogPost = ({
     excerpt,
     slug,
     timeToRead,
-    frontmatter: { title, date, image },
+    frontmatter: { date, title, descriptionShort, image },
   },
 }) => {
   return (
@@ -156,16 +150,18 @@ const FeaturedBlogPost = ({
         {/* keep this link first for SEO */}
         <Link key={slug} to={`/blog/${slug}`}>
           <h3 className="mt-2 text-2xl md:text-3xl xl:text-4xl font-black text-gray-900 inter bg-white tertiary-link">
-            {truncate(title, "55")}
+            {truncate(title, 75)}
           </h3>
         </Link>
-        <p className="mt-4 lg:mt-6 h4 text-gray-700">{excerpt}</p>
+        <p className="mt-4 lg:mt-6 h4 text-gray-700">
+          {truncate(descriptionShort, 150) || excerpt}
+        </p>
       </div>
       <Link to={`/blog/${slug}`} className="lg:w-2/5">
-        <Image
-          fluid={image.childImageSharp.fluid}
+        <GatsbyImage
+          image={getImage(image)}
           alt={title}
-          className="bg-cover rounded-t-lg lg:rounded-t-none lg:rounded-r-lg"
+          className="h-full bg-cover rounded-t-lg lg:rounded-t-none lg:rounded-r-lg"
         />
       </Link>
     </article>
@@ -177,7 +173,7 @@ const BlogPost = ({
     excerpt,
     slug,
     timeToRead,
-    frontmatter: { title, date, image },
+    frontmatter: { date, title, descriptionShort, image },
   },
 }) => {
   return (
@@ -195,14 +191,16 @@ const BlogPost = ({
         {/* keep this link first for SEO */}
         <Link key={slug} to={`/blog/${slug}`}>
           <h3 className="mt-2 text-xl md:text-2xl font-black text-gray-900 inter bg-white tertiary-link">
-            {truncate(title, "45")}
+            {truncate(title, 45)}
           </h3>
         </Link>
-        <p className="mt-4 lg:mt-6 h4 text-gray-700">{excerpt}</p>
+        <p className="mt-4 lg:mt-6 h4 text-gray-700">
+          {truncate(descriptionShort, 120) || excerpt}
+        </p>
       </header>
       <Link to={`/blog/${slug}`}>
-        <Image
-          fluid={image.childImageSharp.fluid}
+        <GatsbyImage
+          image={getImage(image)}
           alt={title}
           className="rounded-t-lg"
         />
@@ -234,11 +232,10 @@ export const blogPostsQuery = graphql`
           frontmatter {
             date(formatString: "LL")
             title
+            descriptionShort
             image {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
@@ -251,17 +248,16 @@ export const blogPostsQuery = graphql`
     mdx(frontmatter: { featured: { eq: true } }) {
       frontmatter {
         date(formatString: "LL")
+        title
+        descriptionShort
         featured
         image {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
         }
-        title
       }
-      excerpt(pruneLength: 120, truncate: true)
+      excerpt(pruneLength: 150, truncate: true)
       slug
       timeToRead
     }

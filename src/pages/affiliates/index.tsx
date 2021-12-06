@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from "react"
-import { navigate, graphql } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
+import { navigate } from "gatsby"
 
+// packages
+import { StaticImage, ImageDataLike } from "gatsby-plugin-image"
 import axios from "axios"
-
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Marquee from "react-fast-marquee"
 
+// components
 import Layout from "@components/layout/Layout"
 import FormField from "@components/utils/FormField"
 import PasswordFormField from "@components/utils/PasswordFormField"
 import Spinner from "@components/utils/Spinner"
 
+// assets
 import Bullet from "@assets/svgs/bullet.svg"
 import OgImage from "@assets/images/og/og-affiliate-index.jpg"
 
 interface AffiliatePageProps {
   data: {
-    affiliatePanel: { childImageSharp: GatsbyImageFluidProps }
+    affiliatePanel: ImageDataLike
   }
   location: Location
 }
 
-const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
+const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
   const title = "Leadgeek Affiliate Program"
   const description =
     "Become a Leadgeek affiliate and start earning 25% lifetime recurring commissions."
@@ -172,9 +174,11 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ data, location }) => {
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-24 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
-              <Img
-                fluid={data.affiliatePanel.childImageSharp.fluid}
-                alt="Leadgeek app feed"
+              <StaticImage
+                src="../../assets/images/aff-screenshot.png"
+                placeholder="tracedSVG"
+                alt="Leadgeek affiliate panel"
+                title="Leadgeek affiliate panel"
                 className="w-full rounded-lg shadow-purpleMd ring-opacity-50 shadow-2xl"
               />
             </div>
@@ -383,17 +387,5 @@ const benefits = [
     title: "No minimum payout thresholds, no maximum earning caps.",
   },
 ]
-
-export const query = graphql`
-  query {
-    affiliatePanel: file(relativePath: { eq: "aff-screenshot.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 958, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
-`
 
 export default AffiliatePage

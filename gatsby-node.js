@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Define a template for blog post
+  // Define a template
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const blogPosts = path.resolve(`./src/templates/blog-posts.js`)
 
@@ -40,9 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMdx.edges
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "src/blog"
-
+  // Create blog posts pages only if there's at least one markdown file found at "src/blog"
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].node.id
@@ -92,34 +90,29 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
 
-//   createTypes(`
-//      type Mdx implements Node {
-//       frontmatter: Frontmatter
-//       fields: Fields
-//     }
-//     type Frontmatter {
-//       slug: String
-//       date: Date @dateformat
-//       title: String
-//       description: String
-//       author: String
-//       featured: Boolean
-//       readTime: Int
-//       image: Image
-//     }
-//     type Fields {
-//       slug: String
-//       date: Date @dateFormat
-//     }
-//     type Image {
-//         childImageSharp: {
-//             fluid: {
-//                 tracedSVG: String
-//             }
-//         }
-//     }
-//   `)
-// }
+  createTypes(`
+     type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      author: String!
+      featured: Boolean!
+      title: String!
+      descriptionShort: String!
+      descriptionLong: String!
+      tags: [String!]!
+      optin: Optin!
+    }
+    type Optin {
+        title: String!
+        description: [String!]!
+        popupTitle: String!
+        popupDescripton: [String!]!
+        cta: String!
+        tag: String!
+    }
+  `)
+}

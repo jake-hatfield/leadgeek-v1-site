@@ -1,27 +1,30 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImageFluidProps } from "gatsby-image"
 
+// packages
+import { getImage, ImageDataLike } from "gatsby-plugin-image"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
+// components
 import Layout from "@components/layout/Layout"
 import HeaderWrapper from "@components/HeaderWrapper"
 import PrimaryHeader from "@components/PrimaryHeader"
 import TestimonialFull from "@components/utils/TestimonialFull"
 
+// assets
 import OgImage from "@assets/images/og/og-stories.jpg"
 
 interface StoriesPageProps {
   data: {
-    testimonialAustin: { childImageSharp: GatsbyImageFluidProps }
-    testimonialBrian: { childImageSharp: GatsbyImageFluidProps }
-    testimonialCharles: { childImageSharp: GatsbyImageFluidProps }
-    testimonialDail: { childImageSharp: GatsbyImageFluidProps }
-    testimonialDimitry: { childImageSharp: GatsbyImageFluidProps }
-    testimonialFrank: { childImageSharp: GatsbyImageFluidProps }
-    testimonialKevin: { childImageSharp: GatsbyImageFluidProps }
-    testimonialWilliam: { childImageSharp: GatsbyImageFluidProps }
-    testimonialYucheng: { childImageSharp: GatsbyImageFluidProps }
+    testimonialAustin: ImageDataLike
+    testimonialBrian: ImageDataLike
+    testimonialCharles: ImageDataLike
+    testimonialDail: ImageDataLike
+    testimonialDimitry: ImageDataLike
+    testimonialFrank: ImageDataLike
+    testimonialKevin: ImageDataLike
+    testimonialWilliam: ImageDataLike
+    testimonialYucheng: ImageDataLike
   }
   location: Location
 }
@@ -47,7 +50,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           for helping me get started.
         </p>
       ),
-      image: data.testimonialCharles.childImageSharp.fluid,
+      image: getImage(data.testimonialCharles),
       source: "Charles",
       description: "New",
       rotate: "rotate-2",
@@ -66,7 +69,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialBrian.childImageSharp.fluid,
+      image: getImage(data.testimonialBrian),
       source: "Brian",
       description: "Intermediate",
       rotate: "-rotate-1",
@@ -86,7 +89,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialWilliam.childImageSharp.fluid,
+      image: getImage(data.testimonialWilliam),
       source: "William",
       description: "Intermediate",
       rotate: "rotate-1",
@@ -104,7 +107,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           ... definitely the best site I've found for leads.
         </p>
       ),
-      image: data.testimonialKevin.childImageSharp.fluid,
+      image: getImage(data.testimonialKevin),
       source: "Kevin",
       description: "New",
       rotate: "-rotate-2",
@@ -121,7 +124,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           !
         </p>
       ),
-      image: data.testimonialDail.childImageSharp.fluid,
+      image: getImage(data.testimonialDail),
       source: "Dail",
       description: "New",
       rotate: "",
@@ -139,7 +142,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           ! Great work.
         </p>
       ),
-      image: data.testimonialYucheng.childImageSharp.fluid,
+      image: getImage(data.testimonialYucheng),
       source: "Yucheng",
       description: "International",
       rotate: "",
@@ -156,7 +159,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialAustin.childImageSharp.fluid,
+      image: getImage(data.testimonialAustin),
       source: "Austin",
       description: "New",
       rotate: "-rotate-1",
@@ -175,7 +178,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           . Thank you!
         </p>
       ),
-      image: data.testimonialFrank.childImageSharp.fluid,
+      image: getImage(data.testimonialFrank),
       source: "Frank",
       description: "International",
       rotate: "rotate-2",
@@ -192,7 +195,7 @@ const StoriesPage: React.FC<StoriesPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialDimitry.childImageSharp.fluid,
+      image: getImage(data.testimonialDimitry),
       source: "Dimitry",
       description: "Intermediate",
       rotate: "-rotate-1",
@@ -282,9 +285,7 @@ const classes = {
 export const testimonialImage = graphql`
   fragment testimonialImage on File {
     childImageSharp {
-      fluid(maxWidth: 200, quality: 90) {
-        ...GatsbyImageSharpFluid_tracedSVG
-      }
+      gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
     }
   }
 `

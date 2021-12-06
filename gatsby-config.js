@@ -10,13 +10,13 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-remark-images`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-tsconfig-paths`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,6 +37,9 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-check-links`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -58,8 +61,6 @@ module.exports = {
               zIndex: 20,
             },
           },
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
         ],
       },
     },
@@ -166,6 +167,9 @@ module.exports = {
                   guid:
                     site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
                   categories: edge.node.frontmatter.tags,
+                  enclosure: {
+                    url: frontmatter.image,
+                  },
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
@@ -177,12 +181,13 @@ module.exports = {
                   ) {
                     edges {
                       node {
-                        excerpt
+                        excerpt(pruneLength: 300)
                         body
                         fields { slug }
                         frontmatter {
                           title
                           date
+                          image
                         }
                       }
                     }

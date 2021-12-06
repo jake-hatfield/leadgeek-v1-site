@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 // packages
 import { GatsbySeo } from "gatsby-plugin-next-seo"
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, getImage, ImageDataLike } from "gatsby-plugin-image"
 
 // components
 import Layout from "@components/layout/Layout"
@@ -27,12 +27,11 @@ import OgImage from "@assets/images/og/og-index.jpg"
 
 interface IndexPageProps {
   data: {
-    heroImage: { childImageSharp: any }
-    testimonialAustin: { childImageSharp: any }
-    testimonialBrian: { childImageSharp: any }
-    testimonialFrank: { childImageSharp: any }
-    testimonialKevin: { childImageSharp: any }
-    testimonialWilliam: { childImageSharp: any }
+    testimonialAustin: ImageDataLike
+    testimonialBrian: ImageDataLike
+    testimonialFrank: ImageDataLike
+    testimonialKevin: ImageDataLike
+    testimonialWilliam: ImageDataLike
   }
   location: Location
 }
@@ -68,7 +67,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
           ... definitely the best site I've found for leads.
         </p>
       ),
-      image: data.testimonialKevin.childImageSharp.fluid,
+      image: getImage(data.testimonialKevin),
       source: "Kevin",
       description: "New",
       rotate: "-rotate-2",
@@ -87,7 +86,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialBrian.childImageSharp.fluid,
+      image: getImage(data.testimonialBrian),
       source: "Brian",
       description: "Intermediate",
       rotate: "rotate-2",
@@ -107,7 +106,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialWilliam.childImageSharp.fluid,
+      image: getImage(data.testimonialWilliam),
       source: "William",
       description: "Intermediate",
       rotate: "rotate-1",
@@ -124,7 +123,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
           .
         </p>
       ),
-      image: data.testimonialAustin.childImageSharp.fluid,
+      image: getImage(data.testimonialAustin),
       source: "Austin",
       description: "New",
       rotate: "-rotate-1",
@@ -143,7 +142,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
           . Thank you!
         </p>
       ),
-      image: data.testimonialFrank.childImageSharp.fluid,
+      image: getImage(data.testimonialFrank),
       source: "Frank",
       description: "International",
       rotate: "rotate-2",
@@ -246,8 +245,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
               </div>
             </div>
             <StaticImage
-              src={"../assets/images/leadgeek-app.png"}
+              src="../assets/images/leadgeek-app.png"
+              placeholder="tracedSVG"
               alt="Leadgeek app feed"
+              title="Leadgeek app feed"
               className={classes.heroImage}
             />
           </div>
@@ -505,46 +506,29 @@ const testimonialsShort = [
 
 export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "leadgeek-app.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 958, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
     testimonialKevin: file(relativePath: { eq: "kevin.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
       }
     }
     testimonialBrian: file(relativePath: { eq: "brian.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
       }
     }
     testimonialWilliam: file(relativePath: { eq: "william.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
       }
     }
     testimonialAustin: file(relativePath: { eq: "austin.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
       }
     }
     testimonialFrank: file(relativePath: { eq: "frank.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200, quality: 90) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(layout: FIXED, placeholder: TRACED_SVG, width: 48)
       }
     }
   }

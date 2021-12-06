@@ -60,7 +60,7 @@ const categories = [
   {
     header: "Product",
     items: [
-      { title: "How it works", link: "demo" },
+      { title: "Demo", link: "demo" },
       { title: "Tour features", link: "features" },
       { title: "Pricing", link: "pricing" },
     ],
@@ -95,10 +95,10 @@ const footerLinks = [
     title: "Sitemap",
     link: "sitemap.xml",
   },
-  //   {
-  //     title: "RSS",
-  //     link: "rss.xml",
-  //   },
+  {
+    title: "RSS",
+    link: "rss.xml",
+  },
 ]
 
 export default Footer
