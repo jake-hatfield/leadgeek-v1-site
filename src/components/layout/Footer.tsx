@@ -1,22 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Logo from "@assets/svgs/logo.svg"
-
 const Footer: React.FC = () => {
   return (
-    <footer className="py-8 md:py-12 relative z-10 border-t border-gray-900">
+    <footer className="py-12 relative z-10 border-t border-gray-900">
       <div className="mx-auto max-w-xl">
-        <div className="flex justify-center">
-          <Logo className="w-12 lg:w-16 mr-4 text-purple-500" />
-        </div>
-        <nav className="inline-grid gap-6 grid-cols-2 md:grid-cols-3 w-full max-w-2xl relative z-10 mt-8 lg:mt-12 px-4 md:px-0">
+        <nav className="grid grid-flow-col auto-cols-fr gap-4 max-w-2xl relative z-10 px-4 md:px-0">
           {categories.map(category => (
-            <div key={category.header} className="mx-auto">
+            <div key={category.header}>
               <h3 className="h3 font-semibold">{category.header}</h3>
               <ul className="mt-4 text-gray-600">
                 {category.items.map(item => (
-                  <li key={item.title} className="mb-2 last:mb-0 ">
+                  <li key={item.title} className="mb-2 last:mb-0">
                     <Link to={`/${item.link}/`} className="tertiary-link inter">
                       {item.title}
                     </Link>
@@ -28,12 +23,12 @@ const Footer: React.FC = () => {
         </nav>
       </div>
       <div className="mt-6 md:mt-12 text-xs font-bold text-gray-600">
-        <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="grid grid-cols-2 md:flex md:items-center gap-4">
+        <div className="container md:flex md:items-start md:justify-between">
+          <ul className="flex flex-wrap md:flex-nowrap md:items-center gap-4">
             {footerLinks.map(footerLink => (
               <li
                 key={footerLink.title}
-                className="first:ml-0 md:ml-4 text-center tertiary-link inter"
+                className="first:ml-0 md:ml-4 tertiary-link inter"
               >
                 {footerLink.title === "Sitemap" ||
                 footerLink.title === "RSS" ? (
@@ -44,7 +39,7 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-6 md:mt-0 text-center md:text-left">
+          <div className="mt-6 md:mt-0">
             <p>
               <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
