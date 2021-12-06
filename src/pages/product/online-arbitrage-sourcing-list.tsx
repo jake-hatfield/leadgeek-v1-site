@@ -420,7 +420,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg py-4 px-6 text-gray-700">
-              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-8 translate-x-2 lg:translate-x-12">
+              <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 -translate-x-2 md:translate-x-2 lg:translate-x-6 xl:translate-x-12">
                 <span>
                   <span
                     role="img"
@@ -545,7 +545,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
             </p>
           </header>
           <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 lg:translate-x-6 xl:translate-x-12">
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-12 md:-translate-y-10 -translate-x-2 md:translate-x-2 lg:-translate-x-2 xl:translate-x-12">
               <span>
                 <span
                   role="img"
@@ -689,7 +689,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               </span>
             </p>
           </header>
-          <div className="relative md:flex md:flex-col lg:flex-row md:items-center mx-4">
+          <div className="relative md:flex md:flex-col xl:flex-row md:items-center mx-4">
             <TestimonialFull
               key={1}
               size={"sm"}
@@ -747,7 +747,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               rotate={"rotate-2"}
             />
           </div>
-          <div className="relative md:flex md:flex-col lg:flex-row md:items-center mx-4">
+          <div className="relative md:flex md:flex-col xl:flex-row md:items-center lg:mt-16 xl:mt-0 mx-4">
             <TestimonialFull
               key={4}
               size={"sm"}

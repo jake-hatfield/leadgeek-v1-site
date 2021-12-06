@@ -165,7 +165,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </section>
       </section>
       {/* side optin */}
-      <animated.aside style={fade} className={"z-30 w-full side-blog"}>
+      <animated.aside style={fade} className={"z-20 w-full side-blog"}>
         <div className="flex justify-center">
           <div className="alt-container w-full">
             <div className="side-blog-w relative z-40 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm">

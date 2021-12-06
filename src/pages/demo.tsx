@@ -187,7 +187,7 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
             ></div>
           </header>
           <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-10 translate-x-2 lg:translate-x-6 xl:translate-x-12">
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 shadow-tealSm -translate-y-12 md:-translate-y-10 -translate-x-2 md:translate-x-2 lg:translate-x-6 xl:translate-x-12">
               <span>
                 <span
                   role="img"

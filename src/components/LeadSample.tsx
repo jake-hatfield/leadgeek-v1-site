@@ -86,7 +86,7 @@ const LeadSampleTable: React.FC<LeadSampleTableProps> = ({ leads }) => {
         initialPage={0}
         pageCount={pageCount}
         marginPagesDisplayed={0}
-        pageRangeDisplayed={4}
+        pageRangeDisplayed={2}
         previousLabel={
           <svg
             xmlns="http://www.w3.org/2000/svg"

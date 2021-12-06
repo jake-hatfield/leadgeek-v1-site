@@ -29,11 +29,11 @@ const Footer: React.FC = () => {
       </div>
       <div className="mt-6 md:mt-12 text-xs font-bold text-gray-600">
         <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="grid grid-flow-col grid-cols-2 md:flex md:items-center gap-2">
+          <ul className="grid grid-cols-2 md:flex md:items-center gap-2">
             {footerLinks.map(footerLink => (
               <li
                 key={footerLink.title}
-                className="first:ml-0 ml-4 tertiary-link inter"
+                className="first:ml-0 md:ml-4 tertiary-link inter"
               >
                 {footerLink.title === "Sitemap" ||
                 footerLink.title === "RSS" ? (
@@ -76,7 +76,7 @@ const categories = [
   {
     header: "Resources",
     items: [
-      //   { title: "Blog", link: "blog" },
+      { title: "Blog", link: "blog" },
       { title: "Changelog", link: "changelog" },
     ],
   },
