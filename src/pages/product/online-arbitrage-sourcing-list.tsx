@@ -225,7 +225,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
       </section>
       {/* section 1: Sourcing modernized */}
       <section className="relative overflow-hidden bg-splatter">
-        <div className="mt-8 md:mt-12 lg:mt-0 lg:mb-32 relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-48 px-4 flex flex-col-reverse lg:flex-none">
+        <div className="mt-8 md:mt-12 lg:mt-0 lg:mb-20 relative max-w-2xl lg:max-w-7xl md:mx-auto py-8 md:py-16 lg:py-48 px-4 flex flex-col-reverse lg:flex-none">
           <header className="relative md:text-center lg:text-left">
             <h2 className="lg:max-w-xl text-3xl md:text-5xl font-black text-gray-900 inter header-height">
               <span className="emphasized-text">Online arbitrage sourcing</span>{" "}
@@ -287,7 +287,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 </div>
               </blockquote>
             </aside>
-            <LoopyDashed className="hidden lg:block absolute bottom-0 h-56 text-purple-500 transform translate-y-64 translate-x-24" />
+            <LoopyDashed className="hidden lg:block absolute bottom-0 h-48 text-purple-500 transform translate-y-56 translate-x-24" />
           </header>
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-y-48 lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
@@ -534,8 +534,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               >
                 📷
               </span>{" "}
-              Get the most representative idea of how Leadgeek can change your
-              FBA business by seeing the metrics of the{" "}
+              So here's full transparency: see the metrics of the{" "}
               <strong>
                 exact{" "}
                 <span className="text-pink-600">{prevTwoWeekLeads.length}</span>{" "}

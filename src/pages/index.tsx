@@ -22,7 +22,7 @@ import RetroSun from "@assets/svgs/retro-sun.svg"
 import RetroSwirl from "@assets/svgs/retro-swirl.svg"
 import BirdTracks from "@assets/svgs/bird-tracks.svg"
 import Signature from "@assets/svgs/signature.svg"
-import DashLoopLine from "@assets/svgs/dash-loop-line.svg"
+import LoopyDashed from "@assets/svgs/loopy-dashed.svg"
 import OgImage from "@assets/images/og/og-index.jpg"
 
 interface IndexPageProps {
@@ -297,7 +297,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
       </section>
       {/* testimonials section */}
       <section className={classes.testimonialSectionWrapper}>
-        <DashLoopLine className={classes.dashLoopLine1} />
+        <LoopyDashed className="absolute top-0 right-1/2 h-28 lg:h-40 text-purple-500 transform -translate-y-36 lg:-translate-y-48" />
         <div className="container">
           <header>
             <h2 className={classes.testimonialSectionH2}>
@@ -341,7 +341,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
       {/* note section */}
       <section className={classes.noteSectionWrapper}>
         <div className="relative container">
-          <DashLoopLine className={classes.dashLoopLine2} />
+          <LoopyDashed className="absolute top-0 right-1/2 h-28 lg:h-40 text-purple-500 transform -translate-y-36 lg:-translate-y-48" />
           <RetroSun className={classes.retroSun3} />
           <BirdTracks className={classes.birdTracks1} />
           <BirdTracks className={classes.birdTracks2} />

@@ -97,7 +97,7 @@ const OrderConfirmationPage: React.FC<OrderConfirmationPageProps> = ({
             outsideLink={"https://app.leadgeek.io/login/"}
             svgOne={
               <div
-                className={`hidden lg:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-24 text-center transition-main w-56 -rotate-3 hover:-rotate-2`}
+                className={`hidden xl:block absolute top-0 left-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform -translate-x-24 text-center transition-main w-56 -rotate-3 hover:-rotate-2`}
               >
                 <blockquote>
                   "Definitely the best site I've found for leads" -{" "}
@@ -107,7 +107,7 @@ const OrderConfirmationPage: React.FC<OrderConfirmationPageProps> = ({
             }
             svgTwo={
               <div
-                className={`hidden lg:block absolute top-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-28 text-center transition-main w-56 rotate-6 hover:rotate-2`}
+                className={`hidden xl:block absolute top-0 right-0 py-1 px-2 handwritten text-lg xl:text-xl rounded-lg bg-gray-900 text-teal-300 transform translate-x-28 text-center transition-main w-56 rotate-6 hover:rotate-2`}
               >
                 <blockquote>
                   "It has been the best decision I have made in acquiring your

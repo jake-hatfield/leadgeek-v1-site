@@ -1,15 +1,23 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
+// packages
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { animated, useSpring } from "react-spring"
 
+// assets
 import LogoSvg from "@assets/svgs/logo.svg"
 import LogoPng from "@assets/images/logo.png"
 
 const Navbar: React.FC = () => {
+  // localState
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const mobileMenuAnimation = useSpring({
+    opacity: mobileMenuOpen ? 1 : 0,
+    display: mobileMenuOpen ? "block" : "hidden",
+  })
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
@@ -36,7 +44,7 @@ const Navbar: React.FC = () => {
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
               <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <LogoSvg className="w-8 lg:w-12 mr-4 text-purple-500" />
+                <LogoSvg className="w-12 mr-4 text-purple-500" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </div>
@@ -100,10 +108,9 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         {/* mobile menu */}
-        <div
-          className={`${
-            mobileMenuOpen ? `block` : `hidden`
-          } fixed top-0 inset-x-0 md:left-1/2 p-2 transition transform origin-top-right lg:hidden`}
+        <animated.nav
+          style={mobileMenuAnimation}
+          className="fixed top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
         >
           <div className="rounded-md shadow-md">
             <div className="rounded-md shadow-graySm border border-gray-900 bg-white divide-y divide-gray-900 shadow-2xl">
@@ -114,11 +121,11 @@ const Navbar: React.FC = () => {
                       to={`/`}
                       className="all-center text-gray-900 rounded-lg"
                     >
-                      <LogoSvg className="w-8 lg:w-12 mr-4 text-purple-500" />
+                      <LogoSvg className="w-12 mr-4 text-purple-500" />
                       lead<span className="text-purple-500">geek</span>
                     </Link>
                   </div>
-                  <div className="-mt-1 -mr-2">
+                  <div className="-mt-2 -mr-2">
                     <button
                       type="button"
                       aria-label="Close mobile menu"
@@ -172,7 +179,7 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </animated.nav>
       </header>
     </>
   )

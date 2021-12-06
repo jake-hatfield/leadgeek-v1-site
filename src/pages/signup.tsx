@@ -436,7 +436,7 @@ const SignupPage: React.FC<{
                   to={`/pricing/`}
                   className="all-center text-gray-900 rounded-lg"
                 >
-                  <Logo className="w-8 lg:w-12 mr-4 text-purple-500" />
+                  <Logo className="w-12 mr-4 text-purple-500" />
                   lead<span className="text-purple-500">geek</span>
                 </Link>
               </h1>
