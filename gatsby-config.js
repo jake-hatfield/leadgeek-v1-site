@@ -169,7 +169,8 @@ module.exports = {
                   categories: edge.node.frontmatter.tags,
                   enclosure: {
                     url:
-                      site.siteMetadata.siteUrl + frontmatter.image.publicURL,
+                      site.siteMetadata.siteUrl +
+                      edge.node.frontmatter.image.publicURL,
                   },
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
