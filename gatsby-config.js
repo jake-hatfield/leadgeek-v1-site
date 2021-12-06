@@ -168,7 +168,8 @@ module.exports = {
                     site.siteMetadata.siteUrl + "/blog" + edge.node.fields.slug,
                   categories: edge.node.frontmatter.tags,
                   enclosure: {
-                    url: frontmatter.image,
+                    url:
+                      site.siteMetadata.siteUrl + frontmatter.image.publicURL,
                   },
                   custom_elements: [{ "content:encoded": edge.node.html }],
                 })
@@ -187,7 +188,9 @@ module.exports = {
                         frontmatter {
                           title
                           date
-                          image
+                          image {
+                            publicURL
+                          }
                         }
                       }
                     }
