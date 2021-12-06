@@ -113,7 +113,7 @@ const classes = {
   featuresList:
     "mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left",
   feature:
-    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-80 md:w-64 transition-main shadow-graySm",
+    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-72 md:w-64 transition-main shadow-graySm",
   featureHeader: "text-gray-900 group-hover:text-white",
   featureTitle: "text-lg xl:text-xl inter font-black",
   featureDesc: "mt-2 lg:mt-4 leading-relaxed",

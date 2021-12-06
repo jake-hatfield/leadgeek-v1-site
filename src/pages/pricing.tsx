@@ -563,7 +563,7 @@ const coreFeatureRows: FeatureRow[] = [
     cells: [
       {
         description: true,
-        value: "Weekly # of products",
+        value: "Weekly products",
       },
       { description: false, value: "50+" },
       { description: false, value: "50+" },
@@ -618,7 +618,7 @@ const coreFeatureRows: FeatureRow[] = [
     cells: [
       {
         description: true,
-        value: "Early access/discounts on new tools",
+        value: "Early access + discounts",
       },
       { description: false, value: false },
       { description: false, value: false },

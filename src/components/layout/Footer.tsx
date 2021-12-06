@@ -10,9 +10,9 @@ const Footer: React.FC = () => {
         <div className="flex justify-center">
           <Logo className="w-12 lg:w-16 mr-4 text-purple-500" />
         </div>
-        <nav className="grid gap-x-4 gap-y-6 grid-cols-2 md:grid-cols-3 w-full relative z-10 mt-8 lg:mt-12 container">
+        <nav className="inline-grid gap-6 grid-cols-2 md:grid-cols-3 w-full max-w-2xl relative z-10 mt-8 lg:mt-12 px-4 md:px-0">
           {categories.map(category => (
-            <div key={category.header} className="">
+            <div key={category.header} className="mx-auto">
               <h3 className="h3 font-semibold">{category.header}</h3>
               <ul className="mt-4 text-gray-600">
                 {category.items.map(item => (
@@ -29,11 +29,11 @@ const Footer: React.FC = () => {
       </div>
       <div className="mt-6 md:mt-12 text-xs font-bold text-gray-600">
         <div className="mt-6 container md:flex md:items-start md:justify-between">
-          <ul className="grid grid-cols-2 md:flex md:items-center gap-2">
+          <ul className="grid grid-cols-2 md:flex md:items-center gap-4">
             {footerLinks.map(footerLink => (
               <li
                 key={footerLink.title}
-                className="first:ml-0 md:ml-4 tertiary-link inter"
+                className="first:ml-0 md:ml-4 text-center tertiary-link inter"
               >
                 {footerLink.title === "Sitemap" ||
                 footerLink.title === "RSS" ? (
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-4 md:mt-0">
+          <div className="mt-6 md:mt-0 text-center md:text-left">
             <p>
               <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek

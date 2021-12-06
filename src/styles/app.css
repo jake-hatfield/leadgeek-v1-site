@@ -135,6 +135,7 @@ body {
   grid-column: max/max 2;
   grid-column-start: max;
   grid-column-end: 2 max;
+  justify-content: center;
 }
 
 .emphasized-text {
