@@ -33,6 +33,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `changelog`,
+        path: `${__dirname}/src/changelog`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -40,6 +47,7 @@ module.exports = {
           `gatsby-remark-check-links`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-slug`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -58,7 +66,7 @@ module.exports = {
             options: {
               background: `#5b6c7e`,
               margin: 30,
-              zIndex: 40,
+              zIndex: 25,
             },
           },
         ],
@@ -179,6 +187,9 @@ module.exports = {
             query: `
                 {
                   allMdx(
+                    filter: {
+                        fileAbsolutePath: { regex: "/blog/" }
+                      }
                     sort: { order: DESC, fields: [frontmatter___date] },
                   ) {
                     edges {

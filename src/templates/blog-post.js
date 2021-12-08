@@ -16,11 +16,14 @@ import Comments from "@components/layout/Blog/Comments"
 import Layout from "@components/layout/Layout"
 import Popup from "@components/utils/Popup"
 import SocialShare from "@components/layout/Blog/SocialShare"
+import TableOfContents from "@components/layout/Blog/TableOfContents"
+
+import { titleCase } from "@components/utils/utils"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx
   const frontmatter = data.mdx.frontmatter
-  const shortcodes = { Chapter }
+  const shortcodes = { Chapter, TableOfContents }
 
   //   local state
   const [showPopup, setShowPopup] = useState(false)
@@ -30,9 +33,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const [ref, percentage] = useScrollPercentage({
     threshold: 0,
   })
-  if (percentage < 0.3) {
+  if (percentage < 0.2) {
     optin = false
-  } else if ((percentage > 0.300001) & (percentage < 0.85)) {
+  } else if ((percentage > 0.200001) & (percentage < 0.85)) {
     optin = true
   } else {
     optin = false
@@ -45,7 +48,7 @@ const BlogPostTemplate = ({ data, location }) => {
   })
 
   //   SEO
-  const title = `${frontmatter.title} | Leadgeek`
+  const title = `${titleCase(frontmatter.title)} | Leadgeek`
   //   max 155 chars
   const description = frontmatter.description || post.excerpt
 
@@ -153,7 +156,9 @@ const BlogPostTemplate = ({ data, location }) => {
             className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl text-base text-gray-900 leading-relaxed"
           >
             <MDXProvider components={shortcodes}>
-              <MDXRenderer title={`Title`}>{post.body}</MDXRenderer>
+              <MDXRenderer title={frontmatter.title} headings={post.headings}>
+                {post.body}
+              </MDXRenderer>
             </MDXProvider>
           </section>
         </article>
@@ -165,14 +170,16 @@ const BlogPostTemplate = ({ data, location }) => {
         </section>
       </section>
       {/* side optin */}
-      <animated.aside style={fade} className={"z-20 w-full side-blog"}>
+      <animated.aside
+        style={fade}
+        className={"z-20 w-full side-blog flex justify-between"}
+      >
         <div className="flex justify-center">
-          <div className="alt-container w-full">
-            <div className="side-blog-w relative z-40 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm">
+          <div className="alt-container w-full ">
+            <div className="side-blog-w relative z-40 mb-16 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm">
               <h4 className="text-gray-900 font-bold inter">
                 {frontmatter.optin.title}
               </h4>
-
               {frontmatter.optin.description.map((item, i) => (
                 <p
                   key={i}
@@ -188,6 +195,12 @@ const BlogPostTemplate = ({ data, location }) => {
                 {frontmatter.optin.cta || "Join now"}
               </button>
             </div>
+            {post.tableOfContents.items.length > 0 && (
+              <TableOfContents
+                title={post.frontmatter.title}
+                items={post.tableOfContents.items}
+              />
+            )}
           </div>
         </div>
       </animated.aside>
@@ -258,7 +271,12 @@ export const pageQuery = graphql`
         }
       }
       body
+      headings {
+        depth
+        value
+      }
       slug
+      tableOfContents
     }
   }
 `

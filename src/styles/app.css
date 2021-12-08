@@ -503,6 +503,25 @@ h6 {
   @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
 }
 
+#toc > ul > li {
+  display: list-item;
+  list-style-position: inside;
+  color: #ffffff;
+}
+
+#changelog-item > ul {
+  @apply mt-2 ml-6;
+}
+
+#changelog-item > ul > li {
+  @apply list-disc;
+}
+
+#changelog-item > ul > li > ul > li {
+  list-style: circle;
+  @apply ml-6;
+}
+
 #commento.commento-root * {
   font-family: inherit;
   text-transform: none;

@@ -16,8 +16,8 @@ import OgImage from "@assets/images/og/og-blog.jpg"
 
 const BlogPostsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMdx.edges
-  console.log(posts)
 
+  console.log(data)
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
@@ -223,7 +223,10 @@ export const blogPostsQuery = graphql`
   query blogPostsQuery($skip: Int!, $limit: Int!) {
     allMdx(
       sort: { fields: [frontmatter___title], order: DESC }
-      filter: { frontmatter: { featured: { eq: false } } }
+      filter: {
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { featured: { eq: false } }
+      }
       limit: $limit
       skip: $skip
     ) {
@@ -245,7 +248,10 @@ export const blogPostsQuery = graphql`
         }
       }
     }
-    mdx(frontmatter: { featured: { eq: true } }) {
+    mdx(
+      fileAbsolutePath: { regex: "/blog/" }
+      frontmatter: { featured: { eq: true } }
+    ) {
       frontmatter {
         date(formatString: "LL")
         title
