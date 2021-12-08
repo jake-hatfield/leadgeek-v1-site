@@ -15,7 +15,7 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ location }) => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io/"
-  const title = "Leadgeek Privacy Policy"
+  const title = "Privacy Policy"
   const description =
     "The privacy policy for Leadgeek website users and customers. We take your data seriously and handle it responsibly."
 

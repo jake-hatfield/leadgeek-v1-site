@@ -12,7 +12,7 @@ interface CommentsPageProps {
 }
 
 const CommentsPage: React.FC<CommentsPageProps> = ({ location }) => {
-  const title = "Leave Your Mark | Leadgeek"
+  const title = "Leave Your Mark"
   const description =
     "Personalize each product by writing a comment that only you can see. Interested in a few variations or plan to re-order an item? Write it down so you don’t forget!"
 

@@ -12,7 +12,7 @@ interface RetailersPageProps {
 }
 
 const RetailersPage: React.FC<RetailersPageProps> = ({ location }) => {
-  const title = "Solid sources by default | Leadgeek"
+  const title = "Solid sources by default"
   const description =
     "Over 500 trusted US-based retailers are used to source products. This not only gives you variety, but a peace of mind that your items are authentic brands to arbitrage, not some knock-off crap that will get your Seller Central account suspended."
 

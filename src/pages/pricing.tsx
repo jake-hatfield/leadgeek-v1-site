@@ -45,7 +45,7 @@ export interface MongoDBWaitlistItem {
 }
 
 const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
-  const title = "Leadgeek Pricing"
+  const title = "Pricing"
   const description =
     "Leadgeek offers entry-level and intermediate plans for arbitrage sourcing, so there's something for everyone. Join today!"
 

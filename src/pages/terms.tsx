@@ -15,7 +15,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ location }) => {
   const siteTitle = "Leadgeek"
   const siteLink = "/"
   const siteLinkFull = "https://leadgeek.io/"
-  const title = "Leadgeek Terms of Service"
+  const title = "Terms of Service"
   const description =
     "All the policies and terms for Leadgeek customers. We try to make all our policies as clear, fair, and understandable as possible."
 

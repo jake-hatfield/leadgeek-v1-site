@@ -12,7 +12,7 @@ interface SellerInsightPageProps {
 }
 
 const SellerInsightPage: React.FC<SellerInsightPageProps> = ({ location }) => {
-  const title = "Professional Experience in Your Corner | Leadgeek"
+  const title = "Professional Experience in Your Corner"
   const description =
     "The Leadgeek sourcing process includes review by a seasoned US Amazon seller for each and every lead. That way, the only products you see are ones that have been approved by years of FBA know-how."
 

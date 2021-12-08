@@ -73,7 +73,7 @@ interface OnlineArbitrageSourcingListPageProps {
 const OnlineArbitrageSourcingListPage: React.FC<
   OnlineArbitrageSourcingListPageProps
 > = ({ data, location }) => {
-  const title = "Online Arbitrage Sourcing List | Leadgeek"
+  const title = "Online Arbitrage Sourcing List"
   const description =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
   const cta = `/product/online-arbitrage-sourcing-list#leads`

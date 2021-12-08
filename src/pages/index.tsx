@@ -37,7 +37,7 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
-  const title = "Leadgeek: Online Arbitrage Sourcing Lists & Software"
+  const title = "Online Arbitrage Sourcing Lists & Software"
   const description =
     "Trusted by Amazon FBA sellers across the world, Leadgeek offers online arbitrage sourcing lists, software, and tools to put you in control of your selling."
   const alt = "Leadgeek Arbitrage Sourcing List & Software"

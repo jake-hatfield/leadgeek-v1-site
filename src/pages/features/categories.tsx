@@ -12,7 +12,7 @@ interface CategoriesPageProps {
 }
 
 const CategoriesPage: React.FC<CategoriesPageProps> = ({ location }) => {
-  const title = "Source Comprehensive Categories | Leadgeek"
+  const title = "Source Comprehensive Categories"
   const description =
     "Building a diversified inventory has never been easier. Choose items sourced from 25+ top-selling Amazon categories to create your ideal product portfolio."
 

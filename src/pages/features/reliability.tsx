@@ -12,7 +12,7 @@ interface ReliabilityPageProps {
 }
 
 const ReliabilityPage: React.FC<ReliabilityPageProps> = ({ location }) => {
-  const title = "Keep 'Em Coming | Leadgeek"
+  const title = "Keep 'Em Coming"
   const description =
     "Leadgeek is all about predictability, especially when it comes to the quantity of leads you can expect. Gone are the days of striking out when sourcing - the Feed delivers a guaranteed number of leads each and every weekday."
 

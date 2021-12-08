@@ -12,12 +12,30 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-remark-images`,
     `gatsby-plugin-resolve-src`,
-    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-tsconfig-paths`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://leadgeek.io`,
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -90,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: "#7069FA",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -114,12 +132,16 @@ module.exports = {
       resolve: "gatsby-plugin-next-seo",
       options: {
         title: "Leadgeek",
+        titleTemplate: "%s | Leadgeek",
         description:
           "Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.",
         openGraph: {
           type: "website",
           locale: "en_US",
           url: "https://leadgeek.io/",
+          title: "Leadgeek",
+          description:
+            "Leadgeek offers premium online arbitrage sourcing lists and software. FBA sellers around the world use Leadgeek for a reliable output of quality leads every weekday.",
           site_name: "Leadgeek",
         },
         twitter: {

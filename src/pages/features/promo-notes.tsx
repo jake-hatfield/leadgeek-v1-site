@@ -12,7 +12,7 @@ interface PromoNotesPageProps {
 }
 
 const PromoNotesPage: React.FC<PromoNotesPageProps> = ({ location }) => {
-  const title = "Your Very Own Research Assistant | Leadgeek"
+  const title = "Your Very Own Research Assistant"
   const description =
     "Are you ever curious if there’s a promo or some discount you’re missing before you order? Now you don’t have to wonder. Any available promotional code, free shipping minimum, and cashback is automatically noted."
 

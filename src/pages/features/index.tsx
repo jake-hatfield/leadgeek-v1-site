@@ -16,7 +16,7 @@ interface FeaturesIndexPageProps {
 }
 
 const FeaturesIndexPage: React.FC<FeaturesIndexPageProps> = ({ location }) => {
-  const title = `Leadgeek Features`
+  const title = `Features`
   const description = `See the top ${featureList.length} features that supercharge a great online arbitrage sourcing list into a deal-finding machine for your FBA business.`
 
   return (

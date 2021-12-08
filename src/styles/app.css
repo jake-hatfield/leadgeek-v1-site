@@ -489,6 +489,18 @@ h6 {
   @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
 }
 
+#table-of-contents > ol > li > ol {
+  @apply ml-2;
+}
+
+#table-of-contents > ol > li > ol > li > ol {
+  @apply ml-4;
+}
+
+#table-of-contents > ol > li > ol > li > ol > li > ol {
+  @apply ml-6;
+}
+
 #changelog-item > ul {
   @apply mt-2 ml-6;
 }

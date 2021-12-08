@@ -12,7 +12,7 @@ interface SearchPageProps {
 }
 
 const SearchPage: React.FC<SearchPageProps> = ({ location }) => {
-  const title = "Keyword Central | Leadgeek"
+  const title = "Keyword Central"
   const description =
     "Powerful search lets you find what you’re interested in without hunting through thousands of leads. Input keywords to search by the source store, title, or ASIN."
 

@@ -12,7 +12,7 @@ interface SupportPageProps {
 }
 
 const SupportPage: React.FC<SupportPageProps> = ({ location }) => {
-  const title = "A+ Member Support | Leadgeek"
+  const title = "A+ Member Support"
   const description =
     "LeadGeek members get dedicated guidance from an experienced arbitrage seller to prevent pitfalls and solve issues. Sell with confidence, not confusion."
 

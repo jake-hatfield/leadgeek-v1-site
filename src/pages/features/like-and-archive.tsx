@@ -14,7 +14,7 @@ interface LikeAndArchivePageProps {
 const LikeAndArchivePage: React.FC<LikeAndArchivePageProps> = ({
   location,
 }) => {
-  const title = `Stay Organized with "Like" & "Archive" | Leadgeek`
+  const title = `Stay Organized with "Like" & "Archive"`
   const description =
     "Things are right where you expect to find them with Leadgeek's simple but powerful like and archive system. Like the leads you want to order soon and archive the ones that deserve a second look at some point in the future."
 

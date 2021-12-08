@@ -12,7 +12,7 @@ interface LeadOwnerShipPageProps {
 }
 
 const LeadOwnerShipPage: React.FC<LeadOwnerShipPageProps> = ({ location }) => {
-  const title = "Leads Belong to You | Leadgeek"
+  const title = "Leads Belong to You"
   const description =
     "Leadgeek puts you in control - and that means that you should be able to download your product leads if you want to. It's easy to export the items you want into a spreadsheet to do whatever you want with."
 

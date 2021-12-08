@@ -12,7 +12,7 @@ interface NotFoundPageProps {
 
 const NotFoundPage: React.FC<NotFoundPageProps> = ({ location }) => (
   <Layout location={location}>
-    <GatsbySeo title="404: Page Not Found | Leadgeek" language="en" />
+    <GatsbySeo title="404: Page Not Found" language="en" noindex={true} />
     <section className="relative overflow-hidden bg-splatter">
       <HeaderWrapper bottomPadding={"pb-24 lg:pb-80"} styles={null}>
         <PrimaryHeader

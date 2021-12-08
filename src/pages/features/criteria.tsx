@@ -12,7 +12,7 @@ interface LeadCriteriaPageProps {
 }
 
 const LeadCriteriaPage: React.FC<LeadCriteriaPageProps> = ({ location }) => {
-  const title = "Top-Shelf Leads Come Standard | Leadgeek"
+  const title = "Top-Shelf Leads Come Standard"
   const description =
     "Scale your business without sacrificing quality in your inventory Carefully-tailored criteria and vetting methods allow you to get professional-grade arbitrage sourcing at a fraction of the price."
 

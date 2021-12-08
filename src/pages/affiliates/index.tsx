@@ -26,7 +26,7 @@ interface AffiliatePageProps {
 }
 
 const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
-  const title = "Leadgeek Affiliate Program"
+  const title = "Affiliate Program"
   const description =
     "Become a Leadgeek affiliate and start earning 25% lifetime recurring commissions."
   const cta = `/affiliates/#affiliate-application`

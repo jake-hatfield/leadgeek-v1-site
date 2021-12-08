@@ -14,13 +14,18 @@ interface AffiliateConfirmationPageProps {
 const AffiliateConfirmationPage: React.FC<AffiliateConfirmationPageProps> = ({
   location,
 }) => {
-  const title = "Affiliate Application Submitted | Leadgeek"
+  const title = "Affiliate Application Submitted"
   const description =
     "Leadgeek support has received your message and will get to you as soon as possible."
 
   return (
     <Layout location={location}>
-      <GatsbySeo title={title} description={description} language="en" />
+      <GatsbySeo
+        title={title}
+        description={description}
+        language="en"
+        noindex={true}
+      />
       <section className="relative bg-splatter">
         <HeaderWrapper bottomPadding={null} styles={null}>
           <PrimaryHeader

@@ -15,7 +15,7 @@ interface ContactSuccessPageProps {
 const ContactSuccessPage: React.FC<ContactSuccessPageProps> = ({
   location,
 }) => {
-  const title = "Contact Success | Leadgeek"
+  const title = "Contact Success"
   const description =
     "Leadgeek support has received your message and will get to you as soon as possible."
 
@@ -24,6 +24,7 @@ const ContactSuccessPage: React.FC<ContactSuccessPageProps> = ({
       <GatsbySeo
         title={title}
         description={description}
+        noindex={true}
         openGraph={{
           title,
           description,

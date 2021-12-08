@@ -12,7 +12,7 @@ interface ContactPageProps {
 }
 
 const ContactPage: React.FC<ContactPageProps> = ({ location }) => {
-  const title = "Contact Leadgeek"
+  const title = "Contact"
   const description =
     "Have a question about Leadgeek? We'll do our best to get you some answers. Ask away and receive a prompt reply."
 

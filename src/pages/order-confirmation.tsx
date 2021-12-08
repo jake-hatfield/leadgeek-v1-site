@@ -17,7 +17,7 @@ interface OrderConfirmationPageProps {
 const OrderConfirmationPage: React.FC<OrderConfirmationPageProps> = ({
   location,
 }) => {
-  const title = "Order Confirmation | Leadgeek"
+  const title = "Order Confirmation"
   const description =
     "Your Leadgeek order has been successfully processed. Thank you for your purchase!"
 
@@ -61,6 +61,7 @@ const OrderConfirmationPage: React.FC<OrderConfirmationPageProps> = ({
       <GatsbySeo
         title={title}
         description={description}
+        noindex={true}
         openGraph={{
           title,
           description,

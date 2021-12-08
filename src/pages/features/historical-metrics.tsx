@@ -14,7 +14,7 @@ interface HistoricalMetricsPageProps {
 const HistoricalMetricsPage: React.FC<HistoricalMetricsPageProps> = ({
   location,
 }) => {
-  const title = "Check Out Historical Metrics | Leadgeek"
+  const title = "Check Out Historical Metrics"
   const description =
     "Leadgeek includes 30 & 90 day metrics and current competition for the buy box. While the price right now is important too, use historical data to see trends like seasonality, out of stock spikes, and more."
 

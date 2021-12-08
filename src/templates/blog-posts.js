@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 
 // packages
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { GatsbySeo, BlogJsonLd } from "gatsby-plugin-next-seo"
 
 // components
 import Layout from "@components/layout/Layout"
@@ -51,6 +51,23 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
           ],
         }}
         language="en"
+      />
+      <BlogJsonLd
+        url={"https://leadgeek.io/blog/"}
+        headline={"Blog"}
+        description={
+          "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
+        }
+        images="https://example.com/photos/1x1/photo.jpg"
+        posts={[
+          {
+            headline: "Post 1",
+            image: "https://example.com/photos/1x1/photo.jpg",
+          },
+          { headline: "Post 2" },
+        ]}
+        datePublished={"2021-12-08T08:00:00+08:00"}
+        authorName="Jake Hatfield"
       />
       {/* notification banner */}
       {/* <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">

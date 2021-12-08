@@ -12,7 +12,7 @@ interface PrepPageProps {
 }
 
 const PrepPage: React.FC<PrepPageProps> = ({ location }) => {
-  const title = "Account for Prep Costs Automatically | Leadgeek"
+  const title = "Account for Prep Costs Automatically"
   const description =
     "Built-in tools allow you to easily estimate product prep fees. Whether you need to calculate a fee based on quantity or weight, you'll see real-world profitability for each item."
 

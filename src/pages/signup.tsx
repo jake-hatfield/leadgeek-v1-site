@@ -401,9 +401,9 @@ const SignupPage: React.FC<{
   }
 
   //   seo
-  const title = `${planType && capitalize(planType)} Plan Signup | Leadgeek`
+  const title = `${planType && capitalize(planType)} Plan Signup`
   const description =
-    "Leadgeek's Bundle is a heavily-discounted combination of the Grow plan and Pro plan. It's the perfect mix of quality and volume for arbitrage sourcing."
+    "Find Leadgeek pricing information for the Grow, Pro, and Bundle plans."
 
   return (
     <Fragment>
@@ -420,7 +420,7 @@ const SignupPage: React.FC<{
               url: OgImage,
               width: 1200,
               height: 630,
-              alt: "Grab the Bundle plan & save",
+              alt: "Sign up for Leadgeek",
             },
           ],
         }}

@@ -12,7 +12,7 @@ interface CalculationsPageProps {
 }
 
 const CalculationPage: React.FC<CalculationsPageProps> = ({ location }) => {
-  const title = "Laser-Accurate Number Crunching | Leadgeek"
+  const title = "Laser-Accurate Number Crunching"
   const description =
     "With Leadgeek, all Amazon fees are accounted for with the official calculator so you see numbers that can be relied on."
 

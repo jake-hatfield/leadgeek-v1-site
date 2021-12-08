@@ -12,7 +12,7 @@ interface SellerNotesPageProps {
 }
 
 const SellerNotesPage: React.FC<SellerNotesPageProps> = ({ location }) => {
-  const title = "Variation Suggestions Out of the Box | Leadgeek"
+  const title = "Variation Suggestions Out of the Box"
   const description =
     "With Leadgeek, variation research is done for you. These suggestions and seller-to-seller notes give you clarity on how to order your inventory."
 

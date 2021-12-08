@@ -35,7 +35,7 @@ interface DemoPageProps {
 }
 
 const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
-  const title = "See How Leadgeek Works"
+  const title = "Watch a Demo"
   const description =
     "Watch a demo and check out the metrics for every arbitrage lead the Leadgeek team has found in the past 2 weeks."
 

@@ -15,7 +15,7 @@ const AffiliateTermsPage: React.FC<AffiliateTermsPageProps> = ({
   location,
 }) => {
   const siteTitle = "Leadgeek"
-  const title = "Leadgeek Affiliate Terms of Service"
+  const title = "Affiliate Terms of Service"
   const description =
     "All the policies and terms for Leadgeek affiliates. We try to make all our policies as clear, fair, and understandable as possible."
 

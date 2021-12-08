@@ -12,7 +12,7 @@ interface FiltersPageProps {
 }
 
 const FiltersPage: React.FC<FiltersPageProps> = ({ location }) => {
-  const title = "Surface Data, Don't Dig for It | Leadgeek"
+  const title = "Surface Data, Don't Dig for It"
   const description =
     "Leadgeek allows you to combine simple filters in a powerful way to only show the information that’s important to you."
 

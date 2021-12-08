@@ -12,7 +12,7 @@ interface DetailsPageProps {
 }
 
 const DetailsPage: React.FC<DetailsPageProps> = ({ location }) => {
-  const title = "View Details on the Fly | Leadgeek"
+  const title = "View Details on the Fly"
   const description =
     "See primary metrics, historical data, and helpful notes all in one place. Also included are helpful links to the source retailer, Amazon listing, and Seller Central to see if the product is ungated for you."
 
