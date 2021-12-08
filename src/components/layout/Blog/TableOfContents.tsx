@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 
-// utils
-import { truncate } from "@components/utils/utils"
-
 const renderItems = (items: any, activeId: string) => {
   return (
     <ol>
@@ -76,15 +73,15 @@ const useActiveId = (itemIds: any[]) => {
 const TableOfContents: React.FC<{
   title: string
   items: any
-}> = ({ title, items }) => {
+}> = ({ items }) => {
   const idList = getItemIds(items)
   const activeId = useActiveId(idList)
   return (
     <aside
       id="toc"
-      className="side-blog-w relative z-40 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm"
+      className="w-64 relative z-40 lg:py-6 px-6 bg-white rounded-lg shadow-graySm"
     >
-      <h4>{truncate(title, 29)}</h4>
+      <h4 className="text-gray-900 font-bold inter">Table of contents</h4>
       {renderItems(items, activeId)}
     </aside>
   )

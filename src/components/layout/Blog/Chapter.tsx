@@ -19,7 +19,7 @@ const Chapter: React.FC<ChapterProps> = ({
         <strong className="uppercase text-sm lg:text-base">
           Chapter {number}:
         </strong>
-        <h2 className="mt-2 text-xl lg:text-2xl font-bold inter">{title}</h2>
+        <span>## {title}</span>
         <div className="mt-8 flex flex-col-reverse md:flex md:flex-row md:justify-between">
           <div className="md:w-3/5 text-base">
             {description.map((item: string, i) => (

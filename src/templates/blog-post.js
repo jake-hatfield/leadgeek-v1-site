@@ -33,9 +33,9 @@ const BlogPostTemplate = ({ data, location }) => {
   const [ref, percentage] = useScrollPercentage({
     threshold: 0,
   })
-  if (percentage < 0.2) {
+  if (percentage < 0.15) {
     optin = false
-  } else if ((percentage > 0.200001) & (percentage < 0.85)) {
+  } else if ((percentage > 0.150001) & (percentage < 0.85)) {
     optin = true
   } else {
     optin = false
@@ -172,36 +172,31 @@ const BlogPostTemplate = ({ data, location }) => {
       {/* side optin */}
       <animated.aside
         style={fade}
-        className={"z-20 w-full side-blog flex justify-between"}
+        className={"hidden xl:block w-full max-w-7xl mx-auto"}
       >
-        <div className="flex justify-center">
-          <div className="alt-container w-full ">
-            <div className="side-blog-w relative z-40 mb-16 lg:py-6 px-6 w-full bg-white rounded-lg shadow-graySm">
-              <h4 className="text-gray-900 font-bold inter">
-                {frontmatter.optin.title}
-              </h4>
-              {frontmatter.optin.description.map((item, i) => (
-                <p
-                  key={i}
-                  className="mt-2 text-sm text-gray-600 leading-relaxed"
-                >
-                  {item}
-                </p>
-              ))}
-              <button
-                onClick={() => setShowPopup(!showPopup)}
-                className="w-full mt-2 py-2 px-2 lg:px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm hover:bg-purple-600 text-white transition-main ring-purple inter"
-              >
-                {frontmatter.optin.cta || "Join now"}
-              </button>
-            </div>
-            {post.tableOfContents.items.length > 0 && (
-              <TableOfContents
-                title={post.frontmatter.title}
-                items={post.tableOfContents.items}
-              />
-            )}
+        <div className="fixed top-48 ml-8">
+          <div className="xl:w-64 mb-16 py-6 px-6 bg-white rounded-lg shadow-graySm">
+            <h4 className="text-gray-900 font-bold inter">
+              {frontmatter.optin.title}
+            </h4>
+            {frontmatter.optin.description.map((item, i) => (
+              <p key={i} className="mt-2 text-sm text-gray-600 leading-relaxed">
+                {item}
+              </p>
+            ))}
+            <button
+              onClick={() => setShowPopup(!showPopup)}
+              className="w-full mt-2 py-2 px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm hover:bg-purple-600 text-white transition-main ring-purple inter"
+            >
+              {frontmatter.optin.cta || "Join now"}
+            </button>
           </div>
+          {post.tableOfContents.items.length > 0 && (
+            <TableOfContents
+              title={post.frontmatter.title}
+              items={post.tableOfContents.items}
+            />
+          )}
         </div>
       </animated.aside>
       {showPopup && (

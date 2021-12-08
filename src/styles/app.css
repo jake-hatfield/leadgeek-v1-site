@@ -410,28 +410,6 @@ td:last-child {
   max-height: 45vh;
 }
 
-@media only screen and (max-width: 1199px) {
-  .side-blog {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .side-blog {
-    display: block;
-    position: fixed;
-    top: 200px;
-  }
-}
-
-.side-blog-w {
-  max-width: 240px;
-}
-
-.alt-container {
-  max-width: 1190px;
-}
-
 /*! purgecss start ignore */
 @media only screen and (max-width: 640px) {
   .full-width {
@@ -481,8 +459,16 @@ h6 {
   @apply my-8;
 }
 
-#blog-body > gatsby-resp-image-image {
-  border: 4px solid #243b53 !important;
+#blog-body > p > span.gatsby-resp-image-wrapper {
+  @apply z-10 shadow-graySm rounded-lg;
+}
+
+#blog-body > p > span.gatsby-resp-image-wrapper > img {
+  @apply rounded-lg;
+}
+
+#blog-body > p > span.gatsby-resp-image-wrapper + em {
+  @apply mt-2 block text-center;
 }
 
 #blog-body > ul,
@@ -501,12 +487,6 @@ h6 {
 #blog-body > blockquote {
   margin: 20px 0px 0px 0px !important;
   @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
-}
-
-#toc > ul > li {
-  display: list-item;
-  list-style-position: inside;
-  color: #ffffff;
 }
 
 #changelog-item > ul {
