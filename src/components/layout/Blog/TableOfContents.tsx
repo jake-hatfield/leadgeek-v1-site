@@ -1,83 +1,66 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useLayoutEffect, useCallback } from "react"
 
 // packages
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-const renderItems = (items: any, activeId: string) => {
-  return (
-    <ol>
-      {items.map((item: any) => (
-        <li key={item.url}>
-          <AnchorLink
-            to={item.url}
-            className={`${
-              activeId === item.url.slice(1)
-                ? "text-purple-500 underline"
-                : "text-gray-900"
-            } hover:text-purple-500 hover:underline`}
-          >
-            {item.title}
-          </AnchorLink>
-          {item.items && renderItems(item.items, activeId)}
-        </li>
-      ))}
-    </ol>
-  )
-}
-
-const getItemIds = (items: any) => {
-  return items.reduce((acc: any, item: any) => {
-    if (item.url) {
-      acc.push(item.url.slice(1))
-    }
-    if (item.items) {
-      acc.push(...getItemIds(item.items))
-    }
-    return acc
-  }, [])
-}
-
-const useActiveId = (itemIds: any[]) => {
-  const [activeId, setActiveId] = useState("")
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        })
-      },
-      { rootMargin: `0% 0% -80% 0%` }
-    )
-
-    itemIds.forEach((id: any) => {
-      const element = document.getElementById(id)
-      if (element) {
-        return observer.observe(element)
-      }
-    })
-
-    return () => {
-      itemIds.forEach((id: any) => {
-        const element = document.getElementById(id)
-        if (element) {
-          return observer.observe(element)
-        }
-      })
-    }
-  }, [itemIds])
-
-  return activeId
-}
-
 const TableOfContents: React.FC<{
-  title: string
   items: any
-}> = ({ items }) => {
-  const idList = getItemIds(items)
-  const activeId = useActiveId(idList)
+  itemIds: any
+}> = ({ items, itemIds }) => {
+  const renderItems = useCallback((items: any, activeId: string) => {
+    return (
+      <ol>
+        {items.map((item: any) => (
+          <li key={item.url}>
+            <AnchorLink
+              to={item.url}
+              className={`${
+                activeId === item.url.slice(1)
+                  ? "text-purple-500 underline"
+                  : "text-gray-900"
+              } hover:text-purple-500 hover:underline`}
+            >
+              {item.title}
+            </AnchorLink>
+            {item.items &&
+              item.items.length &&
+              renderItems(item.items, activeId)}
+          </li>
+        ))}
+      </ol>
+    )
+  }, [])
+
+  const useActiveId = (itemIds: any) => {
+    const [activeId, setActiveId] = useState("")
+
+    useLayoutEffect(() => {
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setActiveId(entry.target.id)
+            }
+          })
+        },
+        { threshold: 0.75, rootMargin: `0% 0% -80% 0%` }
+      )
+
+      itemIds.forEach((id: any) => {
+        observer.observe(document.getElementById(id)!)
+      })
+
+      return () => {
+        itemIds.forEach((id: any) => {
+          return observer.observe(document.getElementById(id)!)
+        })
+      }
+    }, [itemIds])
+
+    return activeId
+  }
+
+  const activeId = useActiveId(itemIds)
   return (
     <aside
       id="table-of-contents"
@@ -89,4 +72,4 @@ const TableOfContents: React.FC<{
   )
 }
 
-export default TableOfContents
+export default React.memo(TableOfContents)

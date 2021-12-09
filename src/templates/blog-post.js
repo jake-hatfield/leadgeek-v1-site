@@ -1,12 +1,12 @@
 // import React, { useState } from "react"
-import React, { useState } from "react"
+import React, { useState, useLayoutEffect, useCallback } from "react"
 import { Link, graphql } from "gatsby"
 
 // packages
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import { GatsbySeo, BlogPostJsonLd } from "gatsby-plugin-next-seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { useScrollPercentage } from "react-scroll-percentage"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import { useSpring, animated, config } from "react-spring"
 import { MDXProvider } from "@mdx-js/react"
 
@@ -30,28 +30,53 @@ const BlogPostTemplate = ({ data, location }) => {
 
   //   side optin visibility logic
   let optin = false
-  const [ref, percentage] = useScrollPercentage({
-    threshold: 0,
-  })
-  if (percentage < 0.15) {
-    optin = false
-  } else if ((percentage > 0.150001) & (percentage < 0.9)) {
-    optin = true
-  } else {
-    optin = false
-  }
+  //   const [ref, percentage] = useScrollPercentage({
+  //     threshold: 0,
+  //   })
+  //   if (percentage < 0.15) {
+  //     optin = false
+  //   } else if ((percentage > 0.150001) & (percentage < 0.9)) {
+  //     optin = true
+  //   } else {
+  //     optin = false
+  //   }
 
-  //   side optin animation
-  const fade = useSpring({
-    opacity: optin ? 1 : 0,
-    config: config.gentle,
-  })
+  //   //   side optin animation
+  //   const fade = useSpring({
+  //     opacity: optin ? 1 : 0,
+  //     config: config.gentle,
+  //   })
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      console.log(currPos.x)
+      console.log(currPos.y)
+    },
+    [],
+    null,
+    false,
+    500
+  )
+
+  const getItemIds = useCallback(items => {
+    return items.reduce((acc, item) => {
+      if (item.url) {
+        // url has a # as first character, remove it to get the raw CSS-id
+        acc.push(item.url.slice(1))
+      }
+      if (item.items) {
+        acc.push(...getItemIds(item.items))
+      }
+
+      return acc
+    }, [])
+  }, [])
+
+  const itemIds = getItemIds(post.tableOfContents.items)
 
   //   SEO
   const title = `${titleCase(frontmatter.title)}`
   //   max 155 chars
   const description = frontmatter.description || post.excerpt
-  console.log(data)
   return (
     <Layout location={location}>
       <GatsbySeo
@@ -82,7 +107,7 @@ const BlogPostTemplate = ({ data, location }) => {
         authorName={frontmatter.author}
       />
 
-      <section className="relative h-full" ref={ref}>
+      <section className="relative h-full">
         {/* blog post */}
         <article
           itemScope
@@ -177,7 +202,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </section>
         {/* side optin */}
         <animated.aside
-          style={fade}
+          //   style={fade}
           className={"hidden xl:block w-full max-w-7xl mx-auto"}
         >
           <div className="fixed top-48 ml-8">
@@ -202,10 +227,10 @@ const BlogPostTemplate = ({ data, location }) => {
                 {frontmatter.optin.cta || "Join now"}
               </button>
             </div>
-            {post.tableOfContents.items.length > 0 && (
+            {post.tableOfContents.items && (
               <TableOfContents
-                title={post.frontmatter.title}
                 items={post.tableOfContents.items}
+                itemIds={itemIds}
               />
             )}
           </div>
