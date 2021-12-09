@@ -69,12 +69,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : blogPosts[index - 1].node.id
       const nextPostId =
         index === blogPosts.length - 1 ? null : blogPosts[index + 1].node.id
-
+      console.log(post.node.slug)
       createPage({
         path: `blog/${post.node.slug}`,
         component: blogPostTemplate,
         context: {
           id: post.node.id,
+          slug: post.node.slug,
           previousPostId,
           nextPostId,
         },
@@ -137,6 +138,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: BlogFrontmatter
     }
     type BlogFrontmatter {
+      dateModified: String
       author: String!
       featured: Boolean!
       title: String!

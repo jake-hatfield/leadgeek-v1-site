@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   })
 
   return (
-    <div className="relative flex flex-col h-auto justify-between">
+    <div className="relative flex flex-col min-h-screen justify-between">
       <Navbar />
       <main>{children}</main>
       <Footer />

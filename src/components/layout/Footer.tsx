@@ -71,7 +71,7 @@ const categories = [
   {
     header: "Resources",
     items: [
-      //   { title: "Blog", link: "blog" },
+      { title: "Blog", link: "blog" },
       { title: "Changelog", link: "changelog" },
     ],
   },

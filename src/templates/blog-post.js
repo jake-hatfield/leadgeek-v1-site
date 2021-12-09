@@ -48,10 +48,10 @@ const BlogPostTemplate = ({ data, location }) => {
   })
 
   //   SEO
-  const title = `${titleCase(frontmatter.title)} | Leadgeek`
+  const title = `${titleCase(frontmatter.title)}`
   //   max 155 chars
   const description = frontmatter.description || post.excerpt
-
+  console.log(data)
   return (
     <Layout location={location}>
       <GatsbySeo
@@ -165,9 +165,7 @@ const BlogPostTemplate = ({ data, location }) => {
             className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl text-base text-gray-900 leading-relaxed"
           >
             <MDXProvider components={shortcodes}>
-              <MDXRenderer title={frontmatter.title} headings={post.headings}>
-                {post.body}
-              </MDXRenderer>
+              <MDXRenderer title={frontmatter.title}>{post.body}</MDXRenderer>
             </MDXProvider>
           </section>
         </article>
@@ -196,8 +194,10 @@ const BlogPostTemplate = ({ data, location }) => {
                 </p>
               ))}
               <button
-                onClick={() => setShowPopup(!showPopup)}
-                className="w-full mt-2 py-2 px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm hover:bg-purple-600 text-white transition-main ring-purple inter"
+                onClick={() => optin && setShowPopup(!showPopup)}
+                className={`w-full mt-2 py-2 px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm ${
+                  optin ? "cursor-pointer" : "cursor-default"
+                } hover:bg-purple-600 text-white transition-main ring-purple inter`}
               >
                 {frontmatter.optin.cta || "Join now"}
               </button>
@@ -211,7 +211,6 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
         </animated.aside>
       </section>
-
       {showPopup && (
         <Popup
           show={showPopup}
@@ -242,7 +241,7 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!) {
+  query BlogPostBySlug($id: String!, $slug: String!) {
     site {
       siteMetadata {
         siteUrl
@@ -254,9 +253,9 @@ export const pageQuery = graphql`
       }
     }
     mdx(id: { eq: $id }) {
-      id
       frontmatter {
         date(formatString: "LL")
+        dateModified
         author
         title
         heroImage: image {
@@ -279,12 +278,25 @@ export const pageQuery = graphql`
         }
       }
       body
-      headings {
-        depth
-        value
-      }
       slug
       tableOfContents
+    }
+    images: allFile(
+      filter: {
+        relativeDirectory: { regex: $slug }
+        extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+      }
+      sort: { fields: name, order: ASC }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 1600, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
     }
   }
 `

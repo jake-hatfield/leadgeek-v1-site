@@ -27,7 +27,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
 
   const featuredPost = data.mdx
 
-  const title = "Leadgeek Blog"
+  const title = "Blog"
   const description =
     "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
 

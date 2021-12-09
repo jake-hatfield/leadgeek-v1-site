@@ -1,4 +1,9 @@
 module.exports = {
+  flags: {
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    FAST_DEV: true,
+  },
   siteMetadata: {
     siteUrl: `https://leadgeek.io/`,
     title: `Leadgeek`,
