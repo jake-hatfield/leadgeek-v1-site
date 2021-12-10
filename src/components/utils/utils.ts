@@ -300,7 +300,10 @@ export const getWaitlistPlanCount = (
 
 const getWindowDimensions = () => {
   if (typeof window === "undefined") {
-    return
+    return {
+      width: 0,
+      height: 0,
+    }
   }
 
   const { innerWidth: width, innerHeight: height } = window
@@ -316,7 +319,7 @@ export const useWindowDimensions = () => {
   )
 
   if (typeof window === "undefined") {
-    return
+    return windowDimensions
   }
 
   useEffect(() => {
