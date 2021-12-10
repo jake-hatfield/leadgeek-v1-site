@@ -299,7 +299,7 @@ export const getWaitlistPlanCount = (
 }
 
 const getWindowDimensions = () => {
-  if (typeof window === undefined) {
+  if (typeof window === "undefined") {
     return
   }
 
@@ -315,7 +315,7 @@ export const useWindowDimensions = () => {
     getWindowDimensions()
   )
 
-  if (typeof window === undefined) {
+  if (typeof window === "undefined") {
     return
   }
 
