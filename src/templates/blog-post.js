@@ -56,7 +56,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   useEffect(() => {
     setArticleHeight(ref.current.clientHeight)
-  })
+  }, [setArticleHeight])
 
   //   side optin animation
   const fade = useSpring({

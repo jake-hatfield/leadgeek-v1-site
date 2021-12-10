@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 // packages
-import { GatsbySeo, BlogJsonLd } from "gatsby-plugin-next-seo"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 // components
 import Layout from "@components/layout/Layout"

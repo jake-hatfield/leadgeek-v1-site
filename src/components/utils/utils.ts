@@ -299,6 +299,10 @@ export const getWaitlistPlanCount = (
 }
 
 const getWindowDimensions = () => {
+  if (typeof window === undefined) {
+    return
+  }
+
   const { innerWidth: width, innerHeight: height } = window
   return {
     width,
@@ -310,6 +314,10 @@ export const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   )
+
+  if (typeof window === undefined) {
+    return
+  }
 
   useEffect(() => {
     function handleResize() {
