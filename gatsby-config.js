@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-plugin-typescript-checker`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-tsconfig-paths`,
+    `gatsby-plugin-remove-fingerprints`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {

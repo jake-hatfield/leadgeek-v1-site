@@ -52,12 +52,12 @@ const BlogPostTemplate = ({ data, location }) => {
   const [articleHeight, setArticleHeight] = useState(0)
   const ref = useRef(null)
   const isBrowser = () => typeof window !== "undefined"
-  let height
+  let windowHeight
   if (isBrowser()) {
     const { height } = useWindowDimensions()
-    let height = height
+    let windowHeight = height
   } else {
-    height = 0
+    windowHeight = 0
   }
   useEffect(() => {
     isBrowser() && setArticleHeight(ref.current.clientHeight)
@@ -70,7 +70,7 @@ const BlogPostTemplate = ({ data, location }) => {
   })
   useScrollPosition(
     ({ currPos }) => {
-      const show = currPos.y < -height && -currPos.y < articleHeight
+      const show = currPos.y < -windowHeight && -currPos.y < articleHeight
       if (show !== hideOnScroll) setHideOnScroll(show)
     },
     [hideOnScroll],
