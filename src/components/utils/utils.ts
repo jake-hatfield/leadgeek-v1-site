@@ -1,4 +1,4 @@
-import React, { useEffect, RefObject } from "react"
+import React, { useState, useEffect, RefObject } from "react"
 
 import axios from "axios"
 
@@ -296,4 +296,29 @@ export const getWaitlistPlanCount = (
         plans: i.plans.filter(plan => plan.type === type),
       })
     }).length
+}
+
+const getWindowDimensions = () => {
+  const { innerWidth: width, innerHeight: height } = window
+  return {
+    width,
+    height,
+  }
+}
+
+export const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  )
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions())
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  return windowDimensions
 }

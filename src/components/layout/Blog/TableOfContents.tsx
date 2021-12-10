@@ -18,7 +18,7 @@ const TableOfContents: React.FC<{
                 activeId === item.url.slice(1)
                   ? "text-purple-500 underline"
                   : "text-gray-900"
-              } hover:text-purple-500 hover:underline`}
+              } hover:text-purple-500 hover:underline text-sm`}
             >
               {item.title}
             </AnchorLink>
@@ -66,7 +66,7 @@ const TableOfContents: React.FC<{
       id="table-of-contents"
       className="w-64 relative z-40 lg:py-6 px-6 bg-white rounded-lg shadow-graySm"
     >
-      <h4 className="mb-2 text-gray-900 font-bold inter">Table of contents</h4>
+      <h4 className="mb-1 text-gray-900 font-bold inter">Table of contents</h4>
       {renderItems(items, activeId)}
     </div>
   )

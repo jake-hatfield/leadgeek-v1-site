@@ -1,5 +1,5 @@
 // import React, { useState } from "react"
-import React, { useState, useCallback } from "react"
+import React, { useState, useEffect, useRef, useCallback } from "react"
 import { Link, graphql } from "gatsby"
 
 // packages
@@ -8,6 +8,7 @@ import { GatsbySeo, BlogPostJsonLd } from "gatsby-plugin-next-seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 import { useSpring, animated, config } from "react-spring"
+import _ from "lodash"
 import { MDXProvider } from "@mdx-js/react"
 
 // components
@@ -18,7 +19,7 @@ import Popup from "@components/utils/Popup"
 import SocialShare from "@components/layout/Blog/SocialShare"
 import TableOfContents from "@components/layout/Blog/TableOfContents"
 
-import { titleCase } from "@components/utils/utils"
+import { titleCase, useWindowDimensions } from "@components/utils/utils"
 
 const BlogPostTemplate = ({ data, location }) => {
   //   local state
@@ -48,6 +49,15 @@ const BlogPostTemplate = ({ data, location }) => {
 
   const imageSrcs = getImageSrcs(getImageData(images))
 
+  const { height } = useWindowDimensions()
+
+  const [articleHeight, setArticleHeight] = useState(0)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    setArticleHeight(ref.current.clientHeight)
+  })
+
   //   side optin animation
   const fade = useSpring({
     opacity: hideOnScroll ? 1 : 0,
@@ -55,7 +65,7 @@ const BlogPostTemplate = ({ data, location }) => {
   })
   useScrollPosition(
     ({ currPos }) => {
-      const show = currPos.y < -1000
+      const show = currPos.y < -height && -currPos.y < articleHeight
       if (show !== hideOnScroll) setHideOnScroll(show)
     },
     [hideOnScroll],
@@ -108,7 +118,6 @@ const BlogPostTemplate = ({ data, location }) => {
       <BlogPostJsonLd
         url={`https://leadgeek.io/blog/${post.slug}`}
         headline={title}
-        body={post.body}
         description={description}
         datePublished={frontmatter.date}
         dateModified={frontmatter.dateModified}
@@ -125,7 +134,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <div className="max-w-4xl mx-auto px-8 transform -rotate-2">
             <Link
               to={"/blog/"}
-              className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 hover:bg-purple-500 hover:text-white"
+              className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 hover:bg-purple-500 hover:text-white transition-main"
             >
               <div className="flex items-center">
                 <svg
@@ -192,7 +201,7 @@ const BlogPostTemplate = ({ data, location }) => {
             </div>
           </div>
         </div>
-        <div className="relative h-full min-h-screen">
+        <div ref={ref} className="relative h-full min-h-screen">
           <section
             id="blog-body"
             className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl text-base text-gray-900 leading-relaxed"
@@ -206,8 +215,8 @@ const BlogPostTemplate = ({ data, location }) => {
             style={fade}
             className={"hidden xl:block w-full max-w-7xl mx-auto"}
           >
-            <div className="fixed top-48 ml-8">
-              <div className="xl:w-64 mb-16 py-6 px-6 bg-white rounded-lg shadow-graySm">
+            <div className="fixed top-32 ml-8">
+              <div className="xl:w-64 mb-8 py-6 px-6 bg-white rounded-lg shadow-graySm">
                 <h4 className="text-gray-900 font-bold inter">
                   {frontmatter.optin.title}
                 </h4>
@@ -238,12 +247,25 @@ const BlogPostTemplate = ({ data, location }) => {
           </animated.aside>
         </div>
       </article>
-
-      {/* ADD TAGS HERE */}
-
+      {/* tags */}
+      <section id="tags" className="container md:max-w-xl lg:max-w-2xl pb-16">
+        <ul className="flex items-centerflex-wrap">
+          {frontmatter.tags.map((tag, i) => (
+            <li key={i} className="first:ml-0 ml-4">
+              <Link
+                to={`/blog/tags/${_.kebabCase(tag)}/`}
+                className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-xl handwritten tracking-wider text-teal-300 hover:bg-purple-500 hover:text-white transition-main"
+              >
+                {tag}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      {/* comments */}
       <section
         id="comments"
-        className="my-8 container md:max-w-xl lg:max-w-2xl relative z-20"
+        className="pb-16 container md:max-w-xl lg:max-w-2xl relative z-20"
       >
         <Comments id={post.frontmatter.postID} />
       </section>
@@ -312,6 +334,8 @@ export const pageQuery = graphql`
           cta
           tag
         }
+        category
+        tags
       }
       id
       body

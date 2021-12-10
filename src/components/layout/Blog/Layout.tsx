@@ -9,7 +9,7 @@ import { truncate } from "@components/utils/utils"
 
 interface BlogPostsLayoutProps {
   title: string
-  pagination: {
+  pagination?: {
     currentPage: number
     numPages: number
     isFirst: boolean
@@ -18,37 +18,37 @@ interface BlogPostsLayoutProps {
     nextPage: number
   }
   posts: any[]
-  featuredPost: any
+  featuredPost?: any
 }
 
 const BlogPostsLayout: React.FC<BlogPostsLayoutProps> = ({
   title,
-  pagination: { currentPage, numPages, isFirst, isLast, prevPage, nextPage },
+  pagination,
   posts,
   featuredPost,
 }) => {
   return (
     <section className="min-h-screen py-12 lg:py-20 relative text-gray-900 bg-splatter">
       <div className="container">
-        <header className="relative mx-auto md:mx-0 max-w-md">
+        <header className="relative mx-auto md:mx-0">
           <h1 className="text-4xl md:text-6xl font-black text-gray-900 inter bg-white">
             {title}
           </h1>
         </header>
         <section className="mt-16">
-          {currentPage === 1 && featuredPost && (
+          {pagination && pagination.currentPage === 1 && featuredPost && (
             <FeaturedBlogPost node={featuredPost} />
           )}
           <BlogPostsGrid posts={posts} />
         </section>
-        {numPages >= 2 && (
+        {pagination && pagination.numPages >= 2 && (
           <ul className="mt-8 all-center">
-            {!isFirst && (
-              <Link to={prevPage.toString()} rel="prev">
+            {!pagination.isFirst && (
+              <Link to={pagination.prevPage.toString()} rel="prev">
                 ← Previous Page
               </Link>
             )}
-            {Array.from({ length: numPages }, (_, i) => (
+            {Array.from({ length: pagination.numPages }, (_, i) => (
               <li
                 key={`pagination-number${i + 1}`}
                 style={{
@@ -58,7 +58,7 @@ const BlogPostsLayout: React.FC<BlogPostsLayoutProps> = ({
                 <Link
                   to={`/blog/${i === 0 ? "" : `page/${i + 1}/`}`}
                   className={`${
-                    i + 1 === currentPage
+                    i + 1 === pagination.currentPage
                       ? "text-pink-600"
                       : "text-gray-600 hover:text-gray-700"
                   } ml-0.5 lg:ml-1 py-2 px-3 rounded-lg bg-white shadow-sm text-xs lg:text-lg font-semibold border-main transition-main ring-purple`}
@@ -67,8 +67,8 @@ const BlogPostsLayout: React.FC<BlogPostsLayoutProps> = ({
                 </Link>
               </li>
             ))}
-            {!isLast && (
-              <Link to={nextPage.toString()} rel="next">
+            {!pagination.isLast && (
+              <Link to={pagination.nextPage.toString()} rel="next">
                 Next Page →
               </Link>
             )}

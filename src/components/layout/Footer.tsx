@@ -91,8 +91,8 @@ const footerLinks = [
     link: "sitemap.xml",
   },
   //   {
-  //     title: "RSS",
-  //     link: "rss.xml",
+  // title: "RSS",
+  // link: "rss.xml",
   //   },
 ]
 

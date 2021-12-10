@@ -22,6 +22,7 @@
     "autoprefixer": "^10.4.0",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3",
     "exit-intent": "^1.1.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-canonical-urls": "^4.3.0",
@@ -88,7 +89,7 @@
   },
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "start": "netlify dev",
     "serve": "gatsby serve",

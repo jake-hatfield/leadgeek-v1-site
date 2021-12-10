@@ -148,6 +148,7 @@ export const blogPostsQuery = graphql`
             gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
           }
         }
+        category
       }
       excerpt(pruneLength: 150, truncate: true)
       slug

@@ -107,7 +107,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (blogTags.length > 0) {
     blogTags.forEach(tag => {
       createPage({
-        path: `blog/tagged/${_.kebabCase(tag.fieldValue)}/`,
+        path: `blog/tags/${_.kebabCase(tag.fieldValue)}/`,
         component: tagsTemplate,
         context: {
           tag: tag.fieldValue,

@@ -11,26 +11,11 @@ import BlogPostsLayout from "@components/layout/Blog/Layout"
 // assets
 import OgImage from "@assets/images/og/og-blog.jpg"
 
-const BlogPostsTemplate = ({ data, location, pageContext }) => {
-  // destructure necessary items
-  const { currentPage, numPages } = pageContext
-
+const BlogTagsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMdx.edges
-  const featuredPost = data.mdx
-  const pagination = {
-    currentPage,
-    numPages,
-    isFirst: currentPage === 1,
-    isLast: currentPage === numPages,
-    prevPage:
-      currentPage - 1 === 1
-        ? "/blog/"
-        : `/page/${(currentPage - 1).toString()}`,
-    nextPage: (currentPage + 1).toString(),
-  }
 
   //   SEO
-  const title = "Blog"
+  const title = `#${pageContext.tag.toLowerCase()} Posts`
   const description =
     "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
 
@@ -42,7 +27,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
         openGraph={{
           title,
           description,
-          url: "https://leadgeek.io/blog/",
+          url: `https://leadgeek.io/tags/${pageContext.tag}`,
           type: "website",
           images: [
             {
@@ -54,67 +39,21 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
           ],
         }}
         language="en"
+        noindex={true}
       />
-      <BlogJsonLd
-        url={"https://leadgeek.io/blog/"}
-        headline={"Blog"}
-        description={
-          "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
-        }
-        images="https://example.com/photos/1x1/photo.jpg"
-        posts={[
-          {
-            headline: "Post 1",
-            image: "https://example.com/photos/1x1/photo.jpg",
-          },
-          { headline: "Post 2" },
-        ]}
-        datePublished={"2021-12-08T08:00:00+08:00"}
-        authorName="Jake Hatfield"
-      />
-      {/* notification banner */}
-      {/* <aside className="hidden lg:block bg-gray-900 text-teal-300 inter">
-        <div className="py-3 container flex items-center">
-          <p className="font-semibold">
-            <span
-              role="img"
-              aria-label="Loudspeaker emoji"
-              className="font-normal"
-            >
-              📢
-            </span>{" "}
-            Stuck with too many product restrictions? Try this 100% free
-          </p>
-          <div className="ml-1 flex items-center hover:text-pink-600 group transition-colors duration-200">
-            <button
-              //   to={"#leads"}
-              className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
-            >
-              auto-ungate ASIN list
-            </button>
-          </div>
-        </div>
-      </aside> */}
       <BlogPostsLayout
-        title={title}
+        title={`#${pageContext.tag.toLowerCase()} posts`}
         posts={posts}
-        featuredPost={featuredPost}
-        pagination={pagination}
       />
     </Layout>
   )
 }
 
-export const blogPostsQuery = graphql`
-  query blogTagsQuery($skip: Int!, $limit: Int!) {
+export const blogTagsQuery = graphql`
+  query blogTagsQuery {
     allMdx(
-      sort: { fields: [frontmatter___title], order: DESC }
-      filter: {
-        fileAbsolutePath: { regex: "/blog/" }
-        frontmatter: { featured: { eq: false } }
-      }
-      limit: $limit
-      skip: $skip
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
     ) {
       edges {
         node {
@@ -127,6 +66,7 @@ export const blogPostsQuery = graphql`
                 gatsbyImageData(layout: FULL_WIDTH)
               }
             }
+            category
           }
           excerpt(pruneLength: 120, truncate: true)
           slug
@@ -134,26 +74,7 @@ export const blogPostsQuery = graphql`
         }
       }
     }
-    mdx(
-      fileAbsolutePath: { regex: "/blog/" }
-      frontmatter: { featured: { eq: true } }
-    ) {
-      frontmatter {
-        date(formatString: "LL")
-        title
-        descriptionShort
-        featured
-        image {
-          childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
-          }
-        }
-      }
-      excerpt(pruneLength: 150, truncate: true)
-      slug
-      timeToRead
-    }
   }
 `
 
-export default BlogPostsTemplate
+export default BlogTagsTemplate

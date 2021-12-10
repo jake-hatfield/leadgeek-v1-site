@@ -170,7 +170,7 @@ module.exports = {
           `/contact-success`,
           `/affiliates/confirmation`,
           `/404`,
-          `/blog/tag/*`,
+          `/blog/tags/*`,
           `/blog/category/*`,
         ],
       },
