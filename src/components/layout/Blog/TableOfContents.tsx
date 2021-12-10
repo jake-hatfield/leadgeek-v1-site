@@ -62,13 +62,13 @@ const TableOfContents: React.FC<{
 
   const activeId = useActiveId(itemIds)
   return (
-    <aside
+    <div
       id="table-of-contents"
       className="w-64 relative z-40 lg:py-6 px-6 bg-white rounded-lg shadow-graySm"
     >
       <h4 className="mb-2 text-gray-900 font-bold inter">Table of contents</h4>
       {renderItems(items, activeId)}
-    </aside>
+    </div>
   )
 }
 

@@ -1,9 +1,9 @@
 // import React, { useState } from "react"
-import React, { useState, useLayoutEffect, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 import { Link, graphql } from "gatsby"
 
 // packages
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 import { GatsbySeo, BlogPostJsonLd } from "gatsby-plugin-next-seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { useScrollPosition } from "@n8tb1t/use-scroll-position"
@@ -21,37 +21,44 @@ import TableOfContents from "@components/layout/Blog/TableOfContents"
 import { titleCase } from "@components/utils/utils"
 
 const BlogPostTemplate = ({ data, location }) => {
+  //   local state
+  const [showPopup, setShowPopup] = useState(false)
+  const [hideOnScroll, setHideOnScroll] = useState(false)
+
   const post = data.mdx
   const frontmatter = data.mdx.frontmatter
   const shortcodes = { Chapter, TableOfContents }
+  const images = [data.imagesSm.edges, data.imagesMd.edges, data.imagesLg.edges]
 
-  //   local state
-  const [showPopup, setShowPopup] = useState(false)
+  const getImageData = images => {
+    let arr = []
+    images.forEach(imageArr =>
+      imageArr.forEach(image => arr.push(getImage(image.node)))
+    )
+    return arr
+  }
 
-  //   side optin visibility logic
-  let optin = false
-  //   const [ref, percentage] = useScrollPercentage({
-  //     threshold: 0,
-  //   })
-  //   if (percentage < 0.15) {
-  //     optin = false
-  //   } else if ((percentage > 0.150001) & (percentage < 0.9)) {
-  //     optin = true
-  //   } else {
-  //     optin = false
-  //   }
+  const getImageSrcs = imageData => {
+    let arr = []
+    imageData.forEach(image =>
+      arr.push(data.site.siteMetadata.siteUrl + getSrc(image))
+    )
+    return arr
+  }
 
-  //   //   side optin animation
-  //   const fade = useSpring({
-  //     opacity: optin ? 1 : 0,
-  //     config: config.gentle,
-  //   })
+  const imageSrcs = getImageSrcs(getImageData(images))
+
+  //   side optin animation
+  const fade = useSpring({
+    opacity: hideOnScroll ? 1 : 0,
+    config: config.gentle,
+  })
   useScrollPosition(
-    ({ prevPos, currPos }) => {
-      console.log(currPos.x)
-      console.log(currPos.y)
+    ({ currPos }) => {
+      const show = currPos.y < -1000
+      if (show !== hideOnScroll) setHideOnScroll(show)
     },
-    [],
+    [hideOnScroll],
     null,
     false,
     500
@@ -89,7 +96,7 @@ const BlogPostTemplate = ({ data, location }) => {
           type: "article",
           images: [
             {
-              url: getImage(frontmatter.ogImage),
+              url: getSrc(frontmatter.ogImage),
               width: 1200,
               height: 630,
               alt: frontmatter.title,
@@ -101,90 +108,91 @@ const BlogPostTemplate = ({ data, location }) => {
       <BlogPostJsonLd
         url={`https://leadgeek.io/blog/${post.slug}`}
         headline={title}
+        body={post.body}
         description={description}
         datePublished={frontmatter.date}
         dateModified={frontmatter.dateModified}
         authorName={frontmatter.author}
+        images={imageSrcs}
       />
-
-      <section className="relative h-full">
-        {/* blog post */}
-        <article
-          itemScope
-          itemType="http://schema.org/Article"
-          className="relative pb-16"
-        >
-          <div className="py-8 lg:py-16 bg-splatter border-b border-gray-900">
-            <div className="max-w-4xl mx-auto px-8 transform -rotate-2">
-              <Link
-                to={"/blog/"}
-                className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 hover:bg-purple-500 hover:text-white"
-              >
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-xl handwritten tracking-wider">
-                    See all posts
-                  </span>
-                </div>
-              </Link>
-              <GatsbyImage
-                image={getImage(frontmatter.heroImage)}
-                alt={frontmatter.title}
-                className="mt-4 blog-hero-image mx-auto rounded-lg shadow-pinkMd"
+      {/* blog post */}
+      <article
+        itemScope
+        itemType="http://schema.org/Article"
+        className="relative pb-16"
+      >
+        <div className="py-8 lg:py-16 bg-splatter border-b border-gray-900">
+          <div className="max-w-4xl mx-auto px-8 transform -rotate-2">
+            <Link
+              to={"/blog/"}
+              className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-teal-300 hover:bg-purple-500 hover:text-white"
+            >
+              <div className="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="text-xl handwritten tracking-wider">
+                  See all posts
+                </span>
+              </div>
+            </Link>
+            <GatsbyImage
+              image={getImage(frontmatter.heroImage)}
+              alt={frontmatter.title}
+              className="mt-4 blog-hero-image mx-auto rounded-lg shadow-pinkMd"
+            />
+          </div>
+          <header className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl">
+            <h1 className="inline-block bg-white text-2xl md:text-4xl font-black text-gray-900 inter">
+              {frontmatter.title}
+            </h1>
+            <h2 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900">
+              {frontmatter.description}
+            </h2>
+          </header>
+          <div className="mt-8 container md:max-w-xl lg:max-w-2xl lg:flex lg:flex-wrap lg:justify-between lg:items-end text-sm md:text-base text-gray-800">
+            <div className="flex items-center">
+              <StaticImage
+                src={"../assets/images/profile-picture.png"}
+                placeholder="traced_SVG"
+                layout="fixed"
+                width={50}
+                height={50}
+                alt={frontmatter.author}
+                className="rounded-full shadow-graySm bg-gray-900"
+              />
+              <div className="ml-4 bg-white">
+                <address
+                  className="font-semibold inter text-gray-900"
+                  rel="author"
+                >
+                  {frontmatter.author}
+                </address>
+                <time pubdate={frontmatter.date}>
+                  Last updated: {frontmatter.date}
+                </time>
+              </div>
+            </div>
+            <div className="mt-6 lg:mt-0">
+              <SocialShare
+                url={`${data.site.siteMetadata.siteUrl}/blog/${post.slug}`}
+                title={frontmatter.title}
+                tags={frontmatter.tags}
+                siteUrl={data.site.siteMetadata.siteUrl}
               />
             </div>
-            <header className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl">
-              <h1 className="inline-block bg-white text-2xl md:text-4xl font-black text-gray-900 inter">
-                {frontmatter.title}
-              </h1>
-              <h2 className="mt-4 lg:mt-6 mx-auto h4 bg-white text-gray-900">
-                {frontmatter.description}
-              </h2>
-            </header>
-            <div className="mt-8 container md:max-w-xl lg:max-w-2xl lg:flex lg:flex-wrap lg:justify-between lg:items-end text-sm md:text-base text-gray-800">
-              <div className="flex items-center">
-                <StaticImage
-                  src={"../assets/images/profile-picture.png"}
-                  placeholder="traced_SVG"
-                  layout="fixed"
-                  width={50}
-                  height={50}
-                  alt={frontmatter.author}
-                  className="rounded-full shadow-graySm bg-gray-900"
-                />
-                <div className="ml-4 bg-white">
-                  <address
-                    className="font-semibold inter text-gray-900"
-                    rel="author"
-                  >
-                    {frontmatter.author}
-                  </address>
-                  <time pubdate={frontmatter.date}>
-                    Last updated: {frontmatter.date}
-                  </time>
-                </div>
-              </div>
-              <div className="mt-6 lg:mt-0">
-                <SocialShare
-                  url={`${data.site.siteMetadata.siteUrl}/blog/${post.slug}`}
-                  title={frontmatter.title}
-                  tags={frontmatter.tags}
-                  siteUrl={data.site.siteMetadata.siteUrl}
-                />
-              </div>
-            </div>
           </div>
+        </div>
+        <div className="relative h-full min-h-screen">
           <section
             id="blog-body"
             className="mt-12 lg:mt-16 container md:max-w-xl lg:max-w-2xl text-base text-gray-900 leading-relaxed"
@@ -192,49 +200,52 @@ const BlogPostTemplate = ({ data, location }) => {
             <MDXProvider components={shortcodes}>
               <MDXRenderer title={frontmatter.title}>{post.body}</MDXRenderer>
             </MDXProvider>
-          </section>
-        </article>
-        <section
-          id="comments"
-          className="my-8 container md:max-w-xl lg:max-w-2xl relative z-20"
-        >
-          <Comments id={post.frontmatter.postID} />
-        </section>
-        {/* side optin */}
-        <animated.aside
-          //   style={fade}
-          className={"hidden xl:block w-full max-w-7xl mx-auto"}
-        >
-          <div className="fixed top-48 ml-8">
-            <div className="xl:w-64 mb-16 py-6 px-6 bg-white rounded-lg shadow-graySm">
-              <h4 className="text-gray-900 font-bold inter">
-                {frontmatter.optin.title}
-              </h4>
-              {frontmatter.optin.description.map((item, i) => (
-                <p
-                  key={i}
-                  className="mt-2 text-sm text-gray-600 leading-relaxed"
+          </section>{" "}
+          {/* side optin */}
+          <animated.aside
+            style={fade}
+            className={"hidden xl:block w-full max-w-7xl mx-auto"}
+          >
+            <div className="fixed top-48 ml-8">
+              <div className="xl:w-64 mb-16 py-6 px-6 bg-white rounded-lg shadow-graySm">
+                <h4 className="text-gray-900 font-bold inter">
+                  {frontmatter.optin.title}
+                </h4>
+                {frontmatter.optin.description.map((item, i) => (
+                  <p
+                    key={i}
+                    className="mt-2 text-sm text-gray-600 leading-relaxed"
+                  >
+                    {item}
+                  </p>
+                ))}
+                <button
+                  onClick={() => hideOnScroll && setShowPopup(!showPopup)}
+                  className={`w-full mt-2 py-2 px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm ${
+                    hideOnScroll ? "cursor-pointer" : "cursor-default"
+                  } hover:bg-purple-600 text-white transition-main ring-purple inter`}
                 >
-                  {item}
-                </p>
-              ))}
-              <button
-                onClick={() => optin && setShowPopup(!showPopup)}
-                className={`w-full mt-2 py-2 px-4 rounded-lg shadow-md hover:shadow-lg border border-purple-500 hover:border-purple-600 bg-purple-500 font-semibold text-sm ${
-                  optin ? "cursor-pointer" : "cursor-default"
-                } hover:bg-purple-600 text-white transition-main ring-purple inter`}
-              >
-                {frontmatter.optin.cta || "Join now"}
-              </button>
+                  {frontmatter.optin.cta || "Join now"}
+                </button>
+              </div>
+              {post.tableOfContents.items && (
+                <TableOfContents
+                  items={post.tableOfContents.items}
+                  itemIds={itemIds}
+                />
+              )}
             </div>
-            {post.tableOfContents.items && (
-              <TableOfContents
-                items={post.tableOfContents.items}
-                itemIds={itemIds}
-              />
-            )}
-          </div>
-        </animated.aside>
+          </animated.aside>
+        </div>
+      </article>
+
+      {/* ADD TAGS HERE */}
+
+      <section
+        id="comments"
+        className="my-8 container md:max-w-xl lg:max-w-2xl relative z-20"
+      >
+        <Comments id={post.frontmatter.postID} />
       </section>
       {showPopup && (
         <Popup
@@ -302,23 +313,52 @@ export const pageQuery = graphql`
           tag
         }
       }
+      id
       body
       slug
       tableOfContents
     }
-    images: allFile(
+    imagesSm: allFile(
       filter: {
-        relativeDirectory: { regex: $slug }
+        relativeDirectory: { eq: $slug }
         extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
       }
-      sort: { fields: name, order: ASC }
     ) {
       edges {
         node {
+          id
           childImageSharp {
-            fluid(maxWidth: 1600, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(aspectRatio: 1, width: 2560, formats: PNG)
+          }
+        }
+      }
+    }
+    imagesMd: allFile(
+      filter: {
+        relativeDirectory: { eq: $slug }
+        extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            gatsbyImageData(aspectRatio: 1.33, width: 2560, formats: PNG)
+          }
+        }
+      }
+    }
+    imagesLg: allFile(
+      filter: {
+        relativeDirectory: { eq: $slug }
+        extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            gatsbyImageData(aspectRatio: 1.77, width: 2560, formats: PNG)
           }
         }
       }

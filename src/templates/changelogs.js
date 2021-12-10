@@ -23,9 +23,11 @@ const ChangelogsTemplate = ({ data, location, pageContext }) => {
     currentPage - 1 === 1 ? "/blog/" : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
 
+  //   SEO
   const title = "Changelog"
   const description =
     "Track new features, updates, and improvements to the Leadgeek software suite. The team is constantly making improvements, and if you have any ideas on a feature, chime in!"
+
   return (
     <Layout location={location}>
       <GatsbySeo

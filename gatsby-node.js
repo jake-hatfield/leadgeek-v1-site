@@ -1,4 +1,5 @@
 const path = require(`path`)
+const _ = require("lodash")
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -8,6 +9,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
   const blogPostsTemplate = path.resolve(`./src/templates/blog-posts.js`)
   const changelogsTemplate = path.resolve(`./src/templates/changelogs.js`)
+  const tagsTemplate = path.resolve(`./src/templates/blog-tags.js`)
+  const categoriesTemplate = path.resolve(`./src/templates/blog-categories.js`)
 
   // Get all markdown blog posts sorted by date
   const blogQuery = await graphql(`
@@ -21,7 +24,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             slug
+            frontmatter {
+              tags
+            }
           }
+        }
+      }
+      tagGroup: allMdx(limit: 1000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+      categoryGroup: allMdx(limit: 1000) {
+        group(field: frontmatter___category) {
+          fieldValue
         }
       }
     }
@@ -61,7 +77,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const blogPosts = blogQuery.data.allMdx.edges
+  const blogTags = blogQuery.data.tagGroup.group
+  const blogCategories = blogQuery.data.categoryGroup.group
   const changelogs = changelogQuery.data.allMdx.edges
+
+  const removeSlashes = string => {
+    return string.replace(/\\|\//g, "")
+  }
 
   // Create blog posts pages only if there's at least one markdown file found at "src/blog"
   if (blogPosts.length > 0) {
@@ -69,15 +91,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : blogPosts[index - 1].node.id
       const nextPostId =
         index === blogPosts.length - 1 ? null : blogPosts[index + 1].node.id
-      console.log(post.node.slug)
       createPage({
         path: `blog/${post.node.slug}`,
         component: blogPostTemplate,
         context: {
           id: post.node.id,
-          slug: post.node.slug,
+          slug: removeSlashes(post.node.slug),
           previousPostId,
           nextPostId,
+        },
+      })
+    })
+  }
+
+  if (blogTags.length > 0) {
+    blogTags.forEach(tag => {
+      createPage({
+        path: `blog/tagged/${_.kebabCase(tag.fieldValue)}/`,
+        component: tagsTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
+      })
+    })
+  }
+
+  if (blogCategories.length > 0) {
+    blogCategories.forEach(category => {
+      createPage({
+        path: `blog/category/${_.kebabCase(category.fieldValue)}/`,
+        component: categoriesTemplate,
+        context: {
+          category: category.fieldValue,
         },
       })
     })
@@ -89,7 +134,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const numBlogPages = Math.ceil(blogPosts.length / itemsPerPage)
   Array.from({ length: numBlogPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `blog/` : `blog/${i + 1}/`,
+      path: i === 0 ? `blog/` : `blog/page/${i + 1}/`,
       component: blogPostsTemplate,
       context: {
         limit: itemsPerPage,
@@ -144,6 +189,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String!
       descriptionShort: String!
       descriptionLong: String!
+      category: String!
       tags: [String!]!
       optin: Optin!
     }

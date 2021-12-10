@@ -1,8 +1,7 @@
 module.exports = {
   flags: {
-    QUERY_ON_DEMAND: true,
-    LAZY_IMAGES: true,
     FAST_DEV: true,
+    PARALLEL_SOURCING: true,
   },
   siteMetadata: {
     siteUrl: `https://leadgeek.io/`,
@@ -171,6 +170,8 @@ module.exports = {
           `/contact-success`,
           `/affiliates/confirmation`,
           `/404`,
+          `/blog/tag/*`,
+          `/blog/category/*`,
         ],
       },
     },

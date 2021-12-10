@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { animated, useSpring } from "react-spring"
+// import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 // assets
 import LogoSvg from "@assets/svgs/logo.svg"
@@ -12,12 +13,25 @@ import LogoPng from "@assets/images/logo.png"
 
 const Navbar: React.FC = () => {
   // localState
+  //   const [hideOnScroll, setHideOnScroll] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const mobileMenuAnimation = useSpring({
     opacity: mobileMenuOpen ? 1 : 0,
     display: mobileMenuOpen ? "block" : "none",
   })
+
+  //   useScrollPosition(
+  //     ({ prevPos, currPos }) => {
+  //       const show = currPos.y < prevPos.y
+  //       if (show !== hideOnScroll) setHideOnScroll(show)
+  //       console.log(show)
+  //     },
+  //     [hideOnScroll],
+  //     undefined,
+  //     false,
+  //     150
+  //   )
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
@@ -39,6 +53,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </aside> */}
+
         <div className="bg-white shadow-sm border-b border-gray-900">
           <div className="w-full py-4 container center-between">
             {/* logo */}
@@ -106,6 +121,7 @@ const Navbar: React.FC = () => {
             </nav>
           </div>
         </div>
+
         {/* mobile menu */}
         <animated.nav
           style={mobileMenuAnimation}

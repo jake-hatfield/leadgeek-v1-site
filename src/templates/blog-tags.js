@@ -15,7 +15,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
   // destructure necessary items
   const { currentPage, numPages } = pageContext
 
-  const pagePosts = data.pagePosts.edges
+  const posts = data.allMdx.edges
   const featuredPost = data.mdx
   const pagination = {
     currentPage,
@@ -34,8 +34,6 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
   const description =
     "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
 
-  const image = `${data.site.siteMetadata.siteUrl}${OgImage}`
-
   return (
     <Layout location={location}>
       <GatsbySeo
@@ -48,7 +46,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
           type: "website",
           images: [
             {
-              url: image,
+              url: OgImage,
               width: 1200,
               height: 630,
               alt: "Learn from the Leadgeek blog.",
@@ -63,7 +61,14 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
         description={
           "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
         }
-        images={image}
+        images="https://example.com/photos/1x1/photo.jpg"
+        posts={[
+          {
+            headline: "Post 1",
+            image: "https://example.com/photos/1x1/photo.jpg",
+          },
+          { headline: "Post 2" },
+        ]}
         datePublished={"2021-12-08T08:00:00+08:00"}
         authorName="Jake Hatfield"
       />
@@ -92,7 +97,7 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
       </aside> */}
       <BlogPostsLayout
         title={title}
-        posts={pagePosts}
+        posts={posts}
         featuredPost={featuredPost}
         pagination={pagination}
       />
@@ -101,13 +106,8 @@ const BlogPostsTemplate = ({ data, location, pageContext }) => {
 }
 
 export const blogPostsQuery = graphql`
-  query blogPostsQuery($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-    pagePosts: allMdx(
+  query blogTagsQuery($skip: Int!, $limit: Int!) {
+    allMdx(
       sort: { fields: [frontmatter___title], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/blog/" }
