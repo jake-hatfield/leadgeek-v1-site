@@ -49,14 +49,19 @@ const BlogPostTemplate = ({ data, location }) => {
 
   const imageSrcs = getImageSrcs(getImageData(images))
 
-  const { height } = useWindowDimensions()
-
   const [articleHeight, setArticleHeight] = useState(0)
   const ref = useRef(null)
-
+  const isBrowser = () => typeof window !== "undefined"
+  let height
+  if (isBrowser()) {
+    const { height } = useWindowDimensions()
+    let height = height
+  } else {
+    height = 0
+  }
   useEffect(() => {
-    setArticleHeight(ref.current.clientHeight)
-  }, [setArticleHeight])
+    isBrowser() && setArticleHeight(ref.current.clientHeight)
+  }, [isBrowser, setArticleHeight])
 
   //   side optin animation
   const fade = useSpring({
