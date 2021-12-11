@@ -24,7 +24,7 @@ const Navbar: React.FC<{ location: Location }> = ({ location }) => {
             </p>
             <div className="ml-2 flex items-center hover:text-pink-600 group transition-colors duration-200">
               <AnchorLink
-                to={"#leads"}
+                to={location ? `${location.pathname}#leads` : ""}
                 title="See the latest arbitrage leads"
                 className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
                 gatsbyLinkProps={{ id: "cta" }}
@@ -46,7 +46,7 @@ const Navbar: React.FC<{ location: Location }> = ({ location }) => {
             {/* md:+ nav */}
             <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
-                to={`${location.pathname}#leads`}
+                to={location ? `${location.pathname}#leads` : ""}
                 title="See the latest arbitrage leads"
                 className="no-m-first cta-link inter"
                 gatsbyLinkProps={{ id: "cta" }}

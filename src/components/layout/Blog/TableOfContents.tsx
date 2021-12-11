@@ -16,7 +16,11 @@ const TableOfContents: React.FC<{
           return (
             <li key={item.url}>
               <AnchorLink
-                to={`${location.pathname.replace(/\/$/, "")}${item.url}`}
+                to={
+                  location
+                    ? `${location.pathname.replace(/\/$/, "")}${item.url}`
+                    : ""
+                }
                 className={`${
                   activeId === item.url.slice(1)
                     ? "text-purple-500 underline"
