@@ -16,7 +16,7 @@ const BlogTagsTemplate = ({ data, location, pageContext }) => {
   const posts = data.allMdx.edges
 
   //   SEO
-  const title = `#${pageContext.tag.toLowerCase()} Posts`
+  const title = `#${_.kebabCase(pageContext.tag)} Posts`
   const description =
     "The Leadgeek blog is a resource for online arbitrage and Amazon FBA selling tips."
 

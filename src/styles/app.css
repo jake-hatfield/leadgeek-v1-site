@@ -554,16 +554,20 @@ h6 {
 #commento.commento-root .commento-submit-button {
   background: #243b53 !important;
 }
+
 #commento.commento-root .commento-login-box {
   border-radius: 0.75rem;
   background: #8eedc7;
 }
+
 #commento.commento-root .commento-input {
   border-radius: 0.75rem;
 }
+
 #commento.commento-root .commento-login-link {
   color: #243b53;
 }
+
 #commento.commento-root .commento-login-text,
 #commento.commento-root .commento-logout {
   display: inline-block;
@@ -574,12 +578,15 @@ h6 {
 #commento.commento-root .commento-mod-tools:before {
   color: #8eedc7;
 }
+
 #commento.commento-root .commento-email {
   border-radius: 0.75rem;
 }
+
 #commento.commento-root .commento-card .commento-body {
   overflow-x: auto;
 }
+
 #commento.commento-root .commento-card .commento-body * {
   font-size: 1em;
   line-height: 1.5;
@@ -588,6 +595,7 @@ h6 {
 #commento.commento-root .commento-card .commento-moderator:after {
   background: #243b53;
 }
+
 #commento.commento-root .commento-card .commento-option-approve:hover,
 #commento.commento-root .commento-card .commento-option-remove:hover,
 #commento.commento-root .commento-card .commento-option-sticky:hover,
@@ -600,11 +608,13 @@ h6 {
 #commento.commento-root .commento-card .commento-option-downvote:hover {
   background-color: #243b53;
 }
+
 #commento.commento-root .commento-card .commento-option-remove,
 #commento.commento-root .commento-card .commento-option-unsticky,
 #commento.commento-root .commento-card .commento-option-approve {
   background-color: #243b53;
 }
+
 #commento.commento-root .commento-card .commento-upvoted,
 #commento.commento-root .commento-card .commento-downvoted {
   background-color: #8eedc7;
@@ -616,6 +626,7 @@ h6 {
   border-color: #243b53;
   background-color: #243b53;
 }
+
 #commento.commento-root input[type="text"],
 .commento-root textarea {
   color: #8eedc7;
