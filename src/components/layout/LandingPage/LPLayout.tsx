@@ -1,8 +1,10 @@
 import React, { useEffect } from "react"
 import "styles/app.css"
 
+// packages
 // import exitIntent from "exit-intent"
 
+// components
 import LPNavbar from "./LPNavbar"
 import LPFooter from "./LPFooter"
 import { handleLGID } from "@components/utils/utils"
@@ -56,7 +58,7 @@ const LPLayout: React.FC<LPLayoutProps> = ({ children, location }) => {
 
   return (
     <div className="relative flex flex-col h-screen justify-between">
-      <LPNavbar />
+      <LPNavbar location={location} />
       <main className="mt-16 md:mt-20">{children}</main>
       <LPFooter />
       {/* exit popup */}

@@ -6,27 +6,31 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 const TableOfContents: React.FC<{
   items: any
   itemIds: any
+  location: Location
 }> = ({ items, itemIds }) => {
+  console.log(location.pathname)
   const renderItems = useCallback((items: any, activeId: string) => {
     return (
       <ol>
-        {items.map((item: any) => (
-          <li key={item.url}>
-            <AnchorLink
-              to={item.url}
-              className={`${
-                activeId === item.url.slice(1)
-                  ? "text-purple-500 underline"
-                  : "text-gray-900"
-              } hover:text-purple-500 hover:underline text-sm`}
-            >
-              {item.title}
-            </AnchorLink>
-            {item.items &&
-              item.items.length &&
-              renderItems(item.items, activeId)}
-          </li>
-        ))}
+        {items.map((item: any) => {
+          return (
+            <li key={item.url}>
+              <AnchorLink
+                to={`${location.pathname.replace(/\/$/, "")}${item.url}`}
+                className={`${
+                  activeId === item.url.slice(1)
+                    ? "text-purple-500 underline"
+                    : "text-gray-900"
+                } hover:text-purple-500 hover:underline text-sm`}
+              >
+                {item.title}
+              </AnchorLink>
+              {item.items &&
+                item.items.length &&
+                renderItems(item.items, activeId)}
+            </li>
+          )
+        })}
       </ol>
     )
   }, [])

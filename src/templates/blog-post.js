@@ -23,8 +23,9 @@ import { titleCase, useWindowDimensions } from "@components/utils/utils"
 
 const BlogPostTemplate = ({ data, location }) => {
   //   local state
-  const [showPopup, setShowPopup] = useState(false)
+  const [articleHeight, setArticleHeight] = useState(0)
   const [hideOnScroll, setHideOnScroll] = useState(false)
+  const [showPopup, setShowPopup] = useState(false)
 
   const post = data.mdx
   const frontmatter = data.mdx.frontmatter
@@ -49,11 +50,12 @@ const BlogPostTemplate = ({ data, location }) => {
 
   const imageSrcs = getImageSrcs(getImageData(images))
 
-  const [articleHeight, setArticleHeight] = useState(0)
   const ref = useRef(null)
-  const isBrowser = () => typeof window !== "undefined"
+  const isBrowser = useCallback(() => {
+    return typeof window !== "undefined"
+  }, [])
 
-  const { height } = useWindowDimensions()
+  const { height: windowHeight } = useWindowDimensions()
 
   useEffect(() => {
     isBrowser() && setArticleHeight(ref.current.clientHeight)
@@ -66,10 +68,10 @@ const BlogPostTemplate = ({ data, location }) => {
   })
   useScrollPosition(
     ({ currPos }) => {
-      const show = currPos.y < -height && -currPos.y < articleHeight
+      const show = currPos.y < -windowHeight && -currPos.y < articleHeight
       if (show !== hideOnScroll) setHideOnScroll(show)
     },
-    [hideOnScroll],
+    [articleHeight, hideOnScroll, isBrowser],
     null,
     false,
     500
@@ -242,6 +244,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 <TableOfContents
                   items={post.tableOfContents.items}
                   itemIds={itemIds}
+                  location={location}
                 />
               )}
             </div>

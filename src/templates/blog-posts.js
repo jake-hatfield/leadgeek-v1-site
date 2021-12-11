@@ -124,7 +124,7 @@ export const blogPostsQuery = graphql`
             descriptionShort
             image {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
               }
             }
           }

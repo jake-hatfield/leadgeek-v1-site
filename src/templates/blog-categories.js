@@ -66,7 +66,7 @@ export const blogCategoriesQuery = graphql`
             descriptionShort
             image {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
               }
             }
           }

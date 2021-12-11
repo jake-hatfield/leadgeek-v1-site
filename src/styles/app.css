@@ -55,7 +55,7 @@ body {
 .bg-splatter {
   background: #fff url("../assets/images/bg-splatter.png") top;
   background-size: 1132px 1014px;
-  @apply relative z-0 overflow-hidden !important;
+  @apply relative z-0 !important;
 }
 
 .stack-sm {
@@ -459,8 +459,12 @@ h6 {
   @apply my-8;
 }
 
+#blog-body > p > a {
+  @apply underline hover:text-purple-500 transition-main;
+}
+
 #blog-body > p > span.gatsby-resp-image-wrapper {
-  @apply z-10 shadow-graySm rounded-lg;
+  @apply mt-8 z-10 shadow-graySm rounded-lg;
 }
 
 #blog-body > p > span.gatsby-resp-image-wrapper > img {

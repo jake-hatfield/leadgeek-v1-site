@@ -7,7 +7,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import LogoSvg from "@assets/svgs/logo.svg"
 import LogoPng from "@assets/images/logo.png"
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{ location: Location }> = ({ location }) => {
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
             {/* md:+ nav */}
             <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
-                to={"#leads"}
+                to={`${location.pathname}#leads`}
                 title="See the latest arbitrage leads"
                 className="no-m-first cta-link inter"
                 gatsbyLinkProps={{ id: "cta" }}

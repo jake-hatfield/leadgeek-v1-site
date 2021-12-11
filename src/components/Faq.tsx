@@ -96,7 +96,7 @@ const Faq = () => {
           However, we absolutely understand that special circumstances arise and
           honor genuine requests. See our{" "}
           <AnchorLink
-            to={`/terms/#cancellation-policy`}
+            to={`/terms#cancellation-policy`}
             title="Leadgeek cancellation policy"
             className="secondary-link"
           >

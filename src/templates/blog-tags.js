@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 // packages
 import { GatsbySeo } from "gatsby-plugin-next-seo"
+import _ from "lodash"
 
 // components
 import Layout from "@components/layout/Layout"
@@ -42,7 +43,7 @@ const BlogTagsTemplate = ({ data, location, pageContext }) => {
         noindex={true}
       />
       <BlogPostsLayout
-        title={`#${pageContext.tag.toLowerCase()} posts`}
+        title={`#${_.kebabCase(pageContext.tag)} posts`}
         posts={posts}
       />
     </Layout>
@@ -63,7 +64,7 @@ export const blogTagsQuery = graphql`
             descriptionShort
             image {
               childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
               }
             }
             category

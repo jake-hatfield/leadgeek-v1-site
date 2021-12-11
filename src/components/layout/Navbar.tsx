@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 
 // packages
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { animated, useSpring } from "react-spring"
-// import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 // assets
 import LogoSvg from "@assets/svgs/logo.svg"
@@ -13,7 +11,6 @@ import LogoPng from "@assets/images/logo.png"
 
 const Navbar: React.FC = () => {
   // localState
-  //   const [hideOnScroll, setHideOnScroll] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const mobileMenuAnimation = useSpring({
@@ -21,17 +18,6 @@ const Navbar: React.FC = () => {
     display: mobileMenuOpen ? "block" : "none",
   })
 
-  //   useScrollPosition(
-  //     ({ prevPos, currPos }) => {
-  //       const show = currPos.y < prevPos.y
-  //       if (show !== hideOnScroll) setHideOnScroll(show)
-  //       console.log(show)
-  //     },
-  //     [hideOnScroll],
-  //     undefined,
-  //     false,
-  //     150
-  //   )
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />
@@ -111,13 +97,13 @@ const Navbar: React.FC = () => {
               >
                 Log in
               </a>
-              <AnchorLink
+              <Link
                 to={"/signup/"}
-                title="Leadgeek pricing plans"
+                title="Sign up for Leadgeek"
                 className="no-m-first cta-link inter"
               >
                 Sign up
-              </AnchorLink>
+              </Link>
             </nav>
           </div>
         </div>

@@ -29,7 +29,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
   const title = "Affiliate Program"
   const description =
     "Become a Leadgeek affiliate and start earning 25% lifetime recurring commissions."
-  const cta = `/affiliates/#affiliate-application`
+  const cta = `/affiliates#affiliate-application`
 
   const [formError, setFormError] = useState("")
   const [checkedTOS, setCheckedTOS] = useState(false)

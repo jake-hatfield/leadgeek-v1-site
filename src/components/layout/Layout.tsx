@@ -1,12 +1,16 @@
 import React, { useEffect } from "react"
+import { Link } from "gatsby"
 import "styles/app.css"
 
+// packages
 import CookieConsent from "react-cookie-consent"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import { handleLGID } from "@components/utils/utils"
+// components
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+
+// utils
+import { handleLGID } from "@components/utils/utils"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -37,13 +41,13 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
           👋
         </span>{" "}
         Hi there! We use{" "}
-        <AnchorLink
+        <Link
           to={`/privacy/#cookies`}
           title="Leadgeek cookie policy"
           className="secondary-link-dark"
         >
           cookies
-        </AnchorLink>{" "}
+        </Link>{" "}
         to personalize your site experience.
       </CookieConsent>
     </div>
