@@ -411,6 +411,7 @@ td:last-child {
 }
 
 /*! purgecss start ignore */
+
 @media only screen and (max-width: 640px) {
   .full-width {
     width: 100vw;
@@ -434,25 +435,26 @@ td:last-child {
 }
 
 #blog-body > h2 {
-  @apply mt-8 inter text-2xl font-bold;
+  @apply mt-12 inter text-2xl font-bold;
 }
 
 #blog-body > h3 {
-  @apply mt-6 inter text-xl font-semibold;
+  @apply mt-10 inter text-xl font-semibold;
 }
 
 #blog-body > h4,
 h5,
 h6 {
-  @apply mt-6 inter text-base font-semibold;
+  @apply mt-10 inter text-lg font-semibold;
 }
 
 #blog-body > p {
-  @apply mt-5;
+  hyphens: auto;
+  @apply mt-6 leading-8 font-normal inter;
 }
 
 #blog-body > pre {
-  @apply mt-5;
+  @apply mt-6;
 }
 
 #blog-body > hr {
@@ -464,7 +466,7 @@ h6 {
 }
 
 #blog-body > p > span.gatsby-resp-image-wrapper {
-  @apply mt-8 z-10 shadow-graySm rounded-lg;
+  @apply mt-12 z-10 shadow-graySm rounded-lg !important;
 }
 
 #blog-body > p > span.gatsby-resp-image-wrapper > img {
@@ -477,20 +479,15 @@ h6 {
 
 #blog-body > ul,
 #blog-article > div > ul {
-  list-style: disc !important;
-  margin-left: 1.25rem !important;
-  margin-top: 1.25rem;
+  @apply mt-4 ml-6 list-disc;
 }
 
 #blog-body > ol {
-  list-style: decimal !important;
-  margin-left: 1.25rem !important;
-  margin-top: 1.25rem;
+  @apply mt-4 ml-6 list-decimal;
 }
 
 #blog-body > blockquote {
-  margin: 20px 0px 0px 0px !important;
-  @apply py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
+  @apply mt-6 py-4 pl-4 pr-2 rounded-lg shadow-graySm bg-gray-100 text-sm font-semibold !important;
 }
 
 #table-of-contents > ol > li > ol {
@@ -525,12 +522,11 @@ h6 {
 
 #commento.commento-root .commento-button,
 #commento.commento-root .commento-email-button {
-  font-weight: normal;
+  @apply font-normal;
 }
 
 #commento.commento-root .commento-button:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  @apply outline-none shadow-md;
 }
 
 #commento.commento-root .commento-submit-button,
@@ -538,49 +534,11 @@ h6 {
 #commento.commento-root .commento-twitter-button,
 #commento.commento-root .commento-google-button,
 #commento.commento-root .commento-email-button {
-  background-color: #243b53 !important;
-  color: #fff;
-  font-size: 0.875rem;
-  border-radius: 0.75rem;
-}
-
-#commento.commento-root .commento-github-button,
-#commento.commento-root .commento-twitter-button,
-#commento.commento-root .commento-google-button {
-  background-color: #7069fa;
-  padding: 6px 8px;
-}
-
-#commento.commento-root .commento-submit-button {
-  background: #243b53 !important;
-}
-
-#commento.commento-root .commento-login-box {
-  border-radius: 0.75rem;
-  background: #8eedc7;
-}
-
-#commento.commento-root .commento-input {
-  border-radius: 0.75rem;
-}
-
-#commento.commento-root .commento-login-link {
-  color: #243b53;
-}
-
-#commento.commento-root .commento-login-text,
-#commento.commento-root .commento-logout {
-  display: inline-block;
-  color: #243b53;
-  text-decoration: none;
-}
-
-#commento.commento-root .commento-mod-tools:before {
-  color: #8eedc7;
+  @apply bg-gray-900 text-white text-sm rounded-lg;
 }
 
 #commento.commento-root .commento-email {
-  border-radius: 0.75rem;
+  @apply rounded-lg;
 }
 
 #commento.commento-root .commento-card .commento-body {
@@ -606,13 +564,13 @@ h6 {
 #commento.commento-root .commento-card .commento-option-cancel:hover,
 #commento.commento-root .commento-card .commento-option-upvote:hover,
 #commento.commento-root .commento-card .commento-option-downvote:hover {
-  background-color: #243b53;
+  @apply bg-gray-900;
 }
 
 #commento.commento-root .commento-card .commento-option-remove,
 #commento.commento-root .commento-card .commento-option-unsticky,
 #commento.commento-root .commento-card .commento-option-approve {
-  background-color: #243b53;
+  @apply bg-gray-900;
 }
 
 #commento.commento-root .commento-card .commento-upvoted,
@@ -623,8 +581,7 @@ h6 {
   .commento-round-check
   input[type="checkbox"]:checked
   + label:before {
-  border-color: #243b53;
-  background-color: #243b53;
+  @apply bg-gray-900 border-main;
 }
 
 #commento.commento-root input[type="text"],
@@ -637,7 +594,7 @@ h6 {
 }
 
 #commento.commento-root .commento-sort-policy-button-selected {
-  color: #243b53;
+  @apply text-gray-900;
 }
 
 #commento.commento-root .commento-textarea-container {

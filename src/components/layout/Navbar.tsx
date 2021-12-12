@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         </aside> */}
 
         <div className="bg-white shadow-sm border-b border-gray-900">
-          <div className="w-full py-4 container center-between">
+          <div className="w-full py-3 container center-between">
             {/* logo */}
             <Link
               to={`/`}
