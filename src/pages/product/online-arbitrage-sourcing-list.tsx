@@ -170,7 +170,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               <strong>most reliable</strong> way to find new products to flip
               for profit on Amazon. Day in. Day out.
             </h2>
-            <div className="lg:flex lg:items-center mt-4 lg:mt-6">
+            <div className="lg:flex lg:items-center mt-8 lg:mt-6">
               <div
                 data-sal="slide-up"
                 data-sal-delay="500"
@@ -245,7 +245,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               </span>
             </p>
             <div
-              className="mt-4 lg:mt-6 flex items-center justify-center lg:justify-start"
+              className="mt-8 lg:mt-6 flex items-center justify-center lg:justify-start"
               data-sal="slide-up"
               data-sal-delay="500"
               data-sal-duration="500"
@@ -326,7 +326,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               <strong>log in, pick your favorite products, and order</strong>.
             </p>
             <div
-              className="mt-4 lg:mt-6 flex items-center justify-center lg:justify-start"
+              className="mt-8 lg:mt-6 flex items-center justify-center lg:justify-start"
               data-sal="slide-up"
               data-sal-delay="500"
               data-sal-duration="500"
@@ -404,7 +404,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
               </span>
             </p>
             <div
-              className="mt-4 lg:mt-6 flex items-center justify-center lg:justify-start"
+              className="mt-8 lg:mt-6 flex items-center justify-center lg:justify-start"
               data-sal="slide-up"
               data-sal-delay="500"
               data-sal-duration="500"
@@ -419,7 +419,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
                 View the latest leads
               </AnchorLink>
             </div>
-            <aside className="relative max-w-xl lg:max-w-lg mt-12 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 border-main shadow-lg rounded-lg py-4 px-6 text-gray-700">
+            <aside className="relative max-w-xl lg:max-w-lg mt-20 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 border-main shadow-lg rounded-lg py-4 px-6 text-gray-700">
               <div className="block absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-10 md:translate-x-2 lg:translate-x-6 xl:translate-x-12">
                 <span>
                   <span
@@ -544,7 +544,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
             </p>
           </header>
           <div className="relative mt-16 w-full max-w-7xl mx-auto px-4">
-            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-12 md:-translate-y-10 -translate-x-2 md:translate-x-2 lg:-translate-x-2 xl:translate-x-12">
+            <div className="absolute top-0 right-0 p-2 rounded-lg transform lg:rotate-12 text-xs bg-gray-900 text-teal-300 -translate-y-12 -translate-x-2 lg:-translate-x-2 xl:translate-x-12">
               <span>
                 <span
                   role="img"
@@ -806,7 +806,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
       {/* section 8: FAQ */}
       <section id="faq" className="mb-24 mx-4">
         <Faq />
-        <div className="mt-4 lg:mt-6 flex items-center justify-center">
+        <div className="mt-8 lg:mt-6 flex items-center justify-center">
           <AnchorLink
             to={cta}
             title="See the latest arbitrage leads"

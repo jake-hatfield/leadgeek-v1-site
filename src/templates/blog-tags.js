@@ -51,10 +51,13 @@ const BlogTagsTemplate = ({ data, location, pageContext }) => {
 }
 
 export const blogTagsQuery = graphql`
-  query blogTagsQuery {
+  query blogTagsQuery($tag: [String]) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { tags: { in: $tag } }
+      }
     ) {
       edges {
         node {

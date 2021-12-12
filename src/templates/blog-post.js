@@ -253,20 +253,22 @@ const BlogPostTemplate = ({ data, location }) => {
         </div>
       </article>
       {/* tags */}
-      <section id="tags" className="container md:max-w-xl lg:max-w-2xl pb-16">
-        <ul className="flex items-centerflex-wrap">
-          {frontmatter.tags.map((tag, i) => (
-            <li key={i} className="first:ml-0 ml-4">
-              <Link
-                to={`/blog/tags/${_.kebabCase(tag)}/`}
-                className="inline-block py-0.5 px-2 bg-gray-900 rounded-lg text-xl handwritten tracking-wider text-teal-300 hover:bg-purple-500 hover:text-white transition-main"
-              >
-                {tag}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {frontmatter.tags.length > 0 && (
+        <section id="tags" className="container md:max-w-xl lg:max-w-2xl pb-16">
+          <ul className="flex items-center flex-wrap gap-4">
+            {frontmatter.tags.map((tag, i) => (
+              <li key={i} className="w-auto">
+                <Link
+                  to={`/blog/tags/${_.kebabCase(tag)}/`}
+                  className="inline-block py-0.5 px-2 whitespace-nowrap bg-gray-900 rounded-lg text-xl handwritten tracking-wider text-teal-300 hover:bg-purple-500 hover:text-white transition-main"
+                >
+                  {_.kebabCase(tag)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {/* comments */}
       <section
         id="comments"

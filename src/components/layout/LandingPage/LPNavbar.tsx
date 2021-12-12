@@ -46,7 +46,7 @@ const Navbar: React.FC<{ location: Location }> = ({ location }) => {
             {/* logo */}
             <div className="font-bold text-xl lg:text-2xl group">
               <Link to={`/`} className="all-center text-gray-900 rounded-lg">
-                <LogoSvg className="w-8 lg:w-12 mr-4 text-purple-500" />
+                <LogoSvg className="w-12 mr-4 text-purple-500" />
                 lead<span className="text-purple-500">geek</span>
               </Link>
             </div>

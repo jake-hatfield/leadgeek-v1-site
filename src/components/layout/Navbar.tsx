@@ -39,7 +39,6 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </aside> */}
-
         <div className="bg-white shadow-sm border-b border-gray-900">
           <div className="w-full py-3 container center-between">
             {/* logo */}
@@ -47,7 +46,7 @@ const Navbar: React.FC = () => {
               to={`/`}
               className="all-center font-bold text-xl lg:text-2xl text-gray-900 rounded-lg"
             >
-              <LogoSvg className="w-12 mr-4 text-purple-500" />
+              <LogoSvg className="w-12 py-2.5 mr-4 text-purple-500" />
               lead<span className="text-purple-500">geek</span>
             </Link>
             {/* mobile button */}

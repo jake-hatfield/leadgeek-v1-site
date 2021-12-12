@@ -190,7 +190,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       descriptionShort: String!
       descriptionLong: String!
       category: String!
-      tags: [String!]!
+      tags: [String]!
       optin: Optin!
     }
     type Optin {
