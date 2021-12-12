@@ -19,7 +19,11 @@ import Popup from "@components/utils/Popup"
 import SocialShare from "@components/layout/Blog/SocialShare"
 import TableOfContents from "@components/layout/Blog/TableOfContents"
 
-import { titleCase, useWindowDimensions } from "@components/utils/utils"
+import {
+  isBrowser,
+  titleCase,
+  useWindowDimensions,
+} from "@components/utils/utils"
 
 const BlogPostTemplate = ({ data, location }) => {
   //   local state
@@ -51,15 +55,12 @@ const BlogPostTemplate = ({ data, location }) => {
   const imageSrcs = getImageSrcs(getImageData(images))
 
   const ref = useRef(null)
-  const isBrowser = useCallback(() => {
-    return typeof window !== "undefined"
-  }, [])
 
   const { height: windowHeight } = useWindowDimensions()
 
   useEffect(() => {
     isBrowser() && setArticleHeight(ref.current.clientHeight)
-  }, [isBrowser, setArticleHeight])
+  }, [setArticleHeight])
 
   //   side optin animation
   const fade = useSpring({
@@ -71,7 +72,7 @@ const BlogPostTemplate = ({ data, location }) => {
       const show = currPos.y < -windowHeight && -currPos.y < articleHeight
       if (show !== hideOnScroll) setHideOnScroll(show)
     },
-    [articleHeight, hideOnScroll, isBrowser],
+    [articleHeight, hideOnScroll],
     null,
     false,
     500

@@ -1,13 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 
+// packages
 import { LogoJsonLd } from "gatsby-plugin-next-seo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
+// utils
+import { isBrowser } from "@components/utils/utils"
+
+// assets
 import LogoSvg from "@assets/svgs/logo.svg"
 import LogoPng from "@assets/images/logo.png"
 
 const Navbar: React.FC<{ location: Location }> = ({ location }) => {
+  if (!isBrowser()) return null
+
   return (
     <>
       <LogoJsonLd logo={LogoPng} url="https://leadgeek.io/" />

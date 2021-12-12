@@ -333,3 +333,7 @@ export const useWindowDimensions = () => {
 
   return windowDimensions
 }
+
+export const isBrowser = () => {
+  return typeof window !== "undefined"
+}

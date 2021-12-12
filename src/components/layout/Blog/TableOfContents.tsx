@@ -3,12 +3,16 @@ import React, { useState, useLayoutEffect, useCallback } from "react"
 // packages
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
+// utils
+import { isBrowser } from "@components/utils/utils"
+
 const TableOfContents: React.FC<{
   items: any
   itemIds: any
   location: Location
 }> = ({ items, itemIds }) => {
-  console.log(location.pathname)
+  if (!isBrowser()) return null
+
   const renderItems = useCallback((items: any, activeId: string) => {
     return (
       <ol>
