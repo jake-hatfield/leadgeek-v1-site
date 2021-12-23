@@ -434,23 +434,27 @@ td:last-child {
   margin-right: calc(-50vw + 0px);
 }
 
+#blog-body {
+  @apply inter;
+}
+
 #blog-body > h2 {
-  @apply mt-12 inter text-2xl font-bold;
+  @apply mt-12 text-2xl font-bold;
 }
 
 #blog-body > h3 {
-  @apply mt-10 inter text-xl font-semibold;
+  @apply mt-10 text-xl font-semibold;
 }
 
 #blog-body > h4,
 h5,
 h6 {
-  @apply mt-10 inter text-lg font-semibold;
+  @apply mt-10 text-lg font-semibold;
 }
 
 #blog-body > p {
   hyphens: auto;
-  @apply mt-6 leading-8 font-normal inter;
+  @apply mt-6 leading-8 font-normal;
 }
 
 #blog-body > pre {
