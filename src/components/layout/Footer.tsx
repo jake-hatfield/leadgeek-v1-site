@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="mt-6 md:mt-12 text-sm text-gray-600">
         <div className="container flex items-center justify-between">
-          <div className="flex items-end mt-6 md:mt-0">
+          <div className="flex items-end mt-5 md:mt-0">
             <p>
               <span className="inter">&copy;</span> 2020-
               {new Date().getFullYear()} Leadgeek
