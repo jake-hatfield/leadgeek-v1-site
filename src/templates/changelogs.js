@@ -113,7 +113,6 @@ const Changelog = ({ node }) => {
 
   const shortcodes = { ListHeader }
 
-  console.log(typeof slug)
   return (
     <article
       id={`v${slug.replace(/[.]/g, "")}`}
