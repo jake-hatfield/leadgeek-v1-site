@@ -113,8 +113,12 @@ const Changelog = ({ node }) => {
 
   const shortcodes = { ListHeader }
 
+  console.log(typeof slug)
   return (
-    <article id="changelog-item" className="mt-8 card shadow-grayMd">
+    <article
+      id={`v${slug.replace(/[.]/g, "")}`}
+      className="mt-8 card shadow-grayMd changelog-item"
+    >
       <header className="md:flex items-end justify-between mb-4 pb-2 border-b border-gray-900">
         <div className="flex items-center">
           <h2 className="text-lg md:text-2xl font-black text-gray-900 inter">
@@ -161,6 +165,7 @@ export const changelogQuery = graphql`
       filter: { fileAbsolutePath: { regex: "/changelog/" } }
       limit: $limit
       skip: $skip
+      sort: { order: DESC, fields: frontmatter___date }
     ) {
       edges {
         node {

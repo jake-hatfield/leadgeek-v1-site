@@ -506,15 +506,15 @@ h6 {
   @apply ml-6;
 }
 
-#changelog-item > ul {
+.changelog-item > ul {
   @apply mt-2 ml-6;
 }
 
-#changelog-item > ul > li {
+.changelog-item > ul > li {
   @apply list-disc;
 }
 
-#changelog-item > ul > li > ul > li {
+.changelog-item > ul > li > ul > li {
   list-style: circle;
   @apply ml-6;
 }
