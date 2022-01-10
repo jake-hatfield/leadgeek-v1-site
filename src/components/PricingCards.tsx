@@ -40,6 +40,7 @@ interface PricingCard {
   features: { title: JSX.Element | string }[]
   seatsLeft: number
   available: boolean
+  forceSoldOut: boolean
 }
 
 const PricingCards: React.FC<PricingCardsProps> = ({
@@ -146,6 +147,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
           ? false
           : true,
+      forceSoldOut: false,
     },
     {
       title: "Pro",
@@ -203,6 +205,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         (proSeatsLeft <= 0 && proSeatsLeft_2 <= 0) || waitlist.pro > 0
           ? false
           : true,
+      forceSoldOut: false,
     },
     {
       title: "Bundle",
@@ -244,6 +247,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         waitlist.bundle === 0
           ? true
           : false,
+      forceSoldOut: true,
     },
   ]
 
@@ -308,7 +312,14 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                   <span className="ml-2">/mo</span>
                 </div>
                 <div className="mt-4 lg:mt-6">
-                  {!plan.available && plan.title ? (
+                  {plan.forceSoldOut && plan.title ? (
+                    <button
+                      disabled={true}
+                      className="block w-full py-2 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base cursor-not-allowed text-teal-300 ring-gray inter"
+                    >
+                      Sold out
+                    </button>
+                  ) : !plan.available && plan.title ? (
                     <button
                       onClick={() => {
                         setSelectedPlan(plan.title)

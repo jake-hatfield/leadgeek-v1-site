@@ -346,6 +346,7 @@ const SignupPage: React.FC<{
     description: string
     price: number
     available: boolean
+    forceSoldOut: boolean
   }[] = [
     {
       title: "Grow",
@@ -356,6 +357,7 @@ const SignupPage: React.FC<{
         (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
           ? false
           : true,
+      forceSoldOut: false,
     },
     {
       title: "Pro",
@@ -365,6 +367,7 @@ const SignupPage: React.FC<{
         (proSeatsLeft <= 0 && proSeatsLeft_2 <= 0) || waitlist.pro > 0
           ? false
           : true,
+      forceSoldOut: false,
     },
     {
       title: "Bundle",
@@ -378,6 +381,7 @@ const SignupPage: React.FC<{
         waitlist.bundle === 0
           ? true
           : false,
+      forceSoldOut: true,
     },
   ]
 
@@ -489,7 +493,14 @@ const SignupPage: React.FC<{
                             <span className="block">/mo</span>
                           </div>
                         </div>
-                        {plan.available ? (
+                        {plan.forceSoldOut && plan.title ? (
+                          <button
+                            disabled={true}
+                            className="block w-full mt-4 py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base cursor-not-allowed text-teal-300 ring-gray inter"
+                          >
+                            Sold out
+                          </button>
+                        ) : plan.available ? (
                           <Link
                             to={`?${plan.title.toLowerCase()}`}
                             className="block w-full mt-4 py-3 rounded-lg
