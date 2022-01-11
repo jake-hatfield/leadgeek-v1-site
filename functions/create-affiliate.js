@@ -119,9 +119,6 @@ exports.handler = async (event, context, callback) => {
         user: process.env.GATSBY_EMAIL_ADDRESS,
         pass: process.env.GATSBY_EMAIL_PASSWORD,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
       debug: true,
     })
 
