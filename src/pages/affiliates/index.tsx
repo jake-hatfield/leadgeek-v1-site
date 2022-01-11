@@ -95,8 +95,10 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
         formData
       )
 
-      console.log(data)
-      if (data.message === "Affiliate submission successful.") {
+      if (
+        data.message === "User found and updated." ||
+        data.message === "Affiliate submission successful."
+      ) {
         return navigate("/affiliates/confirmation/")
       } else {
         setFormError(
@@ -352,7 +354,7 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
                     </div>
                   ) : (
                     <button type="submit" className="cta-link inter">
-                      Submit
+                      Apply now
                     </button>
                   )}
                 </div>

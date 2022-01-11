@@ -82,6 +82,10 @@ const UserSchema = new Schema({
         required: true,
         default: false,
       },
+      pendingApplication: {
+        type: Boolean,
+        default: false,
+      },
       lgid: {
         type: String,
         default: null,

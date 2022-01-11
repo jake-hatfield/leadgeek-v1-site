@@ -45,15 +45,25 @@ const pushToDatabase = async (db, data) => {
   try {
     let user = await db.collection(CO_NAME).findOne({ email })
     if (user) {
+      db.collection(CO_NAME).updateOne(
+        { email },
+        {
+          $set: {
+            "referrals.referrer.pendingApplication": true,
+          },
+        }
+      )
+
       return {
         statusCode,
         headers,
         body: JSON.stringify({
           status: "success",
-          message: "User found",
+          message: "User found and updated.",
         }),
       }
     }
+
     // encrypt password
     const salt = await bcrypt.genSalt(10)
     const encryptedPassword = await bcrypt.hash(password, salt)
@@ -70,8 +80,9 @@ const pushToDatabase = async (db, data) => {
       referrals: {
         referrer: {
           isReferrer: false,
+          pendingApplication: true,
           lgid,
-          dateCreated: Date.now(),
+          dateCreated: new Date(),
         },
       },
       resetPasswordToken: null,
