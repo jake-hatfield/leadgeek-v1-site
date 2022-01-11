@@ -119,7 +119,6 @@ exports.handler = async (event, context, callback) => {
         user: process.env.GATSBY_EMAIL_ADDRESS,
         pass: process.env.GATSBY_EMAIL_PASSWORD,
       },
-      debug: true,
     })
 
     const { name, email, audience, platform } = data
@@ -137,17 +136,11 @@ exports.handler = async (event, context, callback) => {
     }
 
     console.log("Sending email...")
-    transporter.sendMail(mailOptions, (error, info) => {
+    await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.error("There was an error sending the email: ", error)
-        const res = {
-          statusCode: 500,
-          body: JSON.stringify({
-            status: "failure",
-            message: `There was an error sending the email: ${error.message}`,
-          }),
-        }
-        callback(null, res)
+        console.error("There was an error sending the email: ", error.message)
+
+        callback(error)
       }
 
       console.log("Email sent successfully. Here are the details:", info)
