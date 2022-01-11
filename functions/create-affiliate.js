@@ -26,10 +26,11 @@ const connectToDatabase = async uri => {
 }
 
 const pushToDatabase = async (db, data) => {
-  const { name, email, password } = data
+  const { name, email, password, platform } = data
+  console.log(data)
 
   // Ensure we have the required data before proceeding
-  if (!name || !email || !password) {
+  if (!name || !email || !password || !platform) {
     const message = "Required information is missing."
     console.log(message)
     return {

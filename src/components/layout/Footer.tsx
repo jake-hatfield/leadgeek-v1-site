@@ -14,7 +14,10 @@ const Footer: React.FC = () => {
               <ul className="mt-4 text-gray-600">
                 {category.items.map(item => (
                   <li key={item.title} className="mb-2 last:mb-0">
-                    <Link to={`/${item.link}/`} className="tertiary-link inter">
+                    <Link
+                      to={`/${item.link}/`}
+                      className="tertiary-link inter whitespace-nowrap"
+                    >
                       {item.title}
                     </Link>
                   </li>

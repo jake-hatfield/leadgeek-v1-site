@@ -84,16 +84,16 @@ const FeaturesIndexPage: React.FC<FeaturesIndexPageProps> = ({ location }) => {
         <div className={classes.featuresContainer}>
           <ol className={classes.featuresList}>
             {featureList.map((feature, i) => (
-              <Link key={i} to={`/features/${feature.link}/`}>
-                <li className={classes.feature}>
+              <li className={classes.feature}>
+                <Link key={i} to={`/features/${feature.link}/`}>
                   <header className={classes.featureHeader}>
                     <h2 className={classes.featureTitle}>{feature.title}</h2>
                   </header>
                   <div className={classes.featureDesc}>
                     {feature.description}
                   </div>
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ol>
         </div>
@@ -110,10 +110,9 @@ const classes = {
   featuresWrapper:
     "relative pb-12 lg:pb-24 px-4 lg:px-8 text-gray-900 overflow-x-hidden bg-splatter",
   featuresContainer: "max-w-screen-2xl mx-auto",
-  featuresList:
-    "mt-4 lg:mt-6 feature-list feature-grid text-center md:text-left",
+  featuresList: "py-8 feature-list feature-grid text-center md:text-left",
   feature:
-    "mt-8 lg:mt-6 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-72 md:w-64 transition-main shadow-graySm",
+    "my-4 feature-list-item py-4 lg:py-6 px-6 bg-white hover:bg-purple-500 hover:text-white group rounded-lg border border-gray-900 w-72 md:w-64 transition-main shadow-graySm",
   featureHeader: "text-gray-900 group-hover:text-white",
   featureTitle: "text-lg xl:text-xl inter font-black",
   featureDesc: "mt-2 lg:mt-4 leading-relaxed",
