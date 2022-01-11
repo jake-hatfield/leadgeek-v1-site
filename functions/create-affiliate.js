@@ -27,7 +27,6 @@ const connectToDatabase = async uri => {
 
 const pushToDatabase = async (db, data) => {
   const { name, email, password, platform } = data
-  console.log(data)
 
   // Ensure we have the required data before proceeding
   if (!name || !email || !password || !platform) {
@@ -96,7 +95,7 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-exports.handler = async event => {
+exports.handler = async (event, context, callback) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -141,26 +140,28 @@ exports.handler = async event => {
     }
 
     console.log("Sending email...")
-    await transporter.sendMail(mailOptions, (error, res) => {
+    transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error("There was an error sending the email: ", error)
-        return {
-          statusCode: 200,
+        const res = {
+          statusCode: 500,
           body: JSON.stringify({
             status: "failure",
-            message: "There was an error sending the email",
+            message: `There was an error sending the email: ${error.message}`,
           }),
         }
-      } else {
-        console.log("Email sent successfully. Here are the details:", res)
-        return {
-          statusCode: 200,
-          body: JSON.stringify({
-            status: "success",
-            message: "Affiliate submission successful.",
-          }),
-        }
+        callback(null, res)
       }
+
+      console.log("Email sent successfully. Here are the details:", info)
+      const res = {
+        statusCode: 200,
+        body: JSON.stringify({
+          status: "success",
+          message: "Affiliate submission successful.",
+        }),
+      }
+      callback(null, res)
     })
 
     return {
