@@ -121,20 +121,12 @@ const sendEmail = async data => {
       `Method(s) of promotion: ${platform}\n\n` +
       "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
   }
-  await transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return { statusCode: 500, body: error.message }
-    } else {
-      console.log("Email sent successfully. Here are the details:", info)
-      return {
-        statusCode: 200,
-        body: JSON.stringify({
-          status: "success",
-          message: "Affiliate submission successful.",
-        }),
-      }
-    }
-  })
+
+  try {
+    await transporter.sendMail(mailOptions)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 exports.handler = async event => {
