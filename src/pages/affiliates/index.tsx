@@ -94,6 +94,8 @@ const AffiliatePage: React.FC<AffiliatePageProps> = ({ location }) => {
         "/.netlify/functions/create-affiliate",
         formData
       )
+
+      console.log(data)
       if (data.message === "Affiliate submission successful.") {
         return navigate("/affiliates/confirmation/")
       } else {

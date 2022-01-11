@@ -95,64 +95,65 @@ const pushToDatabase = async (db, data) => {
   }
 }
 
-exports.handler = async (event, context, callback) => {
-  if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      body: "This was not a POST request.",
-    }
+const sendEmail = async data => {
+  //   destructure necessary items
+  const { name, email, audience, platform } = data
+
+  // send email
+  const transporter = nodemailer.createTransport({
+    name: "improvmx",
+    host: "smtp.improvmx.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.GATSBY_EMAIL_ADDRESS,
+      pass: process.env.GATSBY_EMAIL_PASSWORD,
+    },
+  })
+  const mailOptions = {
+    from: '"Leadgeek Support" <support@leadgeek.io>',
+    to: `"Leadgeek Affiliates" <affiliates@leadgeek.io`,
+    subject: "New Affiliate Submission",
+    text:
+      `${name} (${email}) has submitted an affiliate application.\n\n` +
+      "Details:\n\n" +
+      `Audience size: ${audience}\n` +
+      `Method(s) of promotion: ${platform}\n\n` +
+      "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
   }
-  try {
-    // Parse the body into an object
-    const data = JSON.parse(event.body)
-    const db = await connectToDatabase(MONGODB_URI)
-
-    await pushToDatabase(db, data)
-
-    // send email
-    const transporter = nodemailer.createTransport({
-      name: "improvmx",
-      host: "smtp.improvmx.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.GATSBY_EMAIL_ADDRESS,
-        pass: process.env.GATSBY_EMAIL_PASSWORD,
-      },
-    })
-
-    const { name, email, audience, platform } = data
-
-    const mailOptions = {
-      from: '"Leadgeek Support" <support@leadgeek.io>',
-      to: `"Leadgeek Affiliates" <affiliates@leadgeek.io`,
-      subject: "New Affiliate Submission",
-      text:
-        `${name} (${email}) has submitted an affiliate application.\n\n` +
-        "Details:\n\n" +
-        `Audience size: ${audience}\n` +
-        `Method(s) of promotion: ${platform}\n\n` +
-        "Please reply in the next 24 hours with your approval decision and adjust their affiliate status accordingly.",
-    }
-
-    console.log("Sending email...")
-    await transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error("There was an error sending the email: ", error.message)
-
-        callback(error)
-      }
-
+  await transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return { statusCode: 500, body: error.message }
+    } else {
       console.log("Email sent successfully. Here are the details:", info)
-      const res = {
+      return {
         statusCode: 200,
         body: JSON.stringify({
           status: "success",
           message: "Affiliate submission successful.",
         }),
       }
-      callback(null, res)
-    })
+    }
+  })
+}
+
+exports.handler = async event => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: "This was not a POST request.",
+    }
+  }
+  // Parse the body into an object
+  const data = JSON.parse(event.body)
+
+  const db = await connectToDatabase(MONGODB_URI)
+
+  await pushToDatabase(db, data)
+
+  try {
+    console.log("Sending email...")
+    await sendEmail(data)
 
     return {
       statusCode: 200,
