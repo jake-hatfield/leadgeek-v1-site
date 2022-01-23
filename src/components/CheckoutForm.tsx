@@ -494,7 +494,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         <aside>
           <div className="mt-6 text-xs md:text-sm text-gray-700">
             <h2 className="mt-4 text-lg lg:text-xl font-bold inter text-gray-900">
-              {plan} plan
+              {plan.includes("_") ? plan.substring(0, plan.indexOf("_")) : plan}{" "}
+              plan
             </h2>
             <div className="mt-2">
               <div className="flex items-center justify-between">

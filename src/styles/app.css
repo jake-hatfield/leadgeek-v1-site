@@ -102,6 +102,11 @@ body {
   @apply ring-8 ring-gray-900 ring-opacity-50 shadow-2xl;
 }
 
+.dark-shadow {
+  @apply shadow-2xl;
+  box-shadow: 4px 4px 0 #243b53 !important;
+}
+
 .svg-shadow {
   -webkit-filter: drop-shadow(3px 3px 0 #9fb3c8);
   filter: drop-shadow(3px 3px 0 #9fb3c8);

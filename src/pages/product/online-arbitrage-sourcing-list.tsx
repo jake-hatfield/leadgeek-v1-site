@@ -292,7 +292,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-y-48 lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
               <StaticImage
-                src="../../assets/images/leadgeek-app.png"
+                src="../../assets/images/feed.jpg"
                 placeholder="tracedSVG"
                 alt="Leadgeek app feed"
                 title="Leadgeek app feed"
@@ -371,7 +371,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
               <StaticImage
-                src="../../assets/images/details.png"
+                src="../../assets/images/details.jpg"
                 placeholder="tracedSVG"
                 alt="Leadgeek detailed view"
                 title="Leadgeek detailed view"

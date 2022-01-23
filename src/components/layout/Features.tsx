@@ -303,7 +303,7 @@ export const featureList: Feature[] = [
             reliable way to get an idea of profitability. This little tool keeps
             up with the changing FBA fee structure, so{" "}
             <span className={classes.emphasizedFeature}>
-              these numbers are pretty darn close to accurate
+              these numbers are pretty darn accurate
             </span>
             .
           </p>

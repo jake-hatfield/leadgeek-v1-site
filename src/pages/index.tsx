@@ -436,8 +436,7 @@ const classes = {
     "hidden lg:block absolute bottom-0 left-0 z-20 transform -translate-y-48 translate-x-16",
   metricsNote:
     "w-48 py-1 px-2 handwritten text-xl rounded-lg bg-gray-900 text-center text-teal-300 transform transition-main rotate-3 hover:-rotate-3",
-  heroImage:
-    "min-w-full rounded-lg ring-4 md:ring-6 lg:ring-8 ring-pink-600 ring-opacity-50 shadow-2xl",
+  heroImage: "min-w-full shadow-pinkMd rounded-lg",
   heroHeader: "relative pt-12 lg:pb-12 container md:text-center text-gray-900",
   heroH2: "text-2xl md:text-3xl xl:text-4xl font-black inter",
   heroParagraph: "mt-4 lg:mt-6 mx-auto h4",

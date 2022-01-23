@@ -88,7 +88,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
       />
       <ProductJsonLd
         productName="Leadgeek Grow Plan"
-        images={["../assets/images/leadgeek-app.png"]}
+        images={["../assets/images/feed.jpg"]}
         description="Leadgeek's Grow plan offers entry-level FBA sellers a great starting point to find high-quality products efficiently."
         brand="Leadgeek"
         reviews={[
@@ -212,7 +212,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
       />
       <ProductJsonLd
         productName="Leadgeek Pro Plan"
-        images={["../assets/images/leadgeek-app.png"]}
+        images={["../assets/images/feed.jpg"]}
         description="Leadgeek's Pro plan is great for intermediate Amazon sellers who are familiar with online arbitrage and want more leads to choose every day."
         brand="Leadgeek"
         reviews={[
@@ -341,7 +341,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ data, location }) => {
       />
       <ProductJsonLd
         productName="Leadgeek Bundle"
-        images={["../assets/images/leadgeek-app.png"]}
+        images={["../assets/images/feed.jpg"]}
         description="Leadgeek's Bundle is a heavily-discounted combination of the Grow plan and Pro plan. It's the perfect mix of quality and volume for arbitrage sourcing."
         brand="Leadgeek"
         reviews={[
