@@ -338,7 +338,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                           : "cta-link"
                       } inter block`}
                     >
-                      Get the {plan.title} plan
+                      Start a free 5-day trial
                     </Link>
                   )}
                 </div>

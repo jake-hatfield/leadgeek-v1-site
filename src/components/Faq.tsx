@@ -76,23 +76,15 @@ const Faq = () => {
       title: "What if I decide this isn't for me?",
       description: (
         <p>
-          No worries! There are no contracts, and you can cancel anytime. Just{" "}
+          No worries, that's what the free 5-day trials are for!{" "}
           <span className="emphasized-text">
-            email{" "}
-            <a
-              href="mailto:support@Leadgeek.io"
-              target="_blank"
-              rel="noreferrer"
-              className="secondary-link"
-            >
-              <span>sup</span>
-              <span>port@l</span>
-              <span>eadgeek.io</span>
-            </a>
-          </span>{" "}
-          and we'll get you sorted out. <br /> <br />{" "}
-          <strong>Please note:</strong> due to the exclusive nature of the
-          product, we do not issue refunds for the current month of service.
+            There are no contracts, and you can cancel anytime with one click in
+            the software
+          </span>
+          . It's 100% your call.
+          <br />
+          <br /> <strong>Please note:</strong> due to the exclusive nature of
+          the product, we do not issue refunds for the current month of service.
           However, we absolutely understand that special circumstances arise and
           honor genuine requests. See our{" "}
           <AnchorLink
@@ -117,7 +109,14 @@ const Faq = () => {
             <Link to={`/contact/`} className="secondary-link">
               contact
             </Link>{" "}
-            page
+            page or at{" "}
+            <a href="mailto:support@leadgeek.io" className="secondary-link">
+              <span>sup</span>
+              <span>port</span>
+              <span>@lea</span>
+              <span>dgeek</span>
+              <span>.io</span>
+            </a>
           </span>
           .
         </p>
@@ -152,12 +151,12 @@ const Faq = () => {
           {
             question: "What if I decide this isn't for me?",
             answer:
-              "No worries! To cancel your subscription, email support@leadgeek.io and we'll get you sorted out. Please note: due to the nature of the product, we do not issue refunds for the current month of service. However, we understand that special circumstances arise and honor genuine requests. See our cancellation policy for more info.",
+              "No worries, that's what the free 5-day trials are for! There are no contracts, and you can cancel anytime with one click in the software. It's 100% your call. Please note: due to the nature of the product, we do not issue refunds for the current month of service. However, we understand that special circumstances arise and honor genuine requests. See our cancellation policy for more info.",
           },
           {
             question: "How do I get in contact with support?",
             answer:
-              "You can contact our support team weekdays from 9am-5pm CST via our contact page.",
+              "You can contact our support team weekdays from 9am-5pm CST via our contact page or at support@leadgeek.io.",
           },
         ]}
       />

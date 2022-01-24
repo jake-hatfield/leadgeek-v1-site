@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
+import { DateTime } from "luxon"
 
 import {
   getCookie,
@@ -14,7 +15,6 @@ import PasswordFormField from "@components/utils/PasswordFormField"
 import Spinner from "@components/utils/Spinner"
 
 import StripeLogo from "@assets/svgs/stripe-logo.svg"
-import Bullet from "@assets/svgs/bullet.svg"
 
 interface FormData {
   firstName: string
@@ -27,9 +27,7 @@ interface CheckoutFormProps {
   type: string
   plan: string
   productSelected: string | undefined
-  featureList: { description: JSX.Element }[]
   price: number
-  discount: number | null
   formData: FormData
   setFormData: React.Dispatch<FormData>
   onSuccessfulCheckout: () => void
@@ -39,9 +37,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   type,
   plan,
   productSelected,
-  featureList,
   price,
-  discount,
   formData,
   setFormData,
   onSuccessfulCheckout,
@@ -251,7 +247,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           priceId,
         }
       )
-      if (subscriptionRes.status === "active") {
+      if (
+        subscriptionRes.status === "active" ||
+        subscriptionRes.status === "trialing"
+      ) {
         const { data: userRes } = await axios.post(
           "/.netlify/functions/create-user",
           {
@@ -326,9 +325,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       titleClasses: `${count === 2 ? "text-gray-900" : "text-gray-500"} inter`,
     },
   ]
-
-  //   set list size for the plan bullets
-  let listSize = 5
 
   return (
     <form onSubmit={onSubmit}>
@@ -492,52 +488,34 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       ) : null}
       {count === 2 && (
         <aside>
-          <div className="mt-6 text-xs md:text-sm text-gray-700">
-            <h2 className="mt-4 text-lg lg:text-xl font-bold inter text-gray-900">
-              {plan.includes("_") ? plan.substring(0, plan.indexOf("_")) : plan}{" "}
-              plan
-            </h2>
-            <div className="mt-2">
-              <div className="flex items-center justify-between">
-                {plan === "Bundle" ? (
-                  <div className="inline-block">
-                    <span className="line-through font-medium text-gray-600">
-                      $318
-                    </span>
-                    <span className="ml-2 text-xl font-bold text-gray-900">
-                      ${price}
-                    </span>
-                    <span className="inline-block text-gray-500 text-base">
-                      /mo
-                    </span>
-                  </div>
-                ) : (
-                  <div>
-                    <span className="text-2xl font-bold text-gray-900">
-                      ${price}
-                    </span>
-                    <span className="inline-block text-gray-500 text-base">
-                      /mo
-                    </span>
-                  </div>
-                )}
-                {plan === "Bundle" && (
-                  <span className="py-1 px-2 inline-block bg-teal-200 rounded-full text-xs text-teal-600 focus:outline-none focus:shadow-outline">
-                    {`${discount}% discount`}
-                  </span>
-                )}
+          <div className="mt-4">
+            <div className="p-4 rounded-lg bg-gray-100 text-gray-900 border border-gray-900">
+              <h2 className="text-lg font-bold inter text-gray-900">
+                {plan.includes("_")
+                  ? plan.substring(0, plan.indexOf("_"))
+                  : plan}{" "}
+                plan
+              </h2>
+              <div className="mt-2 center-between">
+                <p className="text-xs md:text-sm">Total billed today:</p>
+                <span className="font-bold">$0</span>
               </div>
+              <div className="mt-2 pt-2 border-t border-gray-900 center-between">
+                <p className="text-xs md:text-sm">
+                  Total billed on{" "}
+                  <span className="font-bold">
+                    {DateTime.now().plus({ days: 7 }).toFormat("LLL. dd")}
+                  </span>
+                </p>
+                <span>
+                  <span className="font-bold text-gray-900">${price}</span>
+                  /mo
+                </span>
+              </div>
+              <p className="pt-2 text-xs">
+                We'll remind you 3 days before your trial period ends
+              </p>
             </div>
-            <aside className="mt-4 text-sm">
-              <ul>
-                {featureList.slice(0, listSize).map((feature, i) => (
-                  <li key={i} className="mt-2 last:mb-0 flex">
-                    <Bullet className="mt-1 h-4 w-4 text-teal-400 flex-none" />
-                    <div className="ml-4">{feature.description}</div>
-                  </li>
-                ))}
-              </ul>
-            </aside>
           </div>
           <button
             disabled={count > 2}
@@ -570,7 +548,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
                   : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
               } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
             >
-              Subscribe for ${price}
+              Start a free 5-day trial
             </button>
           )}
         </aside>

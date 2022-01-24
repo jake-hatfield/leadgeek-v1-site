@@ -195,10 +195,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
             }
             nav={true}
             goHome={false}
-            linkOne={`demo`}
-            linkOneText={`See how it works`}
-            linkTwo={`signup`}
-            linkTwoText={`or sign up now`}
+            linkOne={`signup`}
+            linkOneText={`Try it FREE`}
+            linkTwo={`demo`}
+            linkTwoText={`or watch a demo`}
             outsideLink={null}
             svgOne={null}
             svgTwo={null}
@@ -402,7 +402,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, location }) => {
         links={[
           { title: "Watch a demo", link: "demo" },
           { title: "Tour the features", link: "features" },
-          { title: "Sign up now", link: "signup" },
+          { title: "Start a free trial", link: "signup" },
         ]}
         description={
           "See how Leadgeek works, the 20 features that make it rad, or join today."

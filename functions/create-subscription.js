@@ -119,26 +119,28 @@ exports.handler = async function (event) {
             statusCode,
             headers,
             body: JSON.stringify({
-              msg:
-                "Your subscription payment is incomplete. Please contact Leadgeek support to complete your purchase.",
+              msg: "Your subscription payment is incomplete. Please contact Leadgeek support to complete your purchase.",
             }),
           }
         }
       }
     } else {
       // subscription for this plan doesn't yet exist, so create it
-
       const subscription = await stripe.subscriptions.create({
         customer: data.customerId,
         items: [{ price: data.priceId }],
+        trial_period_days: 7,
       })
-      if (subscription.status !== "active") {
+
+      if (
+        subscription.status !== "active" &&
+        subscription.status !== "trialing"
+      ) {
         return {
           statusCode,
           headers,
           body: JSON.stringify({
-            msg:
-              "Your card was declined. Please contact your bank or Leadgeek support for more details.",
+            msg: "Your card was declined. Please contact your bank or Leadgeek support for more details.",
           }),
         }
       } else {

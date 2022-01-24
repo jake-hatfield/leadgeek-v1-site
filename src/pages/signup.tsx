@@ -62,9 +62,6 @@ const SignupPage: React.FC<{
   const bundlePlanPrice = 263
   const proPlanPrice = 189
   const growPlanPrice = 129
-  const discount = Math.trunc(
-    (1 - bundlePlanPrice / (proPlanPrice + growPlanPrice)) * 100
-  )
 
   const subscriptions = formatActiveSubscriptions(
     data.allStripeSubscription.nodes
@@ -457,76 +454,86 @@ const SignupPage: React.FC<{
                       plan={capitalize(planDetails.plan)}
                       price={planDetails.price}
                       productSelected={planDetails.productId}
-                      featureList={planDetails.features}
-                      discount={discount}
                       formData={formData}
                       setFormData={setFormData}
                       onSuccessfulCheckout={() => onSuccessfulCheckout()}
                     />
                   </Elements>
                 ) : (
-                  <ul>
-                    <h3 className="mt-3 mb-8 text-xl md:text-2xl lg:text-3xl font-black text-gray-900 inter">
+                  <div className="mb-8">
+                    <h3 className="mt-3 text-xl md:text-2xl lg:text-3xl font-black text-gray-900 inter">
                       Choose a plan
                     </h3>
-
-                    {planList.map((plan, i) => (
-                      <li
-                        key={i}
-                        className={`relative mt-6 py-2 px-4 ${
-                          plan.available ? "bg-white" : "bg-gray-200"
-                        } rounded-lg border border-gray-900 shadow-md`}
-                      >
-                        <div className="flex items-center justify-between pb-4 border-b border-gray-900">
-                          <div>
-                            <h4 className="inter font-black text-gray-900">
-                              {plan.title}
-                            </h4>
-                            <p className="text-xs md:text-sm">
-                              {plan.description}
-                            </p>
+                    <p className="mt-4">
+                      Start a free trial, cancel anytime. We'll email a reminder
+                      before it ends.
+                    </p>
+                    <ul>
+                      {planList.map((plan, i) => (
+                        <li
+                          key={i}
+                          className={`relative mt-6 py-2 px-4 ${
+                            plan.available ? "bg-white" : "bg-gray-200"
+                          } rounded-lg border border-gray-900 shadow-md`}
+                        >
+                          <div className="flex items-center justify-between pb-4 border-b border-gray-900">
+                            <header>
+                              <div className="flex items-center">
+                                <h4 className="inter font-black text-gray-900">
+                                  {plan.title}
+                                </h4>
+                                {plan.available && (
+                                  <span className="ml-4 py-0.5 px-1 text-xs bg-teal-200 text-teal-900 border border-teal-300 rounded-lg">
+                                    Free trial
+                                  </span>
+                                )}
+                              </div>
+                              <p className="mt-2 text-xs md:text-sm">
+                                {plan.description}
+                              </p>
+                            </header>
+                            <div className="text-right">
+                              <span className="ml-2 font-semibold text-xl text-gray-900">
+                                ${plan.price}
+                              </span>
+                              <span className="mt-1 block">/mo</span>
+                            </div>
                           </div>
-                          <div className="text-right">
-                            <span className="font-semibold text-xl text-gray-900">
-                              ${plan.price}
-                            </span>
-                            <span className="block">/mo</span>
-                          </div>
-                        </div>
-                        {plan.forceSoldOut && plan.title ? (
-                          <button
-                            disabled={true}
-                            className="block w-full mt-4 py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base cursor-not-allowed text-teal-300 ring-gray inter"
-                          >
-                            Sold out
-                          </button>
-                        ) : plan.available ? (
-                          <Link
-                            to={`?${plan.title.toLowerCase()}`}
-                            className="block w-full mt-4 py-3 rounded-lg
+                          {plan.forceSoldOut && plan.title ? (
+                            <button
+                              disabled={true}
+                              className="block w-full mt-4 py-3 px-4 rounded-lg border border-gray-900 bg-gray-900 font-semibold text-sm md:text-base cursor-not-allowed text-teal-300 ring-gray inter"
+                            >
+                              Sold out
+                            </button>
+                          ) : plan.available ? (
+                            <Link
+                              to={`?${plan.title.toLowerCase()}`}
+                              className="block w-full mt-4 py-3 rounded-lg
                           border border-purple-500 bg-purple-500 font-semibold
                           text-center text-xs md:text-sm hover:bg-purple-600 text-white
                           transition-main ring-gray inter"
-                          >
-                            Sign up
-                          </Link>
-                        ) : (
-                          <button
-                            onClick={() => {
-                              setSelectedPlan(plan.title)
-                              setShowWaitlistPopup(!showWaitlistPopup)
-                            }}
-                            className="block w-full mt-4 py-3 rounded-lg
+                            >
+                              Start a free 5-day trial
+                            </Link>
+                          ) : (
+                            <button
+                              onClick={() => {
+                                setSelectedPlan(plan.title)
+                                setShowWaitlistPopup(!showWaitlistPopup)
+                              }}
+                              className="block w-full mt-4 py-3 rounded-lg
                           border border-gray-900 bg-gray-900 font-semibold
                           text-center text-xs md:text-sm hover:bg-gray-800 text-teal-300
                           transition-main ring-gray inter"
-                          >
-                            Join the waitlist
-                          </button>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
+                            >
+                              Join the waitlist
+                            </button>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
               </div>
             </div>

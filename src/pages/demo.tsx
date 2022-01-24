@@ -208,11 +208,11 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
         </div>
         <div className="mt-4 lg:mt-6 flex items-center justify-center container">
           <Link
-            to={"/pricing/"}
-            title="See Leadgeek plans"
+            to={"/signup/"}
+            title="Sign up for Leadgeek"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
           >
-            See Leadgeek plans
+            Try it FREE
           </Link>
         </div>
       </section>

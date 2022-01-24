@@ -76,7 +76,8 @@ const OnlineArbitrageSourcingListPage: React.FC<
   const title = "Online Arbitrage Sourcing List"
   const description =
     "Leadgeek's online arbitrage sourcing list takes a modern, seamless approach to help you easily find things to flip for profit on Amazon."
-  const cta = `/product/online-arbitrage-sourcing-list#leads`
+
+  const cta = `/product/online-arbitrage-sourcing-list#pricing`
 
   const startDate = DateTime.fromISO("2020-10-12T12:00")
   const currentDate = DateTime.now()
@@ -179,11 +180,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
               >
                 <AnchorLink
                   to={cta}
-                  title="See the latest arbitrage leads"
+                  title="Start a free trial"
                   className="block md:inline-block cta-link inter text-center text-base"
                   gatsbyLinkProps={{ id: "cta" }}
                 >
-                  View the latest leads
+                  Start a free 5-day trial
                 </AnchorLink>
               </div>
             </div>
@@ -253,11 +254,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="See the latest arbitrage leads"
+                title="Start a free trial"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                View the latest leads
+                Start a free 5-day trial
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
@@ -292,7 +293,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-y-48 lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
               <StaticImage
-                src="../../assets/images/feed.jpg"
+                src="../../assets/images/leadgeek-app.png"
                 placeholder="tracedSVG"
                 alt="Leadgeek app feed"
                 title="Leadgeek app feed"
@@ -334,11 +335,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="See the latest arbitrage leads"
+                title="Start a free trial"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                View the latest leads
+                Start a free 5-day trial
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
@@ -371,7 +372,7 @@ const OnlineArbitrageSourcingListPage: React.FC<
           <div className="block lg:absolute lg:inset-y-0 lg:right-0 max-w-2xl xl:max-w-3xl w-full mx-auto pb-8 lg:py-4 transform lg:translate-x-56 xl:translate-x-24">
             <div className="lg:h-full mx-auto lg:pl-12 lg:-mr-64">
               <StaticImage
-                src="../../assets/images/details.jpg"
+                src="../../assets/images/details_v1.png"
                 placeholder="tracedSVG"
                 alt="Leadgeek detailed view"
                 title="Leadgeek detailed view"
@@ -412,11 +413,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="See the latest arbitrage leads"
+                title="Start a free trial"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                View the latest leads
+                Start a free 5-day trial
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-20 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 border-main shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -809,11 +810,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
         <div className="mt-8 lg:mt-6 flex items-center justify-center">
           <AnchorLink
             to={cta}
-            title="See the latest arbitrage leads"
+            title="Start a free trial"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
             gatsbyLinkProps={{ id: "cta" }}
           >
-            View the latest leads
+            Start a free 5-day trial
           </AnchorLink>
         </div>
       </section>

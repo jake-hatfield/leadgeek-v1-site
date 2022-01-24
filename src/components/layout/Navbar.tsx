@@ -101,12 +101,11 @@ const Navbar: React.FC = () => {
                 title="Sign up for Leadgeek"
                 className="no-m-first cta-link inter"
               >
-                Sign up
+                Try it FREE
               </Link>
             </nav>
           </div>
         </div>
-
         {/* mobile menu */}
         <animated.nav
           style={mobileMenuAnimation}
@@ -165,7 +164,7 @@ const Navbar: React.FC = () => {
           <div className="py-4 px-4 md:px-6 space-y-6 rounded-b-md">
             <div className="space-y-6 text-center">
               <Link to={`/signup/`} className="block cta-link inter">
-                Sign up now
+                Try it free
               </Link>
             </div>
           </div>
