@@ -180,11 +180,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
               >
                 <AnchorLink
                   to={cta}
-                  title="Start a free trial"
+                  title="View leads"
                   className="block md:inline-block cta-link inter text-center text-base"
                   gatsbyLinkProps={{ id: "cta" }}
                 >
-                  Start a free 5-day trial
+                  View leads
                 </AnchorLink>
               </div>
             </div>
@@ -254,11 +254,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="Start a free trial"
+                title="View leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start a free 5-day trial
+                View leads
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
@@ -335,11 +335,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="Start a free trial"
+                title="View leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start a free 5-day trial
+                View leads
               </AnchorLink>
             </div>
             <aside className="max-w-xl lg:max-w-lg mt-6 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 shadow-lg rounded-lg border-main py-4 px-6 text-gray-700">
@@ -413,11 +413,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
             >
               <AnchorLink
                 to={cta}
-                title="Start a free trial"
+                title="View leads"
                 className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start a free 5-day trial
+                View leads
               </AnchorLink>
             </div>
             <aside className="relative max-w-xl lg:max-w-lg mt-20 lg:mt-8 mx-auto lg:mx-0 bg-gray-100 border-main shadow-lg rounded-lg py-4 px-6 text-gray-700">
@@ -810,11 +810,11 @@ const OnlineArbitrageSourcingListPage: React.FC<
         <div className="mt-8 lg:mt-6 flex items-center justify-center">
           <AnchorLink
             to={cta}
-            title="Start a free trial"
+            title="View leads"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
             gatsbyLinkProps={{ id: "cta" }}
           >
-            Start a free 5-day trial
+            View leads
           </AnchorLink>
         </div>
       </section>

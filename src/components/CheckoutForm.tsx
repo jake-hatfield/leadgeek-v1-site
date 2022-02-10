@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import axios from "axios"
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js"
-import { DateTime } from "luxon"
+// import { DateTime } from "luxon"
 
 import {
   getCookie,
@@ -498,9 +498,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
               </h2>
               <div className="mt-2 center-between">
                 <p className="text-xs md:text-sm">Total billed today:</p>
-                <span className="font-bold">$0</span>
+                <span>
+                  <span className="font-bold text-gray-900">${price}</span>
+                  /mo
+                </span>
               </div>
-              <div className="mt-2 pt-2 border-t border-gray-900 center-between">
+              {/* <div className="mt-2 pt-2 border-t border-gray-900 center-between">
                 <p className="text-xs md:text-sm">
                   Total billed on{" "}
                   <span className="font-bold">
@@ -511,10 +514,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
                   <span className="font-bold text-gray-900">${price}</span>
                   /mo
                 </span>
-              </div>
-              <p className="pt-2 text-xs">
+              </div> */}
+              {/* <p className="pt-2 text-xs">
                 We'll remind you 3 days before your trial period ends
-              </p>
+              </p> */}
             </div>
           </div>
           <button
@@ -548,7 +551,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
                   : `bg-purple-500 shadow-purpleSm hover:shadow-purpleMd border-purple-500 hover:border-purple-600 hover:bg-purple-600 ring-purple`
               } w-full mt-4 lg:mt-8 py-3 px-4 rounded-lg border font-semibold text-sm text-white transition-main inter`}
             >
-              Start a free 5-day trial
+              Subscribe for ${price}
             </button>
           )}
         </aside>

@@ -32,11 +32,11 @@ const Navbar: React.FC<{ location: Location }> = ({ location }) => {
             <div className="ml-2 flex items-center hover:text-pink-600 group transition-colors duration-200">
               <AnchorLink
                 to={location ? `${location.pathname}#leads` : ""}
-                title="Start a free trial"
+                title="View leads"
                 className="whitespace-no-wrap underline font-bold focus:outline-none focus:shadow-outline"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start a free 5-day trial
+                View leads
               </AnchorLink>
             </div>
           </div>
@@ -54,11 +54,11 @@ const Navbar: React.FC<{ location: Location }> = ({ location }) => {
             <nav className="hidden md:block lg:flex lg:items-center mr-4">
               <AnchorLink
                 to={location ? `${location.pathname}#leads` : ""}
-                title="Start a free trial"
+                title="View leads"
                 className="no-m-first cta-link inter"
                 gatsbyLinkProps={{ id: "cta" }}
               >
-                Start a free 5-day trial
+                View leads
               </AnchorLink>
             </nav>
           </div>

@@ -129,7 +129,7 @@ exports.handler = async function (event) {
       const subscription = await stripe.subscriptions.create({
         customer: data.customerId,
         items: [{ price: data.priceId }],
-        trial_period_days: 7,
+        // trial_period_days: 7,
       })
 
       if (

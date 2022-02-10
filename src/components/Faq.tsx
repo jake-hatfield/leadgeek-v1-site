@@ -76,7 +76,7 @@ const Faq = () => {
       title: "What if I decide this isn't for me?",
       description: (
         <p>
-          No worries, that's what the free 5-day trials are for!{" "}
+          No worries!{" "}
           <span className="emphasized-text">
             There are no contracts, and you can cancel anytime with one click in
             the software
@@ -151,7 +151,7 @@ const Faq = () => {
           {
             question: "What if I decide this isn't for me?",
             answer:
-              "No worries, that's what the free 5-day trials are for! There are no contracts, and you can cancel anytime with one click in the software. It's 100% your call. Please note: due to the nature of the product, we do not issue refunds for the current month of service. However, we understand that special circumstances arise and honor genuine requests. See our cancellation policy for more info.",
+              "No worries! There are no contracts, and you can cancel anytime with one click in the software. It's 100% your call. Please note: due to the nature of the product, we do not issue refunds for the current month of service. However, we understand that special circumstances arise and honor genuine requests. See our cancellation policy for more info.",
           },
           {
             question: "How do I get in contact with support?",

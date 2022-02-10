@@ -465,8 +465,10 @@ const SignupPage: React.FC<{
                       Choose a plan
                     </h3>
                     <p className="mt-4">
-                      Start a free trial, cancel anytime. We'll email a reminder
-                      before it ends.
+                      Pick your plan below{" "}
+                      <span role="img" aria-label="Point down emoji">
+                        👇
+                      </span>
                     </p>
                     <ul>
                       {planList.map((plan, i) => (
@@ -482,11 +484,11 @@ const SignupPage: React.FC<{
                                 <h4 className="inter font-black text-gray-900">
                                   {plan.title}
                                 </h4>
-                                {plan.available && (
+                                {/* {plan.available && (
                                   <span className="ml-4 py-0.5 px-1 text-xs bg-teal-200 text-teal-900 border border-teal-300 rounded-lg">
                                     Free trial
                                   </span>
-                                )}
+                                )} */}
                               </div>
                               <p className="mt-2 text-xs md:text-sm">
                                 {plan.description}
@@ -514,7 +516,7 @@ const SignupPage: React.FC<{
                           text-center text-xs md:text-sm hover:bg-purple-600 text-white
                           transition-main ring-gray inter"
                             >
-                              Start a free 5-day trial
+                              Sign up
                             </Link>
                           ) : (
                             <button
