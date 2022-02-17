@@ -212,7 +212,7 @@ const DemoPage: React.FC<DemoPageProps> = ({ data, location }) => {
             title="Sign up for Leadgeek"
             className="w-full md:w-auto block md:inline-block cta-link inter text-center text-base"
           >
-            Try it FREE
+            Sign up now
           </Link>
         </div>
       </section>
