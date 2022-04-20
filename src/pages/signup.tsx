@@ -354,7 +354,7 @@ const SignupPage: React.FC<{
         (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
           ? false
           : true,
-      forceSoldOut: false,
+      forceSoldOut: true,
     },
     {
       title: "Pro",
