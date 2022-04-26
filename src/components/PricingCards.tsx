@@ -147,7 +147,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
           ? false
           : true,
-      forceSoldOut: true,
+      forceSoldOut: false,
     },
     {
       title: "Pro",
