@@ -58,8 +58,10 @@ const PricingCards: React.FC<PricingCardsProps> = ({
     growSubscriptions,
     bundleSubscriptions_2,
     proSubscriptions_2,
-    growSubscriptions_2,
+    // growSubscriptions_2,
   } = subscriptions
+
+  console.log(subscriptions)
 
   // calculate remaining seats
   const proPlanSeats = 15
@@ -72,8 +74,8 @@ const PricingCards: React.FC<PricingCardsProps> = ({
     proPlanSeats - (proSubscriptions_2.length + bundleSubscriptions_2.length)
   const growSeatsLeft =
     growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
-  const growSeatsLeft_2 =
-    growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
+  //   const growSeatsLeft_2 =
+  //     growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
   const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
   //   const bundleSeatsLeft_2 =
@@ -143,10 +145,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
       ],
       //   second list not open yet
       seatsLeft: growSeatsLeft,
-      available:
-        (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
-          ? false
-          : true,
+      available: growSeatsLeft <= 0 || waitlist.grow > 0 ? false : true,
       forceSoldOut: false,
     },
     {
