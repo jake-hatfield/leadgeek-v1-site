@@ -268,7 +268,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              !plan.available
+              !plan.available && plan.forceSoldOut
                 ? "bg-gray-200 shadow-graySm"
                 : plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"

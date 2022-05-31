@@ -475,7 +475,9 @@ const SignupPage: React.FC<{
                         <li
                           key={i}
                           className={`relative mt-6 py-2 px-4 ${
-                            plan.available ? "bg-white" : "bg-gray-200"
+                            plan.available && !plan.forceSoldOut
+                              ? "bg-white"
+                              : "bg-gray-200"
                           } rounded-lg border border-gray-900 shadow-md`}
                         >
                           <div className="flex items-center justify-between pb-4 border-b border-gray-900">
