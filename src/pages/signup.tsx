@@ -247,8 +247,8 @@ const SignupPage: React.FC<{
     proPlanSeats - (proSubscriptions_2.length + bundleSubscriptions_2.length)
   const growSeatsLeft =
     growPlanSeats - (growSubscriptions.length + bundleSubscriptions.length)
-  const growSeatsLeft_2 =
-    growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
+  //   const growSeatsLeft_2 =
+  //     growPlanSeats - (growSubscriptions_2.length + bundleSubscriptions_2.length)
   const bundleSeatsLeft =
     proSeatsLeft <= growSeatsLeft ? proSeatsLeft : growSeatsLeft
   //   const bundleSeatsLeft_2 =

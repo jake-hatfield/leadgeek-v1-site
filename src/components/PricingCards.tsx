@@ -267,7 +267,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
         >
           <div
             className={`relative py-4 lg:py-6 px-6 ${
-              !plan.available && plan.forceSoldOut
+              !plan.available || plan.forceSoldOut
                 ? "bg-gray-200 shadow-graySm"
                 : plan.title === "Bundle"
                 ? "bg-purple-500 text-white shadow-tealSm"
@@ -275,12 +275,13 @@ const PricingCards: React.FC<PricingCardsProps> = ({
             } rounded-lg border border-gray-900 w-72 md:w-80 transition-main`}
           >
             {(!plan.available ||
+              plan.forceSoldOut ||
               plan.seatsLeft <= 6 ||
               plan.title === "Bundle") && (
               <div className="absolute inset-x-0 top-0 transform translate-y-px">
                 <div className="flex justify-center transform -translate-y-1/2">
                   <span className="inline-flex rounded-full bg-gray-900 px-4 py-1 text-xs leading-5 font-semibold tracking-wider uppercase text-teal-300 shadow-tealSm">
-                    {!plan.available || plan.seatsLeft < 0
+                    {!plan.available || plan.seatsLeft < 0 || plan.forceSoldOut
                       ? "Sold out"
                       : plan.seatsLeft === 1
                       ? "1 seat left"
@@ -297,7 +298,7 @@ const PricingCards: React.FC<PricingCardsProps> = ({
               <p className="mt-2 text-center text-sm">{plan.description}</p>
               <div
                 className={`mt-4 lg:mt-6 py-4 border-t border-b ${
-                  !plan.available
+                  !plan.available || plan.forceSoldOut
                     ? "border-gray-900"
                     : plan.title === "Bundle"
                     ? "border-teal-300"
@@ -348,7 +349,9 @@ const PricingCards: React.FC<PricingCardsProps> = ({
                 <li key={i} className="mt-2 flex">
                   <Bullet
                     className={`mt-1 svg-sm ${
-                      !plan.available ? "text-gray-400" : "text-teal-300"
+                      !plan.available || plan.forceSoldOut
+                        ? "text-gray-400"
+                        : "text-teal-300"
                     } flex-none`}
                   />
                   <p className="ml-4">{feature.title}</p>
