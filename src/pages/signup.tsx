@@ -350,10 +350,7 @@ const SignupPage: React.FC<{
       description: "New FBA sellers",
       price: growPlanPrice,
       //   second list not open yet
-      available:
-        (growSeatsLeft <= 0 && growSeatsLeft_2 <= 0) || waitlist.grow > 0
-          ? false
-          : true,
+      available: growSeatsLeft <= 0 || waitlist.grow > 0 ? false : true,
       forceSoldOut: false,
     },
     {
