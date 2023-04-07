@@ -114,8 +114,8 @@ module.exports = {
         objects: ["Subscription"],
         secretKey:
           process.env.NODE_ENV === "production"
-            ? "***REMOVED***"
-            : "***REMOVED***",
+            ? "LIVE_KEY"
+            : "TEST_KEY",
       },
     },
     {
